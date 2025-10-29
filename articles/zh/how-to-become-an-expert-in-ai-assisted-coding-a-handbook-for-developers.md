@@ -1,6 +1,6 @@
 ---
 title: 如何成为 AI 辅助编程的专家——开发者手册
-date: 2025-09-06T02:24:21.422Z
+date: 2025-09-06T02:24:21.422Z 
 author: Mrugesh Mohapatra
 authorURL: https://www.freecodecamp.org/news/author/mrugesh/
 originalURL: https://www.freecodecamp.org/news/how-to-become-an-expert-in-ai-assisted-coding-a-handbook-for-developers/
