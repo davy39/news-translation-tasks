@@ -1,0 +1,81 @@
+---
+title: Git Please
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2017-01-04T17:33:15.000Z'
+originalURL: https://freecodecamp.org/news/git-please-a182f28efeb5
+coverImage: https://cdn-media-1.freecodecamp.org/images/1*PhSXjkYS9MTmoNwlPIdQpQ.jpeg
+tags:
+- name: Git
+  slug: git
+- name: GitHub
+  slug: github
+- name: General Programming
+  slug: programming
+- name: software development
+  slug: software-development
+- name: Web Development
+  slug: web-development
+seo_title: null
+seo_desc: 'By Buddy Reno
+
+  As the size of a dev team grows, so does the likelihood of someone doing a force
+  push and overwriting someone else’s code.
+
+  Here’s what a force push looks like in Git:
+
+  $ git push --force origin master# `--force` can also  be written as `...'
+---
+
+By Buddy Reno
+
+As the size of a dev team grows, so does the likelihood of someone doing a force push and overwriting someone else’s code.
+
+Here’s what a force push looks like in Git:
+
+```
+$ git push --force origin master# `--force` can also  be written as `-f`
+```
+
+This command can cause all kinds of problems. It basically tells Git that _I don’t care what is in origin/master. What I have is correct. Overwrite it._
+
+So what happens if a co-worker had changes committed to a branch that you haven’t pulled down into your own repo? It gets overwritten, and your co-worker potentially has to re-do their work (or resurrect a commit or two if they still have it locally).
+
+But this whole mess can be easily avoided with a small change to how you use the`force`flag. Instead of using `—-force`, Use `--force-with-lease`.
+
+```
+$ git push --force-with-lease origin master
+```
+
+To summarize Git’s [documentation](https://git-scm.com/docs/git-push#git-push---force-with-leaseltrefnamegt), using `force-with-lease` tells git to check whether the remote repo is the same as the one you’re trying to push up. If it isn’t, git will throw an error instead of blindly overwriting the remote repo. This will save you from accidentally overwriting work that you don’t intend to.
+
+I hate typing `force-with-lease` though — especially because I’m used to typing the shorthand `-f` for force pushing. Thankfully, Git allows you to add aliases to make this quicker. I like to think that I’m asking Git if it’s okay to force push, so I’ve aliased `push —force-with-lease` to `git please`.
+
+```
+$ git please origin master
+```
+
+You can add an alias in git by typing this into your terminal:
+
+```
+git config --global alias.please 'push --force-with-lease'
+```
+
+Or you can open up your `~/.gitconfig` file and manually add the alias:
+
+```
+[alias]	co = checkout	ci = commit	please = push --force-with-lease
+```
+
+#### There’s always a caveat…
+
+It’s possible to trick force with lease however. When you use `git pull` to get updates from the origin, this is doing two commands at once. Git runs a `fetch` to pull down the reference to all the changes. Then it runs a `merge` to merge the changes you just fetched into your current branch.
+
+If you only do a `fetch` to get the latest updates, you’ll only be updating your references — not actually merging the changes into your working copy. Then, if you force push with lease, Git will look at those references and think that the local copy is up to date with the remote, when in reality it isn’t yet. This will trick Git into overwriting the changes on the remote with your local copy, without having the changes actually merged in.
+
+The easiest way to avoid this problem is always use `git pull` to `fetch` and `merge` at the same time. I’ve not run into any instances where I’ve needed to `fetch` and `merge` manually, so I can’t speak to those circumstances. Using `pull` has always worked for me.
+
+I hope you find `git please` helpful and that, as a result, you never have to recover from a force-push nightmare.
+

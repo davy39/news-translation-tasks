@@ -1,17 +1,31 @@
 ---
-title: "Error: error:0308010c:digital envelope routines::unsupported [Node Error
-  Solved]"
-date: 2024-08-27T13:46:01.360Z
+title: 'Error: error:0308010c:digital envelope routines::unsupported [Node Error Solved]'
+subtitle: ''
 author: Kolade Chris
-authorURL: https://www.freecodecamp.org/news/author/koladechris/
-originalURL: https://www.freecodecamp.org/news/error-error-0308010c-digital-envelope-routines-unsupported-node-error-solved/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2022-11-10T18:39:19.000Z'
+originalURL: https://freecodecamp.org/news/error-error-0308010c-digital-envelope-routines-unsupported-node-error-solved
+coverImage: https://www.freecodecamp.org/news/content/images/2022/11/envelope-1829509_1280.jpg
+tags:
+- name: error
+  slug: error
+- name: error handling
+  slug: error-handling
+- name: node
+  slug: node
+- name: node js
+  slug: node-js
+- name: React
+  slug: react
+seo_title: null
+seo_desc: "If you work with Node.js and command line interface solutions like Webpack,\
+  \ create-react-app, or vue-cli-service, you might have encountered the error, Error:\
+  \ error:0308010c:digital envelope routines::unsupported. \nYou’re not alone, because\
+  \ I’m curre..."
 ---
 
-If you work with Node.js and command line interface solutions like Webpack, create-react-app, or vue-cli-service, you might have encountered the error, `Error: error:0308010c:digital envelope routines::unsupported`.
-
-<!-- more -->
+If you work with Node.js and command line interface solutions like Webpack, create-react-app, or vue-cli-service, you might have encountered the error, `Error: error:0308010c:digital envelope routines::unsupported`. 
 
 You’re not alone, because I’m currently getting it too:
 
@@ -19,7 +33,7 @@ You’re not alone, because I’m currently getting it too:
 
 The React app indeed failed to start:
 
-![ss2-1](https://www.freecodecamp.org/news/content/images/2022/11/ss2-1.png)
+![ss2-1](https://www.freecodecamp.org/news/content/images/2022/11/ss2-1.png) 
 
 In this article, you’ll learn how to fix this error in 3 ways. But first, let’s discuss what causes the error.
 
@@ -27,8 +41,8 @@ In this article, you’ll learn how to fix this error in 3 ways. But first, let�
 
 You are likely getting this error because of 2 main reasons:
 
--   you’re not using the LTS (long term support) version of Node JS. You can see I’m using Node 17.0.0, which is not an LTS version of Node.
--   you’re using react-script with a version less than 5
+- you’re not using the LTS (long term support) version of Node JS. You can see I’m using Node 17.0.0, which is not an LTS version of Node. 
+- you’re using react-script with a version less than 5
 
 The error can also occur because you’re using Node 17.
 
@@ -44,38 +58,37 @@ That should do it. But if this fails to fix the error, then proceed to the next 
 
 ### Use an LTS Version of Node JS
 
-Consider downgrading your Node version to 16.16.0 or other LTS versions.
+Consider downgrading your Node version to 16.16.0 or other LTS versions. 
 
 Currently, 18.12.1 is the latest LTS version of Node. You can download it from the Node JS official website or use NVM to install it.
 
 ### Upgrade React Script to Version 5+
 
-If you’re working with React and this still fails to fix the error for you, then it’s likely an issue with your React script.
+If you’re working with React and this still fails to fix the error for you, then it’s likely an issue with your React script. 
 
 If you’re using a React script version less than 5, then you should upgrade it to version 5+.
 
 In my case, I’m currently using react-scripts 3.4.3:
 
-![ss3](https://www.freecodecamp.org/news/content/images/2022/11/ss3.png)
+![ss3](https://www.freecodecamp.org/news/content/images/2022/11/ss3.png) 
 
 To upgrade react-scripts to 5+, you can do it in two ways:
 
--   Uninstall and reinstall react-scripts
-    
-    -   open the terminal and run `npm uninstall react-scripts`
-    -   run `npm install react-scripts`
--   Manually change the react script version
-    
-    -   go to your `package.json` and change the react-script version to 5.0.2
-    -   delete the node\_modules folder by running `rm –rf node_modules`
-    -   delete the package.lock.json file by running `rm –rf package.lock.json`
-    -   run `npm install` or `yarn add`, depending on the package manager you’re using
+- Uninstall and reinstall react-scripts
+   - open the terminal and run `npm uninstall react-scripts`
+   - run `npm install react-scripts`
+
+- Manually change the react script version
+   - go to your `package.json` and change the react-script version to 5.0.2
+   - delete the node_modules folder by running `rm –rf node_modules`
+   - delete the package.lock.json file by running `rm –rf package.lock.json`
+   - run `npm install` or `yarn add`, depending on the package manager you’re using
 
 After upgrading the version of react-scripts to 5+, my React app is now working fine:
 
 ![ss4](https://www.freecodecamp.org/news/content/images/2022/11/ss4.png)
 
-![ss5](https://www.freecodecamp.org/news/content/images/2022/11/ss5.png)
+![ss5](https://www.freecodecamp.org/news/content/images/2022/11/ss5.png) 
 
 ## Conclusion
 
@@ -84,3 +97,5 @@ As already pointed out in this article, if you are getting the "0308010c:digital
 Hopefully the fixes we discussed in this tutorial help you fix this error. If any of the fixes fail to work for you, then you should try the others. In my case, upgrading react-scripts to 5+ was what worked for me.
 
 Thank you for reading.
+
+

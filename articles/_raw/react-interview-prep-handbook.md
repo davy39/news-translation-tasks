@@ -1,16 +1,28 @@
 ---
 title: The React Interview Prep Handbook – Essential Topics and Code Examples
-date: 2024-11-04T08:40:47.162Z
+subtitle: ''
 author: Kunal Nalawade
-authorURL: https://www.freecodecamp.org/news/author/KunalN25/
-originalURL: https://www.freecodecamp.org/news/react-interview-prep-handbook/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2024-10-11T10:50:19.771Z'
+originalURL: https://freecodecamp.org/news/react-interview-prep-handbook
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1728643567956/00c98d19-4694-4942-9ad2-d2f25bcf05c0.png
+tags:
+- name: React
+  slug: reactjs
+- name: interview questions
+  slug: interview-questions
+- name: handbook
+  slug: handbook
+seo_title: null
+seo_desc: 'Hi everyone! In the ever-changing landscape of web development, React is
+  in very high demand. Companies are often seeking skilled React developers to build
+  dynamic and engaging web applications.
+
+  If you are a web developer or aspiring to be one, it''s ...'
 ---
 
 Hi everyone! In the ever-changing landscape of web development, React is in very high demand. Companies are often seeking skilled React developers to build dynamic and engaging web applications.
-
-<!-- more -->
 
 If you are a web developer or aspiring to be one, it's important to understand what these companies look for in candidates. Preparing for interviews at these companies can be a daunting task.
 
@@ -18,17 +30,17 @@ So, in this article, I am going to list some of the topics to help you prepare f
 
 ## Table of Contents
 
--   [JavaScript Fundamentals][1]
+* [JavaScript Fundamentals](#heading-javascript-fundamentals)
     
--   [React Essentials][2]
+* [React Essentials](#heading-react-essentials)
     
--   [React Hooks][3]
+* [React Hooks](#heading-react-hooks)
     
--   [Additional Concepts][4]
+* [Additional Concepts](#heading-additional-concepts)
     
--   [React Redux][5]
+* [React Redux](#heading-react-redux)
     
--   [Additional Notes][6]
+* [Additional Notes](#heading-additional-notes)
     
 
 ## JavaScript Fundamentals
@@ -37,7 +49,7 @@ To prepare for any web development interview, you need to get familiar with Java
 
 If you are a beginner, you need to clear JavaScript fundamentals before jumping into React. A lot of people (including me) make the mistake of jumping straight into React after learning a bit of JavaScript.
 
-I have written a detailed post on [important JavaScript concepts for interviews][7]. You can include this as part of your React interview preparation. If you are clear on all JavaScript fundamentals, you can skip to the next section.
+I have written a detailed post on [important JavaScript concepts for interviews](https://www.freecodecamp.org/news/js-interview-prep-handbook/). You can include this as part of your React interview preparation. If you are clear on all JavaScript fundamentals, you can skip to the next section.
 
 ## React Essentials
 
@@ -49,7 +61,7 @@ As we all know, the browser DOM (Document Object Model) is a tree-like structure
 
 Why does React use the virtual DOM? Updating and re-rendering the real DOM is slow and inefficient, especially if it gets updated frequently. So, instead of updating the real DOM directly, React updates the virtual DOM.
 
-The virtual DOM is then compared to the real DOM and once it identifies the differences, it only updates that part of the DOM, rather than rendering the entire DOM again. This process is known as [diffing and reconciliation][8].
+The virtual DOM is then compared to the real DOM and once it identifies the differences, it only updates that part of the DOM, rather than rendering the entire DOM again. This process is known as [diffing and reconciliation](https://legacy.reactjs.org/docs/reconciliation.html).
 
 ### What is JSX?
 
@@ -57,7 +69,7 @@ JSX (JavaScript XML) is a syntax extension for JavaScript that allows you to wri
 
 You can write JSX code in a `.js` or `.jsx` file. Consider the following **MyComponent.jsx** file:
 
-```
+```javascript
 const MyComponent = () => {
     const name = "Kunal"
     return (
@@ -76,14 +88,14 @@ State is used to render dynamic information in the component and makes the UI in
 
 Some things you need to keep in mind while using state:
 
--   States are immutable. Always update the state using a `setState` function. For objects/arrays, create new ones and set the state with the new array/object. This ensures proper component behavior.
+* States are immutable. Always update the state using a `setState` function. For objects/arrays, create new ones and set the state with the new array/object. This ensures proper component behavior.
     
--   Use state only when necessary, avoid storing redundant information as it may cause unnecessary re-renders.
+* Use state only when necessary, avoid storing redundant information as it may cause unnecessary re-renders.
     
--   Use the state locally in the same component, avoid passing state down the DOM tree, unless absolutely necessary. For global state, use context or redux.
+* Use the state locally in the same component, avoid passing state down the DOM tree, unless absolutely necessary. For global state, use context or redux.
     
 
-Check the [legacy docs][9] for state in class components. For functional components, refer to the [`useState`][10] section.
+Check the [legacy docs](https://legacy.reactjs.org/docs/state-and-lifecycle.html) for state in class components. For functional components, refer to the [`useState`](#heading-usestate-hook) section.
 
 ### What are props?
 
@@ -91,7 +103,7 @@ Props (short for properties) are a way to pass data from one component to anothe
 
 Let's take an example:
 
-```
+```js
 function ParentComponent() {
   const name = "John Doe";
   const age = 30;
@@ -118,11 +130,11 @@ function ChildComponent({ name, age, handleClick }) {
 }
 ```
 
--   Here, the parent component passes down name, age and handleClick method as props to the child component.
+* Here, the parent component passes down name, age and handleClick method as props to the child component.
     
--   These props form a `props` object that contains the values passed. Every functional component takes a `props` object as an argument
+* These props form a `props` object that contains the values passed. Every functional component takes a `props` object as an argument
     
--   We have accessed the props by destructuring the object in the child component.
+* We have accessed the props by destructuring the object in the child component.
     
 
 Props can only be passed one way down the component tree. That is, from parent to child component. Props are read-only, you cannot change their value directly. State values passed down as props can be updated using state update function.
@@ -133,24 +145,24 @@ React components are of two types: class and functional components. Let's unders
 
 **Class Components:**
 
--   Class components are written using ES6 classes. Its properties and functions are accessed using the `this` keyword. They need a `render` method to return JSX.
+* Class components are written using ES6 classes. Its properties and functions are accessed using the `this` keyword. They need a `render` method to return JSX.
     
--   Class components are stateful components that contain built-in features like State and Context.
+* Class components are stateful components that contain built-in features like State and Context.
     
--   They have methods for different stages of component lifecycle: `componentDidMount()` `componentDidUpdate()` `componentWillUnmount()`, and so on.
+* They have methods for different stages of component lifecycle: `componentDidMount()` `componentDidUpdate()` `componentWillUnmount()`, and so on.
     
--   Class components are verbose, hard to read and always need `this` keyword to access properties.
+* Class components are verbose, hard to read and always need `this` keyword to access properties.
     
 
 **Functional Components:**
 
--   Functional components are simple JavaScript functions that take a `props` object as an argument. They don't need a `render` method, they return JSX directly.
+* Functional components are simple JavaScript functions that take a `props` object as an argument. They don't need a `render` method, they return JSX directly.
     
--   Functional components are stateless and do not have state of their own. Instead, they use Hooks to use class component features like State or Context.
+* Functional components are stateless and do not have state of their own. Instead, they use Hooks to use class component features like State or Context.
     
--   There are no lifecycle methods, lifecycle is be managed with `useEffect` hook.
+* There are no lifecycle methods, lifecycle is be managed with `useEffect` hook.
     
--   Functional components require less code than class components, so they are easier to read and write.
+* Functional components require less code than class components, so they are easier to read and write.
     
 
 Nowadays, developers prefer and recommend functional components, especially with Hooks. Class components are usually found in older codebases.
@@ -165,13 +177,14 @@ Every React component has a lifecycle that goes through three phases: Mounting, 
 
 In this phase, a component is created and added to the DOM. When a component is mounted, the following methods are called:
 
--   [`constructor()`][11]
+* [`constructor()`](https://www.geeksforgeeks.org/react-js-constructor-method/)
+    
 
--   [`static getDerivedStateFromProps(props, state)`][12] (rarely used)
+* [`static getDerivedStateFromProps(props, state)`](https://www.geeksforgeeks.org/react-js-static-getderivedstatefromprops/) (rarely used)
     
--   [`render()`][13]
+* [`render()`](https://www.geeksforgeeks.org/react-js-render-method/)
     
--   `componentDidMount()`
+* `componentDidMount()`
     
 
 `componentDidMount()` is called only once; that is, when the component mounts. It is the preferred method for executing side effects when a component loads for the first time. In functional components, its equivalent is `useEffect` Hook.
@@ -180,20 +193,20 @@ In this phase, a component is created and added to the DOM. When a component is 
 
 In updating phase, the component's state or props change, which causes the component to re-render. The following methods are called when component updates:
 
--   [`shouldComponentUpdate(nextProps, nextState)`][14]
+* [`shouldComponentUpdate(nextProps, nextState)`](https://www.geeksforgeeks.org/reactjs-shouldcomponentupdate-method/)
     
--   `render()` (called again)
+* `render()` (called again)
     
--   [`getSnapshotBeforeUpdate()`][15]
+* [`getSnapshotBeforeUpdate()`](https://www.geeksforgeeks.org/reactjs-getsnapshotbeforeupdate-method/)
     
--   `componentDidUpdate()`
+* `componentDidUpdate()`
     
 
 The `componentDidUpdate` method is called following times:
 
--   The first time when component mounts, after the `componentDidMount` method.
+* The first time when component mounts, after the `componentDidMount` method.
     
--   Any state or props change triggering component re-render.
+* Any state or props change triggering component re-render.
     
 
 It is useful to execute side effects when a state updates. In functional component, the equivalent is `useEffect` with dependencies.
@@ -202,7 +215,7 @@ It is useful to execute side effects when a state updates. In functional compone
 
 In this phase, the component is removed from the DOM. The `componentWillUnmount` method is called while unmounting.
 
-It is mostly used for cleanup tasks before the component unmounts. Refer to the [`useEffect`][16] section for its equivalent.
+It is mostly used for cleanup tasks before the component unmounts. Refer to the [`useEffect`](#heading-useeffect-hook) section for its equivalent.
 
 ### Controlled and Uncontrolled components
 
@@ -210,7 +223,7 @@ In controlled components, the form elements are managed by React state. This mea
 
 Example of controlled component:
 
-```
+```js
 function ControlledComponent() {
   const [value, setValue] = useState('');
 
@@ -228,16 +241,16 @@ function ControlledComponent() {
 }
 ```
 
--   The value of the `input` field is being controlled by React state variable `value`.
+* The value of the `input` field is being controlled by React state variable `value`.
     
--   When you update the input field, the state gets updated and value of the input is set accordingly.
+* When you update the input field, the state gets updated and value of the input is set accordingly.
     
 
 Uncontrolled components, on the other hand, do not depend on state to manage forms. Instead, the values of form fields are managed internally, usually with refs. Refs are used to directly interact with the DOM elements and update values without updating state and causing re-renders.
 
 Example of uncontrolled component:
 
-```
+```js
 function UncontrolledComponent() {
   const inputRef = useRef(null);
 
@@ -259,11 +272,11 @@ Here, we have used a ref to directly access the input element's DOM node and use
 
 When to use either:
 
--   Use controlled components if you want more control over data that the user inputs. This is particularly useful when two form fields are dependent on each other.
+* Use controlled components if you want more control over data that the user inputs. This is particularly useful when two form fields are dependent on each other.
     
--   If you have multiple state dependent on the form data, using state is a good practice.
+* If you have multiple state dependent on the form data, using state is a good practice.
     
--   Use uncontrolled components if your form is very simple and there's no need to manipulate the form data.
+* Use uncontrolled components if your form is very simple and there's no need to manipulate the form data.
     
 
 ### What are Pure Components?
@@ -272,7 +285,7 @@ A pure component is similar to a normal component, except that it only renders i
 
 Let's take an example:
 
-```
+```javascript
 const PureExample = React.memo(() => {
   return <h1> Hello {this.props.name} </h1>;
 });
@@ -290,16 +303,16 @@ function App() {
 }
 ```
 
--   `PureExample` is a pure component that is a child of `App` component. Pure components can be created by surrounding the function with `React.memo()`.
+* `PureExample` is a pure component that is a child of `App` component. Pure components can be created by surrounding the function with `React.memo()`.
     
--   In the example, we have an `input` field that updates `name`, and a button that toggles the state, `toggle`.
+* In the example, we have an `input` field that updates `name`, and a button that toggles the state, `toggle`.
     
--   `name` is passed down as props to `PureExample`, so it re-renders if `name` is updated. If you update `toggle` or any other state, `PureExample` does not re-render.
+* `name` is passed down as props to `PureExample`, so it re-renders if `name` is updated. If you update `toggle` or any other state, `PureExample` does not re-render.
     
 
 In case of class components, pure components can be created by extending the `PureComponent` class. However, functional components are recommended.
 
-```
+```js
 class PureExample extends React.PureComponent {
   render() {
     return <h1> Hello {this.props.name} </h1>;
@@ -319,7 +332,7 @@ React Hooks is a game-changing feature introduced to React in 2016. Hooks provid
 
 We have already seen what state is. Let's understand how to implement state in functional components with a simple example:
 
-```
+```javascript
 const [count, setCount] = useState(0);
 const increment = () => {
     setCount(count + 1);
@@ -336,16 +349,16 @@ return (
 );
 ```
 
--   `useState` function takes an initial value as an argument and returns an array containing two elements: the current state, and a state update function.
+* `useState` function takes an initial value as an argument and returns an array containing two elements: the current state, and a state update function.
     
--   In this example, we have two buttons that increment and decrement the count. On click of the button, the increment/decrement operations are performed by updating the `count` state.
+* In this example, we have two buttons that increment and decrement the count. On click of the button, the increment/decrement operations are performed by updating the `count` state.
     
--   The component re-renders and displays the updated `count`.
+* The component re-renders and displays the updated `count`.
     
 
 For more examples of its usages, check out my post below:
 
-[https://levelup.gitconnected.com/4-different-examples-of-the-usestate-hook-in-react-5504ce011a20][17]
+%[https://levelup.gitconnected.com/4-different-examples-of-the-usestate-hook-in-react-5504ce011a20] 
 
 ### useEffect Hook
 
@@ -353,7 +366,7 @@ The `useEffect` hook is used to implement side effects in a component. Side effe
 
 Let's understand how to use it, with an example:
 
-```
+```javascript
 function App() {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
@@ -363,7 +376,7 @@ function App() {
       const result = await response.json();
       setData(result);
     };
-
+    
     fetchData();
   }, [page]);
 
@@ -379,23 +392,23 @@ function App() {
 }
 ```
 
--   `useEffect` takes two arguments: a function that performs side effects and a dependency array.
+* `useEffect` takes two arguments: a function that performs side effects and a dependency array.
     
--   In this example, we display paginated data by including the fetching logic inside a `useEffect` and including the current page in the dependency.
+* In this example, we display paginated data by including the fetching logic inside a `useEffect` and including the current page in the dependency.
     
--   `useEffect` makes the API call on the first render, loading the first page of data. After that, it loads additional data every time user changes the page.
+* `useEffect` makes the API call on the first render, loading the first page of data. After that, it loads additional data every time user changes the page.
     
 
 How to implement lifecycle methods in `useEffect`:
 
--   To implement `componentDidMount()`, pass an empty dependency array
+* To implement `componentDidMount()`, pass an empty dependency array
     
--   To implement `componentDidUpdate()`, pass dependencies to run the `useEffect` if one of those dependencies changes
+* To implement `componentDidUpdate()`, pass dependencies to run the `useEffect` if one of those dependencies changes
     
--   For `componentWillUnmount()`, return a callback function from `useEffect` containing the cleanup code
+* For `componentWillUnmount()`, return a callback function from `useEffect` containing the cleanup code
     
 
-`useEffect` can be used in a lot of ways. The React [docs][18] contain several examples of usages.
+`useEffect` can be used in a lot of ways. The React [docs](https://react.dev/reference/react/useEffect#usage) contain several examples of usages.
 
 ### useContext Hook
 
@@ -415,11 +428,11 @@ Passing down props through numerous components leads to a situation known as pro
 
 Context lets parent components pass data to all components in the tree without drilling props through them. This eliminates the need to pass down props through multiple components in the tree.
 
-Context was introduced as a [class component feature][19] initially, but now it can be used in functional components with the `useContext` hook.
+Context was introduced as a [class component feature](https://legacy.reactjs.org/docs/context.html) initially, but now it can be used in functional components with the `useContext` hook.
 
 Let's see how to use the hook:
 
-```
+```js
 import React, {useContext} from "react";
 
 const DataContext = React.createContext(null);
@@ -438,24 +451,24 @@ function MainComponent() {
 }
 ```
 
--   We used `React.createContext` method to create a context and then created a provider function that wraps around the main component.
+* We used `React.createContext` method to create a context and then created a provider function that wraps around the main component.
     
--   The `value` prop of `DataContext.Provider` is used the pass data to the entire component tree under `MainComponent`.
+* The `value` prop of `DataContext.Provider` is used the pass data to the entire component tree under `MainComponent`.
     
--   The `useContext` Hook consumes this data inside components. It returns the data that was passed to the `value` prop of the provider.
+* The `useContext` Hook consumes this data inside components. It returns the data that was passed to the `value` prop of the provider.
     
 
 `useContext` can only be used if the component or one of its parents has a context provider wrapped around it. Examples use cases are themes, user info, language preferences and localization, and so on.
 
-Check out additional usages of `useContext` in the [docs][20].
+Check out additional usages of `useContext` in the [docs](https://react.dev/reference/react/useContext#usage).
 
 ### useRef Hook
 
-Refs (short for references) are a way to interact directly with DOM elements. They give you direct access to the JavaScript DOM object and its [methods][21].
+Refs (short for references) are a way to interact directly with DOM elements. They give you direct access to the JavaScript DOM object and its [methods](https://www.tutorialspoint.com/javascript/javascript_dom_methods.htm).
 
-Visit the [legacy docs][22] for using refs in class components. In functional components, we have the `useRef` Hook. Let's take an example:
+Visit the [legacy docs](https://legacy.reactjs.org/docs/refs-and-the-dom.html) for using refs in class components. In functional components, we have the `useRef` Hook. Let's take an example:
 
-```
+```javascript
 export function App(props) {
   const myRef = useRef(null);
 
@@ -467,24 +480,24 @@ export function App(props) {
 }
 ```
 
--   `useRef` takes an initial value as an argument and returns a `ref` object.
+* `useRef` takes an initial value as an argument and returns a `ref` object.
     
--   When this `ref` object is passed to the `ref` prop of an element, we get a direct reference to the element's DOM node.
+* When this `ref` object is passed to the `ref` prop of an element, we get a direct reference to the element's DOM node.
     
--   The value of a `ref` is stored inside its `current` property.
+* The value of a `ref` is stored inside its `current` property.
     
--   Since `ref` is a JavaScript DOM object, we can call the [focus()][23] method to focus on the `input` element when the component mounts.
+* Since `ref` is a JavaScript DOM object, we can call the [focus()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus) method to focus on the `input` element when the component mounts.
     
 
 Unlike state, refs do not cause component re-renders and unlike local variables, refs retain their values between renders.
 
 Some things to remember about refs:
 
--   Components can expose their DOM nodes to parent components by using [forwardRef][24].
+* Components can expose their DOM nodes to parent components by using [forwardRef](https://react.dev/reference/react/forwardRef).
     
--   Only use refs when you absolutely need to access DOM elements. Example use cases could be for tasks like focusing on input elements, selecting tests, triggering animations, determining elements positions, and so on.
+* Only use refs when you absolutely need to access DOM elements. Example use cases could be for tasks like focusing on input elements, selecting tests, triggering animations, determining elements positions, and so on.
     
--   Avoid over-using them, prefer state and props over refs. Avoid modifying DOM elements explicitly to control component behavior, use state instead.
+* Avoid over-using them, prefer state and props over refs. Avoid modifying DOM elements explicitly to control component behavior, use state instead.
     
 
 ### useMemo Hook
@@ -495,7 +508,7 @@ This may be acceptable for a state value dependent on it, but it's inefficient i
 
 `useMemo` Hook is used to memoize the result of this calculation, so that it doesn't run on every render. Let's take an example:
 
-```
+```javascript
 const MemoExample = () => {
   const [computedValue, setComputedValue] = useState(value);
   const [otherState, setOtherState] = useState('Initial State');
@@ -507,7 +520,7 @@ const MemoExample = () => {
       }
       return result;
   }
-
+  
   const value = useMemo(expensiveFunction, [computedValue]);
 
   return  (
@@ -523,20 +536,20 @@ const MemoExample = () => {
 };
 ```
 
--   `useMemo` takes in the function and a dependency array as arguments, and returns the result of this function. It memoizes the result for the next render and returns the memoized value unless some dependency changes.
+* `useMemo` takes in the function and a dependency array as arguments, and returns the result of this function. It memoizes the result for the next render and returns the memoized value unless some dependency changes.
     
--   We have passed `computedValue` state inside the array, so, after running on the first render, the function will run only when `computedValue` changes.
+* We have passed `computedValue` state inside the array, so, after running on the first render, the function will run only when `computedValue` changes.
     
--   If you update any other state, the component re-renders, but the function does not run again.
+* If you update any other state, the component re-renders, but the function does not run again.
     
 
 When to use:
 
--   If you do not want to run a function on every render, except for the state dependent on it.
+* If you do not want to run a function on every render, except for the state dependent on it.
     
--   To maintain referential equality of arrays and object across renders. Array/object references change each time they are declared.
+* To maintain referential equality of arrays and object across renders. Array/object references change each time they are declared.
     
--   When rendering lists with [`Array.map`][25] that do not need to change except for relevant state updates.
+* When rendering lists with [`Array.map`](http://Array.map) that do not need to change except for relevant state updates.
     
 
 ### useCallback Hook
@@ -547,7 +560,7 @@ Similar to arrays or objects, a function reference changes each time it is decla
 
 Let's understand it with an example:
 
-```
+```javascript
 function ParentComponent() {
   const [toggle, setToggle] = useState(false);
 
@@ -563,7 +576,7 @@ function ParentComponent() {
 }
 
 const Child = React.memo(({ handleSubmit }) => {
-
+    
   for (let i = 0; i < 1000000000; i++) {
     // Assume component is slow
   }
@@ -576,31 +589,31 @@ const Child = React.memo(({ handleSubmit }) => {
 });
 ```
 
--   Here, we deliberately slow down the child component to simulate slow renders. Since it's wrapped inside `React.memo()`, it only re-renders if its only prop `handleSubmit` changes.
+* Here, we deliberately slow down the child component to simulate slow renders. Since it's wrapped inside `React.memo()`, it only re-renders if its only prop `handleSubmit` changes.
     
--   But when `toggle` state changes, it triggers a re-render for the child component as well, even if it's not passed down to the child component.
+* But when `toggle` state changes, it triggers a re-render for the child component as well, even if it's not passed down to the child component.
     
--   This is because, every time the parent component renders, the `handleSubmit` function is created with a new reference. So, technically `handleSubmit` has changed and thus, the child component re-renders.
+* This is because, every time the parent component renders, the `handleSubmit` function is created with a new reference. So, technically `handleSubmit` has changed and thus, the child component re-renders.
     
--   To avoid this behaviour, we wrap the `handleSubmit` function declaration inside a `useCallback`. This ensures that the function reference remains the same between renders.
+* To avoid this behaviour, we wrap the `handleSubmit` function declaration inside a `useCallback`. This ensures that the function reference remains the same between renders.
     
--   In our example, the function is created only once, since there are no dependencies. If you add dependencies, the function is re-created only if one of them changes.
+* In our example, the function is created only once, since there are no dependencies. If you add dependencies, the function is re-created only if one of them changes.
     
 
 When to use:
 
--   When you have event handlers defined for an element inside your component, wrap them inside a `useCallback` to avoid unnecessary re-creations of event handlers.
+* When you have event handlers defined for an element inside your component, wrap them inside a `useCallback` to avoid unnecessary re-creations of event handlers.
     
--   When you call a function inside a `useEffect`, you would usually pass the function as a dependency. To avoid running `useEffect` unnecessarily on every render, wrap the function definition inside a `useCallback`.
+* When you call a function inside a `useEffect`, you would usually pass the function as a dependency. To avoid running `useEffect` unnecessarily on every render, wrap the function definition inside a `useCallback`.
     
--   If your custom Hook is returning a function, it is recommended to wrap it inside a `useCallback`. So, the users don't have to optimize the Hook – rather, they can focus on their own code.
+* If your custom Hook is returning a function, it is recommended to wrap it inside a `useCallback`. So, the users don't have to optimize the Hook – rather, they can focus on their own code.
     
 
 If you want to learn more about `useMemo` and `useCallback` hooks, check out my post below:
 
-[https://www.freecodecamp.org/news/difference-between-usememo-and-usecallback-hooks/][26]
+[https://www.freecodecamp.org/news/difference-between-usememo-and-usecallback-hooks/](https://www.freecodecamp.org/news/difference-between-usememo-and-usecallback-hooks/)
 
-[https://www.freecodecamp.org/news/difference-between-usememo-and-usecallback-hooks/][27]
+%[https://www.freecodecamp.org/news/difference-between-usememo-and-usecallback-hooks/] 
 
 ### useReducer Hook
 
@@ -610,7 +623,7 @@ useReducer offers a more structured way to manage complex state by handling all 
 
 Let's see how to use this hook with an example:
 
-```
+```javascript
 const reducer = (state, action) => {
   switch (action.type) {
     case 'INCREMENT':
@@ -642,27 +655,27 @@ export function App(props) {
 }
 ```
 
--   This example contains a simple counter state with three actions: increment, decrement and reset.
+* This example contains a simple counter state with three actions: increment, decrement and reset.
     
--   We define a reducer function that accepts the current state and an action object as arguments. The action object contains the action type (a string) and payload (data passed to the action).
+* We define a reducer function that accepts the current state and an action object as arguments. The action object contains the action type (a string) and payload (data passed to the action).
     
--   The `useReducer` Hook accepts the reducer function and an initial state, and returns an array containing the current state and a `dispatch` method.
+* The `useReducer` Hook accepts the reducer function and an initial state, and returns an array containing the current state and a `dispatch` method.
     
--   To update state, we call the `dispatch` method and pass the action type and payload in an object. We call this process, "dispatching an action".
+* To update state, we call the `dispatch` method and pass the action type and payload in an object. We call this process, "dispatching an action".
     
 
 When to use `useReducer`:
 
--   Use this hook only when your component has complex state update logic. Since it involves writing more code, prefer `useState` for simpler state updates. The simple example provided is just for demonstration purpose.
+* Use this hook only when your component has complex state update logic. Since it involves writing more code, prefer `useState` for simpler state updates. The simple example provided is just for demonstration purpose.
     
--   When there are a lot of state update actions with different logic, it makes sense to have them all in a separate function. With this, you just pass the action type and payload to a `dispatch` function and the reducer handles the state update.
+* When there are a lot of state update actions with different logic, it makes sense to have them all in a separate function. With this, you just pass the action type and payload to a `dispatch` function and the reducer handles the state update.
     
 
 If you want to understand more about the `useReducer` hook, check out my post:
 
-[https://www.freecodecamp.org/news/usereducer-hook-react/][28]
+%[https://www.freecodecamp.org/news/usereducer-hook-react/] 
 
-So far, we have covered the most common hooks that React provides. Besides these, React also offers additional, less commonly uses hooks. So, if you are interested, read about them in the [docs][29]. However, learning the above hooks should be enough for your interviews.
+So far, we have covered the most common hooks that React provides. Besides these, React also offers additional, less commonly uses hooks. So, if you are interested, read about them in the [docs](https://react.dev/reference/react/hooks). However, learning the above hooks should be enough for your interviews.
 
 ### Custom Hooks
 
@@ -672,7 +685,7 @@ To create a custom Hook, first identify a piece of functionality that you want t
 
 Let's say you have multiple components that need to fetch data from APIs. You can export the fetching logic as a Hook to avoid duplicating code.
 
-```
+```javascript
 function useFetch(url) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -693,7 +706,7 @@ function useFetch(url) {
         setLoading(false);
       }
     };
-
+      
     fetchData();
   }, [url]);
 
@@ -703,14 +716,14 @@ function useFetch(url) {
 export default useFetch;
 ```
 
--   In the `useFetch` custom hook, we fetched the data inside a `useEffect` Hook, just as would inside a component. We also handled loading and error states in the Hook.
+* In the `useFetch` custom hook, we fetched the data inside a `useEffect` Hook, just as would inside a component. We also handled loading and error states in the Hook.
     
--   Finally, we return the data, with the loading and error states, allowing the component to use them for handling the rendering logic.
+* Finally, we return the data, with the loading and error states, allowing the component to use them for handling the rendering logic.
     
 
 Let's use this in a component:
 
-```
+```javascript
 const UserList = () => {
   const { data, loading, error } = useFetch('https://jsonplaceholder.typicode.com/users');
 
@@ -731,14 +744,14 @@ The `UsersList` component displays a list of users fetched from an API, and also
 
 This way, custom Hooks help you abstract the logic from a component and make it re-usable throughout the application. There are several other use cases:
 
--   Event listeners for events like window resizing, mouse movements or keyboard presses.
+* Event listeners for events like window resizing, mouse movements or keyboard presses.
     
--   Form handling, including form validation and submission.
+* Form handling, including form validation and submission.
     
--   Themes, caches, transitions, and so on.
+* Themes, caches, transitions, and so on.
     
 
-Check out the [docs][30] to learn more about custom hooks.
+Check out the [docs](https://react.dev/learn/reusing-logic-with-custom-hooks) to learn more about custom hooks.
 
 ## Additional Concepts
 
@@ -746,7 +759,7 @@ Here are some additional concepts that can be helpful:
 
 ### Why not Use Index as Keys while Rendering Lists?
 
-When you render lists in React using the [`Array.map`][31] method, you are asked to provide a unique `key` prop to each item being rendered. This key is used to distinguish elements from each other.
+When you render lists in React using the [`Array.map`](http://Array.map) method, you are asked to provide a unique `key` prop to each item being rendered. This key is used to distinguish elements from each other.
 
 Indices are unique, so it's tempting to use them as keys for simplicity. However, indices of elements are not stable.
 
@@ -754,7 +767,7 @@ Elements often get added or deleted in an array. The order of elements could get
 
 Let's consider the following list:
 
-```
+```javascript
 const items = [
   {
     id: 1,
@@ -792,7 +805,7 @@ A higher order component (HOC) is a function that takes a component as an argume
 
 Rather than providing a short explanation here, I would recommend the following article that explains HOCs with various examples:
 
-[https://www.freecodecamp.org/news/higher-order-components-in-react/][32]
+%[https://www.freecodecamp.org/news/higher-order-components-in-react/] 
 
 ### Lazy Loading
 
@@ -802,7 +815,7 @@ One example of lazy loading is an E-commerce product catalog page. The page firs
 
 In React, lazy loading can be implemented using `React.lazy()` and `Suspense`:
 
-```
+```javascript
 const LazyComponent = React.lazy(() => import('./LazyComponent'));
 
 export const App = () => {
@@ -817,9 +830,9 @@ export const App = () => {
 };
 ```
 
--   Once you have identified a component to lazy load, use the `React.lazy()` function to dynamically import the lazy component.
+* Once you have identified a component to lazy load, use the `React.lazy()` function to dynamically import the lazy component.
     
--   Wrap the lazy-loaded component inside `Suspense`. It renders a fallback (default) component till the lazy component loads.
+* Wrap the lazy-loaded component inside `Suspense`. It renders a fallback (default) component till the lazy component loads.
     
 
 This way, you can load a React component on demand. This is also known as code splitting**.** The code is split and some part of the React code is loaded dynamically when needed.
@@ -834,28 +847,28 @@ There are two ways to render webpages in React. Let's have a look:
 
 **Server Side Rendering (SSR):**
 
--   Web Page is generated and rendered on the server before sending to the client. Client receives complete web page from the server and displays it directly to the user.
+* Web Page is generated and rendered on the server before sending to the client. Client receives complete web page from the server and displays it directly to the user.
     
--   Loading the prepared HTML helps with faster loading times, improving the user experience. This is especially beneficial for users with slower internet connections.
+* Loading the prepared HTML helps with faster loading times, improving the user experience. This is especially beneficial for users with slower internet connections.
     
--   Since the web page is already prepared, it helps search engines better index your website, making it more SEO-friendly.
+* Since the web page is already prepared, it helps search engines better index your website, making it more SEO-friendly.
     
--   SSR can increase server load if the page is updated frequently. Pages with dynamic content can take longer to update because they need to re-render often.
+* SSR can increase server load if the page is updated frequently. Pages with dynamic content can take longer to update because they need to re-render often.
     
--   SSR is used for marketing, blogging and news websites where initial load times and SEO are important.
+* SSR is used for marketing, blogging and news websites where initial load times and SEO are important.
     
 
 **Client Side Rendering (CSR):**
 
--   A basic HTML file is sent to the client, and then it renders dynamic content using JavaScript.
+* A basic HTML file is sent to the client, and then it renders dynamic content using JavaScript.
     
--   Initial load times are slower because preparing and rendering the content mostly happens on the client side.
+* Initial load times are slower because preparing and rendering the content mostly happens on the client side.
     
--   Since it initially renders basic HTML and adds JavaScript content later, search engines may not be able to index your content, making it less SEO-friendly.
+* Since it initially renders basic HTML and adds JavaScript content later, search engines may not be able to index your content, making it less SEO-friendly.
     
--   For web pages with dynamic content, rendering times are faster since all the rendering happens on client side.
+* For web pages with dynamic content, rendering times are faster since all the rendering happens on client side.
     
--   CSR is used for websites with dynamic content and frequent user interactions like social media platforms or dashboards.
+* CSR is used for websites with dynamic content and frequent user interactions like social media platforms or dashboards.
     
 
 ## React Redux
@@ -868,7 +881,7 @@ In the context of React, let’s look at the Hooks Redux provides:
 
 A selector function accepts a Redux state object as an argument and returns a part of that state. The `useSelector` Hook is used to call the selector function. Let's take the following example:
 
-```
+```javascript
 // example state for e-commerce app
 const initialState = {
     users: { 
@@ -890,8 +903,8 @@ const initialState = {
                 id: 102,
                 status: "Processing"
             },
-
-            ...
+        	
+        	...
         ]
     }
 }
@@ -899,13 +912,13 @@ const initialState = {
 
 Let's say you want to display list of orders on a page. We can't access this state directly from the component as it’s part of the redux store. So, we use selector functions.
 
-```
+```javascript
 const selectAllOrders = (state) => state.orders.ordersList
 ```
 
 To call this selector function, we use the `useSelector` Hook:
 
-```
+```javascript
 const OrdersList = () => {
   const orders = useSelector(selectAllOrders);
   return (
@@ -922,7 +935,7 @@ The `useDispatch` Hook returns a function that you can use to dispatch actions, 
 
 Let's take an example. We’ll work with the same state and update one of the order’s status:
 
-```
+```javascript
 function App() {
   const dispatch = useDispatch();
 
@@ -948,22 +961,22 @@ The advantage of using dispatch is that you can just specify the action type and
 
 ### Others
 
-I have just listed two Hooks that React provides to work with Redux. However, if you are not familiar with Redux, you should check out the [docs][33] to get started.
+I have just listed two Hooks that React provides to work with Redux. However, if you are not familiar with Redux, you should check out the [docs](https://redux.js.org/introduction/getting-started) to get started.
 
-Redux is much more than just these two Hooks. Make sure you are clear on the core concepts: store, slices, reducers, actions, selectors, dispatch. [Redux Sagas][34] is another major concept you should learn. They are mainly used for async operations.
+Redux is much more than just these two Hooks. Make sure you are clear on the core concepts: store, slices, reducers, actions, selectors, dispatch. [Redux Sagas](https://redux-saga.js.org/docs/introduction/GettingStarted) is another major concept you should learn. They are mainly used for async operations.
 
 ## Additional Notes
 
 There are a few other areas that I haven't mentioned so far, but can be a good addition:
 
--   [React Router][35]
+* [React Router](https://www.freecodecamp.org/news/react-router-cheatsheet/)
     
--   [Unit Testing in React][36]
+* [Unit Testing in React](https://www.freecodecamp.org/news/how-to-write-unit-tests-in-react/)
     
 
 Additionally, you may be asked to implement a small feature using the concepts I explained in this article. This gives you the opportunity to demonstrate your understanding of React.
 
-Also, it's helpful to have a few React projects on your resume. Check out the [Master React by Building 25 Projects][37].
+Also, it's helpful to have a few React projects on your resume. Check out the [Master React by Building 25 Projects](https://www.freecodecamp.org/news/master-react-by-building-25-projects/).
 
 Keep in mind that React is not limited to just these topics, there are additional resources in the References section. However, this handbook should serve as a useful guide before interviews. Feel free to keep re-visiting it during your interview preparation.
 
@@ -977,50 +990,8 @@ During the interviews, just stay calm and confidently demonstrate your knowledge
 
 ### References
 
--   [React Interview Questions – Interview Prep with Answers and Examples][38]
+* [React Interview Questions – Interview Prep with Answers and Examples](https://www.freecodecamp.org/news/react-interview-questions-and-answers/)
     
--   [React Interview Questions][39] - InterviewBit
+* [React Interview Questions](https://www.interviewbit.com/react-interview-questions/) - InterviewBit
     
--   [Learn React – A Guide to the Key Concepts by Ankur Tyagi][40]
-    
-
-[1]: #heading-javascript-fundamentals
-[2]: #heading-react-essentials
-[3]: #heading-react-hooks
-[4]: #heading-additional-concepts
-[5]: #heading-react-redux
-[6]: #heading-additional-notes
-[7]: https://www.freecodecamp.org/news/js-interview-prep-handbook/
-[8]: https://legacy.reactjs.org/docs/reconciliation.html
-[9]: https://legacy.reactjs.org/docs/state-and-lifecycle.html
-[10]: #heading-usestate-hook
-[11]: https://www.geeksforgeeks.org/react-js-constructor-method/
-[12]: https://www.geeksforgeeks.org/react-js-static-getderivedstatefromprops/
-[13]: https://www.geeksforgeeks.org/react-js-render-method/
-[14]: https://www.geeksforgeeks.org/reactjs-shouldcomponentupdate-method/
-[15]: https://www.geeksforgeeks.org/reactjs-getsnapshotbeforeupdate-method/
-[16]: #heading-useeffect-hook
-[17]: https://levelup.gitconnected.com/4-different-examples-of-the-usestate-hook-in-react-5504ce011a20
-[18]: https://react.dev/reference/react/useEffect#usage
-[19]: https://legacy.reactjs.org/docs/context.html
-[20]: https://react.dev/reference/react/useContext#usage
-[21]: https://www.tutorialspoint.com/javascript/javascript_dom_methods.htm
-[22]: https://legacy.reactjs.org/docs/refs-and-the-dom.html
-[23]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus
-[24]: https://react.dev/reference/react/forwardRef
-[25]: http://Array.map
-[26]: https://www.freecodecamp.org/news/difference-between-usememo-and-usecallback-hooks/
-[27]: https://www.freecodecamp.org/news/difference-between-usememo-and-usecallback-hooks/
-[28]: https://www.freecodecamp.org/news/usereducer-hook-react/
-[29]: https://react.dev/reference/react/hooks
-[30]: https://react.dev/learn/reusing-logic-with-custom-hooks
-[31]: http://Array.map
-[32]: https://www.freecodecamp.org/news/higher-order-components-in-react/
-[33]: https://redux.js.org/introduction/getting-started
-[34]: https://redux-saga.js.org/docs/introduction/GettingStarted
-[35]: https://www.freecodecamp.org/news/react-router-cheatsheet/
-[36]: https://www.freecodecamp.org/news/how-to-write-unit-tests-in-react/
-[37]: https://www.freecodecamp.org/news/master-react-by-building-25-projects/
-[38]: https://www.freecodecamp.org/news/react-interview-questions-and-answers/
-[39]: https://www.interviewbit.com/react-interview-questions/
-[40]: https://www.freecodecamp.org/news/learn-react-key-concepts/#how-much-javascript-do-you-need-to-know-before-learning-react
+* [Learn React – A Guide to the Key Concepts by Ankur Tyagi](https://www.freecodecamp.org/news/learn-react-key-concepts/#how-much-javascript-do-you-need-to-know-before-learning-react)

@@ -1,0 +1,185 @@
+---
+title: C# Basics - Your First C# Program, Types and Variables, and Flow Control Statements
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2020-02-01T00:00:00.000Z'
+originalURL: https://freecodecamp.org/news/c-basics-your-first-c-program-types-and-variables-and-flow-control-statements
+coverImage: https://cdn-media-2.freecodecamp.org/w1280/5f9c9d0a740569d1a4ca3590.jpg
+tags:
+- name: C
+  slug: c
+- name: toothbrush
+  slug: toothbrush
+seo_title: null
+seo_desc: 'Setup
+
+  LinqPad is an .NET scratchpad to quickly test your C# code snippets. The standard
+  edition is free and a perfect tool for beginners to execute language statements,
+  expressions and programs.
+
+  Alternatively, you could also download Visual Studio Co...'
+---
+
+## **Setup**
+
+[LinqPad](http://www.linqpad.net/) is an .NET scratchpad to quickly test your C# code snippets. The standard edition is free and a perfect tool for beginners to execute language statements, expressions and programs.
+
+Alternatively, you could also download [Visual Studio Community 2015](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx) which is an extensible [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment) used by most professionals for creating enterprise applications.
+
+## **Your First C# Program**
+
+```text
+//this is the single line comment
+
+/** This is multiline comment,
+compiler ignores any code inside comment blocks.
+**/
+
+//This is the namespace, part of the standard .NET Framework Class Library
+using System;
+// namespace defines the scope of related objects into packages
+namespace Learning.CSharp
+{  
+  // name of the class, should be same as of .cs file
+  public class Program
+  {
+    //entry point method for console applications
+   public static void Main()
+    {
+      //print lines on console
+      Console.WriteLine("Hello, World!");
+      //Reads the next line of characters from the standard input stream.Most common use is to pause program execution before clearing the console.
+      Console.ReadLine();
+    }
+  }
+}
+```
+
+Every C# console application must have a [Main method](https://msdn.microsoft.com/en-gb/library/acy3edy3.aspx) which is the entry point of the program.
+
+Edit [HelloWorld](https://dotnetfiddle.net/kY7QRm) in .NET Fiddle, a tool inspired by [JSFiddle](http://jsfiddle.net/) where you can alter the code snippets and check the output for yourself. Note, this is just to share and test the code snippets, not to be used for developing applications.
+
+If you are using visual Studio, follow this [tutorial](https://msdn.microsoft.com/en-us/library/k1sx6ed2.aspx) to create console application and understand your first C# program.
+
+## **Types and Variables**
+
+C# is a strongly typed language. Every variable has a type. Every expression or statement evaluates to a value. There are two kinds of types in C#:
+
+* Value types
+* Reference types.
+
+**Value Types** : Variables that are value types directly contain values. Assigning one value type variable to another copies the contained value.
+
+[Edit in .NET Fiddle](https://dotnetfiddle.net/JCkTxb)
+
+```text
+int a = 10;
+int b = 20;
+a=b;
+Console.WriteLine(a); //prints 20
+Console.WriteLine(b); //prints 20
+```
+
+Note that in other dynamic languages this could be different, but in C# this is always a value copy. When value type is created, a single space most likely in [stack](http://gribblelab.org/CBootcamp/7_Memory_Stack_vs_Heap.html#orgheadline2) is created, which is a “LIFO” (last in, first out) data structure. The stack has size limits and memory operations are efficient. Few examples of built-in data types are `int, float, double, decimal, char and string`.
+
+Type | Example | Description  
+--------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------  
+_Integer_ | `int fooInt = 7;` | **Signed 32-bit** Integer  
+_Long_ | `long fooLong = 3000L;` | **Signed 64-bit** integer.**L is used to specify that this variable value is of type long/ulong**  
+_Double_ | `double fooDouble = 20.99;` | Precision: **15-16 digits**  
+_Float_ | `float fooFloat = 314.5f;` | Precision: **7 digits**.**F is used to specify that this variable value is of type float**  
+_Decimal_ | `decimal fooDecimal = 23.3m;` | Precision: **28-29 digits**.Its more precision and smaller range makes it appropriate for **financial and monetary calculations**  
+_Char_ | `char fooChar = 'Z';` | A single **16-bit Unicode character**  
+_Boolean_ | `bool fooBoolean = false;` | Boolean - **true & false**  
+_String_ | `string fooString = "\"escape\" quotes and add \n (new lines) and \t (tabs);` | **A string of Unicode characters.**
+
+For complete list of all built-in data types see [here](https://msdn.microsoft.com/en-us/library/ms228360)
+
+[**Reference types**](https://msdn.microsoft.com/en-us/library/490f96s2.aspx) : Variables of reference types store references to their objects, which means they store the address to the location of data on the [stack](http://gribblelab.org/CBootcamp/7_Memory_Stack_vs_Heap.html#orgheadline2), also known as pointers. Actual data is stored on the [heap](http://gribblelab.org/CBootcamp/7_Memory_Stack_vs_Heap.html#orgheadline3) memory. Assigning reference type to another doesn’t copy the data, instead it creates the second copy of reference which points to the same location on the heap.
+
+In heap, objects are allocated and deallocated in random order that is why this requires the overhead of memory management and [garbage collection](https://msdn.microsoft.com/en-us/library/hh156531(v=vs.110).aspx).
+
+Unless you are writing [unsafe code](https://msdn.microsoft.com/en-us/library/t2yzs44b.aspx) or dealing with [unmanaged code](https://msdn.microsoft.com/en-us/library/sd10k43k(v=vs.100).aspx), you don’t need to worry about the lifetime of your memory locations. .NET compiler and CLR will take care of this, but it’s still good to keep this mind in order to optimize performance of your applications.
+
+More information [here](http://www.c-sharpcorner.com/UploadFile/rmcochran/csharp_memory01122006130034PM/csharp_memory.aspx?ArticleID=9adb0e3c-b3f6-40b5-98b5-413b6d348b91).
+
+## **Flow Control Statements**
+
+### [If else](https://msdn.microsoft.com/en-us/library/5011f09h.aspx) statement
+
+```text
+int myScore = 700;
+if (myScore == 700) {
+ Console.WriteLine("I get printed on the console");
+} else if (myScore > 10) {
+ Console.WriteLine("I don't");
+} else {
+ Console.WriteLine("I also don't");
+}
+
+/** Ternary operators
+ A simple if/else can also be written as follows
+ <condition> ? <true> : <false> **/
+int myNumber = 10;
+string isTrue = myNumber == 10 ? "Yes" : "No";
+```
+
+[Edit in .NET Fiddle](https://dotnetfiddle.net/IFVB33)
+
+### [Switch](https://msdn.microsoft.com/en-GB/library/06tc147t.aspx) statement
+
+```csharp
+using System;
+public class Program {
+ public static void Main() {
+   int myNumber = 0;
+   switch (myNumber) { // A switch section can have more than one case label. 
+    case 0:
+    case 1:
+     {
+      Console.WriteLine(“Case 0 or 1”);
+      break;
+     }
+
+   }
+```
+
+[Edit in .NET Fiddle](https://dotnetfiddle.net/lPZftO)
+
+### [For](https://msdn.microsoft.com/en-us/library/ch45axte.aspx) & [Foreach](https://msdn.microsoft.com/en-gb/library/ttw7t8t6.aspx)
+
+```csharp
+for (int i = 0; i < 10; i++) {
+ Console.WriteLine(i); //prints 0-9 }
+ Console.WriteLine(Environment.NewLine);
+ for (int i = 0; i <= 10; i++) {
+  Console.WriteLine(i); //prints 0-10 }
+  Console.WriteLine(Environment.NewLine);
+  for (int i = 10 - 1; i >= 0; i—) //decrement loop 
+  {
+   Console.WriteLine(i); //prints 9-0 }
+   Console.WriteLine(Environment.NewLine); //for (; ; ) { // All of the expressions are optional. This statement //creates an infinite loop.* //}
+```
+
+[Edit in .NET Fiddle](https://dotnetfiddle.net/edxtvq)
+
+### [While](https://msdn.microsoft.com/en-us/library/2aeyhxcd.aspx) & [do-while](https://msdn.microsoft.com/en-us/library/370s1zax.aspx) 
+
+```csharp
+// Continue the while-loop until index is equal to 10. 
+int i = 0;
+while (i < 10) {
+ Console.Write(“While statement”);
+ Console.WriteLine(i); // Write the index to the screen. i++;// Increment the variable. }
+ int number = 0; // do work first, until condition is satisfied i.e Terminates when number equals 4. do 
+ {
+  Console.WriteLine(number); //prints the value from 0-4 
+  number++; // Add one to number. 
+ }
+ while (number <= 4);
+```
+
+[Edit in .NET Fiddle](https://dotnetfiddle.net/O5hOF1)
+

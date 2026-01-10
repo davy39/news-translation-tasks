@@ -1,16 +1,31 @@
 ---
 title: The AI Engineering Handbook – How to Start a Career and Excel as an AI Engineer
-date: 2025-07-17T02:17:37.037Z
+subtitle: ''
 author: Tatev Aslanyan
-authorURL: https://www.freecodecamp.org/news/author/tatevaslanyan/
-originalURL: https://www.freecodecamp.org/news/the-ai-engineering-handbook-how-to-start-a-career-and-excel-as-an-ai-engineer/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2025-01-15T20:35:11.627Z'
+originalURL: https://freecodecamp.org/news/the-ai-engineering-handbook-how-to-start-a-career-and-excel-as-an-ai-engineer
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1736973272685/95e5c575-58ee-457a-988c-1acf2b60d2aa.png
+tags:
+- name: AI
+  slug: ai
+- name: Data Science
+  slug: data-science
+- name: Machine Learning
+  slug: machine-learning
+- name: lunartech
+  slug: lunartech
+- name: AI Engineer
+  slug: ai-engineer
+seo_title: null
+seo_desc: Have you ever wondered who’s behind the groundbreaking technologies like
+  ChatGPT from OpenAI, Tesla’s autonomous vehicles, or the humanoid robots redefining
+  our perception of artificial intelligence? What does it take to be one of those
+  innovators dr...
 ---
 
 Have you ever wondered who’s behind the groundbreaking technologies like ChatGPT from OpenAI, Tesla’s autonomous vehicles, or the humanoid robots redefining our perception of artificial intelligence? What does it take to be one of those innovators driving the next wave of technological evolution?
-
-<!-- more -->
 
 If you’ve ever been curious, you’re about to find out. Welcome to this AI Engineering handbook. The field of AI Engineering is where innovation meets industry, where cutting-edge research transforms into world-changing products.
 
@@ -24,76 +39,76 @@ This handbook is your ultimate guide to embracing the future of technology. Dive
 
 ### Here’s what we’ll cover:
 
-1.  [Introduction to AI Engineering][1]
+1. [Introduction to AI Engineering](#heading-introduction-to-ai-engineering)
     
-2.  [What Is AI][2] [Engineering?][3]
+2. [What Is AI](#heading-what-is-ai-engineering) [Engineering?](https://join.lunartech.ai/ai-engineering)
     
-3.  [Must-Have Skills][4] [To Start a Career in AI][5]
+3. [Must-Have Skills](https://join.lunartech.ai/ai-engineering) [To Start a Career in AI](#heading-must-have-skills-to-start-a-career-in-ai)
     
-4.  [Career Tips for Aspiring AI Engineers][6]
+4. [Career Tips for Aspiring AI Engineers](#heading-career-tips-for-aspiring-ai-engineers)
     
-5.  [The Future of AI Engineering][7]
+5. [The Future of AI Engineering](#heading-the-future-of-ai-engineering)
     
-6.  [Recommended Resources for Becoming AI Engineer][8]
+6. [Recommended Resources for Becoming AI Engineer](#heading-recommended-resources-for-becoming-ai-engineer)
     
-7.  [Practical AI Engineering: Code Examples and Implementation][9]
+7. [Practical AI Engineering: Code Examples and Implementation](#practical-ai-engineering-code-examples-and-implementation)
     
-8.  [Real World Global Applications of AI Engineering][10]
+8. [Real World Global Applications of AI Engineering](#heading-real-world-global-applications-of-ai-engineering)
     
-    -   [AI Engineering in Healthcare][11]
+    * [AI Engineering in Healthcare](#heading-ai-engineering-in-healthcare)
         
-    -   [AI Engineering in Energy][12]
+    * [AI Engineering in Energy](#heading-ai-engineering-in-energy)
         
-    -   [AI Engineering in Finance][13]
+    * [AI Engineering in Finance](#heading-ai-engineering-in-finance)
         
-    -   [AI Engineering in Manufacturing][14]
+    * [AI Engineering in Manufacturing](#heading-ai-engineering-in-manufacturing)
         
-    -   [AI Engineering in Retail][15]
+    * [AI Engineering in Retail](#heading-ai-engineering-in-retail)
         
-    -   [AI Engineering in Logistics and Supply Chain][16]
+    * [AI Engineering in Logistics and Supply Chain](#heading-ai-engineering-in-logistics-and-supply-chain)
         
-    -   [AI Engineering in Marketing][17]
+    * [AI Engineering in Marketing](#heading-ai-engineering-in-marketing)
         
-    -   [AI Engineering in Education][18]
+    * [AI Engineering in Education](#heading-ai-engineering-in-education)
         
-    -   [AI Engineering in Content Creation][19]
+    * [AI Engineering in Content Creation](#heading-ai-engineering-in-content-creation)
         
-    -   [AI Engineering in Entertainment][20]
+    * [AI Engineering in Entertainment](#heading-ai-engineering-in-entertainment)
         
-    -   [AI Engineering in Autonomous Vehicles][21]
+    * [AI Engineering in Autonomous Vehicles](#heading-ai-engineering-in-autonomous-vehicles)
         
-    -   [AI Engineering in Robotics][22]
+    * [AI Engineering in Robotics](#heading-ai-engineering-in-robotics)
         
-    -   [AI Engineering in Agriculture][23]
+    * [AI Engineering in Agriculture](#heading-ai-engineering-in-agriculture)
         
-9.  [About the Author][24]
+9. [About the Author](#heading-about-the-author)
     
-10.  [Connect With Us][25]
+10. [Connect With Us](#heading-connect-with-us)
     
 
 I’ve recorded a podcast to supplement this book. You can listen to it here:
 
-<iframe width="100%" height="152" src="https://open.spotify.com/embed/episode/7g79Ezl4hgsocU2ReO0Wb3" title="Spotify embed" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" loading="lazy"></iframe>
+%[https://open.spotify.com/episode/7g79Ezl4hgsocU2ReO0Wb3?si=M_C4f5seRjy7EFdBE7jyTg] 
 
-And if you’d like to have this handbook in a convenient PDF format, [you can download it here][26].
+And if you’d like to have this handbook in a convenient PDF format, [you can download it here](https://join.lunartech.ai/ai-engineering).
 
 ## Introduction to AI Engineering
 
 As one of the most in-demand fields today, AI engineering sits at the heart of technological progress. Industry leaders are hunting for top-tier AI engineers across the globe. These engineers are being offered salaries ranging from $300,000 to $700,000 annually, with some even earning in the millions. The demand for AI engineers has never been higher, and the opportunities are vast for those ready to take the leap.
 
-The global artificial intelligence market is projected to grow from $184 billion in 2024 to over [$826 billion by 2030][27]. This exponential growth is driven by AI engineers who are developing these products and solutions, transforming many industries and driving economic expansion.
+The global artificial intelligence market is projected to grow from $184 billion in 2024 to over [$826 billion by 2030](https://www.statista.com/forecasts/1474143/global-ai-market-size?utm_source=chatgpt.com). This exponential growth is driven by AI engineers who are developing these products and solutions, transforming many industries and driving economic expansion.
 
-My name is [Tatev Aslanyan\*\*,\*\*][28] and I’m from [LunarTech][29], a deep tech innovation company specializing in teaching cutting-edge technologies like data science and AI through [courses][30], [bootcamps][31], and corporate training. In this comprehensive handbook, I will guide you step-by-step through what it takes to become a world-class AI engineer. You will learn:
+My name is [Tatev Aslanyan\*\*,\*\*](https://www.linkedin.com/in/tatev-karen-aslanyan/) and I’m from [LunarTech](https://www.lunartech.ai), a deep tech innovation company specializing in teaching cutting-edge technologies like data science and AI through [courses](https://academy.lunartech.ai/courses), [bootcamps](https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp), and corporate training. In this comprehensive handbook, I will guide you step-by-step through what it takes to become a world-class AI engineer. You will learn:
 
--   **What AI Engineering Is**: Gain clarity on the role and its significance in the broader tech ecosystem.
+* **What AI Engineering Is**: Gain clarity on the role and its significance in the broader tech ecosystem.
     
--   **Step-by-Step Skills Development**: Learn exactly what skills you need and how to acquire them in detail to become world class AI Engineer.
+* **Step-by-Step Skills Development**: Learn exactly what skills you need and how to acquire them in detail to become world class AI Engineer.
     
--   **Learning Resources**: Discover the best tools and materials for self-study.
+* **Learning Resources**: Discover the best tools and materials for self-study.
     
--   **Career Opportunities**: Understand what to expect from a career in AI engineering, including the roles, industries, and exceptional earning potential.
+* **Career Opportunities**: Understand what to expect from a career in AI engineering, including the roles, industries, and exceptional earning potential.
     
--   **Modern Applications of AI Engineering**: Discover how AI engineers are transforming industries worldwide.
+* **Modern Applications of AI Engineering**: Discover how AI engineers are transforming industries worldwide.
     
 
 Whether you’re an aspiring AI Engineer or looking to take your passion for AI to the next level, this handbook has been designed with you in mind. It’ll give you everything in one place so you can start and excel in your AI Engineering Career.
@@ -114,13 +129,13 @@ For example, while a data scientist might develop an algorithm to detect tumors 
 
 Key areas of focus for AI engineers include:
 
--   **System Design**: Building infrastructure for data processing and model deployment.
+* **System Design**: Building infrastructure for data processing and model deployment.
     
--   **Optimization**: Ensuring performance, scalability, and reliability.
+* **Optimization**: Ensuring performance, scalability, and reliability.
     
--   **Advanced Models**: Working with deep learning, generative AI, and neural networks.
+* **Advanced Models**: Working with deep learning, generative AI, and neural networks.
     
--   **Integration**: Bridging the gap between AI models and enterprise-level systems.
+* **Integration**: Bridging the gap between AI models and enterprise-level systems.
     
 
 ## Must-Have Skills to Start a Career in AI
@@ -129,47 +144,47 @@ To succeed as an AI engineer, you must master a diverse set of skills, each cont
 
 Later on in this guide, I’ll list and link to a bunch of helpful resources that can help you learn and polish these key skills.
 
-[![655ad9b2-981b-4b48-83d1-5ad7b827645a](https://cdn.hashnode.com/res/hashnode/image/upload/v1736095087480/655ad9b2-981b-4b48-83d1-5ad7b827645a.jpeg)][32]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1736095087480/655ad9b2-981b-4b48-83d1-5ad7b827645a.jpeg align="center")](https://www.lunartech.ai)
 
 ### **Mathematics: The Backbone of AI**
 
 Mathematics is the fuel that powers all AI models, from traditional machine learning to cutting-edge generative AI. Without a strong mathematical foundation, understanding and building AI systems is nearly impossible.
 
--   **Linear Algebra**: Grasp vectors, matrices, eigenvalues, and transformations. These concepts underpin neural networks and deep learning architectures.
+* **Linear Algebra**: Grasp vectors, matrices, eigenvalues, and transformations. These concepts underpin neural networks and deep learning architectures.
     
--   **Calculus**: Learn about gradients, derivatives, and integrals to understand optimization techniques used in training models.
+* **Calculus**: Learn about gradients, derivatives, and integrals to understand optimization techniques used in training models.
     
--   **Game Theory**: Understand concepts like Nash equilibrium and the min-max strategy, which are fundamental for algorithms like Generative Adversarial Networks (GANs).
+* **Game Theory**: Understand concepts like Nash equilibrium and the min-max strategy, which are fundamental for algorithms like Generative Adversarial Networks (GANs).
     
 
 ### **Statistics: Making Sense of Data**
 
 Statistics is a cornerstone for any AI engineer, providing the tools to analyze data and extract meaningful insights. A strong foundation in statistics is critical for understanding machine learning models and making data-driven decisions.
 
--   **Probability**: Master fundamental concepts such as random variables, probability distributions, and independence. Learn how to calculate conditional probabilities and apply Bayes' theorem.
+* **Probability**: Master fundamental concepts such as random variables, probability distributions, and independence. Learn how to calculate conditional probabilities and apply Bayes' theorem.
     
--   **Descriptive Statistics**: Understand measures of central tendency (mean, median, mode) and dispersion (variance, standard deviation) to summarize data effectively.
+* **Descriptive Statistics**: Understand measures of central tendency (mean, median, mode) and dispersion (variance, standard deviation) to summarize data effectively.
     
--   **Inferential Statistics**: Gain expertise in hypothesis testing, confidence intervals, and significance levels to draw conclusions from data samples.
+* **Inferential Statistics**: Gain expertise in hypothesis testing, confidence intervals, and significance levels to draw conclusions from data samples.
     
--   **Probability Distributions**: Familiarize yourself with common distributions such as normal, binomial, and Poisson distributions, and their applications in AI modeling.
+* **Probability Distributions**: Familiarize yourself with common distributions such as normal, binomial, and Poisson distributions, and their applications in AI modeling.
     
--   **Regression Analysis**: Study linear and logistic regression to understand relationships between variables and make predictions.
+* **Regression Analysis**: Study linear and logistic regression to understand relationships between variables and make predictions.
     
--   **Dimensionality Reduction**: Learn techniques like Principal Component Analysis (PCA) to reduce data complexity while retaining essential information.
+* **Dimensionality Reduction**: Learn techniques like Principal Component Analysis (PCA) to reduce data complexity while retaining essential information.
     
--   **Statistical Tests**: Understand t-tests, ANOVA, chi-square tests, and non-parametric methods for analyzing data and validating hypotheses.
+* **Statistical Tests**: Understand t-tests, ANOVA, chi-square tests, and non-parametric methods for analyzing data and validating hypotheses.
     
 
 ### **Programming: The Craft of AI Implementation**
 
 Programming is the cornerstone of AI engineering. A deep understanding of coding ensures that theoretical knowledge can be applied to solve real-world problems.
 
--   **Python**: The go-to language for AI development. Familiarize yourself with libraries like TensorFlow, PyTorch, and NumPy.
+* **Python**: The go-to language for AI development. Familiarize yourself with libraries like TensorFlow, PyTorch, and NumPy.
     
--   **Data Structures and Algorithms**: Essential for efficient problem-solving and implementing optimized AI solutions.
+* **Data Structures and Algorithms**: Essential for efficient problem-solving and implementing optimized AI solutions.
     
--   **Version Control Systems**: Use tools like Git for managing code, collaborating, and maintaining robust development workflows.
+* **Version Control Systems**: Use tools like Git for managing code, collaborating, and maintaining robust development workflows.
     
 
 ### Machine Learning: The Foundation of AI
@@ -180,17 +195,17 @@ Mastery of ML involves not just theoretical knowledge but also practical impleme
 
 Each field of ML has its applications: supervised learning is key in fraud detection and predictive analytics, while unsupervised learning is vital in clustering for customer segmentation and anomaly detection. Boosting algorithms are widely used in areas such as recommendation systems and ranking tasks, making it crucial to understand their nuances and optimization techniques.
 
--   **Supervised Learning**: Focus on labeled data tasks, like regression and classification, and learn models such as linear regression, logistic regression, and support vector machines (SVMs).
+* **Supervised Learning**: Focus on labeled data tasks, like regression and classification, and learn models such as linear regression, logistic regression, and support vector machines (SVMs).
     
--   **Unsupervised Learning**: Master clustering techniques such as k-means and hierarchical clustering, and dimensionality reduction methods like PCA.
+* **Unsupervised Learning**: Master clustering techniques such as k-means and hierarchical clustering, and dimensionality reduction methods like PCA.
     
--   **Reinforcement Learning**: Explore reward-based learning frameworks, widely used in robotics, gaming, and resource optimization.
+* **Reinforcement Learning**: Explore reward-based learning frameworks, widely used in robotics, gaming, and resource optimization.
     
--   **Boosting and Ensemble Methods**: Study algorithms like XGBoost, LightGBM, and Random Forest to improve model accuracy and robustness.
+* **Boosting and Ensemble Methods**: Study algorithms like XGBoost, LightGBM, and Random Forest to improve model accuracy and robustness.
     
--   **Evaluation Metrics**: Understand precision, recall, F1-score, and area under the ROC curve to evaluate model performance effectively.
+* **Evaluation Metrics**: Understand precision, recall, F1-score, and area under the ROC curve to evaluate model performance effectively.
     
--   **Feature Selection**: Learn methods like mutual information and recursive feature elimination to optimize model input.
+* **Feature Selection**: Learn methods like mutual information and recursive feature elimination to optimize model input.
     
 
 ### **Deep Learning: Solving Complex Problems**
@@ -203,121 +218,121 @@ Each of these networks has specific benefits and disadvantages, making it crucia
 
 You’ll also need to learn how to train these networks effectively, manage issues like overfitting and vanishing gradients, and evaluate their performance using appropriate metrics. Practical skills in frameworks like PyTorch or TensorFlow are essential for implementing these networks and applying them to real-world tasks.
 
--   **Feedforward Neural Networks (FNNs)**: Study their structure and applications in simple pattern recognition and regression tasks.
+* **Feedforward Neural Networks (FNNs)**: Study their structure and applications in simple pattern recognition and regression tasks.
     
--   **Convolutional Neural Networks (CNNs)**: Learn about convolutional layers, pooling, and their applications in image and video processing.
+* **Convolutional Neural Networks (CNNs)**: Learn about convolutional layers, pooling, and their applications in image and video processing.
     
--   **Recurrent Neural Networks (RNNs)**: Understand sequence modeling and their use in time-series predictions and natural language processing.
+* **Recurrent Neural Networks (RNNs)**: Understand sequence modeling and their use in time-series predictions and natural language processing.
     
--   **Gated Recurrent Units (GRUs) and LSTMs**: Delve into their architecture to handle long-term dependencies in sequential data.
+* **Gated Recurrent Units (GRUs) and LSTMs**: Delve into their architecture to handle long-term dependencies in sequential data.
     
--   **Optimization Techniques**: Master Adam optimizer, RMSprop, and learning rate scheduling to improve model convergence.
+* **Optimization Techniques**: Master Adam optimizer, RMSprop, and learning rate scheduling to improve model convergence.
     
--   **Regularization Methods**: Study dropout, batch normalization, and L2 regularization to mitigate overfitting.
+* **Regularization Methods**: Study dropout, batch normalization, and L2 regularization to mitigate overfitting.
     
--   **Hyperparameter Tuning**: Learn techniques like grid search and Bayesian optimization to fine-tune model performance.
+* **Hyperparameter Tuning**: Learn techniques like grid search and Bayesian optimization to fine-tune model performance.
     
--   **Evaluation Metrics for Deep Learning**: Understand metrics such as cross-entropy loss and accuracy for classification tasks, and mean squared error for regression.
+* **Evaluation Metrics for Deep Learning**: Understand metrics such as cross-entropy loss and accuracy for classification tasks, and mean squared error for regression.
     
 
 ### **Data Science: Preparing and Analyzing Data**
 
 Data science skills are vital for cleaning, analyzing, and visualizing data—the fuel of AI systems.
 
--   **Data Cleaning:** Learn how to clean dirty data and make it ready for ingesting into Machine Learning or AI model.
+* **Data Cleaning:** Learn how to clean dirty data and make it ready for ingesting into Machine Learning or AI model.
     
--   **Data Preprocessing**: Learn techniques for handling missing data, normalization, and data augmentation.
+* **Data Preprocessing**: Learn techniques for handling missing data, normalization, and data augmentation.
     
--   **Feature Engineering**: Master creating meaningful features from raw data to improve model performance.
+* **Feature Engineering**: Master creating meaningful features from raw data to improve model performance.
     
--   **Visualization**: Use Pandas, NumPy, and Matplotlib for exploratory data analysis and storytelling.
+* **Visualization**: Use Pandas, NumPy, and Matplotlib for exploratory data analysis and storytelling.
     
 
 ### **Generative AI: Creative AI Revolution**
 
 Generative AI represents one of the most transformative areas in modern AI, enabling systems to produce content such as text, images, and music.
 
--   **Foundational Models**: Study foundational models like Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs). Learn how these models are designed and trained to generate new data.
+* **Foundational Models**: Study foundational models like Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs). Learn how these models are designed and trained to generate new data.
     
--   **Applications**: Explore applications in creative industries, including content generation, art creation, and video synthesis. Tools like DALL-E, Runway, and Artbreeder demonstrate the potential of generative AI.
+* **Applications**: Explore applications in creative industries, including content generation, art creation, and video synthesis. Tools like DALL-E, Runway, and Artbreeder demonstrate the potential of generative AI.
     
--   **Challenges and Ethical Considerations**: Understand challenges such as mode collapse in GANs, data bias, and ethical concerns in AI-generated content.
+* **Challenges and Ethical Considerations**: Understand challenges such as mode collapse in GANs, data bias, and ethical concerns in AI-generated content.
     
--   **Techniques for Improvement**: Dive into advanced topics like attention mechanisms in generative models and integrating reinforcement learning to improve output quality.
+* **Techniques for Improvement**: Dive into advanced topics like attention mechanisms in generative models and integrating reinforcement learning to improve output quality.
     
 
 ### **Large Language Models (LLMs): Transforming Communication**
 
 LLMs have revolutionized how machines understand and generate human language. These models are critical for tasks in natural language processing (NLP) and beyond.
 
--   **Key Architectures**: Study transformer-based architectures, including GPT, BERT, and Llama. Understand how they leverage self-attention mechanisms to process language.
+* **Key Architectures**: Study transformer-based architectures, including GPT, BERT, and Llama. Understand how they leverage self-attention mechanisms to process language.
     
--   **Fine-Tuning**: Learn how to fine-tune pre-trained LLMs for specific tasks like sentiment analysis, summarization, and conversational AI.
+* **Fine-Tuning**: Learn how to fine-tune pre-trained LLMs for specific tasks like sentiment analysis, summarization, and conversational AI.
     
--   **Applications**: Explore diverse applications, such as chatbots, code generation, and real-time translation. Familiarize yourself with platforms like OpenAI GPT, Hugging Face, and Google’s BERT.
+* **Applications**: Explore diverse applications, such as chatbots, code generation, and real-time translation. Familiarize yourself with platforms like OpenAI GPT, Hugging Face, and Google’s BERT.
     
--   **Training and Scaling**: Understand the computational demands of training LLMs and the techniques to scale these models efficiently.
+* **Training and Scaling**: Understand the computational demands of training LLMs and the techniques to scale these models efficiently.
     
--   **Evaluation Metrics**: Learn how to evaluate LLMs using metrics such as BLEU, ROUGE, and perplexity, ensuring robust performance in various tasks.
+* **Evaluation Metrics**: Learn how to evaluate LLMs using metrics such as BLEU, ROUGE, and perplexity, ensuring robust performance in various tasks.
     
 
 ### Prompt Engineering
 
 Prompt engineering is a critical skill for effectively leveraging large language models (LLMs). It involves crafting precise and creative prompts to guide LLMs like GPT in producing accurate and relevant outputs.
 
--   **Understanding Prompt Templates**: Learn how to create structured templates to elicit specific responses from models.
+* **Understanding Prompt Templates**: Learn how to create structured templates to elicit specific responses from models.
     
--   **Iterative Optimization**: Refine prompts through iterative testing and feedback to achieve the desired level of output quality.
+* **Iterative Optimization**: Refine prompts through iterative testing and feedback to achieve the desired level of output quality.
     
--   **Practical Applications**: Apply prompt engineering in areas like conversational AI, automated content generation, and customer support.
+* **Practical Applications**: Apply prompt engineering in areas like conversational AI, automated content generation, and customer support.
     
 
 ### Optimization and Production of Large-Language Models (LLMs)
 
 Large-language models have become pivotal in modern AI, and optimizing them for efficiency and deploying them in production are essential skills.
 
--   **Optimization Techniques**: Master quantization, pruning, and knowledge distillation to reduce model size and improve performance without sacrificing accuracy.
+* **Optimization Techniques**: Master quantization, pruning, and knowledge distillation to reduce model size and improve performance without sacrificing accuracy.
     
--   **Productionization Tools**: Familiarize yourself with frameworks like Hugging Face, LangChain, and Flask to deploy models in scalable environments.
+* **Productionization Tools**: Familiarize yourself with frameworks like Hugging Face, LangChain, and Flask to deploy models in scalable environments.
     
--   **Real-World Applications**: Understand how to fine-tune and deploy LLMs for real-world use cases, such as chatbots, document summarization, and sentiment analysis.
+* **Real-World Applications**: Understand how to fine-tune and deploy LLMs for real-world use cases, such as chatbots, document summarization, and sentiment analysis.
     
--   **Monitoring and Maintenance**: Learn how to monitor deployed models, collect feedback, and implement updates to maintain relevance and accuracy.
+* **Monitoring and Maintenance**: Learn how to monitor deployed models, collect feedback, and implement updates to maintain relevance and accuracy.
     
 
 ### Retrieval-Augmented Generation (RAG)
 
 RAG is an advanced technique that combines the power of LLMs with external knowledge sources to improve accuracy and relevance.
 
--   **Core Principles**: Understand how RAG integrates retrieval systems and generative models to fetch and incorporate relevant data into outputs.
+* **Core Principles**: Understand how RAG integrates retrieval systems and generative models to fetch and incorporate relevant data into outputs.
     
--   **Applications**: Explore use cases like document summarization, question answering, and knowledge base enhancements.
+* **Applications**: Explore use cases like document summarization, question answering, and knowledge base enhancements.
     
--   **Tools and Frameworks**: Work with open-source tools such as Hugging Face RAG, Pinecone, and LangChain to build and deploy RAG systems.
+* **Tools and Frameworks**: Work with open-source tools such as Hugging Face RAG, Pinecone, and LangChain to build and deploy RAG systems.
     
--   **Optimization**: Learn strategies for improving retrieval accuracy and model integration for seamless performance.
+* **Optimization**: Learn strategies for improving retrieval accuracy and model integration for seamless performance.
     
 
 ### **Deployment and Optimization: Bringing AI to Life**
 
 An AI system’s value lies in its real-world application, which requires efficient deployment and optimization.
 
--   **Deployment Tools**: Master platforms like Flask, Docker, and Kubernetes for scalable deployments.
+* **Deployment Tools**: Master platforms like Flask, Docker, and Kubernetes for scalable deployments.
     
--   **Model Optimization**: Explore techniques such as quantization, pruning, and knowledge distillation to make models efficient.
+* **Model Optimization**: Explore techniques such as quantization, pruning, and knowledge distillation to make models efficient.
     
--   **Monitoring**: Set up systems to evaluate and improve models continuously in production environments.
+* **Monitoring**: Set up systems to evaluate and improve models continuously in production environments.
     
 
 ### **Ethics and Governance in AI**
 
 As an AI engineer, you bear the responsibility of building ethical and fair AI systems.
 
--   **Bias and Fairness**: Understand and mitigate biases in data and algorithms.
+* **Bias and Fairness**: Understand and mitigate biases in data and algorithms.
     
--   **Data Privacy**: Implement GDPR-compliant data handling practices.
+* **Data Privacy**: Implement GDPR-compliant data handling practices.
     
--   **AI Regulations**: Stay updated on global laws and best practices to ensure responsible AI development.
+* **AI Regulations**: Stay updated on global laws and best practices to ensure responsible AI development.
     
 
 By learning these skills, you will position yourself as a world-class AI engineer ready to tackle the challenges of the future. These competencies not only provide the technical know-how but also equip you with the ability to innovate and lead in this transformative field.
@@ -330,7 +345,7 @@ Building a successful career in AI engineering requires strategic effort, consis
 
 A strong portfolio is your ticket to showcasing your technical skills and creativity to potential employers and collaborators. A well-curated portfolio not only demonstrates your abilities but also provides tangible proof of your expertise.
 
-Many things go into [creating an attention-grabbing portfolio][33]. First, you’ll want to include projects that demonstrate a range of skills—machine learning models, neural network implementations, data preprocessing pipelines, and generative AI experiments.
+Many things go into [creating an attention-grabbing portfolio](https://www.freecodecamp.org/news/how-to-create-a-great-personal-portfolio-page-a-step-by-step-guide/). First, you’ll want to include projects that demonstrate a range of skills—machine learning models, neural network implementations, data preprocessing pipelines, and generative AI experiments.
 
 Second, make sure you host your projects on GitHub to make your work accessible to recruiters and collaborators. Use detailed README files to explain the project goals, methodology, and results.
 
@@ -342,11 +357,11 @@ Finally, you should develop a website that serves as a central hub for your port
 
 Networking is vital for gaining insights, finding mentors, and exploring job opportunities. Building relationships within the AI community can open doors to collaborations and mentorship.
 
-To do this, there are [a number of things you can do][34] and activities you can engage in. For example, you can attend conferences and meetups. Participate in industry events like NeurIPS, ICML, CVPR, and AI Summit to meet professionals and learn about cutting-edge advancements.
+To do this, there are [a number of things you can do](https://www.freecodecamp.org/news/learn-to-code-book/#heading-chapter-2-how-to-build-your-network) and activities you can engage in. For example, you can attend conferences and meetups. Participate in industry events like NeurIPS, ICML, CVPR, and AI Summit to meet professionals and learn about cutting-edge advancements.
 
 You can also join online communities and engage in forums like Reddit r/MachineLearning, AI Stack Exchange, and Kaggle for discussions and advice.
 
-Make sure you [use LinkedIn effectively][35] as it contains a wealth of resources and potential contacts. Regularly update your profile, share your work, and connect with professionals in the AI field. Join LinkedIn groups focused on AI engineering.
+Make sure you [use LinkedIn effectively](https://www.freecodecamp.org/news/linkedin-profile-optimization/) as it contains a wealth of resources and potential contacts. Regularly update your profile, share your work, and connect with professionals in the AI field. Join LinkedIn groups focused on AI engineering.
 
 You can also collaborate with other budding or more experienced AI engineers at events like hackathons. Search out AI and machine learning hackathons where you can work on innovative problems, build projects quickly, and meet like-minded individuals.
 
@@ -372,7 +387,7 @@ There are various areas within AI engineering that you can explore, and one of t
 
 There’s also Autonomous Systems, where you’ll explore areas like robotics, computer vision for navigation, and sensor integration to work on self-driving cars or drones.
 
-AI Ethics and Governance is another important area of specialization. You can dive into topics like bias detection, fairness algorithms, and compliance with global AI regulations to lead ethical AI initiatives. Here’s a [full course on the topic][36] on freeCodeCamp’s YouTube channel if you want to learn more.
+AI Ethics and Governance is another important area of specialization. You can dive into topics like bias detection, fairness algorithms, and compliance with global AI regulations to lead ethical AI initiatives. Here’s a [full course on the topic](https://www.freecodecamp.org/news/the-ethics-of-ai-and-ml/) on freeCodeCamp’s YouTube channel if you want to learn more.
 
 You can also dig into AI applications for specific industries based on some of what you read above. Consider specializing in healthcare AI, financial modeling, or supply chain optimization, depending on your interests and the market demand.
 
@@ -392,9 +407,9 @@ Employers value practical experience, and the best way to build it is by working
 
 There are a number of practical and more approachable ways to do this, whether you’re new to the field or just want to gain more or different experience.
 
-One way to gain experience is by [freelancing][37]. You can offer your skills on platforms like Upwork or Toptal to gain experience in solving diverse AI challenges.
+One way to gain experience is by [freelancing](https://www.freecodecamp.org/news/how-to-start-freelancing/). You can offer your skills on platforms like Upwork or Toptal to gain experience in solving diverse AI challenges.
 
-[Internships][38] are another popular option. Try to pursue internships at leading AI companies to learn industry practices and build a professional network.
+[Internships](https://www.freecodecamp.org/news/software-engineer-internship-handbook/) are another popular option. Try to pursue internships at leading AI companies to learn industry practices and build a professional network.
 
 You can also participate in challenges on Kaggle or DrivenData to test your skills against global talent. These are all things you can put on your résumé when you’re job hunting, and will be especially valuable if you’re newer to the field and don’t have a ton of (or any) work experience yet.
 
@@ -422,13 +437,13 @@ Investments in AI are accelerating worldwide, with private and public sectors re
 
 AI technologies continue to evolve at a breakneck pace, opening up new possibilities for innovation:
 
--   **Generative AI** is transforming creative industries, with tools like DALL-E, Runway, and ChatGPT redefining how we produce content, art, and designs.
+* **Generative AI** is transforming creative industries, with tools like DALL-E, Runway, and ChatGPT redefining how we produce content, art, and designs.
     
--   **Large Language Models (LLMs)**, such as GPT, BERT, and LLaMA, have revolutionized natural language processing, enhancing tasks like sentiment analysis, translation, and conversational AI.
+* **Large Language Models (LLMs)**, such as GPT, BERT, and LLaMA, have revolutionized natural language processing, enhancing tasks like sentiment analysis, translation, and conversational AI.
     
--   **Autonomous Systems** powered by AI are enabling self-driving cars, drones, and robotics, improving industries like logistics, agriculture, and healthcare.
+* **Autonomous Systems** powered by AI are enabling self-driving cars, drones, and robotics, improving industries like logistics, agriculture, and healthcare.
     
--   **Healthcare AI** systems are projected to drive a market worth $187 billion by 2030, offering innovative solutions in diagnostics, drug discovery, and personalized medicine.
+* **Healthcare AI** systems are projected to drive a market worth $187 billion by 2030, offering innovative solutions in diagnostics, drug discovery, and personalized medicine.
     
 
 ### Regional Initiatives Driving AI Growth
@@ -467,11 +482,11 @@ Russia is leveraging its National Strategy for the Development of Artificial Int
 
 AI engineers are the architects of tomorrow, transforming research into actionable solutions that drive industry and societal advancements. Their contributions include:
 
--   **Innovating Across Industries**: AI engineers develop tools and systems that revolutionize sectors from autonomous vehicles and smart cities to personalized healthcare and financial analytics.
+* **Innovating Across Industries**: AI engineers develop tools and systems that revolutionize sectors from autonomous vehicles and smart cities to personalized healthcare and financial analytics.
     
--   **Addressing Global Challenges**: They are instrumental in tackling pressing issues such as climate change, resource optimization, and global health crises.
+* **Addressing Global Challenges**: They are instrumental in tackling pressing issues such as climate change, resource optimization, and global health crises.
     
--   **Ethical AI Leadership**: Engineers ensure that AI systems are fair, unbiased, and compliant with global standards, contributing to the creation of trustworthy AI.
+* **Ethical AI Leadership**: Engineers ensure that AI systems are fair, unbiased, and compliant with global standards, contributing to the creation of trustworthy AI.
     
 
 ### Opportunities for AI Engineers
@@ -488,110 +503,110 @@ AI Engineers are the architects of future technologies. And they’re at the for
 
 Becoming a world-class AI engineer requires access to top-notch learning materials and platforms. Below are recommended resources tailored to each skill area:
 
-[![b18eb965-8831-4a6f-9b0f-16fe884319a0](https://cdn.hashnode.com/res/hashnode/image/upload/v1736095358554/b18eb965-8831-4a6f-9b0f-16fe884319a0.jpeg)][39]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1736095358554/b18eb965-8831-4a6f-9b0f-16fe884319a0.jpeg align="center")](https://www.lunartech.ai)
 
 ### Resources for Mathematics
 
--   [**Fundamentals of Linear Algebra**][40] by LunarTech: Comprehensive course covering vectors, matrices, and their applications in AI (Paid Course)
+* [**Fundamentals of Linear Algebra**](https://academy.lunartech.ai/product/fundamentals-to-linear-algebra) by LunarTech: Comprehensive course covering vectors, matrices, and their applications in AI (Paid Course)
     
--   [**Linear Algebra Crash Course**][41] by LunarTech (Free Course)
+* [**Linear Algebra Crash Course**](https://www.youtube.com/watch?v=n9jZmymHX6o&t=27s) by LunarTech (Free Course)
     
--   [**Calculus 1**][42] **and** [**Calculus 2**][43] by freeCodeCamp (Free Courses)
+* [**Calculus 1**](https://www.freecodecamp.org/news/learn-college-calculus-in-free-course/) **and** [**Calculus 2**](https://www.freecodecamp.org/news/learn-calculus-2-in-this-free-7-hour-course/) by freeCodeCamp (Free Courses)
     
--   [**Math Course**][44] by **Khan Academy**: Beginner-friendly lessons on calculus and algebra (Free Course)
+* [**Math Course**](https://www.khanacademy.org/math) by **Khan Academy**: Beginner-friendly lessons on calculus and algebra (Free Course)
     
--   [**OpenCourseWare Mathematics**][45] by MIT: Advanced lectures on mathematics for in-depth theoretical understanding.(Free Course)
+* [**OpenCourseWare Mathematics**](https://ocw.mit.edu/courses/mathematics/) by MIT: Advanced lectures on mathematics for in-depth theoretical understanding.(Free Course)
     
 
 ### Resources for Statistics
 
--   [**Statistics for AI Professionals**][46] by LunarTech: Covers probability, hypothesis testing, and regression analysis, with real-world AI applications and all fundamental Stats topics in one place. (Paid Course)
+* [**Statistics for AI Professionals**](https://academy.lunartech.ai/product/fundamentals-to-statistics) by LunarTech: Covers probability, hypothesis testing, and regression analysis, with real-world AI applications and all fundamental Stats topics in one place. (Paid Course)
     
--   [**Ultimate Data Science Bootcamp**][47] by LunarTech: Offers bigginner to advanced Statistics as well Python, Machine Learning and other topics to help you become Data Scientist. (Paid Bootcamp)
+* [**Ultimate Data Science Bootcamp**](https://www.lunartech.ai/bootcamp/data-science-bootcamp) by LunarTech: Offers bigginner to advanced Statistics as well Python, Machine Learning and other topics to help you become Data Scientist. (Paid Bootcamp)
     
--   [**Learn Statistics for Data Science and AI Engineering**][48] by Tatev Aslanyan: Covers key statistical concepts you’ll need to get into the AI field. (Free Handbook)
+* [**Learn Statistics for Data Science and AI Engineering**](https://www.freecodecamp.org/news/statistics-for-data-scientce-machine-learning-and-ai-handbook/) by Tatev Aslanyan: Covers key statistical concepts you’ll need to get into the AI field. (Free Handbook)
     
--   [**Data Science Specialization**][49] **by Coursera**: Offers foundational and statistics courses. (Paid Course)
+* [**Data Science Specialization**](https://www.coursera.org/specializations/jhu-data-science) **by Coursera**: Offers foundational and statistics courses. (Paid Course)
     
--   [**The Elements of Statistical Learning**][50]: A deeper dive into statistics tailored for AI engineers. (Book)
+* [**The Elements of Statistical Learning**](https://web.stanford.edu/~hastie/ElemStatLearn/): A deeper dive into statistics tailored for AI engineers. (Book)
     
 
 ### Resources for Programming
 
--   [**Python for Data Science**][51] by LunarTech: Focused course on Python for Data Science and AI. (Paid Course)
+* [**Python for Data Science**](https://academy.lunartech.ai/product/python-for-data-science) by LunarTech: Focused course on Python for Data Science and AI. (Paid Course)
     
--   [**Python for Data Science and Analytics Crash Course**][52] by LunarTech (Free Course)
+* [**Python for Data Science and Analytics Crash Course**](https://www.youtube.com/watch?v=B_jQzHu6Edo&t=5710s) by LunarTech (Free Course)
     
--   [**Automate the Boring Stuff with Python**][53]: Beginner-friendly book for foundational Python skills. (Book)
+* [**Automate the Boring Stuff with Python**](https://automatetheboringstuff.com/): Beginner-friendly book for foundational Python skills. (Book)
     
--   [**How to Use Git and GitHub**][54]: Teaches you everything you need to know to confidently use version control (Free Book)
+* [**How to Use Git and GitHub**](https://www.freecodecamp.org/news/gitting-things-done-book/): Teaches you everything you need to know to confidently use version control (Free Book)
     
--   [**GitHub Guides**][55]: Practical version control tutorials.
+* [**GitHub Guides**](https://guides.github.com/): Practical version control tutorials.
     
 
 ### Resources for Machine Learning
 
--   [**Fundamentals of Machine Learning** by][56] LunarTech: Detailed course covering all essential Traditional ML topics in one place. (Paid Course)
+* [**Fundamentals of Machine Learning** by](https://academy.lunartech.ai/product/fundamentals-of-machine-learning) LunarTech: Detailed course covering all essential Traditional ML topics in one place. (Paid Course)
     
--   [**Machine Learning Crash Course**][57] by LunarTech: Crash Course teaching basics in ML for beginners. (Free Course)
+* [**Machine Learning Crash Course**](https://www.youtube.com/watch?v=43Bbjwy2f5I&t=5420s) by LunarTech: Crash Course teaching basics in ML for beginners. (Free Course)
     
--   [**Machine Learning for AI**][58] by Tatev and Vahe Aslanyan: Teaches you ML basics, key algorithms to know, and examines various case studies.
+* [**Machine Learning for AI**](https://www.freecodecamp.org/news/learn-the-foundations-of-machine-learning-and-artificial-intelligence/) by Tatev and Vahe Aslanyan: Teaches you ML basics, key algorithms to know, and examines various case studies.
     
--   [**Andrew Ng’s Machine Learning Course**][59] by Coursera: Popular beginner course with foundational ML algorithms. (Paid Course)
+* [**Andrew Ng’s Machine Learning Course**](https://www.coursera.org/learn/machine-learning) by Coursera: Popular beginner course with foundational ML algorithms. (Paid Course)
     
--   [**Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow**][60]: Practical applications of ML algorithms. (Book)
+* [**Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow**](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/): Practical applications of ML algorithms. (Book)
     
 
 ### Resources for Deep Learning
 
--   [**Deep Learning Foundations**][61] by LunarTech: Comprehensive training on neural networks, CNNs, RNNs, and optimization techniques. (Paid Course)
+* [**Deep Learning Foundations**](https://academy.lunartech.ai/product/deep-learning-interview-preparation-course-100-q-as) by LunarTech: Comprehensive training on neural networks, CNNs, RNNs, and optimization techniques. (Paid Course)
     
--   [**Deep Learning Specialization**][62] by Coursera: Includes advanced concepts such as LSTMs and GRUs.(Paid Course)
+* [**Deep Learning Specialization**](https://www.coursera.org/specializations/deep-learning) by Coursera: Includes advanced concepts such as LSTMs and GRUs.(Paid Course)
     
--   [**Deep Learning Interview Preparation - Crash Course**][63] by LunarTech (Free Course)
+* [**Deep Learning Interview Preparation - Crash Course**](https://www.youtube.com/watch?v=Lf8XNN3-8nI&t=7168s) by LunarTech (Free Course)
     
--   [**Deep Learning Course - Math and Applications**][64] on freeCodeCamp: Learn the math behind Deep Learning along with practical applications. (Free Course)
+* [**Deep Learning Course - Math and Applications**](https://www.freecodecamp.org/news/deep-learning-course-math-and-applications/) on freeCodeCamp: Learn the math behind Deep Learning along with practical applications. (Free Course)
     
--   [**Deep Learning with Python**][65]: Practical guide for using TensorFlow and Keras. (Book)
+* [**Deep Learning with Python**](https://www.manning.com/books/deep-learning-with-python): Practical guide for using TensorFlow and Keras. (Book)
     
 
 ### Resources for Generative AI
 
--   [**Generative AI Essentials Crash Course**][66] by LunarTech: Dive into GANs, VAEs, and their applications in creative industries. (Paid Course)
+* [**Generative AI Essentials Crash Course**](https://academy.lunartech.ai/product/deep-learning-interview-preparation-course-100-q-as) by LunarTech: Dive into GANs, VAEs, and their applications in creative industries. (Paid Course)
     
--   [**AI Engineering Bootcamp**][67] by LunarTech: Get complete bootcamp in Generative AI from theory to practice with certification. (Paid Bootcamp)
+* [**AI Engineering Bootcamp**](https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp) by LunarTech: Get complete bootcamp in Generative AI from theory to practice with certification. (Paid Bootcamp)
     
--   [**Learn Generative AI in 23 Hours**][68] by Andrew Brown: Teaches key GenAI concepts like prompt engineering, model deployment, optimization, RAG, and AI Agents. (Free Course)
+* [**Learn Generative AI in 23 Hours**](https://www.freecodecamp.org/news/learn-generative-ai-in-23-hours/) by Andrew Brown: Teaches key GenAI concepts like prompt engineering, model deployment, optimization, RAG, and AI Agents. (Free Course)
     
--   [**Runway ML Tutorials**][69]: Explore AI-powered tools for art and video creation.
+* [**Runway ML Tutorials**](https://runwayml.com/): Explore AI-powered tools for art and video creation.
     
--   [**GANs in Action**][70]: Understand the theory and implementation of GANs in various applications. (Book)
+* [**GANs in Action**](https://www.manning.com/books/gans-in-action): Understand the theory and implementation of GANs in various applications. (Book)
     
 
 ### Resources for Large Language Models (LLMs)
 
--   [**AI Engineering Bootcamp**][71] by LunarTech: Get complete bootcamp in Generative AI including everything about LLMs from PRe-Training, Transformers Architecture, Fine-Tuning, Quantization, and Optimization of LLMs and more (Paid Bootcamp)
+* [**AI Engineering Bootcamp**](https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp) by LunarTech: Get complete bootcamp in Generative AI including everything about LLMs from PRe-Training, Transformers Architecture, Fine-Tuning, Quantization, and Optimization of LLMs and more (Paid Bootcamp)
     
--   [**Hugging Face Tutorials**][72]: Practical guides for using pre-trained LLMs (Open Source LLMs)
+* [**Hugging Face Tutorials**](https://huggingface.co/transformers/): Practical guides for using pre-trained LLMs (Open Source LLMs)
     
--   [**Multi-Modal Data Analysis with LLMs and Python**][73] on freeCodeCamp: Teaches how to use LLMs to analyze multiple types of data using a few lines of Python code. (Free Course)
+* [**Multi-Modal Data Analysis with LLMs and Python**](https://www.freecodecamp.org/news/master-multimodal-data-analysis-with-llms-and-python/) on freeCodeCamp: Teaches how to use LLMs to analyze multiple types of data using a few lines of Python code. (Free Course)
     
--   [**Transformer Models for Natural Language Processing**][74]: Detailed insights into LLM architectures. (Book)
+* [**Transformer Models for Natural Language Processing**](https://www.manning.com/books/transformer-models-for-natural-language-processing): Detailed insights into LLM architectures. (Book)
     
--   [**LunarTech Model Deployment Workshop**][75] Learn tools like Flask, Docker, and Kubernetes for deploying scalable AI systems.
+* [**LunarTech Model Deployment Workshop**](https://lunartech.ai/courses/model-deployment) Learn tools like Flask, Docker, and Kubernetes for deploying scalable AI systems.
     
--   [**LangChain Documentation**][76]: For advanced retrieval-augmented generation (RAG) systems.(LangChain Documentation)
+* [**LangChain Documentation**](https://docs.langchain.com/): For advanced retrieval-augmented generation (RAG) systems.(LangChain Documentation)
     
--   [**Efficient Deep Learning for AI Engineers**][77]: Practical techniques for optimizing large models. (Book)
+* [**Efficient Deep Learning for AI Engineers**](https://www.oreilly.com/library/view/efficient-deep-learning/): Practical techniques for optimizing large models. (Book)
     
 
 ### Responsible AI
 
--   [**AI Now Institute Reports**][78]: Updates on AI ethics and global regulations.
+* [**AI Now Institute Reports**](https://www.ainowinstitute.org/): Updates on AI ethics and global regulations.
     
--   [**The Ethics of AI and ML**][79] on freeCodeCamp: Tackles important questions about how to use AI responsibly and ethically. (Free Course)
+* [**The Ethics of AI and ML**](https://www.freecodecamp.org/news/the-ethics-of-ai-and-ml/) on freeCodeCamp: Tackles important questions about how to use AI responsibly and ethically. (Free Course)
     
--   [**Responsible AI Practices**][80] **(Google)**: Guidelines for building ethical AI systems.
+* [**Responsible AI Practices**](https://ai.google/responsibilities/responsible-ai-practices/) **(Google)**: Guidelines for building ethical AI systems.
     
 
 These resources provide a clear path to mastering the skills necessary to become a proficient AI engineer, with **LunarTech courses** offering comprehensive and practical insights across all domains.
@@ -624,7 +639,7 @@ The following example demonstrates how to classify images from the CIFAR-10 data
 
 #### **Code example:**
 
-```
+```python
 import tensorflow as tf
 from tensorflow.keras import layers, models
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
@@ -679,7 +694,7 @@ test_loss, test_accuracy = model.evaluate(x_test, y_test)
 print(f"Test Accuracy: {test_accuracy:.2f}")
 ```
 
-[![80830393-5d14-4a1a-baa0-dc101754e238](https://cdn.hashnode.com/res/hashnode/image/upload/v1736900850961/80830393-5d14-4a1a-baa0-dc101754e238.png)][81]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1736900850961/80830393-5d14-4a1a-baa0-dc101754e238.png align="center")](https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp)
 
 This implementation highlights key practices in AI engineering: leveraging data augmentation to improve generalization, using dropout and batch normalization to prevent overfitting, and employing callbacks like learning rate scheduling and early stopping to optimize training.
 
@@ -695,7 +710,7 @@ Implementing an RNN for time-series forecasting involves preprocessing the data,
 
 #### **Code example:**
 
-```
+```python
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras import layers
@@ -730,7 +745,7 @@ loss = model.evaluate(X_test, y_test)
 print(f"Test Loss: {loss:.4f}")
 ```
 
-[![e07c88b2-c9bf-4d1d-9756-be86ba305771](https://cdn.hashnode.com/res/hashnode/image/upload/v1736900894918/e07c88b2-c9bf-4d1d-9756-be86ba305771.png)][82]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1736900894918/e07c88b2-c9bf-4d1d-9756-be86ba305771.png align="center")](https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp)
 
 This implementation highlights the importance of preprocessing sequential data and using advanced architectures like LSTMs to capture long-term dependencies effectively. By mastering RNNs and their variants, AI engineers can build robust models for time-series forecasting and other sequential data tasks.
 
@@ -746,7 +761,7 @@ Implementing a GAN involves defining both the generator and discriminator networ
 
 #### **Code example:**
 
-```
+```python
 import tensorflow as tf
 from tensorflow.keras import layers
 
@@ -798,23 +813,23 @@ for epoch in range(epochs):
     noise = np.random.normal(0, 1, (batch_size, 100))
     generated_images = generator.predict(noise)
     real_images = x_train[np.random.randint(0, x_train.shape[0], batch_size)]
-
+    
     labels_real = np.ones((batch_size,))
     labels_fake = np.zeros((batch_size,))
-
+    
     d_loss_real = discriminator.train_on_batch(real_images, labels_real)
     d_loss_fake = discriminator.train_on_batch(generated_images, labels_fake)
-
+    
     # Train generator via GAN model
     noise = np.random.normal(0, 1, (batch_size, 100))
     labels_gan = np.ones((batch_size,))
     g_loss = gan_model.train_on_batch(noise, labels_gan)
-
+    
     if epoch % 1000 == 0:
         print(f"Epoch {epoch}, Discriminator Loss: {d_loss_real + d_loss_fake}, Generator Loss: {g_loss}")
 ```
 
-[![ab1184d5-9b0c-4c42-9937-386ebeecb7e4](https://cdn.hashnode.com/res/hashnode/image/upload/v1736900937963/ab1184d5-9b0c-4c42-9937-386ebeecb7e4.png)][83]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1736900937963/ab1184d5-9b0c-4c42-9937-386ebeecb7e4.png align="center")](https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp)
 
 This implementation showcases how GANs can be used to generate realistic images through adversarial training. By mastering GAN architectures and training techniques, AI engineers can unlock new possibilities in creative AI applications across various domains.
 
@@ -832,7 +847,7 @@ Implementing a transformer-based NLP application involves loading a pre-trained 
 
 #### **Code example:**
 
-```
+```python
 from transformers import BertTokenizer, BertForSequenceClassification, Trainer, TrainingArguments
 from datasets import load_dataset
 
@@ -877,7 +892,7 @@ trainer.train()
 trainer.evaluate()
 ```
 
-[![61e10b1f-e9f1-4968-8620-dcf558f93875](https://cdn.hashnode.com/res/hashnode/image/upload/v1736901022180/61e10b1f-e9f1-4968-8620-dcf558f93875.png)][84]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1736901022180/61e10b1f-e9f1-4968-8620-dcf558f93875.png align="center")](https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp)
 
 This implementation showcases how pre-trained transformer models can be fine-tuned efficiently for specific NLP tasks. By mastering transformers and libraries like Hugging Face, AI engineers can build powerful language models that drive innovations across industries.
 
@@ -893,7 +908,7 @@ Implementing RL involves defining the environment, reward structure, and trainin
 
 #### **Code example:**
 
-```
+```python
 import gym
 from stable_baselines3 import PPO
 
@@ -918,7 +933,7 @@ for _ in range(1000):
 env.close()
 ```
 
-[![792817fb-921f-44ef-b17b-0502f55cdced](https://cdn.hashnode.com/res/hashnode/image/upload/v1736901064562/792817fb-921f-44ef-b17b-0502f55cdced.png)][85]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1736901064562/792817fb-921f-44ef-b17b-0502f55cdced.png align="center")](https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp)
 
 This implementation highlights the simplicity of using modern RL frameworks like Stable-Baselines3 to train agents efficiently. By mastering RL techniques and tools, AI engineers can design intelligent systems capable of solving complex real-world challenges.
 
@@ -934,7 +949,7 @@ Implementing SHAP involves training a machine learning model and using SHAP's li
 
 #### **Code example:**
 
-```
+```python
 import shap
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -965,7 +980,7 @@ shap_values = explainer.shap_values(X_test)
 shap.summary_plot(shap_values[1], X_test)
 ```
 
-[![07ae8988-f5dd-4f67-9bb5-910de261a16f](https://cdn.hashnode.com/res/hashnode/image/upload/v1736901111607/07ae8988-f5dd-4f67-9bb5-910de261a16f.png)][86]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1736901111607/07ae8988-f5dd-4f67-9bb5-910de261a16f.png align="center")](https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp)
 
 This implementation demonstrates how SHAP can make machine learning models interpretable by visualizing feature contributions to predictions. By incorporating XAI techniques into their workflows, AI engineers can build transparent systems that foster trust and accountability in AI applications.
 
@@ -985,7 +1000,7 @@ Implementing an NER system involves preprocessing text data, training or fine-tu
 
 #### **Code example:**
 
-```
+```python
 from transformers import AutoTokenizer, AutoModelForTokenClassification
 from transformers import pipeline
 
@@ -1006,7 +1021,7 @@ for entity in entities:
     print(f"Entity: {entity['word']}, Type: {entity['entity']}, Confidence: {entity['score']:.2f}")
 ```
 
-[![56b76b77-4577-4032-9047-ede25b6476c7](https://cdn.hashnode.com/res/hashnode/image/upload/v1736901151131/56b76b77-4577-4032-9047-ede25b6476c7.png)][87]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1736901151131/56b76b77-4577-4032-9047-ede25b6476c7.png align="center")](https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp)
 
 This implementation highlights how pre-trained transformer models can be used to quickly build robust NLP systems. By mastering NER and other NLP techniques, AI engineers can create applications that extract valuable insights from vast amounts of textual data.
 
@@ -1022,7 +1037,7 @@ Implementing YOLOv5 involves training the model on a custom dataset or using pre
 
 #### **Code example:**
 
-```
+```bash
 # Clone YOLOv5 repository and install dependencies
 !git clone https://github.com/ultralytics/yolov5.git
 %cd yolov5
@@ -1038,7 +1053,7 @@ Implementing YOLOv5 involves training the model on a custom dataset or using pre
 !python detect.py --weights runs/train/exp/weights/best.pt --img 640 --conf 0.4 --source data/images/test.jpg
 ```
 
-[![4d1a475e-66ac-49ca-a3a9-3051e33e1410](https://cdn.hashnode.com/res/hashnode/image/upload/v1736901247960/4d1a475e-66ac-49ca-a3a9-3051e33e1410.png)][88]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1736901247960/4d1a475e-66ac-49ca-a3a9-3051e33e1410.png align="center")](https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp)
 
 This example showcases how YOLOv5 can be used for both training on custom datasets and performing inference with pre-trained weights. Mastery of object detection techniques like YOLO equips AI engineers with the skills needed to tackle complex computer vision challenges across industries.
 
@@ -1052,7 +1067,7 @@ Implementing PPO involves defining an environment using frameworks like OpenAI G
 
 #### **Code example:**
 
-```
+```python
 import gym
 from stable_baselines3 import PPO
 
@@ -1077,7 +1092,7 @@ for _ in range(1000):
 env.close()
 ```
 
-[![0be07841-f3e4-4802-8deb-2bdb1e429e2a](https://cdn.hashnode.com/res/hashnode/image/upload/v1736901282574/0be07841-f3e4-4802-8deb-2bdb1e429e2a.png)][89]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1736901282574/0be07841-f3e4-4802-8deb-2bdb1e429e2a.png align="center")](https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp)
 
 This implementation demonstrates how PPO can be used to train agents efficiently for decision-making tasks in dynamic environments. By mastering RL techniques like PPO, AI engineers can design intelligent systems capable of solving real-world problems autonomously.
 
@@ -1089,34 +1104,34 @@ These practical examples—like how companies such as BlackRock, ING, and others
 
 We’ll explore the following industries:
 
--   Healthcare
+* Healthcare
     
--   Energy
+* Energy
     
--   Finance
+* Finance
     
--   Manufacturing
+* Manufacturing
     
--   Retail
+* Retail
     
--   Logistics and Supply Chain
+* Logistics and Supply Chain
     
--   Marketing
+* Marketing
     
--   Agriculture
+* Agriculture
     
--   Content Creation
+* Content Creation
     
--   Entertainment
+* Entertainment
     
--   Autonomous Vehicles
+* Autonomous Vehicles
     
--   Robotics
+* Robotics
     
 
 Each section will dive into the specific ways AI is driving innovation and transforming industries through advanced technologies and applications.
 
-[![6c4d59aa-bec4-4960-b543-a377f3dbd75f](https://cdn.hashnode.com/res/hashnode/image/upload/v1735286667891/6c4d59aa-bec4-4960-b543-a377f3dbd75f.jpeg)][90]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1735286667891/6c4d59aa-bec4-4960-b543-a377f3dbd75f.jpeg align="center")](https://phoenix.lunartech.ai)
 
 ## **AI Engineering in Healthcare**
 
@@ -1192,7 +1207,7 @@ IBM Watson Health and the Mayo Clinic are using AI to improve oncology and disea
 
 As AI continues to evolve, its impact on healthcare will only grow, giving healthcare providers the tools they need to deliver better, more efficient care while improving patient outcomes globally.
 
-[![b60fc73e-f164-473b-8a28-068610e47ddf](https://cdn.hashnode.com/res/hashnode/image/upload/v1735286794409/b60fc73e-f164-473b-8a28-068610e47ddf.jpeg)][91]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1735286794409/b60fc73e-f164-473b-8a28-068610e47ddf.jpeg align="center")](https://phoenix.lunartech.ai)
 
 ## **AI Engineering in Energy**
 
@@ -1272,7 +1287,7 @@ AI is at the forefront of revolutionizing energy management and renewable energy
 
 From smart grids and wind farms to predictive maintenance in oil and gas operations, AI is making energy systems more efficient, cost-effective, and sustainable. As AI continues to evolve, its impact on the energy sector will only grow, enabling a more efficient, cleaner, and more reliable energy future for all.
 
-[![cc4fe9e9-74bf-4a15-8d99-3f38503b1c5f](https://cdn.hashnode.com/res/hashnode/image/upload/v1735286845425/cc4fe9e9-74bf-4a15-8d99-3f38503b1c5f.jpeg)][92]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1735286845425/cc4fe9e9-74bf-4a15-8d99-3f38503b1c5f.jpeg align="center")](https://phoenix.lunartech.ai)
 
 ## **AI Engineering in Finance**
 
@@ -1344,7 +1359,7 @@ AI is revolutionizing the financial sector by enhancing security, improving deci
 
 As AI continues to advance, its role in the financial industry will only grow, enabling institutions to provide better, faster, and more secure services to their customers, while optimizing operations and improving profitability.
 
-[![86588fe5-08cf-492c-bb29-2294c8a1e6d3](https://cdn.hashnode.com/res/hashnode/image/upload/v1735287109114/86588fe5-08cf-492c-bb29-2294c8a1e6d3.jpeg)][93]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1735287109114/86588fe5-08cf-492c-bb29-2294c8a1e6d3.jpeg align="center")](https://phoenix.lunartech.ai)
 
 ## **AI Engineering in Manufacturing**
 
@@ -1418,7 +1433,7 @@ AI is transforming the manufacturing industry by improving efficiency, reducing 
 
 As AI technology continues to evolve, its role in manufacturing will only grow, enabling smarter, more efficient, and sustainable production systems.
 
-[![2420c08b-9ebd-4e59-8f8c-f20ed84c5066](https://cdn.hashnode.com/res/hashnode/image/upload/v1735287171062/2420c08b-9ebd-4e59-8f8c-f20ed84c5066.jpeg)][94]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1735287171062/2420c08b-9ebd-4e59-8f8c-f20ed84c5066.jpeg align="center")](https://www.lunartech.ai)
 
 ## **AI Engineering in Retail**
 
@@ -1490,7 +1505,7 @@ AI is revolutionizing retail by enhancing customer experiences, improving invent
 
 As AI continues to evolve, its role in retail will only increase, providing companies with smarter, more efficient ways to meet customer demands and drive business growth.
 
-[![b3d5383a-8e0d-461b-80ac-1c13463751a4](https://cdn.hashnode.com/res/hashnode/image/upload/v1735287285739/b3d5383a-8e0d-461b-80ac-1c13463751a4.jpeg)][95]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1735287285739/b3d5383a-8e0d-461b-80ac-1c13463751a4.jpeg align="center")](https://www.lunartech.ai)
 
 ## **AI Engineering in Logistics and Supply Chain**
 
@@ -1556,7 +1571,7 @@ AI-driven solutions are not only improving the speed and accuracy of deliveries 
 
 As AI continues to advance, its role in logistics and supply chain management will only grow, providing businesses with smarter, more efficient ways to manage global operations.
 
-[![8695cc64-e1e4-4c10-b7c1-c7410ebc980f](https://cdn.hashnode.com/res/hashnode/image/upload/v1735287428747/8695cc64-e1e4-4c10-b7c1-c7410ebc980f.jpeg)][96]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1735287428747/8695cc64-e1e4-4c10-b7c1-c7410ebc980f.jpeg align="center")](https://phoenix.lunartech.ai)
 
 ## **AI Engineering in Marketing**
 
@@ -1568,7 +1583,7 @@ Below are some key examples of AI-driven innovations in marketing, with a focus 
 
 #### **1\. Phoenix**
 
-[**Phoenix**][97] from **LunarTech** plays a significant role in email marketing, digital marketing strategies, and **highSEO** content creation. It can draft engaging email campaigns, design personalized content, and optimize outreach efforts by analyzing user preferences and behavior.
+[**Phoenix**](https://phoenix.lunartech.ai) from **LunarTech** plays a significant role in email marketing, digital marketing strategies, and **highSEO** content creation. It can draft engaging email campaigns, design personalized content, and optimize outreach efforts by analyzing user preferences and behavior.
 
 Phoenix’s AI engine tailors content to specific audiences, improving engagement rates and overall marketing performance. Phoenix is also great for drafting social media posts, creating SEO-optimized content, and assisting in highSEO blog creation. This makes it a powerful tool for companies looking to boost their digital marketing efforts and maintain a consistent presence across platforms.
 
@@ -1632,7 +1647,7 @@ Platforms like Mailchimp, Hootsuite, and Canva are making it easier for marketer
 
 As AI continues to evolve, it will further enhance marketers' ability to deliver personalized, impactful campaigns that engage audiences, drive conversions, and maximize ROI.
 
-[![5cda1ed5-1840-4ce7-ba35-d05464e3dbd6](https://cdn.hashnode.com/res/hashnode/image/upload/v1735287498753/5cda1ed5-1840-4ce7-ba35-d05464e3dbd6.jpeg)][98]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1735287498753/5cda1ed5-1840-4ce7-ba35-d05464e3dbd6.jpeg align="center")](https://phoenix.lunartech.ai)
 
 ## **AI Engineering in Education**
 
@@ -1712,7 +1727,7 @@ With Coursera’s career-tailored recommendations, Duolingo’s adaptive languag
 
 As AI continues to evolve, its role in education will only grow, providing more personalized, efficient, and impactful learning opportunities for learners around the world.
 
-[![4bbf399f-9d19-4360-a6a1-1ff61f2b725c](https://cdn.hashnode.com/res/hashnode/image/upload/v1735287630158/4bbf399f-9d19-4360-a6a1-1ff61f2b725c.jpeg)][99]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1735287630158/4bbf399f-9d19-4360-a6a1-1ff61f2b725c.jpeg align="center")](https://phoenix.lunartech.ai)
 
 ## **AI Engineering in Content Creation**
 
@@ -1756,7 +1771,7 @@ AI-driven tools have enabled the creation of digital art that mimics traditional
 
 **DeepArt**, **Artbreeder**, **DALL-E**, and **NightCafe** are examples of platforms that use AI to create custom digital artwork, which has applications in advertising, gaming, social media, and personal projects.
 
-It is worth keeping in mind, however, that there are differing opinions about the use of AI to create art. Here’s [an interesting article from the IEEE Computer Society][100] that explains why some artists are angry about AI art if you’re interested.
+It is worth keeping in mind, however, that there are differing opinions about the use of AI to create art. Here’s [an interesting article from the IEEE Computer Society](https://www.computer.org/publications/tech-news/trends/artists-mad-at-ai) that explains why some artists are angry about AI art if you’re interested.
 
 #### **6\. AI for Content Curation and Personalization**
 
@@ -1786,7 +1801,7 @@ AI platforms also provide automated transcription and editing features, saving t
 
 AI is playing a crucial role in video game development, particularly in creating immersive and dynamic environments. AI systems can generate procedurally created worlds, adapt to player actions, and even create narratives and quests.
 
-**Unity’s ML-Agents Toolkit** and [**Phoenix**][101] **from LunarTech** are used for creating text for documents, speaking live with users, and enhancing content in various areas of gaming, social media, and digital marketing. AI in gaming elevates the user experience by making games more engaging and interactive.
+**Unity’s ML-Agents Toolkit** and [**Phoenix**](https://phoenix.lunartech.ai) **from LunarTech** are used for creating text for documents, speaking live with users, and enhancing content in various areas of gaming, social media, and digital marketing. AI in gaming elevates the user experience by making games more engaging and interactive.
 
 #### **11\. AI for Social Media and SEO Optimization**
 
@@ -1796,11 +1811,11 @@ AI engineering is revolutionizing content creation across multiple industries by
 
 Platforms like Canva, Adobe Premiere Pro, Notion, DALL-E, Eleven Labs, Adobe Podcast Enhancer, Synthesia, Descript, Phoenix, Sora by OpenAI, and ChatGPT are just a few examples of how AI is improving everything from design and video editing to language translation and audio enhancement.
 
-Also, [Phoenix][102] from LunarTech is advancing content creation by generating high-quality text for SEO, social media, speaking with documents live and much more.
+Also, [Phoenix](https://phoenix.lunartech.ai) from LunarTech is advancing content creation by generating high-quality text for SEO, social media, speaking with documents live and much more.
 
 As AI technology continues to evolve, it will likely unlock even more innovative possibilities for content creators, empowering them to push the boundaries of creativity and reach broader, more diverse audiences. Whether it’s creating immersive experiences, automating repetitive tasks, or personalizing content, AI is poised to continue reshaping the content creation landscape in profound ways.
 
-[![9057bc5b-2775-497e-8292-136a786bb77a](https://cdn.hashnode.com/res/hashnode/image/upload/v1735287729397/9057bc5b-2775-497e-8292-136a786bb77a.jpeg)][103]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1735287729397/9057bc5b-2775-497e-8292-136a786bb77a.jpeg align="center")](https://phoenix.lunartech.ai)
 
 ## **AI Engineering in Entertainment**
 
@@ -1888,7 +1903,7 @@ AI helps in understanding and interacting with the real world, overlaying virtua
 
 Runway’s AI tools can analyze scripts, generate scenes based on user descriptions, or even provide automatic video edits, streamlining the content creation process for filmmakers, marketers, and media producers.
 
-[![b02fc4a7-f081-4336-80e6-0d59902c45c9](https://cdn.hashnode.com/res/hashnode/image/upload/v1735287821893/b02fc4a7-f081-4336-80e6-0d59902c45c9.jpeg)][104]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1735287821893/b02fc4a7-f081-4336-80e6-0d59902c45c9.jpeg align="center")](https://www.lunartech.ai)
 
 ### **AI Engineering in Autonomous Vehicles**
 
@@ -1974,7 +1989,7 @@ AI engineering in autonomous vehicles is the backbone of making self-driving car
 
 Companies like Waymo, Tesla, Cruise, and Aurora are pushing the boundaries of AI in transportation, enhancing the safety, efficiency, and accessibility of autonomous mobility systems. AI enables real-time data processing, decision-making, and continuous learning, ensuring that autonomous vehicles can function safely in a wide range of environments.
 
-[![8a0720d8-2393-4ec0-bfdb-0081e38888ab](https://cdn.hashnode.com/res/hashnode/image/upload/v1735287898792/8a0720d8-2393-4ec0-bfdb-0081e38888ab.webp)][105]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1735287898792/8a0720d8-2393-4ec0-bfdb-0081e38888ab.webp align="center")](https://www.lunartech.ai)
 
 ### **AI Engineering in Robotics**
 
@@ -2060,13 +2075,13 @@ AI engineering in robotics is transforming industries by improving efficiency, s
 
 These examples illustrate how AI is not just enabling robots to perform tasks, but allowing them to learn, adapt, and collaborate with humans, offering significant improvements over traditional methods.
 
-[![94e3b49e-1991-460a-9453-26a903900459](https://cdn.hashnode.com/res/hashnode/image/upload/v1735287976663/94e3b49e-1991-460a-9453-26a903900459.jpeg)][106]
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1735287976663/94e3b49e-1991-460a-9453-26a903900459.jpeg align="center")](https://www.lunartech.ai)
 
 ### **AI Engineering in** Agriculture
 
 AI engineering is being applied in agritech by many companies around the world, leveraging advanced technologies like machine learning, computer vision, and robotics to enhance productivity, sustainability, and efficiency in agriculture.
 
-[Here’s a full book][107] that explores the benefits of using AI tools in agriculture that can give you more detailed insights.
+[Here’s a full book](https://www.freecodecamp.org/news/ai-in-agriculture-book/) that explores the benefits of using AI tools in agriculture that can give you more detailed insights.
 
 And here are a few specific examples of companies and their AI-driven products:
 
@@ -2154,32 +2169,32 @@ Ultimately, your success in AI engineering will depend on merging theoretical ri
 
 ## **About the Author**
 
-[**Tatev Aslanyan**][108] is a Senior Machine Learning and AI Engineer, CEO, and Co-founder of [**LunarTech**][109], a Deep Tech Innovation startup committed to making Data Science and AI accessible globally. With over 6 years of experience in AI engineering and Data Science, Tatev has worked in the US, UK, Canada, and the Netherlands, applying her expertise to advance AI solutions in diverse industries.
+[**Tatev Aslanyan**](https://www.linkedin.com/in/tatev-karen-aslanyan/) is a Senior Machine Learning and AI Engineer, CEO, and Co-founder of [**LunarTech**](https://www.lunartech.ai), a Deep Tech Innovation startup committed to making Data Science and AI accessible globally. With over 6 years of experience in AI engineering and Data Science, Tatev has worked in the US, UK, Canada, and the Netherlands, applying her expertise to advance AI solutions in diverse industries.
 
 Tatev holds an MSc and BSc in Econometrics and Operational Research from top tier Dutch Universities, and has authored several scientific papers in Natural Language Processing (NLP), Machine Learning, and Recommender Systems, published in respected US scientific journals.
 
-As a top open-source contributor, Tatev has co-authored courses and books, including resources on **freeCodeCamp for 2024**, and has played a pivotal role in educating over **30,000 learners across 144 countries** through [**LunarTech**'s][110] programs.
+As a top open-source contributor, Tatev has co-authored courses and books, including resources on **freeCodeCamp for 2024**, and has played a pivotal role in educating over **30,000 learners across 144 countries** through [**LunarTech**'s](https://www.lunartech.ai) programs.
 
-[LunarTech][111] is Deep Tech innovation company building AI-powered products and delivering educational tools to help enterprises and people innovate, reducing operational costs and increasing profitability.
+[LunarTech](https://www.lunartech.ai) is Deep Tech innovation company building AI-powered products and delivering educational tools to help enterprises and people innovate, reducing operational costs and increasing profitability.
 
 ## Connect With Us
 
--   Connect with me on [LinkedIn][112]
+* Connect with me on [LinkedIn](https://www.linkedin.com/in/tatev-karen-aslanyan/)
     
--   Check out [YouTube Channel][113]
+* Check out [YouTube Channel](https://www.youtube.com/@LunarTech_ai)
     
--   Subscribe to [**LunarTech Newsletter**][114] or [**LENS**][115] - Our News Channel
+* Subscribe to [**LunarTech Newsletter**](https://substack.com/@lunartech) or [**LENS**](https://lens.lunartech.ai) - Our News Channel
     
 
-Want to discover everything about a career in Data Science, Machine Learning and AI, and learn how to secure a Data Science job? Download this free [**Data Science and AI Career Handbook**][116].
+Want to discover everything about a career in Data Science, Machine Learning and AI, and learn how to secure a Data Science job? Download this free [**Data Science and AI Career Handbook**](https://downloads.tatevaslanyan.com/six-figure-data-science-ebook).
 
 Thank you for choosing this guide as your learning companion. As you continue to explore the vast field of Artificial Intelligence, I hope you do so with confidence, precision, and an innovative spirit.
 
 ### AI Engineering Bootcamp by LunarTech
 
-If you are serious about becoming an AI Engineer and want an all-in-one bootcamp that combines deep theory with hands-on practice, then check out the [**LunarTech AI Engineering Bootcamp**][117] focused on Generative AI. This is a comprehensive and advanced program in AI Engineering, designed to equip you with everything you need to thrive in the most competitive AI roles and industries.
+If you are serious about becoming an AI Engineer and want an all-in-one bootcamp that combines deep theory with hands-on practice, then check out the [**LunarTech AI Engineering Bootcamp**](https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp) focused on Generative AI. This is a comprehensive and advanced program in AI Engineering, designed to equip you with everything you need to thrive in the most competitive AI roles and industries.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/g6KQHEeZVQY" style="aspect-ratio: 16 / 9; width: 100%; height: auto;" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" loading="lazy"></iframe>
+%[https://www.youtube.com/watch?v=g6KQHEeZVQY] 
 
 In just 3 to 6 months self-phased or cohort-based, you will learn Generative AI and foundational models like VAEs, GANs, transformers, and LLMs. Dive deep into mathematics, statistics, architecture, and the technical nuances of training these models using industry-standard frameworks like PyTorch and TensorFlow.
 
@@ -2187,128 +2202,8 @@ The curriculum includes pre-training, fine-tuning, prompt engineering, quantizat
 
 This Bootcamp positions you to bridge the gap between research and real-world applications, empowering you to design impactful solutions while building a stellar portfolio filled with advanced projects.
 
-The program also prioritizes AI Ethics, preparing you to create sustainable, ethical models that align with responsible AI principles. This isn’t just another course—it’s a comprehensive journey designed to make you a leader in the AI revolution. [Check out the Curriculum here][118]
+The program also prioritizes AI Ethics, preparing you to create sustainable, ethical models that align with responsible AI principles. This isn’t just another course—it’s a comprehensive journey designed to make you a leader in the AI revolution. [Check out the Curriculum here](https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp)
 
-Spots are limited, and the demand for skilled AI engineers is higher than ever. Don’t wait—your future in AI engineering starts now. You can [Apply Here][119].
+Spots are limited, and the demand for skilled AI engineers is higher than ever. Don’t wait—your future in AI engineering starts now. You can [Apply Here](https://forms.fillout.com/t/frSHf9HUZCus).
 
 > “Let’s Build The Future Together!“ - Tatev Aslanyan, CEO and Co-Founder at LunarTech
-
-[1]: #heading-introduction-to-ai-engineering
-[2]: #heading-what-is-ai-engineering
-[3]: https://join.lunartech.ai/ai-engineering
-[4]: https://join.lunartech.ai/ai-engineering
-[5]: #heading-must-have-skills-to-start-a-career-in-ai
-[6]: #heading-career-tips-for-aspiring-ai-engineers
-[7]: #heading-the-future-of-ai-engineering
-[8]: #heading-recommended-resources-for-becoming-ai-engineer
-[9]: #practical-ai-engineering-code-examples-and-implementation
-[10]: #heading-real-world-global-applications-of-ai-engineering
-[11]: #heading-ai-engineering-in-healthcare
-[12]: #heading-ai-engineering-in-energy
-[13]: #heading-ai-engineering-in-finance
-[14]: #heading-ai-engineering-in-manufacturing
-[15]: #heading-ai-engineering-in-retail
-[16]: #heading-ai-engineering-in-logistics-and-supply-chain
-[17]: #heading-ai-engineering-in-marketing
-[18]: #heading-ai-engineering-in-education
-[19]: #heading-ai-engineering-in-content-creation
-[20]: #heading-ai-engineering-in-entertainment
-[21]: #heading-ai-engineering-in-autonomous-vehicles
-[22]: #heading-ai-engineering-in-robotics
-[23]: #heading-ai-engineering-in-agriculture
-[24]: #heading-about-the-author
-[25]: #heading-connect-with-us
-[26]: https://join.lunartech.ai/ai-engineering
-[27]: https://www.statista.com/forecasts/1474143/global-ai-market-size?utm_source=chatgpt.com
-[28]: https://www.linkedin.com/in/tatev-karen-aslanyan/
-[29]: https://www.lunartech.ai
-[30]: https://academy.lunartech.ai/courses
-[31]: https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp
-[32]: https://www.lunartech.ai
-[33]: https://www.freecodecamp.org/news/how-to-create-a-great-personal-portfolio-page-a-step-by-step-guide/
-[34]: https://www.freecodecamp.org/news/learn-to-code-book/#heading-chapter-2-how-to-build-your-network
-[35]: https://www.freecodecamp.org/news/linkedin-profile-optimization/
-[36]: https://www.freecodecamp.org/news/the-ethics-of-ai-and-ml/
-[37]: https://www.freecodecamp.org/news/how-to-start-freelancing/
-[38]: https://www.freecodecamp.org/news/software-engineer-internship-handbook/
-[39]: https://www.lunartech.ai
-[40]: https://academy.lunartech.ai/product/fundamentals-to-linear-algebra
-[41]: https://www.youtube.com/watch?v=n9jZmymHX6o&t=27s
-[42]: https://www.freecodecamp.org/news/learn-college-calculus-in-free-course/
-[43]: https://www.freecodecamp.org/news/learn-calculus-2-in-this-free-7-hour-course/
-[44]: https://www.khanacademy.org/math
-[45]: https://ocw.mit.edu/courses/mathematics/
-[46]: https://academy.lunartech.ai/product/fundamentals-to-statistics
-[47]: https://www.lunartech.ai/bootcamp/data-science-bootcamp
-[48]: https://www.freecodecamp.org/news/statistics-for-data-scientce-machine-learning-and-ai-handbook/
-[49]: https://www.coursera.org/specializations/jhu-data-science
-[50]: https://web.stanford.edu/~hastie/ElemStatLearn/
-[51]: https://academy.lunartech.ai/product/python-for-data-science
-[52]: https://www.youtube.com/watch?v=B_jQzHu6Edo&t=5710s
-[53]: https://automatetheboringstuff.com/
-[54]: https://www.freecodecamp.org/news/gitting-things-done-book/
-[55]: https://guides.github.com/
-[56]: https://academy.lunartech.ai/product/fundamentals-of-machine-learning
-[57]: https://www.youtube.com/watch?v=43Bbjwy2f5I&t=5420s
-[58]: https://www.freecodecamp.org/news/learn-the-foundations-of-machine-learning-and-artificial-intelligence/
-[59]: https://www.coursera.org/learn/machine-learning
-[60]: https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/
-[61]: https://academy.lunartech.ai/product/deep-learning-interview-preparation-course-100-q-as
-[62]: https://www.coursera.org/specializations/deep-learning
-[63]: https://www.youtube.com/watch?v=Lf8XNN3-8nI&t=7168s
-[64]: https://www.freecodecamp.org/news/deep-learning-course-math-and-applications/
-[65]: https://www.manning.com/books/deep-learning-with-python
-[66]: https://academy.lunartech.ai/product/deep-learning-interview-preparation-course-100-q-as
-[67]: https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp
-[68]: https://www.freecodecamp.org/news/learn-generative-ai-in-23-hours/
-[69]: https://runwayml.com/
-[70]: https://www.manning.com/books/gans-in-action
-[71]: https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp
-[72]: https://huggingface.co/transformers/
-[73]: https://www.freecodecamp.org/news/master-multimodal-data-analysis-with-llms-and-python/
-[74]: https://www.manning.com/books/transformer-models-for-natural-language-processing
-[75]: https://lunartech.ai/courses/model-deployment
-[76]: https://docs.langchain.com/
-[77]: https://www.oreilly.com/library/view/efficient-deep-learning/
-[78]: https://www.ainowinstitute.org/
-[79]: https://www.freecodecamp.org/news/the-ethics-of-ai-and-ml/
-[80]: https://ai.google/responsibilities/responsible-ai-practices/
-[81]: https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp
-[82]: https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp
-[83]: https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp
-[84]: https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp
-[85]: https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp
-[86]: https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp
-[87]: https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp
-[88]: https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp
-[89]: https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp
-[90]: https://phoenix.lunartech.ai
-[91]: https://phoenix.lunartech.ai
-[92]: https://phoenix.lunartech.ai
-[93]: https://phoenix.lunartech.ai
-[94]: https://www.lunartech.ai
-[95]: https://www.lunartech.ai
-[96]: https://phoenix.lunartech.ai
-[97]: https://phoenix.lunartech.ai
-[98]: https://phoenix.lunartech.ai
-[99]: https://phoenix.lunartech.ai
-[100]: https://www.computer.org/publications/tech-news/trends/artists-mad-at-ai
-[101]: https://phoenix.lunartech.ai
-[102]: https://phoenix.lunartech.ai
-[103]: https://phoenix.lunartech.ai
-[104]: https://www.lunartech.ai
-[105]: https://www.lunartech.ai
-[106]: https://www.lunartech.ai
-[107]: https://www.freecodecamp.org/news/ai-in-agriculture-book/
-[108]: https://www.linkedin.com/in/tatev-karen-aslanyan/
-[109]: https://www.lunartech.ai
-[110]: https://www.lunartech.ai
-[111]: https://www.lunartech.ai
-[112]: https://www.linkedin.com/in/tatev-karen-aslanyan/
-[113]: https://www.youtube.com/@LunarTech_ai
-[114]: https://substack.com/@lunartech
-[115]: https://lens.lunartech.ai
-[116]: https://downloads.tatevaslanyan.com/six-figure-data-science-ebook
-[117]: https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp
-[118]: https://www.lunartech.ai/bootcamp/ai-engineering-bootcamp
-[119]: https://forms.fillout.com/t/frSHf9HUZCus

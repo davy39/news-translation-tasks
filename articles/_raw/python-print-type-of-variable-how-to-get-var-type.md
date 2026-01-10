@@ -1,36 +1,46 @@
 ---
 title: Python Print Type of Variable – How to Get Var Type
-date: 2024-10-18T11:20:41.093Z
+subtitle: ''
 author: Kolade Chris
-authorURL: https://www.freecodecamp.org/news/author/koladechris/
-originalURL: https://www.freecodecamp.org/news/python-print-type-of-variable-how-to-get-var-type/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2022-02-16T18:16:37.000Z'
+originalURL: https://freecodecamp.org/news/python-print-type-of-variable-how-to-get-var-type
+coverImage: https://www.freecodecamp.org/news/content/images/2022/02/typeinpython.png
+tags:
+- name: Python
+  slug: python
+- name: variables
+  slug: variables
+seo_title: null
+seo_desc: 'If you''re a Python beginner, becoming familiar with all its various data
+  types can be confusing at first. After all, there are a lot of them available to
+  you in the language.
+
+  In this article, I''m going to show you how to get the type of various data ...'
 ---
 
 If you're a Python beginner, becoming familiar with all its various data types can be confusing at first. After all, there are a lot of them available to you in the language.
-
-<!-- more -->
 
 In this article, I'm going to show you how to get the type of various data structures in Python by assigning them to a variable, and then printing the type to the console with the `print()` function.
 
 ## How to Print the Type of a Variable in Python
 
-To get the type of a variable in Python, you can use the built-in `type()` function.
+To get the type of a variable in Python, you can use the built-in `type()` function. 
 
 The basic syntax looks like this:
 
-```
+```py
 type(variableName)
 ```
 
-In Python, everything is an object. So, when you use the `type()` function to print the type of the value stored in a variable to the console, it returns the class type of the object.
+In Python, everything is an object. So, when you use the `type()` function to print the type of the value stored in a variable to the console, it returns the class type of the object. 
 
 For instance, if the type is a string and you use the `type()` on it, you'd get `<class ‘string‘>` as the result.
 
-To show you the `type()` function in action, I'm going to declare some variables and assign to them the various data types in Python.
+To show you the `type()` function in action, I'm going to declare some variables and assign to them the various data types in Python. 
 
-```
+```py
 name = "freeCodeCamp"
 
 score = 99.99
@@ -46,11 +56,12 @@ person = {
 langs = ("Python", "JavaScript", "Golang")
 
 basics = {"HTML", "CSS", "JavaScript"}
-```
-
-I will then print the types to the console by wrapping `print()` around some strings and the `type()` function.
 
 ```
+
+I will then print the types to the console by wrapping `print()` around some strings and the `type()` function. 
+
+```py
 print("The variable, name is of type:", type(name))
 print("The variable, score is of type:", type(score))
 print("The variable, lessons is of type:", type(lessons))
@@ -68,7 +79,7 @@ print("The variable, basics is of type:", type(basics))
 # The variable, lessons is of type:  <class 'list'>
 # The variable, person is of type:  <class 'dict'> 
 # The variable, langs is of type:  <class 'tuple'> 
-# The variable, basics is of type:  <class 'set'>
+# The variable, basics is of type:  <class 'set'>  
 ```
 
 ## Final Thoughts
@@ -80,3 +91,5 @@ If you're a beginner, you should save yourself the hassle of cramming data types
 You can also use the `type()` function for debugging because in Python, variables are not declared with data types. So, the `type()` function was built into the language for you to check for data types of variables.
 
 Thank you for reading.
+
+

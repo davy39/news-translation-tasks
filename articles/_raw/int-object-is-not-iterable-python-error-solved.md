@@ -1,16 +1,24 @@
 ---
 title: Int Object is Not Iterable – Python Error [Solved]
-date: 2024-08-14T09:26:27.222Z
+subtitle: ''
 author: Kolade Chris
-authorURL: https://www.freecodecamp.org/news/author/koladechris/
-originalURL: https://www.freecodecamp.org/news/int-object-is-not-iterable-python-error-solved/
-translator: ""
-reviewer: ""
+co_authors: []
+series: null
+date: '2022-03-24T16:46:42.000Z'
+originalURL: https://freecodecamp.org/news/int-object-is-not-iterable-python-error-solved
+coverImage: https://www.freecodecamp.org/news/content/images/2022/03/iterable.png
+tags:
+- name: Python
+  slug: python
+seo_title: null
+seo_desc: 'If you are running your Python code and you see the error “TypeError: ''int''
+  object is not iterable”, it means you are trying to loop through an integer or other
+  data type that loops cannot work on.
+
+  In Python, iterable data are lists, tuples, sets, di...'
 ---
 
 If you are running your Python code and you see the error “TypeError: 'int' object is not iterable”, it means you are trying to loop through an integer or other data type that loops cannot work on.
-
-<!-- more -->
 
 In Python, iterable data are lists, tuples, sets, dictionaries, and so on.
 
@@ -22,7 +30,7 @@ Today is the last day you should get this error while running your Python code. 
 
 If you are trying to loop through an integer, you will get this error:
 
-```
+```py
 count = 14
 
 for i in count:
@@ -34,14 +42,13 @@ One way to fix it is to pass the variable into the `range()` function.
 
 In Python, the range function checks the variable passed into it and returns a series of numbers starting from 0 and stopping right before the specified number.
 
-The loop will now run:
-
-```
+The loop will now run: 
+```py
 count = 14
 
 for i in range(count):
     print(i)
-
+    
 # Output: 0
 # 1
 # 2
@@ -60,7 +67,7 @@ for i in range(count):
 
 Another example that uses this solution is in the snippet below:
 
-```
+```py
 age = int(input("Enter your age: "))
 
 for num in range(age):
@@ -80,7 +87,7 @@ for num in range(age):
 
 To check if some particular data are iterable, you can use the `dir()` method. If you can see the magic method `__iter__`, then the data are iterable. If not, then the data are not iterable and you shouldn’t bother looping through them.
 
-```
+ ```py
 perfectNum = 7
 
 print(dir(perfectNum))
@@ -91,7 +98,7 @@ print(dir(perfectNum))
 
 The `__iter__` magic method is not found in the output, so the variable `perfectNum` is not iterable.
 
-```
+```py
 jerseyNums = [43, 10, 7, 6, 8]
 
 print(dir(jerseyNums))
@@ -111,16 +118,5 @@ If you check for the `__iter__` magic method in some data and you don’t find i
 
 Thank you for reading.
 
----
 
-![Kolade Chris](https://cdn.hashnode.com/res/hashnode/image/upload/v1720467520534/YTa5HE3R0.jpg)
 
-I'm a software developer and tech writer focusing on frontend technologies
-
----
-
-If you read this far, thank the author to show them you care. Say Thanks
-
-Learn to code for free. freeCodeCamp's open source curriculum has helped more than 40,000 people get jobs as developers. [Get started][1]
-
-[1]: https://www.freecodecamp.org/learn/

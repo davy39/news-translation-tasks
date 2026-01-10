@@ -1,16 +1,33 @@
 ---
 title: How to Build Scalable Access Control for Your Web App [Full Handbook]
-date: 2025-07-17T02:28:00.575Z
+subtitle: ''
 author: Samhitha Rama Prasad
-authorURL: https://www.freecodecamp.org/news/author/samhitharamaprasad/
-originalURL: https://www.freecodecamp.org/news/how-to-build-scalable-access-control-for-your-web-app/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2025-02-04T19:26:37.559Z'
+originalURL: https://freecodecamp.org/news/how-to-build-scalable-access-control-for-your-web-app
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1738695897990/7a5962ce-9c4a-4e7c-bdeb-520dccc5d240.png
+tags:
+- name: React
+  slug: reactjs
+- name: permissions
+  slug: permissions
+- name: Security
+  slug: security
+- name: access control
+  slug: access-control
+- name: ABAC
+  slug: abac
+- name: casl
+  slug: casl
+seo_title: null
+seo_desc: Access control is crucial for preventing unauthorized access and ensuring
+  that only the right people can access sensitive data in your application. As your
+  app grows in complexity, so does the challenge of enforcing permissions in a clean
+  and efficie...
 ---
 
 Access control is crucial for preventing unauthorized access and ensuring that only the right people can access sensitive data in your application. As your app grows in complexity, so does the challenge of enforcing permissions in a clean and efficient way.
-
-<!-- more -->
 
 In this handbook, we’ll explore various access control mechanisms and walk through two approaches for building a scalable Attribute-Based Access Control solution in React.
 
@@ -24,43 +41,45 @@ Let’s dive in!
 
 ## Table of Contents
 
--   [What is access control? How is it different from AuthZ, AuthN and permissions?][1]
+* [What is access control? How is it different from AuthZ, AuthN and permissions?](#heading-what-is-access-control-how-is-it-different-from-authz-authn-and-permissions)
     
--   [Multi-layered Access Control][2]
+* [Multi-layered Access Control](#heading-multi-layered-access-control)
     
-    -   [Hogwarts in Harmony: A Unified Defense][3]
--   [Access Control Models][4]
+    * [Hogwarts in Harmony: A Unified Defense](#heading-hogwarts-in-harmony-a-unified-defense)
+        
+* [Access Control Models](#heading-access-control-models)
     
--   [Why ABAC?][5]
+* [Why ABAC?](#heading-why-abac)
     
--   [Attribute-Based Access Control In Depth][6]
+* [Attribute-Based Access Control In Depth](#heading-attribute-based-access-control-in-depth)
     
-    -   [Core Components][7]
+    * [Core Components](#heading-core-components)
         
-    -   [How does ABAC work?][8]
+    * [How does ABAC work?](#heading-how-does-abac-work)
         
-    -   [Who defines ABAC policies?][9]
+    * [Who defines ABAC policies?](#heading-who-defines-abac-policies)
         
-    -   [Where should you enforce it — back-end or front-end?][10]
+    * [Where should you enforce it — back-end or front-end?](#heading-where-should-you-enforce-it-back-end-or-front-end)
         
-    -   [Where are policies defined?][11]
+    * [Where are policies defined?](#heading-where-are-policies-defined)
         
--   [1: Implementing Permissions with CASL][12]
+* [1: Implementing Permissions with CASL](#heading-1-implementing-permissions-with-casl)
     
--   [2: Build Your Custom Permissions Validation Framework][13]
+* [2: Build Your Custom Permissions Validation Framework](#heading-2-build-your-custom-permissions-validation-framework)
     
-    -   [Policy Definition using Policy as Code][14]
+    * [Policy Definition using Policy as Code](#heading-policy-definition-using-policy-as-code)
         
-    -   [Workflow Overview][15]
+    * [Workflow Overview](#heading-workflow-overview)
         
-    -   [Policy Validation][16]
+    * [Policy Validation](#heading-policy-validation)
         
-    -   [Policy Enforcement][17]
+    * [Policy Enforcement](#heading-policy-enforcement)
         
--   [Let’s Summarize][18]
+* [Let’s Summarize](#heading-lets-summarize)
     
-    -   [Further Scaling Considerations][19]
--   [Conclusion][20]
+    * [Further Scaling Considerations](#heading-further-scaling-considerations)
+        
+* [Conclusion](#heading-conclusion)
     
 
 ## What is Access Control? How is it Different from AuthZ, AuthN, and Permissions?
@@ -83,33 +102,33 @@ To understand this, here’s a little something for my fellow Potter-heads:
 
 ### Hogwarts in Harmony: A Unified Defense
 
-At the very edge of Hogwarts, you’ve got your Perimeter—the outer defenses that keep dark forces at bay. Think of these as the high, _enchanted stone walls_ that surround the castle—acting like a firewall, with winged boar statues perched on the parapets, keeping watch. Only those with proper clearance are allowed through the gates, ensuring that no unwanted guests, like dark wizards, can enter.
+At the very edge of Hogwarts, you’ve got your Perimeter—the outer defenses that keep dark forces at bay. Think of these as the high, *enchanted stone walls* that surround the castle—acting like a firewall, with winged boar statues perched on the parapets, keeping watch. Only those with proper clearance are allowed through the gates, ensuring that no unwanted guests, like dark wizards, can enter.
 
-When students arrive at Hogwarts, they come by _boats or Thestral-pulled carriages_, which are the only trusted means of transport. This is like **Endpoint Detection and Response (EDR)**, ensuring that only the right devices (or carriages) are allowed entry.
+When students arrive at Hogwarts, they come by *boats or Thestral-pulled carriages*, which are the only trusted means of transport. This is like **Endpoint Detection and Response (EDR)**, ensuring that only the right devices (or carriages) are allowed entry.
 
-If a student tries to use a non-compliant device (like a _cursed broomstick or Apparition_), they won’t be allowed inside. **Mobile Device Management (MDM)** acts like the magical inspection process—only devices that meet Hogwarts' standards can pass through the gate and connect to the school’s systems.
+If a student tries to use a non-compliant device (like a *cursed broomstick or Apparition*), they won’t be allowed inside. **Mobile Device Management (MDM)** acts like the magical inspection process—only devices that meet Hogwarts' standards can pass through the gate and connect to the school’s systems.
 
-At Hogwarts, _owls_ are the trusted messengers that carry messages between the school and the outside world. These owls, like API keys and JWTs, carry the seal of approval and only deliver messages to the right recipients. Dark creatures like _Dementors_ are forbidden from delivering messages, ensuring that only the right communications make it through.
+At Hogwarts, *owls* are the trusted messengers that carry messages between the school and the outside world. These owls, like API keys and JWTs, carry the seal of approval and only deliver messages to the right recipients. Dark creatures like *Dementors* are forbidden from delivering messages, ensuring that only the right communications make it through.
 
-The _Acceptance Letter from Hogwarts_ is like an **OAuth token**. It proves you belong to the magical world and grants you access to the school without needing to show your face or reveal your blood status.
+The *Acceptance Letter from Hogwarts* is like an **OAuth token**. It proves you belong to the magical world and grants you access to the school without needing to show your face or reveal your blood status.
 
-Inside the castle, access to different areas is controlled by who you are and your role at Hogwarts. For example, **Role-Based Access Control (RBAC)** ensures that only _Gryffindors_ can access their common room, while _Slytherins_ have their own. _Prefects_ get additional privileges, like access to the Prefect's bathroom or other special rooms. These roles define where you can go and what you can do within the castle.
+Inside the castle, access to different areas is controlled by who you are and your role at Hogwarts. For example, **Role-Based Access Control (RBAC)** ensures that only *Gryffindors* can access their common room, while *Slytherins* have their own. *Prefects* get additional privileges, like access to the Prefect's bathroom or other special rooms. These roles define where you can go and what you can do within the castle.
 
-But things get more nuanced with **Attribute-Based Access Control (ABAC)**. For instance, only students enrolled in _Care of Magical Creatures_ have access to the Forbidden Forest, but they’re only allowed in during daylight hours, when it's safer. The forest is too dangerous at night, and only those with the right attributes (like a specific timetable) can enter at the right time.
+But things get more nuanced with **Attribute-Based Access Control (ABAC)**. For instance, only students enrolled in *Care of Magical Creatures* have access to the Forbidden Forest, but they’re only allowed in during daylight hours, when it's safer. The forest is too dangerous at night, and only those with the right attributes (like a specific timetable) can enter at the right time.
 
-Within Hogwarts is the _Philosopher’s Stone_, hidden away in a vault guarded by powerful enchantments. This is your Data Layer – the most precious resources, secured by powerful protections. Just like database permissions, the vault is protected by Fluffy, the three-headed dog, a series of enchantments, and traps. Similarly, row-level and column-level security ensure that only Harry Potter can retrieve the Stone because he is the only one worthy (you can only access what’s meant for you).
+Within Hogwarts is the *Philosopher’s Stone*, hidden away in a vault guarded by powerful enchantments. This is your Data Layer – the most precious resources, secured by powerful protections. Just like database permissions, the vault is protected by Fluffy, the three-headed dog, a series of enchantments, and traps. Similarly, row-level and column-level security ensure that only Harry Potter can retrieve the Stone because he is the only one worthy (you can only access what’s meant for you).
 
 To summarize,
 
-1.  **Network Layer (Infrastructure-level):** Firewalls and virtual private networks (VPNs) to control incoming and outgoing network traffic.
+1. **Network Layer (Infrastructure-level):** Firewalls and virtual private networks (VPNs) to control incoming and outgoing network traffic.
     
-2.  **Endpoint Layer (Device-level):** Endpoint Detection and Response (EDR) and Mobile Device Management (MDM) to ensure only compliant device can access your application.
+2. **Endpoint Layer (Device-level):** Endpoint Detection and Response (EDR) and Mobile Device Management (MDM) to ensure only compliant device can access your application.
     
-3.  **API Layer (Service-level):** API keys, JSON Web Tokens (JWTs), and API gateways to authenticate and authorize the caller and enforce policies such as rate limiting, IP whitelisting, and so on.
+3. **API Layer (Service-level):** API keys, JSON Web Tokens (JWTs), and API gateways to authenticate and authorize the caller and enforce policies such as rate limiting, IP whitelisting, and so on.
     
-4.  **Application Layer:** Where the core business logic for authorization typically resides (which this guide is all about).
+4. **Application Layer:** Where the core business logic for authorization typically resides (which this guide is all about).
     
-5.  **Data Layer (Database-level):** Database permissions, row/column-level security.
+5. **Data Layer (Database-level):** Database permissions, row/column-level security.
     
 
 ## Access Control Models
@@ -124,18 +143,18 @@ When a user is assigned a role, they automatically inherit all the permissions a
 
 Let me illustrate this (and all concepts throughout this guide) using a blogging application as an example. This app allows users to create, manage, and publish blog posts in multiple categories. It supports a variety of user roles, each with different levels of access to the content and functionality within the platform.
 
--   **Admin**: Can view, edit, delete, and manage all blog posts and user roles. (Scope: All posts and users)
+* **Admin**: Can view, edit, delete, and manage all blog posts and user roles. (Scope: All posts and users)
     
--   **Editor**: Can edit and approve posts within their assigned categories (for example, Tech, Lifestyle). (Scope: Assigned categories)
+* **Editor**: Can edit and approve posts within their assigned categories (for example, Tech, Lifestyle). (Scope: Assigned categories)
     
--   **Author**: Can create and edit only their own blog posts. (Scope: Own posts)
+* **Author**: Can create and edit only their own blog posts. (Scope: Own posts)
     
--   **Guest User**: Can view public, published blog posts but cannot access private posts. (Scope: Public published posts only)
+* **Guest User**: Can view public, published blog posts but cannot access private posts. (Scope: Public published posts only)
     
 
 The relationship between users and roles is often many-to-many, and roles may also be hierarchical, allowing for complex permission structures.
 
-![Role-based Access Control diagram](https://cdn.hashnode.com/res/hashnode/image/upload/v1737780482515/e30316f8-58a9-4595-81ba-8eb08b2d5a3d.jpeg)
+![Role-based Access Control diagram](https://cdn.hashnode.com/res/hashnode/image/upload/v1737780482515/e30316f8-58a9-4595-81ba-8eb08b2d5a3d.jpeg align="center")
 
 **ABAC** **(Attribute-Based Access Control)** is a model where access decisions are made based on the attributes of the subject (user), object (resource), and the environment. It dynamically evaluates whether a subject can perform an action on an object based on these attributes and policies that govern them.
 
@@ -147,15 +166,15 @@ RBAC provides several benefits, including ease of implementation, reduced admini
 
 But, as the platform grows, you introduce more nuanced requirements for access control. These new requirements lead to the creation of new roles to meet specific access needs:
 
-1.  **Publisher**: Can view, edit, approve, publish, and delete posts across all categories, but cannot manage user roles or settings.
+1. **Publisher**: Can view, edit, approve, publish, and delete posts across all categories, but cannot manage user roles or settings.
     
-2.  **Junior Author**: Can create and edit their own posts within assigned categories.
+2. **Junior Author**: Can create and edit their own posts within assigned categories.
     
-3.  **Senior Author**: Can create and edit their own posts in any category.
+3. **Senior Author**: Can create and edit their own posts in any category.
     
-4.  **User (Subscriber)**: Can view and comment on private posts in addition to public posts.
+4. **User (Subscriber)**: Can view and comment on private posts in addition to public posts.
     
-5.  **Premium Subscriber**: Has all the permissions of a regular subscriber and access to exclusive posts.
+5. **Premium Subscriber**: Has all the permissions of a regular subscriber and access to exclusive posts.
     
 
 Before long, you may find yourself managing an ever-growing list of roles such as Senior Publisher, Publishing Supervisor, Guest User, Subscriber, Premium Subscriber, Graphic Designer, UX Designer, Photographer, Social Media Manager, US Marketing Specialist, UK Marketing Specialist, Web Developer, Data Analyst, Membership Manager, Ad Manager, Legal Advisor, and Sponsor Manager.
@@ -164,7 +183,7 @@ Introducing additional requirements—such as blog category, seniority, and juri
 
 While scopes work well when boundaries are clear and static (for example, department, blog types), they require custom checks for more granular attributes such as seniority, length of service, blog creation time, or publication status. Scopes also struggle to account for attributes that change over time, like the location or timing of access.
 
-Because RBAC relies on roles and fixed scopes to make access decisions, it becomes limited in handling complex and dynamic access needs. That is why, [**OWASP** (Open Worldwide Application Security Project) recommends using **ABAC** or **ReBAC** over RBAC][21], as they are more effective in implementing the principle of least privilege.
+Because RBAC relies on roles and fixed scopes to make access decisions, it becomes limited in handling complex and dynamic access needs. That is why, [**OWASP** (Open Worldwide Application Security Project) recommends using **ABAC** or **ReBAC** over RBAC](https://en.wikipedia.org/wiki/OWASP), as they are more effective in implementing the principle of least privilege.
 
 ## Attribute-Based Access Control In Depth
 
@@ -174,16 +193,16 @@ The core components of ABAC are:
 
 **Attributes**: Attributes are key-value pairs used to define the access context. Examples include:
 
--   **User attributes**: These describe the characteristics of the person requesting access, like role, department, age, clearance level, and so on. 💡 As you can see, role can be one of the attributes based on which access control decision is based. So, ABAC is essentially an extension of RBAC.
+* **User attributes**: These describe the characteristics of the person requesting access, like role, department, age, clearance level, and so on. 💡 As you can see, role can be one of the attributes based on which access control decision is based. So, ABAC is essentially an extension of RBAC.
     
--   **Resource attributes**: These describe the characteristics of the resources (such as files, databases, or services) being accessed. For example, owner, category, status, and so on.
+* **Resource attributes**: These describe the characteristics of the resources (such as files, databases, or services) being accessed. For example, owner, category, status, and so on.
     
--   **Action attributes**: These define what actions are being requested by the user on the resource. For example, `read` access like view/open, `write` access like create/modify/delete, `execute` access like process/run, and so on.
+* **Action attributes**: These define what actions are being requested by the user on the resource. For example, `read` access like view/open, `write` access like create/modify/delete, `execute` access like process/run, and so on.
     
--   **Environment attributes**: These include contextual elements such as `time` or `location` that influence the decision-making process.
+* **Environment attributes**: These include contextual elements such as `time` or `location` that influence the decision-making process.
     
 
-**Policies**: Policies are logical rules or statements that define which combinations of attributes allow or deny access. For instance, A publisher can _publish_ approved posts in assigned categories during business hours.
+**Policies**: Policies are logical rules or statements that define which combinations of attributes allow or deny access. For instance, A publisher can *publish* approved posts in assigned categories during business hours.
 
 ### How does ABAC work?
 
@@ -193,15 +212,15 @@ Sam’s role as a publisher and her assigned categories were set when she joined
 
 Since the access control rule is based on Sam’s attributes—her role as a publisher and the categories she’s assigned to—she can publish posts within those categories. If any of her attributes change, like if she moves to a different department, such as Membership Management, or if her assigned categories change to ‘Fashion’ or ‘Travel,’ her access is automatically revoked.
 
-> _ABAC allows administrators to set access controls without needing to know who specifically will need access. As new members join an organization, there's no need to modify existing rules or object attributes; as long as they have the necessary attributes, they can access the required resources. This ability to automatically accommodate new and unanticipated users without additional adjustments is a key advantage of using ABAC_. ([Source][22])
+> *ABAC allows administrators to set access controls without needing to know who specifically will need access. As new members join an organization, there's no need to modify existing rules or object attributes; as long as they have the necessary attributes, they can access the required resources. This ability to automatically accommodate new and unanticipated users without additional adjustments is a key advantage of using ABAC*. ([Source](https://www.optiq.ai/blog-post/what-is-attribute-based-access-control-explained))
 
 ### Who defines ABAC policies?
 
-1.  **Identity and Access Management administrators**:
+1. **Identity and Access Management administrators**:
     
     In many organizations, security administrators or access control administrators define ABAC policies. Their responsibilities include analyzing business needs, risk management, regulatory compliance, and ensuring that users have the right level of access to resources. They translate security requirements into policies based on the different attributes and conditions specific to the organization.
     
-2.  **Business and resource managers**:
+2. **Business and resource managers**:
     
     In certain cases, business units or department managers may also have input into defining policies. They understand the operational needs and are best positioned to indicate how data should be accessed by their teams.
     
@@ -214,31 +233,31 @@ Access control policies should be enforced in **both** the front-end and the bac
 
 **1.** **Front-end enforcement**
 
--   **Instant feedback**: When you enforce ABAC policies on the front-end, you can immediately show or hide elements (like buttons, links, or menus) based on the user’s attributes. This makes the interface cleaner and helps users understand what they can or can’t do right away.
+* **Instant feedback**: When you enforce ABAC policies on the front-end, you can immediately show or hide elements (like buttons, links, or menus) based on the user’s attributes. This makes the interface cleaner and helps users understand what they can or can’t do right away.
     
--   **Smarter UI**: You can prevent showing options to users that they shouldn’t see. For example, hiding features if the user doesn’t have the correct role or permissions. This makes the UI feel more intuitive and responsive.
+* **Smarter UI**: You can prevent showing options to users that they shouldn’t see. For example, hiding features if the user doesn’t have the correct role or permissions. This makes the UI feel more intuitive and responsive.
     
--   **Reduced server load**: By enforcing certain access restrictions in the front-end, you reduce unnecessary requests to the back-end, improving app performance and reducing load on your servers.
+* **Reduced server load**: By enforcing certain access restrictions in the front-end, you reduce unnecessary requests to the back-end, improving app performance and reducing load on your servers.
     
--   **Security layer**: While the front-end isn’t where sensitive data should live, you can still add an extra layer of security by using it to filter out invalid actions or content **before** a request is made to the back-end. For instance, you can hide sensitive UI elements (like admin controls) or disable buttons based on user attributes, making it harder for unauthorized users to even attempt to trigger certain actions.
+* **Security layer**: While the front-end isn’t where sensitive data should live, you can still add an extra layer of security by using it to filter out invalid actions or content **before** a request is made to the back-end. For instance, you can hide sensitive UI elements (like admin controls) or disable buttons based on user attributes, making it harder for unauthorized users to even attempt to trigger certain actions.
     
 
 **2.** **Back-end enforcement**
 
--   **Bypass risk**: The downside of relying only on the front-end is that users can easily **bypass** it. With the right tools, they can manipulate the front-end code or network requests (using browser dev tools or API proxies). This is why back-end enforcement is essential—it ensures that access rules are applied **server-side**, where they can’t be tampered with.
+* **Bypass risk**: The downside of relying only on the front-end is that users can easily **bypass** it. With the right tools, they can manipulate the front-end code or network requests (using browser dev tools or API proxies). This is why back-end enforcement is essential—it ensures that access rules are applied **server-side**, where they can’t be tampered with.
     
--   **Protecting sensitive data**: The back-end is where your sensitive data is stored and processed. By enforcing ABAC policies on the server, you ensure that unauthorized users can’t access, modify, or even view sensitive information. To avoid data leaks, you should always filter-out sensitive content based on user permissions and send only relevant content to the client.
+* **Protecting sensitive data**: The back-end is where your sensitive data is stored and processed. By enforcing ABAC policies on the server, you ensure that unauthorized users can’t access, modify, or even view sensitive information. To avoid data leaks, you should always filter-out sensitive content based on user permissions and send only relevant content to the client.
     
 
 Now that you know ABAC policies need to be enforced both in the front-end and the back-end, the next question is: **Where do you define these policies?**
 
-As a developer, you might think: "_If I know the policies defined by the security team, I can just translate them into code for both the front-end and back-end._"
+As a developer, you might think: "*If I know the policies defined by the security team, I can just translate them into code for both the front-end and back-end.*"
 
 For example, if the policy is that only senior authors can approve blogs in specific categories, you might write something like this:
 
 **Front-end example (simplified):**
 
-```
+```typescript
 if (user.role === 'author' && user.seniority === 'senior' && user.categories.includes('Tech')) {
   showApprovalDashboard();
 } else {
@@ -248,7 +267,7 @@ if (user.role === 'author' && user.seniority === 'senior' && user.categories.inc
 
 **Back-end example (simplified):**
 
-```
+```typescript
 if (user.role === 'author' && user.seniority === 'senior' && user.categories.includes('Tech')) {
   return res.send(approvalDashboardData);
 } else {
@@ -262,11 +281,11 @@ What happens when you need to introduce additional conditions to this policy, li
 
 And, what if your requirement varies for each user like:
 
--   Display certain UI elements only for users with a premium subscription,
+* Display certain UI elements only for users with a premium subscription,
     
--   Block an API call for a social media manager based on specific attributes,
+* Block an API call for a social media manager based on specific attributes,
     
--   Or hide an entire route for users who are not admins?
+* Or hide an entire route for users who are not admins?
     
 
 Without a structured approach, your app becomes a tangled mess of if-else statements scattered across the codebase.
@@ -275,7 +294,7 @@ Read on to find the answers to these questions!
 
 ### Where are policies defined?
 
-Before we dive into the implementation details, let me briefly revisit the question from the previous section: Where should you _define_ the policies?
+Before we dive into the implementation details, let me briefly revisit the question from the previous section: Where should you *define* the policies?
 
 When there are multiple ways to access a service – whether through a mobile app, web app, or other platforms – the back-end should serve as the source of truth for policy definitions. Defining ABAC policies in the back-end keeps things consistent and secure across all platforms. This means that all clients interact with the same set of rules, reducing the chances of policy discrepancies.
 
@@ -285,21 +304,21 @@ In the upcoming sections, you will learn two approaches to implementing the ABAC
 
 ## 1: Implementing Permissions with CASL
 
-[CASL][23] is an open-source, isomorphic JavaScript library that makes managing permissions in your app much easier with its simple, declarative API.
+[CASL](https://casl.js.org/v6/en) is an open-source, isomorphic JavaScript library that makes managing permissions in your app much easier with its simple, declarative API.
 
 What this means is that you can use CASL on both the client-side (front-end) and server-side (back-end). This is especially great for full-stack applications, as it ensures consistency in access control. The same permission logic can be applied across your entire app, no matter where the request is coming from.
 
-With CASL, you get **declarative access control**, which means you define _what_ is allowed, rather than worrying about _how_ to check permissions. This makes your code cleaner, more readable, and easier to maintain. Whether you're hiding UI elements in the front-end or making sure an API call is authorized in the back-end, CASL helps you enforce permissions consistently across your app.
+With CASL, you get **declarative access control**, which means you define *what* is allowed, rather than worrying about *how* to check permissions. This makes your code cleaner, more readable, and easier to maintain. Whether you're hiding UI elements in the front-end or making sure an API call is authorized in the back-end, CASL helps you enforce permissions consistently across your app.
 
 The best part? You can define permissions using a clear, expressive syntax. This makes it easy to manage even complex permission rules. For example, you can control what a user can (or cannot) do based on their role, the resources they own, and other factors.
 
-And it’s not just for React/React Native – they provide supporting packages for [Angular][24], [Vue][25] and [Aurelia][26] too.
+And it’s not just for React/React Native – they provide supporting packages for [Angular](https://casl.js.org/v6/en/package/casl-angular), [Vue](https://casl.js.org/v6/en/package/casl-vue) and [Aurelia](https://casl.js.org/v6/en/package/casl-aurelia) too.
 
 ### Step 1: Install CASL
 
 First, install CASL using a package manager. I have used v6 for the code examples.
 
-```
+```bash
 npm install @casl/react @casl/ability
 # or
 yarn add @casl/react @casl/ability
@@ -311,16 +330,16 @@ pnpm add @casl/react @casl/ability
 
 In CASL, think of "abilities" as a set of rules that define what actions a user can or cannot perform on specific subjects (like "Posts" or "Users"). Let’s use our earlier examples from the blogging application. For simplicity, we’ll consider two types of users: **Admins** and **Authors**.
 
--   An Admin can manage everything.
+* An Admin can manage everything.
     
--   An Author can create and edit their own posts within assigned categories, but they cannot delete published posts.
+* An Author can create and edit their own posts within assigned categories, but they cannot delete published posts.
     
 
 Now, create a `defineAbilities.ts` file to define the abilities in a high-level, declarative manner using DSL.
 
 Start by defining the `Actions` that a user can perform (for example, `create`, `read`, `update`, `delete`, `manage`) and the `Subjects` (the entities that actions are performed on, such as `‘User’`, `‘Post‘`, or objects like `User` or `Post`).
 
-```
+```typescript
 //defineAbilities.ts
 
 type Actions = 'create' | 'read' | 'update' | 'delete' | 'manage';
@@ -331,7 +350,7 @@ Then, create a type representing the structure of your abilities. It combines th
 
 The `PureAbility<[Actions, Subjects]>` means that the ability system will know what actions are allowed on which subjects. The `createAppAbility` function is used to create an ability instance based on your defined actions and subjects. You can use this function to create abilities specific to a user’s role or permissions.
 
-```
+```typescript
 //defineAbilities.ts
 
 import { CreateAbility, PureAbility, AbilityBuilder, createMongoAbility } from '@casl/ability';
@@ -344,13 +363,13 @@ export type AppAbility = PureAbility<[Actions, Subjects]>
 export const createAppAbility = createMongoAbility as CreateAbility<AppAbility>
 ```
 
-Note that `createMongoAbility` is only used to support simple operators from [MongoDB Query Language][27], like $in, $lte, $eq that are used to specify conditions for your rules. Don't worry – this doesn't mean your app has to use MongoDB, nor do you need to be familiar with the query language. You can also skip these entirely and create custom operators.
+Note that `createMongoAbility` is only used to support simple operators from [MongoDB Query Language](https://www.mongodb.com/docs/manual/reference/operator/query/), like $in, $lte, $eq that are used to specify conditions for your rules. Don't worry – this doesn't mean your app has to use MongoDB, nor do you need to be familiar with the query language. You can also skip these entirely and create custom operators.
 
 Next, define a function called `defineAbilityFor`, which takes a `user` object as its argument and returns an ability instance. The `user` object is expected to have a `role` property (such as 'admin' or 'author') that determines the user's permissions.
 
 The `userPermissions` object maps each user to a function that defines their permissions using the `can` and `cannot` methods provided by `AbilityBuilder`. This approach scales better than a switch case as you add more roles.
 
-```
+```typescript
 //defineAbilities.ts
 
 export default function defineAbilityFor(user: User) {
@@ -371,7 +390,7 @@ export default function defineAbilityFor(user: User) {
   // Call the permissions associated with the user, or default to no permissions.
   const permissions = userPermissions[user.role] || (() => {});
   permissions(); 
-
+ 
   return build();
 }
 ```
@@ -382,15 +401,15 @@ To specify conditions that prevent users from updating posts they haven't create
 
 Add conditional rules to the above file.
 
-```
+```typescript
 
    author: () => {
       // Author can create posts in the 'Tech' and 'Lifestyle' categories
       can('create', 'Post', { category: { $in: ['Tech', 'Lifestyle'] } });
-
+    
       // Author can update the title and description of posts authored by the user
       can('update', 'Post', ['title', 'description'], { ownerId: user.id, status: 'draft' });
-
+    
       // Author cannot delete posts that have a 'Published' status
       cannot('delete', 'Post', { status: 'published' });
     },
@@ -398,27 +417,27 @@ Add conditional rules to the above file.
 
 In CASL, direct rules (like `can`) are combined using `OR` and inverted rules (like `cannot`) and conditions are combined using `AND`. The author:
 
--   can create Posts in their assigned categories `OR`
+* can create Posts in their assigned categories `OR`
     
--   can update title/description of the Posts that they own `AND` are in Draft state
+* can update title/description of the Posts that they own `AND` are in Draft state
     
--   `AND` cannot delete published Posts
+* `AND` cannot delete published Posts
     
 
-Remember, for the same action/subject pair, you should define `cannot` rules _after_ `can` rules, else they will be overridden.
+Remember, for the same action/subject pair, you should define `cannot` rules *after* `can` rules, else they will be overridden.
 
 When dealing with a `Post` object that has a nested `details` field (for example, `details.author.name`, `details.metadata.tags`), you can use the `*` and `**` wildcards to control access based on the level of nesting.
 
--   The `*` wildcard matches only the **top-level fields** within a given object.
+* The `*` wildcard matches only the **top-level fields** within a given object.
     
     This means it will grant access to fields that are directly inside the `details` object, but not any **nested fields**.
     
--   The `**` wildcard allows access to **all fields**, including deeply nested ones, within the object.
+* The `**` wildcard allows access to **all fields**, including deeply nested ones, within the object.
     
     This means it will grant access to every field inside `details`, regardless of how deep the nesting goes.
     
 
-```
+```typescript
 // gives access to all nested fields under Post.details, no matter how deep they are
 can('read', 'Post', ['details.**']) 
 
@@ -432,7 +451,7 @@ The ability instance in `defineAbilities.ts` can be used to enforce permissions 
 
 While the `AbilityBuilder` works for permissions defined inside the system, if your application receives externally defined permissions as a JSON object, like:
 
-```
+```json
 [
   {
     action: 'read',
@@ -449,7 +468,7 @@ While the `AbilityBuilder` works for permissions defined inside the system, if y
 
 you can pass it directly into the `Ability` constructor as follows:
 
-```
+```typescript
   const defineAbilityFor = (permissions: (SubjectRawRule<any, any, MongoQuery<AnyObject>>)[]) => {
     return createMongoAbility<[Actions, Subjects]>(permissions);
   }
@@ -463,7 +482,7 @@ Using JSON to define rules also has the added advantage of **reducing your app's
 
 After successful authentication by your Login or Authentication service, you’ll fetch the user data or associated permissions (depending on the approach you choose in step 2) to your app and create an ability instance in your login component (or similar) as follows:
 
-```
+```typescript
 // login.tsx
 
 import defineAbiltyFor from './config/defineAbilities.js'
@@ -476,9 +495,9 @@ const LoginComponent = () => {
 
 ### **Step 4: Provide ability instance to the entire app**
 
-[Contexts][28] are used in React to share data across components without having to pass props through the component tree. Add the below code in a `can.ts` file:
+[Contexts](https://react.dev/reference/react/createContext) are used in React to share data across components without having to pass props through the component tree. Add the below code in a `can.ts` file:
 
-```
+```typescript
 // can.ts
 
 import {createContext} from 'react'
@@ -492,7 +511,7 @@ This creates a `Can` component, which you will use in the next step to determine
 
 Next, use the above `AbilityContext` to wrap your `App` component and set the `ability` instance created in step 3 as the `value`, so that the abilities are available to all the components in the application.
 
-```
+```typescript
 ReactDOM.render(
 <AbilityContext.Provider value={ability}>
   <App />
@@ -507,7 +526,7 @@ There are two ways to determine if a user has permission to perform an action: u
 
 Assume this is your post object:
 
-```
+```typescript
 // post.ts
 
 export interface Post {
@@ -528,7 +547,7 @@ const post: Post = {
 
 Both `ability.can` and the `Can` component take action, subject, and an optional field and check these parameters against the defined abilities.
 
-```
+```typescript
 // user-profile.tsx
 
 import { useAbility } from '@casl/react';
@@ -550,7 +569,7 @@ export default const UserProfile = () => {
       <Can I="delete" a="Post">
         <p>You can delete a Post.</p>
       </Can>
-
+        
       {/* ==== Example (4) ==== */}
       <Can I="delete" this={subject('Post', post)}>
         {(allowed) =>
@@ -573,42 +592,42 @@ Example `(2)` should return true because you can delete your published posts, **
 
 You have two ways to fix this.
 
--   Use a `subject` helper to specify the type of `post` instance as shown in example `(4)` (it returns true)
+* Use a `subject` helper to specify the type of `post` instance as shown in example `(4)` (it returns true)
     
--   Use a custom subject type detection algorithm to state which property CASL needs to use to discern the type. This can be done using `detectSubjectType` like this:
+* Use a custom subject type detection algorithm to state which property CASL needs to use to discern the type. This can be done using `detectSubjectType` like this:
     
-    ```
-      // defineAbilities.ts
+    ```typescript
+    // defineAbilities.ts
+     
+    export default function defineAbilityFor(user: User) {
+      const { can, cannot, build } = new AbilityBuilder(createAppAbility);
+      // rules defined as explained above
+     
+      return build({
+        detectSubjectType: object => object.__typename
+      });
+    }
+     
+     // post.ts
     
-      export default function defineAbilityFor(user: User) {
-        const { can, cannot, build } = new AbilityBuilder(createAppAbility);
-        // rules defined as explained above
-    
-        return build({
-          detectSubjectType: object => object.__typename
-        });
-      }
-    
-       // post.ts
-    
-       const post: Post = {
-          ownerId: 'yourUserName',
-          category: 'Lifestyle',
-          title: 'My First Post',
-          description: 'This is the description for the first post.',
-          status: 'published',
-          __typename: 'Post'
-      };
+     const post: Post = {
+        ownerId: 'yourUserName',
+        category: 'Lifestyle',
+        title: 'My First Post',
+        description: 'This is the description for the first post.',
+        status: 'published',
+        __typename: 'Post'
+    };
     ```
     
 
 Now, example `(2)` should return true.
 
-Next, look at example `(3)`. It also returns true because the check is on subject _type_ and not on the subject. Remember, when you check on a
+Next, look at example `(3)`. It also returns true because the check is on subject *type* and not on the subject. Remember, when you check on a
 
-> -   subject, you ask "can I delete THIS post?"
+> * subject, you ask "can I delete THIS post?"
 >     
-> -   subject type, you ask "can I delete SOME article?" (that is, at least one post) ([Source][29])
+> * subject type, you ask "can I delete SOME article?" (that is, at least one post) ([Source](https://casl.js.org/v6/en/guide/intro))
 >     
 
 While CASL offers a powerful approach to granular access control, it doesn’t directly address our requirement to apply conditions based on user attributes.
@@ -625,7 +644,7 @@ You have already learned that your access control policies should reside in the 
 
 In YAML, your policy may look like this, where the `policies` list is represented by a sequence (`-`).
 
-```
+```yaml
 policies:
   - policyId: P001
     resource: Post
@@ -644,11 +663,11 @@ The **policyId** is a unique identifier for the policy. The **resource** specifi
 
 As you can see, the conditions in the policies are in a TypeScript-like, human-readable format. This is because they are written using Google's **Common Expression Language (CEL)**.
 
-CEL is an open-source, platform-independent language that is fast and safe for executing user-defined expressions ([unlike `eval()`][30], especially on the server-side). Its performance is enhanced because CEL is compiled once into an abstract syntax tree, which is then used to evaluate against multiple inputs in nanoseconds or microseconds.
+CEL is an open-source, platform-independent language that is fast and safe for executing user-defined expressions ([unlike `eval()`](https://owasp.org/www-community/attacks/Direct_Dynamic_Code_Evaluation_Eval%20Injection), especially on the server-side). Its performance is enhanced because CEL is compiled once into an abstract syntax tree, which is then used to evaluate against multiple inputs in nanoseconds or microseconds.
 
 Let’s redefine the structure as follows:
 
-```
+```yaml
 policies:
   Post:
     view:
@@ -694,16 +713,17 @@ policies:
 
 Here’s why:
 
-1.  **Improved Structure**: By grouping policies by resource and action, you make it much easier to navigate. Adding new policies or actions becomes a breeze, without disrupting the overall setup. For example, if you need to add an `archive` action for the `Post` resource, you simply add it under the `Post` object. This modular approach makes maintaining and extending policies much simpler.
+1. **Improved Structure**: By grouping policies by resource and action, you make it much easier to navigate. Adding new policies or actions becomes a breeze, without disrupting the overall setup. For example, if you need to add an `archive` action for the `Post` resource, you simply add it under the `Post` object. This modular approach makes maintaining and extending policies much simpler.
     
-2.  **Efficient Lookup**: When these policies are accessed in your app as JavaScript objects, lookups are efficient and constant in time (O(1)). This is because policies are stored using direct key lookups, where each policy can be accessed instantly by its unique key. This significantly boosts performance compared to searching through a list (which would take O(n) time). As the number of policies grows, your lookup time stays the same, so performance doesn't slow down.
+2. **Efficient Lookup**: When these policies are accessed in your app as JavaScript objects, lookups are efficient and constant in time (O(1)). This is because policies are stored using direct key lookups, where each policy can be accessed instantly by its unique key. This significantly boosts performance compared to searching through a list (which would take O(n) time). As the number of policies grows, your lookup time stays the same, so performance doesn't slow down.
     
-3.  **Easier Auditing & Version Control**: This structure also makes auditing and version control much smoother. You can easily track changes to policies and manage updates without the risk of accidentally disrupting other policies.
+3. **Easier Auditing & Version Control**: This structure also makes auditing and version control much smoother. You can easily track changes to policies and manage updates without the risk of accidentally disrupting other policies.
     
 
-💡
-
-To understand how string literals work in CEL for the above conditions, check out some examples [here][31].
+<div data-node-type="callout">
+<div data-node-type="callout-emoji">💡</div>
+<div data-node-type="callout-text">To understand how string literals work in CEL for the above conditions, check out some examples <a target="_self" rel="noopener noreferrer nofollow" href="https://stackblitz.com/edit/github-b9k23yjf-kbho9jtj?file=demo.ts" style="pointer-events: none">here</a>.</div>
+</div>
 
 ### Workflow Overview
 
@@ -711,9 +731,9 @@ When the application starts, you fetch policies from the Policy Service using RT
 
 To persist this data for the duration of the session, you'll need to store it in session storage, but be mindful to avoid storing sensitive information. For the purposes of our permission validator, we'll read user data directly from the cache.
 
-At points where policy enforcement is needed, such as in components or routes (let’s call these _policy enforcement points_), the application will call our custom permission hook. This hook then validates permissions based on the policies, the user, the resource, and the environment attributes to either grant or deny access to the requested action.
+At points where policy enforcement is needed, such as in components or routes (let’s call these *policy enforcement points*), the application will call our custom permission hook. This hook then validates permissions based on the policies, the user, the resource, and the environment attributes to either grant or deny access to the requested action.
 
-![Attribute-based Access Control Workflow](https://cdn.hashnode.com/res/hashnode/image/upload/v1737780571125/1dba1568-ee54-4bea-8d25-5c058fa6da68.jpeg)
+![Attribute-based Access Control Workflow](https://cdn.hashnode.com/res/hashnode/image/upload/v1737780571125/1dba1568-ee54-4bea-8d25-5c058fa6da68.jpeg align="center")
 
 ### Policy Validation
 
@@ -721,7 +741,7 @@ At points where policy enforcement is needed, such as in components or routes (l
 
 Begin by defining the types for `Action`, `Resource`, and `Policy` in your code:
 
-```
+```typescript
 // validator.type.ts
 
 export type Action = "view" | "edit" | "create" | "approve" | "publish" | "delete";
@@ -742,7 +762,7 @@ You might be wondering why you need to use `Partial` here. By using `Partial`, w
 
 Then, install `cel-js`, a CEL evaluator for JavaScript to be used in your validator.
 
-```
+```bash
 npm i cel-js
 ```
 
@@ -750,7 +770,7 @@ Create a `validatePermission` function to pull the action rules for the given re
 
 Using the `cel-js` library, evaluate the `conditions` specified in the action rules, which will check if the user meets the required criteria for the action. If the conditions are satisfied, the policy "takes effect," meaning the specified action is enforced according to the defined effect – whether allowing or denying the action. If there are no rules defined or an error occurred during evaluation, deny by default.
 
-```
+```typescript
 // validator.ts
 
 import * as cel from 'cel-js';
@@ -793,7 +813,7 @@ Since the policies were already fetched from the policy management service durin
 
 Notice how the `skip: !userId` condition is used to ensure that the policies are only fetched if a valid `userId` is present, preventing unnecessary network requests.
 
-```
+```typescript
 // usePermission.ts
 
 import { useSelector } from 'react-redux';
@@ -802,9 +822,9 @@ import { validatePermission } from './validator';
 // other imports
 
 export const usePermission = (action: Action, resource: Resource, system: System): boolean => {
-
+  
   const user = useSelector((state: any) => state.user); 
-
+  
   const { data: policies, isLoading: isPoliciesLoading, isError: isPoliciesError } = useGetPoliciesQuery({
     skip: !userId,
   });
@@ -824,18 +844,18 @@ export const usePermission = (action: Action, resource: Resource, system: System
 
 More often than not, even if a user has the required permission to perform an action, they still might not be allowed to do so because of contextual business logic. For example:
 
--   **Post approval**: An editor may have permission to approve a post, but if they’re in the middle of editing it and there are unsaved changes, the approve button should be hidden.
+* **Post approval**: An editor may have permission to approve a post, but if they’re in the middle of editing it and there are unsaved changes, the approve button should be hidden.
     
--   **Commenting**: The comment button should be disabled if a user hasn’t typed anything, even if they have permission to comment.
+* **Commenting**: The comment button should be disabled if a user hasn’t typed anything, even if they have permission to comment.
     
--   **Category creation**: A user with permission might still be blocked from creating a category if the name is empty or already exists.
+* **Category creation**: A user with permission might still be blocked from creating a category if the name is empty or already exists.
     
 
 These rules depend on the current state of the application and need to be handled dynamically. To handle these contextual actions, the validation rules should be defined based on the current state of the application (for example, the post being edited, content being typed, category name availability).
 
 Before delving into how custom hooks can handle these validations, let’s first lay out the rules for these contextual actions:
 
-```
+```typescript
 // contextualRules.ts
 
 import _ from 'lodash';
@@ -870,11 +890,11 @@ const contextualActionRules = {
 
 Now, update the `usePermission` hook to incorporate checks for `contextualActionRules`. If a contextual rule is defined for the specified `resource` and `action`, it will be evaluated alongside the policy-based permission using the current application `state`. If no contextual rule is found, the hook will return the result based solely on the policy-based permission.
 
-```
+```typescript
 // usePermission.ts
 
 export const usePermission = (action: Action, resource: Resource, system: System): boolean => {
-
+  
   const state = useSelector((state: RootState) => state);
 
   /**
@@ -895,13 +915,13 @@ export const usePermission = (action: Action, resource: Resource, system: System
 
 There is one thing that most **definitely** needs to be changed in the above code. Take a guess?
 
-**How is** `usePermission` **beneficial for contextual validations based on the app state?** Because the hook is subscribed to the application state! So, when something changes – like typing into a comment box – the hook re-renders. Since the Comment component relies on this hook to control the comment button’s state, any update in the hook also triggers a re-render of the component. This means that as you type, the button becomes visible, and if the content is cleared, the button gets disabled.
+**How is** `usePermission` **beneficial for contextual validations based on the app state?** Because the hook is subscribed to the application state! So, when something changes – like typing into a comment box – the hook re-renders. Since the Comment component relies on this hook to control the comment button’s state, any update in the hook also triggers a re-render of the component. This means that as you type, the button becomes visible, and if the content is cleared, the button gets disabled.
 
-But, we don’t want the `usePermission` hook to re-render _every_ time the app state changes. Let’s fix that.
+But, we don’t want the `usePermission` hook to re-render *every* time the app state changes. Let’s fix that.
 
 Define `resourceToStateMap` outside the `usePermission` hook to avoid redundant re-creation for every call. `useSelector` subscribes only to the relevant slice of state based on the resource type and ID.
 
-```
+```typescript
 // Bad practice: Instead of this,
 const state = useSelector((state: RootState) => state);
 
@@ -926,9 +946,9 @@ const stateSlice = useSelector((state: RootState) => {
 
 This is why it’s important to make selectors as granular as possible.
 
--   **Avoid over-fetching**: You’re not selecting the entire state anymore, just the piece of it that’s necessary for evaluating the permission and contextual rules. This is much more efficient, especially in large applications.
+* **Avoid over-fetching**: You’re not selecting the entire state anymore, just the piece of it that’s necessary for evaluating the permission and contextual rules. This is much more efficient, especially in large applications.
     
--   **Optimized re-renders**: With granular state selection, only the relevant state slice will trigger a re-render, improving the performance of the application, especially when many components are using the `usePermission` hook.
+* **Optimized re-renders**: With granular state selection, only the relevant state slice will trigger a re-render, improving the performance of the application, especially when many components are using the `usePermission` hook.
     
 
 Now that you’ve completed the bulk of the permission validation logic, let’s make it prettier to use.
@@ -937,7 +957,7 @@ Now that you’ve completed the bulk of the permission validation logic, let’s
 
 Create a `Can` component that checks if the user has permission to perform a specific action on a resource using the `usePermission` hook. If permission is granted, it renders the `children` or calls it as a function with the permission status (this will be used to disable buttons). If not, it displays a fallback element.
 
-```
+```typescript
 // Can.tsx
 
 import { usePermission } from '../hooks/usePermission';
@@ -981,7 +1001,7 @@ You can use the `usePermission` hook for programmatic checks and the `Can` compo
 
 **1\. Using** `Can` **to hide/show components**
 
-```
+```typescript
 <Can
   I="approve"
   a={post}
@@ -994,7 +1014,7 @@ You can use the `usePermission` hook for programmatic checks and the `Can` compo
 
 **2\. Using** `Can` **to disable components**
 
-```
+```typescript
 <Can
   I="delete"
   a={comment}
@@ -1010,14 +1030,14 @@ You can use the `usePermission` hook for programmatic checks and the `Can` compo
 
 **3\. Using** `usePermission` **to create protected routes**
 
-```
+```typescript
 // ProtectedRoute.tsx
 
 import { Navigate, Outlet } from 'react-router-dom'
 
 export function ProtectedRoute() {
   const hasPermission = usePermission("view", user, context);
-
+  
   return hasPermission ? <Outlet /> : <Navigate to='/login' />
 }
 
@@ -1029,7 +1049,7 @@ export function ProtectedRoute() {
 
 **4\. Using** `usePermission` **to skip API calls**
 
-```
+```typescript
 const hasPermission = usePermission("view", user, context);
 
 const { data: user, isLoading: isUserLoading, isError: isUserError } = useUserQuery({
@@ -1049,26 +1069,26 @@ On the other hand, you also learned how to build a custom permission framework t
 
 Both approaches share some key benefits:
 
--   **Dynamic and scalable**: Adding new actions or entities is as simple as updating a single file – no code rewrites required.
+* **Dynamic and scalable**: Adding new actions or entities is as simple as updating a single file – no code rewrites required.
     
--   **Separation of concerns**: Keeps validation logic separate from UI components, which makes your code easier to maintain.
+* **Separation of concerns**: Keeps validation logic separate from UI components, which makes your code easier to maintain.
     
--   **Readable**: You can define permissions using simple, conversational language like "_Can I read this post?_" or "_Can I create a comment?_"
+* **Readable**: You can define permissions using simple, conversational language like "*Can I read this post?*" or "*Can I create a comment?*"
     
--   **Reusable components**: You can reuse wrapper components and hooks across your app to reduce duplication.
+* **Reusable components**: You can reuse wrapper components and hooks across your app to reduce duplication.
     
--   **State reactivity**: Works seamlessly with React state, ensuring that your access control rules are reflected dynamically in your UI.
+* **State reactivity**: Works seamlessly with React state, ensuring that your access control rules are reflected dynamically in your UI.
     
 
 ### **Further Scaling Considerations**
 
 If your policy payload is cumbersome or validation logic is computationally expensive, consider the following optimizations:
 
--   **Memoize the output**: Use `useMemo` to cache the result of expensive computations, but be mindful that `useMemo` itself can be costly if overused.
+* **Memoize the output**: Use `useMemo` to cache the result of expensive computations, but be mindful that `useMemo` itself can be costly if overused.
     
--   **Modularize policies**: Break down your policies into separate files based on their domain. Fetch only the essential policies at startup and lazy load non-essential ones on demand.
+* **Modularize policies**: Break down your policies into separate files based on their domain. Fetch only the essential policies at startup and lazy load non-essential ones on demand.
     
--   **Offload validation to the backend**: Move policy validation logic to the backend and consider server-side rendering. But, keep in mind that some dynamic checks still need to occur on the frontend.
+* **Offload validation to the backend**: Move policy validation logic to the backend and consider server-side rendering. But, keep in mind that some dynamic checks still need to occur on the frontend.
     
 
 Don’t forget to implement access control on the back-end too and make sure to filter-out sensitive data before sending it to the client!
@@ -1077,39 +1097,6 @@ Don’t forget to implement access control on the back-end too and make sure to 
 
 Whether you choose CASL for its simplicity and power or implement your own custom solution for more flexibility, you now have the tools and knowledge to integrate access control into your React applications, ensuring your users can only access what they’re authorized to.
 
-If you enjoyed reading this (or even if you didn’t ;)), drop me a message on [LinkedIn][32] with your feedback.
+If you enjoyed reading this (or even if you didn’t ;)), drop me a message on [LinkedIn](https://www.linkedin.com/in/samhitharamaprasad/) with your feedback.
 
 Happy coding, and may your app's permissions be as scalable as your user base!
-
-[1]: #heading-what-is-access-control-how-is-it-different-from-authz-authn-and-permissions
-[2]: #heading-multi-layered-access-control
-[3]: #heading-hogwarts-in-harmony-a-unified-defense
-[4]: #heading-access-control-models
-[5]: #heading-why-abac
-[6]: #heading-attribute-based-access-control-in-depth
-[7]: #heading-core-components
-[8]: #heading-how-does-abac-work
-[9]: #heading-who-defines-abac-policies
-[10]: #heading-where-should-you-enforce-it-back-end-or-front-end
-[11]: #heading-where-are-policies-defined
-[12]: #heading-1-implementing-permissions-with-casl
-[13]: #heading-2-build-your-custom-permissions-validation-framework
-[14]: #heading-policy-definition-using-policy-as-code
-[15]: #heading-workflow-overview
-[16]: #heading-policy-validation
-[17]: #heading-policy-enforcement
-[18]: #heading-lets-summarize
-[19]: #heading-further-scaling-considerations
-[20]: #heading-conclusion
-[21]: https://en.wikipedia.org/wiki/OWASP
-[22]: https://www.optiq.ai/blog-post/what-is-attribute-based-access-control-explained
-[23]: https://casl.js.org/v6/en
-[24]: https://casl.js.org/v6/en/package/casl-angular
-[25]: https://casl.js.org/v6/en/package/casl-vue
-[26]: https://casl.js.org/v6/en/package/casl-aurelia
-[27]: https://www.mongodb.com/docs/manual/reference/operator/query/
-[28]: https://react.dev/reference/react/createContext
-[29]: https://casl.js.org/v6/en/guide/intro
-[30]: https://owasp.org/www-community/attacks/Direct_Dynamic_Code_Evaluation_Eval%20Injection
-[31]: https://stackblitz.com/edit/github-b9k23yjf-kbho9jtj?file=demo.ts
-[32]: https://www.linkedin.com/in/samhitharamaprasad/

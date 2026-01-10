@@ -1,16 +1,26 @@
 ---
 title: How to Use React's Context API – Tutorial with Examples
-date: 2024-08-19T09:32:08.546Z
-author: Danny Adams
-authorURL: https://www.freecodecamp.org/news/author/danny-adams/
-originalURL: https://www.freecodecamp.org/news/react-context-api-tutorial-examples/
-posteditor: ""
-proofreader: ""
+subtitle: ''
+author: Danny
+co_authors: []
+series: null
+date: '2024-07-22T15:25:40.000Z'
+originalURL: https://freecodecamp.org/news/react-context-api-tutorial-examples
+coverImage: https://www.freecodecamp.org/news/content/images/2024/07/React.png
+tags:
+- name: React
+  slug: react
+- name: React context
+  slug: react-context
+seo_title: null
+seo_desc: 'In React, data is typically passed down from parent to child via props.
+  But this can lead to "prop drilling" – where we have to pass props down through
+  lots of components to get them where they''re needed.
+
+  Also, some props (for example, the current au...'
 ---
 
 In React, data is typically passed down from parent to child via props. But this can lead to "prop drilling" – where we have to pass props down through lots of components to get them where they're needed.
-
-<!-- more -->
 
 Also, some props (for example, the current authenticated user, UI theme, or preferred language) will be required by many components within an application.
 
@@ -18,18 +28,18 @@ React's Context API provides a way to share values like these between components
 
 ## What You'll Learn in This Article
 
--   [What is the React Context API and when should you use it?][1]
--   [React Context API example: how to switch between light and dark mode UI themes][2]
--   [How to create multiple React Contexts (and why you should)][3]
--   [How to prevent the React Context re-render issue][4]
--   [React Context API vs Redux for global state management][5]
+* [What is the React Context API and when should you use it?](#heading-what-is-the-react-context-api-and-when-should-you-use-it)
+* [React Context API example: how to switch between light and dark mode UI themes](#heading-react-context-api-example-light-and-dark-mode-ui-theme)
+* [How to create multiple React Contexts (and why you should)](#heading-how-to-create-multiple-react-contexts)
+* [How to prevent the React Context re-render issue](#heading-how-to-prevent-the-react-context-re-render-issue)
+* [React Context API vs Redux for global state management](#heading-react-context-api-vs-redux)
 
 ## Source Code
 
-All examples from this article are in this repo: [https://github.com/DoableDanny/React-context-API-tutorial][6]
+All examples from this article are in this repo: https://github.com/DoableDanny/React-context-API-tutorial
 
-I also made a video version of this article to make it easier for you to follow along with the examples: [React Context Tutorial with Examples  
-][7]
+I also made a video version of this article to make it easier for you to follow along with the examples: [React Context Tutorial with Examples
+](https://www.youtube.com/watch?v=hkGiP6Ur-B4)
 
 ## What is the React Context API and When Should You Use It?
 
@@ -76,7 +86,7 @@ function Button({ theme }) {
 
 ```
 
-As you can see, each intermediary component needs to include the prop, even if it doesn't use it, just to pass it down further. This clutters the code and makes it more difficult to understand.
+As you can see, each intermediary component needs to include the prop, even if it doesn't use it, just to pass it down further. This clutters the code and makes it more difficult to understand. 
 
 Also, intermediary components that do not use the props might still re-render when the props change, leading to performance issues. This can be particularly problematic in large applications with deep component trees.
 
@@ -113,7 +123,7 @@ Notice that contexts are created by calling the `createContext()` function that 
 
 #### Providing a context
 
-Next, we need to wrap all of the components that need access to the theme in a context provider. The context provider takes a `value` prop, where we can pass the value that we want to make global.
+Next, we need to wrap all of the components that need access to the theme in a context provider. The context provider takes a `value` prop, where we can pass the value that we want to make global. 
 
 Below, `<Navbar />` and `<Button />` will have access to the `theme` state, even though we haven't explicitly passed it down as a prop. This is because we have wrapped these components in the theme context provider, and passed it the value (`theme`) that needs to be made global.
 
@@ -199,10 +209,10 @@ export default Navbar
 
 **Here are the steps involved in using a context**:
 
-1.  Import the context that you want to use (`ThemeContext` in this example) into the component.
-2.  Import the `useContext` hook from `React`.
-3.  Inside of the component that needs access to the context value(s), call the `useContext` hook and pass the context that you want to use. Assign this to a variable (`const theme = useContext(ThemeContext)` in our example)
-4.  The component now has access to the global variable, and the component will re-render/be updated every time a value inside of the context is updated.
+1. Import the context that you want to use (`ThemeContext` in this example) into the component. 
+2. Import the `useContext` hook from `React`.
+3. Inside of the component that needs access to the context value(s), call the `useContext` hook and pass the context that you want to use. Assign this to a variable (`const theme = useContext(ThemeContext)` in our example)
+4. The component now has access to the global variable, and the component will re-render/be updated every time a value inside of the context is updated.
 
 OK, that's everything that we need for this example. Let's now start up our application by running the following command in the project route:
 
@@ -212,13 +222,14 @@ Now let's test things out in the browser.
 
 Light mode:
 
-![light_mode](https://www.freecodecamp.org/news/content/images/2022/03/light_mode.JPG)
 
-_\*\* Press the Toggle Theme button \*\*_
+![Image](https://www.freecodecamp.org/news/content/images/2022/03/light_mode.JPG)
+
+_** Press the Toggle Theme button **_
 
 Dark mode:
 
-![dark_mode](https://www.freecodecamp.org/news/content/images/2022/03/dark_mode.JPG)
+![Image](https://www.freecodecamp.org/news/content/images/2022/03/dark_mode.JPG)
 
 And there we go, we've used the context API to share the theme state throughout our application – without having to pass it down as a prop. Cool! 👌
 
@@ -252,15 +263,15 @@ By only storing related data in each context, we help prevent unnecessary re-ren
 
 ## How to Prevent the React Context Re-render Issue
 
-As we've discussed, whenever a context value is updated, all components consuming that context will be rerendered – even if wrapped in `React.memo()`. (If you don't know what `React.memo()` is, don't panic – we'll discuss it soon!) This can worsen an app’s performance.
+As we've discussed, whenever a context value is updated, all components consuming that context will be rerendered – even if wrapped in `React.memo()`. (If you don't know what `React.memo()` is, don't panic – we'll discuss it soon!) This can worsen an app’s performance. 
 
 But we can mitigate this problem with the following methods:
 
-### 1\. Use Multiple React Contexts
+### 1. Use Multiple React Contexts
 
-This is what we discussed above, and is the "preferred" way of solving the rerender problem ([see this answer][8]).
+This is what we discussed above, and is the "preferred" way of solving the rerender problem ([see this answer](https://github.com/facebook/react/issues/15156#issuecomment-474590693)).
 
-### 2\. Split the Component and Pass the Needed Value
+### 2. Split the Component and Pass the Needed Value
 
 You can also split the component up and pass down (as a prop) the needed value from context, with the child components wrapped in `React.memo()`. Example:
 
@@ -288,14 +299,14 @@ const CardDescription = React.memo(({ theme }) => {
 
 `React.memo()` is a higher-order component (HOC) in React that is used to optimize functional components by preventing unnecessary re-renders. It does this by memoizing the component, meaning it will only re-render if its props change.
 
--   Without `React.memo()`: The components, `CardTitle` and `CardDescription`, would re-render whenever their parent, `Card`, re-renders – even if their props haven't changed. This can lead to performance issues in larger applications or with components that are expensive to render.
--   With `React.memo()`: `CardTitle` and `CardDescription` only re-render if their props change, reducing unnecessary renders and improving performance.
+- Without `React.memo()`: The components, `CardTitle` and `CardDescription`, would re-render whenever their parent, `Card`, re-renders – even if their props haven't changed. This can lead to performance issues in larger applications or with components that are expensive to render.
+- With `React.memo()`: `CardTitle` and `CardDescription` only re-render if their props change, reducing unnecessary renders and improving performance.
 
-So, by splitting the component up, passing down only the values that are needed as props, and wrapping the components in `React.memo()`, `CardTitle` and `CardDescription` will only be re-rendered if `theme` is updated, but not if `username` is updated.
+So, by splitting the component up, passing down only the values that are needed as props, and wrapping the components in `React.memo()`, `CardTitle` and `CardDescription` will only be re-rendered if `theme` is updated, but not if `username` is updated. 
 
 This solution is particularly useful if we can’t split out context for whatever reason.
 
-### 3\. One Component with `React.useMemo()` Inside
+### 3. One Component with `React.useMemo()` Inside
 
 Below, `theme` is a dependency of `useMemo()`, so we will only get a re-render of the elements returned by the callback function when `theme` is changed:
 
@@ -327,8 +338,8 @@ const CardDescription = ({ theme }) => {
 
 Here's how `useMemo()` works:
 
-1.  The first parameter of `useMemo()` is a callback function that returns a memoized value. In this case, it returns a React element, or tree of React elements.
-2.  The second parameter is an array of dependences. If any of the values in this dependency array are updated, then the callback function provided as the first argument is called, and the elements that the callback function returns are re-rendered.
+1. The first parameter of `useMemo()` is a callback function that returns a memoized value. In this case, it returns a React element, or tree of React elements.
+2. The second parameter is an array of dependences. If any of the values in this dependency array are updated, then the callback function provided as the first argument is called, and the elements that the callback function returns are re-rendered.
 
 So, `useMemo()` can be used to only re-render React elements if certain values specified in the dependency array are updated.
 
@@ -338,7 +349,7 @@ This solution is also particularly useful if we can’t split out context.
 
 ## React Context API vs Redux
 
-This is a very common and much-depated topic within the React community. React Context API and Redux are both tools for managing state in a React application, but they have different use cases, strengths, and limitations.
+This is a very common and much-depated topic within the React community. React Context API and Redux are both tools for managing state in a React application, but they have different use cases, strengths, and limitations. 
 
 The Context API is a built-in feature of React, with the primary purpose of allowing state to be shared across a tree of React components without prop drilling.
 
@@ -348,70 +359,44 @@ On the other hand, Redux is a state management library that has to be installed 
 
 #### Why Context API is good for small-to-medium-sized apps:
 
--   **Simplicity**: It's simpler than Redux.
--   **Built-in**: It's part of React, so no need to install extra packages, making maintenance of the project easier.
--   **Minimal boilerplate**: Requires less boilerplate and setup than Redux.
+- **Simplicity**: It's simpler than Redux.
+- **Built-in**: It's part of React, so no need to install extra packages, making maintenance of the project easier.
+- **Minimal boilerplate**: Requires less boilerplate and setup than Redux.
 
 #### Why Redux is good for larger, more complex applications:
 
--   **Single Store**: Maintains a single store for the entire application state, which makes debugging and testing easier.
--   **Predictable State Updates**: Uses pure functions (reducers) to manage state updates, ensuring predictability and immutability.
--   **Middleware Support**: Powerful middleware system (like redux-thunk or redux-saga) for handling asynchronous actions and side effects.
--   **DevTools Integration**: Excellent developer tools for time-travel debugging and state inspection.
--   **Suitable for Large Apps**: Designed to handle complex state logic and large-scale applications.
+- **Single Store**: Maintains a single store for the entire application state, which makes debugging and testing easier.
+- **Predictable State Updates**: Uses pure functions (reducers) to manage state updates, ensuring predictability and immutability.
+- **Middleware Support**: Powerful middleware system (like redux-thunk or redux-saga) for handling asynchronous actions and side effects.
+- **DevTools Integration**: Excellent developer tools for time-travel debugging and state inspection.
+- **Suitable for Large Apps**: Designed to handle complex state logic and large-scale applications.
 
-**Redux maintainer, [Mark Erikson][9], gives the following reasons for using Redux**:
+**Redux maintainer, [Mark Erikson](https://x.com/acemarke?lang=en), gives the following reasons for using Redux**:
 
--   Consistent architectural patterns
--   Debugging capabilities
--   Middleware
--   Addons and extensibility
--   Cross-platform and cross-framework usage
--   Depending on your app's setup, much better performance than working with just Context (we don't have to worry about the rerender problem we get with Context, mentioned above – components only rerender when the value they are using updates)
+- Consistent architectural patterns
+- Debugging capabilities
+- Middleware
+- Addons and extensibility
+- Cross-platform and cross-framework usage
+- Depending on your app's setup, much better performance than working with just Context (we don't have to worry about the rerender problem we get with Context, mentioned above – components only rerender when the value they are using updates)
 
 #### In summary:
 
--   Redux is a more complex state management tool that provides more features and tools. It provides a consistent way of managing state throughout an application, which is very helpful on larger projects with multiple developers (as they won't all be implementing their own styles of state management and making the codebase inconsistent).
--   React Context API is more straightforward, requires less setup, and is a good solution for smaller to medium sized projects where the added complexity and overhead of using a tool like Redux isn't necessary.
+- Redux is a more complex state management tool that provides more features and tools. It provides a consistent way of managing state throughout an application, which is very helpful on larger projects with multiple developers (as they won't all be implementing their own styles of state management and making the codebase inconsistent).
+- React Context API is more straightforward, requires less setup, and is a good solution for smaller to medium sized projects where the added complexity and overhead of using a tool like Redux isn't necessary.
 
 ## Thank you for reading!
 
 If you found this article useful, you can hear more from me by:
 
--   [Subscribing to my YouTube channel][10]. I plan to turn it into a React/NextJS/Node-focused channel, with in-depth videos 😎.
--   [Following me on Twitter][11] where I tweet about my freelancing journey, side projects and current learnings.
--   [Checking out my tech blog][12]
+- [Subscribing to my YouTube channel](https://www.youtube.com/channel/UC0URylW_U4i26wN231yRqvA). I plan to turn it into a React/NextJS/Node-focused channel, with in-depth videos 😎.
+- [Following me on Twitter](https://twitter.com/doabledanny) where I tweet about my freelancing journey, side projects and current learnings.
+- [Checking out my tech blog](https://www.doabledanny.com/blog/)
 
 ### Free React Hooks Course
 
-Want to learn all the hooks in React? I created a free 2 hour video explaining all 9 core React Hooks with examples: [React Hooks Tutorial — All React Hooks Explained with Examples][13]. If you enjoy, consider subscribing to [my channel][14].
+Want to learn all the hooks in React? I created a free 2 hour video explaining all 9 core React Hooks with examples: [React Hooks Tutorial — All React Hooks Explained with Examples](https://www.youtube.com/watch?v=TXN6HYGLba4&ab_channel=DoableDanny). If you enjoy, consider subscribing to [my channel](https://www.youtube.com/channel/UC0URylW_U4i26wN231yRqvA).
 
 Cheers!
 
----
 
-![Danny Adams](https://www.freecodecamp.org/news/content/images/size/w60/2022/01/prof-1.png)
-
-I am a fullstack web developer focused on React, NextJS, TypeScript, Node, and PHP. Currently freelancing fulltime with WordPress.
-
----
-
-If you read this far, thank the author to show them you care. Say Thanks
-
-Learn to code for free. freeCodeCamp's open source curriculum has helped more than 40,000 people get jobs as developers. [Get started][15]
-
-[1]: #whatisthereactcontextapiandwhenshouldyouuseit
-[2]: #reactcontextapiexamplelightanddarkmodeuitheme
-[3]: #howtocreatemultiplereactcontexts
-[4]: #howtopreventthereactcontextrerenderissue
-[5]: #reactcontextapivsredux
-[6]: https://github.com/DoableDanny/React-context-API-tutorial
-[7]: https://www.youtube.com/watch?v=hkGiP6Ur-B4
-[8]: https://github.com/facebook/react/issues/15156#issuecomment-474590693
-[9]: https://x.com/acemarke?lang=en
-[10]: https://www.youtube.com/channel/UC0URylW_U4i26wN231yRqvA
-[11]: https://twitter.com/doabledanny
-[12]: https://www.doabledanny.com/blog/
-[13]: https://www.youtube.com/watch?v=TXN6HYGLba4&ab_channel=DoableDanny
-[14]: https://www.youtube.com/channel/UC0URylW_U4i26wN231yRqvA
-[15]: https://www.freecodecamp.org/learn/

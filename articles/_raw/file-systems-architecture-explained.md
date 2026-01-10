@@ -1,16 +1,30 @@
 ---
-title: What Is a File System? Types of Computer File Systems and How they Work –
-  Explained with Examples
-date: 2024-09-30T11:49:42.988Z
-authorURL: ""
-originalURL: https://www.freecodecamp.org/news/file-systems-architecture-explained/
-posteditor: ""
-proofreader: ""
+title: What Is a File System? Types of Computer File Systems and How they Work – Explained
+  with Examples
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2022-01-11T16:49:00.000Z'
+originalURL: https://freecodecamp.org/news/file-systems-architecture-explained
+coverImage: https://www.freecodecamp.org/news/content/images/2021/02/pexels-photo-6571015.jpeg
+tags:
+- name: Computer Science
+  slug: computer-science
+- name: software architecture
+  slug: software-architecture
+- name: storage
+  slug: storage
+seo_title: null
+seo_desc: 'By Reza Lavarian
+
+  It''s a bit tricky to explain what exactly a file system is in just one sentence.
+
+  That''s why I decided to write an article about it. This post is meant to be a high-level
+  overview of file systems. But I''ll sneak into the lower-level c...'
 ---
 
 By Reza Lavarian
-
-<!-- more -->
 
 It's a bit tricky to explain what exactly a file system is in just one sentence.
 
@@ -20,7 +34,7 @@ That's why I decided to write an article about it. This post is meant to be a hi
 
 Let's start with a simple definition:
 
-A **file system** defines how files are **named**, **stored**, and **retrieved** from a storage device.
+A  **file system**  defines how files are  **named**,  **stored**, and  **retrieved**  from a storage device.
 
 Every time you open a file on your computer or smart device, your operating system uses its file system internally to load it from the storage device.
 
@@ -28,7 +42,7 @@ Or when you copy, edit, or delete a file, the file system handles it under the h
 
 Whenever you download a file or access a web page over the Internet, a file system is involved too.
 
-For instance, if you access a page on [freeCodeCamp][1], your browser sends an [HTTP][2] request to freeCodeCamp's server to fetch the page. If the requested resource is a file, it's fetched from a file system.
+For instance, if you access a page on [freeCodeCamp](https://www.freecodecamp.org/), your browser sends an [HTTP](https://www.decodingweb.dev/books/decoding-web-development/http) request to freeCodeCamp's server to fetch the page. If the requested resource is a file, it's fetched from a file system.
 
 When people talk about file systems, they might refer to different aspects of a file system depending on the context - that's where things start to seem knotty.
 
@@ -62,11 +76,11 @@ Space management, metadata, data encryption, file access control, and data integ
 
 ## Everything begins with partitioning
 
-Storage devices must be **partitioned** and **formatted** before the first use.
+Storage devices must be  **partitioned**  and  **formatted**  before the first use.
 
 But what is partitioning?
 
-Partitioning is splitting a storage device into several _logical regions_, so they can be managed separately as if they are separate storage devices.
+Partitioning is splitting a storage device into several  _logical regions_, so they can be managed separately as if they are separate storage devices.
 
 ![Image](https://www.freecodecamp.org/news/content/images/2021/02/partitions.jpg)
 
@@ -88,7 +102,7 @@ A swap partition works as the RAM extension when RAM runs out of space.
 
 For instance, the OS might move a chunk of data (temporarily) from RAM to the swap partition to free up some space on the RAM.
 
-Operating systems continuously use various [memory management][3] techniques to ensure every process has enough memory space to run.
+Operating systems continuously use various [memory management](https://www.decodingweb.dev/books/processing-fundamentals/operating-systems-and-memory-management) techniques to ensure every process has enough memory space to run.
 
 File systems on Windows and Mac have a similar layout, but they don't use a dedicated swap partition; Instead, they manage to swap within the partition on which you've installed your operating system.
 
@@ -96,7 +110,7 @@ On a computer with multiple partitions, you can install several operating system
 
 The recovery and diagnostic utilities reside in dedicated partitions too.
 
-For instance, to boot up a MacBook in recovery mode, you need to hold `Command + R` as soon as you restart (or turn on) your MacBook. By doing so, you instruct the system's firmware to boot up with a partition that contains the recovery program.
+For instance, to boot up a MacBook in recovery mode, you need to hold  `Command + R`  as soon as you restart (or turn on) your MacBook. By doing so, you instruct the system's firmware to boot up with a partition that contains the recovery program.
 
 Partitioning isn't just a way of installing multiple operating systems and tools, though; It also helps us keep critical system files apart from ordinary ones.
 
@@ -106,11 +120,11 @@ Back to the office example, having a call center and a tech team in a common are
 
 For instance, the tech team would appreciate a quieter area.
 
-Some operating systems, like Windows, assign a drive letter (A, B, C, or D) to the partitions. For instance, the _primary partition_ on Windows (on which Windows is installed) is known as **C**:, or **drive C**.
+Some operating systems, like Windows, assign a drive letter (A, B, C, or D) to the partitions. For instance, the  _primary partition_  on Windows (on which Windows is installed) is known as  **C**:, or **drive C**.
 
 In Unix-like operating systems, however, partitions appear as ordinary directories under the root directory - we'll cover this later.
 
-In the next section, we'll dive deeper into partitioning and get to know two concepts that will change your perspective on file systems: **system firmware** and **booting**.
+In the next section, we'll dive deeper into partitioning and get to know two concepts that will change your perspective on file systems:  **system firmware** and  **booting**.
 
 Are you ready?
 
@@ -120,12 +134,12 @@ Away we go! 🏊‍♂️
 
 When partitioning a storage device, we have two partitioning methods (or schemes 🙄) to choose from:
 
--   **Master boot record (MBR) Scheme**
--   **GUID Partition Table (GPT) Scheme**
+* **Master boot record (MBR) Scheme**
+* **GUID Partition Table (GPT) Scheme**
 
 Regardless of what partitioning scheme you choose, the first few blocks on the storage device will always contain critical data about your partitions.
 
-The system's _firmware_ uses these data structures to boot up the operating system on a partition.
+The system's  _firmware_  uses these data structures to boot up the operating system on a partition.
 
 Wait, what is the system firmware? You may ask.
 
@@ -141,12 +155,13 @@ However, on simpler systems like a printer, the firmware is the operating system
 
 Hardware manufacturers make firmware based on two specifications:
 
--   **Basic Input/Output (BIOS)**
--   **Unified Extensible Firmware Interface (UEFI)**
+* **Basic Input/Output (BIOS)**
+* **Unified Extensible Firmware Interface (UEFI)**
 
 Firmwares - BIOS-based or UEFI-based - reside on a _non-volatile memory_, like a flash ROM attached to the motherboard.
 
-![Image](https://www.freecodecamp.org/news/content/images/2021/02/5794340306_caef1e6960_b.jpg) _\[CC BY 2.0\](https://www.flickr.com/photos/computerhotline/5794340306">**BIOS** By [Thomas Bresson][4], Licensed under **<a href="https://creativecommons.org/licenses/by/2.0/)**_
+![Image](https://www.freecodecamp.org/news/content/images/2021/02/5794340306_caef1e6960_b.jpg)
+_[CC BY 2.0](https://www.flickr.com/photos/computerhotline/5794340306">**BIOS**</a> By <a href="https://www.flickr.com/photos/computerhotline/">Thomas Bresson</a>, Licensed under **<a href="https://creativecommons.org/licenses/by/2.0/)**_
 
 When you press the power button on your computer, the firmware is the first program to run.
 
@@ -168,8 +183,8 @@ This sector is called MBR.
 
 MBR contains the following information:
 
--   The boot loader, which is a **simple program** (in machine code) to initiate the first stage of the booting process
--   A **partition table**, which contains information about your partitions.
+* The boot loader, which is a  **simple program**  (in machine code) to initiate the first stage of the booting process
+* A  **partition table**, which contains information about your partitions.
 
 BIOS-based firmware boots the system differently than UEFI-based firmware.
 
@@ -179,7 +194,7 @@ Once the system is powered on, the BIOS firmware starts and loads the boot loade
 
 Having the boot loader and the partition table in a predefined location like MBR enables BIOS to boot up the system without having to deal with any file.
 
-If you are curious about how the CPU executes the instructions residing in the memory, you can read this beginner-friendly and fun [guide on how the CPU works][5].
+If you are curious about how the CPU executes the instructions residing in the memory, you can read this beginner-friendly and fun [guide on how the CPU works](https://www.decodingweb.dev/books/processing-fundamentals/how-cpu-works).
 
 The boot loader code in the MBR takes between 434 bytes to 446 bytes of the MBR space (out of 512b). Additionally, 64 bytes are allocated to the partition table, which can contain information about a maximum of four partitions.
 
@@ -189,11 +204,11 @@ The smallest piece of code known as the _first-stage boot loader_ is stored in t
 
 The responsibility of the first-stage boot loader is to initiate the next (and more complicated) stages of the booting process.
 
-Immediately after the MBR, and before the first partition starts, there's a small space, around 1MB, called the **MBR gap**.
+Immediately after the MBR, and before the first partition starts, there's a small space, around 1MB, called the  **MBR gap**.
 
 MBR gap can be used to place another piece of the boot loader program if needed.
 
-A boot loader, such as GRUB 2, uses the MBR gap to store another stage of its functionality. GRUB calls this the _stage 1.5_ boot loader, which contains a file system driver.
+A boot loader, such as GRUB 2, uses the MBR gap to store another stage of its functionality. GRUB calls this the  _stage 1.5_  boot loader, which contains a file system driver.
 
 Stage 1.5 enables the next stages of GRUB to understand the concept of files, rather than loading raw instructions from the storage device (like the first-stage boot loader).
 
@@ -211,11 +226,11 @@ And if we magnify the MBR, its content would look like this:
 
 Although MBR is simple and widely supported, it has some limitations 😑.
 
-MBR's data structure limits the number of partitions to only _four primary_ partitions.
+MBR's data structure limits the number of partitions to only  _four primary_  partitions.
 
-A common workaround is to make an _extended_ partition beside the primary partitions, as long as the total number of partitions won't exceed four.
+A common workaround is to make an  _extended_  partition beside the primary partitions, as long as the total number of partitions won't exceed four.
 
-An extended partition can be split into multiple _logical partitions_. Making extended partitions is different across operating systems. Over this quick guide [Microsoft explains how it should be done on Windows][6].
+An extended partition can be split into multiple  _logical partitions_. Making extended partitions is different across operating systems. Over this quick guide [Microsoft explains how it should be done on Windows](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-more-than-four-partitions-on-a-biosmbr-based-hard-disk?view=windows-11).
 
 When making a partition, you can choose between primary and extended.
 
@@ -247,21 +262,22 @@ Many hardware and operating systems now support UEFI and use the GPT scheme to p
 
 In the GPT partitioning scheme, the first sector of the storage device is reserved for compatibility reasons with BIOS-based systems. The reason is some systems might still use a BIOS-based firmware but have a GPT-partitioned storage device.
 
-This sector is called **Protective MBR.** (This is where the first-stage boot loader would reside in an MBR-partitioned disk)
+This sector is called  **Protective MBR.** (This is where the first-stage boot loader would reside in an MBR-partitioned disk)
 
-After this first sector, the GPT data structures are stored, including the **GPT header** and the **partition entries**.
+After this first sector, the GPT data structures are stored, including the  **GPT header**  and the  **partition entries**.
 
 The GPT entries and the GPT header are backed up at the end of the storage device, so they can be recovered if the primary copy gets corrupted.
 
-This backup is called **Secondary GPT.**
+This backup is called  **Secondary GPT.**
 
 The layout of a GPT-partitioned storage device looks like this:
 
-![Image](https://www.freecodecamp.org/news/content/images/2021/02/GUID_Partition_Table_Scheme.svg) \_**\[CC BY-SA 2.5\](https://commons.wikimedia.org/wiki/File:GUID\_Partition\_Table\_Scheme.svg">GUID Partition Table Scheme** By [Kbolino][7], Licensed under **<a href="https://creativecommons.org/licenses/by-sa/2.5/)**\_
+![Image](https://www.freecodecamp.org/news/content/images/2021/02/GUID_Partition_Table_Scheme.svg)
+_**[CC BY-SA 2.5](https://commons.wikimedia.org/wiki/File:GUID_Partition_Table_Scheme.svg">GUID Partition Table Scheme</a>** By <a href="https://en.wikipedia.org/wiki/User:Kbolino">Kbolino</a>, Licensed under **<a href="https://creativecommons.org/licenses/by-sa/2.5/)**_
 
-In GPT, all the booting services (boot loaders, boot managers, pre-os environments, and shells) live in a dedicated partition called **EFI System Partition (ESP)**, which UEFI firmware can use.
+In GPT, all the booting services (boot loaders, boot managers, pre-os environments, and shells) live in a dedicated partition called  **EFI System Partition (ESP)**, which UEFI firmware can use.
 
-ESP even has its own file system, which is a specific version of **FAT**. On Linux, ESP resides under the `/sys/firmware/efi` path.
+ESP even has its own file system, which is a specific version of  **FAT**. On Linux, ESP resides under the  `/sys/firmware/efi`  path.
 
 If this path cannot be found on your system, then your firmware is probably BIOS-based firmware.
 
@@ -269,22 +285,24 @@ To check it out, you can try to change the directory to the ESP mount point, lik
 
 ```
 cd /sys/firmware/efi
+
 ```
 
 UEFI-based firmware assumes that the storage device is partitioned with GPT and looks up the ESP in the GPT partition table.
 
-Once the EFI partition is found, it looks for the configured boot loader - usually, a file ending with `.efi`.
+Once the EFI partition is found, it looks for the configured boot loader -  usually, a file ending with  `.efi`.
 
-UEFI-based firmware gets the booting configuration from **NVRAM** (a non-volatile RAM).
+UEFI-based firmware gets the booting configuration from  **NVRAM**  (a non-volatile RAM).
 
 NVRAM contains the booting settings and paths to the operating system boot loader files.
 
 UEFI firmware can do a BIOS-style boot too (to boot the system from an MBR disk) if configured accordingly.
 
-You can use the `parted` command on Linux to see what partitioning scheme is used for a storage device.
+You can use the  `parted`  command on Linux to see what partitioning scheme is used for a storage device.
 
 ```
 sudo parted -l
+
 ```
 
 And the output would be something like this:
@@ -300,16 +318,20 @@ Number  Start   End     Size    File system  Name  Flags
 14      1049kB  5243kB  4194kB                     bios_grub
 15      5243kB  116MB   111MB   fat32              msftdata
  1      116MB   172GB   172GB   ext4
+
+
+
 ```
 
-Based on the above output, the storage device's ID is `/dev/vda` with a capacity of 172GB. The storage device is partitioned based on GPT and has three partitions; The second and third partitions are formatted based on the FAT32 and EXT4 file systems respectively.
+Based on the above output, the storage device's ID is  `/dev/vda`  with a capacity of 172GB. The storage device is partitioned based on GPT and has three partitions; The second and third partitions are formatted based on the FAT32 and EXT4 file systems respectively.
 
 Having a BIOS GRUB partition implies the firmware is still BIOS-based firmware.
 
-Let's confirm that with the `dmidecode` command like so:
+Let's confirm that with the  `dmidecode`  command like so:
 
 ```
 sudo dmidecode -t 0
+
 ```
 
 And the output would be:
@@ -320,6 +342,7 @@ Getting SMBIOS data from sysfs.
 SMBIOS 2.4 present.
 
 ...
+
 ```
 
 ✅ Confirmed!
@@ -330,15 +353,15 @@ When partitioning is done, the partitions should be **formatted**.
 
 Most operating systems allow you to format a partition based on a set of file systems.
 
-For instance, if you are formatting a partition on Windows, you can choose between **FAT32**, **NTFS**, and **exFAT** file systems.
+For instance, if you are formatting a partition on Windows, you can choose between  **FAT32**,  **NTFS**, and  **exFAT** file systems.
 
-Formatting involves the creation of various **data structures** and metadata used to manage files within a partition.
+Formatting involves the creation of various  **data structures**  and metadata used to manage files within a partition.
 
 These data structures are one aspect of a file system.
 
 Let's take the NTFS file system as an example.
 
-When you format a partition to NTFS, the formatting process places the key NTFS data structures and the **Master file table (MFT)** on the partition.
+When you format a partition to NTFS, the formatting process places the key NTFS data structures and the  **Master file table (MFT)** on the partition.
 
 Alright, let's get back file systems with our new background about partitioning, formatting, and booting.
 
@@ -348,47 +371,48 @@ A file system is a set of data structures, interfaces, abstractions, and APIs th
 
 Each operating system uses a particular file system to manage the files.
 
-In the early days, Microsoft used **FAT** (FAT12, FAT16, and FAT32) in the **MS-DOS** and **Windows 9x** family.
+In the early days, Microsoft used  **FAT** (FAT12, FAT16, and FAT32) in the  **MS-DOS**  and  **Windows 9x**  family.
 
-Starting from Windows **NT 3.1**, Microsoft developed **New Technology File System (NTFS)**, which had many advantages over FAT32, such as supporting bigger files, allowing longer filenames, data encryption, access management, journaling, and a lot more.
+Starting from Windows  **NT 3.1**, Microsoft developed  **New Technology File System (NTFS)**, which had many advantages over FAT32, such as supporting bigger files, allowing longer filenames, data encryption, access management, journaling, and a lot more.
 
 NTFS has been the default file system of the Window NT family (2000, XP, Vista, 7, 10, etc.) ever since.
 
 NTFS isn’t suitable for non-Windows environments, though 🤷🏻.
 
-For instance, you can **only read** the content of an NTFS-formatted storage device (like flash memory) on a Mac OS, but you won’t be able to write anything to it - unless you [install an NTFS driver with write support][8].
+For instance, you can  **only read**  the content of an NTFS-formatted storage device (like flash memory) on a Mac OS, but you won’t be able to write anything to it - unless you [install an NTFS driver with write support](https://www.howtogeek.com/236055/how-to-write-to-ntfs-drives-on-a-mac/).
 
 Or you can just use the **exFat** file system.
 
-**Extended File Allocation Table (exFAT)** is a lighter version of NTFS created by Microsoft in 2006.
+**Extended File Allocation Table (exFAT)**  is a lighter version of NTFS created by Microsoft in 2006.
 
 exFAT was designed for high-capacity removable devices, such as external hard disks, USB drives, and memory cards.
 
-exFAT is the default file system used by **SDXC** **cards**.
+exFAT is the default file system used by  **SDXC**  **cards**.
 
-Unlike NTFS, exFAT has **read and write** support on Non-Windows environments as well, including Mac OS — making it the best cross-platform file system for high-capacity removable storage devices.
+Unlike NTFS, exFAT has  **read and write**  support on Non-Windows environments as well, including Mac OS — making it the best cross-platform file system for high-capacity removable storage devices.
 
 So basically, if you have a removable disk you want to use on Windows, Mac, and Linux, you need to format it to exFAT.
 
 Apple has also developed and used various file systems over the years, including  
-**Hierarchical File System (HFS)**, **HFS+**, and recently **Apple File System (APFS)**.
+**Hierarchical File System (HFS)**,  **HFS+**, and recently  **Apple File System (APFS)**.
 
-Just like NTFS, APFS is a journaling file system and has been in use since the launch of **OS X High Sierra** in 2017.
+Just like NTFS, APFS is a journaling file system and has been in use since the launch of  **OS X High Sierra**  in 2017.
 
 But how about file systems in Linux distributions?
 
-**The Extended File System (ext)** family of file systems was created for the Linux kernel - the core of the Linux operating system.
+**The Extended File System (ext)**  family of file systems was created for the Linux kernel - the core of the Linux operating system.
 
-The first version of **ext** was released in 1991, but soon after, it was replaced by the **second extended file system** (**ext2)** in 1993.
+The first version of  **ext**  was released in 1991, but soon after, it was replaced by the  **second extended file system**  (**ext2)** in 1993.
 
-In the 2000s, the **third extended filesystem** (**ext3)** and **fourth extended filesystem (ext4)** were developed for Linux with journaling capability.
+In the 2000s, the  **third extended filesystem**  (**ext3)**  and  **fourth extended filesystem (ext4)**  were developed for Linux with journaling capability.
 
-**ext4** is now the default file system in many distributions of Linux, including [Debian][9] and [Ubuntu][10].
+**ext4**  is now the default file system in many distributions of Linux, including  [Debian](https://en.wikipedia.org/wiki/Debian)  and  [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu).
 
-You can use the `findmnt` command on Linux to list your ext4-formatted partitions:
+You can use the  `findmnt`  command on Linux to list your ext4-formatted partitions:
 
 ```
 findmnt -lo source,target,fstype,used -t ext4
+
 ```
 
 The output would be something like:
@@ -396,15 +420,16 @@ The output would be something like:
 ```
 SOURCE    TARGET FSTYPE  USED
 /dev/vda1 /      ext4    3.6G
+
 ```
 
 ## Architecture of file systems
 
 A file system installed on an operating system consists of three layers:
 
--   **Physical file system**
--   **Virtual file system**
--   **Logical file system**
+* **Physical file system**
+* **Virtual file system**
+* **Logical file system**
 
 These layers can be implemented as independent or tightly coupled abstractions.
 
@@ -414,11 +439,11 @@ Although these layers are different across operating systems, the concept is the
 
 The physical layer is the concrete implementation of a file system; It's responsible for data storage and retrieval and space management on the storage device (or precisely: partitions).
 
-The physical file system interacts with the storage hardware via [device drivers][11].
+The physical file system interacts with the storage hardware via  [device drivers](https://www.decodingweb.dev/books/processing-fundamentals/how-a-computer-program-works#device-drivers).
 
-The next layer is the virtual file system or **VFS**.
+The next layer is the virtual file system or  **VFS**.
 
-The virtual file system provides a **consistent view** of various file systems mounted on the same operating system.
+The virtual file system provides a  **consistent view**  of various file systems mounted on the same operating system.
 
 So does this mean an operating system can use multiple file systems at the same time?
 
@@ -428,17 +453,17 @@ It's common for a removable storage medium to have a different file system than 
 
 For instance, on Windows (which uses NTFS as the primary file system), a flash memory might have been formatted to exFAT or FAT32.
 
-That said, the operating system should provide a **unified interface** between computer programs (file explorers and other apps that work with files) and the different mounted file systems (such as NTFS, APFS, ext4, FAT32, exFAT, and UDF).
+That said, the operating system should provide a  **unified interface** between computer programs (file explorers and other apps that work with files) and the different mounted file systems (such as NTFS, APFS, ext4, FAT32, exFAT, and UDF).
 
 For instance, when you open up your file explorer program, you can copy an image from an ext4 file system and paste it over to your exFAT-formatted flash memory - without having to know that files are managed differently under the hood.
 
 This convenient layer between the user (you) and the underlying file systems is provided by the VFS.
 
-A VFS defines a _contract_ that all physical file systems must implement to be supported by that operating system.
+A VFS defines a  _contract_  that all physical file systems must implement to be supported by that operating system.
 
 However, this compliance isn't built into the file system core, meaning the source code of a file system doesn't include support for every operating system's VFS.
 
-Instead, it uses a **file system driver** to adhere to the VFS rules of every file system. A driver is a program that enables software to communicate with another software or hardware.
+Instead, it uses a  **file system driver** to adhere to the VFS rules of every file system. A driver is a program that enables software to communicate with another software or hardware.
 
 Although VFS is responsible for providing a standard interface between programs and various file systems, computer programs don't interact with VFS directly.
 
@@ -448,25 +473,26 @@ Can you guess what it is?
 
 Yes, we're talking about the **logical file system**.
 
-The logical file system is the user-facing part of a file system, which provides an API to enable user programs to perform various file operations, such as `OPEN`, `READ`, and `WRITE`, without having to deal with any storage hardware.
+The logical file system is the user-facing part of a file system, which provides an API to enable user programs to perform various file operations, such as  `OPEN`, `READ`, and  `WRITE`, without having to deal with any storage hardware.
 
 On the other hand, VFS provides a bridge between the logical layer (which programs interact with) and a set of the physical layer of various file systems.
 
-![Image](https://www.freecodecamp.org/news/content/images/2021/02/filesystem-1.jpg) _A high-level architecture of the file system layers_
+![Image](https://www.freecodecamp.org/news/content/images/2021/02/filesystem-1.jpg)
+_A high-level architecture of the file system layers_
 
 ### What does it mean to mount a file system?
 
-On Unix-like systems, the VFS assigns a **device ID** (for instance, `dev/disk1s1`) to each partition or removable storage device.
+On Unix-like systems, the VFS assigns a  **device ID** (for instance,  `dev/disk1s1`) to each partition or removable storage device.
 
-Then, it creates a **virtual directory tree** and puts the content of each device under that directory tree as separate directories.
+Then, it creates a  **virtual directory tree**  and puts the content of each device under that directory tree as separate directories.
 
-The act of assigning a directory to a storage device (under the root directory tree) is called **mounting**, and the assigned directory is called a **mount point**.
+The act of assigning a directory to a storage device (under the root directory tree) is called  **mounting**, and the assigned directory is called a  **mount point**.
 
 That said, on a Unix-like operating system, all partitions and removable storage devices appear as if they are directories under the root directory.
 
 For instance, on Linux, the mounting points for a removable device (such as a memory card), are usually under the `/media` directory.
 
-That said, once a flash memory is attached to the system, and consequently, _auto mounted_ at the default mounting point (`/media` in this case), its content would be available under the `/media` directory.
+That said, once a flash memory is attached to the system, and consequently,  _auto mounted_  at the default mounting point (`/media`  in this case), its content would be available under the `/media`  directory.
 
 However, there are times you need to mount a file system manually.
 
@@ -474,6 +500,7 @@ On Linux, it’s done like so:
 
 ```
 mount /dev/disk1s1 /media/usb
+
 ```
 
 In the above command, the first parameter is the device ID (`/dev/disk1s1`), and the second parameter (`/media/usb`) is the mount point.
@@ -485,36 +512,37 @@ If it doesn’t, it has to be created first:
 ```
 mkdir -p /media/usb
 mount /dev/disk1s1 /media/usb
+
 ```
 
 If the mount-point directory already contains files, those files will be hidden for as long as the device is mounted.
 
 ## Files metadata
 
-File metadata is a data structure that contains **data about a file**, such as:
+File metadata is a data structure that contains  **data about a file**, such as:
 
--   File size
--   Timestamps, like creation date, last accessed date, and modification date
--   The file's owner
--   The file's mode (who can do what with the file)
--   What blocks on the partition are allocated to the file
--   and a lot more
+* File size
+* Timestamps, like creation date, last accessed date, and modification date
+* The file's owner
+* The file's mode (who can do what with the file)
+* What blocks on the partition are allocated to the file
+* and a lot more
 
 Metadata isn’t stored with the file content, though. Instead, it’s stored in a different place on the disk - but associated with the file.
 
-In Unix-like systems, the metadata is in the form of data structures, called **inode**.
+In Unix-like systems, the metadata is in the form of data structures, called  **inode**.
 
-Inodes are identified by a unique number called the _inode number._
+Inodes are identified by a unique number called the  _inode number._
 
-Inodes are associated with files in a table called _inode tables_.
+Inodes are associated with files in a table called  _inode tables_.
 
 Each file on the storage device has an inode, which contains information about it such as the time it was created, modified, etc.
 
 The inode also includes the address of the blocks allocated to the file; On the other hand, where exactly it's located on the storage device
 
-In an ext4 inode, the address of the allocated blocks is stored as a set of data structures called **extents** (within the inode).
+In an ext4 inode, the address of the allocated blocks is stored as a set of data structures called  **extents** (within the inode).
 
-Each extent contains the address of the _first data block_ allocated to the file and the number of the _continuous blocks_ that the file has occupied.
+Each extent contains the address of the _first data block_ allocated to the file and the number of the  _continuous blocks_ that the file has occupied.
 
 Whenever you open a file on Linux, its name is first resolved to an inode number.
 
@@ -522,10 +550,11 @@ Having the inode number, the file system fetches the respective inode from the i
 
 Once the inode is fetched, the file system starts to compose the file from the data blocks registered in the inode.
 
-You can use the `df` command with the `-i` parameter on Linux to see the inodes (total, used, and free) in your partitions:
+You can use the  `df`  command with the  `-i`  parameter on Linux to see the inodes (total, used, and free) in your partitions:
 
 ```
 df -i
+
 ```
 
 The output would look like this:
@@ -534,14 +563,16 @@ The output would look like this:
 udev           4116100    378 4115722    1% /dev
 tmpfs          4118422    528 4117894    1% /run
 /dev/vda1      6451200 175101 6276099    3% /
+
 ```
 
-As you can see, the partition `/dev/vda1` has a total number of 6,451,200 inodes, of which 3% have been used (175,101 inodes).
+As you can see, the partition  `/dev/vda1`  has a total number of 6,451,200 inodes, of which 3% have been used (175,101 inodes).
 
-To see the inodes associated with files in a directory, you can use the `ls` command with `-il` parameters.
+To see the inodes associated with files in a directory, you can use the  `ls`  command with  `-il`  parameters.
 
 ```
 ls -li
+
 ```
 
 And the output would be:
@@ -552,6 +583,7 @@ And the output would be:
 1303836 -rw-r--r--  1 root www-data 39551 Jul  8  2019 wp-login.php
 1303837 -rw-r--r--  1 root www-data  8403 Jul  8  2019 wp-mail.php
 1303838 -rw-r--r--  1 root www-data 18962 Jul  8  2019 wp-settings.php
+
 ```
 
 The first column is the inode number associated with each file.
@@ -562,46 +594,47 @@ It's unlikely that a personal Linux OS would run out of inodes. However, enterpr
 
 On NTFS, the metadata is stored differently, though.
 
-NTFS keeps file information in a data structure called the [**Master File Table (MFT)**][12].
+NTFS keeps file information in a data structure called the  [**Master File Table (MFT)**](https://docs.microsoft.com/en-us/windows/win32/fileio/master-file-table).
 
 Every file has at least one entry in MFT, which contains everything about it, including its location on the storage device - similar to the inodes table.
 
 On most operating systems, you can grab metadata via the graphical user interface.
 
-For instance, when you right-click on a file on Mac OS, and select **Get Info** (Properties in Windows), a window appears with information about the file. This information is fetched from the respective file’s metadata.
+For instance, when you right-click on a file on Mac OS, and select **Get Info**  (Properties in Windows), a window appears with information about the file. This information is fetched from the respective file’s metadata.
 
 ## Space Management
 
-Storage devices are divided into fixed-sized blocks called **sectors**.
+Storage devices are divided into fixed-sized blocks called  **sectors**.
 
-A sector is the **minimum storage unit** on a storage device and is between 512 bytes and 4096 bytes (Advanced Format).
+A sector is the  **minimum storage unit**  on a storage device and is between 512 bytes and 4096 bytes (Advanced Format).
 
-However, file systems use a high-level concept as the storage unit, called **blocks.**
+However, file systems use a high-level concept as the storage unit, called  **blocks.**
 
 Blocks are an abstraction over physical sectors; Each block usually consists of multiple sectors.
 
 Depending on the file size, the file system allocates one or more blocks to each file.
 
-Speaking of space management, the file system is aware of every _used_ and _unused_ block on the partitions, so it’ll be able to allocate space to new files or fetch the existing ones when requested.
+Speaking of space management, the file system is aware of every  _used_  and  _unused_ block on the partitions, so it’ll be able to allocate space to new files or fetch the existing ones when requested.
 
-The most basic storage unit in ext4-formatted partitions is the block. However, the contiguous blocks are grouped into **block groups** for easier management.
+The most basic storage unit in ext4-formatted partitions is the block. However, the contiguous blocks are grouped into  **block groups** for easier management.
 
-![Image](https://www.freecodecamp.org/news/content/images/2021/02/block-group.jpg) _The layout of a block group within an ext4 partition_
+![Image](https://www.freecodecamp.org/news/content/images/2021/02/block-group.jpg)
+_The layout of a block group within an ext4 partition_
 
 Each block group has its own data structures and data blocks.
 
 Here are the data structures a block group can contain:
 
--   **Super Block:** a metadata repository, which contains metadata about the entire file system, such as the total number of blocks in the file system, total blocks in block groups, inodes, and more. Not all block groups contain the superblock, though. A certain number of block groups store a copy of the super as a backup.
--   **Group Descriptors:** Group descriptors also contain bookkeeping information for each block group
--   **Inode Bitmap:** Each block group has its own inode quota for storing files. A block bitmap is a data structure used to identify _used_ and _unused_ inodes within the block group. `1` denotes used and `0` denotes unused inode objects.
--   **Block Bitmap:** a data structure used to identify used & unused data blocks within the block group. `1` denotes used and `0` denotes unused data blocks
--   **Inode Table:** a data structure that defines the relation of files and their inodes. The number of inodes stored in this area is related to the block size used by the file system.
--   **Data Blocks:** This is the zone within the block group where file contents are stored.
+* **Super Block:** a metadata repository, which contains metadata about the entire file system, such as the total number of blocks in the file system, total blocks in block groups, inodes, and more. Not all block groups contain the superblock, though. A certain number of block groups store a copy of the super as a backup.
+* **Group Descriptors:** Group descriptors also contain bookkeeping information for each block group
+* **Inode Bitmap:** Each block group has its own inode quota for storing files. A block bitmap is a data structure used to identify  _used_  and  _unused_  inodes within the block group.  `1`  denotes used and  `0`  denotes unused inode objects.
+* **Block Bitmap:**  a data structure used to identify used & unused data blocks within the block group.  `1`  denotes used and  `0`  denotes unused data blocks
+* **Inode Table:**  a data structure that defines the relation of files and their inodes. The number of inodes stored in this area is related to the block size used by the file system.
+* **Data Blocks:** This is the zone within the block group where file contents are stored.
 
-Ext4 file system even takes one step further (comparing to ext3), and organizes block groups into a bigger group called _flex block groups_.
+Ext4 file system even takes one step further (comparing to ext3), and organizes block groups into a bigger group called  _flex block groups_.
 
-The data structures of each block group, including the block bitmap, inode bitmap, and inode table, are _concatenated_ and stored in the _first block group_ within each flex block group.
+The data structures of each block group, including the block bitmap, inode bitmap, and inode table, are  _concatenated_  and stored in the  _first block group_  within each flex block group.
 
 Having all the data structures concatenated in one block group (the first one) frees up more contiguous data blocks on other block groups within each flex block group.
 
@@ -609,7 +642,10 @@ These concepts might be confusing, but you don't have to master every bit of the
 
 The layout of the first block group looks like this:
 
-![Image](https://www.freecodecamp.org/news/content/images/2021/02/block-group-detail.jpg) _The layout of the first block in an ext4 flex block group_
+![Image](https://www.freecodecamp.org/news/content/images/2021/02/block-group-detail.jpg)
+_The layout of the first block in an ext4 flex block group_
+
+
 
 When a file is being written to a disk, it is written to one or more blocks within a block group.
 
@@ -617,9 +653,12 @@ Managing files at the block group level improves the performance of the file sys
 
 ### Size vs size on disk
 
-Have you ever noticed that your file explorer displays two different sizes for each file: **size,** and **size on disk**.
+Have you ever noticed that your file explorer displays two different sizes for each file:  **size,**  and  **size on disk**.
 
-![Image](https://www.freecodecamp.org/news/content/images/2021/02/disksize-1.jpg) _Size and Size on disk_
+![Image](https://www.freecodecamp.org/news/content/images/2021/02/disksize-1.jpg)
+_Size and Size on disk_
+
+
 
 Why are `size` and `size on disk` slightly different? You may ask.
 
@@ -629,32 +668,37 @@ We already know depending on the file size, one or more blocks are allocated to 
 
 One block is the minimum space that can be allocated to a file. This means the remaining space of a partially-filled block cannot be used by another file. This is the rule!
 
-Since the size of the file _isn't an integer multiple of blocks_, the last block might be partially used, and the remaining space would remain unused - or would be filled with zeros.
+Since the size of the file  _isn't an integer multiple of blocks_, the last block might be partially used, and the remaining space would remain unused - or would be filled with zeros.
 
 So "size" is basically the actual file size, while "size on disk" is the space it has occupied, even though it’s not using it all.
 
-You can use the `du` command on Linux to see it yourself.
+You can use the `du`  command on Linux to see it yourself.
 
 ```
 du -b "some-file.txt"
+
+
 ```
 
 The output would be something like this:
 
 ```
 623 icon-link.svg
+
 ```
 
 And to check the size on disk:
 
 ```
 du -B 1 "icon-link.svg"
+
 ```
 
 Which will result in:
 
 ```
 4096    icon-link.svg
+
 ```
 
 Based on the output, the allocated block is about 4kb, while the actual file size is 623 bytes. This means each block size on this operating system is 4kb.
@@ -669,21 +713,22 @@ That's when new files need to be stored as fragments.
 
 **File Fragmentation** occurs when a file is stored as fragments on the storage device because the file system cannot find enough contiguous blocks to store the whole file in a row.
 
-![Image](https://www.freecodecamp.org/news/content/images/2021/02/disk_image-1.jpg) _An example of a fragmented and non-fragmented file_
+![Image](https://www.freecodecamp.org/news/content/images/2021/02/disk_image-1.jpg)
+_An example of a fragmented and non-fragmented file_
 
 Let's make it more clear with an example.
 
-Imagine you have a Word document named `myfile.docx`.
+Imagine you have a Word document named  `myfile.docx`.
 
-`myfile.docx` is initially stored in a few contiguous blocks on the disk; Let's say this is how the blocks are named: `LBA250`, `LBA251`, and `LBA252`.
+`myfile.docx`  is initially stored in a few contiguous blocks on the disk; Let's say this is how the blocks are named:  `LBA250`,  `LBA251`, and  `LBA252`.
 
-Now, if you add more content to `myfile.docx` and save it, it will need to occupy more blocks on the storage medium.
+Now, if you add more content to  `myfile.docx` and save it, it will need to occupy more blocks on the storage medium.
 
-Since `myfile.docx` is currently stored on `LBA250`, `LBA251`, and `LBA252`, the new content should preferably sit within `LBA253` and so forth - depending on how many more blocks are needed to accommodate the new changes.
+Since  `myfile.docx`  is currently stored on  `LBA250`,  `LBA251`, and  `LBA252`, the new content should preferably sit within  `LBA253`  and so forth - depending on how many more blocks are needed to accommodate the new changes.
 
-Now, imagine `LBA253` is already taken by another file (maybe it’s the first block of another file). In that case, the new content of `myfile.docx` has to be stored on different blocks somewhere else on the disks, for instance, `LBA312` and `LBA313`.
+Now, imagine  `LBA253`  is already taken by another file (maybe it’s the first block of another file). In that case, the new content of  `myfile.docx`  has to be stored on different blocks somewhere else on the disks, for instance,  `LBA312`  and  `LBA313`.
 
-`myfile.docx` got fragmented 💔.
+`myfile.docx`  got fragmented 💔.
 
 File fragmentation puts a burden on the file system because every time a fragmented file is requested by a user program, the file system needs to collect every piece of the file from various locations on a disk.
 
@@ -699,11 +744,11 @@ The short answer is: not anymore!
 
 Modern file systems use smart algorithms to avoid (or early-detect) fragmentation as much as possible.
 
-Ext4 also does some sort of **preallocation,** which involves reserving blocks for a file before they are actually needed - making sure the file won't get fragmented if it gets bigger over time.
+Ext4 also does some sort of  **preallocation,** which involves reserving blocks for a file before they are actually needed - making sure the file won't get fragmented if it gets bigger over time.
 
-The number of the _preallocated blocks_ is defined in the _length field_ of the file's extent of its inode object.
+The number of the  _preallocated blocks_  is defined in the  _length field_ of the file's extent of its inode object.
 
-Additionally, ext4 uses an allocation technique called **delayed allocation**.
+Additionally, ext4 uses an allocation technique called  **delayed allocation**.
 
 The idea is instead of writing to data blocks one at a time during a write, the allocation requests are accumulated in a buffer and are written to the disk at once.
 
@@ -717,7 +762,7 @@ Delayed allocation actively reduces fragmentation and increases performance.
 
 ## Directories
 
-A Directory (Folder in Windows) is a special file used as a **logical container** to group files and directories within a file system.
+A Directory (Folder in Windows) is a special file used as a  **logical container**  to group files and directories within a file system.
 
 On NTFS and Ext4, directories and files are treated the same way. That said, directories are just files that have their own inode (on Ext4) or MFT entry (on NTFS).
 
@@ -725,14 +770,15 @@ The inode or MFT entry of a directory contains information about that directory,
 
 The files aren't literally contained within the directory, but they are associated with the directory in a way that they appear as directory's children at a higher level, such as in a file explorer program.
 
-These entries are called **directory entries.** Directory entries contain file names mapped to their inode/MFT entry.
+These entries are called  **directory entries.** Directory entries contain file names mapped to their inode/MFT entry.
 
-In addition to the directory entries, there are two more entries. The `.` entry, which points to the directory itself, and `..`, which points to the parent directory of this directory.
+In addition to the directory entries, there are two more entries. The  `.` entry, which points to the directory itself, and  `..`, which points to the parent directory of this directory.
 
-On Linux, you can use the `ls` in a directory to see the directory entries with their associated inode numbers:
+On Linux, you can use the  `ls`  in a directory to see the directory entries with their associated inode numbers:
 
 ```
 ls -lai
+
 ```
 
 And the output would be something like this:
@@ -744,23 +790,24 @@ And the output would be something like this:
  81020 drwxr-xr-x 14 root root   4096 Dec  2 07:01 cache
  81146 drwxrwxrwt  2 root root   4096 Oct 16 21:43 crash
  80913 drwxr-xr-x 46 root root   4096 Dec  1 22:14 lib
-
+ 
  ...
+
 ```
 
 ## Rules for naming files
 
 Some file systems enforce limitations on filenames.
 
-The limitation can be in the **length of the filename** or **filename case sensitivity**.
+The limitation can be in the  **length of the filename**  or  **filename case sensitivity**.
 
-For instance, in NTFS (Windows) and APFS (Mac) file systems, `MyFile` and `myfile` refer to the same file, while on ext4 (Linux), they point to different files.
+For instance, in NTFS (Windows) and APFS (Mac) file systems,  `MyFile`  and  `myfile`  refer to the same file, while on ext4 (Linux), they point to different files.
 
 Why does this matter? You may ask.
 
 Imagine that you’re creating a web page on your Windows machine. The web page contains your company logo, which is a PNG file, like this:
 
-```
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -772,15 +819,16 @@ Imagine that you’re creating a web page on your Windows machine. The web page 
         <!--SOME MORE CONTENT-->
     </body>
 </html>
+
 ```
 
-If the actual file name is `Logo.png` (note the capital **L**), you can still see the image when you open your web page on your web browser (on your Windows machine).
+If the actual file name is  `Logo.png`  (note the capital  **L**), you can still see the image when you open your web page on your web browser (on your Windows machine).
 
 However, once you deploy it to a Linux server and view it live, you'll see a broken image.
 
 Why?
 
-Because in Linux (ext4 file system) `logo.png` and `Logo.png` point to two different files.
+Because in Linux (ext4 file system)  `logo.png`  and  `Logo.png`  point to two different files.
 
 So keep that in mind when developing on Windows and deploying to a Linux server.
 
@@ -788,23 +836,23 @@ So keep that in mind when developing on Windows and deploying to a Linux server.
 
 One important aspect of file systems is the **maximum file size** they support.
 
-An old file system like **FAT32** (used by MS-DOS +7.1, Windows 9x family, and flash memories) can’t store files more than 4 GB, while its successor, **NTFS** allows file sizes to be up to **16 EB** (1000 TB).
+An old file system like  **FAT32** (used by MS-DOS +7.1, Windows 9x family, and flash memories) can’t store files more than 4 GB, while its successor,  **NTFS**  allows file sizes to be up to  **16 EB**  (1000 TB).
 
 Like NTFS, exFAT allows a file size of 16 EB too. This makes exFAT an ideal option for storing massive data objects, such as video files.
 
 Practically, there’s no limitation on the file size in the exFAT and NTFS file systems.
 
-Linux’s ext4 and Apple’s APFS support files up to **16 TiB** and **8 EiB** respectively.
+Linux’s ext4 and Apple’s APFS support files up to  **16 TiB**  and  **8 EiB**  respectively.
 
 ## File manager programs
 
-As you know, the logical layer of the file system provides an API to enable user applications to perform file operations, such as `read`, `write`, `delete`, and `execute` operations.
+As you know, the logical layer of the file system provides an API to enable user applications to perform file operations, such as  `read`,  `write`,  `delete`, and  `execute` operations.
 
 The file system’s API is a low-level mechanism, though, designed for computer programs, runtime environments, and shells - not designed for daily use.
 
 That said, operating systems provide convenient file management utilities out of the box for your day-to-day file management.
 
-For instance, **File** **Explorer** on Windows, **Finder** on Mac OS, and **Nautilus** on Ubuntu are examples of file manager programs.
+For instance,  **File**  **Explorer**  on Windows,  **Finder** on Mac OS, and  **Nautilus**  on Ubuntu are examples of file manager programs.
 
 These utilities use the logical file system’s API under the hood.
 
@@ -826,9 +874,10 @@ For instance, a file owner (on Linux or Mac) can configure a file to be availabl
 
 ```
 chmod 777 myfile.txt
+
 ```
 
-`777` means everyone can do every operation (read, write, execute) on `myfile.txt`. Please note this is just an example, and you should not set a file's permission to `777`.
+`777`  means everyone can do every operation (read, write, execute) on  `myfile.txt`. Please note this is just an example, and you should not set a file's permission to `777`.
 
 ## Maintaining data integrity
 
@@ -842,13 +891,13 @@ But what if the system crashes while the older version of the file is being repl
 
 In older file systems (like FAT32 or ext2) the data would be corrupted because it was partially written to the disk.
 
-This is less likely to happen with modern file systems as they use a technique called **journaling.**
+This is less likely to happen with modern file systems as they use a technique called  **journaling.**
 
 Journaling file systems record every operation that’s about to happen in the physical layer but hasn’t happened yet.
 
 The main purpose is to keep track of the changes that haven't yet been committed to the file system _physically_.
 
-The journal is a special allocation on the disk where each writing attempt is first stored as a **transaction**.
+The journal is a special allocation on the disk where each writing attempt is first stored as a  **transaction**.
 
 Once the data is physically placed on the storage device, the change is committed to the filesystem.
 
@@ -866,13 +915,14 @@ To access a file, you traverse to the respective directory, and you'll have it.
 
 ```
 cd /music/country/highwayman
+
 ```
 
 However, in a database file system, there’s no concept of paths and directories.
 
-The database file system is a **faceted system** which groups files based on various _attributes_ and _dimensions_.
+The database file system is a  **faceted system**  which groups files based on various  _attributes_  and  _dimensions_.
 
-For instance, MP3 files can be listed by artist, genre, release year, and album - at the same time!
+For instance, MP3 files can be listed by artist, genre, release year, and album -  at the same time!
 
 A database file system is more like a high-level application to help you organize and access your files more easily and more efficiently. However, you won’t be able to access the raw files outside of this application.
 
@@ -890,25 +940,11 @@ We can't! 😁
 
 But let's finish this post with the brief description I used at the beginning:
 
-A **file system** defines how files are **named**, **stored**, and **retrieved** from the storage device.
+A  **file system**  defines how files are  **named**,  **stored**, and  **retrieved**  from the storage device.
 
 Alright, I think it does it for this write-up. If you notice something is missing or that I've gotten wrong, please let me in the comments below. That would help me and others too!
 
-By the way, if you like more comprehensive guides like this one, visit my website [decodingweb. dev][13] and follow me on [Twitter][14] because, besides freeCodeCamp, those are the channels I use to share my everyday findings.
+By the way, if you like more comprehensive guides like this one, visit my website [decodingweb. dev](https://www.decodingweb.dev/)  and follow me on  [Twitter](https://twitter.com/lavary_) because, besides freeCodeCamp, those are the channels I use to share my everyday findings.
 
 Thanks for reading, and enjoy learning! 😃
 
-[1]: https://www.freecodecamp.org/
-[2]: https://www.decodingweb.dev/books/decoding-web-development/http
-[3]: https://www.decodingweb.dev/books/processing-fundamentals/operating-systems-and-memory-management
-[4]: https://www.flickr.com/photos/computerhotline/
-[5]: https://www.decodingweb.dev/books/processing-fundamentals/how-cpu-works
-[6]: https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-more-than-four-partitions-on-a-biosmbr-based-hard-disk?view=windows-11
-[7]: https://en.wikipedia.org/wiki/User:Kbolino
-[8]: https://www.howtogeek.com/236055/how-to-write-to-ntfs-drives-on-a-mac/
-[9]: https://en.wikipedia.org/wiki/Debian
-[10]: https://en.wikipedia.org/wiki/Ubuntu
-[11]: https://www.decodingweb.dev/books/processing-fundamentals/how-a-computer-program-works#device-drivers
-[12]: https://docs.microsoft.com/en-us/windows/win32/fileio/master-file-table
-[13]: https://www.decodingweb.dev/
-[14]: https://twitter.com/lavary_

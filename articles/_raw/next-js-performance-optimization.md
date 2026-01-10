@@ -1,52 +1,63 @@
 ---
 title: How to Optimize Next.js App Performance With Lazy Loading
-date: 2024-08-19T09:26:13.051Z
+subtitle: ''
 author: Tapas Adhikary
-authorURL: https://www.freecodecamp.org/news/author/atapas/
-originalURL: https://www.freecodecamp.org/news/next-js-performance-optimization/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2024-07-19T22:31:12.000Z'
+originalURL: https://freecodecamp.org/news/next-js-performance-optimization
+coverImage: https://www.freecodecamp.org/news/content/images/2024/07/lazyloading-next.js.png
+tags:
+- name: JavaScript
+  slug: javascript
+- name: Next.js
+  slug: nextjs
+- name: web performance
+  slug: web-performance
+seo_title: null
+seo_desc: "People don't like using slow applications. And the initial load time matters\
+  \ a lot for web applications and websites. \nAn application that takes more than\
+  \ 3 seconds to load is considered slow and may cause users to leave the application\
+  \ or website.\nN..."
 ---
 
-People don't like using slow applications. And the initial load time matters a lot for web applications and websites.
-
-<!-- more -->
+People don't like using slow applications. And the initial load time matters a lot for web applications and websites. 
 
 An application that takes more than 3 seconds to load is considered slow and may cause users to leave the application or website.
 
-`Next.js` is a React-based framework you can use to build scalable, performant, and faster web applications and websites. With the inclusion of [React Server Components][1] in the Next.js app router release, developers have a new mental model for "thinking in a server components" way. It solves the problem with SEO, helps create `zero bundle size` React components, and the end result is faster loading of UI components.
+`Next.js` is a React-based framework you can use to build scalable, performant, and faster web applications and websites. With the inclusion of [React Server Components](https://www.freecodecamp.org/news/how-to-use-react-server-components/) in the Next.js app router release, developers have a new mental model for "thinking in a server components" way. It solves the problem with SEO, helps create `zero bundle size` React components, and the end result is faster loading of UI components.
 
 But your application may not be always about the server components. You may need to use client components as well. Also, you may want to load them either as part of the application's initial load or on demand (say at the click of a button).
 
-Loading a client component on the browser includes downloading the component code into the browser, downloading all the libraries and other components you had imported into that client component, and a few additional things that React takes care of for you to make sure your components are working.
+Loading a client component on the browser includes downloading the component code into the browser, downloading all the libraries and other components you had imported into that client component, and a few additional things that React takes care of for you to make sure your components are working. 
 
 Based on the user's internet connection and other network factors, the entire loading of the client component may take a while, which may keep your users from using the application more quickly.
 
-This is where `Lazy Loading` techniques can come in handy. They can help save you from a monolithic loading of your client components on the browser.
+This is where `Lazy Loading` techniques can come in handy. They can help save you from a monolithic loading of your client components on the browser. 
 
 In this article, we will discuss a couple of lazy loading techniques in Next.js for client component loading optimization. We will also talk about a few edge cases you should know to handle.
 
 If you like to learn from video content as well, this article is also available as a video tutorial here: 🙂
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gq9bBZru78Y" style="aspect-ratio: 16 / 9; width: 100%; height: auto;" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" loading="lazy"></iframe>
+%[https://www.youtube.com/watch?v=gq9bBZru78Y]
 
 Before we get started, a couple of things for you:
 
--   We will write a bunch of code to build an app to demonstrate the lazy loading techniques. You can find all the source code from this GitHub repository: [https://github.com/tapascript/nextjs-lazy-load][2]. But I strongly suggest that you write the code yourself as we proceed and use the repository only as a reference.
--   You can also access the app deployed publicly [on Netlify here][3].
+* We will write a bunch of code to build an app to demonstrate the lazy loading techniques. You can find all the source code from this GitHub repository: [https://github.com/tapascript/nextjs-lazy-load](https://github.com/tapascript/nextjs-lazy-load). But I strongly suggest that you write the code yourself as we proceed and use the repository only as a reference.
+* You can also access the app deployed publicly [on Netlify here](https://nextjs-lazy-load.netlify.app/).
 
 Let's start 🚀. Oh yes, if you are Tom & Jerry cartoon lover, you are going to enjoy this even more!
 
 ## **Table of Contents**
 
--   [What is Lazy Loading][4]?
--   [Lazy Loading Techniques in Next.js][5]
--   [Lazy Loading with dynamic import and next/dynamic][6]
--   [Lazy Loading with React.lazy() and Suspense][7]
--   [How to Lazy Load the Named Exported Components][8]
--   [Lazy Loading Your Server Components][9]
--   [Should We Lazy Load All Client Components in Next.js?][10]
--   [What's Next?][11]
+* [What is Lazy Loading](#heading-what-is-lazy-loading)?
+* [Lazy Loading Techniques in Next.js](#heading-lazy-loading-techniques-in-nextjs)
+* [Lazy Loading with dynamic import and next/dynamic](#heading-lazy-loading-with-dynamic-import-and-nextdynamic)
+* [Lazy Loading with React.lazy() and Suspense](#heading-lazy-loading-with-reactlazy-and-suspense)
+* [How to Lazy Load the Named Exported Components](#heading-how-to-lazy-load-the-named-exported-components)
+* [Lazy Loading Your Server Components](#heading-lazy-loading-your-server-components-1)
+* [Should We Lazy Load All Client Components in Next.js?](#heading-lazy-loading-your-server-components-1)
+* [What's Next?](#heading-whats-next)
 
 ## What is Lazy Loading?
 
@@ -54,17 +65,20 @@ In modern day web application development, we don't code all the logic in one Ja
 
 Then we use something called a bundler which kicks in at the build phase of the application development process. It creates bundles for our scripts and styles. Some of the famous bundlers are Webpack, Rollup, and Parcel, among others.
 
-![Image](https://www.freecodecamp.org/news/content/images/2024/07/image-43.png) _Bundler creating bundles from the source code_
+![Image](https://www.freecodecamp.org/news/content/images/2024/07/image-43.png)
+_Bundler creating bundles from the source code_
 
-Now, as we have the bundles, if we try to load them on the browser all together, we will encounter some slowness. This is because the complete bundle needs to be loaded into the browser for the user interface to be functional.
+Now, as we have the bundles, if we try to load them on the browser all together, we will encounter some slowness. This is because the complete bundle needs to be loaded into the browser for the user interface to be functional. 
 
-![Image](https://www.freecodecamp.org/news/content/images/2024/07/image-44.png) _Loading a huge bundle results in a poor loading experience_
+![Image](https://www.freecodecamp.org/news/content/images/2024/07/image-44.png)
+_Loading a huge bundle results in a poor loading experience_
 
-So, instead of waiting for the huge bundle to get loaded into the browser, modern web development libraries and tooling systems allow us to load the bundle in chunks.
+So, instead of waiting for the huge bundle to get loaded into the browser, modern web development libraries and tooling systems allow us to load the bundle in chunks. 
 
 We may want to load some of the chunks immediately, as users may need them sooner as the application loads. At the same time, we may want to wait to load certain parts of a web page until they're needed.
 
-![Image](https://www.freecodecamp.org/news/content/images/2024/07/image-45.png) _Breaking into chunks and loading what is needed_
+![Image](https://www.freecodecamp.org/news/content/images/2024/07/image-45.png)
+_Breaking into chunks and loading what is needed_
 
 This mechanism of waiting to load part of the pages or application, and loading them only when they are absolutely necessary, is called `Lazy Loading`. The concept of lazy loading is not React or Next.js-specific. It is a performance optimization technique that you can implement with various libraries and frameworks.
 
@@ -74,8 +88,8 @@ Lazy loading techniques in Next.js is used to reduce the amount of JavaScript ne
 
 There are two ways we can implement lazy loading techniques in Next.js:
 
--   Using dynamic imports with the help of the `next/dynamic` package.
--   Using a combination of `React.lazy()` and `Suspense`.
+* Using dynamic imports with the help of the `next/dynamic` package.
+* Using a combination of `React.lazy()` and `Suspense`.
 
 Let's understand each of these techniques with code examples.
 
@@ -85,13 +99,13 @@ Let's understand each of these techniques with code examples.
 
 To demonstrate it, let's first create a Next.js app using the following command:
 
-```
+```bash
 npx create-next-app@latest
 ```
 
 You can start the app locally using the following command:
 
-```
+```bash
 ## Using npm
 npm run dev
 
@@ -103,7 +117,7 @@ yarn dev
 
 Now create a folder called `components` under the `app/` directory. We will create all our components under the component folder. Now, create a folder called `tom` under the `app/components/`. Finally, create a React component called `tom.jsx` under the `app/components/tom/` directory with the following code:
 
-```
+```js
 // tom.jsx
 
 const LazyTom = () => {
@@ -129,17 +143,18 @@ const LazyTom = () => {
 };
 
 export default LazyTom;
+
 ```
 
 To explain the above code:
 
--   We have created a ReactJS component called `LazyTom`.
--   It is a simple presentational component which has a heading and a couple of paragraphs talking about the cat, Tom, from the famous `Tom & Jerry` cartoon.
--   At the end, we have `default` exported the component to import it elsewhere.
+* We have created a ReactJS component called `LazyTom`.
+* It is a simple presentational component which has a heading and a couple of paragraphs talking about the cat, Tom, from the famous `Tom & Jerry` cartoon.
+* At the end, we have `default` exported the component to import it elsewhere.
 
 Now, create another file called `tom-story.jsx` under the `app/components/tom/` directory with the following code:
 
-```
+```js
 // tom-story.jsx
 
 "use client";
@@ -174,16 +189,16 @@ export default TomStory;
 
 The main magic of lazy loading with `dynamic` is happening in the above code:
 
--   We have created a client component called `TomStory` using the `"use client"` directive.
--   First, we have imported the `useState` hook for managing a toggle state, and the `dynamic` function from the `next/dynamic` for the lazy loading of the component we created before.
--   The `dynamic` function takes a function as an argument that returns the imported component. You can also configure a custom loading message by providing an optional configuration object as argument to the dynamic function.
--   The `dynamic()` function returns the lazily loaded component instance – that is, `LazyTom` (could be any name). But this component is not loaded yet.
--   In the JSX, we have a toggle button that shows and hides the `LazyTom` component. Note that the component will be lazy loaded into the user browser at the first instance of a button click. After that, if you hide and show it again, the `LazyTom` component will not be reloaded until we hard refresh the browser or clear the browser cache.
--   Finally, we have default exported the `TomStory` component.
+* We have created a client component called `TomStory` using the `"use client"` directive.
+* First, we have imported the `useState` hook for managing a toggle state, and the `dynamic` function from the `next/dynamic` for the lazy loading of the component we created before.
+* The `dynamic` function takes a function as an argument that returns the imported component. You can also configure a custom loading message by providing an optional configuration object as argument to the dynamic function. 
+* The `dynamic()` function returns the lazily loaded component instance – that is, `LazyTom` (could be any name). But this component is not loaded yet.
+* In the JSX, we have a toggle button that shows and hides the `LazyTom` component. Note that the component will be lazy loaded into the user browser at the first instance of a button click. After that, if you hide and show it again, the `LazyTom` component will not be reloaded until we hard refresh the browser or clear the browser cache.
+* Finally, we have default exported the `TomStory` component.
 
 Now we need to test it out. To do that, open the `page.js` file in the `app/` directory and replace the content with the following code:
 
-```
+```js
 import TomStory from "./components/tom/tom-story";
 
 export default function Home() {
@@ -201,21 +216,23 @@ Now access the app on your browser using `http://localhost:3000`. You should see
 
 The `LazyTom` component from the `tom.jsx` has not been downloaded yet. This is because we haven't yet clicked on the `Load Tom's Story` button.
 
-![Image](https://www.freecodecamp.org/news/content/images/2024/07/Screenshot-2024-07-17-at-9.21.10-AM.png) _The button to lazy load Tom's story_
+![Image](https://www.freecodecamp.org/news/content/images/2024/07/Screenshot-2024-07-17-at-9.21.10-AM.png)
+_The button to lazy load Tom's story_
 
 Now, click on the button. You should see a loading message for a moment and then the component will be loaded with Tom's story. You can now see the `tom.jsx` component listed in the `Network` tab and also the component rendered on the page with the Tom's story.
 
-![Image](https://www.freecodecamp.org/news/content/images/2024/07/Screenshot-2024-07-17-at-9.27.55-AM.png) _Now Tom's story is lazily loaded_
+![Image](https://www.freecodecamp.org/news/content/images/2024/07/Screenshot-2024-07-17-at-9.27.55-AM.png)
+_Now Tom's story is lazily loaded_
 
 Now that you have experienced how the `dynamic` function from `next/dynamic` helps us load a component lazily, let's get started with the other technique using `React.lazy()` and `Suspense`.
 
 ## Lazy Loading with `React.lazy()` and `Suspense`
 
-To demonstrate this technique, let's start with Jerry's story, my favourite character from the Tom & Jerry cartoon.
+To demonstrate this technique, let's start with Jerry's story, my favourite character from the Tom & Jerry cartoon. 
 
 First, we'll create a folder called `jerry` under the `app/components/` directory. Now, create a file called `jerry.jsx` under the `app/components/jerry/` with the following code:
 
-```
+```js
 // jerry.jsx
 
 const LazyJerry = () => {
@@ -249,7 +266,7 @@ The content of `jerry.jsx` is structurally similar to `tom.jsx`. Here we have po
 
 Like the last time, let's create a `jerry-story.jsx` file to showcase the lazy loading of Jerry's story. Create the file under the `app/components/jerry/` directory with the following code:
 
-```
+```js
 // jerry-story.jsx
 
 "use client";
@@ -283,25 +300,26 @@ export default JerryStory;
 
 Here also we have a client component, and we will be using the `lazy()` method and `Suspense` from React, so we have imported them. Like the `dynamic()` function in the last technique, the `lazy()` function also takes a function as an argument that retrurns the lazily imported component. We have also provided the relative path to the component that we are trying to load.
 
-Note that with `dynamic()` we had an opportunity to customize the loading message as part of the function itself. With `lazy()`, we will be doing that as part of the `Suspense` fallback.
+Note that with `dynamic()` we had an opportunity to customize the loading message as part of the function itself. With `lazy()`, we will be doing that as part of the `Suspense` fallback. 
 
-Suspense uses a fallback when you wait for the data to load. If you would like to understand the Suspense and Error Boundary from ReactJS in-depth, you can [check out this video tutorial][12].
+Suspense uses a fallback when you wait for the data to load. If you would like to understand the Suspense and Error Boundary from ReactJS in-depth, you can [check out this video tutorial](https://www.youtube.com/watch?v=OpHbSHp8PcI). 
 
 Here, as our `LazyJerry` component is loading lazily, we have provided a fallback to show a loading message until the component code is download into the browser successfully and rendered.
 
-```
+```js
 {shown && 
     <Suspense fallback={<h1>Loading Jerry&apos;s Story</h1>}>
                 <LazyJerry />
     </Suspense>
 }
+                              
 ```
 
 Also, as you can see, we are loading the component on the first button click. Here also, the component will not be reloaded every time we click on the button unless we refresh the browser or clear the browser cache.
 
 Let's now test it by importing it into the `page.js` file and adding the component in its JSX.
 
-```
+```js
 // page.js
 
 import TomStory from "./components/tom/tom-story";
@@ -319,26 +337,28 @@ export default function Home() {
 
 Now, you'll see another component appear on the user interface with a button to load Jerry's story. At this stage, you will not see the jerry.jsx component loaded into the browser.
 
-![Image](https://www.freecodecamp.org/news/content/images/2024/07/Screenshot-2024-07-17-at-9.33.36-AM.png) _The button to lazy load Jerry's story_
+![Image](https://www.freecodecamp.org/news/content/images/2024/07/Screenshot-2024-07-17-at-9.33.36-AM.png)
+_The button to lazy load Jerry's story_
 
 Now, click on the button. You will see that the component is loaded, and you can see it on the Network tab list. You should be able to read Jerry's story rendered as part of the lazily loaded component.
 
-![Image](https://www.freecodecamp.org/news/content/images/2024/07/Screenshot-2024-07-17-at-9.37.30-AM.png) _Jerry's story is lazily loaded_
+![Image](https://www.freecodecamp.org/news/content/images/2024/07/Screenshot-2024-07-17-at-9.37.30-AM.png)
+_Jerry's story is lazily loaded_
 
 ## How to Lazy Load the Named Exported Components
 
 So far, with both the techniques we have imported a component that was exported with the `default export` and then lazy loaded it. In JavaScript (and so in React), you can export and import modules in two different ways:
 
--   With the `default` keyword. In this case, the exported module can be imported with any name. You would use this if you wanted to export only one functionality from a module.
--   Without the `default` keyword, this is called a `named export`. In this case, you have to maintain the same module name for the export and import. You also need to enclose the module name in the curly brackets ({...}) while importing. You would use this if you wanted to export multiple functionalities from a module.
+* With the `default` keyword. In this case, the exported module can be imported with any name. You would use this if you wanted to export only one functionality from a module.
+* Without the `default` keyword, this is called a `named export`. In this case, you have to maintain the same module name for the export and import. You also need to enclose the module name in the curly brackets ({...}) while importing. You would use this if you wanted to export multiple functionalities from a module.
 
-If you want to get into JavaScript modules and how they work in greater detail, I would suggest going through [this crash course][13] published on freeCodeCamp's YouTube channel.
+If you want to get into JavaScript modules and how they work in greater detail, I would suggest going through [this crash course](https://www.youtube.com/watch?v=KeBxopnhizw) published on freeCodeCamp's YouTube channel.
 
 To demonstrate the lazy loading of a `named export` component, let's create another simple presentational React component. This time we will use the angry but cute dog named `Spike` from the Tom & Jerry cartoon.
 
 Create a folder called `spike` under the `app/components/` directory. Now, create a file called `spike.jsx` under the `app/components/spike/` directory with the following code:
 
-```
+```js
 // spike.jsx
 
 export const LazySpike = () => {
@@ -369,14 +389,14 @@ export const LazySpike = () => {
 
 Again, this component is structurally exactly same as the `tom.jsx` and `jerry.jsx` components we have seen before, but with two major differences:
 
-1.  Here, we have exported the component without the default keyword, hence it is a `named export`.
-2.  We are talking about the dog, Spike.
+1. Here, we have exported the component without the default keyword, hence it is a `named export`.
+2. We are talking about the dog, Spike.
 
 Now, we need to handle the lazy loading of a named exported component and it's going to be a bit different from the default exported component.
 
 Create a file called `spike-story.jsx` under the `app/components/spike/` directory with the following code:
 
-```
+```js
 // spike-story.jsx
 
 "use client";
@@ -411,7 +431,7 @@ export default SpikeStory;
 
 Like `tom-story`, we are using the dynamic import with the next/dynamic. But let's zoom into the following block from the above code:
 
-```
+```js
 const LazySpike = dynamic(() => import("./spike").then((mod) => mod.LazySpike), {
     loading: () => <h1>Loading Spike&apos;s Story...</h1>,
 });
@@ -419,9 +439,9 @@ const LazySpike = dynamic(() => import("./spike").then((mod) => mod.LazySpike), 
 
 The changes you will notice here are that we are resolving the promise explicitly from the `import("./spike")` function using the the `.then()` handler function. We get the module first, and then pick the exported component by its actual name – that is `LazySpike` in this case. The rest of the things remain the same as before as in the `tom-story`.
 
-Now to test it out, again import the component into the `page.js` file, and use it in the JSX like the last two times.
+Now to test it out, again import the component into the `page.js` file, and use it in the JSX  like the last two times.
 
-```
+```js
 // page.js
 
 import TomStory from "./components/tom/tom-story";
@@ -441,29 +461,33 @@ export default function Home() {
 
 There you go – you should see the new component rendered on the browser with a button to load Spike's story from the `spike.jsx` file which is not loaded yet.
 
-![Image](https://www.freecodecamp.org/news/content/images/2024/07/Screenshot-2024-07-17-at-9.59.55-AM.png) _The button to lazy load Spike's story_
+![Image](https://www.freecodecamp.org/news/content/images/2024/07/Screenshot-2024-07-17-at-9.59.55-AM.png)
+_The button to lazy load Spike's story_
 
 Clicking on the button will load the file into the browser and render the component to show you Spike's story.
 
-![Image](https://www.freecodecamp.org/news/content/images/2024/07/Screenshot-2024-07-17-at-10.02.01-AM.png) _Spike's story is lazily loaded_
+![Image](https://www.freecodecamp.org/news/content/images/2024/07/Screenshot-2024-07-17-at-10.02.01-AM.png)
+_Spike's story is lazily loaded_
 
 Below you can see all three components demonstrating three different techniques and uses cases side-by-side. You can test them together. The image below is showcasing lazy loading of two components in parallel where another component was already lazily loaded.
 
-![Image](https://www.freecodecamp.org/news/content/images/2024/07/Screenshot-2024-07-17-at-10.14.21-AM.png) _Lazily loading multiple components in parallel_
+![Image](https://www.freecodecamp.org/news/content/images/2024/07/Screenshot-2024-07-17-at-10.14.21-AM.png)
+_Lazily loading multiple components in parallel_
 
-Here is another case where all three components were lazy loaded, on demand with the respective button clicks.
+Here is another case where all three components were lazy loaded, on demand with the respective button clicks. 
 
-![Image](https://www.freecodecamp.org/news/content/images/2024/07/Screenshot-2024-07-17-at-10.05.35-AM-1.png) _All the stories lazy loaded_
+![Image](https://www.freecodecamp.org/news/content/images/2024/07/Screenshot-2024-07-17-at-10.05.35-AM-1.png)
+_All the stories lazy loaded_
 
 ## Lazy Loading Your Server Components
 
-We spoke about the lazy loading techniques of client components. Can we use the same on server components as well? Well, you can but you don't have to, as server components are already `code split` and the loading aspect is already been taken care of by Next.js. You are not going to get any kind of error if you are trying to do so, but it would be unnecessary.
+We spoke about the lazy loading techniques of client components. Can we use the same on server components as well? Well, you can but you don't have to, as server components are already `code split` and the loading aspect is already been taken care of by Next.js. You are not going to get any kind of error if you are trying to do so, but it would be unnecessary. 
 
 In case, you are dynamically importing a server component that has one or more client components as children, those client components will be lazy loaded. But there won't be any impact on the (parent) server component itself.
 
 Here is an example of a server component that has two client components as children:
 
-```
+```js
 // server-comp.jsx
 
 import ComponentA from "./a-client-comp";
@@ -485,7 +509,7 @@ export default AServerComp
 
 Now, we are dynamically importing the server component into the `page.js` file and using it in its JSX. The child client components of the dynamically imported server component will be lazy loaded, but not the server component itself.
 
-```
+```js
 // page.js
 
 import dynamic from "next/dynamic";
@@ -497,7 +521,7 @@ import SpikeStory from "./components/spike/spike-story";
 const AServerComp = dynamic(() => import('./components/server-comps/server-comp'), {
   loading: () => <h1>Loading Through Server Component...</h1>,
 })
-
+ 
 
 export default function Home() {
   return (
@@ -516,13 +540,13 @@ export default function Home() {
 
 I had this question when I first started learning about lazy loading. Now that I have gained more experience with this technique, here is my perspective:
 
-You don't have to lazy load all client components. Optimzation is great, but over optimization can have adverse effects. You need to identify where these optimizations are required.
+You don't have to lazy load all client components. Optimzation is great, but over optimization can have adverse effects. You need to identify where these optimizations are required. 
 
--   Do you have client components that are really bulky?
--   Are you unnecessarily putting so many things into one component that you should break it down and refactor?
--   Do you import heavy libraries into your client components?
--   Have you opted for tree-shaking?
--   Can you mark bulky client components per route and is it fine not to load some or all of them at the initial load of the page for that route?
+* Do you have client components that are really bulky? 
+* Are you unnecessarily putting so many things into one component that you should break it down and refactor? 
+* Do you import heavy libraries into your client components? 
+* Have you opted for tree-shaking? 
+* Can you mark bulky client components per route and is it fine not to load some or all of them at the initial load of the page for that route?
 
 As you see, these are a bunch of meaningful questions to ask before you step into optimizing things. Once you have answers, and decide you need lazy loading, then you can implement the techniques you learned from this article.
 
@@ -530,46 +554,14 @@ As you see, these are a bunch of meaningful questions to ask before you step int
 
 That's all for now. Did you enjoy reading this article and have you learned something new? If so, I would love to know if the content was helpful. I have my social handles provided below.
 
-Up next, if you are willing to learn `Next.js` and its ecosystem like `Next-Auth(V5)` with both fundamental concepts and projects, I have a great news for you: you can [check out this playlist on my YouTube][14] channel with 20+ video tutorials and 11+ hours of engaging content so far, for free. I hope you like them as well.
+Up next, if you are willing to learn `Next.js` and its ecosystem like `Next-Auth(V5)` with both fundamental concepts and projects, I have a great news for you: you can [check out this playlist on my YouTube](https://www.youtube.com/watch?v=VSB2h7mVhPg&list=PLIJrr73KDmRwz_7QUvQ9Az82aDM9I8L_8) channel with 20+ video tutorials and 11+ hours of engaging content so far, for free. I hope you like them as well.
 
 Let's connect.
 
--   Subscribe to my [YouTube Channel][15].
--   [Follow me on X (Twitter][16]) or [LinkedIn][17] if you don't want to miss the daily dose of up-skilling tips.
--   Check out and follow my Open Source work on [GitHub][18].
--   I regularly publish meaningful posts on my [GreenRoots Blog][19], you may find them helpful, too.
+* Subscribe to my [YouTube Channel](https://www.youtube.com/tapasadhikary?sub_confirmation=1).
+* [Follow me on X (Twitter](https://twitter.com/tapasadhikary)) or [LinkedIn](https://www.linkedin.com/in/tapasadhikary/) if you don't want to miss the daily dose of up-skilling tips.
+* Check out and follow my Open Source work on [GitHub](https://github.com/atapas).
+* I regularly publish meaningful posts on my [GreenRoots Blog](https://blog.greenroots.info/), you may find them helpful, too.
 
 See you soon with my next article. Until then, please take care of yourself, and keep learning.
 
----
-
-![Tapas Adhikary](https://cdn.hashnode.com/res/hashnode/image/upload/v1645464332466/IynS2q6H6.jpeg)
-
-Demand-Stack Developer. I teach on YouTube youtube.com/tapasadhikary how to level up your tech career. An Open Source Enthusiast, Writer.
-
----
-
-If you read this far, thank the author to show them you care. Say Thanks
-
-Learn to code for free. freeCodeCamp's open source curriculum has helped more than 40,000 people get jobs as developers. [Get started][20]
-
-[1]: https://www.freecodecamp.org/news/how-to-use-react-server-components/
-[2]: https://github.com/tapascript/nextjs-lazy-load
-[3]: https://nextjs-lazy-load.netlify.app/
-[4]: #heading-what-is-lazy-loading
-[5]: #heading-lazy-loading-techniques-in-nextjs
-[6]: #heading-lazy-loading-with-dynamic-import-and-nextdynamic
-[7]: #heading-lazy-loading-with-reactlazy-and-suspense
-[8]: #heading-how-to-lazy-load-the-named-exported-components
-[9]: #heading-lazy-loading-your-server-components-1
-[10]: #heading-lazy-loading-your-server-components-1
-[11]: #heading-whats-next
-[12]: https://www.youtube.com/watch?v=OpHbSHp8PcI
-[13]: https://www.youtube.com/watch?v=KeBxopnhizw
-[14]: https://www.youtube.com/watch?v=VSB2h7mVhPg&list=PLIJrr73KDmRwz_7QUvQ9Az82aDM9I8L_8
-[15]: https://www.youtube.com/tapasadhikary?sub_confirmation=1
-[16]: https://twitter.com/tapasadhikary
-[17]: https://www.linkedin.com/in/tapasadhikary/
-[18]: https://github.com/atapas
-[19]: https://blog.greenroots.info/
-[20]: https://www.freecodecamp.org/learn/

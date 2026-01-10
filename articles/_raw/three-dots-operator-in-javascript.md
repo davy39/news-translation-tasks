@@ -1,15 +1,24 @@
 ---
-title: ... in JavaScript – the Three Dots Operator in JS
-date: 2024-10-18T11:44:14.429Z
-authorURL: ""
-originalURL: https://www.freecodecamp.org/news/three-dots-operator-in-javascript/
-posteditor: ""
-proofreader: ""
+title: '... in JavaScript – the Three Dots Operator in JS'
+subtitle: ''
+author: Joel Olawanle
+co_authors: []
+series: null
+date: '2022-08-10T23:38:25.000Z'
+originalURL: https://freecodecamp.org/news/three-dots-operator-in-javascript
+coverImage: https://www.freecodecamp.org/news/content/images/2022/08/cover-template--1-.jpg
+tags:
+- name: JavaScript
+  slug: javascript
+seo_title: null
+seo_desc: 'The three dots operator in JavaScript is one of the significant updates
+  that was shipped with ES6.
+
+  This operator (...) helps you achieve many things that previously required many
+  lines of code, unfamiliar syntax, and more.
+
+  In this short article, you ...'
 ---
-
-By Joel Olawanle
-
-<!-- more -->
 
 The three dots operator in JavaScript is one of the significant updates that was shipped with ES6.
 
@@ -27,7 +36,7 @@ This recipient could be anything, such as an object, an array, and so on. And th
 
 ### Spread operator syntax:
 
-```
+```js
 const newArray = ['firstItem', ...oldArray];
 ```
 
@@ -39,7 +48,7 @@ When we want to copy the elements of a particular array into a new array without
 
 Here's an example:
 
-```
+```js
 let studentNames = ["Daniel", "Jane", "Joe"];
 
 let names = [...studentNames];
@@ -49,7 +58,7 @@ console.log(names); // ["Daniel","Jane","Joe"]
 
 This saves us the time we would use to write a loop statement:
 
-```
+```js
 let studentNames = ["Daniel", "Jane", "Joe"];
 
 let names = [];
@@ -65,7 +74,7 @@ console.log(names); // ["Daniel","Jane","Joe"]
 
 As we did with arrays, you can also use an object as a receiver for the spread operator.
 
-```
+```js
 let user = { name: "John Doe", age: 10 };
 
 let copiedUser = { ...user };
@@ -74,7 +83,7 @@ console.log(copiedUser); // { name: "John Doe", age: 10 }
 
 Whereas an old way of doing this would have been to use the `Object.assign()` method this way:
 
-```
+```js
 let user = { name: "John Doe", age: 10 };
 
 let copiedUser = Object.assign({}, user);
@@ -85,7 +94,7 @@ console.log(copiedUser); // { name: "John Doe", age: 10 }
 
 When we have two or more arrays that we want to merge into a new array, we can easily do this with the spread operator. It lets us copy elements from an array:
 
-```
+```js
 let maleNames = ["Daniel", "Peter", "Joe"];
 let femaleNames = ["Sandra", "Lucy", "Jane"];
 
@@ -96,7 +105,7 @@ console.log(allNames); // ["Daniel","Peter","Joe","Sandra","Lucy","Jane"]
 
 It's also important to know that we can use the same approach for as many arrays as we have. We can also add individual elements within the array:
 
-```
+```js
 let maleNames = ["Daniel", "Peter", "Joe"];
 let femaleNames = ["Sandra", "Lucy", "Jane"];
 let otherNames = ["Bill", "Jill"];
@@ -107,7 +116,7 @@ let names = [...moreNames, "Ben", "Fred"];
 
 This saves us the stress of using a complicated syntax like the `concat()` method:
 
-```
+```js
 let maleNames = ["Daniel", "Peter", "Joe"];
 let femaleNames = ["Sandra", "Lucy", "Jane"];
 let otherNames = ["Bill", "Jill"];
@@ -120,7 +129,7 @@ let moreNames = femaleNames.concat(maleNames, otherNames);
 
 We can also concatenate objects similarly to how we did arrays with the spread operator:
 
-```
+```js
 let userName = { name: "John Doe" };
 let userSex = { sex: "Male" };
 
@@ -131,7 +140,7 @@ console.log(user); // { name: "John Doe", sex: "Male" }
 
 **Note:** In a situation where one key has another property, the last property overrides the first instance:
 
-```
+```js
 let userName = { name: "John Doe" };
 let userSex = { sex: "Female", name: "Jane Doe" };
 
@@ -144,7 +153,7 @@ One significant situation when you'll use the spread operator is when you are tr
 
 For example, suppose we have an array of fruits in which we repeated some fruits, and we want to pull these fruits into a new array and avoid repetition. We can use the `set()` method alongside the spread operator to list them in a new array:
 
-```
+```js
 let fruits = ["Mango", "Apple", "Mango", "Banana", "Mango"];
 
 let uniqueFruits = [...new Set(fruits)];
@@ -155,7 +164,7 @@ console.log(uniqueFruits); // ["Mango","Apple","Banana"]
 
 When you have a function that takes in a number and you have these numbers as elements of an array:
 
-```
+```js
 let scores = [12, 33, 6]
 
 const addAll = (a, b, c) => {
@@ -165,7 +174,7 @@ const addAll = (a, b, c) => {
 
 You can use the spread operator to pass these elements into the function call as arguments using the spread operator:
 
-```
+```js
 let scores = [12, 33, 6]
 
 const addAll = (a, b, c) => {
@@ -177,7 +186,7 @@ addAll(...scores); // 51
 
 An old method of doing this would have been to use the `apply()` method:
 
-```
+```js
 let scores = [12, 33, 6]
 
 const addAll = (a, b, c) => {
@@ -191,7 +200,7 @@ addAll.apply(null, scores); // 51
 
 Suppose we have a string. We can make use of the spread operator to split it into characters:
 
-```
+```js
 let myString = "freeCodeCamp";
 
 const splitString = [...myString];
@@ -201,7 +210,7 @@ console.log(splitString); // ["f","r","e","e","C","o","d","e","C","a","m","p"]
 
 This is similar to the `split()` method:
 
-```
+```js
 let myString = "freeCodeCamp";
 
 const splitString = myString.split('');
@@ -215,13 +224,13 @@ On the other hand, the rest operator allows you to combine any number of argumen
 
 ### Syntax of the rest operator
 
-```
+```js
 const func = (first, ...rest) => {};
 ```
 
 A perfect example to illustrate this would be if we have a list of numbers, and we want to use the first number as the multiplier. We then want to put the multiplied value of the remaining numbers in an array:
 
-```
+```js
 const multiplyArgs = (multiplier, ...otherArgs) => {
     return otherArgs.map((number) => {
     return number * multiplier;
@@ -235,7 +244,7 @@ console.log(multipiedArray); // [30,42,54]
 
 Here is a good representation of the rest operator and what its value looks like:
 
-```
+```js
 const multiplyArgs = (multiplier, ...otherArgs) => {
     console.log(multiplier); // 6
     console.log(otherArgs); // [5,7,9]
@@ -246,7 +255,7 @@ multiplyArgs(6, 5, 7, 9);
 
 **Note:** The Rest parameter must be the last formal parameter.
 
-```
+```js
 const multiplyArgs = (multiplier, ...otherArgs, lastNumber) => {
     console.log(lastNumber); // Uncaught SyntaxError: Rest parameter must be last formal parameter
 };
@@ -262,7 +271,7 @@ We use the spread operator to spread array values or iterables into maybe an arr
 
 While we use the Rest operator to gather the remaining elements passed into a function as an array.
 
-```
+```js
 const myFunction = (name1, ...rest) => { // used rest operator here
     console.log(name1);
     console.log(rest);
@@ -278,6 +287,4 @@ In this article, you learned what the three dots operator means in JavaScript. Y
 
 Have fun coding!
 
-You can access over 200 of my articles by [visiting my website][1]. You can also use the search field to see if I've written a specific article.
-
-[1]: https://joelolawanle.com/contents
+You can access over 200 of my articles by [visiting my website](https://joelolawanle.com/contents). You can also use the search field to see if I've written a specific article.

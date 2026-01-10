@@ -1,49 +1,68 @@
 ---
 title: How to Build a Video Subtitle Generator using the Gemini API
-date: 2024-12-12T03:25:52.102Z
-author: Sanjay R
-authorURL: https://www.freecodecamp.org/news/author/sanjayxr/
-originalURL: https://www.freecodecamp.org/news/build-a-video-subtitle-generator-using-the-gemini-api/
-posteditor: ""
-proofreader: ""
+subtitle: ''
+author: Sanjay
+co_authors: []
+series: null
+date: '2024-12-11T15:28:11.973Z'
+originalURL: https://freecodecamp.org/news/build-a-video-subtitle-generator-using-the-gemini-api
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1733638398422/2f468b16-5801-4f8c-bf40-c24d07e219b7.jpeg
+tags:
+- name: gemini
+  slug: gemini
+- name: React
+  slug: reactjs
+- name: Express
+  slug: express
+seo_title: null
+seo_desc: 'In this tutorial, you''ll build an AI-powered subtitle generator using
+  Google''s Gemini API. We''ll create a project called “AI-Subtitle-Generator” using
+  React for the front end and Express for the back end. Get ready for a fun and practical
+  project.
+
+  Ta...'
 ---
 
 In this tutorial, you'll build an AI-powered subtitle generator using Google's Gemini API. We'll create a project called “AI-Subtitle-Generator” using React for the front end and Express for the back end. Get ready for a fun and practical project.
 
-<!-- more -->
-
 ## Table of Contents
 
--   [How to Get Your API Key][1]
+* [How to Get Your API Key](#heading-how-to-get-your-api-key)
     
--   [Project Setup][2]
+* [Project Setup](#heading-project-setup)
     
--   [Front End Setup][3]
+* [Front End Setup](#heading-front-end-setup)
     
--   [Server Setup][4]
+* [Server Setup](#heading-server-setup)
     
--   [Update the Front End][5]
+* [Update the Front End](#heading-update-the-front-end)
     
--   [Summary][6]
+* [Summary](#heading-summary)
     
--   [Conclusion][7]
+* [Conclusion](#heading-conclusion)
     
 
 ### Prerequisites
 
 To build this project, you should know the basics of React and Express.
 
+## What is the Gemini API?
+
+Google's Gemini API is a powerful tool that lets you integrate advanced AI capabilities into your applications. Gemini is a multimodal model, which means you can use various types of input, like text, images, audio, and video.
+
+It’s good at analyzing and processing large amounts of text as well as pulling information from videos – which makes it great for our use case of a subtitle generator.
+
 ## How to Get Your API Key
 
 An API key acts as a unique identifier and authenticates your requests to the service. It's essential for accessing and using Gemini AI’s capabilities. This key will allow our application to communicate with Gemini and help us build our project.
 
-Go to [Google AI Studio][8], then click “Get API Key”:
+Go to [Google AI Studio](https://aistudio.google.com/prompts/new_chat), then click “Get API Key”:
 
-![Screenshot of Google AI Studio showing the 'Get API Key' button](https://cdn.hashnode.com/res/hashnode/image/upload/v1733571839232/f5636fd0-c3cd-4c1b-bf7f-5200bce41444.png)
+![Screenshot of Google AI Studio showing the 'Get API Key' button](https://cdn.hashnode.com/res/hashnode/image/upload/v1733571839232/f5636fd0-c3cd-4c1b-bf7f-5200bce41444.png align="center")
 
 After you are redirected to the API KEY page, click “Create API Key“:
 
-![Screenshot showing how to create an API key in Google AI Studio.](https://cdn.hashnode.com/res/hashnode/image/upload/v1733572045638/c950f7a2-613c-4976-905a-ce5c9dceb901.png)
+![Screenshot showing how to create an API key in Google AI Studio.](https://cdn.hashnode.com/res/hashnode/image/upload/v1733572045638/c950f7a2-613c-4976-905a-ce5c9dceb901.png align="center")
 
 A new API KEY will be created. Then make sure you copy the key.
 
@@ -61,13 +80,13 @@ First, we will focus on the front end and set up a basic React application.
 
 Navigate to the `client` folder:
 
-```
+```bash
 cd client
 ```
 
 Then create a new React project using Vite. To do that, run the following command:
 
-```
+```bash
 npm create vite@latest .
 ```
 
@@ -75,13 +94,13 @@ When prompted, choose “React“. Select “React + TS” or “React + JS”. 
 
 Next, install the dependencies with this command:
 
-```
+```bash
 npm install
 ```
 
 Then start the development server:
 
-```
+```bash
 npm run dev
 ```
 
@@ -89,9 +108,9 @@ npm run dev
 
 Now in `client/src/App.tsx`, add the following code:
 
-```
+```typescript
 //  client/src/App.tsx
-
+ 
 const App = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
@@ -130,42 +149,42 @@ Now that we have our API key, let's set up the backend server. This server will 
 
 Navigate to `server` folder:
 
-```
+```bash
 cd server
 ```
 
 And initialize the project:
 
-```
+```bash
 npm init -y
 ```
 
 Then install the necessary packages:
 
-```
+```bash
 npm install express dotenv cors @google/generative-ai express-fileupload nodemon
 ```
 
 These are the back-end dependencies we’re using in this project:
 
--   `express`**:** The web framework for creating the backend API.
+* `express`**:** The web framework for creating the backend API.
     
--   `dotenv`**:** Loads environment variables from a `.env` file.
+* `dotenv`**:** Loads environment variables from a `.env` file.
     
--   `cors`**:** Enables Cross-Origin Resource Sharing, allowing your frontend to communicate with your backend.
+* `cors`**:** Enables Cross-Origin Resource Sharing, allowing your frontend to communicate with your backend.
     
--   `@google/generative-ai`**:** The Google AI library for interacting with the Gemini API.
+* `@google/generative-ai`**:** The Google AI library for interacting with the Gemini API.
     
--   `express-fileupload`**:** Handles file uploads, making it easy to access uploaded files on the server.
+* `express-fileupload`**:** Handles file uploads, making it easy to access uploaded files on the server.
     
--   `nodemon`**:** Automatically restarts the server when you make changes to your code.
+* `nodemon`**:** Automatically restarts the server when you make changes to your code.
     
 
 ### Set Up the Environment Variables
 
 Now, create a file called `.env`. This is where you’ll manage your API keys.
 
-```
+```javascript
 //.env
 API_KEY = YOUR_API_API
 PORT = 3000
@@ -175,7 +194,7 @@ PORT = 3000
 
 For this project, we are using ES6 modules instead of CommonJS. To enable this, update your `package.json` file with the following code:
 
-```
+```json
 {
   "name": "server",
   "version": "1.0.0",
@@ -204,7 +223,7 @@ For this project, we are using ES6 modules instead of CommonJS. To enable this, 
 
 Create a file `server.js`. Now, let’s set up a basic Express application.
 
-```
+```javascript
 //  server/server.js
 
 import express from "express";
@@ -234,7 +253,7 @@ Now we need to create some folders to manage the code. You can also manage the e
 
 This is the final folder structure for the server:
 
-```
+```plaintext
 server/
 ├── server.js
 ├── controller/
@@ -256,7 +275,7 @@ server/
 
 Now create a `routes` folder and then create `subs.routes.js`:
 
-```
+```javascript
 // server/routes/sub.routes.js
 
 import express from "express"
@@ -281,7 +300,7 @@ Now, let's configure how our application will interact with Gemini.
 
 Create a `gemini` folder and then create a new file called `gemini.config.js`:
 
-```
+```javascript
 //  server/gemini/gemini.config.js
 
 import {
@@ -323,7 +342,7 @@ export default model;    //export the model
 
 In the code above, the `safetySettings` are optional. These settings allow you to define thresholds for potentially harmful content (like hate speech, violence, or explicit material) in Gemini's output.
 
-You can read more about Gemini’s safety settings [here][9].
+You can read more about Gemini’s safety settings [here](https://ai.google.dev/gemini-api/docs/safety-settings).
 
 ### Create a Controller to Handle Endpoint Logic
 
@@ -331,7 +350,7 @@ Now, create a `controller` folder, and inside it create a file named `subs.contr
 
 In `server/controller/subs.controller.js`, add this code:
 
-```
+```javascript
 // server/controller/subs.controller.js
 
 import { fileURLToPath } from "url";
@@ -377,7 +396,7 @@ But the file upload process is not yet complete. We still need to send the file 
 
 Create a folder `utils` and create a file `fileUpload.js`. You can refer to the folder structure provided above.
 
-```
+```javascript
 //  server/utils/fileUpload.js
 
 import { GoogleAIFileManager, FileState } from "@google/generative-ai/server";
@@ -421,7 +440,7 @@ The function then checks if the processing was successful. If so, it returns the
 
 Now in the `utils` folder, create a file called `genContent.js`:
 
-```
+```javascript
 // server/utils/genContent.js
 
 import model from "../gemini/gemini.config.js";
@@ -458,7 +477,7 @@ Finally, we need to update the controller file. We've created the `fileUpload` a
 
 In the `server/controller/subs.controller.js`:
 
-```
+```javascript
 //  server/controller/subs.controller.js
 
 import { fileURLToPath } from "url";
@@ -508,19 +527,19 @@ Our frontend currently only allows users to select a video. In this section, we'
 
 Navigate to the `client` folder:
 
-```
+```bash
 cd client
 ```
 
 Install `axios`. We’ll use it to handle HTTP requests.
 
-```
+```bash
 npm install axios
 ```
 
 In the `client/src/App.tsx`:
 
-```
+```typescript
 //   client/src/App.tsx
 
 import axios from "axios";
@@ -574,24 +593,10 @@ That's it! You've successfully built an AI-powered subtitle generator using the 
 
 Want to create a customizable video prompting application? Just add an input field to let users enter their prompts, send that prompt to the server, and use it in place of the hardcoded prompt. That's all it takes.
 
-For more information about the Gemini API, refer to the official [Gemini API Docs][10]
+For more information about the Gemini API, refer to the official [Gemini API Docs](https://ai.google.dev/gemini-api/docs#node.js)
 
-You can find the full code here: [AI-Subtitle-Generator][11]
+You can find the full code here: [AI-Subtitle-Generator](https://github.com/sanjayr-12/ai-subtitle-generator)
 
-If there are any mistakes or you have any questions, contact me on [LinkedIn][12] or [Instagram][13].
+If there are any mistakes or you have any questions, contact me on [LinkedIn](https://www.linkedin.com/in/sanjay-r-ab6064294/) or [Instagram](https://www.instagram.com/heheheh_pet/profilecard/?igsh=eXh3MWw4ZzZ3NTRq).
 
 Thank you for reading!
-
-[1]: #heading-how-to-get-your-api-key
-[2]: #heading-project-setup
-[3]: #heading-front-end-setup
-[4]: #heading-server-setup
-[5]: #heading-update-the-front-end
-[6]: #heading-summary
-[7]: #heading-conclusion
-[8]: https://aistudio.google.com/prompts/new_chat
-[9]: https://ai.google.dev/gemini-api/docs/safety-settings
-[10]: https://ai.google.dev/gemini-api/docs#node.js
-[11]: https://github.com/sanjayr-12/ai-subtitle-generator
-[12]: https://www.linkedin.com/in/sanjay-r-ab6064294/
-[13]: https://www.instagram.com/heheheh_pet/profilecard/?igsh=eXh3MWw4ZzZ3NTRq

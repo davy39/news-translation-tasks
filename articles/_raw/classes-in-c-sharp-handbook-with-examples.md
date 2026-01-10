@@ -1,16 +1,30 @@
 ---
 title: The C# Class Handbook – Types of Classes with Code Examples
-date: 2025-07-17T02:15:02.960Z
+subtitle: ''
 author: Isaiah Clifford Opoku
-authorURL: https://www.freecodecamp.org/news/author/Clifftech/
-originalURL: https://www.freecodecamp.org/news/classes-in-c-sharp-handbook-with-examples/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2024-12-20T16:20:41.910Z'
+originalURL: https://freecodecamp.org/news/classes-in-c-sharp-handbook-with-examples
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1734711601436/b4de90be-1d93-4d8d-a4ed-ae09b192ef5c.png
+tags:
+- name: C#
+  slug: csharp
+- name: dotnet
+  slug: dotnet
+- name: classes
+  slug: classes
+- name: handbook
+  slug: handbook
+seo_title: null
+seo_desc: 'Classes are the fundamental building blocks of object-oriented programming
+  in C#. They allow you to create reusable and modular code by grouping related data
+  and functions.
+
+  Different types of classes serve various purposes. For instance, organizing y...'
 ---
 
 Classes are the fundamental building blocks of object-oriented programming in C#. They allow you to create reusable and modular code by grouping related data and functions.
-
-<!-- more -->
 
 Different types of classes serve various purposes. For instance, organizing your logic to make your code easier to navigate is helpful when building an application.
 
@@ -22,38 +36,38 @@ In this guide, we'll explore various types of classes in C# and how you can use 
 
 Before we proceed, you should have the following:
 
-1.  **Basic knowledge of C#**: you should understand C# syntax and basic programming constructs like variables, loops, and conditionals.
+1. **Basic knowledge of C#**: you should understand C# syntax and basic programming constructs like variables, loops, and conditionals.
     
-2.  **Familiarity with Object-Oriented Programming (OOP) concepts**: you should know how to work with classes, objects, inheritance, polymorphism, encapsulation, and abstraction.
+2. **Familiarity with Object-Oriented Programming (OOP) concepts**: you should know how to work with classes, objects, inheritance, polymorphism, encapsulation, and abstraction.
     
-3.  **Familiarity with access modifiers**: you should understand public, private, internal, and protected access modifiers.
+3. **Familiarity with access modifiers**: you should understand public, private, internal, and protected access modifiers.
     
-4.  **Experience with C# IDE/Environment**: you should be able to write and run C# programs using an IDE like Visual Studio.
+4. **Experience with C# IDE/Environment**: you should be able to write and run C# programs using an IDE like Visual Studio.
     
 
-If you want to learn more about C#, you can check out my YouTube channel: [CliffTech][1].
+If you want to learn more about C#, you can check out my YouTube channel: [CliffTech](https://www.youtube.com/@CliffTech).
 
 ## Table of Contents
 
--   [Static Classes in C Sharp][2]
+* [Static Classes in C Sharp](#heading-static-classes-in-c-sharp)
     
--   [Sealed Classes in C Sharp][3]
+* [Sealed Classes in C Sharp](#heading-sealed-classes-in-c-sharp)
     
--   [Concrete Classes in C Sharp][4]
+* [Concrete Classes in C Sharp](#heading-concrete-classes-in-c-sharp)
     
--   [Abstract Classes in C Sharp][5]
+* [Abstract Classes in C Sharp](#heading-abstract-classes-in-c-sharp)
     
--   [Singleton Classes in C Sharp][6]
+* [Singleton Classes in C Sharp](#heading-singleton-classes-in-c-sharp)
     
--   [Generic Classes in C Sharp][7]
+* [Generic Classes in C Sharp](#heading-generic-classes-in-c-sharp)
     
--   [Internal Classes in C Sharp][8]
+* [Internal Classes in C Sharp](#heading-internal-classes-in-c-sharp)
     
--   [Nested Classes in C Sharp][9]
+* [Nested Classes in C Sharp](#heading-nested-classes-in-c-sharp)
     
--   [Partial Classes in C Sharp][10]
+* [Partial Classes in C Sharp](#heading-partial-classes-in-c-sharp)
     
--   [Conclusion][11]
+* [Conclusion](#heading-conclusion)
     
 
 The first type of class we’ll discuss is the Static Class. Let’s dive in.
@@ -68,11 +82,11 @@ Unlike regular classes, static classes cannot be instantiated, and they exclusiv
 
 In essence, when we refer to stateless grouping, it implies that there's no need to create an instance to call a static method – you can simply use the class or method name directly. This approach provides a clear and efficient way to manage utility functions, enhancing code organization and accessibility.
 
-### Example of a Static Class in C
+### Example of a Static Class in C#
 
 Here's an example of a static class in C#:
 
-```
+```csharp
 namespace StaticClasses
 {
 // Define a static class
@@ -83,13 +97,13 @@ namespace StaticClasses
         {
             return a + b;
         }
-
+        
         // Static method to subtract two numbers
         public static int Subtract(int a, int b)
         {
             return a - b;
         }
-
+       
        // Static method to multiply two numbers
         public static int Multiply(int a, int b)
         {
@@ -101,11 +115,11 @@ namespace StaticClasses
 
 In this example:
 
--   The `MathUtils` class is defined as `static`, meaning it cannot be instantiated.
+* The `MathUtils` class is defined as `static`, meaning it cannot be instantiated.
     
--   It contains three static methods: `Add`, `Subtract`, and `Multiply`.
+* It contains three static methods: `Add`, `Subtract`, and `Multiply`.
     
--   These methods can be called directly on the `MathUtils` class without creating an instance.
+* These methods can be called directly on the `MathUtils` class without creating an instance.
     
 
 Before you can use this, you need to call it in your `Program.cs`. When you create any C# application, the entry point is `Program.cs`. You’ll need to go there and make sure to call these classes so that you can execute them. This is what we will be doing for the rest of the section.
@@ -114,7 +128,7 @@ Before you can use this, you need to call it in your `Program.cs`. When you crea
 
 Now you can use the static methods defined in the `MathUtils` class as follows:
 
-```
+```csharp
 
  // program.cs
 namespace StaticClasses
@@ -130,7 +144,7 @@ namespace StaticClasses
 
             // Call the static method Multiply from the MathUtils class
             int product = MathUtils.Multiply(5, 3);
-
+            
             // Display the results of the sum method
             Console.WriteLine($"Sum: {sum}"); // Output: 8
             // Display the results of the difference method
@@ -146,36 +160,36 @@ namespace StaticClasses
 
 To decide when to use static classes or methods in C#, consider the following guidelines:
 
-1.  **Use Static Classes when:**
+1. **Use Static Classes when:**
     
-    -   You need a collection of utility or helper methods that do not require any instance data.
+    * You need a collection of utility or helper methods that do not require any instance data.
         
-    -   The methods and properties are stateless and can be accessed globally without creating an object.
+    * The methods and properties are stateless and can be accessed globally without creating an object.
         
-    -   You want to group related functions that are not tied to a specific object state.
+    * You want to group related functions that are not tied to a specific object state.
         
-    -   You need to ensure that the class cannot be instantiated or inherited.
+    * You need to ensure that the class cannot be instantiated or inherited.
         
-2.  **Use Static Methods when:**
+2. **Use Static Methods when:**
     
-    -   You have a class that is mostly instance-based, but you need a few methods that do not depend on instance data.
+    * You have a class that is mostly instance-based, but you need a few methods that do not depend on instance data.
         
-    -   The method performs a task that is independent of any object state and can be executed without an instance.
+    * The method performs a task that is independent of any object state and can be executed without an instance.
         
-    -   You want to provide a utility function within a class that can be accessed without creating an object of that class.
+    * You want to provide a utility function within a class that can be accessed without creating an object of that class.
         
 
 By using static classes and methods appropriately, you can enhance code organization, improve performance by avoiding unnecessary object creation, and ensure that certain functionalities are easily accessible throughout your application.
 
-### Key Points to Remember About Static Classes in C
+### Key Points to Remember About Static Classes in C#
 
--   **Cannot be Instantiated**: You cannot create objects from a static class.
+* **Cannot be Instantiated**: You cannot create objects from a static class.
     
--   **Only static members**: Static classes can only have static members. They do not support instance methods or fields.
+* **Only static members**: Static classes can only have static members. They do not support instance methods or fields.
     
--   **Sealed by default**: Static classes are automatically sealed, so they cannot be inherited.
+* **Sealed by default**: Static classes are automatically sealed, so they cannot be inherited.
     
--   **Utility and helper methods**: Static classes are usually used to group related utility or helper methods that don't need an object state.
+* **Utility and helper methods**: Static classes are usually used to group related utility or helper methods that don't need an object state.
     
 
 Static classes help organize and access utility methods and properties clearly and simply, making them important for creating efficient and maintainable code.
@@ -186,11 +200,11 @@ Sealed classes are a special type of class in C# that cannot be inherited. You c
 
 By sealing a class, you ensure that it cannot be modified or extended, making it useful for scenarios where you want to provide a specific implementation without allowing further alterations.
 
-### Example of a Sealed Class in C
+### Example of a Sealed Class in C#
 
 Here's an example of a sealed class in C#:
 
-```
+```csharp
 namespace SealedClasses
 {
 
@@ -215,7 +229,7 @@ namespace SealedClasses
             Width = width;
             Height = height;
         }
-
+       
        // Implement the CalculateArea method
         public override double CalculateArea()
         {
@@ -227,18 +241,18 @@ namespace SealedClasses
 
 In this example:
 
--   The `Shape` class is an abstract base class with an abstract method `CalculateArea()`.
+* The `Shape` class is an abstract base class with an abstract method `CalculateArea()`.
     
--   The `Rectangle` class inherits from `Shape` and provides an implementation for `CalculateArea()`.
+* The `Rectangle` class inherits from `Shape` and provides an implementation for `CalculateArea()`.
     
--   The `Rectangle` class is sealed, which means it cannot be inherited from. This ensures that the class's implementation cannot be modified or extended.
+* The `Rectangle` class is sealed, which means it cannot be inherited from. This ensures that the class's implementation cannot be modified or extended.
     
 
 ### How to Use the Sealed Rectangle Class in the Program.cs
 
 Here's how you can use the `Rectangle` class in a `Program.cs` file:
 
-```
+```csharp
 namespace SealedClasses
 {
     class Program
@@ -260,31 +274,31 @@ In this example, the `Rectangle` class is sealed to ensure that its behavior can
 
 Sealed classes are particularly useful in the following contexts:
 
-1.  **Framework development**: When developing frameworks or libraries, you might use sealed classes to lock down certain classes that are not intended to be extended by users. This helps maintain control over the framework's behavior and ensures that users cannot introduce bugs or inconsistencies by extending these classes.
+1. **Framework development**: When developing frameworks or libraries, you might use sealed classes to lock down certain classes that are not intended to be extended by users. This helps maintain control over the framework's behavior and ensures that users cannot introduce bugs or inconsistencies by extending these classes.
     
-2.  **Preventing inheritance**: If a class is designed to be a specific implementation with no need for further customization or extension, sealing it prevents other developers from creating subclasses that might alter its intended functionality.
+2. **Preventing inheritance**: If a class is designed to be a specific implementation with no need for further customization or extension, sealing it prevents other developers from creating subclasses that might alter its intended functionality.
     
-3.  **Finalizing class design**: When a class has reached a point where its design is considered complete and no further changes or extensions are anticipated, sealing it can signal to other developers that the class should be used as-is.
+3. **Finalizing class design**: When a class has reached a point where its design is considered complete and no further changes or extensions are anticipated, sealing it can signal to other developers that the class should be used as-is.
     
-4.  **Avoiding overriding**: In scenarios where overriding methods could lead to incorrect behavior or security issues, sealing the class ensures that its methods cannot be overridden, preserving the original logic and functionality.
+4. **Avoiding overriding**: In scenarios where overriding methods could lead to incorrect behavior or security issues, sealing the class ensures that its methods cannot be overridden, preserving the original logic and functionality.
     
 
 ### Key Points to Remember About Sealed Classes
 
--   **No inheritance**: Sealed classes cannot be inherited, ensuring their behavior stays the same.
+* **No inheritance**: Sealed classes cannot be inherited, ensuring their behavior stays the same.
     
--   **Prevent modification**: They prevent further inheritance, avoiding accidental changes or extensions.
+* **Prevent modification**: They prevent further inheritance, avoiding accidental changes or extensions.
     
--   **Immutable and specific**: Sealed classes are useful for creating immutable classes or when you need a specific, unchangeable implementation.
+* **Immutable and specific**: Sealed classes are useful for creating immutable classes or when you need a specific, unchangeable implementation.
     
 
 ### Sealed Classes vs. Static Classes
 
 You might wonder why we need sealed classes if static classes are already sealed. The key differences are:
 
--   **Static Classes** are sealed and cannot be instantiated. They are used for grouping static methods and properties.
+* **Static Classes** are sealed and cannot be instantiated. They are used for grouping static methods and properties.
     
--   **Sealed Classes** can be instantiated but cannot be inherited. This allows for creating objects that are protected from further subclassing.
+* **Sealed Classes** can be instantiated but cannot be inherited. This allows for creating objects that are protected from further subclassing.
     
 
 Sealed classes offer flexibility in creating classes that can be used directly without the risk of modification through inheritance.
@@ -297,12 +311,12 @@ Unlike `abstract classes` or `interfaces`, concrete classes have complete implem
 
 A concrete class is not abstract. It includes full implementations of all its members—methods, properties, fields, and so on—and can be used to create objects. These classes represent real-world entities or concepts in your application, encapsulating both data (stored in fields or properties) and behavior (defined by methods).
 
-### Example: Defining a Concrete Class in C
+### Example: Defining a Concrete Class in C#
 
 Here's a simple example of a concrete class in C#:
 
-```
-
+```csharp
+ 
 
 // Define a concrete class
 public class Animal
@@ -329,7 +343,7 @@ In this example, the `Animal` class is a concrete class with a method `Speak` th
 
 Here's how you can use the `Dog` class in a `Program.cs` file:
 
-```
+```csharp
 
 // program.cs
 class Program
@@ -338,10 +352,10 @@ class Program
     {
         // Create an instance of the Dog class
         Dog myDog = new Dog();
-
+        
         // Call the inherited method
         myDog.Speak(); // Output: The animal makes a sound.
-
+        
         // Call the method defined in the Dog class
         myDog.Bark();  // Output: The dog barks.
     }
@@ -354,7 +368,7 @@ In this example, we create an instance of the `Dog` class called `myDog`. We fir
 
 To illustrate the practical application of concrete classes, consider the following example of a `Product` class:
 
-```
+```csharp
 // Define a concrete class for a product
 public class Product
 {
@@ -376,7 +390,7 @@ This `Product` class is a concrete class with properties `Name` and `Price` to s
 
 Here's how you can use the `Product` class:
 
-```
+```csharp
 class Program
 {
     static void Main(string[] args)
@@ -387,7 +401,7 @@ class Program
             Name = "Laptop",
             Price = 1299.99m
         };
-
+        
         // Display product information
         product.DisplayInfo(); // Output: Product: Laptop, Price: $1,299.99
     }
@@ -398,11 +412,11 @@ In this scenario, the `Product` class is used to create a `product` object. The 
 
 ### Key Points to Remember About Concrete Classes
 
--   **Instantiable**: Concrete classes can be instantiated, allowing you to create objects that represent specific entities or concepts in your application.
+* **Instantiable**: Concrete classes can be instantiated, allowing you to create objects that represent specific entities or concepts in your application.
     
--   **Complete implementation**: Concrete classes provide full implementations of all methods and properties, unlike abstract classes or interfaces.
+* **Complete implementation**: Concrete classes provide full implementations of all methods and properties, unlike abstract classes or interfaces.
     
--   **Common use**: They are the most common type of class in C#, used to define objects with specific behavior and data.
+* **Common use**: They are the most common type of class in C#, used to define objects with specific behavior and data.
     
 
 Concrete classes are essential for C# development, enabling you to define and work with objects that model real-world entities within your applications. Understanding how to effectively use concrete classes is crucial for building robust, object-oriented software.
@@ -427,7 +441,7 @@ But abstract classes cannot be instantiated directly. They must be inherited by 
 
 Let's explore a real-world example to illustrate the concept of abstract classes and abstract methods in C#.
 
-```
+```csharp
 using System;
 
 // define an abstract class
@@ -531,7 +545,7 @@ The `SavingsAccount` and `CheckingAccount` classes inherit from `BankAccount` an
 
 Let's see how we can use the `SavingsAccount` and `CheckingAccount` classes in a `Program.cs` file.
 
-```
+```csharp
 namespace AbstractClasses
 {
     class Program
@@ -542,17 +556,17 @@ namespace AbstractClasses
             BankAccount savings = new SavingsAccount("SA123", 1000, 1.5m);
             // Create a checking account
             BankAccount checking = new CheckingAccount("CA123", 500, 200);
-
+           
             // Deposit and withdraw from the savings account
             savings.DisplayAccountInfo();
-
+          
            // Deposit and withdraw from the checking account
             savings.Deposit(200);
 
             savings.Withdraw(100);
             // Display the updated account information
             savings.DisplayAccountInfo();
-
+            
             checking.DisplayAccountInfo();
 
              // Deposit and withdraw from the checking account
@@ -580,7 +594,7 @@ namespace AbstractClasses
 
 This program will produce the following output:
 
-```
+```markdown
 Savings Account SA123 - Balance: 1000, Interest Rate: 1.5%
 Deposited 200 to Savings Account SA123. New Balance: 1200
 Withdrew 100 from Savings Account SA123. New Balance: 1100
@@ -597,11 +611,11 @@ In this example, the `SavingsAccount` and `CheckingAccount` objects are created,
 
 ### Key Points to Remember About Abstract Classes
 
--   **Cannot be instantiated**: You can't create an instance of an abstract class directly. A subclass must inherit it and provide the implementations for the abstract methods.
+* **Cannot be instantiated**: You can't create an instance of an abstract class directly. A subclass must inherit it and provide the implementations for the abstract methods.
     
--   **Contain abstract methods**: Abstract methods in an abstract class have no body. Any non-abstract class that inherits from the abstract class must implement these methods.
+* **Contain abstract methods**: Abstract methods in an abstract class have no body. Any non-abstract class that inherits from the abstract class must implement these methods.
     
--   **Define common interfaces**: Abstract classes set a common interface for related classes, ensuring they are consistent while allowing different implementations.
+* **Define common interfaces**: Abstract classes set a common interface for related classes, ensuring they are consistent while allowing different implementations.
     
 
 Abstract classes are important in C#. They help enforce a structure across related classes but still allow for specific details. By using abstract classes, you can make your code more organized, easier to maintain, and extend.
@@ -618,7 +632,7 @@ Imagine you have a class responsible for managing a database connection. You don
 
 Let’s now see how you can implement a Singleton class in C#:
 
-```
+```csharp
 // Define a singleton class
 public class Singleton
 {
@@ -663,7 +677,7 @@ The `PrintMessage` method is just a simple example to show that the Singleton in
 
 Now let’s see how you can use this Singleton class in your application:
 
-```
+```csharp
 class Program
 {
     static void Main(string[] args)
@@ -687,7 +701,7 @@ In this example, we retrieve the Singleton instance twice. Because the class is 
 
 You can expand the Singleton pattern to handle more complex scenarios. For example, you could initialize the Singleton instance with configuration data:
 
-```
+```csharp
 public class ConfigurationManager
 {
     private static ConfigurationManager instance;
@@ -723,13 +737,13 @@ Here, `ConfigurationManager` is a Singleton class that loads and manages applica
 
 ### Key Points to Remember About Singleton Classes
 
--   **Single instance**: Singleton classes ensure that only one instance of the class exists in the application.
+* **Single instance**: Singleton classes ensure that only one instance of the class exists in the application.
     
--   **Global access**: Singleton provides a global point of access to the instance, making it easy to use across different parts of your application.
+* **Global access**: Singleton provides a global point of access to the instance, making it easy to use across different parts of your application.
     
--   **Thread safety**: In multi-threaded environments, ensure your Singleton is thread-safe to avoid creating multiple instances.
+* **Thread safety**: In multi-threaded environments, ensure your Singleton is thread-safe to avoid creating multiple instances.
     
--   **Use cases**: Common use cases for Singleton include managing configurations, logging services, and database connections.
+* **Use cases**: Common use cases for Singleton include managing configurations, logging services, and database connections.
     
 
 Singleton classes are a fundamental design pattern in software engineering, offering a simple yet powerful way to manage shared resources. Understanding and correctly implementing Singletons can help you write more efficient and maintainable code.
@@ -748,7 +762,7 @@ Instead of writing two separate classes, you can write one generic stack class t
 
 Let’s take a look at a simple implementation of a generic stack class:
 
-```
+```csharp
 // Define a generic class
 public class Stack<T>
 {
@@ -794,7 +808,7 @@ Because `Stack<T>` is generic, you can use it with any data type, whether it's `
 
 Let’s see how this generic `Stack` class can be used in a program:
 
-```
+```csharp
 class Program
 {
     static void Main(string[] args)
@@ -822,7 +836,7 @@ In this example, we create two instances of the `Stack` class: one that stores i
 
 Let’s take it a step further and extend our `Stack` class to include a method that returns all items as an array:
 
-```
+```csharp
 public T[] ToArray()
 {
     return items.ToArray();
@@ -831,7 +845,7 @@ public T[] ToArray()
 
 Now, you can easily convert the stack’s items into an array:
 
-```
+```csharp
 int[] intArray = intStack.ToArray();
 string[] stringArray = stringStack.ToArray();
 ```
@@ -840,13 +854,13 @@ This extension further showcases the power of generics, allowing the same method
 
 ### Key Points to Remember About Generic Classes
 
--   **Flexibility**: Generic classes can handle any data type, making them adaptable and reusable.
+* **Flexibility**: Generic classes can handle any data type, making them adaptable and reusable.
     
--   **Type safety**: Using type parameters ensures that your code is type-safe, catching errors during compile-time instead of runtime.
+* **Type safety**: Using type parameters ensures that your code is type-safe, catching errors during compile-time instead of runtime.
     
--   **Code reuse**: Generics remove the need to duplicate code for different data types, resulting in cleaner and easier-to-maintain code.
+* **Code reuse**: Generics remove the need to duplicate code for different data types, resulting in cleaner and easier-to-maintain code.
     
--   **Type parameters**: Generic classes use type parameters as placeholders for the actual data types you will use when creating an instance of the class.
+* **Type parameters**: Generic classes use type parameters as placeholders for the actual data types you will use when creating an instance of the class.
     
 
 Generic classes are crucial in C# for building flexible, reusable, and type-safe code. By learning and using generics, you can create more reliable and maintainable applications.
@@ -865,7 +879,7 @@ In a large application, you may have classes that should only be used internally
 
 Let’s consider a scenario where you have a library that processes orders. You might have a class that handles the complex logic of calculating discounts, but you don't want this class to be accessible to users of your library. Instead, you only expose the main `OrderProcessor` class, keeping the discount logic hidden with an internal class.
 
-```
+```csharp
 // Define a public class that uses an internal class
 public class OrderProcessor
 {
@@ -895,7 +909,7 @@ In this example, the `DiscountCalculator` class is marked as `internal`, meaning
 
 Now, let's see how this works in practice:
 
-```
+```csharp
 class Program
 {
     static void Main(string[] args)
@@ -910,11 +924,11 @@ In this example, the `ProcessOrder` method is publicly accessible, but the inter
 
 ### Key Points to Remember About Internal Classes
 
--   **Limited access**: Internal classes can only be accessed within the same assembly, which helps keep your public API simple and focused.
+* **Limited access**: Internal classes can only be accessed within the same assembly, which helps keep your public API simple and focused.
     
--   **Encapsulation**: They are used to hide implementation details, like helper functions or complex logic, that shouldn't be publicly visible.
+* **Encapsulation**: They are used to hide implementation details, like helper functions or complex logic, that shouldn't be publicly visible.
     
--   **Visibility control**: The `internal` access modifier lets you control which classes and members are visible, ensuring only the necessary parts of your code are accessible to other assemblies.
+* **Visibility control**: The `internal` access modifier lets you control which classes and members are visible, ensuring only the necessary parts of your code are accessible to other assemblies.
     
 
 Internal classes are important for managing complex applications, allowing you to control what parts of your code can be accessed from outside your assembly. By hiding details and limiting access, you can keep your codebase clean, easy to maintain, and secure.
@@ -931,21 +945,21 @@ Nested classes are particularly useful when a class is closely tied to the logic
 
 Let’s consider a scenario where we have a class that represents a `Car` and another class that represents a `Engine`. Since the `Engine` class is closely related to the `Car` class and doesn’t make much sense on its own, we can define it as a nested class within `Car`.
 
-```
+```csharp
 // Define a class with a nested class
 public class Car
 {
     // Define private fields
     private string model;
     private Engine carEngine;
-
+  
    // Constructor
     public Car(string model)
     {
         this.model = model;
         carEngine = new Engine();
     }
-
+   
 
     // Method to start the car
     public void StartCar()
@@ -971,7 +985,7 @@ In this example, the `Car` class has a private field `model` and a method `Start
 
 Let’s see how we can use the `Car` class and its nested `Engine` class in a program:
 
-```
+```csharp
 class Program
 {
     static void Main(string[] args)
@@ -990,13 +1004,13 @@ In this example, we create an instance of the `Car` class and call the `StartCar
 
 ### Key Points to Remember About Nested Classes
 
--   **Encapsulation**: Nested classes keep details hidden that shouldn't be seen outside the main class.
+* **Encapsulation**: Nested classes keep details hidden that shouldn't be seen outside the main class.
     
--   **Access to private members**: Nested classes can access private parts of the main class, making them good for helper classes that need to work with the main class's internal parts.
+* **Access to private members**: Nested classes can access private parts of the main class, making them good for helper classes that need to work with the main class's internal parts.
     
--   **Organization**: Use nested classes to keep related classes together, which makes the code cleaner and more organized.
+* **Organization**: Use nested classes to keep related classes together, which makes the code cleaner and more organized.
     
--   **Static or non-static**: Nested classes can be static or non-static. Static nested classes can't access the instance parts of the main class directly, but non-static nested classes can.
+* **Static or non-static**: Nested classes can be static or non-static. Static nested classes can't access the instance parts of the main class directly, but non-static nested classes can.
     
 
 Nested classes are a useful way to organize your code, especially for complex objects with closely related parts. Keeping related classes together makes your code easier to manage and maintain.
@@ -1011,13 +1025,13 @@ By using the `partial` keyword, you can organize your code better, especially wh
 
 Imagine you’re working on a large application where a single class contains hundreds of lines of code. This can become difficult to manage and maintain. By using partial classes, you can divide the class into logical parts, each residing in a separate file. This not only makes the code more readable but also allows multiple developers to work on different parts of the class simultaneously without causing merge conflicts.
 
-### Example: Defining a Partial Class in C
+### Example: Defining a Partial Class in C#
 
 Let’s say we have a class that handles various operations for an employee management system. Instead of putting all methods in one file, we can split them across multiple files using partial classes.
 
 **File 1:** `PartialClass_Methods1.cs`
 
-```
+```csharp
 // Define a partial class
 public partial class EmployeeOperations
 {
@@ -1030,7 +1044,7 @@ public partial class EmployeeOperations
 
 **File 2:** `PartialClass_Methods2.cs`
 
-```
+```csharp
 // Define the other part of the partial class
 public partial class EmployeeOperations
 {
@@ -1047,7 +1061,7 @@ In these examples, the `EmployeeOperations` class is split into two files, each 
 
 Now, let’s use the `EmployeeOperations` class in our `Program.cs` file:
 
-```
+```csharp
 class Program
 {
     static void Main(string[] args)
@@ -1064,11 +1078,11 @@ In this example, the `EmployeeOperations` class, although defined in multiple fi
 
 ### Key Points to Remember About Partial Classes
 
--   **Code organization**: Partial classes help keep large classes organized by splitting them into smaller, focused sections.
+* **Code organization**: Partial classes help keep large classes organized by splitting them into smaller, focused sections.
     
--   **Team collaboration**: Multiple developers can work on different parts of the same class without interfering with each other’s code.
+* **Team collaboration**: Multiple developers can work on different parts of the same class without interfering with each other’s code.
     
--   **Generated code**: Often used with auto-generated code, where part of the class is generated by a tool, and the rest is written manually.
+* **Generated code**: Often used with auto-generated code, where part of the class is generated by a tool, and the rest is written manually.
     
 
 Partial classes are a powerful feature in C# that allows for better code management, especially in large-scale applications. By breaking down a class into logical components, you can maintain clean, readable, and maintainable code.
@@ -1078,15 +1092,3 @@ Partial classes are a powerful feature in C# that allows for better code managem
 Classes are the building blocks of object-oriented programming in C#. By understanding the different types of classes—abstract, static, sealed, concrete, and singleton—you can create well-structured, maintainable, and efficient code.
 
 Whether you’re designing utility classes, defining abstract interfaces, or encapsulating complex logic, classes play a crucial role in shaping your application’s architecture.
-
-[1]: https://www.youtube.com/@CliffTech
-[2]: #heading-static-classes-in-c-sharp
-[3]: #heading-sealed-classes-in-c-sharp
-[4]: #heading-concrete-classes-in-c-sharp
-[5]: #heading-abstract-classes-in-c-sharp
-[6]: #heading-singleton-classes-in-c-sharp
-[7]: #heading-generic-classes-in-c-sharp
-[8]: #heading-internal-classes-in-c-sharp
-[9]: #heading-nested-classes-in-c-sharp
-[10]: #heading-partial-classes-in-c-sharp
-[11]: #heading-conclusion

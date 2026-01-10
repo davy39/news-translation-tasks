@@ -1,0 +1,120 @@
+---
+title: JavaScript Booleans Explained – How to use Booleans in JavaScript
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2020-02-01T00:00:00.000Z'
+originalURL: https://freecodecamp.org/news/booleans-in-javascript-explained-how-to-use-booleans-in-javascript
+coverImage: https://cdn-media-2.freecodecamp.org/w1280/5f9c9d04740569d1a4ca3574.jpg
+tags:
+- name: JavaScript
+  slug: javascript
+- name: General Programming
+  slug: programming
+- name: toothbrush
+  slug: toothbrush
+seo_title: null
+seo_desc: 'Boolean
+
+  Booleans are a primitive datatype commonly used in computer programming languages.
+  By definition, a boolean has two possible values: true or false.
+
+  In JavaScript, there is often implicit type coercion to boolean. If for example
+  you have an if...'
+---
+
+## **Boolean**
+
+Booleans are a primitive datatype commonly used in computer programming languages. By definition, a boolean has two possible values: `true` or `false`.
+
+In JavaScript, there is often implicit type coercion to boolean. If for example you have an if statement which checks a certain expression, that expression will be coerced to a boolean:
+
+```javascript
+const a = 'a string';
+if (a) {
+  console.log(a); // logs 'a string'
+}
+```
+
+There are only a few values that will be coerced to false:
+
+* false (not really coerced as it already is false)
+* null
+* undefined
+* NaN
+* 0
+* "" (empty string)
+
+All other values will be coerced to true. When a value is coerced to a boolean, we also call that either ‘falsy’ or ‘truthy’.
+
+One way that type coercion is used is with the use of the or (`||`) and and (`&&`) operators:
+
+```javascript
+const a = 'word';
+const b = false;
+const c = true;
+const d = 0
+const e = 1
+const f = 2
+const g = null
+
+console.log(a || b); // 'word'
+console.log(c || a); // true
+console.log(b || a); // 'word'
+console.log(e || f); // 1
+console.log(f || e); // 2
+console.log(d || g); // null
+console.log(g || d); // 0
+console.log(a && c); // true
+console.log(c && a); // 'word'
+```
+
+As you can see, the _or_ operator checks the first operand. If this is true or truthy, it returns it immediately (which is why we get ‘word’ in the first case & true in the second case). If it is not true or truthy, it returns the second operand (which is why we get ‘word’ in the third case).
+
+With the and operator it works in a similar way, but for ‘and’ to be true, both operands need to be truthy. So it will always return the second operand if both are true/truthy, otherwise it will return false. That is why in the fourth case we get true and in the last case we get ‘word’.
+
+## **The Boolean Object**
+
+There is also a native JavaScript object that wraps around a value. The value passed as the first parameter is converted to a boolean value, if necessary. If value is omitted, 0, -0, null, false, NaN, undefined, or the empty string (""), the object has an initial value of false. All other values, including any object or the string “false”, create an object with an initial value of true.
+
+Do not confuse the primitive Boolean values true and false with the true and false values of the Boolean object.
+
+## **More Details**
+
+Any object whose value is not undefined or null, including a Boolean object whose value is false, evaluates to true when passed to a conditional statement. If true, this will execute the function. For example, the condition in the following if statement evaluates to true:
+
+```javascript
+const x = new Boolean(false);
+if (x) {
+  // this code is executed
+}
+```
+
+This behavior does not apply to Boolean primitives. For example, the condition in the following if statement evaluates to false:
+
+```javascript
+const x = false;
+if (x) {
+  // this code is not executed
+}
+```
+
+Do not use a Boolean object to convert a non-boolean value to a boolean value. Instead, use Boolean as a function to perform this task:
+
+```javascript
+const x = Boolean(expression);     // preferred
+const x = new Boolean(expression); // don't use
+```
+
+If you specify any object, including a Boolean object whose value is false, as the initial value of a Boolean object, the new Boolean object has a value of true.
+
+```javascript
+const myFalse = new Boolean(false);   // initial value of false
+const g = new Boolean(myFalse);       // initial value of true
+const myString = new String('Hello'); // string object
+const s = new Boolean(myString);      // initial value of true
+```
+
+Do not use a Boolean object in place of a Boolean primitive.
+

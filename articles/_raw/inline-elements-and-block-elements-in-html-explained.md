@@ -1,15 +1,34 @@
 ---
 title: Inline Elements and Block Elements in HTML - Explained
-date: 2024-09-15T04:03:36.909Z
-authorURL: ""
-originalURL: https://www.freecodecamp.org/news/inline-elements-and-block-elements-in-html-explained/
-posteditor: ""
-proofreader: ""
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2020-02-08T23:08:00.000Z'
+originalURL: https://freecodecamp.org/news/inline-elements-and-block-elements-in-html-explained
+coverImage: https://cdn-media-2.freecodecamp.org/w1280/5f9c9cad740569d1a4ca338e.jpg
+tags:
+- name: HTML
+  slug: html
+- name: HTML5
+  slug: html5
+- name: toothbrush
+  slug: toothbrush
+seo_title: null
+seo_desc: 'Block and Inline Elements
+
+  Let''s understand block and inline elements using the below examples:
+
+  Code Sample with Output:
+
+
+  Block-Level Element:
+
+  A Block-level element occupies the entire space of the parent (container) such as
+  <div> and <p> in the examp...'
 ---
 
 ## **Block and Inline Elements**
-
-<!-- more -->
 
 Let's understand block and inline elements using the below examples:
 
@@ -39,13 +58,11 @@ Some of the **inline elements** are `<a>`,`<span>`,`<img>`,`<code>`,`<cite>`,`<b
 
 ### Changes In HTML5
 
-While an understanding of block and inline elements is still relevant, you should be aware that these terms were defined in prior versions of the HTML specification.
+While an understanding of block and inline elements is still relevant, you should be aware that these terms were defined in prior versions of the HTML specification. 
 
-In HTML5, a more complex set of “content categories” replaces block-level and inline elements. Block-level elements are largely placed in the “flow content” category in HTML5, while inline elements correspond to the “phrasing content” category.
+In HTML5, a more complex set of “content categories” replaces block-level and inline elements. Block-level elements are largely placed in the “flow content” category in HTML5, while inline elements correspond to the “phrasing content” category. 
 
-For more information on the new content categories in HTML5, including flow content and phrasing content, refer to the [Content categories page on the Mozilla Developer Network.][1]
+For more information on the new content categories in HTML5, including flow content and phrasing content, refer to the [Content categories page on the Mozilla Developer Network.](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories)
 
-Read more about HTML [here][2].
+Read more about HTML [here](https://guide.freecodecamp.org/html).
 
-[1]: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories
-[2]: https://guide.freecodecamp.org/html

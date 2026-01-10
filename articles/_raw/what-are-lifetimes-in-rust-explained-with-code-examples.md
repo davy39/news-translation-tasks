@@ -1,16 +1,26 @@
 ---
 title: What are Lifetimes in Rust? Explained with Code Examples
-date: 2024-10-21T03:39:49.933Z
+subtitle: ''
 author: Oduah Chigozie
-authorURL: https://www.freecodecamp.org/news/author/GhoulKingR/
-originalURL: https://www.freecodecamp.org/news/what-are-lifetimes-in-rust-explained-with-code-examples/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2024-09-06T20:03:57.375Z'
+originalURL: https://freecodecamp.org/news/what-are-lifetimes-in-rust-explained-with-code-examples
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1725652969333/ba8a3fb6-3ac8-40e0-91e6-3e32e7f7b4b4.jpeg
+tags:
+- name: Rust
+  slug: rust
+- name: rust lang
+  slug: rust-lang
+seo_title: null
+seo_desc: 'Lifetimes are fundamental mechanisms in Rust. There''s a very high chance
+  you''ll need to work with lifetimes in any Rust project that has any sort of complexity.
+
+  Even though they are important to Rust projects, lifetimes can be quite tricky to
+  wrap yo...'
 ---
 
 Lifetimes are fundamental mechanisms in Rust. There's a very high chance you'll need to work with lifetimes in any Rust project that has any sort of complexity.
-
-<!-- more -->
 
 Even though they are important to Rust projects, lifetimes can be quite tricky to wrap your head around. So I created this guide to provide more clarity on what they are and when you should use them.
 
@@ -18,16 +28,16 @@ Even though they are important to Rust projects, lifetimes can be quite tricky t
 
 To get the most out of this tutorial, you'll need the following:
 
--   At least beginner-level familiarity with Rust: This tutorial doesn't help with learning how to code in Rust. It only helps with understanding lifetimes in Rust and how they work
+* At least beginner-level familiarity with Rust: This tutorial doesn't help with learning how to code in Rust. It only helps with understanding lifetimes in Rust and how they work
     
--   Familiarity with generics: Generics in Rust work identically to how they do in popular programming languages. Knowledge of how generics work in any language would be helpful.
+* Familiarity with generics: Generics in Rust work identically to how they do in popular programming languages. Knowledge of how generics work in any language would be helpful.
     
--   Knowing how the borrow checker works isn't as much a requirement as the last two above, but it would be helpful. Knowledge of how lifetimes work also helps in understanding how the borrow checker works.
+* Knowing how the borrow checker works isn't as much a requirement as the last two above, but it would be helpful. Knowledge of how lifetimes work also helps in understanding how the borrow checker works.
     
 
 ## So, What are Lifetimes in Rust?
 
-For Rust's [borrow checker][1] to ensure safety throughout your code, it needs to know how long all the data in the program will live during its execution. This becomes difficult to do in certain situations, and those situations are where you need to use explicit lifetime annotations.
+For Rust's [borrow checker](https://doc.rust-lang.org/rust-by-example/scope/borrow.html) to ensure safety throughout your code, it needs to know how long all the data in the program will live during its execution. This becomes difficult to do in certain situations, and those situations are where you need to use explicit lifetime annotations.
 
 Lifetimes in Rust are mechanisms for ensuring that all borrows that occur within your code are valid. A variable's lifetime is how long it lives within the program's execution, starting from when it's initialized and ending when it's destroyed in the program.
 
@@ -35,7 +45,7 @@ The borrow checker can detect the lifetimes of variables in many cases. But in c
 
 The syntax for explicit lifetime annotations is a single quote followed by a set of characters for identification (for example, `'static`, `'a`) as in:
 
-```
+```rust
 max<'a>
 ```
 
@@ -43,7 +53,7 @@ The lifetime annotation indicates that `max` should live at most as long as `'a`
 
 Using multiple lifetimes follows the same syntax:
 
-```
+```rust
 max<'a, 'b>
 ```
 
@@ -51,7 +61,7 @@ In this case, the lifetime annotations indicate that `max` should live at most a
 
 Explicit lifetime annotations are handled similarly to how generics are. Let's take a look at an example:
 
-```
+```rust
 fn max<'a>(s1: &'a str, s2: &'a str) -> &'a str {
     // return the longest string out of the two
 }
@@ -65,7 +75,7 @@ A Rust project has many cases that would require explicit lifetime annotations, 
 
 A function only needs an explicit lifetime annotation when it returns a reference from any of its arguments. Let's take an example:
 
-```
+```rust
 fn max<'a>(s1: &'a str, s2: &'a str) -> &'a str {
     if s1.len() > s2.len() {
         s1
@@ -77,7 +87,7 @@ fn max<'a>(s1: &'a str, s2: &'a str) -> &'a str {
 
 If you remove the lifetime annotations, you'll get an LSP (Language Server Protocol) warning to include the lifetime annotations. If you ignore LSP's warning message and compile the code, you'll get the same message as a compiler error. For example:
 
-```
+```rust
 fn max(s1: &str, s2: &str) -> &str {
     if s1.len() > s2.len() {
         s1
@@ -109,7 +119,7 @@ error: could not compile `lifetime-test` (bin "lifetime-test") due to 1 previous
 
 On the other hand, a function doesn't need explicit lifetimes if it isn't returning a reference in its arguments. For example:
 
-```
+```rust
 fn print_longest(s1: &str, s2: &str) {
     if s1.len() > s2.len() {
         println!("{s1} is longer than {s2}")
@@ -121,7 +131,7 @@ fn print_longest(s1: &str, s2: &str) {
 
 A function returning a different value doesn't need explicit lifetime annotations either:
 
-```
+```rust
 fn join_strs(s1: &str, s2: &str) -> String {
     let mut joint_string = String::from(s1);
     joint_string.push_str(s2);
@@ -135,7 +145,7 @@ You only need to specify lifetimes if a function returns a reference from one of
 
 Structs require explicit lifetime annotations when any of their fields are references. This allows the borrow checker to ensure that the references in the struct's fields live longer than the struct. For example:
 
-```
+```rust
 struct Strs<'a, 'b> {
     x: &'a str,
     y: &'b str,
@@ -144,7 +154,7 @@ struct Strs<'a, 'b> {
 
 Without the lifetime annotations, you'll get a similar LSP and compiler error message to the one in the previous section:
 
-```
+```rust
 struct OtherStruct {
     x: &str,
     y: &str,
@@ -192,7 +202,7 @@ Lifetime annotations concerning methods can be done as annotations to standalone
 
 Annotating lifetimes on standalone methods is identical to annotating lifetimes in functions:
 
-```
+```rust
 impl Struct {
     fn max<'a>(self: &Self, s1: &'a str, s2: &'a str) -> &'a str {
         if s1.len() > s2.len() {
@@ -208,7 +218,7 @@ impl Struct {
 
 Writing explicit lifetime annotations for `impl` blocks is required if the struct it is associated with has lifetime annotations in its definition. This is the syntax for writing `impl` blocks with explicit lifetime annotations:
 
-```
+```rust
 struct Struct<'a> {
 }
 
@@ -218,7 +228,7 @@ impl<'a> Struct<'a> {
 
 This allows any method you write in the `impl` block to return a reference from `Struct`. For example:
 
-```
+```rust
 struct Strs<'a> {
     x: &'a str,
     y: &'a str,
@@ -241,7 +251,7 @@ Lifetime annotations in traits are dependent on the methods that the trait defin
 
 Let's look at one example. A method inside a trait definition can use explicit lifetime annotations as a standalone method, and the trait definition won't require explicit lifetime annotations. Like so:
 
-```
+```rust
 trait Max {
     fn longest_str<'a>(s1: &'a str, s2: &'a str) -> &'a str;
 }
@@ -259,7 +269,7 @@ impl<'a> Max for Struct<'a> {
 
 If a trait method requires references from the struct its associated with, the trait's definition would require explicit lifetime annotations. For example:
 
-```
+```rust
 trait Max<'a> {
     fn max(self: &Self) -> &'a str;
 }
@@ -267,7 +277,7 @@ trait Max<'a> {
 
 Which can be implemented this way:
 
-```
+```rust
 struct Strs<'a> {
     x: &'a str,
     y: &'a str,
@@ -292,7 +302,7 @@ impl<'a> Max<'a> for Strs<'a> {
 
 Similar to structs, enums need explicit lifetime annotations if any of their fields are references. For example:
 
-```
+```rust
 enum Either<'a> {
     Str(String),
     Ref(&'a String),
@@ -307,7 +317,7 @@ In many Rust projects, you'll likely have encountered variables that are `'stati
 
 Variables with `'static` lifetimes can be created at runtime. But they can't be dropped, only coerced into shorter lifetimes. For example:
 
-```
+```rust
 // The lifetime annotation 'a is the shorter lifetime of the
 // two arguments s1 and s2
 fn max<'a>(s1: &'a str, s2: &'a str) -> &'a str {
@@ -320,10 +330,10 @@ fn max<'a>(s1: &'a str, s2: &'a str) -> &'a str {
 
 fn main() {
     let first = "First string"; // Longer lifetime
-
+    
     {
         let second = "Second string"; // Shorter lifetime
-
+        
         // In the max function, the lifetime of first is
         // coerced into the lifetime of second
         println!("The biggest of {} and {} is {}", first, second, max(first, second));
@@ -335,13 +345,13 @@ String literals are examples of values with `'static` lifetimes. They are also s
 
 Rust allows you to declare static variables with the `static` keyword, using this syntax:
 
-```
+```rust
 static IDENTIFIER: &'static str = "value";
 ```
 
 Static variables can be declared in any scope, including the global scope. This means that you can use static variables as global variables. For example:
 
-```
+```rust
 static FIRST_NAME: &'static str = "John";
 static LAST_NAME: &'static str = "Doe";
 
@@ -353,7 +363,7 @@ fn main() {
 
 Static variables can also be mutable or immutable. But working with mutable static variables is only allowed in `unsafe` blocks because they're unsafe.
 
-```
+```rust
 static mut FIRST_NAME: &'static str = "John";
 static LAST_NAME: &'static str = "Doe";
 
@@ -378,5 +388,3 @@ Explicit lifetime annotations are those `'a`, `'b`, and `'static` things you see
 In this guide, you learned about explicit lifetime annotations and saw some examples of how to use them. I it gave you some clarity on the topic, and helped you understand lifetimes better.
 
 Thanks for reading!
-
-[1]: https://doc.rust-lang.org/rust-by-example/scope/borrow.html

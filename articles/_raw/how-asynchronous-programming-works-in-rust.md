@@ -1,17 +1,30 @@
 ---
-title: How Asynchronous Programming Works in Rust – Futures and Async/Await
-  Explained with Examples
-date: 2024-10-21T03:41:51.177Z
+title: How Asynchronous Programming Works in Rust – Futures and Async/Await Explained
+  with Examples
+subtitle: ''
 author: Oduah Chigozie
-authorURL: https://www.freecodecamp.org/news/author/GhoulKingR/
-originalURL: https://www.freecodecamp.org/news/how-asynchronous-programming-works-in-rust/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2024-08-15T15:18:18.081Z'
+originalURL: https://freecodecamp.org/news/how-asynchronous-programming-works-in-rust
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1723746256888/b046d857-161c-41be-96d0-1c05b1e448b8.jpeg
+tags:
+- name: Rust
+  slug: rust
+- name: async/await
+  slug: asyncawait
+- name: asynchronous
+  slug: asynchronous
+seo_title: null
+seo_desc: 'If you''re familiar with languages like JavaScript and Python, you may
+  have heard about asynchronous programming. And perhaps you''re wondering how it
+  works in Rust.
+
+  In this article, I''ll give you a simple overview of how asynchronous programming
+  works...'
 ---
 
 If you're familiar with languages like JavaScript and Python, you may have heard about asynchronous programming. And perhaps you're wondering how it works in Rust.
-
-<!-- more -->
 
 In this article, I'll give you a simple overview of how asynchronous programming works in Rust. You'll learn about futures as well as `async`/`.await`.
 
@@ -41,7 +54,7 @@ Futures are traits, with a `poll` state that is either `Poll::Pending` to signif
 
 Futures are lazy. They run when you `.await` them (we'll look into how to `.await` them in the next section). `.await`ing a future pauses the execution of an asynchronous thread, and begins running its task. At this point the result of the `poll` method is `Poll::Pending`. When the future is done with its task, `poll`'s state will become `Poll::Ready`, and the future will allow it's thread to proceed.
 
-If you want to get more into the technical details about Futures, you can check out [the documentation][1].
+If you want to get more into the technical details about Futures, you can check out [the documentation](https://rust-lang.github.io/async-book/02_execution/01_chapter.html).
 
 ## async/.await in Rust
 
@@ -49,7 +62,7 @@ If you want to get more into the technical details about Futures, you can check 
 
 Let's take a look at an example:
 
-```
+```rust
 async fn add(a: u8, b: u8) -> u8 {
     a + b
 }
@@ -76,14 +89,14 @@ In this section, we’ll look at two ways solve this issue. The two ways to do t
 
 To install `tokio` in your project, add this line to its `Cargo.toml`:
 
-```
+```ini
 [dependencies]
 tokio = { version = "1", features = ["full"] }
 ```
 
 After adding the line, you can write your `main` functions like this:
 
-```
+```rust
 async fn add(a: u8, b: u8) -> u8 {
     a + b
 }
@@ -103,14 +116,14 @@ async fn main() {
 
 To install `futures` in your project, add this line to its `Cargo.toml`:
 
-```
+```ini
 [dependencies]
 futures = "0.3"
 ```
 
 After installing the library, you can do something like this:
 
-```
+```rust
 use futures::executor::block_on;
 
 async fn add(a: u8, b: u8) -> u8 {
@@ -134,5 +147,3 @@ Asynchronous programming allows you to run operations in parallel and with less 
 While this article should help you become familiar with the basics asynchronous programming in Rust, it’s still just an overview. There are some cases where you'll need to use other constructs in Rust like Pinning, Arcs, and so on.
 
 If you have any questions or thoughts, feel free to reach out to me. Thanks for reading!
-
-[1]: https://rust-lang.github.io/async-book/02_execution/01_chapter.html

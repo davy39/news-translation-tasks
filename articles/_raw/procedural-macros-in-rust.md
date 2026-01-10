@@ -1,89 +1,99 @@
 ---
 title: Procedural Macros in Rust – A Handbook for Beginners
-date: 2024-09-04T15:52:15.042Z
+subtitle: ''
 author: Anshul Sanghi
-authorURL: https://www.freecodecamp.org/news/author/anshulsanghi/
-originalURL: https://www.freecodecamp.org/news/procedural-macros-in-rust/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2024-04-24T17:49:17.000Z'
+originalURL: https://freecodecamp.org/news/procedural-macros-in-rust
+coverImage: https://www.freecodecamp.org/news/content/images/2024/04/Procedural-Macros-in-Rust-Cover--1-.png
+tags:
+- name: handbook
+  slug: handbook
+- name: Rust
+  slug: rust
+seo_title: null
+seo_desc: 'In this handbook, you''ll learn about procedural macros in Rust, and what
+  purposes they serve. You''ll also learn how to write your own procedural macros
+  with both hypothetical and real-world examples.
+
+  This guide assumes that you''re familiar with Rust ...'
 ---
 
 In this handbook, you'll learn about procedural macros in Rust, and what purposes they serve. You'll also learn how to write your own procedural macros with both hypothetical and real-world examples.
 
-<!-- more -->
-
-This guide assumes that you're familiar with Rust and its basic concepts, such as data-types, iterators, and traits. If you need to establish or review your Rust basics, [check out this interactive course][1].
+This guide assumes that you're familiar with Rust and its basic concepts, such as data-types, iterators, and traits. If you need to establish or review your Rust basics, [check out this interactive course](https://www.freecodecamp.org/news/rust-in-replit/).
 
 You don't need any prior knowledge of macros, as this article covers everything from the ground up.
 
 ## Table of Contents
 
-1.  [What are Macros in Rust?][2]
-    1.  [Types of Macros in Rust][3]
-    2.  [Types of Procedural Macros][4]
-2.  [Prerequisites][5]
-    1.  [Helpful Dependencies][6]
-3.  [How to Write a Simple Derive Macro][7]
-    1.  [The `IntoStringHashMap` Derive Macro][8]
-    2.  [How to Declare a Derive Macro][9]
-    3.  [How to Parse Macro Input][10]
-    4.  [How to Ensure a Struct Target for the Macro][11]
-    5.  [How to Build the Output Code][12]
-    6.  [How to Use Your Derive Macro][13]
-    7.  [How to Improve Our Implementation][14]
-4.  [A More Elaborate Derive macro][15]
-    1.  [The `DeriveCustomModel` Macro][16]
-    2.  [How to Separate Implementation From Declaration][17]
-    3.  [How to Parse Derive Macro Arguments][18]
-    4.  [How to Implement `DeriveCustomModel`][19]
-    5.  [How to Generate Each Custom Model][20]
-    6.  [How to Use Your `DeriveCustomModal` Macro][21]
-5.  [A Simple Attribute Macro][22]
-    1.  [The `log_duration` Attribute][23]
-    2.  [How to Declare an Attribute Macro][24]
-    3.  [How to Implement the `log_duration` Attribute Macro][25]
-    4.  [How to Use Your `log_duration` Macro][26]
-6.  [A More Elaborate Attribute macro][27]
-    1.  [The `cached_fn` Attribute][28]
-    2.  [How to Implement the `cached_fn` Attribute Macro][29]
-    3.  [`cached_fn` Attribute Arguments][30]
-    4.  [How to Use the `cached_fn` Macro][31]
-7.  [A Simple Function-like Macro][32]
-    1.  [The `constant_string` Macro][33]
-    2.  [How to Declare a Function-like Macro][34]
-    3.  [How to Implement the `constant_string` Macro][35]
-    4.  [How to Use the `constant_string` Macro][36]
-8.  [A More Elaborate Function-like Macro][37]
-    1.  [The `hash_mapify` Macro][38]
-    2.  [How to Implement the `hash_mapify` Macro][39]
-    3.  [How to Parse `hash_mapify`'s Input][40]
-    4.  [How to Generate Output Code][41]
-    5.  [How to Convert Custom Data Types To Output Tokens][42]
-    6.  [How to Use the `hash_mapify` Macro][43]
-9.  [Beyond Writing Macros][44]
-    1.  [Helpful Crates/Tools][45]
-10.  [Downsides of Macros][46]
-    1.  [Debugging (or lack thereof)][47]
-    2.  [Compile Time Costs][48]
-    3.  [Lack of auto-complete and code checks][49]
-    4.  [Where do we draw the line?][50]
-11.  [Wrapping Up][51]
-    1.  [Enjoying my work?][52]
+1. [What are Macros in Rust?](#heading-what-are-macros-in-rust)
+    1. [Types of Macros in Rust](#heading-types-of-macros-in-rust)
+    2. [Types of Procedural Macros](#heading-types-of-procedural-macros)
+2. [Prerequisites](#heading-prerequisites)
+    1. [Helpful Dependencies](#heading-helpful-dependencies)
+3. [How to Write a Simple Derive Macro](#heading-how-to-write-a-simple-derive-macro)
+    1. [The `IntoStringHashMap` Derive Macro](#heading-the-intostringhashmap-derive-macro)
+    2. [How to Declare a Derive Macro](#heading-how-to-declare-a-derive-macro)
+    3. [How to Parse Macro Input](#how-to-parse-macro-input)
+    4. [How to Ensure a Struct Target for the Macro](#how-to-ensure-a-struct-target-for-macro)
+    5. [How to Build the Output Code](#heading-how-to-build-the-output-code)
+    6. [How to Use Your Derive Macro](#heading-how-to-use-your-derive-macro)
+    7. [How to Improve Our Implementation](#heading-how-to-improve-our-implementation)
+4. [A More Elaborate Derive macro](#heading-a-more-elaborate-derive-macro)
+    1. [The `DeriveCustomModel` Macro](#heading-the-derivecustommodel-macro)
+    2. [How to Separate Implementation From Declaration](#how-to-separate-implementation-from-declaration)
+    3. [How to Parse Derive Macro Arguments](#heading-how-to-parse-derive-macro-arguments)
+    4. [How to Implement `DeriveCustomModel`](#heading-how-to-implement-derivecustommodel)
+    5. [How to Generate Each Custom Model](#heading-how-to-generate-each-custom-model)
+    6. [How to Use Your `DeriveCustomModal` Macro](#how-to-use-your-derivecustommodal-macro)
+5. [A Simple Attribute Macro](#heading-a-simple-attribute-macro)
+    1. [The `log_duration` Attribute](#heading-the-logduration-attribute)
+    2. [How to Declare an Attribute Macro](#heading-how-to-declare-an-attribute-macro)
+    3. [How to Implement the `log_duration` Attribute Macro](#heading-how-to-implement-the-logduration-attribute-macro)
+    4. [How to Use Your `log_duration` Macro](#how-to-use-your-log-duration-macro)
+5. [A More Elaborate Attribute macro](#heading-a-more-elaborate-attribute-macro)
+    1. [The `cached_fn` Attribute](#heading-the-cachedfn-attribute)
+    2. [How to Implement the `cached_fn` Attribute Macro](#heading-how-to-implement-the-cachedfn-attribute-macro)
+    3. [`cached_fn` Attribute Arguments](#heading-cachedfn-attribute-arguments)
+    4. [How to Use the `cached_fn` Macro](#heading-how-to-use-the-cachedfn-macro)
+6. [A Simple Function-like Macro](#heading-a-simple-function-like-macro)
+    1. [The `constant_string` Macro](#heading-the-constantstring-macro)
+    2. [How to Declare a Function-like Macro](#heading-how-to-declare-a-function-like-macro)
+    3. [How to Implement the `constant_string` Macro](#heading-how-to-implement-the-constantstring-macro)
+    4. [How to Use the `constant_string` Macro](#heading-how-to-use-the-constantstring-macro)
+7. [A More Elaborate Function-like Macro](#heading-a-more-elaborate-function-like-macro)
+    1. [The `hash_mapify` Macro](#heading-the-hashmapify-macro)
+    2. [How to Implement the `hash_mapify` Macro](#heading-how-to-implement-the-hashmapify-macro)
+    3. [How to Parse `hash_mapify`'s Input](#how-to-parse-hash-mapifys-input)
+    4. [How to Generate Output Code](#how-to-generate-output-code)
+    5. [How to Convert Custom Data Types To Output Tokens](#heading-how-to-convert-custom-data-types-to-output-tokens)
+    6. [How to Use the `hash_mapify` Macro](#heading-how-to-use-the-hashmapify-macro)
+8. [Beyond Writing Macros](#heading-beyond-writing-macros)
+    1. [Helpful Crates/Tools](#heading-helpful-cratestools)
+9. [Downsides of Macros](#heading-downsides-of-macros)
+    1. [Debugging (or lack thereof)](#heading-debugging-or-lack-thereof)
+    2. [Compile Time Costs](#heading-compile-time-costs)
+    3. [Lack of auto-complete and code checks](#heading-lack-of-auto-complete-and-code-checks)
+    4. [Where do we draw the line?](#heading-where-do-we-draw-the-line)
+10. [Wrapping Up](#heading-wrapping-up)
+    1. [Enjoying my work?](#heading-enjoying-my-work)
 
 ## **What are Macros in Rust?**
 
 Macros are an integral part of the Rust programming language. It doesn’t take long before you start encountering them when first learning the language.
 
-In their simplest form, macros in Rust allow you to execute some code at compile-time. Rust pretty much allows you to do whatever you want when it comes to macros and what you can do with them. The most common use-case of this feature is writing code that generates other code.
+In their simplest form, macros in Rust allow you to execute some code at compile-time. Rust pretty much allows you to do whatever you want when it comes to macros and what you can do with them. The most common use-case of this feature is writing code that generates other code. 
 
 Macros are a way to extend functionality of the compiler beyond what's supported as standard. Whether you want to generate code based on existing code, or you want to transform existing code in some form, macros are your go-to tool.
 
 Here's how the official Rust book describes it:
 
-> The term _macro_ refers to a family of features in Rust.
-> 
-> Fundamentally, macros are a way of writing code that writes other code, which is known as _metaprogramming_.
-> 
+> The term _macro_ refers to a family of features in Rust.  
+>   
+> Fundamentally, macros are a way of writing code that writes other code, which is known as _metaprogramming_.  
+>   
 > Metaprogramming is useful for reducing the amount of code you have to write and maintain, which is also one of the roles of functions. However, macros have some additional powers that functions don’t.
 
 Using macros, you can also dynamically add things that are required to be added at compilation time, which is not possible using functions since they get called at runtime. One such feature, for example, is implementing _Traits_ on types, which is required to be implemented at compilation time.
@@ -94,8 +104,8 @@ Macros do have their own syntax for both writing and using them, which we'll exp
 
 Some examples of how macros are being used really helps convey just how powerful they are:
 
--   The **SQLx** project uses macros to verify all your SQL queries and statements (as long as you created them using the provided macro) at compile-time by actually executing them against a running instance of DB (yes, at compile time).
--   **typed\_html** implements a complete HTML parser with compile-time validation, all while using the familiar JSX syntax.
+* The **SQLx** project uses macros to verify all your SQL queries and statements (as long as you created them using the provided macro) at compile-time by actually executing them against a running instance of DB (yes, at compile time).
+* **typed_html** implements a complete HTML parser with compile-time validation, all while using the familiar JSX syntax.
 
 ## Types of Macros in Rust
 
@@ -103,17 +113,17 @@ In Rust, there are 2 different types of macros: declarative and procedural.
 
 ### Declarative macros
 
-Declarative macros work based on syntax parsing. While the official docs define them as allowing you to write syntax extensions, I believe it's more intuitive to consider them as an advanced version of the `match` keyword for the compiler.
+Declarative macros work based on syntax parsing. While the official docs define them as allowing you to write syntax extensions, I believe it's more intuitive to consider them as an advanced version of the `match` keyword for the compiler. 
 
-You can define one or more patterns to match, and their body should return the output Rust code you'd like the macro to produce.
+You can define one or more patterns to match, and their body should return the output Rust code you'd like the macro to produce. 
 
-We're not going to be talking about them in this article, but if you'd like to learn more, [this][53] is a good place to start.
+We're not going to be talking about them in this article, but if you'd like to learn more, [this](https://doc.rust-lang.org/reference/macros-by-example.html) is a good place to start.
 
 ### Procedural macros
 
-These macros, in their most basic use cases, execute any Rust code you want at compile time. The only requirement is that they should take Rust code as input, and return Rust code as output.
+These macros, in their most basic use cases, execute any Rust code you want at compile time. The only requirement is that they should take Rust code as input, and return Rust code as output. 
 
-There's no special syntax parsing involved for writing these macros (unless you want to do so), which is why they're personally easier for me to understand and write.
+There's no special syntax parsing involved for writing these macros (unless you want to do so), which is why they're personally easier for me to understand and write. 
 
 Procedural macros are further divided into 3 categories: derive macros, attribute macros, and functional macros.
 
@@ -121,23 +131,23 @@ Procedural macros are further divided into 3 categories: derive macros, attribut
 
 #### Derive macros
 
-Derive macros are, generally speaking, applied to data types in Rust. They are a way to extend the type declaration to also automatically "derive" functionality for it.
+Derive macros are, generally speaking, applied to data types in Rust. They are a way to extend the type declaration to also automatically "derive" functionality for it. 
 
 You can use them to generate "derived" types from a type, or as a way to implement methods on the target data type automatically. This should make sense once you look at the following example below.
 
-Printing non-primitive data types, such as structs, enums or even errors (which are just structs, but let's assume they're not), for debugging purposes is a very common feature for any language, not just Rust. In Rust, only primitives implicitly have the ability to be printed in "debug" contexts.
+Printing non-primitive data types, such as structs, enums or even errors (which are just structs, but let's assume they're not), for debugging purposes is a very common feature for any language, not just Rust. In Rust, only primitives implicitly have the ability to be printed in "debug" contexts. 
 
 If you think about how everything in Rust is just traits (even basic operations like add and equals), this makes sense. You want to be able to debug print your custom data types, but Rust has no way of saying "please apply this trait to every single data type in the code out there, ever".
 
 This is where the `Debug` derive macro comes in. There's a standard way of debug-printing each type of data structure in Rust that it uses for its internal types. The `Debug` macro allows you to automatically implement the `Debug` trait for your custom types, while following the same rules and style guide as the implementation for internal data types.
 
-```
+```rust
 // Derive macro examples
 
 /// Example for deriving methods on data types
 #[derive(Debug)]
 pub struct User {
-    username: String,
+	username: String,
     first_name: String,
     last_name: String,
 }
@@ -145,7 +155,7 @@ pub struct User {
 
 The `Debug` derive macro will result in the following code (presentational, not exact):
 
-```
+```rust
 impl core::fmt::Debug for User {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct(
@@ -163,9 +173,9 @@ As you might be able to tell, nobody wants to write this code for all of their c
 
 During actual compilation, the same code would give the following as the result:
 
-```
+```rust
 pub struct User {
-    username: String,
+	username: String,
     first_name: String,
     last_name: String,
 }
@@ -187,28 +197,28 @@ Notice how the original type declaration is preserved in the output code. This i
 
 #### Attribute macros
 
-Attribute macros, in addition to data types, are usually applied to code blocks such as functions, impl blocks, inline blocks, and so on. They're usually used to either transform the target code in some way, or annotate it with additional information.
+Attribute macros, in addition to data types, are usually applied to code blocks such as functions, impl blocks, inline blocks, and so on. They're usually used to either transform the target code in some way, or annotate it with additional information. 
 
 The most common use case for these is to modify a function to add additional functionality or logic to it. For example, you can easily write an attribute macro that:
 
--   Logs all input and output parameters
--   Logs the total runtime of the function
--   Counts the number of times that function is called
--   Adds pre-determined additional fields to any struct
+* Logs all input and output parameters
+* Logs the total runtime of the function
+* Counts the number of times that function is called
+* Adds pre-determined additional fields to any struct
 
 and so on.
 
 All of the things I mentioned above, and much more, combined form the insanely popular and useful `instrumentation` macro in Rust provided by the `tracing` crate. Of course I'm massively simplifying here, but it's good enough as an example.
 
-If you're used to using Clippy, it might have screamed at you a couple of times to add the `#[must_use]` attribute to your function or method.
+If you're used to using Clippy, it might have screamed at you a couple of times to add the `#[must_use]` attribute to your function or method. 
 
 That is an example of macros used to annotate the function with additional information. It tells the compiler to warn the user if the return value from this function call isn't used. The `Result` type is already annotated with `#[must_use]` by default, which is how you see the warning `Unused Result<...> that must be used` when you don't use a return value of `Result` type.
 
-Attribute macros are also what powers [conditional compilation][54] in Rust.
+Attribute macros are also what powers [conditional compilation](https://doc.rust-lang.org/reference/conditional-compilation.html) in Rust.
 
 #### Functional macros
 
-Functional macros are macros disguised as functions. These are the least restrictive type of procedural macros, as they can be used literally anywhere, as long as they output code that's valid in the context that they're used in.
+Functional macros are macros disguised as functions. These are the least restrictive type of procedural macros, as they can be used literally anywhere, as long as they output code that's valid in the context that they're used in. 
 
 These macros aren't "applied" to anything unlike the 2 others, but rather called just like you'd call a function. As arguments, you can literally pass in anything you want, as long as your macro knows how to parse it. This includes everything all the way from no arguments to valid Rust code to random gibberish that only your macro can make sense of.
 
@@ -220,13 +230,13 @@ After that lengthy description of the basic information regarding macros, it's f
 
 There are certain rules around writing your own procedural-macros that you'll need to follow. These rules apply to all 3 types of procedural macros. They are:
 
--   Procedural macros can only be added to a project that is marked as `proc-macro` in `Cargo.toml`
--   Projects marked as such cannot export anything other than procedural macros.
--   The macros themselves have to all be declared in the `lib.rs` file.
+* Procedural macros can only be added to a project that is marked as `proc-macro` in `Cargo.toml`
+* Projects marked as such cannot export anything other than procedural macros.
+* The macros themselves have to all be declared in the `lib.rs` file.
 
 Let’s begin by setting up our project with this code:
 
-```
+```shell
 cargo new --bin my-app
 cd my-app
 cargo new --lib my-app-macros;
@@ -236,7 +246,7 @@ This will create a root project, as well as a sub-project within it that will ho
 
 First, the `Cargo.toml` file for `my-app-macros` should have the following contents (notice that you need to declare a lib section that has the `proc-macro` property):
 
-```
+```toml
 # my-app/my-app-macros/Cargo.toml
 
 [package]
@@ -254,7 +264,7 @@ proc-macro = true
 
 Next, the `Cargo.toml` file for `my-app` should have the following contents:
 
-```
+```toml
 # my-app/Cargo.toml
 
 workspace = { members = ["my-app-macros"] }
@@ -277,25 +287,25 @@ You need to set the dependency resolver version to “2”, and add your macros 
 
 From the compiler’s point of view, this is how macros work:
 
--   They take a stream of tokens as input (and optionally a stream of tokens as arguments to the macro itself).
--   They return a stream of tokens as output.
+* They take a stream of tokens as input (and optionally a stream of tokens as arguments to the macro itself).
+* They return a stream of tokens as output.
 
 That’s all that the compiler knows! And as you'll soon see, it's enough for the compiler to know that.
 
-This does create a problem though. You need to be able to make sense of this "stream of tokens" in a way where you correctly understand them, whether as Rust code or custom syntax, are able to modify them, and also output them. Doing so manually is no easy task, and for the purposes of this tutorial, it is out of scope.
+This does create a problem though. You need to be able to make sense of this "stream of tokens" in a way where you correctly understand them, whether as Rust code or custom syntax, are able to modify them, and also output them. Doing so manually is no easy task, and for the purposes of this tutorial, it is out of scope. 
 
 We can, however, rely on great open source work done by many developers to ease this for us. You need to add a few dependencies to help with this problem:
 
--   `syn` — A syntax parser for Rust. This helps you to parse the input token stream as Rust AST. AST is a concept that you mostly run into when trying to write your own interpreter or compiler, but a basic understanding is essential for working with macros. Macros, after all, are just extensions that you write for the compiler in a sense. If you’re interested in learning more about what ASTs are, [check out this very helpful introduction][55].
--   `quote` — quote is, and this is a huge generalisation, a crate that helps us perform the reverse operation of what `syn` does. It helps us convert Rust source code into a stream of tokens that we can output from our macro.
--   `proc-macro2` — The standard library provides a `proc-macro` crate, but the types it provides cannot exist outside of procedural macros. `proc-macro2` is a wrapper around the standard library that makes all of the internal types usable outside of the context of macros. This, for example, allows both `syn` and `quote` to not only be used for procedural macros, but in regular Rust code as well, should you ever have such a need. And we will indeed be using that extensively if we ever want to unit test our macros or their expansions.
--   `darling`–It facilitates parsing and working with macro arguments, which is otherwise a tedious process due to having to manually parse it from the syntax tree. `darling` provides us with `serde`\-like ability to automatically parse input argument tree into our arguments struct. It also helps us in error handling around invalid arguments, required arguments, and so on.
+* `syn` — A syntax parser for Rust. This helps you to parse the input token stream as Rust AST. AST is a concept that you mostly run into when trying to write your own interpreter or compiler, but a basic understanding is essential for working with macros. Macros, after all, are just extensions that you write for the compiler in a sense. If you’re interested in learning more about what ASTs are, [check out this very helpful introduction](https://dev.to/balapriya/abstract-syntax-tree-ast-explained-in-plain-english-1h38).
+* `quote` — quote is, and this is a huge generalisation, a crate that helps us perform the reverse operation of what `syn` does. It helps us convert Rust source code into a stream of tokens that we can output from our macro.
+* `proc-macro2` — The standard library provides a `proc-macro` crate, but the types it provides cannot exist outside of procedural macros. `proc-macro2` is a wrapper around the standard library that makes all of the internal types usable outside of the context of macros. This, for example, allows both `syn` and `quote` to not only be used for procedural macros, but in regular Rust code as well, should you ever have such a need. And we will indeed be using that extensively if we ever want to unit test our macros or their expansions.
+* `darling`–It facilitates parsing and working with macro arguments, which is otherwise a tedious process due to having to manually parse it from the syntax tree. `darling` provides us with `serde`-like ability to automatically parse input argument tree into our arguments struct. It also helps us in error handling around invalid arguments, required arguments, and so on.
 
-While these projects are contributed to by many developers, I want to give special thanks to [David Tolnay][56]. He's a legend in the Rust community and is the creator of most of these projects, and many many more open source crates in Rust.
+While these projects are contributed to by many developers, I want to give special thanks to [David Tolnay](https://crates.io/users/dtolnay). He's a legend in the Rust community and is the creator of most of these projects, and many many more open source crates in Rust.
 
 Let’s quickly add these dependencies to our project and start writing our macro:
 
-```
+```shell
 // my-app-macros
 
 cargo add syn quote proc-macro2 darling
@@ -313,7 +323,7 @@ Let's say you have an app where you need to be able to convert structs into hash
 
 You declare macros by creating a function, and annotating that function using attribute macros that tell the compiler to consider that function as a macro declaration. Since your `lib.rs` is empty right now, you also need to declare `proc-macro2` as an extern crate:
 
-```
+```rust
 // my-app-macros/src/lib.rs
 extern crate proc_macro;
 
@@ -321,15 +331,15 @@ use proc_macro::TokenStream;
 
 #[proc_macro_derive(IntoStringHashMap)]
 pub fn derive_into_hash_map(item: TokenStream) -> TokenStream {
-    todo!()
+	todo!()
 }
 ```
 
-All we’re doing here is declaring our macro as a derive macro with the identifier `IntoStringHashMap`. Note that the function name is not important here. What's important is the identifier passed to the `proc_macro_derive` attribute macro.
+All we’re doing here is declaring our macro as a derive macro with the identifier `IntoStringHashMap`. Note that the function name is not important here. What's important is the identifier passed to the `proc_macro_derive` attribute macro. 
 
 Let's immediately see how you can use this – we'll come back and finish the implementation later:
 
-```
+```rust
 // my-app/src/main.rs
 
 use my_app_macros::IntoStringHashMap;
@@ -351,9 +361,9 @@ You can just use your macro as any other derive macro, using the identifier you 
 
 If you try and compile your code at this stage, you should see the following compilation error:
 
-```
+```shell
    Compiling my-app v0.1.0 
-
+   
 error: proc-macro derive panicked
  --> src/main.rs:3:10
   |
@@ -363,9 +373,10 @@ error: proc-macro derive panicked
   = help: message: not yet implemented
 
 error: could not compile `my-app` (bin "my-app") due to 1 previous error
+
 ```
 
-This clearly proves that our macro was executed during the compilation stage, as, if you're not familiar with the `todo!()` macro, panics with `help: message: not yet implemented` when executed.
+This clearly proves that our macro was executed during the compilation stage, as, if you're not familiar with the `todo!()` macro, panics with `help: message: not yet implemented` when executed. 
 
 This means that both our macro declaration and its usage works. We can move on to actually implementing this macro now.
 
@@ -373,19 +384,19 @@ This means that both our macro declaration and its usage works. We can move on t
 
 First, you parse the input token stream as a `DeriveInput` using `syn`, which is a representation of any target that you can use a derive macro with_:_
 
-```
+```rust
 let input = syn::parse_macro_input!(item as syn::DeriveInput);
 ```
 
-`syn` provides us with the `parse_macro_input` macro that uses a somewhat custom syntax as its arguments. You provide it the name of your input variable, the `as` keyword, and the data type in `syn` that it should parse the input token stream as (in our case, a `DeriveInput`).
+`syn` provides us with the `parse_macro_input` macro that uses a somewhat custom syntax as its arguments. You provide it the name of your input variable, the `as` keyword, and the data type in `syn` that it should parse the input token stream as (in our case, a `DeriveInput`). 
 
 If you jump into the source code for `DeriveInput`, you'll see that it gives us the following information:
 
--   `attrs`: Attributes applied to this type, whether other attribute macros declared by us, or the built-in ones such as `must_use`.
--   `vis`: The visibility specifier for this type declaration.
--   `ident`: The identifier (name) of the type.
--   `generics`: Information about the generic parameters this type takes, including lifetimes.
--   `data`: An enum that describes whether the target is a struct, an enum, or a union, and also provides us with more information for each of these.
+* `attrs`: Attributes applied to this type, whether other attribute macros declared by us, or the built-in ones such as `must_use`.
+* `vis`: The visibility specifier for this type declaration.
+* `ident`: The identifier (name) of the type.
+* `generics`: Information about the generic parameters this type takes, including lifetimes.
+* `data`: An enum that describes whether the target is a struct, an enum, or a union, and also provides us with more information for each of these.
 
 These field names and their types (apart from data field) are pretty standard across targets supported by `syn`, such as functions, enums, and so on.
 
@@ -393,7 +404,7 @@ If you further jump into the declaration of the `Data` enum, and into `DataStruc
 
 The complete implementation for this macro looks like this:
 
-```
+```rust
 // my-app/my-app-macros/lib.rs
 
 extern crate proc_macro2;
@@ -443,9 +454,9 @@ There's a lot going on here, so let's break it down:
 
 `let struct_identifier = &input.ident;`: You store the struct identifier into a separate variable, so that you can easily use it later.
 
-```
+```rust
 match &input.data {
-    Data::struct(syn::DataStruct { fields, .. }) => { ... },
+	Data::struct(syn::DataStruct { fields, .. }) => { ... },
     _ => unimplemented!()
 }
 ```
@@ -456,42 +467,42 @@ You match over the parsed data field from `DeriveInput`. If it is of type `DataS
 
 Let's take a look at the match arm implementation when you do have a `DataStruct`:
 
-```
+```rust
 let mut implementation = quote!{
-    let mut hash_map = std::collections::HashMap::<String, String>::new();
+	let mut hash_map = std::collections::HashMap::<String, String>::new();
 };
 ```
 
 Here you created a new `TokenStream` using `quote`. This `TokenStream` is different than the one provided by the standard library, so don't confuse it with that. This needs to be mutable, as we'll be adding more code to this `TokenStream` soon.
 
-`TokenStream` is basically the inverse representation of an AST. You provide actual Rust code to the `quote` macro, and it gives us the "stream of tokens" as you've called it previously for that source code.
+`TokenStream` is basically the inverse representation of an AST. You provide actual Rust code to the `quote` macro, and it gives us the "stream of tokens" as you've called it previously for that source code. 
 
 This `TokenStream` can either be converted to the macro's output type, or be manipulated using methods provided by `quote` such as extend.
 
 Moving on,
 
-```
+```rust
 for field in fields {
-    let identifier = field.ident.as_ref().unwrap();
-    implementation.extend(quote!{
-        hash_map.insert(
-            stringify!(#identifier).to_string(),
-            String::from(value.#identifier)
-        );
-    });
+	let identifier = field.ident.as_ref().unwrap();
+	implementation.extend(quote!{
+		hash_map.insert(
+			stringify!(#identifier).to_string(),
+			String::from(value.#identifier)
+		);
+	});
 }
 ```
 
-You loop over all of the fields. In each iteration, you first create a variable `identifier` to hold the name of the field for later use. You then use the `extend` method on our previously created `TokenStream` to add additional code to it.
+You loop over all of the fields. In each iteration, you first create a variable `identifier` to hold the name of the field for later use. You then use the `extend` method on our previously created `TokenStream` to add additional code to it. 
 
-The `extend` method just takes another `TokenStream`, which can easily be generated using `quote` macro. For the extension, you simply write code to insert a new entry into the `hash_map` that will be created in the macro output.
+The `extend` method just takes another `TokenStream`, which can easily be generated using `quote` macro. For the extension, you simply write code to insert a new entry into the `hash_map` that will be created in the macro output. 
 
 Let's have a closer look at that:
 
-```
+```rust
 hash_map.insert(
-    stringify!(#identifier).to_string(),
-    String::from(value.#identifier)
+	stringify!(#identifier).to_string(),
+	String::from(value.#identifier)
 );
 ```
 
@@ -501,30 +512,31 @@ But what does the `#identifier` represent?
 
 `quote` provides you with the ability to use any variables declared outside of the `TokenStream` within it using the `#` prefix. Think of it as `{}` in format args. `#identifier` in this case simply gets replaced with the field identifier we declared outside of the `extend` call. So you basically call the `stringify!()` macro on the field identifier directly.
 
-Similarly, you can access the value of a field using the familiar `struct_variable.field_name` syntax, but use the identifier variable instead of the field name instead. This is what you do when you pass the value to your insert statement: `String::from(value.#identifier)`.
+Similarly, you can access the value of a field using the familiar `struct_variable.field_name` syntax, but use the identifier variable instead of the field name instead. This is what you do when you pass the value to your insert statement: `String::from(value.#identifier)`. 
 
 If you've looked at the code closely, you'll realise where the `value` came from, but if not, it's just what the trait implementation method uses to declare its input argument further down.
 
 Once you've built your implementation using the for loop for each field in the struct, you have a `TokenStream` which, for representational purposes, contains the following code:
 
-```
+```rust
 let mut hash_map = std::collections::HashMap::<String, String>::new();
 hash_map.insert("username".to_string(), String::from(value.username));
 hash_map.insert("first_name".to_string(), String::from(value.first_name));
 hash_map.insert("last_name".to_string(), String::from(value.last_name));
+
 ```
 
 Moving on to finally generating the output of our macro, you have:
 
-```
+```rust
 quote! {
-    impl From<#struct_identifier> for std::collections::HashMap<String, String> {
-        fn from(value: #struct_identifier) -> Self {
-            #implementation
+	impl From<#struct_identifier> for std::collections::HashMap<String, String> {
+		fn from(value: #struct_identifier) -> Self {
+			#implementation
 
-            hash_map
-        }
-    }
+			hash_map
+		}
+	}
 }
 ```
 
@@ -532,21 +544,21 @@ Here you start by creating another `TokenStream` using `quote`. You write your `
 
 The following line again uses the `#` prefix syntax that we just looked at to declare that the trait implementation should be for your target struct, based on the identifier for the struct. In this case, this identifier will be replaced with `User` if you apply the derive macro to `User` struct.
 
-```
+```rust
 impl From<#struct_identifier> for std::collections::HashMap<String, String> {}
 ```
 
 Finally, you have the actual method body:
 
-```
+```rust
 fn from(value: #struct_identifier) -> Self {
-    #implementation
+	#implementation
 
-    hash_map
+	hash_map
 }
 ```
 
-As you can see, you can easily nest `TokenStream`s into other `TokenStreams` using the same `#` syntax that lets you use external variables within the `quote` macro.
+As you can see, you can easily nest `TokenStream`s into other `TokenStreams` using the same `#` syntax that lets you use external variables within the `quote` macro. 
 
 Here, you declare that your hash map implementation should be inserted as the first few lines of the function. And then you simply return the same `hash_map`. This completes your trait implementation.
 
@@ -554,7 +566,7 @@ As the very last step, you call `.into()` on the return type of our `match` bloc
 
 If it was harder to understand it when I broke it down line by line, you can look at the following complete but commented code in addition:
 
-```
+```rust
 // Tell the compiler that this function is a derive macro, and the identifier for derive is `IntoHashMap`.
 #[proc_macro_derive(IntoHashMap)]
 // Declare a function that takes an input `TokenStream` and outputs `TokenStream`.
@@ -630,7 +642,7 @@ And that's it. You've written your very first procedural macro in Rust!
 
 Coming back to your `my-app/main.rs`, let's debug-print the hashmap that you create using the macro you implemented. Your `main.rs` should look like this:
 
-```
+```rust
 // my-app/src/main.rs
 
 use std::collections::HashMap;
@@ -658,7 +670,7 @@ fn main() {
 
 If you run this using `cargo run`, you should see the following output in your terminal:
 
-```
+```shell
 [src/main.rs:20:5] hash_map = {
     "last_name": "Last",
     "first_name": "First",
@@ -670,11 +682,11 @@ And there you go!
 
 ### How to Improve Our Implementation
 
-There is a better way to work with iterators and `quote` that I skipped over in our original implementation – intentionally so, because it requires us to learn a bit more of the syntax specific to `quote`.
+There is a better way to work with iterators and `quote` that I skipped over in our original implementation – intentionally so, because it requires us to learn a bit more of the syntax specific to `quote`. 
 
 Let's see what it would have looked like with that, before we dive into how it works:
 
-```
+```rust
 let input = syn::parse_macro_input!(item as syn::DeriveInput);
     let struct_identifier = &input.ident;
 
@@ -702,9 +714,9 @@ let input = syn::parse_macro_input!(item as syn::DeriveInput);
 
 That looks so much more concise and easier to understand! Let's look at the special bit of syntax that makes it possible – in particular, the following line:
 
-```
+```rust
 #(
-    hash_map.insert(stringify!(#field_identifiers).to_string(), String::from(value.#field_identifiers));
+	hash_map.insert(stringify!(#field_identifiers).to_string(), String::from(value.#field_identifiers));
 )*
 ```
 
@@ -726,12 +738,12 @@ We will also need to add an implementation of `From` trait to automatically conv
 
 Let's start by declaring it in `lib.rs`:
 
-```
+```rust
 // lib.rs
 
 #[proc_macro_derive(DeriveCustomModel, attributes(custom_model))]
 pub fn derive_custom_model(item: TokenStream) -> TokenStream {
-    todo!()
+	todo!()
 }
 ```
 
@@ -743,7 +755,7 @@ Let's also create a new file that will contain the implementation detail of this
 
 Create a new file `custom_model.rs`:
 
-```
+```shell
 touch src/custom_model.rs
 ```
 
@@ -751,7 +763,7 @@ touch src/custom_model.rs
 
 Define a function that implements the `DeriveCustomModel` macro. We're also going to add all imports right away to avoid confusion later:
 
-```
+```rust
 // custom_model.rs
 
 use syn::{
@@ -763,9 +775,9 @@ use proc_macro::TokenStream;
 use quote::{quote, ToTokens};
 
 pub(crate) fn derive_custom_model_impl(input: TokenStream) -> TokenStream {
-    // Parse input token stream as `DeriveInput`
-    let original_struct = parse_macro_input!(input as DeriveInput);
-
+	// Parse input token stream as `DeriveInput`
+	let original_struct = parse_macro_input!(input as DeriveInput);
+    
     // Destructure data & ident fields from the input
     let DeriveInput { data, ident, .. } = original_struct.clone();
 }
@@ -773,10 +785,10 @@ pub(crate) fn derive_custom_model_impl(input: TokenStream) -> TokenStream {
 
 This is just a Rust function, so there are no special rules here. You can call this from the declaration just like a regular Rust function.
 
-```
+```rust
 #[proc_macro_derive(DeriveCustomModel, attributes(custom_model))]
 pub fn derive_custom_model(item: TokenStream) -> TokenStream {
-    custom_model::custom_model_impl(item)
+	custom_model::custom_model_impl(item)
 }
 ```
 
@@ -784,7 +796,7 @@ pub fn derive_custom_model(item: TokenStream) -> TokenStream {
 
 To parse the arguments to our derive macro (which are usually provided using attributes applied to either the target or to its fields), we are going to rely on the `darling` crate to make it as simple as defining the data type for them.
 
-```
+```rust
 // custom_model.rs
 
 // Derive `FromDeriveInput` for this struct, which is a
@@ -808,7 +820,7 @@ We've told `darling` that for arguments to the struct, we should expect a list o
 
 Next, let's define the arguments for each model:
 
-```
+```rust
 // custom_model.rs
 
 // Derive `FromMeta` for this struct, which is a
@@ -834,40 +846,40 @@ In this, we have two required arguments, `name` and `fields`, and one optional a
 
 Now that we have all of our data types defined, let's get to parsing – which is as simple as calling a method on our argument struct! The complete function implementation should like this:
 
-```
+```rust
 // custom_model.rs
 
 pub(crate) fn derive_custom_model_impl(input: TokenStream) -> TokenStream {
-    // Parse input token stream as `DeriveInput`
-    let original_struct = parse_macro_input!(input as DeriveInput);
-
+	// Parse input token stream as `DeriveInput`
+	let original_struct = parse_macro_input!(input as DeriveInput);
+    
     // Destructure data & ident fields from the input
     let DeriveInput { data, ident, .. } = original_struct.clone();
-
+    
     if let Struct(data_struct) = data {
-        // Extract the fields from this data struct
+    	// Extract the fields from this data struct
         let DataStruct { fields, .. } = data_struct;
-
+        
         // `darling` provides this method on the struct
         // to easily parse arguments, and also handles
         // errors for us.
         let args = match CustomModelArgs::from_derive_input(&original_struct) {
             Ok(v) => v,
             Err(e) => {
-                // If darling returned an error, generate a
+            	// If darling returned an error, generate a
                 // token stream from it so that the compiler
                 // shows the error in the right location.
                 return TokenStream::from(e.write_errors());
             }
         };
 
-        // Destructure `models` field from parsed args.
+		// Destructure `models` field from parsed args.
         let CustomModelArgs { models } = args;
 
-        // Create a new output
+		// Create a new output
         let mut output = quote!();
 
-        // Panic if no models are defined but macro is
+		// Panic if no models are defined but macro is
         // used.
         if models.is_empty() {
             panic!(
@@ -875,19 +887,19 @@ pub(crate) fn derive_custom_model_impl(input: TokenStream) -> TokenStream {
             )
         }
 
-        // Iterate over all defined models
+		// Iterate over all defined models
         for model in models {
-            // Generate custom model from target struct's fields and `model` args.
+        	// Generate custom model from target struct's fields and `model` args.
             let generated_model = generate_custom_model(&fields, &model);
 
-            // Extend the output to include the generated model
+			// Extend the output to include the generated model
             output.extend(quote!(#generated_model));
         }
 
-        // Convert output into TokenStream and return
+		// Convert output into TokenStream and return
         output.into()
     } else {
-        // Panic if target is not a named struct
+    	// Panic if target is not a named struct
         panic!("DeriveCustomModel can only be used with named structs")
     }
 }
@@ -897,7 +909,7 @@ The code that generates tokens for each model has been extracted away to another
 
 ### How to Generate Each Custom Model
 
-```
+```rust
 // custom_model.rs
 
 fn generate_custom_model(fields: &Fields, model: &CustomModel) -> proc_macro2::TokenStream {
@@ -988,7 +1000,7 @@ fn generate_custom_model(fields: &Fields, model: &CustomModel) -> proc_macro2::T
 
 Coming back to your `my-app/main.rs`, let's debug-print the generated hash-maps for your new structs that you create using the macro you implemented. Your `main.rs` should look like this:
 
-```
+```rust
 // my-app/src/main.rs
 
 use macros::{DeriveCustomModel, IntoStringHashMap};
@@ -1024,13 +1036,14 @@ fn main() {
 
     dbg!(user_info);
 }
+
 ```
 
 As you can see, `extra_derives` is already useful to us since we need to derive `Debug` and `IntoStringHashMap` for the new models.
 
 If you run this using `cargo run`, you should see the following output in your terminal:
 
-```
+```shell
 [src/main.rs:32:5] hash_map = {
     "last_name": "last_name",
     "first_name": "first_name",
@@ -1039,6 +1052,7 @@ If you run this using `cargo run`, you should see the following output in your t
     username: "username",
     age: 27,
 }
+
 ```
 
 We are going to wrap up the derive macros here.
@@ -1055,20 +1069,21 @@ You are going to write a simple attribute macro that can be applied to any funct
 
 You declare attribute macros by creating a function and annotating that function using the `proc_macro_attribute` macro that tells the compiler to consider that function as a macro declaration. Let's see what that looks like:
 
-```
+```rust
 // my-app-macros/src/lib.rs
 
 #[proc_macro_attribute]
 pub fn log_duration(args: TokenStream, item: TokenStream) -> TokenStream {
     log_duration_impl(args, item)
 }
+
 ```
 
 For these macros, the function name is important, as that also becomes the name of the macro. As you can see, these take two different arguments. The first is the argument passed to the attribute macro, and the second is the target of the attribute macro.
 
 Let's also implement `log_duration_impl`. Create a new file `log_duration.rs`:
 
-```
+```shell
 touch src/log_duration.rs
 ```
 
@@ -1076,7 +1091,7 @@ touch src/log_duration.rs
 
 I'm going to give you the complete implementation first, and then I'll break down the parts that I haven't used so far:
 
-```
+```rust
 // my-app-macros/src/log_duration.rs
 
 use proc_macro::TokenStream;
@@ -1101,13 +1116,13 @@ pub(crate) fn log_duration_impl(_args: TokenStream, input: TokenStream) -> Token
 
     // Extract statements in the body of the functions
     let statements = block.stmts;
-
+    
     // Store the function identifier for logging
     let function_identifier = sig.ident.clone();
 
     // Reconstruct the function as output using parsed input
     quote!(
-        // Reapply all the other attributes on this function.
+    	// Reapply all the other attributes on this function.
         // The compiler doesn't include the macro we are
         // currently working in this list.
         #(#attrs)*
@@ -1115,7 +1130,7 @@ pub(crate) fn log_duration_impl(_args: TokenStream, input: TokenStream) -> Token
         #vis #sig {
             // At the beginning of the function, create an instance of `Instant`
             let __start = std::time::Instant::now();
-
+            
             // Create a new block, the body of which is the body of the function.
             // Store the return value of this block as a variable so that we can
             // return it later from the parent function.
@@ -1132,11 +1147,12 @@ pub(crate) fn log_duration_impl(_args: TokenStream, input: TokenStream) -> Token
     )
     .into()
 }
+
 ```
 
 The only things that you might not have seen previously are the `sig` and the `block` fields you get from parsing the input as `ItemFn`. `sig` contains the entire signature of a function while `block` contains the entire body of the function. This is why, by using the following code, we can basically reconstruct the unmodified function:
 
-```
+```rust
 // Example code to reconstruct unmodified fn in macro
 
 #vis #sig #block
@@ -1148,7 +1164,7 @@ In this example, you want to modify the function body, which is why you create a
 
 Coming back to `main.rs`, using an attribute macro is simpler than you might think:
 
-```
+```rust
 // main.rs
 
 #[log_duration]
@@ -1169,7 +1185,7 @@ fn main() {
 
 When you run this, you should get the following output:
 
-```
+```shell
 function_to_benchmark took 498μs
 65535
 ```
@@ -1180,9 +1196,9 @@ We are now ready to move on to a more complex use-case.
 
 ### The `cached_fn` Attribute
 
-You are going to write an attribute macro that will allow you to add caching capability to any function. For the purposes of this example, we're going to assume that our function always has `String` arguments and also returns a `String` value.
+You are going to write an attribute macro that will allow you to add caching capability to any function. For the purposes of this example, we're going to assume that our function always has `String` arguments and also returns a `String` value. 
 
-Some of you might know this better as a "memoized" function.
+Some of you might know this better as a "memoized" function. 
 
 In addition, you will need to allow the user of this macro to tell the macro how it can generate a dynamic key based on function args.
 
@@ -1190,7 +1206,7 @@ To help us facilitate the caching part so that we don't get diverted, we're goin
 
 Let's add it to the project by editing the `Cargo.toml` file for `my-app` directly:
 
-```
+```rust
 // Cargo.toml
 
 workspace = { members = ["my-app-macros"] }
@@ -1207,24 +1223,25 @@ resolver = "2"
 # New dependency
 cacache = { version = "13.0.0", default-features = false, features = ["mmap"] }
 macros = { path = "./macros" }
+
 ```
 
 ### How to Implement the `cached_fn` Attribute Macro
 
 Let's start by declaring this macro in `lib.rs`:
 
-```
+```rust
 // my-app-macros/src/lib.rs
 
 #[proc_macro_attribute]
 pub fn cached_fn(args: TokenStream, item: TokenStream) -> TokenStream {
-    cached_fn_impl(args, item)
+	cached_fn_impl(args, item)
 }
 ```
 
 Create a new file `cached_fn.rs` to store the implementation:
 
-```
+```shell
 touch my-app-macros/src/cached_fn.rs
 ```
 
@@ -1232,7 +1249,7 @@ Let's define how our arguments should look before we go ahead and implement anyt
 
 ### `cached_fn` Attribute Arguments
 
-```
+```rust
 // my-app-macros/src/cached_fn.rs
 
 #[derive(FromMeta)]
@@ -1244,11 +1261,11 @@ struct CachedParams {
 }
 ```
 
-The only argument is an optional `keygen`, which is of type `Expr`. `Expr` represents any valid [Rust expression][57], so it can be very dynamic. In this example, you'll be passing an expression that generates the key based on function arguments of the target function.
+The only argument is an optional `keygen`, which is of type `Expr`. `Expr` represents any valid [Rust expression](https://doc.rust-lang.org/reference/expressions.html), so it can be very dynamic. In this example, you'll be passing an expression that generates the key based on function arguments of the target function.
 
 As always, we'll first see the entire implementation and then break down the parts that are new:
 
-```
+```rust
 // my-app-macros/src/cached_fn.rs
 
 pub fn cached_fn_impl(args: TokenStream, item: TokenStream) -> TokenStream {
@@ -1333,7 +1350,7 @@ pub fn cached_fn_impl(args: TokenStream, item: TokenStream) -> TokenStream {
 }
 ```
 
-Well, turns out that you've seen everything that we used in this one before.
+Well, turns out that you've seen everything that we used in this one before. 
 
 The only new thing here is the use of the `cacache` dependency, but that's also pretty straightforward. You just give the location where you want to store the cached data as the first argument to the `read_sync` and `write_sync` functions provided by `cacache`.
 
@@ -1343,7 +1360,7 @@ We've also added some logging to help us verify that the macro works as expected
 
 To make any function memoized or cached, we simply annotate it using the `cached_fn` attribute:
 
-```
+```rust
 // src/main.rs
 
 #[cached_fn(keygen = "format!(\"{first_name} {last_name}\")")]
@@ -1352,7 +1369,7 @@ fn test_cache(first_name: String, last_name: String) -> String {
 }
 
 fn main() {
-    test_cache("John".to_string(), "Appleseed".to_string());
+	test_cache("John".to_string(), "Appleseed".to_string());
     test_cache("John".to_string(), "Appleseed".to_string());
     test_cache("John".to_string(), "Doe".to_string());
 }
@@ -1360,7 +1377,7 @@ fn main() {
 
 If you run this, you should see the following output:
 
-```
+```shell
 Data is not fetched from cached
 Data is fetched from cached
 Data is not fetched from cached
@@ -1382,7 +1399,7 @@ Disclaimer: If you're familiar with declarative macros (using `macro_rules!` syn
 
 We're going to build a very simple macro that takes in a string literal (of type `&str`) as input and creates a global public constant for it (the name of the variable being the same as the value). Basically, our macro will generate the following:
 
-```
+```rust
 pub const STRING_LITERAL: &str = "STRING_LITERAL";
 ```
 
@@ -1390,7 +1407,7 @@ pub const STRING_LITERAL: &str = "STRING_LITERAL";
 
 You declare function-like macros by creating a function and annotating that function using a `proc_macro` macro. It tells the compiler to consider that function as a macro declaration. Let's see what that looks like:‌
 
-```
+```rust
 // my-app-macros/src/lib.rs
 
 #[proc_macro]
@@ -1405,13 +1422,13 @@ For these macros, the function name is important, as that also becomes the name 
 
 For the implementation, let's create a new file `constant_string.rs`:
 
-```
+```rust
 touch my-app-macros/src/constant_string.rs
 ```
 
 The implementation is pretty simple:
 
-```
+```rust
 use darling::FromMeta;
 use proc_macro::TokenStream;
 use quote::quote;
@@ -1436,7 +1453,7 @@ All we're doing is parsing input as a string literal. If you pass something to d
 
 The usage of this macro is also pretty simple:
 
-```
+```rust
 // src/main.rs
 
 constant_string!("SOME_CONSTANT_STRING_VALUE");
@@ -1444,7 +1461,7 @@ constant_string!("SOME_CONSTANT_STRING_VALUE");
 
 The above code will expand to this:
 
-```
+```rust
 pub const SOME_CONSTANT_STRING_VALUE: &str = "SOME_CONSTANT_STRING_VALUE";
 ```
 
@@ -1456,12 +1473,12 @@ Function-like macros, as the name might suggest, can be used in a similar way to
 
 Moving on to the interesting parts: the macro you're going to write now will allow you to generate a `HashMap` by simply passing in a list of key-value pairs. For example:
 
-```
+```rust
 let variable = "Some variable";
 
 hash_mapify!(
-    &str,
-    key = "value", 
+	&str,
+	key = "value", 
     key2 = "value2", 
     key3 = "value3", 
     key4 = variable
@@ -1476,7 +1493,7 @@ To keep things simple, since this can easily get out of hand, we're only going t
 
 We're going to start as usual by declaring our macro:
 
-```
+```rust
 // my-app-macros/src/lib.rs
 
 #[proc_macro]
@@ -1485,19 +1502,19 @@ pub fn hash_mapify(item: TokenStream) -> TokenStream {
 }
 ```
 
-Next, you're going to define a data structure to hold your input data. In this case, you need to know the value type passed, as well as a list of key-value pairs.
+Next, you're going to define a data structure to hold your input data. In this case, you need to know the value type passed, as well as a list of key-value pairs. 
 
-We are going to extract the implementation to a separate file, which is where you'll also implement the data types and parsing logic.
+We are going to extract the implementation to a separate file, which is where you'll also implement the data types and parsing logic. 
 
 Create new file `hash_mapify.rs` and declare the data type to hold input data:
 
-```
+```shell
 touch my-app-macros/src/hash_mapify.rs
 ```
 
 ### How to Parse `hash_mapify`'s Input
 
-```
+```rust
 // my-app-macros/src/hash_mapify.rs
 
 use proc_macro::TokenStream;
@@ -1515,41 +1532,41 @@ pub struct ParsedMap {
 
 You store the value as `TokenStream` directly because you need to support both literal values as well as variables, both of which only have 1 common type in this context, `TokenStream`.
 
-You also might have noticed that we save the `value_type` as `Type` which is a type provided by `syn` crate which is an enum of the possible types that a Rust value could have. That was a mouthful!
+You also might have noticed that we save the `value_type` as `Type` which is a type provided by `syn` crate which is an enum of the possible types that a Rust value could have. That was a mouthful! 
 
 You won't need to handle each variant of this enum, since this type can also directly be converted to `TokenStream`. You'll better understand what that means shortly.
 
 Next, you need to implement the `syn::parse::Parse` trait for `ParsedMap` declared previously, so that it can be computed from the `TokenStream` passed as arguments to the macro.
 
-```
+```rust
 // my-app-macros/src/hash_mapify.rs
 
 impl Parse for ParsedMap {
-    fn parse(input: ParseStream) -> syn::Result<Self> {
-        let mut entries = Vec::<ParsedMapEntry>::new();
+	fn parse(input: ParseStream) -> syn::Result<Self> {
+    	let mut entries = Vec::<ParsedMapEntry>::new();
     }
 }
 ```
 
-`input`, which is of type `ParsedStream` in this case, works similar to an iterator. You need to parse tokens out of the input using the method `parse` on it, which will also advance the stream to the beginning of the next token.
+`input`, which is of type `ParsedStream` in this case, works similar to an iterator. You need to parse tokens out of the input using the method `parse` on it, which will also advance the stream to the beginning of the next token. 
 
 For example, if you have a stream of tokens representing `[a, b, c]`, as soon as you parse `[` out of this stream, the stream will be mutated to only contain `a, b, c]` . This is very similar to iterators, where as soon as you take a value out, the iterator is advanced by one position and only holds the remaining items.
 
 Before you parse anything, you need to check if input is empty, and panic if it is:
 
-```
+```rust
 // my-app-macros/src/hash_mapify.rs
 
 impl Parse for ParsedMap {
-    fn parse(input: ParseStream) -> syn::Result<Self> {
-        // ...
-
-        // Check if input is empty (no arguments are passed). If
+	fn parse(input: ParseStream) -> syn::Result<Self> {
+    	// ...
+        
+    	// Check if input is empty (no arguments are passed). If
         // not, then panic as we cannot continue further.
         if input.is_empty() {
             panic!("At least a type must be specified for an empty hashmap");
         }
-
+        
         // ...
     }
 }
@@ -1557,17 +1574,17 @@ impl Parse for ParsedMap {
 
 Since we expect the first argument passed to the macro to be the type of the value in our hashmap, let's parse that out of the token stream:
 
-```
+```rust
 // my-app-macros/src/hash_mapify.rs
 
 impl Parse for ParsedMap {
-    fn parse(input: ParseStream) -> syn::Result<Self> {
-        // ...
-
-        // Since the first argument should be of type `Type`, you try
+	fn parse(input: ParseStream) -> syn::Result<Self> {
+    	// ...
+        
+    	// Since the first argument should be of type `Type`, you try
         // to parse `Type` out of input and returns an error otherwise.
         let ty = input.parse::<Type>()?;
-
+        
         // ...
     }
 }
@@ -1581,23 +1598,23 @@ This means that if you pass `SomeRandomType` where `SomeRandomType` isn't actual
 
 Moving on, we also expect the user to use `,` to separate the arguments. Let's parse that as the next token after type:
 
-```
+```rust
 // my-app-macros/src/hash_mapify.rs
 
 impl Parse for ParsedMap {
-    fn parse(input: ParseStream) -> syn::Result<Self> {
-        // ...
-
-        // Next, parse the `,` token, which you expect to be used to
+	fn parse(input: ParseStream) -> syn::Result<Self> {
+    	// ...
+        
+    	// Next, parse the `,` token, which you expect to be used to
         // separate the arguments.
         input.parse::<Token![,]>()?;
-
+        
         // ...
     }
 }
 ```
 
-You might notice the usage of the `Token!` macro when providing the type argument for the `parse` method. It's a macro provided by `syn` to easily convert built-ins such as keywords (`type`, `async` , `fn` and so on) as well as punctuation marks (`,`, `.`, `;` and so on) and delimiters (`{`, `[`, `(` and so on). This macro takes a single argument, which is the keyword/punctuation/delimiter literal for which the type is needed.
+You might notice the usage of the `Token!` macro when providing the type argument for the `parse` method. It's a macro provided by `syn` to easily convert built-ins such as keywords (`type`, `async` , `fn` and so on) as well as punctuation marks (`,`, `.`, `;` and so on) and delimiters (`{`, `[`, `(` and so on). This macro takes a single argument, which is the keyword/punctuation/delimiter literal for which the type is needed. 
 
 The official docs define it as:
 
@@ -1609,19 +1626,19 @@ Do note that white-space isn't important, as that is entirely handled during the
 
 Since you won't know how many key-value pairs are passed, you need something to tell you when all of it is parsed:
 
-```
+```rust
 // my-app-macros/src/hash_mapify.rs
 
 impl Parse for ParsedMap {
-    fn parse(input: ParseStream) -> syn::Result<Self> {
-        // ...
-
+	fn parse(input: ParseStream) -> syn::Result<Self> {
+    	// ...
+        
         // Loop until the input is empty (there is nothing else
         // left to parse).
-        while !input.is_empty() {
-            // ..
+    	while !input.is_empty() {
+        	// ..
         }
-
+        
         // ...
     }
 }
@@ -1631,17 +1648,17 @@ As I explained previously, tokens are taken out of the stream and it's advanced 
 
 Each key-value pair can be parsed in a similar fashion as you parsed the type argument:
 
-```
+```rust
 // my-app-macros/src/hash_mapify.rs
 
 impl Parse for ParsedMap {
-    fn parse(input: ParseStream) -> syn::Result<Self> {
-        // ...
-
+	fn parse(input: ParseStream) -> syn::Result<Self> {
+    	// ...
+        
         // Loop until the input is empty (there is nothing else
         // left to parse).
-        while !input.is_empty() {
-            // Try to parse the key as an identifier
+    	while !input.is_empty() {
+        	// Try to parse the key as an identifier
             let key = if let Ok(key) = input.parse::<syn::Ident>() {
                 key.to_string()
                 // If it's not an identifier, try to parse it as
@@ -1685,7 +1702,7 @@ impl Parse for ParsedMap {
                 input.parse::<Token![,]>()?;
             }
         }
-
+        
         // ...
     }
 }
@@ -1697,7 +1714,7 @@ As the name might suggest, this only performs a check, so it doesn't take that t
 
 Once all of the parsing is done, you just return the information as part of `ParsedMap` struct we declared earlier. The complete implementation for this trait is as below if that's easier for you to read through:
 
-```
+```rust
 // my-app-macros/src/hash_mapify.rs
 
 impl Parse for ParsedMap {
@@ -1778,7 +1795,7 @@ impl Parse for ParsedMap {
 
 You can now finally write the actual macro implementation, which is going to be pretty-straightforward:
 
-```
+```rust
 // my-app-macros/src/hash_mapify.rs
 
 pub fn hash_mapify_impl(item: TokenStream) -> TokenStream {
@@ -1786,7 +1803,7 @@ pub fn hash_mapify_impl(item: TokenStream) -> TokenStream {
     // This will use the logic from parse trait we implemented
     // earlier.
     let input = parse_macro_input!(item as ParsedMap);
-
+    
     let key_value_pairs = input.entries;
     let ty = input.value_type;
 
@@ -1797,7 +1814,7 @@ pub fn hash_mapify_impl(item: TokenStream) -> TokenStream {
         // Create a new hashmap with `String` for key type and `#ty` for 
         // value type, which parsed from the macro input arguments.
         let mut hash_map = std::collections::HashMap::<String, #ty>::new();
-
+        
         // Insert all key-value pairs into the hashmap.
         #(
             hash_map.insert(#key_value_pairs);
@@ -1812,7 +1829,7 @@ pub fn hash_mapify_impl(item: TokenStream) -> TokenStream {
 
 If you're coding along with me, or if you have a keen eye, you might have noticed that there is an error here. The type of variable `key_value_pairs` is `Vec<ParsedMapEntry>`. We are trying to use it in the output as:
 
-```
+```rust
 #(hash_map.insert(#key_value_pairs);)*
 ```
 
@@ -1822,9 +1839,9 @@ But if we try to manually write an implementation where we loop it ourselves, ge
 
 ### How to Convert Custom Data Types to Output Tokens
 
-This trait can be implemented for any of our custom types and defines how the type looks like when converted into the token stream.
+This trait can be implemented for any of our custom types and defines how the type looks like when converted into the token stream. 
 
-```
+```rust
 // my-app-macros/src/hash_mapify.rs
 
 impl ToTokens for ParsedMapEntry {
@@ -1843,7 +1860,7 @@ Once you've done this, `quote` can now easily convert the problematic code to to
 
 As usual, here's the complete implementation if that's easier to understand:
 
-```
+```rust
 // my-app-macros/src/hash_mapify.rs
 
 use proc_macro::TokenStream;
@@ -1967,17 +1984,18 @@ pub fn hash_mapify_impl(item: TokenStream) -> TokenStream {
     })
     .into()
 }
+
 ```
 
 ### How to Use the `hash_mapify` Macro
 
 We can verify that our macro works by writing a simple usage:
 
-```
+```rust
 // src/main.rs
 
 fn main() {
-    test_hashmap();
+	test_hashmap();
 }
 
 fn test_hashmap() {
@@ -2000,7 +2018,7 @@ fn test_hashmap() {
 
 If you run this code, you should see the following output:
 
-```
+```shell
 [src/main.rs:62:5] hash_map = {
     "first_key": "first_value",
     "some_key": "value for variable key",
@@ -2023,31 +2041,31 @@ Now that you've learned how to write basic derive macros, I'd like to take some 
 
 ### Helpful Crates/Tools
 
-[**cargo-expand**][58]
+[**cargo-expand**](https://github.com/dtolnay/cargo-expand)
 
-This is a CLI tool that can generate macro expanded code for any file in your project. Another great project by [David Tolnay][59]. You do need the nightly toolchain for Rust to use this, though. Don't worry – it's only required for the tool itself to work. You don't need to make your project use the nightly toolchain as well. Your project can stay in the stable zone.
+This is a CLI tool that can generate macro expanded code for any file in your project. Another great project by [David Tolnay](https://crates.io/users/dtolnay). You do need the nightly toolchain for Rust to use this, though. Don't worry – it's only required for the tool itself to work. You don't need to make your project use the nightly toolchain as well. Your project can stay in the stable zone.
 
 Install nightly toolchain:
 
-```
+```shell
 rustup toolchain install nightly
 ```
 
 Install `cargo-expand`:
 
-```
+```shell
 cargo install cargo-expand
 ```
 
 Now that this is done, you can see what the actual expansion of your code in main looks like. Simply run the following in the `my-app` project directory:
 
-```
+```shell
 cargo expand
 ```
 
 and it will output the expanded code in the terminal output. You will see some unfamiliar stuff as well, such as what the `dbg!` macro expands to, but you can ignore those.
 
-**[trybuild][60] & [macrotest][61]**
+**[trybuild](https://docs.rs/trybuild/latest/trybuild/#) & [macrotest](https://docs.rs/macrotest/latest/macrotest/#)**
 
 These are 2 crates that are extremely useful if you want to unit-test your procedural macros' expanded forms, or assert any expected compilation errors.
 
@@ -2055,108 +2073,43 @@ These are 2 crates that are extremely useful if you want to unit-test your proce
 
 ### Debugging (or lack thereof)
 
-You cannot put a breakpoint into any line of code that is generated by the macro. Nor can you get to it from the stacktrace of an error. This makes debugging generated code very difficult.
+You cannot put a breakpoint into any line of code that is generated by the macro. Nor can you get to it from the stacktrace of an error. This makes debugging generated code very difficult. 
 
-In my usual workflow, I either put logging into the generated code, or if that is not enough, I replace the usage of macro with the code given to me by `cargo expand` temporarily to debug it, make changes, and then update the macro code based on that.
+In my usual workflow, I either put logging into the generated code, or if that is not enough, I replace the usage of macro with the code given to me by `cargo expand` temporarily to debug it, make changes, and then update the macro code based on that. 
 
 There might be better ways out there, and if you know any, I'd be grateful if you can share them with me.
 
 ### Compile Time Costs
 
-There's a non-zero cost for macro expansion that the compiler needs to run and process, and then check that the code it generated is valid. This becomes even more expensive when recursive macros are involved.
+There's a non-zero cost for macro expansion that the compiler needs to run and process, and then check that the code it generated is valid. This becomes even more expensive when recursive macros are involved. 
 
-As a very crude estimation, each macro expansion adds 10ms to the compile time of the project. If you're interested, I encourage you to read through this [introduction on how the compiler processes macros][62] internally.
+As a very crude estimation, each macro expansion adds 10ms to the compile time of the project. If you're interested, I encourage you to read through this [introduction on how the compiler processes macros](https://rustc-dev-guide.rust-lang.org/macro-expansion.html) internally.
 
 ### Lack of Auto-complete and Code Checks
 
 Code written as part of a macro output isn't presently supported fully by any IDE, nor is it supported by rust-analyzer. So in most cases, you're writing code without relying on features such as auto-complete, auto-suggestions, and so on.
 
-### Where Do We Draw the Line?
+### Where Do We Draw the Line? 
 
-Given the insane potential of macros, it's very easy to get carried away with them. It's important to remember all of the drawbacks and make decisions accordingly, ensuring that you are not indulging yourselves into premature abstraction.
+Given the insane potential of macros, it's very easy to get carried away with them. It's important to remember all of the drawbacks and make decisions accordingly, ensuring that you are not indulging yourselves into premature abstraction. 
 
 As a general rule, I personally avoid implementing any "business logic" with macros, nor do I attempt to write macros for generating code that I will need to step through with a debugger time and again. Or the code that I will need to make micro changes in for performance testing and improvement.
 
 ## Wrapping Up
 
-This was a long journey! But I wanted anyone with basic knowledge and experience with Rust to be able to follow and come out of this able to write macros in their own projects.
+This was a long journey! But I wanted anyone with basic knowledge and experience with Rust to be able to follow and come out of this able to write macros in their own projects. 
 
 Hopefully, I was able to do that for you. I will be writing a lot more about macros in general, so stay tuned for that.
 
-You can find the complete code for everything we looked at in this article in [https://github.com/anshulsanghi-blog/macros-handbook][63] repository.
+You can find the complete code for everything we looked at in this article in [https://github.com/anshulsanghi-blog/macros-handbook](https://github.com/anshulsanghi-blog/macros-handbook) repository.
 
-Also, feel free to **[contact me][64]** if you have any questions or opinions on this topic.
+Also, feel free to **[contact me](mailto:contact@anshulsanghi.tech)** if you have any questions or opinions on this topic.
 
 ### **Enjoying my work?**
 
 Consider buying me a coffee to support my work!
 
-[☕Buy me a coffee][65]
+[☕Buy me a coffee](https://buymeacoffee.com/anshulsanghi)
 
 Till next time, happy coding and wishing you clear skies!
 
-[1]: https://www.freecodecamp.org/news/rust-in-replit/
-[2]: #heading-what-are-macros-in-rust
-[3]: #heading-types-of-macros-in-rust
-[4]: #heading-types-of-procedural-macros
-[5]: #heading-prerequisites
-[6]: #heading-helpful-dependencies
-[7]: #heading-how-to-write-a-simple-derive-macro
-[8]: #heading-the-intostringhashmap-derive-macro
-[9]: #heading-how-to-declare-a-derive-macro
-[10]: #how-to-parse-macro-input
-[11]: #how-to-ensure-a-struct-target-for-macro
-[12]: #heading-how-to-build-the-output-code
-[13]: #heading-how-to-use-your-derive-macro
-[14]: #heading-how-to-improve-our-implementation
-[15]: #heading-a-more-elaborate-derive-macro
-[16]: #heading-the-derivecustommodel-macro
-[17]: #how-to-separate-implementation-from-declaration
-[18]: #heading-how-to-parse-derive-macro-arguments
-[19]: #heading-how-to-implement-derivecustommodel
-[20]: #heading-how-to-generate-each-custom-model
-[21]: #how-to-use-your-derivecustommodal-macro
-[22]: #heading-a-simple-attribute-macro
-[23]: #heading-the-logduration-attribute
-[24]: #heading-how-to-declare-an-attribute-macro
-[25]: #heading-how-to-implement-the-logduration-attribute-macro
-[26]: #how-to-use-your-log-duration-macro
-[27]: #heading-a-more-elaborate-attribute-macro
-[28]: #heading-the-cachedfn-attribute
-[29]: #heading-how-to-implement-the-cachedfn-attribute-macro
-[30]: #heading-cachedfn-attribute-arguments
-[31]: #heading-how-to-use-the-cachedfn-macro
-[32]: #heading-a-simple-function-like-macro
-[33]: #heading-the-constantstring-macro
-[34]: #heading-how-to-declare-a-function-like-macro
-[35]: #heading-how-to-implement-the-constantstring-macro
-[36]: #heading-how-to-use-the-constantstring-macro
-[37]: #heading-a-more-elaborate-function-like-macro
-[38]: #heading-the-hashmapify-macro
-[39]: #heading-how-to-implement-the-hashmapify-macro
-[40]: #how-to-parse-hash-mapifys-input
-[41]: #how-to-generate-output-code
-[42]: #heading-how-to-convert-custom-data-types-to-output-tokens
-[43]: #heading-how-to-use-the-hashmapify-macro
-[44]: #heading-beyond-writing-macros
-[45]: #heading-helpful-cratestools
-[46]: #heading-downsides-of-macros
-[47]: #heading-debugging-or-lack-thereof
-[48]: #heading-compile-time-costs
-[49]: #heading-lack-of-auto-complete-and-code-checks
-[50]: #heading-where-do-we-draw-the-line
-[51]: #heading-wrapping-up
-[52]: #heading-enjoying-my-work
-[53]: https://doc.rust-lang.org/reference/macros-by-example.html
-[54]: https://doc.rust-lang.org/reference/conditional-compilation.html
-[55]: https://dev.to/balapriya/abstract-syntax-tree-ast-explained-in-plain-english-1h38
-[56]: https://crates.io/users/dtolnay
-[57]: https://doc.rust-lang.org/reference/expressions.html
-[58]: https://github.com/dtolnay/cargo-expand
-[59]: https://crates.io/users/dtolnay
-[60]: https://docs.rs/trybuild/latest/trybuild/#
-[61]: https://docs.rs/macrotest/latest/macrotest/#
-[62]: https://rustc-dev-guide.rust-lang.org/macro-expansion.html
-[63]: https://github.com/anshulsanghi-blog/macros-handbook
-[64]: mailto:contact@anshulsanghi.tech
-[65]: https://buymeacoffee.com/anshulsanghi

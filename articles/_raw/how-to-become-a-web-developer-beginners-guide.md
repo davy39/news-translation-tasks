@@ -1,65 +1,81 @@
 ---
 title: How to Become a Web Developer – a Beginner's Guide
-date: 2024-12-31T14:57:36.273Z
+subtitle: ''
 author: Kunal Nalawade
-authorURL: https://www.freecodecamp.org/news/author/KunalN25/
-originalURL: https://www.freecodecamp.org/news/how-to-become-a-web-developer-beginners-guide/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2024-12-22T21:29:59.771Z'
+originalURL: https://freecodecamp.org/news/how-to-become-a-web-developer-beginners-guide
+coverImage: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/505eectW54k/upload/4567a9e14c8e9bac3dc8d6c6a39661f5.jpeg
+tags:
+- name: JavaScript
+  slug: javascript
+- name: Web Development
+  slug: web-development
+- name: Frontend Development
+  slug: frontend-development
+- name: backend
+  slug: backend
+- name: Beginner Developers
+  slug: beginners
+seo_title: null
+seo_desc: Are you considering a career in web development? If so, then you are making
+  an excellent choice. Web Development is one of the most in-demand skills in the
+  market in 2024. With over 5.038 billion Internet users, web development has a promising
+  future...
 ---
 
-Are you considering a career in web development? If so, then you are making an excellent choice. Web Development is one of the most in-demand skills in the market in 2024. With over [5.038 billion Internet users][1], web development has a promising future.
-
-<!-- more -->
+Are you considering a career in web development? If so, then you are making an excellent choice. Web Development is one of the most in-demand skills in the market in 2024. With over [5.038 billion Internet users](https://www.webfx.com/web-development/statistics/), web development has a promising future.
 
 In this article, I am going to show you the essentials of getting started with web development. We’ll explore key tech stacks, beginner-friendly project ideas, helpful resources, and some additional tips.
 
-Two years ago, I wrote an [article][2] on this topic. Since the demand for web development still remains very high, I am excited to re-visit it with a more detailed guide. So, stick around until the end.
+Two years ago, I wrote an [article](https://medium.com/gitconnected/read-this-to-kickstart-your-web-development-journey-26f54b1a4843) on this topic. Since the demand for web development still remains very high, I am excited to re-visit it with a more detailed guide. So, stick around until the end.
 
 ## Table of Contents
 
-1.  [What is a Website?][3]
+1. [What is a Website?](#heading-what-is-a-website)
     
-    1.  [Frontend vs Backend][4]
-2.  [Frontend Development][5]
+    1. [Frontend vs Backend](#heading-frontend-vs-backend-of-a-website)
+        
+2. [Frontend Development](#heading-frontend-development)
     
-    1.  [HTML][6]
+    1. [HTML](#heading-html)
         
-    2.  [CSS][7]
+    2. [CSS](#heading-css)
         
-    3.  [JavaScript][8]
+    3. [JavaScript](#heading-javascript)
         
-    4.  [Frontend Frameworks and Libraries][9]
+    4. [Frontend Frameworks and Libraries](#heading-learn-frontend-frameworks-and-libraries)
         
-    5.  [Responsive Design][10]
+    5. [Responsive Design](#heading-learn-responsive-design)
         
-3.  [Backend Development][11]
+3. [Backend Development](#heading-backend-development)
     
-    1.  [Why you should learn a programming language?][12]
+    1. [Why you should learn a programming language?](#heading-why-should-you-learn-a-programming-language)
         
-    2.  [Python][13]
+    2. [Python](#heading-python)
         
-    3.  [Golang][14]
+    3. [Golang](#heading-golang)
         
-    4.  [Java][15]
+    4. [Java](#heading-java)
         
-    5.  [JavaScript][16]
+    5. [JavaScript](#heading-javascript-1)
         
-    6.  [How to choose a programming language?][17]
+    6. [How to choose a programming language?](#heading-how-to-choose-a-programming-language)
         
-    7.  [Backend Frameworks][18]
+    7. [Backend Frameworks](#heading-backend-development-frameworks)
         
-    8.  [Databases][19]
+    8. [Databases](#heading-databases)
         
-    9.  [APIs][20]
+    9. [APIs](#heading-apis)
         
-4.  [Git and GitHub][21]
+4. [Git and GitHub](#heading-git-and-github)
     
-5.  [Build a portfolio of projects][22]
+5. [Build a portfolio of projects](#heading-build-a-portfolio-of-projects)
     
-6.  [Deployment and Hosting Services][23]
+6. [Deployment and Hosting Services](#heading-deployment-and-hosting-platforms)
     
-7.  [Additional Tips][24]
+7. [Additional Tips](#heading-additional-tips)
     
 
 ## What is a Website?
@@ -92,19 +108,19 @@ As I mentioned above, frontend development is mainly concerned with the UI – t
 
 HTML (HyperText Markup Language) is used to write web pages that are displayed by the browser. It defines the structure and content of a web page, making it the backbone of every website.
 
-The content of a web page includes elements such as headings, paragraphs, links, images, lists, and so on. HTML creates and structures all these elements through the use of HTML _tags._ The browser, in turn, interprets this HTML code and renders it on your screen.
+The content of a web page includes elements such as headings, paragraphs, links, images, lists, and so on. HTML creates and structures all these elements through the use of HTML *tags.* The browser, in turn, interprets this HTML code and renders it on your screen.
 
 freeCodeCamp’s Responsive Web Design certification in their free curriculum starts off by teaching you HTML basics. You’ll even build your own photo app. So that’s a good place to start and dig deep into HTML.
 
-If you want additional practice, [w3schools.com][25] is a helpful resource for beginners as well. It offers clear and step-by-step tutorials for each concept. They also provide an interactive editor for you to practice using HTML tags and see the output web page (as does freeCodeCamp).
+If you want additional practice, [w3schools.com](https://www.w3schools.com/html/) is a helpful resource for beginners as well. It offers clear and step-by-step tutorials for each concept. They also provide an interactive editor for you to practice using HTML tags and see the output web page (as does freeCodeCamp).
 
 Focus on the following areas:
 
--   Creating a simple web page
+* Creating a simple web page
     
--   Using HTML tags to render content
+* Using HTML tags to render content
     
--   Creating Forms
+* Creating Forms
     
 
 ### CSS
@@ -115,28 +131,28 @@ CSS (Cascading Style Sheets) is used to add visual appeal to the web page. It tr
 
 Here’s how a website looks with plain HTML:
 
-![1*SUE5ynYY1Tu5BXOQZCoJtQ](https://miro.medium.com/v2/resize:fit:1400/1*SUE5ynYY1Tu5BXOQZCoJtQ.png)
+![](https://miro.medium.com/v2/resize:fit:1400/1*SUE5ynYY1Tu5BXOQZCoJtQ.png align="left")
 
 And this is what it looks like when you add CSS:
 
-![1*9cVIjOqY-sQESGI9qDVw0w](https://miro.medium.com/v2/resize:fit:1400/1*9cVIjOqY-sQESGI9qDVw0w.png)
+![](https://miro.medium.com/v2/resize:fit:1400/1*9cVIjOqY-sQESGI9qDVw0w.png align="left")
 
 Much better, right? It actually looks like a proper web page, as compared to the skeletal UI before. This is referred to as “styling” a web page.
 
 CSS styling includes the following:
 
--   Colours, fonts, and element backgrounds
+* Colours, fonts, and element backgrounds
     
--   Organising content in various layouts (grid, flex box, and so on)
+* Organising content in various layouts (grid, flex box, and so on)
     
--   Spacing, that is margins and paddings
+* Spacing, that is margins and paddings
     
--   Transitions and Animations (Advanced stuff)
+* Transitions and Animations (Advanced stuff)
     
 
 As you continue on in the freeCodeCamp curriculum, you’ll learn CSS as well – so that’s a great way to go.
 
-You can also refer to [w3schools.com][26] for CSS Tutorials. Play around with each CSS property in their interactive editors.
+You can also refer to [w3schools.com](https://www.w3schools.com/css/default.asp) for CSS Tutorials. Play around with each CSS property in their interactive editors.
 
 **Note:** HTML and CSS are NOT programming languages.
 
@@ -146,37 +162,38 @@ HTML and CSS are only able to create static websites – that is, you cannot int
 
 JavaScript (JS) is a programming language that makes a website dynamic and interactive. It adds the following functionalities to a website:
 
--   Handling user interactions like clicks, hovers, keyboard presses, form filling, and so on.
+* Handling user interactions like clicks, hovers, keyboard presses, form filling, and so on.
     
--   Updating content dynamically on a web page
+* Updating content dynamically on a web page
     
--   Handling form validations and submissions
+* Handling form validations and submissions
     
--   Interacting with the backend servers
+* Interacting with the backend servers
     
 
 JavaScript has many more capabilities that make your website functional and engaging for end users. As you start your JS learning journey, building strong foundation of the concepts is key. Initially, focus on the following areas:
 
--   Basic JavaScript syntax
+* Basic JavaScript syntax
     
--   JS Functions
+* JS Functions
     
--   Interacting with DOM (Document Object Model)
+* Interacting with DOM (Document Object Model)
     
--   Event Handling
+* Event Handling
     
--   JS Objects and Arrays
+* JS Objects and Arrays
     
--   Asynchronous JavaScript
+* Asynchronous JavaScript
     
 
 Refer to the following resources for JavaScript:
 
--   [freeCodeCamp][27] for a free, in-depth, JS curriculum
-
--   [w3schools.com][28] for basic JavaScript tutorial
+* [freeCodeCamp](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/) for a free, in-depth, JS curriculum
     
--   [JavaScript Interview Prep Handbook][29] for important JavaScript concepts.
+
+* [w3schools.com](https://www.w3schools.com/js/default.asp) for basic JavaScript tutorial
+    
+* [JavaScript Interview Prep Handbook](https://www.freecodecamp.org/news/js-interview-prep-handbook/) for important JavaScript concepts.
     
 
 There are a lot of other resources for JavaScript, but I won’t overwhelm you with too many. These two should be enough to get started.
@@ -197,9 +214,9 @@ React JS is a JavaScript library that makes it easy to create dynamic and intera
 
 React is my personal suggestion since it has a gentler learning curve compared to other frameworks. It is in very high demand among frontend roles, as many web apps are built in React.
 
-To start learning React, your best resource is the [React Docs][30]. They are very detailed, and include interactive code editors to play around with.
+To start learning React, your best resource is the [React Docs](https://react.dev/learn). They are very detailed, and include interactive code editors to play around with.
 
-The freeCodeCamp YouTube channel also has some helpful React courses, like [this one from Bob Ziroll][31], and the Frontend Development Libraries certification has a [React section as well][32].
+The freeCodeCamp YouTube channel also has some helpful React courses, like [this one from Bob Ziroll](https://www.freecodecamp.org/news/learn-react-2024/), and the Frontend Development Libraries certification has a [React section as well](https://www.freecodecamp.org/learn/front-end-development-libraries/#react).
 
 Apart from React, there are other JavaScript frameworks like Angular, Vue, and the jQuery library. These remain popular as well, and depending on which tools are in demand in your area, you can focus on the one that will meet your needs the best.
 
@@ -211,15 +228,15 @@ Before moving on, let’s talk about a fundamental practice in web development.
 
 Responsive design refers to an approach where your design adjusts to fit screens of all sizes, ranging from desktops to tablets and mobiles. A good responsive design drastically reduces the need to write separate code for different screen sizes.
 
-Here’s an interesting fact: _mobile phones make up two-thirds of web usage in the entire world._ So, to ensure a good user experience, you need to make the website look good on mobile phones.
+Here’s an interesting fact: *mobile phones make up two-thirds of web usage in the entire world.* So, to ensure a good user experience, you need to make the website look good on mobile phones.
 
-Learn more about responsive design in this [simple guide][33], and read more about [some best practices here][34].
+Learn more about responsive design in this [simple guide](https://levelup.gitconnected.com/read-this-to-make-your-website-responsive-35af4ab7992b), and read more about [some best practices here](https://www.freecodecamp.org/news/responsive-design-best-practices/).
 
 And here are some other resources that can help you on your frontend journey:
 
--   [MDN Docs][35]
+* [MDN Docs](https://developer.mozilla.org/en-US/docs/Learn)
     
--   [WebDevSimplified][36] - YouTube Channel
+* [WebDevSimplified](https://www.youtube.com/@WebDevSimplified) - YouTube Channel
     
 
 ## Backend Development
@@ -246,18 +263,18 @@ Python is has a lot of tutorials and good community support, making it easy to g
 
 Refer to the following resources for learning Python:
 
--   [Ultimate Python Beginner’s Course][37] on freeCodeCamp’s YouTube channel
+* [Ultimate Python Beginner’s Course](https://www.freecodecamp.org/news/ultimate-beginners-python-course/) on freeCodeCamp’s YouTube channel
     
--   [GeeksforGeeks][38] Python Tutorial
+* [GeeksforGeeks](https://www.geeksforgeeks.org/python-programming-language-tutorial/) Python Tutorial
     
--   [Python Tutorial for Beginners on YouTube][39] (Hindi)
+* [Python Tutorial for Beginners on YouTube](https://youtu.be/vLqTf2b6GZw?si=hcggX88jmrVYvpC5) (Hindi)
     
--   [Machine Learning with Python][40] – freeCodeCamp certification
+* [Machine Learning with Python](https://www.freecodecamp.org/learn/machine-learning-with-python/) – freeCodeCamp certification
     
 
 ### Golang
 
-Golang (Go) is increasing in popularity because of its simplicity and efficiency. Go code executes quickly and efficiently, making it a good option for high performance needs. This also leads to faster development time. Go also has excellent support for [concurrency][41], which leads to efficient processing.
+Golang (Go) is increasing in popularity because of its simplicity and efficiency. Go code executes quickly and efficiently, making it a good option for high performance needs. This also leads to faster development time. Go also has excellent support for [concurrency](https://gowthamy.medium.com/concurrent-programming-introduction-1b6eac31aa66), which leads to efficient processing.
 
 Go is beginner-friendly and has a clean and concise syntax, making it easy to read and maintain. It also has an extensive standard library offering a many built-in functions and tools, so it’s easy to set up a project without much hassle.
 
@@ -265,16 +282,16 @@ Go is growing in popularity because of its efficiency, and many companies are ad
 
 Go offers plenty of resources and a growing community for beginners. To get started with Go, refer to the following resources:
 
--   [Tour of Go][42] – Interactive Learning with basic Golang concepts
+* [Tour of Go](https://go.dev/tour/welcome/1) – Interactive Learning with basic Golang concepts
     
--   [Golang Handbook][43] from Flavio Copes
+* [Golang Handbook](https://www.freecodecamp.org/news/go-beginners-handbook/) from Flavio Copes
     
--   [Go Docs][44] – Very detailed
+* [Go Docs](https://go.dev/doc/) – Very detailed
     
 
 ### Java
 
-Java is an [Object-Oriented Programming][45] (OOP) language, widely used for backend development. Java is known for its security and robustness, making it a preferred choice for applications that require high reliability such as financial and healthcare systems. Java also offers a great support for concurrency.
+Java is an [Object-Oriented Programming](https://medium.com/gitconnected/come-and-join-the-beautiful-world-of-java-9cedc815bafa) (OOP) language, widely used for backend development. Java is known for its security and robustness, making it a preferred choice for applications that require high reliability such as financial and healthcare systems. Java also offers a great support for concurrency.
 
 Java is a good option for beginners as it has extensive resources and a large developer community. This includes plenty of tutorials and detailed documentation to make life easier for beginners as well as experienced developers.
 
@@ -284,9 +301,9 @@ Lastly, the concepts that you learn while coding in Java stick with you and make
 
 The following resources can help you get started with Java:
 
--   [Java Programming for Beginners on freeCodeCamp.org][46]
+* [Java Programming for Beginners on freeCodeCamp.org](https://www.youtube.com/watch?v=A74TOX803D0)
     
--   [Objects-Oriented Programming in Java][47]
+* [Objects-Oriented Programming in Java](https://www.freecodecamp.org/news/object-oriented-programming-concepts-java/)
     
 
 ### JavaScript
@@ -297,15 +314,15 @@ NodeJS is a run time environment that allows you to run JS code on the server si
 
 NodeJS follows an event-driven architecture and asynchronous programming, which enables it to handle multiple tasks without stopping execution for a single one (non-blocking I/O). Node is single threaded, so instead of creating multiple threads to handle tasks, it executes them one by one asynchronously by queuing tasks.
 
-Node also follows a modular architecture, meaning you can break your application into smaller, manageable components. It also includes [NPM][48] (Node Package Manager) which provides access to thousands of open-source libraries to add functionality like routing, authentication, or database handling.
+Node also follows a modular architecture, meaning you can break your application into smaller, manageable components. It also includes [NPM](https://docs.npmjs.com/about-npm) (Node Package Manager) which provides access to thousands of open-source libraries to add functionality like routing, authentication, or database handling.
 
 Why use Node?
 
--   This is a very good option if you are already familiar with JavaScript, as you don’t need to learn any other language.
+* This is a very good option if you are already familiar with JavaScript, as you don’t need to learn any other language.
     
--   Node is fast and efficient, making it easy if you want to set up a small server quickly.
+* Node is fast and efficient, making it easy if you want to set up a small server quickly.
     
--   Node also has a large ecosystem of libraries through NPM.
+* Node also has a large ecosystem of libraries through NPM.
     
 
 However, Node is not ideal for CPU-intensive tasks as they can block the main thread, since it’s single threaded.
@@ -316,15 +333,15 @@ With so many options available, it may feel confusing to choose the right one fo
 
 Python and Golang are very beginner-friendly with simple syntax. So, if you value a gentle learning curve, then these two are good options. Java is known for its reliability and robustness, with a lot of enterprise-level applications built using Java.
 
-As for the job opportunities, there’s [high demand][49] for each of the above languages, so you can choose any one you want. The most important thing is to develop your problem solving skill and understand how reliable software is built.
+As for the job opportunities, there’s [high demand](https://codeop.tech/blog/programming-languages-in-demand/) for each of the above languages, so you can choose any one you want. The most important thing is to develop your problem solving skill and understand how reliable software is built.
 
 The choice of language doesn’t really matter in the long run, since the core fundamentals remain the same. So, my advice is to pick any language, learn its syntax and core capabilities, and start solving problems. You can start with the following:
 
--   [Learn Data Structures and Algorithms][50]
+* [Learn Data Structures and Algorithms](https://www.geeksforgeeks.org/how-to-start-learning-dsa/)
     
--   [Start solving problems on LeetCode][51]
+* [Start solving problems on LeetCode](https://leetcode.com/discuss/study-guide/623011/A-guide-for-dummies-\(like-me\))
     
--   Learn language specific frameworks and develop projects (Upcoming section)
+* Learn language specific frameworks and develop projects (Upcoming section)
     
 
 ### Backend Development Frameworks
@@ -333,11 +350,11 @@ Programming languages alone are not enough to create robust and secure applicati
 
 Depending on your language of choice, you can learn the following frameworks:
 
--   [Django][52] and [Flask][53] – Python Based Frameworks
+* [Django](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Introduction) and [Flask](https://www.geeksforgeeks.org/python-introduction-to-web-development-using-flask/) – Python Based Frameworks
     
--   [Java Spring Boot][54]
+* [Java Spring Boot](https://spring.io/projects/spring-boot)
     
--   [Gin][55] – Golang framework (You can create a simple Golang application without using a framework)
+* [Gin](https://gin-gonic.com/docs/introduction/) – Golang framework (You can create a simple Golang application without using a framework)
     
 
 Read more about them if you are interested.
@@ -348,36 +365,36 @@ A database is a structured collection of data and is a crucial part of backend d
 
 Databases are broadly categorised into two types:
 
--   **Relational Databases** use tables to store data and define relationships between those tables. Examples are [MySQL][56], [PostgreSQL][57], [SQLite][58].
+* **Relational Databases** use tables to store data and define relationships between those tables. Examples are [MySQL](https://www.geeksforgeeks.org/what-is-mysql/), [PostgreSQL](https://www.postgresql.org/about/), [SQLite](https://www.simplilearn.com/tutorials/sql-tutorial/what-is-sqlite).
     
--   **Non-Relational Databases (NoSQL)** are designed to handle unstructured or semi-structured data and are often used for hierarchical or document-based data storage. Examples are [MongoDB][59] and [Cassandra][60].
+* **Non-Relational Databases (NoSQL)** are designed to handle unstructured or semi-structured data and are often used for hierarchical or document-based data storage. Examples are [MongoDB](https://www.geeksforgeeks.org/what-is-mongodb-working-and-features/) and [Cassandra](https://www.geeksforgeeks.org/apache-cassandra-nosql-database/).
     
-    -   **MongoDB**: A popular NoSQL database for flexible and scalable data storage.
+    * **MongoDB**: A popular NoSQL database for flexible and scalable data storage.
         
-    -   **Cassandra**: Suitable for handling large amounts of distributed data.
+    * **Cassandra**: Suitable for handling large amounts of distributed data.
         
 
-To begin with relational databases, [learn SQL (Structured Query Language)][61]. SQL is used to write queries that perform various operations on the data, such as:
+To begin with relational databases, [learn SQL (Structured Query Language)](https://www.freecodecamp.org/news/learn-sql-free-relational-database-courses-for-beginners/). SQL is used to write queries that perform various operations on the data, such as:
 
--   **Creating** tables and defining their structure.
+* **Creating** tables and defining their structure.
     
--   **Reading** data using SELECT statements.
+* **Reading** data using SELECT statements.
     
--   **Updating** existing records.
+* **Updating** existing records.
     
--   **Deleting** unnecessary or outdated data.
+* **Deleting** unnecessary or outdated data.
     
 
 Refer to the following resources to learn SQL:
 
--   [Full handbook on SQL][62]
+* [Full handbook on SQL](https://www.freecodecamp.org/news/a-beginners-guide-to-sql/)
     
--   [w3schools.com][63]
+* [w3schools.com](https://www.w3schools.com/sql/)
     
--   [GeeksforGeeks][64] – Great resource to learn about database concepts
+* [GeeksforGeeks](https://www.geeksforgeeks.org/sql-tutorial/) – Great resource to learn about database concepts
     
 
-Once you are familiar with basic SQL syntax and are able to write queries, explore [DBMS (DataBase Management System)][65] concepts. These help you understand how databases are designed, managed, and optimised.
+Once you are familiar with basic SQL syntax and are able to write queries, explore [DBMS (DataBase Management System)](https://www.geeksforgeeks.org/dbms/) concepts. These help you understand how databases are designed, managed, and optimised.
 
 As a beginner, I recommend starting with relational databases because they provide a solid foundation in DBMS concepts involving tables and relationships between them. They are much more widely used among enterprises and learning their concepts can benefit you a lot.
 
@@ -393,11 +410,11 @@ To see these API calls, visit any website and open the Network Tab in Developer 
 
 Read the following articles to understand more about APIs:
 
--   [GeeksforGeeks - What is an API?][66]
+* [GeeksforGeeks - What is an API?](https://www.geeksforgeeks.org/what-is-an-api/)
     
--   [Full beginner-friendly course on APIs][67]
+* [Full beginner-friendly course on APIs](https://www.freecodecamp.org/news/apis-for-beginners/)
     
--   [How does an API work?][68]
+* [How does an API work?](https://www.freecodecamp.org/news/how-apis-work/)
     
 
 At this point, you know how to start with both frontend and backend development. If you've reached this stage, congratulations! You've completed most of the hard work. But there’s one more thing you need to learn before you start developing projects.
@@ -412,11 +429,11 @@ GitHub lets you share your project code and view other developers' code, too. Th
 
 To get started with Git and GitHub, refer to the following articles:
 
--   [Learn the Basics of Git in Under 10 Minutes][69]
+* [Learn the Basics of Git in Under 10 Minutes](https://www.freecodecamp.org/news/learn-the-basics-of-git-in-under-10-minutes-da548267cc91/)
     
--   [Full book on Git and GitHub + version control basics][70]
+* [Full book on Git and GitHub + version control basics](https://www.freecodecamp.org/news/gitting-things-done-book/)
     
--   [Getting Started with GitHub][71]
+* [Getting Started with GitHub](https://docs.github.com/en/get-started/start-your-journey)
     
 
 ## Build a Portfolio of Projects
@@ -425,20 +442,20 @@ Now, you are ready to start working on projects. A strong portfolio of projects 
 
 Consider the following project ideas:
 
--   Todo App
+* Todo App
     
--   E-Commerce App
+* E-Commerce App
     
--   Personal Portfolio website
+* Personal Portfolio website
     
--   Weather App – Use a public API and create a simple UI
+* Weather App – Use a public API and create a simple UI
     
--   Expense Tracker
+* Expense Tracker
     
 
 You can research more about these ideas and start with some basic features that come to mind. Build either the frontend, the backend, or both, depending on your goals. Share your projects on GitHub to increase their visibility.
 
-Check out [GeeksforGeeks][72] for more project ideas.
+Check out [GeeksforGeeks](https://www.geeksforgeeks.org/web-development-projects/) for more project ideas.
 
 ## Deployment and Hosting Platforms
 
@@ -448,40 +465,40 @@ Let’s understand the above terms. **Deployment** refers to the process of uplo
 
 Deploying and Hosting an application mainly follows these steps:
 
--   The application code is written, tested locally, and optimised for production
+* The application code is written, tested locally, and optimised for production
     
--   The required configurations and secrets (passwords, API keys, and so on) are written as environment variables
+* The required configurations and secrets (passwords, API keys, and so on) are written as environment variables
     
--   The code is pushed to a version control system like GitHub or GitLab
+* The code is pushed to a version control system like GitHub or GitLab
     
--   The code is scanned for any security vulnerabilities and automated tests are run
+* The code is scanned for any security vulnerabilities and automated tests are run
     
--   Hosting platforms pull the code from these repositories and make it accessible on the internet.
+* Hosting platforms pull the code from these repositories and make it accessible on the internet.
     
 
-Hosting services like [Netlify][73], [GitHub Pages][74], and [Heroku][75] offer free and paid services and are easy to use for beginners. Netlify only supports frontend applications while Heroku is good for backend and full stack applications with easy integration of databases. GitHub Pages lets you host right from your repository.
+Hosting services like [Netlify](https://www.netlify.com/blog/2016/09/29/a-step-by-step-guide-deploying-on-netlify/), [GitHub Pages](https://pages.github.com/), and [Heroku](https://www.heroku.com/) offer free and paid services and are easy to use for beginners. Netlify only supports frontend applications while Heroku is good for backend and full stack applications with easy integration of databases. GitHub Pages lets you host right from your repository.
 
 Releasing your website to the public is a great opportunity to showcase your work to recruiters and potential collaborators.
 
 ## Additional Tips
 
-1.  Don't spend too much time on tutorials, as you might get stuck in "tutorial hell." Tutorials are important for understanding core concepts, but real learning happens when you work hands-on. So start building as soon as you can, even if it’s just small projects at first.
+1. Don't spend too much time on tutorials, as you might get stuck in "tutorial hell." Tutorials are important for understanding core concepts, but real learning happens when you work hands-on. So start building as soon as you can, even if it’s just small projects at first.
     
-2.  JavaScript might seem overwhelming at first, but start small and practice regularly. Don’t rush to learn multiple things at once, tackle one concept at a time and practice through code for better understanding.
+2. JavaScript might seem overwhelming at first, but start small and practice regularly. Don’t rush to learn multiple things at once, tackle one concept at a time and practice through code for better understanding.
     
-3.  Experiment with different frameworks initially to find one that works for you. Once you choose a framework, stick with it until you learn it well.
+3. Experiment with different frameworks initially to find one that works for you. Once you choose a framework, stick with it until you learn it well.
     
-4.  Ensure that your programming language concepts are clear before jumping into any framework.
+4. Ensure that your programming language concepts are clear before jumping into any framework.
     
-5.  If you feel that a programming language is not working for you, you can switch to a different one, the core fundamentals remain the same.
+5. If you feel that a programming language is not working for you, you can switch to a different one, the core fundamentals remain the same.
     
-6.  As a beginner, it's important to have a basic understanding of both the frontend and the backend. Later, you can choose to specialise in one or you can choose to focus on both, becoming a "full stack" developer.
+6. As a beginner, it's important to have a basic understanding of both the frontend and the backend. Later, you can choose to specialise in one or you can choose to focus on both, becoming a "full stack" developer.
     
-7.  You will face challenges at first, so don't get discouraged. Keep practicing, and you will get better over time.
+7. You will face challenges at first, so don't get discouraged. Keep practicing, and you will get better over time.
     
-8.  If you are stuck on any issue, use Chat GPT, Google Search, forums and developer communities, and Stack Overflow as much as possible. I am always available if you need any help.
+8. If you are stuck on any issue, use Chat GPT, Google Search, forums and developer communities, and Stack Overflow as much as possible. I am always available if you need any help.
     
-9.  Lastly, stay updated with the latest trends and technologies in web development. Always look for new or improved ways to solve problems. Learning never stops!
+9. Lastly, stay updated with the latest trends and technologies in web development. Always look for new or improved ways to solve problems. Learning never stops!
     
 
 ## Conclusion
@@ -498,91 +515,10 @@ Connect with me on Twitter for more updates and discussions. If you have any que
 
 ### **References:**
 
--   [How to become a web developer][76]
+* [How to become a web developer](https://www.geeksforgeeks.org/can-start-learn-web-development/)
     
--   [Building your first website][77]
+* [Building your first website](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website)
     
--   [Getting started with backend engineering][78]
+* [Getting started with backend engineering](https://medium.com/shecodeafrica/getting-started-with-backend-engineering-a-beginners-guide-2426759238ea)
     
--   [Developer roadmap][79]
-    
-
-[1]: https://www.webfx.com/web-development/statistics/
-[2]: https://medium.com/gitconnected/read-this-to-kickstart-your-web-development-journey-26f54b1a4843
-[3]: #heading-what-is-a-website
-[4]: #heading-frontend-vs-backend-of-a-website
-[5]: #heading-frontend-development
-[6]: #heading-html
-[7]: #heading-css
-[8]: #heading-javascript
-[9]: #heading-learn-frontend-frameworks-and-libraries
-[10]: #heading-learn-responsive-design
-[11]: #heading-backend-development
-[12]: #heading-why-should-you-learn-a-programming-language
-[13]: #heading-python
-[14]: #heading-golang
-[15]: #heading-java
-[16]: #heading-javascript-1
-[17]: #heading-how-to-choose-a-programming-language
-[18]: #heading-backend-development-frameworks
-[19]: #heading-databases
-[20]: #heading-apis
-[21]: #heading-git-and-github
-[22]: #heading-build-a-portfolio-of-projects
-[23]: #heading-deployment-and-hosting-platforms
-[24]: #heading-additional-tips
-[25]: https://www.w3schools.com/html/
-[26]: https://www.w3schools.com/css/default.asp
-[27]: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/
-[28]: https://www.w3schools.com/js/default.asp
-[29]: https://www.freecodecamp.org/news/js-interview-prep-handbook/
-[30]: https://react.dev/learn
-[31]: https://www.freecodecamp.org/news/learn-react-2024/
-[32]: https://www.freecodecamp.org/learn/front-end-development-libraries/#react
-[33]: https://levelup.gitconnected.com/read-this-to-make-your-website-responsive-35af4ab7992b
-[34]: https://www.freecodecamp.org/news/responsive-design-best-practices/
-[35]: https://developer.mozilla.org/en-US/docs/Learn
-[36]: https://www.youtube.com/@WebDevSimplified
-[37]: https://www.freecodecamp.org/news/ultimate-beginners-python-course/
-[38]: https://www.geeksforgeeks.org/python-programming-language-tutorial/
-[39]: https://youtu.be/vLqTf2b6GZw?si=hcggX88jmrVYvpC5
-[40]: https://www.freecodecamp.org/learn/machine-learning-with-python/
-[41]: https://gowthamy.medium.com/concurrent-programming-introduction-1b6eac31aa66
-[42]: https://go.dev/tour/welcome/1
-[43]: https://www.freecodecamp.org/news/go-beginners-handbook/
-[44]: https://go.dev/doc/
-[45]: https://medium.com/gitconnected/come-and-join-the-beautiful-world-of-java-9cedc815bafa
-[46]: https://www.youtube.com/watch?v=A74TOX803D0
-[47]: https://www.freecodecamp.org/news/object-oriented-programming-concepts-java/
-[48]: https://docs.npmjs.com/about-npm
-[49]: https://codeop.tech/blog/programming-languages-in-demand/
-[50]: https://www.geeksforgeeks.org/how-to-start-learning-dsa/
-[51]: https://leetcode.com/discuss/study-guide/623011/A-guide-for-dummies-\(like-me\)
-[52]: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Introduction
-[53]: https://www.geeksforgeeks.org/python-introduction-to-web-development-using-flask/
-[54]: https://spring.io/projects/spring-boot
-[55]: https://gin-gonic.com/docs/introduction/
-[56]: https://www.geeksforgeeks.org/what-is-mysql/
-[57]: https://www.postgresql.org/about/
-[58]: https://www.simplilearn.com/tutorials/sql-tutorial/what-is-sqlite
-[59]: https://www.geeksforgeeks.org/what-is-mongodb-working-and-features/
-[60]: https://www.geeksforgeeks.org/apache-cassandra-nosql-database/
-[61]: https://www.freecodecamp.org/news/learn-sql-free-relational-database-courses-for-beginners/
-[62]: https://www.freecodecamp.org/news/a-beginners-guide-to-sql/
-[63]: https://www.w3schools.com/sql/
-[64]: https://www.geeksforgeeks.org/sql-tutorial/
-[65]: https://www.geeksforgeeks.org/dbms/
-[66]: https://www.geeksforgeeks.org/what-is-an-api/
-[67]: https://www.freecodecamp.org/news/apis-for-beginners/
-[68]: https://www.freecodecamp.org/news/how-apis-work/
-[69]: https://www.freecodecamp.org/news/learn-the-basics-of-git-in-under-10-minutes-da548267cc91/
-[70]: https://www.freecodecamp.org/news/gitting-things-done-book/
-[71]: https://docs.github.com/en/get-started/start-your-journey
-[72]: https://www.geeksforgeeks.org/web-development-projects/
-[73]: https://www.netlify.com/blog/2016/09/29/a-step-by-step-guide-deploying-on-netlify/
-[74]: https://pages.github.com/
-[75]: https://www.heroku.com/
-[76]: https://www.geeksforgeeks.org/can-start-learn-web-development/
-[77]: https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website
-[78]: https://medium.com/shecodeafrica/getting-started-with-backend-engineering-a-beginners-guide-2426759238ea
-[79]: https://www.youtube.com/watch?v=CWAi_2oLhYg
+* [Developer roadmap](https://www.youtube.com/watch?v=CWAi_2oLhYg)

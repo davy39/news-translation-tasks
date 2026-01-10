@@ -1,41 +1,58 @@
 ---
 title: Cannot use import statement outside a module [React TypeScript Error Solved]
-date: 2024-08-27T14:10:46.341Z
+subtitle: ''
 author: Ihechikara Abba
-authorURL: https://www.freecodecamp.org/news/author/Ihechikara/
-originalURL: https://www.freecodecamp.org/news/cannot-use-import-statement-outside-a-module-react-typescript-error-solved/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2022-11-15T15:30:56.000Z'
+originalURL: https://freecodecamp.org/news/cannot-use-import-statement-outside-a-module-react-typescript-error-solved
+coverImage: https://www.freecodecamp.org/news/content/images/2022/11/markus-spiske-iar-afB0QQw-unsplash.jpg
+tags:
+- name: error
+  slug: error
+- name: error handling
+  slug: error-handling
+- name: JavaScript
+  slug: javascript
+- name: node
+  slug: node
+- name: node js
+  slug: node-js
+- name: TypeScript
+  slug: typescript
+seo_title: null
+seo_desc: "When building a web application, you may encounter the SyntaxError: Cannot\
+  \ use import statement outside a module error. \nThis error might be raised when\
+  \ using either JavaScript or TypeScript in the back-end. So you could be working\
+  \ on the client side..."
 ---
 
-When building a web application, you may encounter the `SyntaxError: Cannot use import statement outside a module` error.
+When building a web application, you may encounter the `SyntaxError: Cannot use import statement outside a module` error. 
 
-<!-- more -->
+This error might be raised when using either JavaScript or TypeScript in the back-end. So you could be working on the client side with React, Vue, and so on, and still run into this error. 
 
-This error might be raised when using either JavaScript or TypeScript in the back-end. So you could be working on the client side with React, Vue, and so on, and still run into this error.
+You can also encounter this error when working with JavaScript on the client side. 
 
-You can also encounter this error when working with JavaScript on the client side.
+In this article, you'll learn how to fix the `SyntaxError: Cannot use import statement outside a module` error when using TypeScript or JavaScript with [Node](https://www.freecodecamp.org/news/node-js-server-side-javascript-what-is-node-used-for/). 
 
-In this article, you'll learn how to fix the `SyntaxError: Cannot use import statement outside a module` error when using TypeScript or JavaScript with [Node][1].
-
-You'll also learn how to fix the error when working with JavaScript on the client side.
+You'll also learn how to fix the error when working with JavaScript on the client side. 
 
 ## How to Fix the TypeScript `SyntaxError: Cannot use import statement outside a module` Error
 
-In this section, we'll work with a basic Node server using Express.
+In this section, we'll work with a basic Node server using Express. 
 
 Note that if you're using the latest version of TypeScript for your Node app, the **tsconfig.json** file has default rules that prevent the `SyntaxError: Cannot use import statement outside a module` error from being raised.
 
 So you're most likely not going to encounter the `SyntaxError: Cannot use import statement outside a module` error if you:
 
--   Install the latest version of TypeScript, and are using the default **tsconfig.json** file that is generated when you run `tsc init` with the latest version.
--   Setup TypeScript correctly for Node and install the necessary packages.
+* Install the latest version of TypeScript, and are using the default **tsconfig.json** file that is generated when you run `tsc init` with the latest version.
+* Setup TypeScript correctly for Node and install the necessary packages.
 
 But let's assume you're not using the latest **tsconfig.json** file configurations.
 
 Here's an Express server that listens on port 3000 and logs "Hello World!" to the console:
 
-```
+```javascript
 import express from "express"
 
 const app = express()
@@ -46,35 +63,35 @@ app.listen("3000", (): void => {
 })
 ```
 
-The code above looks as though it should run perfectly but the `SyntaxError: Cannot use import statement outside a module` is raised.
+The code above looks as though it should run perfectly but the `SyntaxError: Cannot use import statement outside a module` is raised. 
 
-This is happening because we used the `import` keyword to import a module: `import express from "express"`.
+This is happening because we used the `import` keyword to import a module: `import express from "express"`. 
 
 To fix this, head over to the **tsconfig.json** file and scroll to the modules section.
 
 You should see a particular rule like this under the modules section:
 
-```
+```javascript
 /* Modules */
-"module": "esnext"
+"module": "esnext" 
 ```
 
-To fix the problem, change the value "esnext" to "commonjs".
+To fix the problem, change the value "esnext" to "commonjs". 
 
 That is:
 
-```
+```javascript
 /* Modules */
 "module": "commonjs"
 ```
 
 ## How to Fix the JavaScript `SyntaxError: Cannot use import statement outside a module` Error
 
-Fixing the `SyntaxError: Cannot use import statement outside a module` error when using vanilla JS is a bit different from TypeScript.
+Fixing the `SyntaxError: Cannot use import statement outside a module` error when using vanilla JS is a bit different from TypeScript. 
 
 Here's our server:
 
-```
+```javascript
 import express from "express";
 
 const app = express();
@@ -83,13 +100,14 @@ app.listen(3000, () => {
     console.log("Hello World!");
     // SyntaxError: Cannot use import statement outside a module
 });
+
 ```
 
-We're getting the `SyntaxError: Cannot use import statement outside a module` error for the same reason — we used the `import` keyword to import a module.
+We're getting the `SyntaxError: Cannot use import statement outside a module` error for the same reason — we used the `import` keyword to import a module. 
 
 To fix this, go to the **package.json** file and add `"type": "module",`. That is:
 
-```
+```javascript
 {
   "name": "js",
   "version": "1.0.0",
@@ -106,6 +124,7 @@ To fix this, go to the **package.json** file and add `"type": "module",`. That i
     "express": "^4.18.2"
   }
 }
+
 ```
 
 Now you can use the `import` keyword without getting an error.
@@ -118,7 +137,7 @@ To fix this error when working with JavaScript on the client side (without any f
 
 ## Summary
 
-In this article, we talked about the `SyntaxError: Cannot use import statement outside a module` error in TypeScript and JavaScript.
+In this article, we talked about the `SyntaxError: Cannot use import statement outside a module` error in TypeScript and JavaScript. 
 
 This error mainly occurs when you use the `import` keyword to import a module in Node.js. Or when you omit the `type="module"` attribute in a `script` tag.
 
@@ -126,4 +145,3 @@ We saw code examples that raised the error and how to fix them when working with
 
 Happy coding!
 
-[1]: https://www.freecodecamp.org/news/node-js-server-side-javascript-what-is-node-used-for/

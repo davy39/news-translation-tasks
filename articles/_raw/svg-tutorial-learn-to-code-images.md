@@ -1,16 +1,26 @@
 ---
 title: SVG Tutorial – How to Code Images with 12 Examples
-date: 2024-08-19T12:49:19.047Z
+subtitle: ''
 author: Hunor Márton Borbély
-authorURL: https://www.freecodecamp.org/news/author/hunor/
-originalURL: https://www.freecodecamp.org/news/svg-tutorial-learn-to-code-images/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2023-12-04T12:29:00.000Z'
+originalURL: https://freecodecamp.org/news/svg-tutorial-learn-to-code-images
+coverImage: https://www.freecodecamp.org/news/content/images/2021/10/Learn-SVG.001.jpeg
+tags:
+- name: image
+  slug: image
+- name: SVG
+  slug: svg
+seo_title: null
+seo_desc: 'Have you ever needed an icon for your website, but you couldn''t quite
+  find the right one? Or perhaps you wanted to have a simple diagram, but didn''t
+  want to learn a whole new library just for that?
+
+  Well, good news – you can do all that and more witho...'
 ---
 
 Have you ever needed an icon for your website, but you couldn't quite find the right one? Or perhaps you wanted to have a simple diagram, but didn't want to learn a whole new library just for that?
-
-<!-- more -->
 
 Well, good news – you can do all that and more without ever leaving your favorite code editor or using any third party tools or libraries.
 
@@ -22,7 +32,7 @@ For more complicated images, you will still use a designer tool. But the next ti
 
 So how do SVGs look like under the surface? In this tutorial, we go through the source code of a few SVGs to cover the foundations.
 
-The following examples are from [svg-tutorial.com][1]. You can also [watch this article as a video][2] with even more fun examples.
+The following examples are from [svg-tutorial.com](https://svg-tutorial.com). You can also [watch this article as a video](https://youtu.be/kBT90nwUb_o) with even more fun examples.
 
 ## **The SVG tag**
 
@@ -37,8 +47,7 @@ The size defined by `width` and `height` is how the rest of HTML thinks of the i
 In the next example we have three SVGs that have the very same content. A `circle` element with the same center coordinate and same radius. They appear quite different, though.
 
 ![Learn-SVG.001-1](https://www.freecodecamp.org/news/content/images/2021/12/Learn-SVG.001-1.jpeg)
-
-The very same circle can appear different based on the size of the image and the `viewBox` property
+_The very same circle can appear different based on the size of the image and the `viewBox` property_
 
 At the example in the middle, the size defined by `width` and `height` matches the one defined by the `viewbox`. In the first example we see what happens if the `width` and `height` are smaller. The image simply shrinks down as all the coordinates and sizes defined within the image still align to the `viewbox`.
 
@@ -59,8 +68,7 @@ Let’s start with a simple Christmas tree ornament. Here we'll only use simple 
 We'll position and style these elements with attributes. For the circle, we define the center position and for the rectangle, we define the top left corner. These positions are always related to the coordinate system defined by the viewBox.
 
 ![Learn-SVG.002-1](https://www.freecodecamp.org/news/content/images/2021/12/Learn-SVG.002-1.jpeg)
-
-Christmas Ornament made out of circles and a rectangle. On the right you can see the coordinates we use in this example.
+_Christmas Ornament made out of circles and a rectangle. On the right you can see the coordinates we use in this example._
 
 ```html
 <html>
@@ -92,8 +100,7 @@ And to set a border for a shape we use `stroke` and `stroke-width`. Note how we 
 Let’s move on to a Christmas tree. We can’t always use basic shapes to assemble our image. A polygon is the simplest way to draw a freeform shape. Here we set a list of points that are connected with straight lines.
 
 ![Learn-SVG.003](https://www.freecodecamp.org/news/content/images/2021/12/Learn-SVG.003.jpeg)
-
-Christmas Tree made out of polygons and a rectangle
+_Christmas Tree made out of polygons and a rectangle_
 
 ```html
 <html>
@@ -117,8 +124,7 @@ Let’s move on with a gingerbread figure. Since our SVG is living inside an HTM
 We can only move the presentation attributes, though. Position attributes and attributes that define the shape still have to stay in the HTML. But we can move colors, stroke, and font attributes to CSS.
 
 ![Learn-SVG.004](https://www.freecodecamp.org/news/content/images/2021/12/Learn-SVG.004.jpeg)
-
-Gingerbread figure example. On the right you can see how would it look if the `stroke-width` were one
+_Gingerbread figure example. On the right you can see how would it look if the `stroke-width` were one_
 
 ```html
 <svg class="gingerbread" width="200" height="200" viewBox="-100 -100 200 200">
@@ -172,8 +178,7 @@ Let’s move on to a star. A star is a simple shape, so we can define it as a bu
 Instead of that, we can just define one wing as a group, then repeat it five times with a rotation to get the star's shape. We use the `transform` attribute to set a rotation.
 
 ![Learn-SVG.005](https://www.freecodecamp.org/news/content/images/2021/12/Learn-SVG.005.jpeg)
-
-Star shape made out of transformed polygons. On the right we can see the coordianates of one arm of the star
+_Star shape made out of transformed polygons. On the right we can see the coordianates of one arm of the star_
 
 ```html
 <svg width="200" height="200" viewBox="-100 -100 200 200">      
@@ -215,8 +220,7 @@ Grouping elements is a nice trick, but we had to repeat the same code for each w
 Instead of repeating the same code over and over again, we can also create a definition for a shape and reuse it by `id`. Here we define a branch of a snowflake then use it six times with different rotations.
 
 ![Learn-SVG.006](https://www.freecodecamp.org/news/content/images/2021/12/Learn-SVG.006.jpeg)
-
-Snowflake made out of reused image elements. On the right we can see the coordainates use for an arm
+_Snowflake made out of reused image elements. On the right we can see the coordainates use for an arm_
 
 ```html
 <svg width="200" height="200" viewBox="-100 -100 200 200">
@@ -259,9 +263,8 @@ This path is a bit unusual because there are several move to commands in it to d
 
 Rotation is not the only way we can generate images from simple shapes. In this example, we define a tree shape and then place it at various positions in different sizes to draw a forest.
 
-![Screenshot-2023-11-30-at-21.21.23](https://www.freecodecamp.org/news/content/images/2023/11/Screenshot-2023-11-30-at-21.21.23.png)
-
-Forest made out of reused image elements
+![Image](https://www.freecodecamp.org/news/content/images/2023/11/Screenshot-2023-11-30-at-21.21.23.png)
+_Forest made out of reused image elements_
 
 First, we create a background out of a rectangle and a circle. Then we define a tree shape from a simple polygon and a line.
 
@@ -269,7 +272,7 @@ Then we can reuse it in a similar way as we did in the snowflake example. We mov
 
 Here we also position the reused elements by setting an `x` and `y` coordinate and to add some perspective to the image we use the `scale` transformation.
 
-```HTML
+```html
 <svg width="200" height="200" viewBox="-100 -100 200 200">
   <defs>
     <g id="tree">
@@ -293,8 +296,7 @@ Here we also position the reused elements by setting an `x` and `y` coordinate a
 The path element becomes really powerful when we start using curves. One of them is the quadratic Bézier curve that not only defines an endpoint for a segment but also has a control point. The control point is an invisible coordinate towards which the line is bending, but not touching it.
 
 ![Learn-SVG.007](https://www.freecodecamp.org/news/content/images/2021/12/Learn-SVG.007.jpeg)
-
-Christmas Tree made using Quadratic Bézier curves
+_Christmas Tree made using Quadratic Bézier curves_
 
 ```html
 <svg width="200" height="400" viewBox="-100 -200 200 400">
@@ -342,14 +344,12 @@ With a cubic Bezier (`C`), we not only one have one control point but two. The f
 If these directions match the directions of the line before and the line after the curve, then we have a smooth transition between the path segments.
 
 ![Learn-SVG.008](https://www.freecodecamp.org/news/content/images/2021/12/Learn-SVG.008.jpeg)
-
-With Cubic Bézier curves we can set two control points 
+_With Cubic Bézier curves we can set two control points_
 
 The next example uses both quadratic and cubic Béziers to form a bell. Here the bottom of this bell is defined with straight lines. Then a quadratic Béziers starts the bell cloak. Next a cubic Bezier smoothly continues the quadratic bezier as it forms the top of the bell. Then we reach the bottom part with another quadratic bezier.
 
 ![Learn-SVG.001-2](https://www.freecodecamp.org/news/content/images/2021/12/Learn-SVG.001-2.jpeg)
-
-Bell example made out of different curves and straight lines
+_Bell example made out of different curves and straight lines_
 
 ```html
 <svg width="200" height="200" viewBox="-100 -100 200 200">
@@ -375,9 +375,8 @@ Bell example made out of different curves and straight lines
 
 Drawing shapes is not the only use case for paths. We can also use them to render text along an invisible path. We can define a path in the definitions section and use it in a `textPath` element to make the text go around the circle. Here we use arc again, but you can use any other path and the text will follow the stroke.
 
-![Screenshot-2023-11-30-at-21.21.27](https://www.freecodecamp.org/news/content/images/2023/11/Screenshot-2023-11-30-at-21.21.27.png)
-
-With the `text-path` property we can make a text follow a path
+![Image](https://www.freecodecamp.org/news/content/images/2023/11/Screenshot-2023-11-30-at-21.21.27.png)
+_With the `text-path` property we can make a text follow a path_
 
 ```html
 <svg width="200" height="200" viewBox="-100 -100 200 200">
@@ -402,9 +401,8 @@ With the `text-path` property we can make a text follow a path
 
 To continue our forest example, we can add a snowing effect with a similar animation. We can animate the `transform` property from CSS.
 
-![Learn-SVG](https://www.freecodecamp.org/news/content/images/2023/11/Learn-SVG.gif)
-
-Animation effect made with SVG and CSS
+![Image](https://www.freecodecamp.org/news/content/images/2023/11/Learn-SVG.gif)
+_Animation effect made with SVG and CSS_
 
 We extend our forest example with simple reusable snowflakes and add a bunch of them to the scene with various CSS classes to set some variation in speed and appearance. Then we add animation in CSS to make them look like falling snow. It’s a bit glitchy and not the most sophisticated animation, but you get the idea.
 
@@ -442,7 +440,7 @@ We extend our forest example with simple reusable snowflakes and add a bunch of 
 </svg>
 ```
 
-```CSS
+```css
 .flake {
   animation-duration: inherit;
   animation-name: snowing;
@@ -474,15 +472,48 @@ We extend our forest example with simple reusable snowflakes and add a bunch of 
 
 ## How to Make a Clock That Shows the Actual Time
 
-SVG elements can be manipulated from JavaScript the same way as any other HTML tag.
+SVG elements can be manipulated from JavaScript the same way as any other HTML tag. 
 
-![Screenshot-2023-11-30-at-21.21.16](https://www.freecodecamp.org/news/content/images/2023/11/Screenshot-2023-11-30-at-21.21.16.png)
-
-Clock example made with SVG and JavaScript
+![Image](https://www.freecodecamp.org/news/content/images/2023/11/Screenshot-2023-11-30-at-21.21.16.png)
+_Clock example made with SVG and JavaScript_
 
 In this example, we are using a short code snipped to show the actual time on a clock. We access the hour and minute hands in JavaScript with `getElementById` then set their `transform` attribute with a rotation that reflects the current time. Below you see the actual SVG showing the current time.
 
-For a more detailed tutorial on how to make a clock with SVG and JavaScript, check out [How to Code an Animated Watch][3].
+<div style="display: flex; justify-content: space-evenly;">
+    <script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const hoursElement = document.getElementById("hours");
+    const minutesElement = document.getElementById("minutes");
+
+    const hour = new Date().getHours() % 12;
+    const minute = new Date().getMinutes();
+
+    hoursElement.setAttribute("transform", `rotate(${(360 / 12) * hour})`);
+    minutesElement.setAttribute("transform", `rotate(${(360 / 60) * minute})`);
+  });
+</script>
+<svg width="200" height="200" viewBox="-100 -100 200 200">
+  <rect x="-100" y="-100" width="200" height="200" fill="#CD803D" />
+
+  <circle r="55" stroke="#FCCE7B" stroke-width="10" fill="white" />
+
+  <circle
+    r="45"
+    stroke="#B6705F"
+    stroke-width="6"
+    stroke-dasharray="6 17.56194490192345"
+    stroke-dashoffset="3"
+    fill="none"
+  />
+
+  <g stroke="#5f4c6c" stroke-linecap="round">
+    <line id="hours" y2="-20" stroke-width="8" />
+    <line id="minutes" y2="-35" stroke-width="6" />
+  </g>
+</svg>
+</div>
+
+For a more detailed tutorial on how to make a clock with SVG and JavaScript, check out [How to Code an Animated Watch](https://www.freecodecamp.org/news/svg-javascript-tutorial/).
 
 ```html
 <svg width="200" height="200" viewBox="-100 -100 200 200">
@@ -521,17 +552,16 @@ window.addEventListener("DOMContentLoaded", () => {
 
 ## How to make a Data-driven Diagram with SVG and React
 
-SVGs also work well with frontend libraries. Here’s an example of a React component that generates a data-driven diagram.
+SVGs also work well with frontend libraries. Here’s an example of a React component that generates a data-driven diagram. 
 
 In this example we have two things. We are generating a list of rectangles to create a column diagram based on some arbitrary data. And we also generate a series of coordinates for a polyline.
 
-![Screenshot-2023-11-30-at-21.21.32](https://www.freecodecamp.org/news/content/images/2023/11/Screenshot-2023-11-30-at-21.21.32.png)
+![Image](https://www.freecodecamp.org/news/content/images/2023/11/Screenshot-2023-11-30-at-21.21.32.png)
+_We can use JavaScript to generate a Data-Driven Diagram_
 
-We can use JavaScript to generate a Data-Driven Diagram
+For simple use cases, you can code your own diagram like this. But if you need more complex diagrams then check out the [D3 library](https://d3js.org/). The D3 library uses SVG under to hood to create all sorts of diagrams.
 
-For simple use cases, you can code your own diagram like this. But if you need more complex diagrams then check out the [D3 library][4]. The D3 library uses SVG under to hood to create all sorts of diagrams.
-
-```JavaScript
+```javascript
 function Diagram() {
   const dataPoints = [3, 4, 7, 5, 3, 6];
   const sineWave = Array.from({ length: 115 })
@@ -563,41 +593,14 @@ Under the hood, SVGs can be quite confusing at first. Lots of coordinates, lette
 
 And we are just getting started. Adding JavaScript to the mix will introduce a whole new level.
 
-For more examples check out [svg-tutorial.com][5] or my [YouTube tutorial][6] with 12 more examples on how to use SVGs for your next project!
+For more examples check out [svg-tutorial.com](https://svg-tutorial.com) or my [YouTube tutorial](https://www.youtube.com/watch?v=kBT90nwUb_o) with 12 more examples on how to use SVGs for your next project!
 
-[
+[Embedded content](http://svg-tutorial.com)
 
-SVG Tutorial: Learn how to create SVG images, shapes, animations, and more
+%[https://www.youtube.com/watch?v=kBT90nwUb_o&embeds_referring_euri=https%3A%2F%2Fwww.freecodecamp.org%2Fnews%2Fsvg-tutorial-learn-to-code-images%2F&source_ve_path=MjM4NTE&feature=emb_title]
 
-Explore the fundamentals of Scalable Vector Graphics (SVG). Learn how to create and manipulate SVG images with JavaScript, animatie them with CSS. Or turn things around and generate graphics from code.
+### **Subscribe for more tutorials on Web Development:**
 
-![favicon](http://svg-tutorial.com/favicon.ico)SVG Tutorial
+%[https://www.youtube.com/channel/UCxhgW0Q5XLvIoXHAfQXg9oQ]
 
-![image](https://svg-tutorial.com/image.png)
 
-][7]
-
-<iframe width="356" height="200" src="https://www.youtube.com/embed/kBT90nwUb_o?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" title="Learn SVG through 24 examples" name="fitvid0"></iframe>
-
-### **************Subscribe for more tutorials on Web Development:**************
-
-[
-
-Hunor Márton Borbély
-
-Game development with JavaScript, creative coding tutorials, HTML canvas, SVG, Three.js, and some React and Vue https://twitter.com/HunorBorbelyhttps://codepen.io/HunorMarton…
-
-![favicon_144x144](https://www.youtube.com/s/desktop/2ebf064d/img/favicon_144x144.png)YouTube
-
-![APkrFKaQ34YAITK6J0qgy6Iv6pms35dPhF68Hyy7BoYoLA=s900-c-k-c0x00ffffff-no-rj](https://yt3.googleusercontent.com/ytc/APkrFKaQ34YAITK6J0qgy6Iv6pms35dPhF68Hyy7BoYoLA=s900-c-k-c0x00ffffff-no-rj)
-
-][8]
-
-[1]: https://svg-tutorial.com
-[2]: https://youtu.be/kBT90nwUb_o
-[3]: https://www.freecodecamp.org/news/svg-javascript-tutorial/
-[4]: https://d3js.org/
-[5]: https://svg-tutorial.com
-[6]: https://www.youtube.com/watch?v=kBT90nwUb_o
-[7]: http://svg-tutorial.com
-[8]: https://www.youtube.com/channel/UCxhgW0Q5XLvIoXHAfQXg9oQ

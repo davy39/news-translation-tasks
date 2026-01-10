@@ -1,0 +1,204 @@
+---
+title: The Best Java 8 Tutorials
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2019-11-18T18:25:00.000Z'
+originalURL: https://freecodecamp.org/news/best-java-8-tutorial
+coverImage: https://cdn-media-2.freecodecamp.org/w1280/5f9c9f38740569d1a4ca4171.jpg
+tags:
+- name: Java
+  slug: java
+- name: Tutorial
+  slug: tutorial
+seo_title: null
+seo_desc: Java is a programming language developed by Sun Microsystems in 1995, which
+  later got acquired by Oracle. It’s now a full platform with lots of standard APIs,
+  open source APIs, tools, a huge developer community and is used to build the most
+  trusted e...
+---
+
+[Java](https://www.oracle.com/java/index.html) is a programming language developed by [Sun Microsystems](https://en.wikipedia.org/wiki/Sun_Microsystems) in 1995, which later got acquired by [Oracle](http://www.oracle.com/index.html). It’s now a full platform with lots of standard APIs, open source APIs, tools, a huge developer community and is used to build the most trusted enterprise solutions by big and small companies alike. [Android](https://www.android.com/) application development is done fully with Java and its ecosystem.
+
+The best place to start learning Java is [freeCodeCamp's 10-hour Java 8 tutorial](https://www.youtube.com/watch?v=grEKMHGYyns) on YouTube.
+
+![Image](https://img.youtube.com/vi/grEKMHGYyns/maxresdefault.jpg)
+
+## **Version**
+
+The latest version is [Java 11](http://www.oracle.com/technetwork/java/javase/overview), which was released in 2018 with [various improvements](https://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html) over the previous version, Java 10. But for all intents and purposes, we will use Java 8 for all tutorials.
+
+Java is also divided into several “Editions”:
+
+* [SE](http://www.oracle.com/technetwork/java/javase/overview/index.html) - Standard Edition - for desktop and standalone server applications
+* [EE](http://www.oracle.com/technetwork/java/javaee/overview/index.html) - Enterprise Edition - for developing and executing Java components that run embedded in a Java server
+* [ME](http://www.oracle.com/technetwork/java/embedded/javame/overview/index.html) - Micro Edition - for developing and executing Java applications on mobile phones and embedded devices
+
+## **Installation: JDK or JRE?**
+
+Download the latest Java binaries from the [official website](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). Here you may face a question, which one to download, JDK or JRE? 
+
+JRE stands for Java Runtime Environment, which is the platform dependent Java Virtual Machine to run Java codes. JDK stands for Java Development Kit, which consists of most of the development tools, most importantly the compiler `javac`, and also the JRE. 
+
+So, for an average user, JRE would be sufficient. But since we will be developing with Java, we will download the JDK.
+
+## **Platform specific installation instructions**
+
+### **Windows**
+
+* Download the relevant [.msi](https://en.wikipedia.org/wiki/Windows_Installer) file (x86 / i586 for 32bits, x64 for 64bits)
+* Run the .msi file. It's a self extracting executable file which will install Java in your system!
+
+### **Linux**
+
+* Download the relevant [tar.gz](http://www.cyberciti.biz/faq/linux-unix-bsd-extract-targz-file/) file for your system and install:
+
+`bash $ tar zxvf jdk-8uversion-linux-x64.tar.gz`
+
+* [RPM based Linux platforms](https://en.wikipedia.org/wiki/List_of_Linux_distributions#RPM-based) download the relevant [.rpm](https://en.wikipedia.org/wiki/RPM_Package_Manager) file and install:
+
+`bash $ rpm -ivh jdk-8uversion-linux-x64.rpm`
+
+* Users have the choice to install an open source version of Java, OpenJDK or the Oracle JDK. While OpenJDK is in active development and in sync with Oracle JDK, they just differ in [licensing](http://openjdk.java.net/faq/) stuff. However few developers complain of the stability of Open JDK. 
+
+Instructions for **Ubuntu**:
+
+Open JDK installation:  
+`bash sudo apt-get install openjdk-8-jdk`
+
+Oracle JDK installation:  
+`bash sudo add-apt-repository ppa:webupd8team/java sudo apt-get update sudo apt-get install oracle-java8-installer`
+
+### **Mac**
+
+* Either download Mac OSX .dmg executable from Oracle Downloads
+* Or use [Homebrew](http://brew.sh/) to [install](http://stackoverflow.com/a/28635465/2861269):
+
+```bash
+brew tap caskroom/cask  
+brew install brew-cask  
+brew cask install java
+```
+
+### **Verify Installation**
+
+Verify Java has been properly installed in your system by opening Command Prompt (Windows) / Windows Powershell / Terminal (Mac OS and *Unix) and checking the versions of Java runtime and compiler:
+
+```text
+$ java -version
+java version "1.8.0_66"
+Java(TM) SE Runtime Environment (build 1.8.0_66-b17)
+Java HotSpot(TM) 64-Bit Server VM (build 25.66-b17, mixed mode)
+
+$ javac -version
+javac 1.8.0_66
+```
+
+**Tip** : If you get an error such as “Command Not Found” on either `java` or `javac` or both, don't panic - it's just that your system PATH is not properly set. 
+
+For Windows, see [this StackOverflow answer](http://stackoverflow.com/questions/15796855/java-is-not-recognized-as-an-internal-or-external-command) or [this article](http://javaandme.com/) on how to do it. Also there are guides for [Ubuntu](http://stackoverflow.com/questions/9612941/how-to-set-java-environment-path-in-ubuntu) and [Mac](http://www.mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/) as well. If you still can’t figure it out, don't worry, just ask us in our [Gitter room](https://gitter.im/FreeCodeCamp/java)!
+
+## **JVM**
+
+Ok now since we are done with the installations, let’s begin to understand first the nitty gritty of the Java ecosystem. 
+
+Java is an [interpreted and compiled](http://stackoverflow.com/questions/1326071/is-java-a-compiled-or-an-interpreted-programming-language) language, that is the code we write gets compiled to bytecode and interpreted to run. We write the code in .java files, and Java compiles them into [bytecodes](https://en.wikipedia.org/wiki/Java_bytecode) which are run on a Java Virtual Machine or JVM for execution. These bytecodes typically have a .class extension.
+
+Java is a pretty secure language as it doesn’t let your program run directly on the machine. Instead, your program runs on a Virtual Machine called JVM. This Virtual Machine exposes several APIs for low level machine interactions you can make, but other than that you cannot play with machine instructions explicitly. This adds a huge bonus of security.
+
+Also, once your bytecode is compiled, it can run on any Java VM. This Virtual Machine is machine dependent, that is it has different implementations for Windows, Linux and Mac. But your program is guaranteed to run in any system thanks to this VM. This philosophy is called [“Write Once, Run Anywhere”](https://en.wikipedia.org/wiki/Write_once,_run_anywhere).
+
+## **Hello World!**
+
+Let’s write a sample Hello World application. Open any editor / IDE of your choice and create a file `HelloWorld.java`.
+
+```text
+public class HelloWorld {
+
+    public static void main(String[] args) {
+        // Prints "Hello, World" to the terminal window.
+        System.out.println("Hello, World");
+    }
+
+}
+```
+
+Keep in mind that in Java, file names should be the **exact same name of the public class** in order to compile!
+
+Now open the terminal / Command Prompt. Change your current directory in the terminal / Command Prompt to the directory where your file is located. And compile the file:
+
+```text
+$ javac HelloWorld.java
+```
+
+Now run the file using `java` command!
+
+```text
+$ java HelloWorld
+Hello, World
+```
+
+Congrats! Your first Java program has run successfully. Here we are just printing a string passing it to the API `System.out.println`. We will cover all the concepts in the code, but you are welcome to take a [closer look](https://docs.oracle.com/javase/tutorial/getStarted/application/)! If you have any doubt or need additional help, feel free to contact us anytime in our [Gitter Chatroom](https://gitter.im/FreeCodeCamp/java)!
+
+## **Documentation**
+
+Java is heavily [documented](https://docs.oracle.com/javase/8/docs/), as it supports huge amounts of APIs. If you are using any major IDE such as Eclipse or IntelliJ IDEA, you will find the Java Documentation included within.
+
+Also, here is a list of free IDEs for Java coding:
+
+* [NetBeans](https://netbeans.org/)
+* [Eclipse](https://eclipse.org/)
+* [IntelliJ IDEA](https://www.jetbrains.com/idea/features/)
+* [Android Studio](https://developer.android.com/studio/index.html)
+* [BlueJ](https://www.bluej.org/)
+* [jEdit](http://www.jedit.org/)
+* [Oracle JDeveloper](http://www.oracle.com/technetwork/developer-tools/jdev/overview/index-094652.html)
+
+# **Basic Operations**
+
+Java supports the following operations on variables:
+
+* **Arithmetic** : `Addition (+)`, `Subtraction (-)`, `Multiplication (*)`, `Division (/)`, `Modulus (%)`,`Increment (++)`,`Decrement (--)`.
+* **String concatenation**: `+` can be used for String concatenation, but subtraction `-` on a String is not a valid operation.
+* **Relational**: `Equal to (==)`, `Not Equal to (!=)`, `Greater than (>)`, `Less than (<)`, `Greater than or equal to (>=)`, `Less than or equal to (<=)`
+* **Bitwise**: `Bitwise And (&)`, `Bitwise Or (|)`, `Bitwise XOR (^)`, `Bitwise Compliment (~)`, `Left shift (<<)`, `Right Shift (>>)`, `Zero fill right shift (>>>)`
+* **Logical**: `Logical And (&&)`, `Logical Or (||)`, `Logical Not (!)`
+* **Assignment**: `=`, `+=`, `-=`, `*=`, `/=`, `%=`, `<<=`, `>>=`, `&=`, `^=`, `|=`
+* **Others**: `Conditional/Ternary(?:)`, `instanceof`
+
+While most of the operations are self-explanatory, the Conditional (Ternary) Operator works as follows:
+
+`expression that results in boolean output ? return this value if true : return this value if false;`
+
+Example: True Condition:
+
+```java
+    int x = 10;
+    int y = (x == 10) ? 5 : 9; // y will equal 5 since the expression x == 10 evaluates to true
+    
+```
+
+False Condition:
+
+```java
+    int x = 25;
+    int y = (x == 10) ? 5 : 9; // y will equal 9 since the expression x == 10 evaluates to false
+```
+
+The instance of operator is used for type checking. It can be used to test if an object is an instance of a class, a subclass or an interface. General format: *object **instance** of class/subclass/interface*
+
+Here is a program to illustrate an instance of operator:
+
+```java
+  Person obj1 = new Person();
+        Person obj2 = new Boy();
+ 
+        // As obj is of type person, it is not an
+        // instance of Boy or interface
+        System.out.println("obj1 instanceof Person: " +  (obj1 instanceof Person)); /*it returns true since obj1 is an instance of person */
+                           
+       
+```
+
+

@@ -1,68 +1,78 @@
 ---
 title: What Happens When You Visit a Website? How the Web Works Explained
-date: 2024-11-19T09:53:40.335Z
+subtitle: ''
 author: Viviana Yanez
-authorURL: https://www.freecodecamp.org/news/author/vivianay/
-originalURL: https://www.freecodecamp.org/news/what-happens-when-you-visit-a-website/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2024-11-15T17:31:36.281Z'
+originalURL: https://freecodecamp.org/news/what-happens-when-you-visit-a-website
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1731682843488/32065460-190d-472f-9268-5b181430eef6.jpeg
+tags:
+- name: Web Development
+  slug: web-development
+- name: internet
+  slug: internet
+seo_title: null
+seo_desc: 'In this article, I’ll guide you through an overview of what happens when
+  you navigate to a website using your browser.
+
+  Whether you’re new to web development or have some experience, this post will help
+  you gain a better understanding of how the web a...'
 ---
 
 In this article, I’ll guide you through an overview of what happens when you navigate to a website using your browser.
-
-<!-- more -->
 
 Whether you’re new to web development or have some experience, this post will help you gain a better understanding of how the web and its core technologies work.
 
 ## Table of Contents
 
--   [Finding a Resource: URLs][1]
+* [Finding a Resource: URLs](#heading-finding-a-resource-urls)
     
--   [Matching IPs and URLs: DNS Resolution][2]
+* [Matching IPs and URLs: DNS Resolution](#heading-matching-ips-and-urls-dns-resolution)
     
-    -   [What is the DNS Resolver?][3]
+    * [What is the DNS Resolver?](#heading-what-is-the-dns-resolver)
         
-    -   [What is the Root DNS Server?][4]
+    * [What is the Root DNS Server?](#heading-what-is-the-root-dns-server)
         
-    -   [What is the Top Level Domain Server?][5]
+    * [What is the Top Level Domain Server?](#heading-what-is-the-top-level-domain-server)
         
-    -   [Authoritative Nameserver][6]
+    * [Authoritative Nameserver](#heading-authoritative-nameserver)
         
--   [Establishing a Connection: TCP/IP Model][7]
+* [Establishing a Connection: TCP/IP Model](#heading-establishing-a-connection-tcpip-model)
     
-    -   [How Does TCP Connection Work?][8]
+    * [How Does TCP Connection Work?](#heading-how-does-tcp-connection-work)
         
-    -   [TCP Three-way Handshake][9]
+    * [TCP Three-way Handshake](#heading-tcp-three-way-handshake)
         
--   [Starting the Exchange: Client-Server Communication][10]
+* [Starting the Exchange: Client-Server Communication](#heading-starting-the-exchange-client-server-communication)
     
-    -   [What is the HTTP Protocol?][11]
+    * [What is the HTTP Protocol?](#heading-what-is-the-http-protocol)
         
-    -   [HTTP Request/Response][12]
+    * [HTTP Request/Response](#heading-http-requestresponse)
         
-    -   [HTTPS][13]
+    * [HTTPS](#heading-https)
         
-    -   [Time to First Byte][14]
+    * [Time to First Byte](#heading-time-to-first-byte)
         
--   [From Data to Pixels: The Critical Rendering Path][15]
+* [From Data to Pixels: The Critical Rendering Path](#heading-from-data-to-pixels-the-critical-rendering-path)
     
-    -   [Building the DOM tree][16]
+    * [Building the DOM tree](#heading-building-the-dom-tree)
         
-    -   [Building the CSSOM Tree][17]
+    * [Building the CSSOM Tree](#heading-building-the-cssom-tree)
         
-    -   [Javascript Compilation and Execution][18]
+    * [Javascript Compilation and Execution](#heading-javascript-compilation-and-execution)
         
-    -   [Building the Accessibility Tree][19]
+    * [Building the Accessibility Tree](#heading-building-the-accessibility-tree)
         
-    -   [Render tree][20]
+    * [Render tree](#heading-render-tree)
         
-    -   [Layout][21]
+    * [Layout](#heading-layout)
         
-    -   [Painting][22]
+    * [Painting](#heading-painting)
         
-    -   [A Note About JavaScript Hydration][23]
+    * [A Note About JavaScript Hydration](#heading-a-note-about-javascript-hydration)
         
--   [Conclusion][24]
+* [Conclusion](#heading-conclusion)
     
 
 Before going into the details of every step included in the process, let's review some of the basic concepts we’ll be covering.
@@ -71,35 +81,35 @@ The internet is a huge network of interconnected computers. The World Wide Web (
 
 Computers connected to the internet are either:
 
--   **Clients**, the web user's devices and the software that those devices use to access the web.
+* **Clients**, the web user's devices and the software that those devices use to access the web.
     
--   **Servers**, computers that store web pages, sites, or apps and the files they need to be displayed in the user's web browser or devices.
+* **Servers**, computers that store web pages, sites, or apps and the files they need to be displayed in the user's web browser or devices.
     
 
 ## Finding a Resource: URLs
 
 Each resource stored in a server can be located by clients using its valid associated URL. The following is an example of a valid URL:
 
-![Example of a valid URL, including its scheme, authority, path to resource, two parameters and an anchor.](https://cdn.hashnode.com/res/hashnode/image/upload/v1731414821178/970907db-f349-421e-b410-45f4ee978e0b.jpeg)
+![Example of a valid URL, including its scheme, authority, path to resource, two parameters and an anchor.](https://cdn.hashnode.com/res/hashnode/image/upload/v1731414821178/970907db-f349-421e-b410-45f4ee978e0b.jpeg align="center")
 
 You may already know what a URL is, but let’s see in detail each one of its parts:
 
--   **Scheme**: The first part of an URL indicates the protocol that should be used to retrieve the resource. Websites use the HTTP and the HTTPS protocol, but we’ll see more details about this later. The `:` after the scheme is what separates it from the next part of the URL.
+* **Scheme**: The first part of an URL indicates the protocol that should be used to retrieve the resource. Websites use the HTTP and the HTTPS protocol, but we’ll see more details about this later. The `:` after the scheme is what separates it from the next part of the URL.
     
--   **Authority**: this part is composed by the domain name and the port number separated by a colon. The port is only mandatory when the standard ports of the HTTP protocol (80 for HTTP and 443 for HTTPS) are not being used by the web server. The `//` before the domain name indicates the beginning of the authority.
+* **Authority**: this part is composed by the domain name and the port number separated by a colon. The port is only mandatory when the standard ports of the HTTP protocol (80 for HTTP and 443 for HTTPS) are not being used by the web server. The `//` before the domain name indicates the beginning of the authority.
     
--   **Path to resource**: this is the abstract or physical path to the resource in the web server.
+* **Path to resource**: this is the abstract or physical path to the resource in the web server.
     
--   **Parameters**: a set of key/value pairs that add extra options to apply to the returning the requested resource. They are separated by a `&` and each web server has its own way to handle parameters. This section starts with `?`.
+* **Parameters**: a set of key/value pairs that add extra options to apply to the returning the requested resource. They are separated by a `&` and each web server has its own way to handle parameters. This section starts with `?`.
     
--   **Anchor**: This section, if present, starts by a `#` and is handled by the browser to display a specific part of the returned document. For example, it can point to a specific section in a HTML document.
+* **Anchor**: This section, if present, starts by a `#` and is handled by the browser to display a specific part of the returned document. For example, it can point to a specific section in a HTML document.
     
 
 There are a few things that happen when you type a URL into your browser’s address bar that allow you to navigate to a site and interact with its content. Let’s see each one in detail.
 
 ## Matching IPs and URLs: DNS Resolution
 
-While, as humans, we prefer domain names composed of words, computers communicate with each other using IP addresses. IP addresses are composed by numbers and are harder to remember for our human minds. The [Domain Name System][25] (**DNS**) is what puts together domain names and IP addresses.
+While, as humans, we prefer domain names composed of words, computers communicate with each other using IP addresses. IP addresses are composed by numbers and are harder to remember for our human minds. The [Domain Name System](https://en.wikipedia.org/wiki/Domain_Name_System) (**DNS**) is what puts together domain names and IP addresses.
 
 When you type a URL, the browser will first look into the local cache to see if the results for the DNS lookup are already stored. Then, it will equally check into the operating system cache.
 
@@ -119,7 +129,7 @@ At this moment, the DNS resolver will cache the IP of that Top Level Domain serv
 
 ### What is the Top Level Domain Server?
 
-The [Top Level Domain][26] (**TLD**) server stores the IP addresses of the authoritative name servers for the domain that the user is looking for.
+The [Top Level Domain](https://en.wikipedia.org/wiki/Top-level_domain) (**TLD**) server stores the IP addresses of the authoritative name servers for the domain that the user is looking for.
 
 In the URL, `www.exampleurl.com`, the top-level domain is `.com`. There are different types, such as generic top-level domains like `.com` or `.org`, country code top-level domains, usually represented by the two letters ISO country code, and more.
 
@@ -137,17 +147,17 @@ Once the DNS lookup is completed and the browser has the IP address, it can atte
 
 ## Establishing a Connection: TCP/IP Model
 
-The connection between client and server is established using the [Transmission Control Protocol][27] (**TCP**) and the [Internet Protocol][28] (**IP**). These protocols are the main ones behind the World Wide Web and other internet technologies, such as email, and determine how data travels across the network.
+The connection between client and server is established using the [Transmission Control Protocol](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) (**TCP**) and the [Internet Protocol](https://en.wikipedia.org/wiki/Internet_Protocol) (**IP**). These protocols are the main ones behind the World Wide Web and other internet technologies, such as email, and determine how data travels across the network.
 
-The [TCP/IP model][29] is a framework used to organize the different protocols involved in the internet and other network communications. The primary responsibility of TCP/IP is to divide the data into packets and send them to their final destination, ensuring the packets can be put back together on the other end of the communication.
+The [TCP/IP model](https://en.wikipedia.org/wiki/Internet_protocol_suite) is a framework used to organize the different protocols involved in the internet and other network communications. The primary responsibility of TCP/IP is to divide the data into packets and send them to their final destination, ensuring the packets can be put back together on the other end of the communication.
 
 This process follows a four-layer model, where data travels in one direction and then in the reverse direction when it reaches the destination:
 
-![The four-layer model includes the application layer, the transport layer, the internet layer, and the network layer. Data travels back and forth through these layers.](https://cdn.hashnode.com/res/hashnode/image/upload/v1731414848576/178ce64e-2216-487a-b142-c88c2125dcde.jpeg)
+![The four-layer model includes the application layer, the transport layer, the internet layer, and the network layer. Data travels back and forth through these layers.](https://cdn.hashnode.com/res/hashnode/image/upload/v1731414848576/178ce64e-2216-487a-b142-c88c2125dcde.jpeg align="center")
 
 The transport layer that ensures applications can exchange data by establishing data channels. It is also the layer that establishes the concept of network ports, a system of numbered data channels allocated for the specific communication channels that applications need.
 
-The TCP/IP model’s transport layer includes two protocols that are most commonly used on the internet: the TCP and the [User Datagram Protocol][30] (UDP).
+The TCP/IP model’s transport layer includes two protocols that are most commonly used on the internet: the TCP and the [User Datagram Protocol](https://en.wikipedia.org/wiki/User_Datagram_Protocol) (UDP).
 
 TCP includes some capabilities that make it prevalent over most of the internet-based applications such as the web, so let’s focus on it.
 
@@ -159,15 +169,15 @@ TCP allows data to be transferred reliably and in order to its destination. It i
 
 The handshake is a way for the client and the server to establish a secure connection and ensure that both parties are synchronized and ready to start exchanging messages.
 
-![The three steps of the TCP handshake.](https://cdn.hashnode.com/res/hashnode/image/upload/v1731414866173/6d66c360-2d2e-427b-8c8d-1555fdaa7197.jpeg)
+![The three steps of the TCP handshake.](https://cdn.hashnode.com/res/hashnode/image/upload/v1731414866173/6d66c360-2d2e-427b-8c8d-1555fdaa7197.jpeg align="center")
 
 The three steps of the TCP handshake include:
 
-1.  The client informs the server that it wants to establish a connection by sending a SYN (synchronize) packet. This packet specifies a sequence number that subsequent segments will start with.
+1. The client informs the server that it wants to establish a connection by sending a SYN (synchronize) packet. This packet specifies a sequence number that subsequent segments will start with.
     
-2.  The server receives the SYN and responds with a SYN-ACK (synchronize-acknowledgment) segment. It includes the server’s sequence number and an acknowledgment of the client’s sequence number, incremented by one.
+2. The server receives the SYN and responds with a SYN-ACK (synchronize-acknowledgment) segment. It includes the server’s sequence number and an acknowledgment of the client’s sequence number, incremented by one.
     
-3.  The client responds with an ACK message, acknowledging the server’s sequence number. At this point, the connection has been established.
+3. The client responds with an ACK message, acknowledging the server’s sequence number. At this point, the connection has been established.
     
 
 ## Starting the Exchange: Client-Server Communication
@@ -176,7 +186,7 @@ Once the TCP connection is established, the client and server can start exchangi
 
 ### What is the HTTP Protocol?
 
-[Hypertext Transfer Protocol][31] (**HTTP**) is the most widely used application layer protocol in the TCP/IP suite, but it’s considered insecure, leading to a shift towards HTTPS, which uses TLS on top of TCP for data encryption. You see find more details about this later.
+[Hypertext Transfer Protocol](https://en.wikipedia.org/wiki/HTTP) (**HTTP**) is the most widely used application layer protocol in the TCP/IP suite, but it’s considered insecure, leading to a shift towards HTTPS, which uses TLS on top of TCP for data encryption. You see find more details about this later.
 
 The browser will start by sending an HTTP request message to the server, asking for a copy of the site in the form of an HTML file. HTTP protocol can transfer files like HTML, CSS, JS, SVG, and so on.
 
@@ -184,53 +194,53 @@ The browser will start by sending an HTTP request message to the server, asking 
 
 There are two types of HTTP messages:
 
--   **Requests**, sent by the client to the server to trigger an action.
+* **Requests**, sent by the client to the server to trigger an action.
     
--   **Responses**, sent from the server to the client as an answer to the previous request.
+* **Responses**, sent from the server to the client as an answer to the previous request.
     
 
 Messages are plain text documents, structured in a precise way determined by the communication protocol, in this case, HTTP.
 
 The three parts included in a **HTTP request** are:
 
-1.  **Request line**: Includes the request method, which is a verb defining the action to perform. In the case we are covering in this blogpost, the browser will make a GET request to fetch a page from the server. The request line will also include the resource location, in this case an URL, and the protocol version being used.
+1. **Request line**: Includes the request method, which is a verb defining the action to perform. In the case we are covering in this blogpost, the browser will make a GET request to fetch a page from the server. The request line will also include the resource location, in this case an URL, and the protocol version being used.
     
-2.  **Request header**: A set of key value pairs. Two of them are mandatory. `Host` indicates the domain name to target, and `Connection` which is always set to close unless it must be kept open. The request header always ends with a blank line.
+2. **Request header**: A set of key value pairs. Two of them are mandatory. `Host` indicates the domain name to target, and `Connection` which is always set to close unless it must be kept open. The request header always ends with a blank line.
     
-3.  **Request body**: Is an optional field that allows sending data over the server.
+3. **Request body**: Is an optional field that allows sending data over the server.
     
 
 The server will reply to the request with an HTTP response. Responses include information about the request status and may include the requested resource or data.
 
 HTTP responses are structured in the following parts:
 
-1.  **Status line**: Includes the used protocol version, a status code and a status text, with a human readable description of the status code.
+1. **Status line**: Includes the used protocol version, a status code and a status text, with a human readable description of the status code.
     
-2.  **Headers**: A set of key-value pairs that can either be general headers, applying to the whole message; response headers, giving additional information about the server status; or representation headers, describing the format and encoding for the message data if present.
+2. **Headers**: A set of key-value pairs that can either be general headers, applying to the whole message; response headers, giving additional information about the server status; or representation headers, describing the format and encoding for the message data if present.
     
-3.  **Body**: Contains the requested data or resource. If no data or resource is expected by the client, the response usually won’t include a body.
+3. **Body**: Contains the requested data or resource. If no data or resource is expected by the client, the response usually won’t include a body.
     
 
 When the request for a web page is approved by the server, the response will include a `200 OK` message. Other existing HTTP response codes are:
 
--   404 Not Found
+* 404 Not Found
     
--   403 Forbidden
+* 403 Forbidden
     
--   301 Moved Permanently
+* 301 Moved Permanently
     
--   500 Internal Server Error
+* 500 Internal Server Error
     
--   304 Not Modified
+* 304 Not Modified
     
--   401 Unauthorized
+* 401 Unauthorized
     
 
 The response will also contain a list of HTTP headers and the response body, including the corresponding HTML code for the requested page.
 
 ### HTTPS
 
-[Hypertext Transfer Protocol Secure][32] (**HTTPS**) is not a different protocol, but an extension of the HTTP. It is usually referred to as HTTP over Transport Layer Security (**TLS**). Let’s see what it exactly means.
+[Hypertext Transfer Protocol Secure](https://en.wikipedia.org/wiki/HTTPS) (**HTTPS**) is not a different protocol, but an extension of the HTTP. It is usually referred to as HTTP over Transport Layer Security (**TLS**). Let’s see what it exactly means.
 
 HTTP is the protocol used for most communications between browsers and servers, but it lacks security. Any data sent over HTTP can potentially be visible to anyone on the network. This is especially risky when sensitive data is involved in the connection, such as login credentials, financial information, health information, and so on.
 
@@ -240,23 +250,23 @@ In HTTPS the communications are encrypted using the TLS protocol, which relies o
 
 To establish an encrypted communication, the client and the server have to initiate another handshake. During the handshake, they agree on the TLS version to use and on how they will encrypt data and authenticate each other during the connection, a set of rules known as the cipher suite.
 
-![Steps in the SSL Handshake.](https://cdn.hashnode.com/res/hashnode/image/upload/v1731414891509/541f6b6c-ad54-4301-834a-1056aea524c0.jpeg)
+![Steps in the SSL Handshake.](https://cdn.hashnode.com/res/hashnode/image/upload/v1731414891509/541f6b6c-ad54-4301-834a-1056aea524c0.jpeg align="center")
 
 This handshake or TLS negotiation starts once a TCP connection has been established, and includes the following steps:
 
--   **Client hello**: The browser sends a hello message that includes all supported TLS versions and cipher suites.
+* **Client hello**: The browser sends a hello message that includes all supported TLS versions and cipher suites.
     
--   **Server Hello**: The server responds with the chosen cipher suite and TLS version, along with its SSL certificate containing the server's public key.
+* **Server Hello**: The server responds with the chosen cipher suite and TLS version, along with its SSL certificate containing the server's public key.
     
--   **Authentication and Pre-Master Key**: The client verifies the server’s SSL certificate with the corresponding trusted authority, then creates a pre-master key using the server's public key (previously shared in the certificate) and shares this pre-master key with the server.
+* **Authentication and Pre-Master Key**: The client verifies the server’s SSL certificate with the corresponding trusted authority, then creates a pre-master key using the server's public key (previously shared in the certificate) and shares this pre-master key with the server.
     
--   **Pre-master key decryption**: The pre-mastered key can only be decrypted using the server’s private key. If the server is able to decrypt it, the client and server can then agree on a shared master secret to use for the session.
+* **Pre-master key decryption**: The pre-mastered key can only be decrypted using the server’s private key. If the server is able to decrypt it, the client and server can then agree on a shared master secret to use for the session.
     
--   **Client ChangeCipherSpec**: The client creates a session key using the shared master secret and sends the server all previously exchanged records, this time encrypted with the session key.
+* **Client ChangeCipherSpec**: The client creates a session key using the shared master secret and sends the server all previously exchanged records, this time encrypted with the session key.
     
--   **Server ChangeCipherSpec**: If the server generates the correct session key, it will be able to decrypt the message and verify the received record. The server then sends a record to confirm that the client also has the correct keys.
+* **Server ChangeCipherSpec**: If the server generates the correct session key, it will be able to decrypt the message and verify the received record. The server then sends a record to confirm that the client also has the correct keys.
     
--   **Secured connection established**: The handshake is complete.
+* **Secured connection established**: The handshake is complete.
     
 
 Once the handshake is completed, all the communication between the client and server is protected by symmetric encryption using the session key, and the browser can make the first HTTP GET request for the site.
@@ -267,11 +277,11 @@ Once the browser's request is approved, the server will send a 200 OK message al
 
 Data travels between the client and server divided into a series of small data chunks, called data packets. This makes it easy to replace corrupted chunks of data if needed and also allows data to travel to and from different locations, enabling multiple users to access data faster and at the same time.
 
-When the first request is made from the client, the first packet that arrives as response marks the [Time to First Byte][33] (**TTFB**), which represents the time elapsed since the request was initiated and when the first chunk of data was received as a response. It will include the time taken for the DNS lookup, the TCP handshake to establish the connection, and the TLS handshake if the request is made over HTTPS.
+When the first request is made from the client, the first packet that arrives as response marks the [Time to First Byte](https://developer.mozilla.org/en-US/docs/Glossary/Time_to_first_byte) (**TTFB**), which represents the time elapsed since the request was initiated and when the first chunk of data was received as a response. It will include the time taken for the DNS lookup, the TCP handshake to establish the connection, and the TLS handshake if the request is made over HTTPS.
 
 ## From Data to Pixels: The Critical Rendering Path
 
-The [Critical Rendering Path][34] (**CRP**) is a series of steps that the browser performs to transform the data received back from the server into pixels on the screen. It includes creating the [Document Object Model][35] (**DOM**) and [CSS Object Model][36] (**CSSOM**), the **render tree** and **layout**.
+The [Critical Rendering Path](https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path) (**CRP**) is a series of steps that the browser performs to transform the data received back from the server into pixels on the screen. It includes creating the [Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) (**DOM**) and [CSS Object Model](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model) (**CSSOM**), the **render tree** and **layout**.
 
 ### Building the DOM tree
 
@@ -281,7 +291,7 @@ Each HTML tag in the document is represented as a node in the DOM tree. Nodes ar
 
 For the following HTML code:
 
-```
+```xml
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -325,7 +335,7 @@ For the following HTML code:
 
 The resulting DOM tree looks like following:
 
-![The DOM tree includes all HTML elements, its content and its hierarchy relationships.](https://cdn.hashnode.com/res/hashnode/image/upload/v1731498370760/4267c646-145e-487c-83af-f97d6f8ce21d.jpeg)
+![The DOM tree includes all HTML elements, its content and its hierarchy relationships.](https://cdn.hashnode.com/res/hashnode/image/upload/v1731498370760/4267c646-145e-487c-83af-f97d6f8ce21d.jpeg align="center")
 
 While parsing the HTML, the browser makes additional requests for encountered resources. CSS files and images are non-blocking resources, meaning the parser will continue its task while awaiting the requested resources. But if a `<script>` tag is found, the HTML parsing will pause impacting the time to first rendering.
 
@@ -337,7 +347,7 @@ In the CSSOM, each HTML element is matched with its corresponding CSS styles. Th
 
 Given the following CSS code:
 
-```
+```css
 * {
     box-sizing: border-box;
 }
@@ -394,7 +404,7 @@ footer {
 
 When the browser processes it, the resulting CSSOM will look like this:
 
-![The CSSOM tree includes each HTML element and their corresponding styles. ](https://cdn.hashnode.com/res/hashnode/image/upload/v1731496962735/f3cb0399-a9fb-48cc-8043-00608d1236db.jpeg)
+![The CSSOM tree includes each HTML element and their corresponding styles. ](https://cdn.hashnode.com/res/hashnode/image/upload/v1731496962735/f3cb0399-a9fb-48cc-8043-00608d1236db.jpeg align="center")
 
 Its creation is not incremental, meaning that the browser stops rendering the page until it processes all the CSS.
 
@@ -412,24 +422,24 @@ Once the browser completes parsing and executes all JavaScript files that may mo
 
 Based on the structure of the site created in the DOM tree, the browser also creates an accessibility tree.
 
-The accessibility tree is another representation of the site’s content, specifically designed to allow navigation through the site using [assistive technologies][37].
+The accessibility tree is another representation of the site’s content, specifically designed to allow navigation through the site using [assistive technologies](https://en.wikipedia.org/wiki/Web_accessibility#Assistive_technologies_used_for_web_browsing).
 
 In the accessibility tree, each DOM element is represented as an accessible object, containing the following information:
 
--   **Name**: An identifier used to refer to the element.
+* **Name**: An identifier used to refer to the element.
     
--   **Description**: Additional information about the element.
+* **Description**: Additional information about the element.
     
--   **Role**: The type of element it is, related to its intended use.
+* **Role**: The type of element it is, related to its intended use.
     
--   **State** and other properties: If the element is subject to change, it may include its current state. It can also include other properties specifying other functionality.
+* **State** and other properties: If the element is subject to change, it may include its current state. It can also include other properties specifying other functionality.
     
 
 In major web browsers, you can access the accessible objects and their information by selecting a node in the DOM tree viewer and the navigating to the “Accessibility” tab.
 
-![A unordered list selected and the accessibility tab in Chrome Dev Tools.](https://cdn.hashnode.com/res/hashnode/image/upload/v1731578933460/0a8c7a78-c19a-4d19-a96a-fabd19772156.png)
+![A unordered list selected and the accessibility tab in Chrome Dev Tools.](https://cdn.hashnode.com/res/hashnode/image/upload/v1731578933460/0a8c7a78-c19a-4d19-a96a-fabd19772156.png align="center")
 
-![A unordered list selected and the accessibility tab in Firefox Dev Tools.](https://cdn.hashnode.com/res/hashnode/image/upload/v1731579023128/85aeb312-1632-49c3-80cb-0d5db8ec8502.png)
+![A unordered list selected and the accessibility tab in Firefox Dev Tools.](https://cdn.hashnode.com/res/hashnode/image/upload/v1731579023128/85aeb312-1632-49c3-80cb-0d5db8ec8502.png align="center")
 
 Having a well-structured accessibility tree is key in determining whether a site will be navigable using assistive technology, making the difference between inclusion and exclusion.
 
@@ -441,7 +451,7 @@ This tree is a combination of the DOM and CSSOM trees. The browser processes all
 
 Non-visible nodes, such as `<script>` or `<meta>` tags, as well as elements hidden with the `display: none` CSS property, are not included in this tree.
 
-![The render tree is created from the DOM and CSSOM trees.](https://cdn.hashnode.com/res/hashnode/image/upload/v1731501603172/d3467e9a-e75b-4217-875b-58684edfdbc0.jpeg)
+![The render tree is created from the DOM and CSSOM trees.](https://cdn.hashnode.com/res/hashnode/image/upload/v1731501603172/d3467e9a-e75b-4217-875b-58684edfdbc0.jpeg align="center")
 
 ### Layout
 
@@ -482,41 +492,3 @@ You learned about URLs and the DNS lookup performed by the browser to find the s
 Finally, you explored what happens from the time the first chunk of data is received from the server until the site is displayed on your screen, along with key concepts such as the accessibility tree and the JavaScript hydration process.
 
 I hope you enjoyed this guide and found it useful. Thanks for reading!
-
-[1]: #heading-finding-a-resource-urls
-[2]: #heading-matching-ips-and-urls-dns-resolution
-[3]: #heading-what-is-the-dns-resolver
-[4]: #heading-what-is-the-root-dns-server
-[5]: #heading-what-is-the-top-level-domain-server
-[6]: #heading-authoritative-nameserver
-[7]: #heading-establishing-a-connection-tcpip-model
-[8]: #heading-how-does-tcp-connection-work
-[9]: #heading-tcp-three-way-handshake
-[10]: #heading-starting-the-exchange-client-server-communication
-[11]: #heading-what-is-the-http-protocol
-[12]: #heading-http-requestresponse
-[13]: #heading-https
-[14]: #heading-time-to-first-byte
-[15]: #heading-from-data-to-pixels-the-critical-rendering-path
-[16]: #heading-building-the-dom-tree
-[17]: #heading-building-the-cssom-tree
-[18]: #heading-javascript-compilation-and-execution
-[19]: #heading-building-the-accessibility-tree
-[20]: #heading-render-tree
-[21]: #heading-layout
-[22]: #heading-painting
-[23]: #heading-a-note-about-javascript-hydration
-[24]: #heading-conclusion
-[25]: https://en.wikipedia.org/wiki/Domain_Name_System
-[26]: https://en.wikipedia.org/wiki/Top-level_domain
-[27]: https://en.wikipedia.org/wiki/Transmission_Control_Protocol
-[28]: https://en.wikipedia.org/wiki/Internet_Protocol
-[29]: https://en.wikipedia.org/wiki/Internet_protocol_suite
-[30]: https://en.wikipedia.org/wiki/User_Datagram_Protocol
-[31]: https://en.wikipedia.org/wiki/HTTP
-[32]: https://en.wikipedia.org/wiki/HTTPS
-[33]: https://developer.mozilla.org/en-US/docs/Glossary/Time_to_first_byte
-[34]: https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path
-[35]: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
-[36]: https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model
-[37]: https://en.wikipedia.org/wiki/Web_accessibility#Assistive_technologies_used_for_web_browsing

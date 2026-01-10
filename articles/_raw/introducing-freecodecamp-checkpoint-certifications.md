@@ -1,17 +1,27 @@
 ---
-title: Introducing New freeCodeCamp Certifications in the Full Stack Developer
-  Curriculum
-date: 2025-11-28T02:58:07.056Z
+title: Introducing New freeCodeCamp Certifications in the Full Stack Developer Curriculum
+subtitle: ''
 author: Quincy Larson
-authorURL: https://www.freecodecamp.org/news/author/quincy/
-originalURL: https://www.freecodecamp.org/news/introducing-freecodecamp-checkpoint-certifications/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2025-09-18T20:58:00.820Z'
+originalURL: https://freecodecamp.org/news/introducing-freecodecamp-checkpoint-certifications
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1758228730264/c1387e81-974b-4573-abe2-d07bff7d6ef7.png
+tags:
+- name: community
+  slug: community
+- name: Open Source
+  slug: opensource
+seo_title: null
+seo_desc: 'I''m a big fan of CompTIA and the rigor of their certifications. I wanted
+  freeCodeCamp''s new Full Stack Developer cert to be similarly rigorous.
+
+  But I made one major miscalculation.
+
+  I underestimated people''s desire to earn certifications within less t...'
 ---
 
 I'm a big fan of CompTIA and the rigor of their certifications. I wanted freeCodeCamp's new Full Stack Developer cert to be similarly rigorous.
-
-<!-- more -->
 
 But I made one major miscalculation.
 
@@ -27,11 +37,11 @@ I'm kind of embarrassed that it took me months to understand this.
 
 And to be clear, there are a few other reasons that not everybody has moved over to our new full stack curriculum:
 
-1.  The curriculum is still in beta.
+1. The curriculum is still in beta.
     
-2.  The Back End JavaScript coursework isn't live yet.
+2. The Back End JavaScript coursework isn't live yet.
     
-3.  Our exam environment isn't live yet. So you can't sit for exams yet.
+3. Our exam environment isn't live yet. So you can't sit for exams yet.
     
 
 The good news is that the freeCodeCamp community is working hard to finish these three items.
@@ -50,17 +60,17 @@ We're going back to this model by breaking the Full Stack Development curriculum
 
 Here's the full list of certs you'll be able to earn along the way:
 
-1.  Responsive Web Design
+1. Responsive Web Design
     
-2.  JavaScript Algorithms and Data Structures
+2. JavaScript Algorithms and Data Structures
     
-3.  Front End Libraries
+3. Front End Libraries
     
-4.  Python Programming
+4. Python Programming
     
-5.  Relational Databases
+5. Relational Databases
     
-6.  Back End Development and APIs
+6. Back End Development and APIs
     
 
 The full progression will look something like this:
@@ -71,7 +81,7 @@ The main difference: as you earn these certs, you'll progress toward earning our
 
 The finished curriculum will look something like this:
 
-![A screenshot of freecodecamp.org/learn showing the accordion menu with the above-listed certifications and a final exam and capstone project](https://cdn.hashnode.com/res/hashnode/image/upload/v1758228923613/4f9c8f00-88a5-409d-bee8-b886ae9857e8.webp)
+![A screenshot of freecodecamp.org/learn showing the accordion menu with the above-listed certifications and a final exam and capstone project](https://cdn.hashnode.com/res/hashnode/image/upload/v1758228923613/4f9c8f00-88a5-409d-bee8-b886ae9857e8.webp align="center")
 
 We're working to finish our exam environment so that you can sit for exams and earn our new Responsive Web Design cert and JavaScript cert as early as Halloween.
 
@@ -111,7 +121,7 @@ Our app strikes a balance between respecting people's privacy while also flaggin
 
 ### Are there any other changes to the plans for the full stack cert that you haven't talked about here?
 
-No. We're still proceeding with everything I talked about in [my Christmas community update][1]. We're making steady forward progress. The freeCodeCamp open source community is more locked-in and more productive than ever.
+No. We're still proceeding with everything I talked about in [my Christmas community update](https://www.freecodecamp.org/news/christmas-2025-freecodecamp-curriculum-updates/). We're making steady forward progress. The freeCodeCamp open source community is more locked-in and more productive than ever.
 
 ### When should I switch from the legacy cert curriculum to the new full stack curriculum?
 
@@ -126,5 +136,3 @@ That's right.
 ### Cool. Don't you usually sign off with your catch phrase? Say the line, Bart.
 
 Happy coding.
-
-[1]: https://www.freecodecamp.org/news/christmas-2025-freecodecamp-curriculum-updates/

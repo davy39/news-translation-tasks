@@ -1,16 +1,31 @@
 ---
 title: Major freeCodeCamp Curriculum Updates Now Live in 2025
-date: 2025-01-13T10:17:32.261Z
+subtitle: ''
 author: Quincy Larson
-authorURL: https://www.freecodecamp.org/news/author/quincy/
-originalURL: https://www.freecodecamp.org/news/christmas-2025-freecodecamp-curriculum-updates/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2024-12-24T01:21:43.801Z'
+originalURL: https://freecodecamp.org/news/christmas-2025-freecodecamp-curriculum-updates
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1735001839858/19f1c48b-0d23-4bdf-882b-9f008e288719.png
+tags:
+- name: Open Source
+  slug: opensource
+- name: learn to code
+  slug: learn-to-code
+- name: freeCodeCamp.org
+  slug: freecodecamp
+seo_title: null
+seo_desc: 'Merry Christmas campers! 🎄 freeCodeCamp just shipped a ton of FREE learning
+  tools for you to dig into over the holidays:
+
+  🏗️ The new Certified Full Stack Developer curriculum is here!
+
+  🗨️ The new English for Developers CEFR Level B1
+
+  🤳 Major updates...'
 ---
 
 Merry Christmas campers! 🎄 freeCodeCamp just shipped a ton of FREE learning tools for you to dig into over the holidays:
-
-<!-- more -->
 
 🏗️ The new Certified Full Stack Developer curriculum is here!
 
@@ -38,19 +53,19 @@ Here's the full contents of the new Certified Full Stack Developer path. It's a 
 
 I recommend starting at the beginning, even if you’ve already learned some of these topics before.
 
-You can dive right in and start working your way through [the new Certified Full Stack Developer curriculum][1] now.
+You can dive right in and start working your way through [the new Certified Full Stack Developer curriculum](https://www.freecodecamp.org/learn/full-stack-developer/) now.
 
 ## The English for Developers Curriculum CEFR Level B1
 
 Last Christmas, we released CEFR Level A2 English coursework.
 
-![5eec4303-900b-4423-980a-cfa68a2962a0](https://cdn.hashnode.com/res/hashnode/image/upload/v1735002125376/5eec4303-900b-4423-980a-cfa68a2962a0.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1735002125376/5eec4303-900b-4423-980a-cfa68a2962a0.png align="center")
 
 And I’m thrilled to say that after a year of hard work, we’ve not only gotten all of that live – we’ve also now shipped a big chunk of Level B1.
 
 The certification exams will come out in 2025 as well.
 
-You can try our new [CEFR Level B1 English for Developers certification curriculum][2].
+You can try our new [CEFR Level B1 English for Developers certification curriculum](https://www.freecodecamp.org/learn/b1-english-for-developers/).
 
 ## The freeCodeCamp iPhone and Android Apps
 
@@ -66,9 +81,9 @@ You can now:
 
 Download it on iPhone/Android and leave a 5-star review. ⭐️⭐️⭐️⭐️⭐️ 😉
 
-[Get the Android app][3]
+[Get the Android app](https://play.google.com/store/apps/details?id=org.freecodecamp&hl=en_US)
 
-[Get the iPhone app][4]
+[Get the iPhone app](https://apps.apple.com/us/app/freecodecamp/id6446908151)
 
 ## 2025 is going to be amazing.
 
@@ -76,15 +91,8 @@ Thanks again to all of you who contribute to freeCodeCamp's curriculum and our m
 
 It's so cool that anyone can get help at any time from campers on the forum and Discord.
 
-Encourage your friends to get involved. They can start with [our open source contribution documentation][5].
+Encourage your friends to get involved. They can start with [our open source contribution documentation](https://contribute.freecodecamp.org).
 
 Finally, thanks to all of you who donate to support freeCodeCamp's mission. We're just getting started.🥞
 
-Please encourage your friends to support our charity as well. Together we can ensure everyone everywhere has access to a free world-class education. You can join 11,043 kind people around the world and [become a supporter][6].
-
-[1]: https://www.freecodecamp.org/learn/full-stack-developer/
-[2]: https://www.freecodecamp.org/learn/b1-english-for-developers/
-[3]: https://play.google.com/store/apps/details?id=org.freecodecamp&hl=en_US
-[4]: https://apps.apple.com/us/app/freecodecamp/id6446908151
-[5]: https://contribute.freecodecamp.org
-[6]: https://www.freecodecamp.org/donate
+Please encourage your friends to support our charity as well. Together we can ensure everyone everywhere has access to a free world-class education. You can join 11,043 kind people around the world and [become a supporter](https://www.freecodecamp.org/donate).

@@ -1,54 +1,78 @@
 ---
-title: How to Create a Professional Chat API Solution with Sockets in NodeJS
-  [Beginner level]
-date: 2024-08-29T00:48:19.396Z
-author: Adeel Imran
-authorURL: https://www.freecodecamp.org/news/author/adeel/
-originalURL: https://www.freecodecamp.org/news/create-a-professional-node-express/
-posteditor: ""
-proofreader: ""
+title: How to Create a Professional Chat API Solution with Sockets in NodeJS [Beginner
+  level]
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2020-06-16T23:47:21.000Z'
+originalURL: https://freecodecamp.org/news/create-a-professional-node-express
+coverImage: https://cdn-media-2.freecodecamp.org/w1280/5f9c9a39740569d1a4ca2455.jpg
+tags:
+- name: backend
+  slug: backend
+- name: Express.js
+  slug: expressjs
+- name: node js
+  slug: node-js
+- name: Node.js
+  slug: nodejs
+- name: REST API
+  slug: rest-api
+- name: SocketIO
+  slug: socketio
+- name: websocket
+  slug: websocket
+seo_title: null
+seo_desc: 'By Adeel Imran
+
+  Have you ever wondered how chat applications work behind the scenes? Well, today
+  I am going to walk you through how to make a REST + Sockets-based application built
+  on top of NodeJS/ExpressJS using MongoDB.
+
+  I have been working on the c...'
 ---
 
-Have you ever wondered how chat applications work behind the scenes? Well, today I am going to walk you through how to make a REST + Sockets-based application built on top of [NodeJS][1]/[ExpressJS][2] using [MongoDB][3].
+By Adeel Imran
 
-<!-- more -->
+Have you ever wondered how chat applications work behind the scenes? Well, today I am going to walk you through how to make a REST + Sockets-based application built on top of [NodeJS](https://nodejs.org/)/[ExpressJS](http://expressjs.com/) using [MongoDB](https://www.mongodb.com/).
 
 I have been working on the content for this article for over a week now – I really hope it helps someone out there.
 
 ## Prerequisites
 
--   Set up Mongodb on your machine \[[Installation guide written here][4]\]
--   For windows users, you can find the installation guide \[[here][5]\]
--   For macOS users, you can find the installation guide \[[here][6]\]\[[To the point installation that I wrote][7]\]
--   For Linux users, you can find the installation guide \[[here][8]\]
--   Install Node/NPM on your machine \[[Installation link here][9]\] (I am using Node version v12.18.0)
+* Set up Mongodb on your machine [[Installation guide written here](https://github.com/adeelibr/node-playground/blob/master/chapter-1-chat/guidelines/installing-mongo.md)]
+* For windows users, you can find the installation guide [[here](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/#procedure)]
+* For macOS users, you can find the installation guide [[here](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/#install-homebrew)][[To the point installation that I wrote](https://github.com/adeelibr/node-playground/blob/master/chapter-1-chat/guidelines/installing-mongo.md)]
+* For Linux users, you can find the installation guide [[here](https://docs.mongodb.com/manual/administration/install-on-linux/)]
+* Install Node/NPM on your machine [[Installation link here](https://nodejs.org/en/download/)] (I am using Node version v12.18.0)
 
 ## Topics we'll cover
 
 ### General
 
--   Create an express server
--   How to do API validations
--   Create basic skeleton for the entire application
--   Setting up MongoDB (installation, setup in express)
--   Creating users API + Database (Create a user, Get a user by id, Get all users, Delete a user by id)
--   Understanding what a middleware is
--   JWT (JSON web tokens) authentication (decode/encode) - Login middleware
--   Web socket class that handles events when a user disconnects, adds its identity, joins a chat room, wants to mute a chat room
--   Discussing chat room & chat message database model
+* Create an express server
+* How to do API validations
+* Create basic skeleton for the entire application
+* Setting up MongoDB (installation, setup in express)
+* Creating users API + Database (Create a user, Get a user by id, Get all users, Delete a user by id)
+* Understanding what a middleware is
+* JWT (JSON web tokens) authentication (decode/encode) - Login middleware
+* Web socket class that handles events when a user disconnects, adds its identity, joins a chat room, wants to mute a chat room
+* Discussing chat room & chat message database model
 
 ### For the API
 
--   Initiate a chat between users
--   Create a message in chat room
--   See conversation for a chat room by its id
--   Mark an entire conversation as read (similar to Whatsapp)
--   Get recent conversation from all chats (similar to Facebook messenger)
+* Initiate a chat between users
+* Create a message in chat room
+* See conversation for a chat room by its id
+* Mark an entire conversation as read (similar to Whatsapp)
+* Get recent conversation from all chats (similar to Facebook messenger)
 
-### Bonus  - API    
+### Bonus  - API    
 
--   Delete a chat room by id along with all its associated messages
--   Delete a message by id
+* 	Delete a chat room by id along with all its associated messages
+* 	Delete a message by id
 
 Before we begin, I wanted to touch on some basics in the following videos.
 
@@ -58,23 +82,23 @@ What are routes? Controllers? How do we allow for CORS (cross origin resource sh
 
 I talk about all this and more (including REST conventions) in this video:
 
-<iframe width="480" height="270" src="https://www.youtube.com/embed/t7-yuYFVG1Y?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" name="fitvid0"></iframe>
+%[https://www.youtube.com/watch?v=t7-yuYFVG1Y&feature=youtu.be]
 
-Also, here's a [GitHub link to the entire source code of this video][10] \[Chapter 0\]
+Also, here's a [GitHub link to the entire source code of this video](https://github.com/adeelibr/node-playground/tree/master/chapter-0-basic) [Chapter 0]
 
-Do have a look at the README.md for "Chapter 0" source code. It has all the relevant learning links I mention in the video along with an amazing half hour tutorial on postman.
+Do have a look at the README.md for "Chapter 0" source code. It has all the relevant learning links I mention in the video along with an amazing half hour tutorial on postman. 
 
-### Adding API validation to your API end-point
+### Adding API validation to your API end-point 
 
 In the below video, you'll learn how to write your own custom validation using a library called "make-validation":
 
-<iframe width="480" height="270" src="https://www.youtube.com/embed/t-KGXLM0YlE?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" name="fitvid1"></iframe>
+%[https://www.youtube.com/watch?v=t-KGXLM0YlE&feature=youtu.be]
 
-Here's the [GitHub link to the entire source code of this video][11] \[Chapter 0\].
+Here's the [GitHub link to the entire source code of this video](https://github.com/adeelibr/node-playground/tree/master/chapter-0-basic) [Chapter 0].
 
-And here's the **make-validation** library link \[G[itHub][12]\]\[[npm][13]\]\[[example][14]\].
+And here's the **make-validation** library link [G[itHub](https://github.com/withvoid/make-validation)][[npm](https://www.npmjs.com/package/@withvoid/make-validation)][[example](https://github.com/withvoid/make-validation/tree/master/example)].
 
-The entire source code of this tutorial can be found **[here][15]**. If you have any feedback, please just reach out to me on [http://twitter.com/adeelibr][16]. If you like this tutorial kindly leave a star on the [**github repository**][17]**.**
+The entire source code of this tutorial can be found **[here](https://github.com/adeelibr/node-playground/tree/master/chapter-1-chat)**. If you have any feedback, please just reach out to me on [http://twitter.com/adeelibr](http://twitter.com/adeelibr). If you like this tutorial kindly leave a star on the **github repository****.**
 
 Let's begin now that you know the basics of ExpressJS and how to validate a user response.
 
@@ -135,6 +159,7 @@ Your `package.json` now should look something like this:
     "nodemon": "2.0.4"
   }
 }
+
 ```
 
 Awesome!
@@ -193,16 +218,17 @@ server.listen(port);
 server.on("listening", () => {
   console.log(`Listening on port:: http://localhost:${port}/`)
 });
+
 ```
 
 Let's add the routes for `indexRouter` `userRouter` `chatRoomRouter` & `deleteRouter`.
 
 In your project's root folder create a folder called `routes`. Inside the `routes` folder add the following files:
 
--   `index.js`
--   `user.js`
--   `chatRoom.js`
--   `delete.js`
+* `index.js`
+* `user.js`
+* `chatRoom.js`
+* `delete.js`
 
 Let's add content for `routes/index.js` first:
 
@@ -219,6 +245,7 @@ router
   .post('/login/:userId', encode, (req, res, next) => { });
 
 export default router;
+
 ```
 
 Let's add content for `routes/user.js` next:
@@ -237,6 +264,7 @@ router
   .delete('/:id', user.onDeleteUserById)
 
 export default router;
+
 ```
 
 And now let's add content for `routes/chatRoom.js`:
@@ -256,6 +284,7 @@ router
   .put('/:roomId/mark-read', chatRoom.markConversationReadByRoomId)
 
 export default router;
+
 ```
 
 Finally, let's add content for `routes/delete.js`:
@@ -272,15 +301,16 @@ router
   .delete('/message/:messageId', deleteController.deleteMessageById)
 
 export default router;
+
 ```
 
 Awesome now that our routes are in place let's add the controllers for each route.
 
 Create a new folder called `controllers`. Inside that folder create the following files:
 
--   `` `user.js` ``
--   `chatRoom.js`
--   `delete.js`
+* `user.js`
+* `chatRoom.js`
+* `delete.js`
 
 Let's start of with `controllers/user.js`:
 
@@ -328,16 +358,15 @@ export const encode = async (req, res, next) => {}
 
 I will talk about what this file does in a bit, so for now let's just ignore it.
 
-![0f2621f3fad63457842f817f81df58ec](https://www.freecodecamp.org/news/content/images/2020/06/0f2621f3fad63457842f817f81df58ec.gif)
-
-We are done with our basic boilerplate of the code base
+![Image](https://www.freecodecamp.org/news/content/images/2020/06/0f2621f3fad63457842f817f81df58ec.gif)
+_We are done with our basic boilerplate of the code base_
 
 We have ended up doing the following:
 
--   Created an Express server that listens on port 3000
--   Added cross-origin-resource (CORS) to our `server.js`
--   Added a logger to our `server.js`
--   And also added route handlers with empty controllers.
+* Created an Express server that listens on port 3000
+* Added cross-origin-resource (CORS) to our `server.js`
+* Added a logger to our `server.js`
+* And also added route handlers with empty controllers.
 
 Nothing fancy so far that I haven't covered in the videos above.
 
@@ -345,19 +374,19 @@ Nothing fancy so far that I haven't covered in the videos above.
 
 Before we add MongoDB to our code base, make sure it is installed in your machine by running one of the following:
 
--   For Windows users installation guide \[[here][18]\]
--   For macOS users installation guide \[[here][19]\]\[[To the point installation that I wrote][20]\]
--   For Linux users installation guide \[[here][21]\]
+* For Windows users installation guide [[here](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/#procedure)]
+* For macOS users installation guide [[here](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/#install-homebrew)][[To the point installation that I wrote](https://github.com/adeelibr/node-playground/blob/master/chapter-1-chat/guidelines/installing-mongo.md)]
+* For Linux users installation guide [[here](https://docs.mongodb.com/manual/administration/install-on-linux/)]
 
-If you are having issues installing MongoDB, just let me know at [https://twitter.com/adeelibr][22] and I'll write a custom guide for you or make an installation video guide. :)
+If you are having issues installing MongoDB, just let me know at [https://twitter.com/adeelibr](https://twitter.com/adeelibr) and I'll write a custom guide for you or make an installation video guide. :)
 
-I am using [Robo3T][23] as my MongoDB GUI.
+I am using [Robo3T](https://robomongo.org/) as my MongoDB GUI.
 
-Now you should have your MongoDB instance running and [Robo3T][24] installed. (You can use any GUI client that you like for this. I like [Robo3T][25] a lot so I'm using it. Also, it's open source.)
+Now you should have your MongoDB instance running and [Robo3T](https://robomongo.org/) installed. (You can use any GUI client that you like for this. I like [Robo3T](https://robomongo.org/) a lot so I'm using it. Also, it's open source.)
 
-Here is a small video I found on YouTube that gives a 6 minute intro to [Robo3T][26]:
+Here is a small video I found on YouTube that gives a 6 minute intro to [Robo3T](https://robomongo.org/):
 
-<iframe width="480" height="270" src="https://www.youtube.com/embed/DKZr1Urs7sA?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" name="fitvid2"></iframe>
+%[https://www.youtube.com/watch?v=DKZr1Urs7sA]
 
 Once your MongoDB instance is up and running let's begin integrating MongoDB in our code as well.
 
@@ -372,6 +401,7 @@ const config = {
 }
 
 export default config
+
 ```
 
 Usually the default port that `MongoDB` instances will run on is `27017`.
@@ -404,6 +434,7 @@ mongoose.connection.on('error', error => {
 mongoose.connection.on('disconnected', () => {
   console.log('Mongo connection is disconnected')
 })
+
 ```
 
 Next import `config/mongo.js` in your `server/index.js` file like this:
@@ -417,7 +448,7 @@ import "./config/mongo.js";
 import indexRouter from "./routes/index.js";
 ```
 
-If you get lost at any time, the entire source code for this tutorial is right [**here**][27]**.**
+If you get lost at any time, the entire source code for this tutorial is right [**here**](https://github.com/adeelibr/node-playground/tree/master/chapter-1-chat)**.**
 
 Let's discuss what we are doing here step by step:
 
@@ -425,6 +456,7 @@ We first import our `config.js` file in `config/mongo.js`. Next we pass in the v
 
 ```
 const CONNECTION_URL = `mongodb://${config.db.url}/${config.db.name}`
+
 ```
 
 Then using the `CONNECTION_URL` we form a Mongo connection, by doing this:
@@ -440,8 +472,8 @@ This tells `mongoose` to make a connection with the database with our Node/Expre
 
 The options we are giving Mongo here are:
 
--   `useNewUrlParser`: MongoDB driver has deprecated their current [connection string][28] parser. `useNewUrlParser: true` tells mongoose to use the new parser by Mongo. (If it's set to true, we have to provide a database port in the `CONNECTION_URL`.)
--   `useUnifiedTopology`: False by default. Set to `true` to opt in to using [MongoDB driver's new connection management engine][29]. You should set this option to `true`, except for the unlikely case that it prevents you from maintaining a stable connection.
+* `useNewUrlParser`: MongoDB driver has deprecated their current [connection string](https://docs.mongodb.com/manual/reference/connection-string/) parser. `useNewUrlParser: true` tells mongoose to use the new parser by Mongo. (If it's set to true, we have to provide a database port in the `CONNECTION_URL`.)
+* `useUnifiedTopology`: False by default. Set to `true` to opt in to using [MongoDB driver's new connection management engine](https://mongoosejs.com/docs/deprecations.html#useunifiedtopology). You should set this option to `true`, except for the unlikely case that it prevents you from maintaining a stable connection.
 
 Next we simply add `mongoose` event handlers like this:
 
@@ -461,10 +493,10 @@ mongoose.connection.on('disconnected', () => {
 })
 ```
 
--   `connected` will be called once the database connection is established
--   `disconnected` will be called when your Mongo connection is disabled
--   `error` is called if there is an error connecting to your Mongo database
--   `reconnected` event is called when the database loses connection and then makes an attempt to successfully reconnect.
+* `connected` will be called once the database connection is established
+* `disconnected` will be called when your Mongo connection is disabled
+* `error` is called if there is an error connecting to your Mongo database
+* `reconnected` event is called when the database loses connection and then makes an attempt to successfully reconnect. 
 
 Once you have this in place, simply go in your `server/index.js` file and import `config/mongo.js`. And that is it. Now when you start up your server by typing this:
 
@@ -474,15 +506,14 @@ npm start;
 
 You should see something like this:
 
-![Screenshot-2020-06-15-at-19.42.53](https://www.freecodecamp.org/news/content/images/2020/06/Screenshot-2020-06-15-at-19.42.53.png)
-
-Logs when you start your server
+![Image](https://www.freecodecamp.org/news/content/images/2020/06/Screenshot-2020-06-15-at-19.42.53.png)
+_Logs when you start your server_
 
 If you see this you have successfully added Mongo to your application.
 
 Congratulations!
 
-If you got stuck here for some reason, let me know at [twitter.com/adeelibr][30] and I will try to sort it out for you. :)
+If you got stuck here for some reason, let me know at [twitter.com/adeelibr](https://twitter.com/adeelibr) and I will try to sort it out for you. :)
 
 ## Let's setup our first API section for users/
 
@@ -581,20 +612,21 @@ And then finally we'll export the object like this:
 
 ```
 export default mongoose.model("User", userSchema);
+
 ```
 
-So `mongoose.model` takes in 2 parameters here.
+So `mongoose.model` takes in 2 parameters here. 
 
--   The name of the model, which is `User` here
--   The schema associated with that model, which is `userSchema` in this case
+* The name of the model, which is `User` here
+* The schema associated with that model, which is `userSchema` in this case
 
 Note: Based on the name of the model, which is `User` in this case, we don't add `collection` key in the schema section. It will take this `User` name and append an `s` to it and create a collection by its name, which becomes `user`.
 
 Great, now we have our first model.
 
-If you've gotten stuck anywhere, just have a look at the [source code][31].
+If you've gotten stuck anywhere, just have a look at the [source code](https://github.com/adeelibr/node-playground/tree/master/chapter-1-chat).
 
-### Create a new user API \[POST request\]
+### Create a new user API [POST request] 
 
 Next let's write our first controller for this route: `.post('/', user.onCreateUser)`.
 
@@ -660,7 +692,7 @@ if (!validation.success) return res.status(400).json({ ...validation });
 
 Please make sure that you have seen the video (above) on `validate an API request in Node using custom validation or by using make-validation library`.
 
-Here we are using the `[make-validation][32]` library (that I ended up making while writing this tutorial). I talk about it's usage in the video at the start of this tutorial.
+Here we are using the `[make-validation](https://www.npmjs.com/package/@withvoid/make-validation)` library (that I ended up making while writing this tutorial). I talk about it's usage in the video at the start of this tutorial.
 
 All we are doing here is passing `req.body` to `payload`. Then in the checks we're adding an object where against each `key` we are telling what are the requirements for each type, for example:
 
@@ -682,7 +714,7 @@ const user = await UserModel.createUser(firstName, lastName, type);
 return res.status(200).json({ success: true, user });
 ```
 
-Then we destruct `firstName, lastName, type` from `req.body` and pass those values to our `UserModel.createUser`. If everything goes right, it simply returns `success: true` with the new `user` created along with a status `200`.
+Then we destruct `firstName, lastName, type` from `req.body` and pass those values to our `UserModel.createUser`. If everything goes right, it simply returns `success: true` with the new `user` created along with a status `200`. 
 
 If anywhere in this process anything goes wrong, it throws an error and goes to the catch block:
 
@@ -714,6 +746,7 @@ userSchema.statics.createUser = async function (
 
 
 export default mongoose.model("User", userSchema);
+
 ```
 
 So all we are doing here is adding a static method to our `userSchema` called `createUser` that takes in 3 parameters: `firstName, lastName, type`.
@@ -728,12 +761,13 @@ Here the `this` part is very important, since we are writing a static method on 
 
 One thing to note here is that `userSchema.statics.createUser = async function (firstName, lastName, type) => {}` won't work. If you use an `=>` arrow function the `this` context will be lost and it won't work.
 
-If you want to learn more about `static` methods in mongoose, see this very short but helpful doc example [here][33].
+If you want to learn more about `static` methods in mongoose, see this very short but helpful doc example [here](https://mongoosejs.com/docs/2.7.x/docs/methods-statics.html).
 
 Now that we have everything set up, let's start our terminal by running the following command in the project's root folder:
 
 ```
 npm start;
+
 ```
 
 Go into postman, set up a `POST` request on this API `http://localhost:3000/users`, and add the following body to the API:
@@ -748,13 +782,13 @@ Go into postman, set up a `POST` request on this API `http://localhost:3000/user
 
 Like this:
 
-![Screenshot-2020-06-15-at-21.37.15](https://www.freecodecamp.org/news/content/images/2020/06/Screenshot-2020-06-15-at-21.37.15.png)
+![Image](https://www.freecodecamp.org/news/content/images/2020/06/Screenshot-2020-06-15-at-21.37.15.png)
 
-You can also get the **entire postman API** collection from [**here**][34] so that you don't have to write the APIs again and again.
+You can also get the **entire postman API** collection from [**here**](https://www.getpostman.com/collections/c28b12148c3d980fc39d) so that you don't have to write the APIs again and again.
 
 Awesome – we just ended up creating our first API. Let's create a couple more user APIs before we move to the chat part because there is no chat without users (unless we have robots, but robots are users as well ?).
 
-### Get a user by its ID API \[GET request\]
+### Get a user by its ID API [GET request] 
 
 Next we need to write an API that gets us a user by its ID. So for our route `.get('/:id', user.onGetUserById)` let's write down its controller.
 
@@ -794,7 +828,7 @@ const user = await this.findOne({ _id: id });
 if (!user) throw ({ error: 'No user with this id found' });
 ```
 
-We use `mongoose`'s  `findOne` method to find an entry by `id`. We know that only one item exists in the collection by this `id` because the `id` is unique. If no user is found we simply throw an error with the message `No user with this id found`.
+We use `mongoose`'s  `findOne` method to find an entry by `id`. We know that only one item exists in the collection by this `id` because the `id` is unique. If no user is found we simply throw an error with the message `No user with this id found`.
 
 And that is it! Let's start up our server:
 
@@ -806,13 +840,13 @@ Open up postman and create a `GET` request `http://localhost:3000/users/:id`.
 
 Note: I am using the ID of the last user we just created.
 
-![Screenshot-2020-06-15-at-22.01.16](https://www.freecodecamp.org/news/content/images/2020/06/Screenshot-2020-06-15-at-22.01.16.png)
+![Image](https://www.freecodecamp.org/news/content/images/2020/06/Screenshot-2020-06-15-at-22.01.16.png)
 
 Nicely done! Good job.
 
 Two more API's to go for our user section.
 
-### Get all users API \[GET request\]
+### Get all users API [GET request]
 
 For our router in `.get('/', user.onGetAllUsers)` let's add information to its controller.
 
@@ -854,11 +888,13 @@ npm start;
 
 Open up postman and create a `GET` request for this route `http://localhost:3000/users`:
 
-![Screenshot-2020-06-15-at-22.12.13](https://www.freecodecamp.org/news/content/images/2020/06/Screenshot-2020-06-15-at-22.12.13.png)
+![Image](https://www.freecodecamp.org/news/content/images/2020/06/Screenshot-2020-06-15-at-22.12.13.png)
+
+
 
 I went ahead and ended up creating a couple more users. ?
 
-### Delete a user by ID API \[DELETE request\] (More of a bonus section, you can skip this if you want)
+### Delete a user by ID API [DELETE request] (More of a bonus section, you can skip this if you want)
 
 Let's create our final route to delete a user by their ID. For the route `.delete('/:id', user.onDeleteUserById)` go to its controller in `controllers/user.js` and write this code in the `onDeleteUserById()` method:
 
@@ -895,23 +931,24 @@ Let's start up our server:
 
 ```
 npm start;
+
 ```
 
 Go to postman and create a new `DELETE` route:
 
-![Screenshot-2020-06-15-at-22.24.51](https://www.freecodecamp.org/news/content/images/2020/06/Screenshot-2020-06-15-at-22.24.51.png)
+![Image](https://www.freecodecamp.org/news/content/images/2020/06/Screenshot-2020-06-15-at-22.24.51.png)
 
-With this we'll conclude our USER API section.
+With this we'll conclude our USER API section. 
 
 Next we will cover how to authenticate routes with an authentication token. This is the last thing I want to touch on before moving on to the chat section – because all of the chat APIs will be authenticated.
 
-### What are middlewares in ExpressJS?
+### What are middlewares in ExpressJS? 
 
 How can we write them? By adding JWT middleware in your application:
 
-<iframe width="480" height="270" src="https://www.youtube.com/embed/G8Z6yeV0ytc?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" name="fitvid3"></iframe>
+%[https://www.youtube.com/watch?v=G8Z6yeV0ytc&feature=youtu.be]
 
-And here's the [GitHub link to the entire source code of this video][35] \[Chapter 0\].
+And here's the [GitHub link to the entire source code of this video](https://github.com/adeelibr/node-playground/tree/master/chapter-0-basic) [Chapter 0].
 
 And again, all the relevant info can be found in the READ.ME.
 
@@ -1048,9 +1085,10 @@ Then we do this:
 
 ```
 const accessToken = req.headers.authorization.split(' ')[1];
+
 ```
 
-It's being `split(' ')` by space and then we are getting the second index of the array by accessing its `[1]` index because the convention is `authorization: Bearer <auth-token>`. Want to read more on this? Check out this nice [thread on quora][36].
+It's being `split(' ')` by space and then we are getting the second index of the array by accessing its `[1]` index because the convention is `authorization: Bearer <auth-token>`. Want to read more on this? Check out this nice [thread on quora](https://www.quora.com/Why-is-Bearer-required-before-the-token-in-Authorization-header-in-a-HTTP-request).
 
 Then we try to decode our token:
 
@@ -1073,7 +1111,7 @@ Now, moving forward, every route that goes through this `decode` middleware will
 
 This was it for the middleware section. Let's create a `login` route so that we can ask a user for their information and give a token in return (because moving forward they'll need a token to access the rest of chat APIs).
 
-### Creating a login route \[POST request\]
+### Creating a login route [POST request]
 
 Go to your `routes/index.js` file and paste the following content:
 
@@ -1095,17 +1133,18 @@ router
   });
 
 export default router;
+
 ```
 
-So all we are doing is adding the `encode` middleware to our `http://localhost:3000/login/:<user-id>` \[POST\] route. If everything goes smoothly the user will get an `authorization` token.
+So all we are doing is adding the `encode` middleware to our `http://localhost:3000/login/:<user-id>` [POST] route. If everything goes smoothly the user will get an `authorization` token.
 
 Note: I am not adding a login/signup flow, but I still wanted to touch on JWT/middleware in this tutorial.
 
 Usually authentication is done in a similar way. The only addition here is that the user doesn't provide their ID. They provide their username, password (which we verify in the database), and if everything checks out we give them an authorization token.
 
-If you got stuck anywhere up to this point, just write to me at [twitter.com/adeelibr][37], so that way I can improve the content. You can also write to me if you would like to learn something else.
+If you got stuck anywhere up to this point, just write to me at [twitter.com/adeelibr](https://twitter.com/adeelibr), so that way I can improve the content. You can also write to me if you would like to learn something else.
 
-As a reminder, the entire source code is available [here][38]. You don't have to code along with this tutorial, but if you do the concepts will stick better.
+As a reminder, the entire source code is available [here](https://github.com/adeelibr/node-playground/tree/master/chapter-1-chat). You don't have to code along with this tutorial, but if you do the concepts will stick better.
 
 Let's just check our `/login` route now.
 
@@ -1113,23 +1152,22 @@ Start your server:
 
 ```
 npm start;
+
 ```
 
 Let's run postman. Create a new POST request `http://localhost:3000/login/<user-id>`:
 
-![Screenshot-2020-06-15-at-23.03.15](https://www.freecodecamp.org/news/content/images/2020/06/Screenshot-2020-06-15-at-23.03.15.png)
+![Image](https://www.freecodecamp.org/news/content/images/2020/06/Screenshot-2020-06-15-at-23.03.15.png)
+_When the user ID is correct_
 
-When the user ID is correct
-
-![Screenshot-2020-06-15-at-23.03.32](https://www.freecodecamp.org/news/content/images/2020/06/Screenshot-2020-06-15-at-23.03.32.png)
-
-When the user ID is invalid
+![Image](https://www.freecodecamp.org/news/content/images/2020/06/Screenshot-2020-06-15-at-23.03.32.png)
+_When the user ID is invalid_
 
 With this we are done with our login flow as well.
 
 This was a lot. But now we can focus only on our chat routes.
 
-## Create a web socket class
+## Create a web socket class 
 
 This web socket class will handle events when a user disconnects, joins a chat room, or wants to mute a chat room.
 
@@ -1175,17 +1213,18 @@ class WebSockets {
 }
 
 export default new WebSockets();
+
 ```
 
 The WebSockets class has three major things here:
 
--   users array
--   connection method
--   subscribing members of a chat room to it. `subscribeOtherUser`
+* users array
+* connection method
+* subscribing members of a chat room to it. `subscribeOtherUser`
 
 Let's break this down.
 
-We have a class:
+We have a class: 
 
 ```
 class WebSockets {
@@ -1230,10 +1269,10 @@ The `connection` method takes in a parameter called `client` (client here will b
 
 We take the param `client` and add some event to it
 
--   client.on('disconnect') // when a user connection is lost this method will be called
--   client.on('identity') // when user logs in from the front end they will make a connection with our server by giving their identity
--   client.on('subscribe') // when a user joins a chat room this method is called
--   client.on('unsubscribe') // when a user leaves or wants to mute a chat room
+* client.on('disconnect') // when a user connection is lost this method will be called
+* client.on('identity') // when user logs in from the front end they will make a connection with our server by giving their identity
+* client.on('subscribe') // when a user joins a chat room this method is called
+* client.on('unsubscribe') // when a user leaves or wants to mute a chat room
 
 Let's talk about `disconnect`:
 
@@ -1301,13 +1340,13 @@ subscribeOtherUser(room, otherUserId) {
 }
 ```
 
-We pass in  `room` and `otherUserId` as params to this function.
+We pass in  `room` and `otherUserId` as params to this function.
 
 Using the `otherUserId` we filter on our `this.users` array and all the results that match are stored in `userSockets` array.
 
 You might be thinking – how can one user have multiple presences in the user array? Well, think of a scenario where the same user is logged in from both their web application and mobile phone. It will create multiple socket connections for the same user.
 
-Next we map on `userSockets`. For each item in this array we pass it into this method:  `const socketConn = global.io.sockets.connected(userInfo.socketId)`
+Next we map on `userSockets`. For each item in this array we pass it into this method:  `const socketConn = global.io.sockets.connected(userInfo.socketId)` 
 
 I will talk more about this `global.io.sockets.connected` in a bit. But what this initially does is it takes in `userInfo.socketId` and if it exists in our socket connection, it will return the connection, otherwise `null`.
 
@@ -1345,20 +1384,20 @@ global.io.on('connection', WebSockets.connection)
 
 The `server` was created and we do two things:
 
--   assign `global.io` to `socketio.listen(server)` (As soon as a port starts listening on the `server`, sockets starts listening for events happening on that port as well.)
--   then we assign `global.io.on('connection', WebSockets.connection)` method. Every time someone from the front end makes a socket connection, the `connection` method will be called which will invoke our `Websockets` class and inside that class the `connection` method.
+* assign `global.io` to `socketio.listen(server)` (As soon as a port starts listening on the `server`, sockets starts listening for events happening on that port as well.)
+* then we assign `global.io.on('connection', WebSockets.connection)` method. Every time someone from the front end makes a socket connection, the `connection` method will be called which will invoke our `Websockets` class and inside that class the `connection` method.
 
 `global.io` is equivalent to `windows` object in browser. But since we don't have `windows` in NodeJS we use `global.io`. Whatever we put in `global.io` is available in the entire application.
 
 This is the same `global.io` we used in the `WebSockets` class inside the `subscribeOtherUser` method.
 
-If you got lost here is the [entire source code of this chat application][39]. Also free to drop me a message with your feedback and I will try to improve the content of this tutorial.
+If you got lost here is the [entire source code of this chat application](https://github.com/adeelibr/node-playground/tree/master/chapter-1-chat). Also free to drop me a message with your feedback and I will try to improve the content of this tutorial.
 
 ## Discussing chat room & chat message database model
 
 Before starting off with Chat, I think it is really important to discuss the database model on which we will create our chat application. Have a look at the below video:
 
-<iframe width="480" height="270" src="https://www.youtube.com/embed/GAt-XjGvMxM?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" name="fitvid4"></iframe>
+%[https://www.youtube.com/watch?v=GAt-XjGvMxM&feature=youtu.be]
 
 Now that you have a clear idea about what our chat structure will be like, let's start off by making our chat room model.
 
@@ -1427,13 +1466,13 @@ export default mongoose.model("ChatRoom", chatRoomSchema);
 
 We have three things going on here:
 
--   We have a const for `CHAT_ROOM_TYPES` which has only two types
--   We define our ChatRoom schema
--   We add a static method to initiate chat
+* We have a const for `CHAT_ROOM_TYPES` which has only two types
+* We define our ChatRoom schema
+* We add a static method to initiate chat
 
 ## Chat related APIs
 
-### Initiate a chat between users (/room/initiate \[POST request\])
+### Initiate a chat between users (/room/initiate [POST request])
 
 Let's discuss our static method defined in `models/ChatRoom.js` called `initiateChat`:
 
@@ -1472,11 +1511,11 @@ chatRoomSchema.statics.initiateChat = async function (userIds, type, chatInitiat
 
 This function takes in three parameters:
 
--   userIds (array of users)
--   type (type of chatroom)
--   chatInitiator (the user who created the chat room)
+* userIds (array of users)
+* type (type of chatroom)
+* chatInitiator (the user who created the chat room)
 
-Next we are doing two things here: either returning an existing chatroom document or creating a new one.
+Next we are doing two things here: either returning an existing chatroom document or creating a new one. 
 
 Let's break this one down:
 
@@ -1505,12 +1544,12 @@ userIds: { $size: userIds.length, $all: [...userIds] },
 type: type,
 ```
 
-You can read more on the $size operator [here][40], and more on the $all operator [here][41].
+You can read more on the $size operator [here](https://docs.mongodb.com/manual/reference/operator/query/size/), and more on the $all operator [here](https://docs.mongodb.com/manual/reference/operator/query/all/).
 
 We're checking to find a chatroom document where an item exists in our chatrooms collection where
 
-1.  the `userIds` are the same as the one we are passing to this function (irrespective of the user ids order), and
-2.  the length of the `userIds` is the same as that my `userIds.length` that we are passing through the function.
+1.  the `userIds` are the same as the one we are passing to this function (irrespective of the user ids order), and 
+2. the length of the `userIds` is the same as that my `userIds.length` that we are passing through the function.
 
 Also we're checking that the chat room type should be the same.
 
@@ -1560,7 +1599,7 @@ initiate: async (req, res) => {
 },
 ```
 
-We are using the `[make-validation][42]` library here to validate the user's request. For the initiate API, we expect the user to send an array of `users` and also define the type of the `chat-room` that is being created.
+We are using the `[make-validation](https://www.npmjs.com/package/@withvoid/make-validation)` library here to validate the user's request. For the initiate API, we expect the user to send an array of `users` and also define the type of the `chat-room` that is being created.
 
 Once the validation passes, then:
 
@@ -1580,9 +1619,9 @@ We simply call our `initiateChat` method from `ChatRoomModel` and pass it `allUs
 
 Let's run this and see if it works (here is a video of me doing it):
 
-<iframe width="459" height="344" src="https://www.youtube.com/embed/vWzmTrNoNJs?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" name="fitvid5"></iframe>
+%[https://youtu.be/vWzmTrNoNJs]
 
-### Create a message in chat room (/:roomId/message) \[POST request\]
+### Create a message in chat room (/:roomId/message) [POST request]
 
 Let's create a message for the chat room we just created with `pikachu`.
 
@@ -1703,9 +1742,9 @@ export default mongoose.model("ChatMessage", chatMessageSchema);
 
 There are a couple of things happening here:
 
--   We have a `MESSAGE_TYPES` object which has only one type called `text`
--   We are defining our schema for `chatmessage` and `readByRecipient`
--   Then we are writing our static method for `createPostInChatRoom`
+* We have a `MESSAGE_TYPES` object which has only one type called `text`
+* We are defining our schema for `chatmessage` and `readByRecipient`
+* Then we are writing our static method for `createPostInChatRoom`
 
 I know this is a lot of content, but just bear with me. Let's just write the controller for the route that creates this message.
 
@@ -1738,23 +1777,23 @@ postMessage: async (req, res) => {
 
 Cool, let's discuss what we are doing here:
 
-<iframe width="459" height="344" src="https://www.youtube.com/embed/z1C0Sl2wmJU?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" name="fitvid6"></iframe>
+%[https://youtu.be/z1C0Sl2wmJU]
 
 Operators discussed in this video are:
 
--   [$match][43]
--   [$last][44]
--   [$addToSet][45]
--   [$lookup][46]
--   [$unwind][47]
--   [$group][48]
+* [$match](https://docs.mongodb.com/manual/reference/operator/aggregation/match/)
+* [$last](https://docs.mongodb.com/manual/reference/operator/aggregation/last/)
+* [$addToSet](https://docs.mongodb.com/manual/reference/operator/update/addToSet/)
+* [$lookup](https://docs.mongodb.com/manual/reference/operator/aggregation/lookup/)
+* [$unwind](https://docs.mongodb.com/manual/reference/operator/aggregation/unwind/)
+* [$group](https://docs.mongodb.com/manual/reference/operator/aggregation/group/)
 
-### See conversation for a chat room by it's id \[Get request\]
+### See conversation for a chat room by it's id [Get request]
 
 Now that we have
 
--   Created a chat room
--   Are able to add messages in that chat room
+* Created a chat room
+* Are able to add messages in that chat room
 
 Let's see the entire conversation for that chat as well (with pagination).
 
@@ -1816,7 +1855,7 @@ userSchema.statics.getUserByIds = async function (ids) {
 }
 ```
 
-The operator used here is [$in][49] – I'll talk about this in a bit.
+The operator used here is [$in](https://docs.mongodb.com/manual/reference/operator/query/in/) – I'll talk about this in a bit.
 
 And then at last, go to your `ChatMessage` model in `models/ChatMessage.js` and write a new static method called `getConversationByRoomId`:
 
@@ -1850,15 +1889,15 @@ chatMessageSchema.statics.getConversationByRoomId = async function (chatRoomId, 
 
 Let's discuss all that we have done so far:
 
-<iframe width="459" height="344" src="https://www.youtube.com/embed/cnwOMrVMv0c?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" name="fitvid7"></iframe>
+%[https://youtu.be/cnwOMrVMv0c]
 
-**[All the source code is available here][50].**
+**[All the source code is available here](https://github.com/adeelibr/node-playground/tree/master/chapter-1-chat).**
 
 ### Mark an entire conversation as read (feature similar to WhatsApp)
 
 Once the other person is logged in and they view a conversation for a room id, we need to mark that conversation as read from their side.
 
-To do this, in your `routes/chatRoom.js` for the route
+To do this, in your `routes/chatRoom.js` for the route 
 
 ```
 put('/:roomId/mark-read', chatRoom.markConversationReadByRoomId)
@@ -1923,8 +1962,8 @@ A possible use case is that the user might not have read the last 15 messages on
 
 The query itself is defined in 2 steps:
 
--   Find
--   Update
+* Find
+* Update
 
 And there can be multiple statements be updated.
 
@@ -1949,7 +1988,7 @@ Once it has all those documents where the criteria matches, it's then time to up
 },
 ```
 
-`$addToSet` will just push a new entry to the `readByRecipients` array. This is like `Array.push` but for mongo.
+`$addToSet` will just push a new entry to the `readByRecipients` array. This is like `Array.push` but for mongo. 
 
 Next we want to tell `mongoose` to not just update the first record it finds, but also to update all the records where the condition matches. So doing this:
 
@@ -1971,74 +2010,20 @@ npm start;
 
 Open your postman and create a new `PUT` request to test this route `ocalhost:3000/room/<room=id-here>/mark-read`:
 
-![Screenshot-2020-06-16-at-23.20.53](https://www.freecodecamp.org/news/content/images/2020/06/Screenshot-2020-06-16-at-23.20.53.png)
+![Image](https://www.freecodecamp.org/news/content/images/2020/06/Screenshot-2020-06-16-at-23.20.53.png)
 
 ### Bonus Section
 
--   How to delete a chat room and all its related messages
--   How to delete a message by its message id
+* How to delete a chat room and all its related messages
+* How to delete a message by its message id
 
-<iframe width="459" height="344" src="https://www.youtube.com/embed/GHhOIg5ZDa4?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" name="fitvid8"></iframe>
+%[https://youtu.be/GHhOIg5ZDa4]
 
 And we are done! Wow that was a lot of learning today.
 
-You can find the source code of this tutorial [here][51].
+You can find the source code of this tutorial [here](https://github.com/adeelibr/node-playground/tree/master/chapter-1-chat).
 
-Reach out to me on twitter with your feedback – I would love to hear if you have any suggestions for improvements: [twitter.com/adeelibr][52]
+Reach out to me on twitter with your feedback – I would love to hear if you have any suggestions for improvements: [twitter.com/adeelibr](https://twitter.com/adeelibr)
 
-If you liked to this article, please do give the [github repository][53] a star and subscribe to my [youtube channel][54].
+If you liked to this article, please do give the [github repository](https://github.com/adeelibr/node-playground/tree/master/chapter-1-chat) a star and subscribe to my [youtube channel](https://www.youtube.com/channel/UCGHFI8lm4QzUzFH5nnzqkjA).
 
-[1]: https://nodejs.org/
-[2]: http://expressjs.com/
-[3]: https://www.mongodb.com/
-[4]: https://github.com/adeelibr/node-playground/blob/master/chapter-1-chat/guidelines/installing-mongo.md
-[5]: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/#procedure
-[6]: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/#install-homebrew
-[7]: https://github.com/adeelibr/node-playground/blob/master/chapter-1-chat/guidelines/installing-mongo.md
-[8]: https://docs.mongodb.com/manual/administration/install-on-linux/
-[9]: https://nodejs.org/en/download/
-[10]: https://github.com/adeelibr/node-playground/tree/master/chapter-0-basic
-[11]: https://github.com/adeelibr/node-playground/tree/master/chapter-0-basic
-[12]: https://github.com/withvoid/make-validation
-[13]: https://www.npmjs.com/package/@withvoid/make-validation
-[14]: https://github.com/withvoid/make-validation/tree/master/example
-[15]: https://github.com/adeelibr/node-playground/tree/master/chapter-1-chat
-[16]: http://twitter.com/adeelibr
-[17]: https://github.com/adeelibr/node-playground
-[18]: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/#procedure
-[19]: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/#install-homebrew
-[20]: https://github.com/adeelibr/node-playground/blob/master/chapter-1-chat/guidelines/installing-mongo.md
-[21]: https://docs.mongodb.com/manual/administration/install-on-linux/
-[22]: https://twitter.com/adeelibr
-[23]: https://robomongo.org/
-[24]: https://robomongo.org/
-[25]: https://robomongo.org/
-[26]: https://robomongo.org/
-[27]: https://github.com/adeelibr/node-playground/tree/master/chapter-1-chat
-[28]: https://docs.mongodb.com/manual/reference/connection-string/
-[29]: https://mongoosejs.com/docs/deprecations.html#useunifiedtopology
-[30]: https://twitter.com/adeelibr
-[31]: https://github.com/adeelibr/node-playground/tree/master/chapter-1-chat
-[32]: https://www.npmjs.com/package/@withvoid/make-validation
-[33]: https://mongoosejs.com/docs/2.7.x/docs/methods-statics.html
-[34]: https://www.getpostman.com/collections/c28b12148c3d980fc39d
-[35]: https://github.com/adeelibr/node-playground/tree/master/chapter-0-basic
-[36]: https://www.quora.com/Why-is-Bearer-required-before-the-token-in-Authorization-header-in-a-HTTP-request
-[37]: https://twitter.com/adeelibr
-[38]: https://github.com/adeelibr/node-playground/tree/master/chapter-1-chat
-[39]: https://github.com/adeelibr/node-playground/tree/master/chapter-1-chat
-[40]: https://docs.mongodb.com/manual/reference/operator/query/size/
-[41]: https://docs.mongodb.com/manual/reference/operator/query/all/
-[42]: https://www.npmjs.com/package/@withvoid/make-validation
-[43]: https://docs.mongodb.com/manual/reference/operator/aggregation/match/
-[44]: https://docs.mongodb.com/manual/reference/operator/aggregation/last/
-[45]: https://docs.mongodb.com/manual/reference/operator/update/addToSet/
-[46]: https://docs.mongodb.com/manual/reference/operator/aggregation/lookup/
-[47]: https://docs.mongodb.com/manual/reference/operator/aggregation/unwind/
-[48]: https://docs.mongodb.com/manual/reference/operator/aggregation/group/
-[49]: https://docs.mongodb.com/manual/reference/operator/query/in/
-[50]: https://github.com/adeelibr/node-playground/tree/master/chapter-1-chat
-[51]: https://github.com/adeelibr/node-playground/tree/master/chapter-1-chat
-[52]: https://twitter.com/adeelibr
-[53]: https://github.com/adeelibr/node-playground/tree/master/chapter-1-chat
-[54]: https://www.youtube.com/channel/UCGHFI8lm4QzUzFH5nnzqkjA

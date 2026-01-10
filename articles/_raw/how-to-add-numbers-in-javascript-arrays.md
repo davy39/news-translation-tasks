@@ -1,24 +1,34 @@
 ---
 title: JS Sum of an Array – How to Add the Numbers in a JavaScript Array
-date: 2024-10-18T10:44:57.122Z
+subtitle: ''
 author: Dionysia Lemonaki
-authorURL: https://www.freecodecamp.org/news/author/dionysialemonaki/
-originalURL: https://www.freecodecamp.org/news/how-to-add-numbers-in-javascript-arrays/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2023-03-31T17:45:12.000Z'
+originalURL: https://freecodecamp.org/news/how-to-add-numbers-in-javascript-arrays
+coverImage: https://www.freecodecamp.org/news/content/images/2023/03/pexels-chelsey-horne-4506938.jpg
+tags:
+- name: arrays
+  slug: arrays
+- name: JavaScript
+  slug: javascript
+seo_title: null
+seo_desc: 'An array in JavaScript is an object that allows you to store an ordered
+  collection of multiple values under a single variable name and manipulate those
+  values in numerous ways.
+
+  In this article, you will learn how to calculate the sum of all the numbe...'
 ---
 
 An array in JavaScript is an object that allows you to store an ordered collection of multiple values under a single variable name and manipulate those values in numerous ways.
-
-<!-- more -->
 
 In this article, you will learn how to calculate the sum of all the numbers in a given array using a few different approaches.
 
 Specifically, I will show you how to find the sum of all numbers in an array by using:
 
--   A `for` loop
--   The `forEach()` method
--   The `reduce()` method
+- A `for` loop
+- The `forEach()` method
+- The `reduce()` method
 
 Let's get started!
 
@@ -28,7 +38,7 @@ One of the simplest ways of calculating the sum of all numbers in an array is us
 
 Let's look at the following example:
 
-```
+```js
 // create an array
 let myNums = [1, 2, 3, 4, 5];
 
@@ -51,15 +61,15 @@ Next, I used the `for` loop to iterate over all the elements until the end of th
 
 I also reassigned the value of the `sum` variable using the addition assignment operator by adding its current value and the current array element.
 
-To learn more about the `for` loop in JavaScript, give [this article][1] a read.
+To learn more about the `for` loop in JavaScript, give [this article](https://www.freecodecamp.org/news/javascript-for-loops/) a read.
 
 ## How to Calculate the Sum of an Array Using the `forEach()` Method in JavaScript
 
-Another way to calculate the sum of an array is using JavaScript's built-in `forEach()` method. It iterates over an array and calls a function for each item.
+Another way to calculate the sum of an array is using JavaScript's built-in `forEach()` method. It iterates over an array and calls a function for each item. 
 
 Let's look at the following example:
 
-```
+```js
 // create an array
 const myNums = [1,2,3,4,5];
 
@@ -80,7 +90,7 @@ Then, I used the `forEach()` method to iterate over each item in the array.
 
 On each iteration, I reassigned the value of the `sum` variable by adding its current value and the value of the current array element in each iteration.
 
-To learn more about the `forEach()` function, give [this article][2] a read.
+To learn more about the `forEach()` function, give [this article](https://www.freecodecamp.org/news/javascript-foreach-how-to-loop-through-an-array-in-js/) a read.
 
 ## How to Calculate the Sum of an Array Using the `reduce()` Method in JavaScript
 
@@ -90,7 +100,7 @@ The `reduce()` method reduces all elements in an array into a single value.
 
 Let's look at the following example:
 
-```
+```js
 // create an array
 const myNums = [1,2,3,4,5];
 
@@ -106,22 +116,18 @@ The `reduce()` method takes a user-defined callback function as its first requir
 
 The callback function accepts the following two required parameters:
 
--   The `accumulator`, which is the variable that stores the last returned value from the previous function call.
--   The `currentValue`, which represents the current array item.
+- The `accumulator`, which is the variable that stores the last returned value from the previous function call.
+- The `currentValue`, which represents the current array item.
 
 The second argument to the `reduce()` method is the `initialValue`, which is `0`. The `initialValue` represents the initial value of the `accumulator`.
 
-To learn more about the `reduce()` method, give [this article][3] a read.
+To learn more about the `reduce()` method, give [this article](https://www.freecodecamp.org/news/reduce-f47a7da511a9/) a read.
 
 ## Conclusion
-
 And there you have it! You have learned three ways to calculate the sum of an array in JavaScript.
 
-To learn more about JavaScript, check out [this Full JavaScript Course for Beginners][4].
+To learn more about JavaScript, check out [this Full JavaScript Course for Beginners](https://www.freecodecamp.org/news/full-javascript-course-for-beginners/).
 
 Thanks for reading, and happy coding!
 
-[1]: https://www.freecodecamp.org/news/javascript-for-loops/
-[2]: https://www.freecodecamp.org/news/javascript-foreach-how-to-loop-through-an-array-in-js/
-[3]: https://www.freecodecamp.org/news/reduce-f47a7da511a9/
-[4]: https://www.freecodecamp.org/news/full-javascript-course-for-beginners/
+

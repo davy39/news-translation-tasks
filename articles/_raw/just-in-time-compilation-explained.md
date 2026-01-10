@@ -1,15 +1,28 @@
 ---
 title: Just in Time Compilation Explained
-date: 2024-10-03T00:46:13.013Z
-authorURL: ""
-originalURL: https://www.freecodecamp.org/news/just-in-time-compilation-explained/
-posteditor: ""
-proofreader: ""
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2020-02-01T00:00:00.000Z'
+originalURL: https://freecodecamp.org/news/just-in-time-compilation-explained
+coverImage: https://cdn-media-2.freecodecamp.org/w1280/5f9c9d05740569d1a4ca357b.jpg
+tags:
+- name: compilers
+  slug: compilers
+- name: Computer Science
+  slug: computer-science
+- name: toothbrush
+  slug: toothbrush
+seo_title: null
+seo_desc: 'Just-in-time compilation is a method for improving the performance of interpreted
+  programs. During execution the program may be compiled into native code to improve
+  its performance. It is also known as dynamic compilation.
+
+  Dynamic compilation has som...'
 ---
 
 Just-in-time compilation is a method for improving the performance of interpreted programs. During execution the program may be compiled into native code to improve its performance. It is also known as dynamic compilation.
-
-<!-- more -->
 
 Dynamic compilation has some advantages over static compilation. When running Java or C# applications, the runtime environment can profile the application while it is being run. This allows for more optimized code to be generated. If the behavior of the application changes while it is running, the runtime environment can recompile the code.
 
@@ -43,20 +56,21 @@ The source code is completely converted into machine code
 
 ### JIT scenario
 
-The source code will be converted into assembly language like structure \[for ex IL (intermediate language) for C#, ByteCode for java\].
+The source code will be converted into assembly language like structure [for ex IL (intermediate language) for C#, ByteCode for java].
 
 The intermediate code is converted into machine language only when the application needs that is required codes are only converted to machine code.
 
 ## **JIT vs Non-JIT comparison**
 
-In JIT not all the code is converted into machine code first a part of the code that is necessary will be converted into machine code then if a method or functionality called is not in machine then that will be turned into machine code, which reduces burden on the CPU. As the machine code will be generated on run time, the JIT compiler will produce machine code that is optimized for running machine’s CPU architecture.
+In JIT not all the code is converted into machine code first a part of the code that is necessary will be converted into machine code then if a method or functionality called is not in machine then that will be turned into machine code, which reduces burden on the CPU. As the machine code will be generated on run time, the JIT compiler will produce machine code that is optimized for running machine’s CPU architecture. 
 
 Some examples of JIT are:
 
--   Java: JVM (Java Virtual Machine)
--   C#: CLR (Common Language Runtime)
--   Android: DVM (Dalvik Virtual Machine) or ART (Android RunTime) in newer versions
+* Java: JVM (Java Virtual Machine) 
+* C#: CLR (Common Language Runtime) 
+* Android: DVM (Dalvik Virtual Machine) or ART (Android RunTime) in newer versions
 
 The Java Virtual Machine (JVM) executes bytecode and maintains a count as of how many time a function is executed. If this count exceeds a predefined limit JIT compiles the code into machine language which can directly be executed by the processor (unlike the normal case in which javac compiles the code into bytecode and then Java, the interpreter interprets this bytecode line by line converts it into machine code and executes).
 
 Also next time this function is calculated same compiled code is executed again unlike normal interpretation in which the code is interpreted again line by line. This makes execution faster.
+

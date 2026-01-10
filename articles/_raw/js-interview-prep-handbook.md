@@ -1,17 +1,26 @@
 ---
-title: The JavaScript Interview Prep Handbook – Essential Topics to Know + Code
-  Examples
-date: 2024-08-27T16:06:20.626Z
+title: The JavaScript Interview Prep Handbook – Essential Topics to Know + Code Examples
+subtitle: ''
 author: Kunal Nalawade
-authorURL: https://www.freecodecamp.org/news/author/kunal-nalawade-25/
-originalURL: https://www.freecodecamp.org/news/js-interview-prep-handbook/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2024-05-22T09:58:22.000Z'
+originalURL: https://freecodecamp.org/news/js-interview-prep-handbook
+coverImage: https://www.freecodecamp.org/news/content/images/2024/05/JavaScript-Interview-Prep-Cover.png
+tags:
+- name: handbook
+  slug: handbook
+- name: JavaScript
+  slug: javascript
+seo_title: null
+seo_desc: 'JavaScript is a widely used language in web development and powers interactive
+  features of virtually every website out there. JavaScript makes it possible to create
+  dynamic web pages and is very versatile.
+
+  JavaScript remains one of the most in-demand...'
 ---
 
 JavaScript is a widely used language in web development and powers interactive features of virtually every website out there. JavaScript makes it possible to create dynamic web pages and is very versatile.
-
-<!-- more -->
 
 JavaScript remains one of the most in-demand programming languages in 2024. Many companies are looking for proficiency in JavaScript, and one of its frameworks like Angular and React. If you are an aspiring web developer, understanding what these companies look for in interviews is the key to unlocking great opportunities.
 
@@ -19,25 +28,44 @@ In this handbook, I'll delve into several essential JavaScript concepts that you
 
 ## Table of Contents
 
--   [How to Use `var`, `let`, and `const` Keywords.][1]
--   [What is Hoisting?][2]
--   [How Do Closures Work?][3]
--   [How to Implement Debouncing.][4]
--   [How to Implement Throttling.][5]
--   [What is Currying?][6]
--   [What is the Difference between `==` and `===`?][7]
--   [How Does the `this` Keyword Work?][8]
--   [How to Use the `call`, `apply` and `bind` Methods.][9]
--   [What are Prototypes and Prototypal Inheritance?][10]
--   [‌How to Use the Spread Operator.][11]
--   [How Does Array and Object Destructuring Work?][12]
--   [What are Promises?][13]
--   [How to Use the `async` and `await` Keywords.][14]
--   [What is an Event Loop?][15]
--   [How Event Propagation Works – Bubbling and Capturing.][16]
--   [What are Generator Functions?][17]
--   [How to Implement Polyfills for `Array.map()`, `Array.reduce()`, and `Array.filter()`][18]
--   [Additional Thoughts][19]
+* [How to Use `var`, `let`, and `const` Keywords.](#heading-how-to-use-var-let-and-const-keywords)
+    
+* [What is Hoisting?](#heading-what-is-hoisting)
+    
+* [How Do Closures Work?](#heading-how-do-closures-work)
+    
+* [How to Implement Debouncing.](#heading-how-to-implement-debouncing)
+    
+* [How to Implement Throttling.](#heading-how-to-implement-throttling)
+    
+* [What is Currying?](#heading-what-is-currying)
+    
+* [What is the Difference between `==` and `===`?](#heading-what-is-the-difference-between-and)
+    
+* [How Does the `this` Keyword Work?](#heading-how-does-the-this-keyword-work)
+    
+* [How to Use the `call`, `apply` and `bind` Methods.](#heading-how-to-use-the-call-apply-and-bind-methods)
+    
+* [What are Prototypes and Prototypal Inheritance?](#heading-what-are-prototypes-and-prototypal-inheritance)
+    
+* [‌How to Use the Spread Operator.](#heading-how-to-use-the-spread-operator)
+    
+* [How Does Array and Object Destructuring Work?](#heading-how-does-array-and-object-destructuring-work)
+    
+* [What are Promises?](#heading-what-are-promises)
+    
+* [How to Use the `async` and `await` Keywords.](#heading-how-to-use-the-async-and-await-keywords)
+    
+* [What is an Event Loop?](#heading-what-is-an-event-loop)
+    
+* [How Event Propagation Works – Bubbling and Capturing.](#heading-how-event-propagation-works-bubbling-and-capturing)
+    
+* [What are Generator Functions?](#heading-what-are-generator-functions)
+    
+* [How to Implement Polyfills for `Array.map()`, `Array.reduce()`, and `Array.filter()`](#heading-how-to-implement-polyfills-for-arraymap-arrayreduce-and-arrayfilter)
+    
+* [Additional Thoughts](#heading-additional-thoughts)
+    
 
 ## How to Use `var`, `let`, and `const` Keywords
 
@@ -55,7 +83,7 @@ console.log(a) // 5
 console.log(b) // throws ReferenceError
 ```
 
-A `let` variable has block level scope. This variable, if declared inside a block, cannot be accessed outside it. For example:              
+A `let` variable has block level scope. This variable, if declared inside a block, cannot be accessed outside it. For example:
 
 ```javascript
 var a = 5;
@@ -70,7 +98,7 @@ console.log(c); // throws ReferenceError
 
 Here, variables `a` and `b` have global scope, so they can be accessed anywhere. Variable `c` cannot be accessed outside the `if` block since `let` only has block level scope.
 
-`const` is used to declare a constant. Once a variable is declared with `const`, it cannot be modified.              
+`const` is used to declare a constant. Once a variable is declared with `const`, it cannot be modified.
 
 ```javascript
 const x = 5;
@@ -96,7 +124,7 @@ Hoisting refers to JavaScript's default behavior that moves all variables and fu
 ```javascript
 x=5 
 console.log(x) // prints 5 
-var x               
+var x
 ```
 
 In the code above, JavaScript has moved the variable declaration to the top of the code block. That is: it is similar to declaring `x` at the first line.
@@ -144,19 +172,9 @@ innerFun(); // prints 3
 
 Here, `fun()` declares and initializes a variable `count`. Then, it returns an inner function that increments `count` before printing it. Now, when you call `innerFun()` anywhere outside the `fun()` method, it can still access `count` and increment it.
 
-This is the concept of closures. You can understand more about closures in the following post by [Matías Hernández][20].
+This is the concept of closures. You can understand more about closures in the following post by [Matías Hernández](https://www.freecodecamp.org/news/author/matias-hernandez/).
 
-[
-
-How to Use Closures in JavaScript – A Beginner’s Guide
-
-Closures are a confusing JavaScript concept to learn, because it’s hard to seehow they’re actually used. Unlike other concepts such as functions, variables, and objects, you don’talways use closures conscientiously and directly. You don’t say: Oh! Here I willuse a closure as a solution. But at…
-
-![favicon](https://cdn.freecodecamp.org/universal/favicons/favicon.ico)Matías HernándezfreeCodeCamp.org
-
-![English-Header-4](https://www.freecodecamp.org/news/content/images/2021/01/English-Header-4.png)
-
-][21]
+%[https://www.freecodecamp.org/news/closures-in-javascript/] 
 
 ## How to Implement Debouncing
 
@@ -198,17 +216,7 @@ The first two calls do not execute, while the third one does, after 500ms. Debou
 
 Debouncing has plenty of applications, with the most popular one being the auto-complete functionality in search bars. I have explained debouncing in detail in the following post:
 
-[
-
-Debouncing in JavaScript – Explained by Building Auto-Complete Functionality in React
-
-Hi readers, I hope you are doing great! I am back with another tutorial on webdevelopment. If you are someone who enjoys developing web apps with JavaScriptand React, then this post is for you. When you roll out a new app into production, you want to make sure that it’suser friendly. A website’s…
-
-![favicon](https://cdn.freecodecamp.org/universal/favicons/favicon.ico)Kunal NalawadefreeCodeCamp.org
-
-![photo-1550063873-ab792950096b](https://www.freecodecamp.org/news/content/images/2024/02/photo-1550063873-ab792950096b.jpeg)
-
-][22]
+%[https://www.freecodecamp.org/news/deboucing-in-react-autocomplete-example/] 
 
 ## How to Implement Throttling
 
@@ -257,17 +265,7 @@ Here, the first call executes immediately, and for the next 500ms, no function c
 
 Throttling also uses the concept of closures. I have explained throttling in detail in my post, so check it out:
 
-[
-
-What is Throttling in JavaScript? Explained with a Simple React Use Case
-
-Welcome back, fellow developers! Today, we are once again delving intoJavaScript and Web Development and learning about throttling. As a developer, making your website user-friendly is important. This goes a longway toward the product’s success, and a key part of the user experience is thewebsi…
-
-![favicon](https://cdn.freecodecamp.org/universal/favicons/favicon.ico)Kunal NalawadefreeCodeCamp.org
-
-![throttling-image](https://www.freecodecamp.org/news/content/images/2024/04/throttling-image.jpeg)
-
-][23]
+%[https://www.freecodecamp.org/news/throttling-in-javascript/] 
 
 ## What is Currying?
 
@@ -291,7 +289,7 @@ function curryAdd(a) {
 }
 ```
 
-Here, each function inside `curryAdd` takes one argument and returns another function till all arguments are collected. `curryAdd` is also known as a [higher-order function][24].
+Here, each function inside `curryAdd` takes one argument and returns another function till all arguments are collected. `curryAdd` is also known as a [higher-order function](https://www.freecodecamp.org/news/higher-order-functions-explained/).
 
 Currying allows you to reuse partial implementations of a function. In case you do not have all the arguments available, you can fix some arguments of the function initially and return a reusable function.
 
@@ -326,12 +324,14 @@ console.log(a == b); // true
 console.log(a === b); // false
 ```
 
--   `==` compares only the value of `a` and `b`,
--   `===` compares both value and data type of `a` and `b`
+* `==` compares only the value of `a` and `b`,
+    
+* `===` compares both value and data type of `a` and `b`
+    
 
 ## How Does the `this` Keyword Work?
 
-The `this` keyword is the object that you are currently referencing. Its value is set to the context in which you are using it. When referenced globally, `this` refers to the [window][25] object.
+The `this` keyword is the object that you are currently referencing. Its value is set to the context in which you are using it. When referenced globally, `this` refers to the [window](https://developer.mozilla.org/en-US/docs/Web/API/Window) object.
 
 ```javascript
 console.log(this) // prints window {}
@@ -351,7 +351,7 @@ const obj = {
 obj.getInfo();
 ```
 
-Refer to the [docs][26] to learn more about the `this` keyword.
+Refer to the [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this) to learn more about the `this` keyword.
 
 ## How to Use the `call`, `apply` and `bind` Methods
 
@@ -381,7 +381,7 @@ getInfo.call(ob2); // Name: marcus, Age: 23
 
 ### `apply`
 
-The `apply` method is similar to `call`, but it differs in the way you pass arguments. Consider a function with arguments:              
+The `apply` method is similar to `call`, but it differs in the way you pass arguments. Consider a function with arguments:
 
 ```javascript
 function getInfo(a, b) {
@@ -439,7 +439,7 @@ rabbit.jumps = true;
 rabbit.walk(); // Animal is walking
 ```
 
-`Object.create` creates a new object `rabbit` with its prototype set to `animal`.  You can also set additional properties of the new object.
+`Object.create` creates a new object `rabbit` with its prototype set to `animal`. You can also set additional properties of the new object.
 
 Also, the `walk()` method does not exist on `rabbit`, so it searches the object's prototype `animal`. This means the `rabbit` object has inherited the properties and methods of the `animal` object.
 
@@ -473,19 +473,9 @@ console.log(dog); // Animal { name: 'Dog' }
 dog.walk(); // Dog is walking
 ```
 
-You can learn more about prototypes and inheritance in JavaScript in the following post by [Germán Cocca][27].
+You can learn more about prototypes and inheritance in JavaScript in the following post by [Germán Cocca](https://www.freecodecamp.org/news/author/gercocca/).
 
-[
-
-JavaScript Prototypes and Inheritance – and Why They Say Everything in JS is an Object
-
-Hi everyone! In this short article we’re going to talk about prototypalinheritance in JavaScript, and what are the implications of it. Table of Contents \* Intro \* How to access a prototype’s properties and methods in JavaScript \* The prototype chain \* A prototype-based language \* Javascript c…
-
-![favicon](https://cdn.freecodecamp.org/universal/favicons/favicon.ico)Germán CoccafreeCodeCamp.org
-
-![pexels-maor-attias-5192478](https://www.freecodecamp.org/news/content/images/2022/04/pexels-maor-attias-5192478.jpg)
-
-][28]
+%[https://www.freecodecamp.org/news/prototypes-and-inheritance-in-javascript/] 
 
 ## ‌How to Use the Spread Operator
 
@@ -547,7 +537,7 @@ console.log(b); // 2
 console.log(c); // 3
 ```
 
-This is the same for objects:        
+This is the same for objects:
 
 ```javascript
 const obj = { name: 'kunal', age: 22, gender: 'male' };
@@ -562,7 +552,7 @@ console.log(gender); // male
 
 Promises are a very important concept in JavaScript, almost certain to be asked in interviews. Promises are used for asynchronous operations in JavaScript like timeouts or API calls.
 
-Promises use a [Promise][29] object that exists in one of three states: pending, fulfilled (resolved), and rejected. When an asynchronous operation ends, a promise can either be resolved (successful) or rejected (failure).
+Promises use a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) object that exists in one of three states: pending, fulfilled (resolved), and rejected. When an asynchronous operation ends, a promise can either be resolved (successful) or rejected (failure).
 
 Let's take a simple example:
 
@@ -580,8 +570,10 @@ function asyncOperation() {
 
 The above function returns a promise that performs an asynchronous operation.
 
--   If the operation is successful, the `resolve` method is called to indicate that the promise has been fulfilled.
--   If the operation fails, the `reject` method is called to indicate that the promise has been rejected.
+* If the operation is successful, the `resolve` method is called to indicate that the promise has been fulfilled.
+    
+* If the operation fails, the `reject` method is called to indicate that the promise has been rejected.
+    
 
 In this example, these methods are called at random. To handle this promise in your code, use the `then` and `catch` methods.
 
@@ -595,26 +587,18 @@ asyncOperation()
     });
 ```
 
--   The `then` method takes a callback function that executes if the promise was resolved. It takes a response object as an argument that is equal to the object you pass in the `resolve` method.
--   The `catch` method takes a callback function that executes if the promise was rejected and takes an error object as argument that is passed in the `reject` method.
+* The `then` method takes a callback function that executes if the promise was resolved. It takes a response object as an argument that is equal to the object you pass in the `resolve` method.
+    
+* The `catch` method takes a callback function that executes if the promise was rejected and takes an error object as argument that is passed in the `reject` method.
+    
 
 The above code prints "Successful" and "Error" at random.
 
-Apart from the basics, the Promise object also contains useful methods that work with multiple promises: `[Promise.all()][30]`, `[Promise.any()][31]`, `[Promise.race()][32]`.
+Apart from the basics, the Promise object also contains useful methods that work with multiple promises: [Promise.all()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all), [Promise.any()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any), [Promise.race()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race).
 
 Read the following tutorial to learn about promises in detail:
 
-[
-
-JavaScript Promise Tutorial – How to Resolve or Reject Promises in JS
-
-Promises are important building blocks for asynchronous operations inJavaScript. You may think that promises are not so easy to understand, learn,and work with. And trust me, you are not alone! Promises are challenging for many web developers, even after spending yearsworking with them. In thi…
-
-![favicon](https://cdn.freecodecamp.org/universal/favicons/favicon.ico)TAPAS ADHIKARYfreeCodeCamp.org
-
-![cover-1](https://www.freecodecamp.org/news/content/images/2020/11/cover-1.png)
-
-][33]
+%[https://www.freecodecamp.org/news/javascript-promise-tutorial-how-to-resolve-or-reject-promises-in-js/] 
 
 ## How to Use the `async` and `await` Keywords
 
@@ -676,11 +660,11 @@ fetchData();
 
 Event loop explains the mechanism behind asynchronous operations and event handling. This is a crucial concept in JavaScript that explains its runtime model and thus, one of the most commonly asked question in interviews.
 
-Instead of providing a brief explanation, I think you should learn it in detail and understand it fully. Read the [MDN Docs][34] to understand event loop in detail, with the help of diagram.
+Instead of providing a brief explanation, I think you should learn it in detail and understand it fully. Read the [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Event_loop) to understand event loop in detail, with the help of diagram.
 
 If you prefer videos, you can also watch the following video by Philip Roberts:
 
-<iframe width="356" height="200" src="https://www.youtube.com/embed/8aGhZQkoFbQ?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" title="What the heck is the event loop anyway? | Philip Roberts | JSConf EU" name="fitvid0"></iframe>
+%[https://www.youtube.com/watch?v=8aGhZQkoFbQ] 
 
 ## How Event Propagation Works – Bubbling and Capturing
 
@@ -715,9 +699,9 @@ Event propagation occurs in two ways:
 
 When the button is clicked, the event handler of the button is called first. Then, the event bubbles up the DOM tree and the event handlers of parents are called sequentially from the immediate parent to the highest ancestor. That is: the `div` and `body` elements respectively.
 
-![image-52](https://www.freecodecamp.org/news/content/images/2024/05/image-52.png)
+![Image](https://www.freecodecamp.org/news/content/images/2024/05/image-52.png align="left")
 
-Event Bubbling
+*Event Bubbling*
 
 ### ‌Event Capturing
 
@@ -731,9 +715,9 @@ document.body.addEventListener("click", () => {
 }, true);
 ```
 
-![image-53](https://www.freecodecamp.org/news/content/images/2024/05/image-53.png)
+![Image](https://www.freecodecamp.org/news/content/images/2024/05/image-53.png align="left")
 
-Event Capturing
+*Event Capturing*
 
 However, this looks counter-productive. After all, the user only wants to click the button, they have no idea of the DOM tree structure. So, to prevent this behaviour, we can use the `stopPropagation()` method.
 
@@ -744,11 +728,9 @@ document.getElementById("button").addEventListener("click", (event) => {
 });
 ```
 
-c
+![Image](https://www.freecodecamp.org/news/content/images/2024/05/image-54.png align="left")
 
-![image-54](https://www.freecodecamp.org/news/content/images/2024/05/image-54.png)
-
-Stopped propagation
+*Stopped propagation*
 
 ## What are Generator Functions?
 
@@ -765,13 +747,13 @@ function* generatorFunction() {
 }
 ```
 
-A generator function is declared with `function*` and the `yield` keyword is used to pause execution and return a value. The above syntax creates a [GeneratorFunction][35] object.
+A generator function is declared with `function*` and the `yield` keyword is used to pause execution and return a value. The above syntax creates a [GeneratorFunction](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction) object.
 
 ```javascript
 const gen = generatorFunction()
 ```
 
-‌This object uses an [iterator][36] to execute a generator function. The iterator provides a `next()` method that executes the function's body till the next yield statement and returns an object containing the yielded value and a `done` property (Boolean), which indicates if the generator function has reached its end.
+‌This object uses an [iterator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterator_protocol) to execute a generator function. The iterator provides a `next()` method that executes the function's body till the next yield statement and returns an object containing the yielded value and a `done` property (Boolean), which indicates if the generator function has reached its end.
 
 Let's call the generator function:
 
@@ -902,40 +884,3 @@ In this handbook, I have outlined several important topics to prepare for your n
 If you are unable to understand the content or find the explanation unsatisfactory, comment your thoughts below. New ideas are always appreciated! Feel free to connect with me on Twitter.
 
 Good luck with your interviews !!!
-
-[1]: #how-to-use-var-let-and-const-keywords
-[2]: #what-is-hoisting
-[3]: #how-do-closures-work
-[4]: #how-to-implement-debouncing
-[5]: #how-to-implement-throttling
-[6]: #what-is-currying
-[7]: #what-is-the-difference-between-and-
-[8]: #how-does-the-this-keyword-work
-[9]: #how-to-use-the-call-apply-and-bind-methods
-[10]: #what-are-prototypes-and-prototypal-inheritance
-[11]: #-how-to-use-the-spread-operator
-[12]: #how-does-array-and-object-destructuring-work
-[13]: #what-are-promises
-[14]: #how-to-use-the-async-and-await-keywords
-[15]: #what-is-an-event-loop
-[16]: #how-event-propagation-works-bubbling-and-capturing
-[17]: #what-are-generator-functions
-[18]: #how-to-implement-polyfills-for-array-map-array-reduce-and-array-filter-
-[19]: #additional-thoughts
-[20]: https://www.freecodecamp.org/news/author/matias-hernandez/
-[21]: https://www.freecodecamp.org/news/closures-in-javascript/
-[22]: https://www.freecodecamp.org/news/deboucing-in-react-autocomplete-example/
-[23]: https://www.freecodecamp.org/news/throttling-in-javascript/
-[24]: https://www.freecodecamp.org/news/higher-order-functions-explained/
-[25]: https://developer.mozilla.org/en-US/docs/Web/API/Window
-[26]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
-[27]: https://www.freecodecamp.org/news/author/gercocca/
-[28]: https://www.freecodecamp.org/news/prototypes-and-inheritance-in-javascript/
-[29]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
-[30]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
-[31]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any
-[32]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race
-[33]: https://www.freecodecamp.org/news/javascript-promise-tutorial-how-to-resolve-or-reject-promises-in-js/
-[34]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Event_loop
-[35]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction
-[36]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterator_protocol

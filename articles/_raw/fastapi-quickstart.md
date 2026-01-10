@@ -1,21 +1,32 @@
 ---
 title: FastAPI Handbook – How to Develop, Test, and Deploy APIs
-date: 2024-09-27T01:40:48.488Z
-authorURL: ""
-originalURL: https://www.freecodecamp.org/news/fastapi-quickstart/
-posteditor: ""
-proofreader: ""
+subtitle: ''
+author: Atharva Shah
+co_authors: []
+series: null
+date: '2023-07-25T20:54:10.000Z'
+originalURL: https://freecodecamp.org/news/fastapi-quickstart
+coverImage: https://www.freecodecamp.org/news/content/images/2023/07/FastAPI-Handbook-Cover.png
+tags:
+- name: FastAPI
+  slug: fastapi
+- name: handbook
+  slug: handbook
+- name: Python
+  slug: python
+seo_title: null
+seo_desc: 'Welcome to the world of FastAPI, a sleek and high-performance web framework
+  for constructing Python APIs. Don''t worry if you''re new to API programming – we''ll
+  start at the beginning.
+
+  An API (Application Programming Interface) connects several softwar...'
 ---
-
-By Atharva Shah
-
-<!-- more -->
 
 Welcome to the world of FastAPI, a sleek and high-performance web framework for constructing Python APIs. Don't worry if you're new to API programming – we'll start at the beginning.
 
 An **API** (Application Programming Interface) connects several software programs allowing them to converse and exchange information. APIs are essential in modern software development as they are an application's backend architecture.
 
-After reading this quick start guide, you will be able to develop a course administration API using **[FastAPI][1]** and **[MongoDB][2]**. The best part is that you will not only be writing APIs but also testing and containerizing the app.
+After reading this quick start guide, you will be able to develop a course administration API using [**FastAPI**](https://fastapi.tiangolo.com/) and [**MongoDB**](https://www.mongodb.com/). The best part is that you will not only be writing APIs but also testing and containerizing the app.
 
 In this walkthrough project, we'll create a Python backend system using FastAPI, a fast web framework, and a MongoDB database for course information storage and retrieval.
 
@@ -49,10 +60,14 @@ We'll begin with a script that reads the course information from courses.json. T
 
 The interesting aspect is creating several endpoints with FastAPI. Our API will be able to:
 
--   Fetch a list of all courses
--   Show a comprehensive course overview
--   List detailed information about certain chapters
--   Record user scores for each chapter.
+* Fetch a list of all courses
+    
+* Show a comprehensive course overview
+    
+* List detailed information about certain chapters
+    
+* Record user scores for each chapter.
+    
 
 Additionally, for each course, we will aggregate all reviews, providing visitors with relevant information regarding course popularity and quality.
 
@@ -62,14 +77,22 @@ This tutorial focuses on building a scalable, efficient, and user-friendly API. 
 
 Here are the sections of this tutorial:
 
--   [API Methods][3]
--   [Client and Server][4]
--   [How to Set Up the MongoDB Database][5]
--   [How to Parse and Insert Course Data into MongoDB][6]
--   [How to Design the FastAPI Endpoints][7]
--   [Automated API Endpoint Testing with PyTest][8]
--   [How to Containerize the Application with Docker][9]
--   [Conclusion][10]
+* [API Methods](#heading-api-methods)
+    
+* [Client and Server](#heading-client-and-server)
+    
+* [How to Set Up the MongoDB Database](#heading-how-to-set-up-the-mongodb-database)
+    
+* [How to Parse and Insert Course Data into MongoDB](#heading-how-to-parse-and-insert-course-data-into-mongodb)
+    
+* [How to Design the FastAPI Endpoints](#heading-how-to-design-the-fastapi-endpoints)
+    
+* [Automated API Endpoint Testing with PyTest](#heading-automated-api-endpoint-testing-with-pytest)
+    
+* [How to Containerize the Application with Docker](#heading-how-to-containerize-the-application-with-docker)
+    
+* [Conclusion](#heading-conclusion)
+    
 
 ## API Methods
 
@@ -93,54 +116,71 @@ After the server gets the **request**, it processes it and returns a **response*
 
 A response generally comprises an HTTP status code indicating the success or failure of the request, as well as any data sent back to the client by the server.
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-131.png) _Diagram showing how APIs work_
+![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-131.png align="left")
+
+*Diagram showing how APIs work*
 
 ## How to Set Up the MongoDB Database
 
 MongoDB is a type of NoSQL database. It is non-relational and saves information as collections and documents.
 
-Install MongoDB for your operating system from the [official website.][11]
+Install MongoDB for your operating system from the [official website.](https://www.mongodb.com/try/download/community)
 
 Now run the `mongosh` command for your terminal to verify if the installation was successful.
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-125.png) _Running the mongosh command should yield this output_
+![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-125.png align="left")
+
+*Running the mongosh command should yield this output*
 
 Connect to the MongoDB server with **MongoDB Compass**. I recommend that you set up MongoDB by specifying settings such as port number, storage engine, authentication, and so forth.
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-124.png) _Create a new MongoDB connection_
+![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-124.png align="left")
+
+*Create a new MongoDB connection*
 
 Now that the connection is established, the next step is to create a database or a "document". Call this database "courses". It will be empty for you currently. In just a minute we'll insert the documents using a Python script.
 
 ## How to Parse and Insert Course Data into MongoDB
 
-You could insert records one by one, but it is best to use a JSON file to simplify that process. Download this file [**courses.json**][12] from GitHub. All course information is present in it (as a list of courses).
+You could insert records one by one, but it is best to use a JSON file to simplify that process. Download this file [**courses.json**](https://github.com/HighnessAtharva/fastapi-kimo/blob/master/courses.json) from GitHub. All course information is present in it (as a list of courses).
 
 Specifically, each course has the following structure:
 
--   **name:** The title of the course.
--   **date:** Creation date as a UNIX timestamp.
--   **description:** The description of the course.
--   **domain:** List of the course domain(s).
--   **chapters:** List of the course chapters. Each chapter has a title name and content text.
+* **name:** The title of the course.
+    
+* **date:** Creation date as a UNIX timestamp.
+    
+* **description:** The description of the course.
+    
+* **domain:** List of the course domain(s).
+    
+* **chapters:** List of the course chapters. Each chapter has a title name and content text.
+    
 
 You will need a few Python packages for this project.
 
--   **`BSON`** - Binary serialization format that is used in MongoDB for efficient data storage and retrieval. It comes bundled with PyMongo.
--   **`FastAPI`** - Web framework for creating Python APIs that offer high performance, automatic validation, interactive documentation, and support for async operations.
--   **`PyMongo`** - Official MongoDB driver for Python. It serves as a high-level API for integrating MongoDB within Python.
--   **`Uvicorn`** - Primary ASGI server that improves application performance. It is responsible for server startup.
--   **`Starlette`** - ASGI framework that powers FastAPI and allows rapid prototyping development.
--   **`Pydantic`** - Integrated data validation and parsing library. We need it to create interactive API documentation while automatically validating incoming request data and enforcing data type rules.
+* `BSON` - Binary serialization format that is used in MongoDB for efficient data storage and retrieval. It comes bundled with PyMongo.
+    
+* `FastAPI` - Web framework for creating Python APIs that offer high performance, automatic validation, interactive documentation, and support for async operations.
+    
+* `PyMongo` - Official MongoDB driver for Python. It serves as a high-level API for integrating MongoDB within Python.
+    
+* `Uvicorn` - Primary ASGI server that improves application performance. It is responsible for server startup.
+    
+* `Starlette` - ASGI framework that powers FastAPI and allows rapid prototyping development.
+    
+* `Pydantic` - Integrated data validation and parsing library. We need it to create interactive API documentation while automatically validating incoming request data and enforcing data type rules.
+    
 
 Get them installed via the pip commands like so:
 
-```
+```javascript
 pip install fastapi pymongo uvicorn starlette pydantic
 ```
 
 Now, let's write a Python script to insert all this course data into the database so that we can start building API routes. Spin up your IDE, create a file called `script.py`, and make sure it is in the same directory as the `courses.json` file.
 
-```
+```py
 """ 
 Script to parse course information from courses.json, create the appropriate databases and
 collection(s) on a local instance of MongoDB, create the appropriate indices (for efficient retrieval)
@@ -165,7 +205,7 @@ collection.create_index("name")
 # add rating field to each course
 for course in courses:
     course['rating'] = {'total': 0, 'count': 0}
-
+    
 # add rating field to each chapter
 for course in courses:
     for chapter in course['chapters']:
@@ -185,7 +225,9 @@ It begins by connecting to the local MongoDB instance. It reads course data from
 
 It's a straightforward script for managing course data in a database. On running the script, all records from the `courses.json` should have been inserted into the courses DB. Switch to MongoDB Compass to verify it.
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-116.png) _You should be able to see the JSON items in your courses database after running the python script_
+![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-116.png align="left")
+
+*You should be able to see the JSON items in your courses database after running the python script*
 
 ## How to Design the FastAPI Endpoints
 
@@ -210,7 +252,7 @@ The ratings are aggregated for each course. |
 
 Okay, time to dive into the API code. Create a brand new Python file and call it `main.py`:
 
-```
+```py
 import contextlib
 from fastapi import FastAPI, HTTPException, Query
 from pymongo import MongoClient
@@ -230,7 +272,7 @@ Let's go over each of these endpoints in more detail now.
 
 This endpoint allows you to retrieve a list of all available courses. You can sort the courses based on different criteria, such as alphabetical order (based on the course title in ascending order), date (in descending order), or total course rating (in descending order). Also, we'll allow users to filter the courses based on their domain.
 
-```
+```py
 @app.get('/courses')
 def get_courses(sort_by: str = 'date', domain: str = None):
     # set the rating.total and rating.count to all the courses based on the sum of the chapters rating
@@ -282,24 +324,24 @@ Finally, the code queries the MongoDB database to retrieve the relevant course i
 
 That was the code explanation, but what about the actual API response? Run the command below in your terminal from the current working directory:
 
-```
+```javascript
 uvicorn main:app --reload
 ```
 
 Uvicorn is an ASGI webserver. You can interact with API endpoints right on your local machine without any external server. On running the above command you should see a success message stating that the server has started.
 
-Fire up your browser and enter [`http://127.0.0.1:8000/courses`][13] in the URL bar. The output that you will see will be the JSON response directly from the server.
+Fire up your browser and enter [`http://127.0.0.1:8000/courses`](http://127.0.0.1:8000/courses) in the URL bar. The output that you will see will be the JSON response directly from the server.
 
 Verify that the first object contains the following:
 
-```
+```json
 {
 "name": "Introduction to Programming",
 "date": 1659906000,
 "description": "An introduction to programming using a language called Python. Learn how to read and write code as well as how to test and \"debug\" it. Designed for students with or without prior programming experience who'd like to learn Python specifically. Learn about functions, arguments, and return values (oh my!); variables and types; conditionals and Boolean expressions; and loops. Learn how to handle exceptions, find and fix bugs, and write unit tests; use third-party libraries; validate and extract data with regular expressions; model real-world entities with classes, objects, methods, and properties; and read and write files. Hands-on opportunities for lots of practice. Exercises inspired by real-world programming problems. No software required except for a web browser, or you can write code on your own PC or Mac.",
 "domain": [
     "programming"
-    ],
+	],
 "rating": {
     "total": 6,
     "count": 12
@@ -309,21 +351,27 @@ Verify that the first object contains the following:
 
 Guess what? It is a list of all the courses that we stored in our database. Your front-end application may now iterate over all these items and present them in a fancy way to the user. That is the power of APIs.
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-117.png) _The Rating for the entire course will be updated as per the aggregated sum of chapters as mentioned in the assignment document._
+![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-117.png align="left")
 
-At this point, if you wish to see the documentation for your API do so by navigating to the [`http://127.0.0.1:8000/docs`][14] endpoint. This navigable API comes prepackages with FastAPI. How cool is that?
+*The Rating for the entire course will be updated as per the aggregated sum of chapters as mentioned in the assignment document.*
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-126.png) _FastAPI docs for all your API endpoints_
+At this point, if you wish to see the documentation for your API do so by navigating to the [`http://127.0.0.1:8000/docs`](http://127.0.0.1:8000/docs) endpoint. This navigable API comes prepackages with FastAPI. How cool is that?
+
+![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-126.png align="left")
+
+*FastAPI docs for all your API endpoints*
 
 Don't like the plain old look of the docs? Fret not, there is also a `/redoc` endpoint with a slightly fancier interface. Just navigate to `[http://127.0.0.1:8000/](http://127.0.0.1:8000/docs)redoc` and you will be greeted with this screen.
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-127.png) _FastAPI alternate redoc interface with search and download options_
+![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-127.png align="left")
+
+*FastAPI alternate redoc interface with search and download options*
 
 ### The Get Course Overview Endpoint (`/courses/{course_id}` – GET)
 
 You'll use this endpoint to get an overview of a specific course. Simply provide the course\_id in the URL, and the API will return detailed information about that particular course.
 
-```
+```py
 @app.get('/courses/{course_id}')
 def get_course(course_id: str):
     course = db.courses.find_one({'_id': ObjectId(course_id)}, {'_id': 0, 'chapters': 0})
@@ -333,7 +381,7 @@ def get_course(course_id: str):
         course['rating'] = course['rating']['total']
     except KeyError:
         course['rating'] = 'Not rated yet' 
-
+    
     return course
 ```
 
@@ -343,13 +391,15 @@ If it cannot find the course, it throws an `HTTPException` with the status code 
 
 Finally, without the `chapters` field, it returns the JSON response of the course information, including the total rating.
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-118.png) _Single Course Overview Endpoint Response_
+![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-118.png align="left")
+
+*Single Course Overview Endpoint Response*
 
 ### Get Specific Chapter Information Endpoint (`/courses/{course_id}/{chapter_id}` – GET)
 
 Hitting this endpoint returns specific information about a chapter within a course. By specifying both the `course_id` and the `chapter_id` in the URL, you can access the details of that particular chapter.
 
-```
+```py
 @app.get('/courses/{course_id}/{chapter_id}')
 def get_chapter(course_id: str, chapter_id: str):    
     course = db.courses.find_one({'_id': ObjectId(course_id)}, {'_id': 0, })
@@ -375,7 +425,9 @@ Using the `chapter_id` provided in the request, the code then attempts to retrie
 
 If it locates the chapter, the response contains information on the individual chapter within the course.
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-119.png) _Chapter Detail Endpoint_
+![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-119.png align="left")
+
+*Chapter Detail Endpoint*
 
 ### Rate Chapter Endpoint (`/courses/{course_id}/{chapter_id}` – POST)
 
@@ -383,7 +435,7 @@ This endpoint allows users to rate individual chapters within a course. You can 
 
 Up until now, we've mostly seen GET requests. But now let's see how you can send data to the server, validate it, and insert it in the application database.
 
-```
+```py
 @app.post('/courses/{course_id}/{chapter_id}')
 def rate_chapter(course_id: str, chapter_id: str, rating: int = Query(..., gt=-2, lt=2)):
     course = db.courses.find_one({'_id': ObjectId(course_id)}, {'_id': 0, })
@@ -411,13 +463,17 @@ If the `chapter_id` is not a valid integer or is out of range, it raises an `HTT
 
 If the chapter does not have an existing `rating` field, it creates one and initializes it with the provided rating and a count of 1. The updated rating is then updated in the database, and the updated chapter is returned as the response, providing feedback to the user about their rating for that chapter.
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-120.png) _POST Request to add a rating to a chapter_
+![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-120.png align="left")
+
+*POST Request to add a rating to a chapter*
 
 To make a POST request, open the docs and click on the request highlighted in the above image. Then, click on "Try it out", fill in the post data, and press the Execute button right below. This sends the POST data to the server which is then validated.
 
 If all the submitted data is as expected, the server accepts and shows the 200 status code meaning that the operation was successful. The submitted data is now in the MongoDB document.
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-121.png) _Post Request Success_
+![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-121.png align="left")
+
+*Post Request Success*
 
 That's a wrap on the API development part.
 
@@ -431,7 +487,7 @@ Ensuring the proper functioning of all these endpoints after each development it
 
 Create a file `test_app.py` in the same directory as `courses.json` and `main.py`:
 
-```
+```py
 from fastapi.testclient import TestClient
 from pymongo import MongoClient
 from bson import ObjectId
@@ -459,7 +515,7 @@ These test functions use `TestClient` to interact with the "/courses" endpoint o
 
 The tests verify the status codes, data presence, sorting order, and domain filtering in the API responses, ensuring the functionality of the course endpoint is correct and reliable.
 
-```
+```py
 def test_get_courses_no_params():
     response = client.get("/courses")
     assert response.status_code == 200
@@ -470,7 +526,7 @@ def test_get_courses_sort_by_alphabetical():
     courses = response.json()
     assert len(courses) > 0
     assert sorted(courses, key=lambda x: x['name']) == courses
-
+     
 
 def test_get_courses_sort_by_date():
     response = client.get("/courses?sort_by=date")
@@ -492,7 +548,7 @@ def test_get_courses_filter_by_domain():
     courses = response.json()
     assert len(courses) > 0
     assert all([c['domain'][0] == 'mathematics' for c in courses])
-
+    
 def test_get_courses_filter_by_domain_and_sort_by_alphabetical():
     response = client.get("/courses?domain=mathematics&sort_by=alphabetical")
     assert response.status_code == 200
@@ -500,7 +556,7 @@ def test_get_courses_filter_by_domain_and_sort_by_alphabetical():
     assert len(courses) > 0
     assert all([c['domain'][0] == 'mathematics' for c in courses])
     assert sorted(courses, key=lambda x: x['name']) == courses
-
+    
 def test_get_courses_filter_by_domain_and_sort_by_date():
     response = client.get("/courses?domain=mathematics&sort_by=date")
     assert response.status_code == 200
@@ -516,7 +572,7 @@ Pay attention to the assert statements. The expected results are checked against
 
 The tests use TestClient to send queries to FastAPI's "/courses/course id" endpoint, retrieving course data from the MongoDB database using the `db.courses.find_one` function. Comparing API response data to database data can help you determine if the endpoint handles existing and non-existent course IDs.
 
-```
+```py
 def test_get_course_by_id_exists():
     response = client.get("/courses/6431137ab5da949e5978a281")
     assert response.status_code == 200
@@ -529,8 +585,8 @@ def test_get_course_by_id_exists():
     name_response = course['name']
     # compare the two
     assert name_db == name_response
-
-
+     
+     
 def test_get_course_by_id_not_exists():
     response = client.get("/courses/6431137ab5da949e5978a280")
     assert response.status_code == 404
@@ -543,15 +599,15 @@ The tests anticipate the FastAPI application's "/courses/course id/chapter numbe
 
 We use assertions to determine if the answer includes the anticipated data or gives a "Not Found" response for a non-existent chapter. It validates that the correct API chapter was retrieved and handles existing and non-existent chapters.
 
-```
+```py
 def test_get_chapter_info():
     response = client.get("/courses/6431137ab5da949e5978a281/1")
     assert response.status_code == 200
     chapter = response.json()
     assert chapter['name'] == 'Big Picture of Calculus'
     assert chapter['text'] == 'Highlights of Calculus'
-
-
+    
+    
 def test_get_chapter_info_not_exists():
     response = client.get("/courses/6431137ab5da949e5978a281/990")
     assert response.status_code == 404
@@ -564,7 +620,7 @@ To test the rating capability, the test function specifies the course ID, chapte
 
 FastAPI mimics a user's activity to rate a certain chapter of a course. The response is successful with a 200 status code. JSON content is validated for "name" and "rating" keys, as well as "total" and "count" keys. The total rating and rating count are greater than 0, indicating users have rated the chapter.
 
-```
+```py
 def test_rate_chapter():
     course_id = "6431137ab5da949e5978a281"
     chapter_id = "1"
@@ -582,7 +638,7 @@ def test_rate_chapter():
 
     assert response.json()["rating"]["total"] > 0
     assert response.json()["rating"]["count"] > 0
-
+     
 def test_rate_chapter_not_exists():
     response = client.post("/courses/6431137ab5da949e5978a281/990/rate", json={"rating": 1})
     assert response.status_code == 404
@@ -593,9 +649,11 @@ This verification makes sure that the rating addition endpoint works as intended
 
 By running the `pytest` command, all the test functions in the `test_app.py` file will be executed, and you'll get feedback on whether the endpoints are functioning as expected or if any errors or regressions have occurred. This allows developers and QA teams to catch issues early in the development cycle and maintain the application's reliability and stability.
 
-As you can see in the image below, all the tests are passing. Good job! As you keep on adding more features and endpoints to the app, keep adding the associated tests in order to validate correctness. This is called [Test Driven Development (TDD)][15].
+As you can see in the image below, all the tests are passing. Good job! As you keep on adding more features and endpoints to the app, keep adding the associated tests in order to validate correctness. This is called [Test Driven Development (TDD)](https://www.freecodecamp.org/news/an-introduction-to-test-driven-development-c4de6dce5c/).
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-122.png) _Running API Tests with Pytest_
+![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-122.png align="left")
+
+*Running API Tests with Pytest*
 
 Running the Pytest command shows the output as illustrated in the image above. It says that 13 tests pasts. This means that all our endpoints are functional and return the expected responses.
 
@@ -609,13 +667,13 @@ You can put your application and all of its dependencies together into a single 
 
 **Docker** is a modern containerization technology that makes it easier to create, distribute, and execute containers. It enables developers to consistently and reproducibly build, ship, and execute apps without building from source.
 
-Get Docker installed from here: [https://www.docker.com/get-started][16].
+Get Docker installed from here: [https://www.docker.com/get-started](https://www.docker.com/get-started).
 
 Dockerizing Python programs helps you make sure that they run consistently across multiple computers, eliminating compatibility difficulties. It containerizes the software, its dependencies, and customizations, making it portable.
 
 In the same directory as other files, make a new file called `Dockerfile`. Note that it does not require any extension.
 
-```
+```dockerfile
 # Use an official Python runtime as a parent image
 FROM python:3.9-slim-buster
 
@@ -648,19 +706,23 @@ In this case, it runs "uvicorn main:app" (the main.py FastAPI app) with host set
 
 Build the Docker image in the same directory as the Dockerfile using: `**docker build -t my_python_app .**`
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-123.png) _Containerizing the FastAPI app with Docker_
+![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-123.png align="left")
+
+*Containerizing the FastAPI app with Docker*
 
 Run the container in detached mode using the command `**docker run -d -p 80:80 my_python_app**`.
 
 Once you do this, you can view the status of the containers and the image from Docker Desktop.
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-128.png) _Docker Desktop shows that our container image is now in a running state on port 80_
+![Image](https://www.freecodecamp.org/news/content/images/2023/07/image-128.png align="left")
+
+*Docker Desktop shows that our container image is now in a running state on port 80*
 
 ### How to Terminate the Docker Container
 
 Find the container ID or name with `**docker ps**`. Stop the container using its ID or name: `**docker stop <container_id_or_name>**`
 
-This walkthrough has only addressed development, testing, and containerization. Just note that post deployment container security, if neglected, introduces risks like vulnerabilities, misconfigurations, and attacks. You should ideally take advantage of a [CNAPP][17] (Cloud Native Application Protection Platform) to scan images, stick to best practises, and monitor running containers for protection.
+This walkthrough has only addressed development, testing, and containerization. Just note that post deployment container security, if neglected, introduces risks like vulnerabilities, misconfigurations, and attacks. You should ideally take advantage of a [CNAPP](https://www.accuknox.com/blog/cnapp-buyers-guide) (Cloud Native Application Protection Platform) to scan images, stick to best practises, and monitor running containers for protection.
 
 The takeaway is that Docker containerization allows bundling of Python scripts with dependencies, making them consistent and portable. The Dockerfile describes how the image should be created.
 
@@ -674,24 +736,4 @@ We did this by importing course data from a JSON file into MongoDB and then crea
 
 PyTest helped us handle automated testing, ensuring dependability and stability. We then containerized the application Docker, which simplifies deployment and maintenance.
 
-My [Github Repository][18] contains the complete code covered in this quick start walkthrough. Subscribe to my [technical blog][19] for technical cheat sheets and resources.
-
-[1]: https://fastapi.tiangolo.com/
-[2]: https://www.mongodb.com/
-[3]: #heading-api-methods
-[4]: #heading-client-and-server
-[5]: #heading-how-to-set-up-the-mongodb-database
-[6]: #heading-how-to-parse-and-insert-course-data-into-mongodb
-[7]: #heading-how-to-design-the-fastapi-endpoints
-[8]: #heading-automated-api-endpoint-testing-with-pytest
-[9]: #heading-how-to-containerize-the-application-with-docker
-[10]: #heading-conclusion
-[11]: https://www.mongodb.com/try/download/community
-[12]: https://github.com/HighnessAtharva/fastapi-kimo/blob/master/courses.json
-[13]: http://127.0.0.1:8000/courses
-[14]: http://127.0.0.1:8000/docs
-[15]: https://www.freecodecamp.org/news/an-introduction-to-test-driven-development-c4de6dce5c/
-[16]: https://www.docker.com/get-started
-[17]: https://www.accuknox.com/blog/cnapp-buyers-guide
-[18]: https://github.com/HighnessAtharva/fastapi-kimo/
-[19]: https://atharvashah.netlify.app/
+My [Github Repository](https://github.com/HighnessAtharva/fastapi-kimo/) contains the complete code covered in this quick start walkthrough. Subscribe to my [technical blog](https://atharvashah.netlify.app/) for technical cheat sheets and resources.

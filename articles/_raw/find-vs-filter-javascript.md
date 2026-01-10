@@ -1,17 +1,27 @@
 ---
 title: find() vs filter() in JavaScript – Differences Explained with Examples
-date: 2024-10-18T10:48:45.208Z
-authorURL: ""
-originalURL: https://www.freecodecamp.org/news/find-vs-filter-javascript/
-posteditor: ""
-proofreader: ""
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2022-10-14T22:22:22.000Z'
+originalURL: https://freecodecamp.org/news/find-vs-filter-javascript
+coverImage: https://www.freecodecamp.org/news/content/images/2022/10/Logo.jpg
+tags:
+- name: JavaScript
+  slug: javascript
+- name: Web Development
+  slug: web-development
+seo_title: null
+seo_desc: "By Aman Kalra\nA common interview question that JavaScript developers often\
+  \ get asked is to explain the difference between the find() and filter() methods.\
+  \ \nIn this tutorial today, I'll walk you through what these methods are and when\
+  \ you should use t..."
 ---
 
 By Aman Kalra
 
-<!-- more -->
-
-A common interview question that JavaScript developers often get asked is to explain the difference between the find() and filter() methods.
+A common interview question that JavaScript developers often get asked is to explain the difference between the find() and filter() methods. 
 
 In this tutorial today, I'll walk you through what these methods are and when you should use them.
 
@@ -21,7 +31,7 @@ This method returns all the elements of the array that satisfy the condition spe
 
 Let's see with an example how it actually works:
 
-```
+```typescript
 const x = [1, 2, 3, 4, 5];
 
 const y = x.filter(el => el*2 === 2);
@@ -37,7 +47,7 @@ This method returns first element of the array that satisfies the condition spec
 
 Let's see with an example how it actually works:
 
-```
+```typescript
 const x = [1, 2, 3, 4, 5];
 
 const y = x.find(el => el*2 === 2);
@@ -50,7 +60,7 @@ Now, if you see the output of the above example, the **value of y is 1**. This i
 The main differences between above examples is:
 
 1.  `filter()` returns an array containing the element that satisfies the condition, but `find()` returns the element itself that satisfies the condition.
-2.  In `filter()`, whole array is iterated despite the fact that the element being searched for is present at the beginning. But in `find()`, as soon as the element that satisfies the condition is found, it gets returned.
+2. In `filter()`, whole array is iterated despite the fact that the element being searched for is present at the beginning. But in `find()`, as soon as the element that satisfies the condition is found, it gets returned.
 
 ## Use Cases for `find()` and `filter()`
 
@@ -58,9 +68,9 @@ When you have a use case where more than 1 element is expected to be returned an
 
 Let's look at examples of both use cases:
 
-### 1\. filter() use case example
+### 1. filter() use case example
 
-```
+```typescript
 const x = [1, 2, 3, 4, 5];
 
 const y = x.filter(el => el%2 === 0);
@@ -70,9 +80,9 @@ console.log("y is: ", y); // y is: [2, 4]
 
 In above example, `**filter()**` makes more sense as you would want to iterate over all elements of the array to find the elements that are divisible by 2.
 
-### 2\. find() use case example
+### 2. find() use case example
 
-```
+```typescript
 const emp = [
     {
         name: "Ram",
@@ -98,3 +108,4 @@ In above example, `**find()**` makes more sense as there is just 1 employee who 
 ### **Thanks for reading!**
 
 If you found this article useful, do share it with your friends and colleagues.
+

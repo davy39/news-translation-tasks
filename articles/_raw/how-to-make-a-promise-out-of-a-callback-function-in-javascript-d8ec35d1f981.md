@@ -1,19 +1,36 @@
 ---
 title: How to make a Promise out of a Callback function in JavaScript
-date: 2024-10-08T13:16:33.296Z
-authorURL: ""
-originalURL: https://www.freecodecamp.org/news/how-to-make-a-promise-out-of-a-callback-function-in-javascript-d8ec35d1f981/
-posteditor: ""
-proofreader: ""
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2018-07-24T22:06:26.000Z'
+originalURL: https://freecodecamp.org/news/how-to-make-a-promise-out-of-a-callback-function-in-javascript-d8ec35d1f981
+coverImage: https://cdn-media-1.freecodecamp.org/images/1*7EYmjkeLQs8QXSLr_6iTMg.jpeg
+tags:
+- name: backend
+  slug: backend
+- name: JavaScript
+  slug: javascript
+- name: promises
+  slug: promises
+- name: 'tech '
+  slug: tech
+- name: Web Development
+  slug: web-development
+seo_title: null
+seo_desc: 'By Adham El Banhawy
+
+  Back-end developers run into challenges all the time while building applications
+  or testing code. As a developer who is fairly new and getting acquainted with those
+  challenges, I have never run into a challenge or inconvenience mo...'
 ---
 
 By Adham El Banhawy
 
-<!-- more -->
-
 Back-end developers run into challenges all the time while building applications or testing code. As a developer who is fairly new and getting acquainted with those challenges, I have never run into a challenge or inconvenience more frequently — or more memorable — than with **callback functions.**
 
-I am not going to delve too deeply into the details of callback and its pros and cons or alternatives like promises and async/await. For a more vivid explanation, you can check out [this article][1] which explains them thoroughly.
+I am not going to delve too deeply into the details of callback and its pros and cons or alternatives like promises and async/await. For a more vivid explanation, you can check out [this article](https://medium.com/codebuddies/getting-to-know-asynchronous-javascript-callbacks-promises-and-async-await-17e0673281ee) which explains them thoroughly.
 
 ### **Callback Hell**
 
@@ -23,22 +40,22 @@ For example, try making an API call using the `request` module or connecting to 
 
 You’d have to nest these calls inside each other:
 
-```
+```js
 request.get(url, function(error, response, mongoUrl) {
 
   if(error) throw new Error("Error while fetching fetching data");
-
+  
   MongoClient.connect(mongoUrl, function(error, client) {
-
+  
     if(error) throw new Error("MongoDB connection error");
-
+    
     console.log("Connected successfully to server");    
     const db = client.db("dbName");
     // Do some application logic
     client.close();
-
+    
   });
-
+  
 });
 ```
 
@@ -46,7 +63,7 @@ Okay…so where’s the problem? Well, for one thing, the readability of the cod
 
 It may seem OK at first when the codebase is small. But this doesn’t scale well, especially if you go more layers deeper into the nested callbacks.
 
-You will end up with a lot of closing brackets and curly braces that will confuse you and other developers no matter how neatly formatted your code is. There is a website called [callbackhell][2] that addresses this specific issue.
+You will end up with a lot of closing brackets and curly braces that will confuse you and other developers no matter how neatly formatted your code is. There is a website called [callbackhell](http://callbackhell.com/) that addresses this specific issue.
 
 I hear some of you, including my naïve past self, telling me wrap it in an `async` function then `await` the callback function. This just doesn’t work.
 
@@ -54,55 +71,55 @@ If there is any code block after the the function that uses callbacks, that code
 
 Here’s that mistake that I did before:
 
-```
+```js
 var request = require('request');
 
 // WRONG
 
 async function(){
-
+    
   let joke;
   let url = "https://api.chucknorris.io/jokes/random"
-
+  
   await request.get(url, function(error, response, data) {
-
+      
     if(error) throw new Error("Error while fetching fetching data");
-
+      
     let content = JSON.parse(data);
     joke = content.value;
-
+      
   });
-
+    
   console.log(joke); // undefined
-
+    
 };
 
 // Wrong
 
 async function(){
-
+    
   let joke;
   let url = "https://api.chucknorris.io/jokes/random"
-
+  
   request.get(url, await function(error, response, data) {
-
+      
     if(error) throw new Error("Error while fetching fetching data");
-
+      
     let content = JSON.parse(data);
     joke = content.value;
-
+      
   });
-
+    
   console.log(joke); // undefined
-
+    
 };
 ```
 
-Some more experienced devs might say “Just use a different library that uses promises to do the same thing, like [axios][3], or just use [fetch][4]”_._ Sure I can in that scenario, but that’s just running away from the problem.
+Some more experienced devs might say “Just use a different library that uses promises to do the same thing, like [axios](https://www.npmjs.com/package/axios), or just use [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)”_._ Sure I can in that scenario, but that’s just running away from the problem.
 
 Besides, this is just an example. Sometimes you can be locked into using a library that doesn’t support promises with no alternatives. Like using software development kits (SDKs) to communicate with platforms like Amazon Web Services (AWS), Twitter, or Facebook.
 
-Sometimes, even using a callback to do a very simple call with a quick I/O or CRUD operation is fine, and no other logic depends on its results. But you might be constrained by the runtime environment like in a [Lambda function][5] which would kill all process once the main thread finishes, regardless of any asynchronous calls that did not complete.
+Sometimes, even using a callback to do a very simple call with a quick I/O or CRUD operation is fine, and no other logic depends on its results. But you might be constrained by the runtime environment like in a [Lambda function](https://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction-function.html) which would kill all process once the main thread finishes, regardless of any asynchronous calls that did not complete.
 
 ### Solution 1 (easy): Use Node’s “util” module
 
@@ -110,7 +127,7 @@ The solution is surprisingly simple. Even if you’re a little uncomfortable wit
 
 As pointed out by Erop and Robin in the comments, Nodejs version 8 and above now support turning callback functions into promises using the built-in **util** module.
 
-```
+```js
 const request = require('request');
 
 const util = require('util');
@@ -126,13 +143,13 @@ const getChuckNorrisFact = util.promisify(request);
 getChuckNorrisFact(url).then(data => {
 
    let content = JSON.parse(data.body);
-
+   
    console.log('Joke: ', content.value);
-
+   
 }).catch(err => console.log('error: ', err))
 ```
 
-The above code solves the problem neatly using the [**util.promisify**][6] method available from nodejs core library.
+The above code solves the problem neatly using the [**util.promisify**](https://nodejs.org/docs/latest-v8.x/api/util.html#util_util_promisify_original) method available from nodejs core library.
 
 All you have to do is use the callback function as an argument to util.promisify, and store it an a variable. In my case, that’s _getChuckNorrisFact_.  
 Then you use that variable as a function that you can use like a promise with the **.then()** and the **.catch()** methods.
@@ -143,7 +160,7 @@ Sometimes, using the request and util libraries is just not possible, whether it
 
 Let’s take the Chuck Norris example above, and turn that into a promise.
 
-```
+```js
 var request = require('request');
 let url = "https://api.chucknorris.io/jokes/random";
 
@@ -153,7 +170,7 @@ let getChuckNorrisFact = (url) => {
     (resolve, reject) => {
       request.get(url, function(error, response, data){
         if (error) reject(error);
-
+          
 let content = JSON.parse(data);
         let fact = content.value;
         resolve(fact);
@@ -169,18 +186,12 @@ getChuckNorrisFact(url).then(
 );
 ```
 
-![Image](https://cdn-media-1.freecodecamp.org/images/ZXNYPRkv4mC2cHoq-4PIdoAx0WK-DyuUybzA) _works like magic_
+![Image](https://cdn-media-1.freecodecamp.org/images/ZXNYPRkv4mC2cHoq-4PIdoAx0WK-DyuUybzA)
+_works like magic_
 
 In the code above, I put the callback-based `request` function inside a Promise wrapper `Promise( (resolve, reject) => { //callback function})`. This wrapper allows us to call the `getChuckNorrisFact` function like a promise with the `**.then()**`and `.catch()` methods. When the `_getChuckNorrisFact_` is called, it executes the request to the API and **waits** for either a `resolve()` or a `reject()` statement to execute. In the callback function, you simply pass the retrieved data into the resolve or reject methods.
 
 Once the data (in this case, an awesome Chuck Norris fact) is fetched and passed to the resolver, the `getChuckNorrisFact` executes the `then()` method. This will return the result that you can **use inside a function inside the `then()`** to do your desired logic — in this case displaying it to the console.
 
-You can read more about it in the [MDN Web Docs.][7]
+You can read more about it in the [MDN Web Docs.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises#Creating_a_Promise_around_an_old_callback_API)
 
-[1]: https://medium.com/codebuddies/getting-to-know-asynchronous-javascript-callbacks-promises-and-async-await-17e0673281ee
-[2]: http://callbackhell.com/
-[3]: https://www.npmjs.com/package/axios
-[4]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
-[5]: https://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction-function.html
-[6]: https://nodejs.org/docs/latest-v8.x/api/util.html#util_util_promisify_original
-[7]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises#Creating_a_Promise_around_an_old_callback_API

@@ -1,0 +1,144 @@
+---
+title: How to check if an input is empty with JavaScript
+subtitle: ''
+author: Zell Liew
+co_authors: []
+series: null
+date: '2019-03-14T07:09:27.000Z'
+originalURL: https://freecodecamp.org/news/checking-if-an-input-is-empty-with-javascript-d41ed5a6195f
+coverImage: https://cdn-media-1.freecodecamp.org/images/0*YK6dG3FqhIXZgD3x.gif
+tags:
+- name: CSS
+  slug: css
+- name: JavaScript
+  slug: javascript
+- name: General Programming
+  slug: programming
+- name: 'tech '
+  slug: tech
+- name: technology
+  slug: technology
+seo_title: null
+seo_desc: 'Last week, I shared how to check if an input is empty with CSS. Today,
+  let’s talk about the same thing, but with JavaScript.
+
+  It’s much simpler.
+
+  Here’s what we’re building:
+
+
+  Events to validate the input
+
+  If you want to validate the input when a user ty...'
+---
+
+Last week, I shared how to [check if an input is empty with CSS](https://zellwk.com/blog/check-empty-input-css). Today, let’s talk about the same thing, but with JavaScript.
+
+It’s much simpler.
+
+Here’s what we’re building:
+
+![Image](https://cdn-media-1.freecodecamp.org/images/J-TSs6H2P10YzT6HqW1U29C6zTZlrIYDh2B0)
+
+### Events to validate the input
+
+If you want to validate the input when a user types into the field, you can use the `input` event.
+
+```
+const input = document.querySelector('input')input.addEventListener('input', evt => {  // Validate input})
+```
+
+If you want to validate the input when a user submits a form, you can use the `submit` event. Make sure you prevent the default behavior with`preventDefault`.
+
+If you don’t prevent the default behavior, browsers will navigate the user to the URL stated in the action attribute.
+
+```
+const form = document.querySelector('form')form.addEventListener('submit', evt => {  evt.preventDefault()
+```
+
+```
+// Validate input})
+```
+
+### Validating the input
+
+We want to know whether an input is empty. For our purpose, empty means:
+
+1. The user hasn’t typed anything into the field
+2. The user has typed one or more empty spaces, but not other characters
+
+In JavaScript, the pass/fail conditions can be represented as:
+
+```
+// Empty' ''  ''   '
+```
+
+```
+// Filled'one-word''one-word '' one-word'' one-word ''one phrase with whitespace''one phrase with whitespace '' one phrase with whitespace'' one phrase with whitespace '
+```
+
+Checking this is easy. We just need to use the `trim` method. `trim` removes any whitespace from the front and back of a string.
+
+```
+const value = input.value.trim()
+```
+
+If the input is valid, you can set `data-state` to `valid`. If the input is invalid, you can set the `data-state` to `invalid`.
+
+```
+// This is JavaScript 
+```
+
+```
+input.addEventListener('input', evt => {  const value = input.value.trim()
+```
+
+```
+if (value) {    input.dataset.state = 'valid'  } else {    input.dataset.state = 'invalid'  }})
+```
+
+```
+/* This is CSS */
+```
+
+```
+/* Show red borders when filled, but invalid */input[data-state="invalid"] {  border-color: hsl(0, 76%, 50%);}
+```
+
+```
+/* Show green borders when valid */input[data-state="valid"] {  border-color: hsl(120, 76%, 50%);}This isn’t the end yet. We have a problem.
+```
+
+When a user enters text into the field, input validation begins. However, if the user removes all text from the field, the input continues to be invalid.
+
+We don’t want to invalidate the input if the user removes all text. They may need a moment to think, but the invalidated state sets off an unnecessary alarm.
+
+![Image](https://cdn-media-1.freecodecamp.org/images/dsKKfAA91i2Uz5MVxMBJ531ya-j0s9bsQ5zo)
+
+To fix this, we can check whether the user has entered any text into the input before we `trim` it.
+
+```
+input.addEventListener('input', evt => {  const value = input.value
+```
+
+```
+if (!value) {    input.dataset.state = ''    return  }
+```
+
+```
+const trimmed = value.trim()
+```
+
+```
+if (trimmed) {    input.dataset.state = 'valid'  } else {    input.dataset.state = 'invalid'  }})
+```
+
+Here’s a Codepen for you to play with:
+
+See the Pen [Empty validation with JavaScript](https://codepen.io/zellwk/pen/EObQpr/) by Zell Liew ([@zellwk](https://codepen.io/zellwk)) on [CodePen](https://codepen.io/).
+
+Thanks for reading. Did this article help you out? If it did, I hope you consider [sharing it](https://twitter.com/share?text=Checking%20if%20an%20input%20is%20empty%20with%20JavaScript%20by%20@zellwk%20?%20&url=https://zellwk.com/blog/check-empty-input-js/). You might help someone else out. Thanks so much!
+
+This article was originally posted at [my blog](https://zellwk.com/blog/check-empty-input-js).  
+Sign up for my [newsletter](https://zellwk.com/) if you want more articles to help you become a better frontend developer.
+

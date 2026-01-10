@@ -1,17 +1,28 @@
 ---
-title: JavaScript Capitalize First Letter – How to Uppercase the First Letter in
-  a Word with JS
-date: 2024-08-27T06:06:07.982Z
-author: Dillion Megida
-authorURL: https://www.freecodecamp.org/news/author/dillionmegida/
-originalURL: https://www.freecodecamp.org/news/javascript-capitalize-first-letter-of-word/
-posteditor: ""
-proofreader: ""
+title: JavaScript Capitalize First Letter – How to Uppercase the First Letter in a
+  Word with JS
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2022-06-23T15:46:56.000Z'
+originalURL: https://freecodecamp.org/news/javascript-capitalize-first-letter-of-word
+coverImage: https://www.freecodecamp.org/news/content/images/2022/06/capitalize-first-letter.png
+tags:
+- name: CSS
+  slug: css
+- name: JavaScript
+  slug: javascript
+seo_title: null
+seo_desc: "By Dillion Megida\nWhen you're coding, there are many ways to capitalize\
+  \ the first letter of a word. You can use CSS as well as some JavaScript methods.\
+  \ \nIn this article, I will show you one approach to achieve this.\nTo capitalize\
+  \ the first letter of ..."
 ---
 
-When you're coding, there are many ways to capitalize the first letter of a word. You can use CSS as well as some JavaScript methods.
+By Dillion Megida
 
-<!-- more -->
+When you're coding, there are many ways to capitalize the first letter of a word. You can use CSS as well as some JavaScript methods. 
 
 In this article, I will show you one approach to achieve this.
 
@@ -52,7 +63,7 @@ const firstLetterCap = firstLetter.toUpperCase()
 
 ## How to capitalize the first letter of a word in JavaScript
 
-Using the three string methods above, we will get the first character of the word, capitalize it, then concatenate it with the remaining sliced part.
+Using the three string methods above, we will get the first character of the word, capitalize it, then concatenate it with the remaining sliced part. 
 
 This approach will result in a new word that has the first letter capitalized.
 
@@ -86,3 +97,5 @@ const capitalized =
 ```
 
 Thank you for reading, and happy coding!
+
+

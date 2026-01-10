@@ -11,7 +11,7 @@ env:
     push_with_retry() {
       local branch=${1:-main}
       local max_retries=${2:-3}
-      
+
       for i in $(seq 1 $max_retries); do
         if git push origin "$branch"; then
           echo "Push to $branch successful"

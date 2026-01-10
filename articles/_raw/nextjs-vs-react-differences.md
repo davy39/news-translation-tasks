@@ -1,16 +1,26 @@
 ---
 title: Next.js vs React – Differences and How to Choose the Right One for Your Project
-date: 2024-12-11T14:30:03.769Z
+subtitle: ''
 author: Okoro Emmanuel Nzube
-authorURL: https://www.freecodecamp.org/news/author/Derekvibe/
-originalURL: https://www.freecodecamp.org/news/nextjs-vs-react-differences/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2024-12-04T20:17:25.012Z'
+originalURL: https://freecodecamp.org/news/nextjs-vs-react-differences
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1733260801154/22f3a036-3b7f-4e38-946e-93ec432164b1.png
+tags:
+- name: Next.js
+  slug: nextjs
+- name: React
+  slug: reactjs
+seo_title: null
+seo_desc: 'As a developer, there are many tools, languages, frameworks and open-source
+  packages you have to learn in order to make your job easier and straightforward
+  (though the journey isn’t a straightforward one but you will get there).
+
+  Some of these tools, ...'
 ---
 
 As a developer, there are many tools, languages, frameworks and open-source packages you have to learn in order to make your job easier and straightforward (though the journey isn’t a straightforward one but you will get there).
-
-<!-- more -->
 
 Some of these tools, languages, or frameworks are used daily by community members and can undergo fundamental changes in how they are implemented or written over time.
 
@@ -18,37 +28,37 @@ In this article, we will explore two popular JavaScript technologies, Next.js an
 
 ## Table of Contents
 
--   [Table of Contents][1]
+* [Table of Contents](#heading-table-of-contents)
     
--   [Understanding React][2]
+* [Understanding React](#heading-understanding-react)
     
-    -   [Client-side Rendering][3]
+    * [Client-side Rendering](#heading-client-side-rendering)
         
-    -   [Use Cases for React in Web Development][4]
+    * [Use Cases for React in Web Development](#heading-use-cases-for-react-in-web-development)
         
--   [Exploring Next.js][5]
+* [Exploring Next.js](#heading-exploring-nextjs)
     
-    -   [Server-side Rendering][6]
+    * [Server-side Rendering](#heading-server-side-rendering)
         
-    -   [Use Cases for Next.js in web development][7]
+    * [Use Cases for Next.js in web development](#heading-use-cases-for-nextjs-in-web-development)
         
--   [Key Difference Between Next.js and React][8]
+* [Key Difference Between Next.js and React](#heading-key-difference-between-nextjs-and-react)
     
-    -   [Rendering Methods: client-side vs. server-side][9]
+    * [Rendering Methods: client-side vs. server-side](#heading-rendering-methods-client-side-vs-server-side)
         
-    -   [Performance Considerations][10]
+    * [Performance Considerations](#heading-performance-considerations)
         
-    -   [SEO Implications][11]
+    * [SEO Implications](#heading-seo-implications)
         
-    -   [Scalability and Project Complexity][12]
+    * [Scalability and Project Complexity](#heading-scalability-and-project-complexity)
         
--   [When to Use React or Next.js][13]
+* [When to Use React or Next.js](#heading-when-to-use-react-or-nextjs)
     
-    -   [When to use React][14]
+    * [When to use React](#heading-when-to-use-react)
         
-    -   [When to Use Next.js][15]
+    * [When to Use Next.js](#heading-when-to-use-nextjs)
         
--   [Conclusion][16]
+* [Conclusion](#heading-conclusion)
     
 
 ## Understanding React
@@ -67,7 +77,7 @@ With that out of the way, let’s move on.
 
 React is one of the most popular JavaScript libraries used by developers to build fast, interactive, and reliable user interfaces. It is a declarative library that helps developers create component-based web applications. Facebook developed this library in 2011 and it has been trending since then.
 
-Usually, when writing JavaScript code, we create a file with the extension `js`. For example: `App.js`, `script.js`, and so on. In React we create a file with the extension `jsx`. That is: `index.jsx`, `Home.jsx`, and so on. The `jsx` is a React extension that allows you to write a JavaScript code resembling HTML. The syntax, when executed, is passed through preprocessors/transpilers which transforms the HTML-looking code into a standard JavaScript code.
+Usually, when writing JavaScript code, we create a file with the extension `js`. For example: `App.js`, `script.js`, and so on. In React we create a file with the extension `jsx`. That is: `index.jsx`, `Home.jsx`, and so on. The `jsx` is a React extension that allows you to write a JavaScript code resembling HTML. The syntax, when executed, is passed through preprocessors/transpilers which transforms the HTML-looking code into a standard JavaScript code.
 
 At the heart of all React applications are components. Components are chunks of user interfaces (UI) which are built independently and can be reused in different parts of your project. Different components can be built separately and later brought together to form a complex user interface (UI).
 
@@ -75,9 +85,9 @@ At the heart of all React applications are components. Components are chunks of 
 
 Here is a structural representation of root and child components.
 
-![structural representation of root and child components](https://cdn.hashnode.com/res/hashnode/image/upload/v1732758941272/17c6b471-b2a7-40ae-83f8-4e215a50c853.png)
+![structural representation of root and child components](https://cdn.hashnode.com/res/hashnode/image/upload/v1732758941272/17c6b471-b2a7-40ae-83f8-4e215a50c853.png align="center")
 
-From the image above, you can clearly understand what components are all about. `App` is the root component, and inside the root component, we have the child components: `Navbar`, `Profile`, `Blog` and `Footer`. The child components can be reused on other pages of the project without having to rewrite the code again.
+From the image above, you can clearly understand what components are all about. `App` is the root component, and inside the root component, we have the child components: `Navbar`, `Profile`, `Blog` and `Footer`. The child components can be reused on other pages of the project without having to rewrite the code again.
 
 ### Client-side Rendering
 
@@ -85,20 +95,20 @@ Client-side rendering (CSR) is a common technique, especially in libraries like 
 
 Therefore, in CSR, the logic and structure of the web page is handled by the client (browser) and a fully rendered page is displayed.
 
-To help you understand CSR, [I have added an article here][17].
+To help you understand CSR, [I have added an article here](https://www.freecodecamp.org/news/rendering-patterns/#heading-single-page-applications-spas-with-client-side-rendering-csr).
 
 ### **Use Cases for React in Web Development**
 
 Ever since React became a go-to choice for many developers, its flexibility has made it suitable for a wide range of use cases in web development. Here are a few cases:
 
--   **Single Page Applications (SPAs):** When we talk about SPAs, we don’t really mean that your web application has only one page, it can go on to having multiple pages. In SPAs, your web application files (HTML, CSS, JS) are generated once on your web page and when subsequent updates are made on the file, your page won’t have to fully reload. This approach helps ensure a faster transition, reduces load on the server and enhance overall user experience.
+* **Single Page Applications (SPAs):** When we talk about SPAs, we don’t really mean that your web application has only one page, it can go on to having multiple pages. In SPAs, your web application files (HTML, CSS, JS) are generated once on your web page and when subsequent updates are made on the file, your page won’t have to fully reload. This approach helps ensure a faster transition, reduces load on the server and enhance overall user experience.
     
--   **Interactive User Interfaces:** React is suitable for building interactive user interfaces which, from time to time, undergo dynamic updates based on the actions of the users. Examples are online forms, dashboards, websites (E-commerce websites), and so on.
+* **Interactive User Interfaces:** React is suitable for building interactive user interfaces which, from time to time, undergo dynamic updates based on the actions of the users. Examples are online forms, dashboards, websites (E-commerce websites), and so on.
     
--   **Cross-Platform Applications:** Having React knowledge comes in handy when building mobile applications, simplifying the connection between web applications and mobile applications. Tools like React Native helps you achieve this process.
+* **Cross-Platform Applications:** Having React knowledge comes in handy when building mobile applications, simplifying the connection between web applications and mobile applications. Tools like React Native helps you achieve this process.
     
 
-## **Exploring Next.js**
+## **Exploring Next.js** 
 
 Next.js is a popular React-based framework used in building web applications with the use of React components. Next.js provides additional structure, features, and optimization for your web application.
 
@@ -110,15 +120,15 @@ Server-side rendering (SSR) is a technique in web development where a server gen
 
 In server-side rendering, a request is first sent to the server from the browser (client), then the server begins to process the request and when it's done processing the request, it executes the request by generating and displaying an HTML file with the content on the browser (client side). When a change is made or a new page is requested, a new request is sent again to the server and it is processed all over again – a fresh, fully rendered HTML file will be generated and displayed on the browser (client).
 
-For a better understanding of CSR and SSR, I have added a [YouTube video here][18].
+For a better understanding of CSR and SSR, I have added a [YouTube video here](https://youtu.be/-JXUaydU1J0?si=U3PrqicrIJoLYOM9).
 
-### Use Cases for Next.js in web development
+### Use Cases for Next.js in web development 
 
--   **Single Page Application (SPAs):** Next.js can be used in the creation of single page applications, similar to React.
+* **Single Page Application (SPAs):** Next.js can be used in the creation of single page applications, similar to React.
     
--   **SEO-Friendly:** Next.js helps create SEO-friendly websites by rendering an HTML file on the server and delivering it to the browser. This improves search engine visibility, increasing the chances of your website appearing at the top of search results.
+* **SEO-Friendly:** Next.js helps create SEO-friendly websites by rendering an HTML file on the server and delivering it to the browser. This improves search engine visibility, increasing the chances of your website appearing at the top of search results.
     
--   **Multi-User Platforms:** Due to Next.js ability to handle dynamic routing, API handling, and so on, it’s easy to create applications that serve various purposes.
+* **Multi-User Platforms:** Due to Next.js ability to handle dynamic routing, API handling, and so on, it’s easy to create applications that serve various purposes.
     
 
 ## Key Difference Between Next.js and React
@@ -129,39 +139,39 @@ When we talk about the rendering method in React, React relies mainly on renderi
 
 Next.js, on the other hand, supports both SSR and CSR because it was built on top of React. Web pages are rendered on the server and both logic and structure of the page are all handled by the server. This enables a faster loading of the web page and also improves the SEO.
 
-### Performance Considerations
+### Performance Considerations 
 
 In terms of performance considerations, Next.js is often preferred because it offers multiple rendering options, including server-side rendering (SSR), static site generation (SSG), Incremental Static Regeneration (ISR), and client-side rendering (CSR). In contrast, React primarily provides a single rendering approach: client-side rendering.
 
-### SEO Implications
+### SEO Implications 
 
 React is less SEO-friendly because search engines may struggle to index content that requires JavaScript execution to render.
 
 On the other hand, Next.js is more SEO-friendly than React because it renders content on the server, providing fully-rendered HTML to search engines for easier indexing.
 
-### Scalability and Project Complexity
+### Scalability and Project Complexity 
 
 In terms of scalability and project complexity, Next.js is generally better than React. Next.js provides built-in features that enhance the scalability of your project. These include:
 
--   Server-side rendering (SSR) and static site generation (SSG) for better performance and SEO.
+* Server-side rendering (SSR) and static site generation (SSG) for better performance and SEO.
     
--   A built-in API routes feature for creating serverless functions seamlessly.
+* A built-in API routes feature for creating serverless functions seamlessly.
     
--   A file-based routing system that simplifies the organization of larger projects.
+* A file-based routing system that simplifies the organization of larger projects.
     
 
 In contrast, with React, you are responsible for setting up and maintaining the structure for scalability. For larger projects, this often requires adding additional tools such as:
 
--   State management libraries (for example, Redux, Recoil, and so on).
+* State management libraries (for example, Redux, Recoil, and so on).
     
--   Routing libraries (for example, React Router).
+* Routing libraries (for example, React Router).
     
 
 These tools are necessary to enhance React's scalability and address project complexity, but they also increase the overhead and effort needed to set up and manage the application.
 
 In summary, here is a tabular break down;
 
-<table><tbody><tr><td><p><strong>Factors</strong></p></td><td><p><strong>React</strong></p></td><td><p><strong>Next.js</strong></p></td></tr><tr><td><p>Scalability</p></td><td><p>It is possible but to increase scalability, it requires additional tools and a custom setup</p></td><td><p>It is scalable and already has built-in tools that increase the scalability.</p></td></tr><tr><td><p>Performance</p></td><td><p>It provides only one rendering option which is client-side rendering (CSR)</p></td><td><p>It offers multiple rendering options, including SSR, SSG, ISR, and CSR.</p></td></tr><tr><td><p>SEO</p></td><td><p>It is less SEO-friendly because search engines may struggle to index content that requires JavaScript execution to render.</p></td><td><p>It is more SEO-friendly than React because it renders content on the server, providing fully-rendered HTML to search engines for easier indexing.</p></td></tr><tr><td><p>Use Case</p></td><td><p>Mostly used in smaller or unique projects</p></td><td><p>Mostly used in large-scale projects and enhances performance and SEO</p></td></tr></tbody></table>
+<table><tbody><tr><td colspan="1" rowspan="1"><p><strong>Factors</strong></p></td><td colspan="1" rowspan="1"><p><strong>React</strong></p></td><td colspan="1" rowspan="1"><p><strong>Next.js</strong></p></td></tr><tr><td colspan="1" rowspan="1"><p>Scalability</p></td><td colspan="1" rowspan="1"><p>It is possible but to increase scalability, it requires additional tools and a custom setup</p></td><td colspan="1" rowspan="1"><p>It is scalable and already has built-in tools that increase the scalability.</p></td></tr><tr><td colspan="1" rowspan="1"><p>Performance</p></td><td colspan="1" rowspan="1"><p>It provides only one rendering option which is client-side rendering (CSR)</p></td><td colspan="1" rowspan="1"><p>It offers multiple rendering options, including SSR, SSG, ISR, and CSR.</p></td></tr><tr><td colspan="1" rowspan="1"><p>SEO</p></td><td colspan="1" rowspan="1"><p>It is less SEO-friendly because search engines may struggle to index content that requires JavaScript execution to render.</p></td><td colspan="1" rowspan="1"><p>It is more SEO-friendly than React because it renders content on the server, providing fully-rendered HTML to search engines for easier indexing.</p></td></tr><tr><td colspan="1" rowspan="1"><p>Use Case</p></td><td colspan="1" rowspan="1"><p>Mostly used in smaller or unique projects</p></td><td colspan="1" rowspan="1"><p>Mostly used in large-scale projects and enhances performance and SEO</p></td></tr></tbody></table>
 
 ## When to Use React or Next.js
 
@@ -171,26 +181,26 @@ Choosing the right tool for your project solely depends on the complexity of the
 
 Here are some cases when it is best to use React for your project:
 
--   When building highly interactive applications.
+* When building highly interactive applications.
     
--   When your project requires manual handling of routing, state management or/and API integration.
+* When your project requires manual handling of routing, state management or/and API integration.
     
--   When your project requires client-side rendering (CSR)
+* When your project requires client-side rendering (CSR)
     
 
 ### When to Use Next.js
 
 Here are some cases where it’s best to use Next.js:
 
--   When your project requires a better SEO.
+* When your project requires a better SEO.
     
--   When your project requires server side rendering.
+* When your project requires server side rendering.
     
--   When your project requires you to build APIs along your frontend code.
+* When your project requires you to build APIs along your frontend code.
     
--   When building content-driven websites like blogs or e-commerce sites. Due to its use of server-side rendering, it aids in improving the load times of contents on the page.
+* When building content-driven websites like blogs or e-commerce sites. Due to its use of server-side rendering, it aids in improving the load times of contents on the page.
     
--   Next.js is best used when you want to optimize images in your project.
+* Next.js is best used when you want to optimize images in your project.
     
 
 ## Conclusion
@@ -200,22 +210,3 @@ At this point I believe you have a clear understanding of React and Next.js, the
 Thank you for taking the time to read this. I hope you found it helpful.
 
 Happy coding.
-
-[1]: #heading-table-of-contents
-[2]: #heading-understanding-react
-[3]: #heading-client-side-rendering
-[4]: #heading-use-cases-for-react-in-web-development
-[5]: #heading-exploring-nextjs
-[6]: #heading-server-side-rendering
-[7]: #heading-use-cases-for-nextjs-in-web-development
-[8]: #heading-key-difference-between-nextjs-and-react
-[9]: #heading-rendering-methods-client-side-vs-server-side
-[10]: #heading-performance-considerations
-[11]: #heading-seo-implications
-[12]: #heading-scalability-and-project-complexity
-[13]: #heading-when-to-use-react-or-nextjs
-[14]: #heading-when-to-use-react
-[15]: #heading-when-to-use-nextjs
-[16]: #heading-conclusion
-[17]: https://www.freecodecamp.org/news/rendering-patterns/#heading-single-page-applications-spas-with-client-side-rendering-csr
-[18]: https://youtu.be/-JXUaydU1J0?si=U3PrqicrIJoLYOM9

@@ -1,0 +1,74 @@
+---
+title: Lessons I learned in my first months as a non-traditional software engineer
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2019-04-22T16:22:54.000Z'
+originalURL: https://freecodecamp.org/news/lessons-i-learned-in-my-first-months-as-a-non-traditional-software-engineer-ac2ada05ba14
+coverImage: https://cdn-media-1.freecodecamp.org/images/1*VQHcr8rqEd56zFj52mG6dA.jpeg
+tags:
+- name: Culture
+  slug: culture
+- name: learning
+  slug: learning
+- name: General Programming
+  slug: programming
+- name: software development
+  slug: software-development
+- name: 'tech '
+  slug: tech
+seo_title: null
+seo_desc: 'By Kalalau Cantrell
+
+  I am about 3 months into my journey as a new software engineer. I work at a place
+  where the bar is high for what it means to craft quality software. My peers are
+  well-educated and highly disciplined engineers with many years of ex...'
+---
+
+By Kalalau Cantrell
+
+I am about 3 months into my journey as a new software engineer. I work at a place where the bar is high for what it means to craft quality software. My peers are well-educated and highly disciplined engineers with many years of experience. Those conditions alone would be enough to cause someone new to wonder things like “Am I good enough to be here?” or “Will I be able to keep up?”
+
+To top it off, however, I have the fact that my background in software is non-traditional. My degree is in music and I am self-taught in programming. You can probably imagine the kind of [impostor syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome) that someone in my position might feel when surrounded by people who are so smart and credentialed.
+
+**The self-doubt could have been paralyzing. But, somehow it didn’t last very long at all.**
+
+So, how did that happen? How did the doubt give way to the enthusiasm to learn and grow that I mostly feel today? I made a list of 31 experiences that helped me embrace being new and non-traditional rather than fearing it. I studied the list and in it noticed three patterns, which I’ve formed into lessons, that I’d like to share with you.
+
+To keep this post at a nice length, I kept the actual list out but you can [view it here](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md) if you’d like to read about each experience. I cite related experiences in brackets throughout the post (e.g. [[23](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#23-company-has-a-bi-monthly-stand-up-to-discuss-new-things-the-organization-wants-to-learn)]). Below are the three lessons that I gleaned from pondering the list and reflecting on each experience.
+
+### Be Vulnerable
+
+Resist the urge to hide your ignorance. It is natural to want to appear invulnerable. You don’t want to look like you don’t know what you’re doing, right? I’ve observed, however, that any effort put toward appearing invulnerable is an effort that does not go toward overcoming your ignorance. It makes it much harder to learn and grow if you never let yourself feel safe.
+
+An easy way to check that you’re in a safe place is to show some vulnerability. If someone asks you whether you understand something, try revealing that you may have gaps in your understanding [[11](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#11-team-members-constantly-check-if-i-understand-and-when-they-do-ive-erred-on-the-side-of-being-open-to-a-teaching-moment-rather-than-trying-to-prove-what-i-know-ive-noticed-that-the-team-jumps-on-the-opportunity-to-help-me-learn-this-attitude-is-well-described-by-the-expose-your-ignorance-pattern-in-the-book-apprenticeship-patterns)]. If you find that your vulnerability is met with support and encouragement, you are among great people. You are in a prime environment to learn and grow.
+
+Thankfully, the place I work makes it pretty easy to show vulnerability [[1](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#1-company-gave-me-the-title-of-apprentice), [10](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#10-project-manager-said-you-contribute-to-the-team-on-day-one-because-newer-people-asking-questions-helps-more-experienced-people-get-a-deeper-understanding-of-their-skills-too), [15](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#15-during-an-all-company-meeting-president-began-an-announcement-about-a-sensitive-topic-by-saying-i-may-not-say-this-100-correctly-but-give-me-some-grace-and-hear-what-im-really-trying-to-say-here-showing-an-attitude-of-vulnerability-toward-the-members-of-his-company), [17](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#17-experienced-team-member-said-dont-worry-i-literally-just-learned-this-a-few-months-ago-when-talking-about-the-reselect-js-library-this-made-me-realize-theres-no-need-to-appear-invulnerable), [18](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#18-well-regarded-engineer-in-the-company-said--please-challenge-me-on-this-idea-i-think-im-looking-for-some-accountability-when-sharing-his-opinion-on-the-importance-of-detailed-commit-messages-this-made-me-realize-that-even-the-smartest-engineers-can-show-vulnerability), [19](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#19-member-of-leadership-team-said-im-still-figuring-out-how-best-to-do-my-job-during-a-new-hire-orientation-type-of-meeting)]. It makes it much easier to show vulnerability when those around you do it, too, especially those in leadership positions [[15](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#15-during-an-all-company-meeting-president-began-an-announcement-about-a-sensitive-topic-by-saying-i-may-not-say-this-100-correctly-but-give-me-some-grace-and-hear-what-im-really-trying-to-say-here-showing-an-attitude-of-vulnerability-toward-the-members-of-his-company), [17](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#17-experienced-team-member-said-dont-worry-i-literally-just-learned-this-a-few-months-ago-when-talking-about-the-reselect-js-library-this-made-me-realize-theres-no-need-to-appear-invulnerable), [18](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#18-well-regarded-engineer-in-the-company-said--please-challenge-me-on-this-idea-i-think-im-looking-for-some-accountability-when-sharing-his-opinion-on-the-importance-of-detailed-commit-messages-this-made-me-realize-that-even-the-smartest-engineers-can-show-vulnerability), [19](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#19-member-of-leadership-team-said-im-still-figuring-out-how-best-to-do-my-job-during-a-new-hire-orientation-type-of-meeting)].
+
+### Value your relationships as much as your technical skills
+
+When you’re ramping up, technical skills are important but they are only part of the equation. It’s easy to focus too narrowly on “what you know” and “what you can do” and neglect the benefits that come from connecting with your peers. I’ve experienced, however, that the greatest strides in ramping up are made once you’ve established a relationship with your team.
+
+Many of the experiences that helped me feel more comfortable as a new engineer were not related to gaining or demonstrating technical skills [[4](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#4-company-assigned-me-a-personal-guide-on-day-one), [5](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#5-scrum-master-of-my-team-said-well-get-you-there-moments-after-getting-to-know-me), [8](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#8-team-asked-for-my-input-during-standup-and-pair-programming-within-my-first-few-days-of-starting-with-them)]. Even the experiences that had some technical qualities about them [[6](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#6-team-had-me-pair-programming-within-a-day-of-starting-with-them), [27](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#27-team-had-me-do-my-first-pr-within-my-3rd-sprint-with-them-quickly-followed-by-my-2nd-and-3rd)] were helpful to me not necessarily because they involved technical achievements but more so because they involved accomplishments I made **with my team**.
+
+### Overcoming your ignorance is a lifelong journey, so go at a pace that makes sense for you
+
+It is a journey but you may sometimes feel the compulsion to treat it like a race. If you’re like me, you have a “things-to-learn” list that only seems to get longer and there never seems to be enough time in a day for crossing things off of it. But that is just a perception. If you carry that perception, you will find yourself rushing.
+
+Rush for long enough and you start to appreciate just how long the trail really is. Rushing is tiring. Pause for a moment and realize that you have the rest of your career to cross things off that list. You need to find a pace that is sustainable for the long haul.
+
+The right pace will be different for each person depending on their home situation, their personal goals, and their career goals. I have a family at home but I manage to find regular time for professional development because at this stage in my career, it is a high priority for me.
+
+My current pace is 60–90 minutes every night or so after my family goes to bed. I spend this time either getting extra practice with the tools I use at work, playing with technologies that I’m just interested in, or reading books and blogs [[31](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#31-60---90-minutes-every-night-or-so-of-learning-time-reading-side-projects-experimenting-with-code)]. It’s only been about 3 months, but I can already tell that making this investment is like taking steps on the long trail toward overcoming my ignorance.
+
+I’m fortunate that my employer regularly hosts events that promote continual learning [[13](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#13-company-encouraged-me-to-purchase-any-learning-materials-i-needed-for-professional-development-and-reimbursed-me-from-day-one), [21](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#21-people-in-the-company-are-constantly-sharing-things-they-learn-in-the-form-of-blogs-and-internal-talks), [22](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#22-attended-study-groups-organized-by-members-of-the-company-where-people-of-all-experience-levels-get-together-to-learn-something-new), [23](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#23-company-has-a-bi-monthly-stand-up-to-discuss-new-things-the-organization-wants-to-learn), [25](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md#25-attended-a-company-sponsored-hackathon-where-coworkers-of-all-skill-levels-got-together-and-worked-on-things-they-wanted-to-learn)]. It helps me remember to travel with patience when I see that my peers of all skill levels are traveling, too.
+
+### Final Thoughts
+
+Despite the odds described in the intro, I come to work not fearing being new but actually relishing it. Many small but meaningful [experiences](https://github.com/klcantrell/blog-content/blob/72b4a4eb94f8f10d935be724b7836e332942cf44/3-lessons-learned-in-my-first-months-as-a-nontraditional-software-engineer/31-experiences.md) have helped me go from “Am I good enough to be here?” to “I can learn, grow, and contribute here”.
+
+If you are an experienced engineer or in a leadership position, I hope reading this will encourage you to foster an environment where vulnerability, strong relationships, and lifelong learning are encouraged. If you are at the beginning of your journey like I am, I hope you found something here that you can take back and apply to your own story. Thanks for reading!
+
+> Originally posted on [blog.kalalau-cantrell.com](http://blog.kalalau-cantrell.com/2019/04/3-lessons-i-learned-in-my-first-months-as-a-non-traditional-software-engineer/).
+

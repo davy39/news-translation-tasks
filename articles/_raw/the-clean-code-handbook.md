@@ -1,17 +1,30 @@
 ---
-title: "The Clean Code Handbook: How to Write Better Code for Agile Software
-  Development"
-date: 2025-07-17T01:56:30.419Z
+title: 'The Clean Code Handbook: How to Write Better Code for Agile Software Development'
+subtitle: ''
 author: Programming with Shahan
-authorURL: https://www.freecodecamp.org/news/author/codewithshahan/
-originalURL: https://www.freecodecamp.org/news/the-clean-code-handbook/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2025-01-29T17:04:40.260Z'
+originalURL: https://freecodecamp.org/news/the-clean-code-handbook
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1738170236859/edacf21e-7180-4f65-9e7e-f7cf95b4f9d8.png
+tags:
+- name: clean code
+  slug: clean-code
+- name: JavaScript
+  slug: javascript
+- name: agile
+  slug: agile
+- name: handbook
+  slug: handbook
+seo_title: null
+seo_desc: 'Building scalable software applications requires writing clean code that’s
+  so simple that any dev can understand it.
+
+  In this article, I’ll explain and demonstrate what clean code is. Then I’ll share
+  my favorite clean code patterns for building modern...'
 ---
 
 Building scalable software applications requires writing clean code that’s so simple that any dev can understand it.
-
-<!-- more -->
 
 In this article, I’ll explain and demonstrate what clean code is. Then I’ll share my favorite clean code patterns for building modern Agile applications.
 
@@ -21,60 +34,60 @@ Let’s get started.
 
 ## Table of Contents
 
-1.  [The Cost of Bad Code][1]
+1. [The Cost of Bad Code](#heading-the-cost-of-bad-code)
     
-2.  [Clean Coder vs. Messy Coder][2]
+2. [Clean Coder vs. Messy Coder](#heading-clean-coder-vs-messy-coder)
     
-3.  [AI Can’t Save You If Your Code is a Mess 🗑️][3]
+3. [AI Can’t Save You If Your Code is a Mess 🗑️](#heading-ai-cant-save-you-if-your-code-is-a-mess)
     
-4.  [12 Clean Code Design Patterns for Building Agile Applications ⚖️][4]
+4. [12 Clean Code Design Patterns for Building Agile Applications ⚖️](#heading-12-clean-code-design-patterns-for-building-agile-applications)
     
-    -   [🌿 Use Names That Mean Something][5]
+    * [🌿 Use Names That Mean Something](#heading-use-names-that-mean-something)
         
-    -   [🔨 Keep Functions Laser-Focused (SRP)][6]
+    * [🔨 Keep Functions Laser-Focused (SRP)](#heading-keep-functions-laser-focused-srp)
         
-    -   [🚪 Use Comments Thoughtfully][7]
+    * [🚪 Use Comments Thoughtfully](#heading-use-comments-thoughtfully)
         
-    -   [⚡ Best Practices for Writing Good Comments][8]
+    * [⚡ Best Practices for Writing Good Comments](#heading-best-practices-for-writing-good-comments)
         
-    -   [🧩 Make Your Code Readable][9]
+    * [🧩 Make Your Code Readable](#heading-make-your-code-readable)
         
-    -   [🏌️ Test Everything You Write][10]
+    * [🏌️ Test Everything You Write](#heading-test-everything-you-write)
         
-    -   [💉 Use Dependency Injection][11]
+    * [💉 Use Dependency Injection](#heading-use-dependency-injection)
         
-    -   [📂 Clean Project Structures][12]
+    * [📂 Clean Project Structures](#heading-clean-project-structures)
         
-    -   [🤹‍♂️ Be Consistent with Formatting][13]
+    * [🤹‍♂️ Be Consistent with Formatting](#heading-be-consistent-with-formatting)
         
-    -   [✋ Stop Hardcoding Values][14]
+    * [✋ Stop Hardcoding Values](#heading-stop-hardcoding-values)
         
-    -   [🤏 Keep Functions Short][15]
+    * [🤏 Keep Functions Short](#heading-keep-functions-short)
         
-    -   [⛺ Follow the Boy Scout Rule][16]
+    * [⛺ Follow the Boy Scout Rule](#heading-follow-the-boy-scout-rule)
         
-    -   [🏟️ Follow the Open/Closed Principle][17]
+    * [🏟️ Follow the Open/Closed Principle](#heading-follow-the-openclosed-principle)
         
-5.  [Modern Best Practices to Help You Write Clean Code: A Summary 🥷][18]
+5. [Modern Best Practices to Help You Write Clean Code: A Summary 🥷](#heading-modern-best-practices-to-help-you-write-clean-code-a-summary)
     
-6.  [Automated Tools for Maintaining Clean Code ⚓][19]
+6. [Automated Tools for Maintaining Clean Code ⚓](#heading-automated-tools-for-maintaining-clean-code)
     
-    -   [1️⃣ Static Analysis][20]
+    * [1️⃣ Static Analysis](#heading-1-static-analysis)
         
-    -   [2️⃣ Automated Code Formatting][21]
+    * [2️⃣ Automated Code Formatting](#heading-2-automated-code-formatting)
         
-    -   [3️⃣ Continuous Integration (CI) Testing][22]
+    * [3️⃣ Continuous Integration (CI) Testing](#heading-3-continuous-integration-ci-testing)
         
-    -   [4️⃣ CI/CD pipelines][23]
+    * [4️⃣ CI/CD pipelines](#heading-4-cicd-pipelines)
         
-7.  [The Role of Documentation in Agile Software Development 🚣][24]
+7. [The Role of Documentation in Agile Software Development 🚣](#heading-the-role-of-documentation-in-agile-software-development)
     
-8.  [Conclusion 🏁][25]
+8. [Conclusion 🏁](#heading-conclusion)
     
-9.  [Frequently Asked Questions About Clean Code 🧯][26]
+9. [Frequently Asked Questions About Clean Code 🧯](#heading-frequently-asked-questions-about-clean-code)
     
 
-![Image of agile software development meme](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xh3j6ccn1hc3euc3lfyl.png)
+![Image of agile software development meme](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xh3j6ccn1hc3euc3lfyl.png align="left")
 
 In Agile, where change is the only constant, clean code is your armor. It makes you adaptable, swift, and, most importantly, in control.
 
@@ -82,7 +95,7 @@ Here’s the truth: writing clean code is not optional if you want to survive in
 
 ## The Cost of Bad Code
 
-![Image of cost of messy code vs clean code graph by shahan](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wdai6npb55j71sguj6kl.png)
+![Image of cost of messy code vs clean code graph by shahan](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wdai6npb55j71sguj6kl.png align="center")
 
 To explain this stack bar graph, in the initial development phase, bad code is **slightly** more costly to change than clean code.
 
@@ -90,13 +103,13 @@ But as we move into the maintenance and refactoring phases, the gap widens signi
 
 By the legacy phase, bad code reaches 100% cost – now it’s extremely expensive to update, while clean code remains more manageable at 45%.
 
-As of now, the most recent analysis on the cost of poor software quality in the U.S. is the 2022 report by the Consortium for Information and Software Quality ([cisq.org][27]). This report estimates that poor software quality cost the U.S. economy at least $2.41 trillion in 2022, with technical debt accounting for about $1.52 trillion of this amount.
+As of now, the most recent analysis on the cost of poor software quality in the U.S. is the 2022 report by the Consortium for Information and Software Quality ([cisq.org](http://cisq.org)). This report estimates that poor software quality cost the U.S. economy at least $2.41 trillion in 2022, with technical debt accounting for about $1.52 trillion of this amount.
 
-You can [read more about that here][28].
+You can [read more about that here](https://www.it-cisq.org/the-cost-of-poor-quality-software-in-the-us-a-2022-report/).
 
 Recent discussions continue to highlight the significant impact of technical debt on software quality and business performance.
 
-For instance, [a 2024 survey][29] indicated that for more than 50% of companies, technical debt accounts for greater than a quarter of their total IT budget. And this can really hinder innovation if it’s not addressed.
+For instance, [a 2024 survey](https://vfunction.com/blog/how-to-manage-technical-debt) indicated that for more than 50% of companies, technical debt accounts for greater than a quarter of their total IT budget. And this can really hinder innovation if it’s not addressed.
 
 As you can see, there’s no doubt that bad code is a costly problem in software development.
 
@@ -104,11 +117,11 @@ As you can see, there’s no doubt that bad code is a costly problem in software
 
 Here’s a graph that shows the journey of **two types** of coders:
 
-![Image of clean code vs bad code graph chart](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c6ubf77uwipf4gtucw8q.png)
+![Image of clean code vs bad code graph chart](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c6ubf77uwipf4gtucw8q.png align="center")
 
--   **⚠️ The Messy Coder (Red line):** Starts fast but crashes hard. The more lines they write, the more trouble they make.
+* **⚠️ The Messy Coder (Red line):** Starts fast but crashes hard. The more lines they write, the more trouble they make.
     
--   **⚡ The Clean Coder (Blue line):** Starts slow but stays consistent. Growth doesn’t stop — it accelerates.
+* **⚡ The Clean Coder (Blue line):** Starts slow but stays consistent. Growth doesn’t stop — it accelerates.
     
 
 🫵 Now, you decide which line you want to follow.
@@ -135,7 +148,7 @@ But then it hit me — every developer struggles with this. It wasn't about how 
 
 I decided to escape this trap. After five months of intense work — four to five hours a day writing, designing, and researching — I created something I wish I had when I started programming. A book that’s a complete beginner’s guide: **Clean Code Zero to One.**
 
-![cover image of clean code zero to one: from messy code to masterpiece](https://cdn.hashnode.com/res/hashnode/image/upload/v1737731329839/c4c862d9-7fdc-460a-ae2e-18b19468b6ec.png)
+![cover image of clean code zero to one: from messy code to masterpiece](https://cdn.hashnode.com/res/hashnode/image/upload/v1737731329839/c4c862d9-7fdc-460a-ae2e-18b19468b6ec.png align="center")
 
 If you want to learn more about the book, I give you all the details at the end of this tutorial. So read on to learn more about writing clean code.
 
@@ -147,7 +160,7 @@ If your code doesn’t follow these modern clean code design patterns, you could
 
 Naming your variables or functions b or x is not helpful. Call them what they are so they’re easier to understand. Here’s an example of both a bad and good variable name:
 
-```
+```javascript
 // Weak and vague
 let b = 5;
 
@@ -157,7 +170,7 @@ let numberOfUsers = 5;
 
 People who write unclear names don’t want to own their mistakes. Don’t be that person.
 
-![Comic showing a bad vs a good variable name, by Shahan](https://cdn.hashnode.com/res/hashnode/image/upload/v1736165724746/37b2edc3-3c68-47a8-ab6f-f131a2239a01.png)
+![Comic showing a bad vs a good variable name, by Shahan](https://cdn.hashnode.com/res/hashnode/image/upload/v1736165724746/37b2edc3-3c68-47a8-ab6f-f131a2239a01.png align="center")
 
 ### **🔨 Keep Functions Laser-Focused (SRP)**
 
@@ -169,7 +182,7 @@ Good code is like a hammer. It hits one nail, not ten. For example, if you are h
 
 **🔥 My Rule:** Your code works for you. Keep it sharp, focused, and controllable, or it’s going to control you. Here is how to make that happen:
 
-```
+```javascript
 // Clean: One job, one focus
 function calculateTotal(a, b) {
     return a + b;
@@ -204,7 +217,7 @@ Here are some short examples of good comments vs bad comments. I’ll also show 
 
 **Example 1: Bad Comment 👎**
 
-```
+```javascript
 // Multiply the price by the quantity to calculate the total
 const total = price * quantity;
 ```
@@ -215,15 +228,15 @@ This is a **bad comment** because it simply repeats what the code already says. 
 
 If the code is clear and simple, **you don’t need a comment.**
 
-```
+```javascript
 const total = price * quantity;
 ```
 
-![Image illustrating unnecessary comment vs "silent comment", by Shahan](https://cdn.hashnode.com/res/hashnode/image/upload/v1736165891398/6a942ad7-5b09-4990-9c7f-95358dafcbf3.png)
+![Image illustrating unnecessary comment vs "silent comment", by Shahan](https://cdn.hashnode.com/res/hashnode/image/upload/v1736165891398/6a942ad7-5b09-4990-9c7f-95358dafcbf3.png align="center")
 
 **Example 2: Bad Comment 👎**
 
-```
+```javascript
 // Check if the user logged in
 function isUserLoggedIn(session) {
     return !!session.user;
@@ -234,7 +247,7 @@ This comment is bad because it doesn’t explain why the `isUserLoggin()` exists
 
 **Good Example 👍**
 
-```
+```javascript
 // The user is authenticated before accessing protected resources
 function isUserLoggedIn(session) {
     return !!session.user;
@@ -243,20 +256,20 @@ function isUserLoggedIn(session) {
 
 This is a **good comment** because it explains **why** the code exists. It tells us that the function checks if the user is authenticated before allowing access to sensitive parts of the app. It focuses on the bigger picture.
 
-![Before: "Check if the user is logged in". After: "The user is authenticated before accessing protected resources." By Shahan.](https://cdn.hashnode.com/res/hashnode/image/upload/v1736166143011/b3ddae3d-41cf-4534-8f1a-af710579922c.png)
+![Before: "Check if the user is logged in". After: "The user is authenticated before accessing protected resources." By Shahan.](https://cdn.hashnode.com/res/hashnode/image/upload/v1736166143011/b3ddae3d-41cf-4534-8f1a-af710579922c.png align="center")
 
 ### **⚡ Best Practices for Writing Good Comments**
 
-1.  **Explain the “Why,” not the “What”:**  
+1. **Explain the “Why,” not the “What”:**  
     Write comments to explain the purpose or context of the code, not what the code is doing.
     
-2.  **Avoid obvious comments:**  
+2. **Avoid obvious comments:**  
     Don’t write comments for things the code already makes clear.
     
-3.  **Keep them short and precise:**  
+3. **Keep them short and precise:**  
     Write concise comments that are easy to read and directly explain the purpose.
     
-4.  **Update comments regularly:**  
+4. **Update comments regularly:**  
     Outdated comments can mislead developers, so always update them when the code changes.
     
 
@@ -264,7 +277,7 @@ This is a **good comment** because it explains **why** the code exists. It tells
 
 Let’s implement these practices into a real-world project: a large e-commerce application. One function calculates shipping costs based on the order details. Here's the full code, I will explain each comment below:
 
-```
+```javascript
 // Shipping rules:
 // - Free shipping for orders over $100
 // - Standard shipping ($10) for orders below $100
@@ -298,7 +311,7 @@ console.log(calculateShipping(order2)); // Output: 15
 
 At the start of the function, we include a comment explaining the rules for shipping costs. This gives the reader an overview of the logic without needing to read the full code.
 
-```
+```javascript
 // Shipping rules:
 // - Free shipping for orders over $100
 // - Standard shipping ($10) for orders below $100
@@ -307,7 +320,7 @@ At the start of the function, we include a comment explaining the rules for ship
 
 Then, the first condition checks if the order total is greater than or equal to $100. A comment here clarifies **why** free shipping is applied.
 
-```
+```javascript
 // Check if the order qualifies for free shipping
 if (order.total >= 100) {
     shippingCost = 0; // Free shipping
@@ -316,7 +329,7 @@ if (order.total >= 100) {
 
 The second condition applies an additional charge for international shipping. The comment explains **why** the extra cost is added.
 
-```
+```javascript
 // Add additional cost for international orders
 if (order.isInternational) {
     shippingCost += 5;
@@ -331,7 +344,7 @@ Imagine you’re working in a team of 20 developers. Someone reads the `calculat
 
 If someone reading your code feels like they’re solving a riddle, you’ve already become a troublemaker. Here is the proof:
 
-```
+```javascript
 // Clean: Reads like a story
 if (isLoggedIn) {
     console.log("Welcome!");
@@ -347,18 +360,18 @@ If your code is messy and hard to read, it will confuse others—and even yourse
 
 **🍵 Why is Readability Important?**
 
-1.  **For yourself:** When you revisit your code after weeks or months, clean code helps you pick up where you left off without wasting time figuring out what you did.
+1. **For yourself:** When you revisit your code after weeks or months, clean code helps you pick up where you left off without wasting time figuring out what you did.
     
-2.  **For your team:** If someone else reads your code, they shouldn’t have to solve a puzzle. Clean code makes teamwork smoother and prevents miscommunication.
+2. **For your team:** If someone else reads your code, they shouldn’t have to solve a puzzle. Clean code makes teamwork smoother and prevents miscommunication.
     
-3.  **Fewer bugs:** Clear code is easier to debug because you can quickly spot mistakes.
+3. **Fewer bugs:** Clear code is easier to debug because you can quickly spot mistakes.
     
 
 **🧙‍♂️ How to Write Readable Code**
 
 Let’s build a simple program to manage books in a library. We’ll make it clean and readable and then I will break down this code below:
 
-```
+```javascript
 // A class to represent a book
 class Book {
     constructor(title, author, isAvailable) {
@@ -406,17 +419,18 @@ book1.returnBook(); // Return the book
 displayAvailableBooks(library); // Final list
 ```
 
+  
 We created a `Book` class to represent each book. It has properties like `title`, `author`, and `isAvailable` to track its status.
 
--   The `borrow` method checks if the book is available. If yes, it marks it as unavailable and prints a message.
+* The `borrow` method checks if the book is available. If yes, it marks it as unavailable and prints a message.
     
--   The `returnBook` method makes the book available again.
+* The `returnBook` method makes the book available again.
     
--   The `displayAvailableBooks` function loops through the library and prints only the books that are available.
+* The `displayAvailableBooks` function loops through the library and prints only the books that are available.
     
--   We create three books (`book1`, `book2`, `book3`) and store them in a `library` array.
+* We create three books (`book1`, `book2`, `book3`) and store them in a `library` array.
     
--   We borrow and return books, showing how the list of available books changes.
+* We borrow and return books, showing how the list of available books changes.
     
 
 As you can see, readable code is not just about style. It saves time, prevents bugs, and preserves your code as useful for years to come.
@@ -431,7 +445,7 @@ Concretely, unit testing checks individual parts of your code (like functions or
 
 Let me give you an example of how unit testing works:
 
-```
+```javascript
 class Calculator {
     add(a, b) { return a + b; }
     subtract(a, b) { return a - b; }
@@ -447,7 +461,7 @@ Here’s what’s going on in this code:
 
 First, we create the calculator class:
 
-```
+```javascript
 class Calculator {
     add(a, b) { return a + b; }
     subtract(a, b) { return a - b; }
@@ -456,14 +470,14 @@ class Calculator {
 
 The `Calculator` class has two methods: `add` and `subtract`.
 
--   `add(a, b)` takes two numbers and returns their sum.
+* `add(a, b)` takes two numbers and returns their sum.
     
--   `subtract(a, b)` takes two numbers and returns their difference.
+* `subtract(a, b)` takes two numbers and returns their difference.
     
 
 Next, we set up the tests:
 
-```
+```javascript
 const calculator = new Calculator();
 ```
 
@@ -471,42 +485,42 @@ Here, we’re creating an instance of the `Calculator` class to test its methods
 
 Then we write test cases:
 
-```
+```javascript
 console.assert(calculator.add(2, 3) === 5, "Addition failed");
 console.assert(calculator.subtract(5, 3) === 2, "Subtraction failed");
 ```
 
 `console.assert(condition, message)` checks if the condition is `true`. If it’s `false`, the message ("Addition failed" or "Subtraction failed") is displayed in the console.
 
--   **First test**: `calculator.add(2, 3) === 5`
+* **First test**: `calculator.add(2, 3) === 5`
     
-    -   Calls the `add` method with `2` and `3`.
+    * Calls the `add` method with `2` and `3`.
         
-    -   Checks if the result is `5`.
+    * Checks if the result is `5`.
         
--   **Second test**: `calculator.subtract(5, 3) === 2`
+* **Second test**: `calculator.subtract(5, 3) === 2`
     
-    -   Calls the `subtract` method with `5` and `3`.
+    * Calls the `subtract` method with `5` and `3`.
         
-    -   Checks if the result is `2`.
+    * Checks if the result is `2`.
         
 
 So what happens if something breaks? It’s pretty simple to solve any issues that arise here. In this case, if the `add` or `subtract` method doesn’t work correctly, the test will fail. For example:
 
-```
+```javascript
 console.assert(calculator.add(2, 3) === 6, "Addition failed");
 ```
 
--   The condition `calculator.add(2, 3) === 6` is `false`.
+* The condition `calculator.add(2, 3) === 6` is `false`.
     
--   The console will display: `"Addition failed"`.
+* The console will display: `"Addition failed"`.
     
 
 **Real-World Example: Testing a Login System 👥**
 
 Let’s test a simple login system to see how unit testing works in a real-world scenario.
 
-```
+```javascript
 class Auth {
     login(username, password) {
         return username === "admin" && password === "1234";
@@ -521,7 +535,7 @@ console.assert(auth.login("user", "wrongpassword") === false, "Login succeeded f
 
 First, create the `Auth` class:
 
-```
+```javascript
 class Auth {
     login(username, password) {
         return username === "admin" && password === "1234";
@@ -533,29 +547,29 @@ The `login` method checks if the username is `"admin"` and the password is `"123
 
 Next, set up the tests:
 
-```
+```javascript
 const auth = new Auth();
 ```
 
 Create an instance of the `Auth` class. Then write the test cases:
 
-```
+```javascript
 console.assert(auth.login("admin", "1234") === true, "Login failed for valid credentials");
 console.assert(auth.login("user", "wrongpassword") === false, "Login succeeded for invalid credentials");
 ```
 
--   **First test**: Checks if valid credentials (`"admin"`, `"1234"`) succeed. If not, `"Login failed for valid credentials"` is displayed.
+* **First test**: Checks if valid credentials (`"admin"`, `"1234"`) succeed. If not, `"Login failed for valid credentials"` is displayed.
     
--   **Second test**: Checks if invalid credentials (`"user"`, `"wrongpassword"`) fail. If not, `"Login succeeded for invalid credentials"` is displayed.
+* **Second test**: Checks if invalid credentials (`"user"`, `"wrongpassword"`) fail. If not, `"Login succeeded for invalid credentials"` is displayed.
     
 
 **🌱 Why testing results in clean code:**
 
-1.  You naturally write smaller, more focused functions to make your code testable
+1. You naturally write smaller, more focused functions to make your code testable
     
-2.  Tests verify that your code behaves as expected under different conditions.
+2. Tests verify that your code behaves as expected under different conditions.
     
-3.  With tests in place, you can confidently update your code, knowing the tests will catch any mistakes.
+3. With tests in place, you can confidently update your code, knowing the tests will catch any mistakes.
     
 
 ### **💉 Use Dependency Injection**
@@ -566,7 +580,7 @@ So, what does Dependency Injection do? It lets you manage your code's relationsh
 
 To demonstrate how it works, here I’m using the Nodemailer dependency for sending emails to users:
 
-```
+```javascript
 // Dependency: Sending emails with Nodemailer
 const nodemailer = require('nodemailer');
 function sendEmail(to, subject, message) {
@@ -591,33 +605,33 @@ A well-organized project is the difference between a **trash heap** and a high-e
 
 Here is how each folder should be organized:
 
-![Image of clean code project structure by shahan](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9xwyg9iqqcybz21lsgxz.png)
+![Image of clean code project structure by shahan](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9xwyg9iqqcybz21lsgxz.png align="left")
 
 If your codebase looks like a junk drawer, you’ve already caused trouble for your future self.
 
 Let’s go through the clean project structure you can see above to better understand it:
 
-**1.** `myProjet/src`
+**1\.** `myProjet/src`
 
 This is the main container for your entire application. Everything your app needs is stored inside this folder. It has subfolders to keep things tidy and managed in one place.
 
-**2.** `components`
+**2\.** `components`
 
 This is where you keep all the reusable pieces of your app. You can use these components in multiple places without building them again.
 
-**3.** `services`
+**3\.** `services`
 
 This is the "brain" of your app. It handles all the work behind the scenes for both the frontend and backend. `emailService.js`, `userService.js` and `productService.js` are some of the example files for your `services` folder.
 
-**4.** `utils`
+**4\.** `utils`
 
 This contains all the small, handy tools you need to make your application run smoothly and make your life easier. For example, `formatedate.js`, `validateEmail.js` and `generateId.js` are some of the common utils files to make reusable pieces of components for your entire project.
 
-#### **5.** `tests`
+#### **5\.** `tests`
 
 Conventionally, test files are typically located **outside** the `src` folder, at the project root level. This keeps your production code (`src`) separate from your test code (`tests`), making it cleaner and easier to manage. Have a look:
 
-```
+```bash
 myProject/
 ├── src/              # Production code
 │   ├── components/
@@ -639,7 +653,7 @@ So let me create a clean, durable project structure for you to apply in any futu
 
 From our previous email sending application example, we will write a clean project structure for this app. We want to build an application that sends emails to users. Your clean project structure for this app should look like this:
 
-![Image of email app clean code project structure by shahan](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6v6rlc5qiplgxz1h4dps.png)
+![Image of email app clean code project structure by shahan](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6v6rlc5qiplgxz1h4dps.png align="left")
 
 As you can see, I packed every subfolder and file inside the `src` folder which is the main container of our application. Inside the `src` folder, we created `components`, `services`, `utiles`. Finally, we have a manageable `test` folder outside the `src` folder to test each component independently. This test folder has nothing to do with our production code that is located inside the `src` folder.
 
@@ -647,15 +661,15 @@ As you can see, I packed every subfolder and file inside the `src` folder which 
 
 Don’t write code like you’re 10 different people. Be consistent with your formatting.
 
-Use tools like [Prettier][30] or [ESLint][31] to enforce a consistent style. If every file looks different, you’re creating chaos that no one wants to fix.
+Use tools like [Prettier](https://prettier.io/) or [ESLint](https://eslint.org/) to enforce a consistent style. If every file looks different, you’re creating chaos that no one wants to fix.
 
 I would say that consistency in formatting is one of the most important aspects of writing clean code.
 
 Have a look...
 
-![Image of consistent formatting snippets from clean code zero to one book](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/46zu4k5nnrkcdesgqrye.png)
+![Image of consistent formatting snippets from clean code zero to one book](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/46zu4k5nnrkcdesgqrye.png align="left")
 
-```
+```javascript
 // Always use 2 spaces for indentation
 function calculateArea(width, height) {
   if (width <= 0 || height <= 0) {
@@ -691,7 +705,7 @@ That extra line break between the rectangle definition and the `try` block is li
 
 #### 3️⃣ Clear Separation of Logic: Modular Thinking
 
-```
+```javascript
 try {
   const area = calculateArea(rectangle.width, rectangle.height);
   console.log(`Area: ${area}`);
@@ -702,11 +716,11 @@ try {
 
 Look at how the logic is divided into clear sections:
 
--   First, the calculation (`calculateArea` function).
+* First, the calculation (`calculateArea` function).
     
--   Then, the output (`console.log`).
+* Then, the output (`console.log`).
     
--   Finally, error handling (`catch` block).
+* Finally, error handling (`catch` block).
     
 
 Each task has its own space and purpose.
@@ -715,26 +729,26 @@ Each task has its own space and purpose.
 
 When you throw errors or log messages, you format them cleanly. No vague or cryptic messages here. A developer seeing this will immediately know the problem.
 
-```
+```javascript
 throw new Error("Dimensions must be positive numbers.");
 ```
 
 **🐦‍⬛ General tips for consistent formatting:**
 
--   Use 2 or 4 spaces for indentation consistently throughout your codebase. Avoid tabs to maintain uniformity across different editors.
+* Use 2 or 4 spaces for indentation consistently throughout your codebase. Avoid tabs to maintain uniformity across different editors.
     
--   Keep lines to a maximum of 100-120 characters to prevent horizontal scrolling and improve readability.
+* Keep lines to a maximum of 100-120 characters to prevent horizontal scrolling and improve readability.
     
--   Group related logic together and separate blocks of code with blank lines to highlight their purpose.
+* Group related logic together and separate blocks of code with blank lines to highlight their purpose.
     
--   Finally, avoid over-aligning code. Instead, let indentation naturally guide the flow of logic.
+* Finally, avoid over-aligning code. Instead, let indentation naturally guide the flow of logic.
     
 
 ### **✋ Stop Hardcoding Values**
 
 Hardcoding values is a lazy way to code. Here is the proof:
 
-```
+```javascript
 // Bad: Hardcoded and rigid
 function createUser() {
     const maxUsers = 100;
@@ -756,13 +770,13 @@ Its best to store your fixed values in the global configuration (config) file.
 
 ### **🤏 Keep Functions Short**
 
-If your function is longer than 20 lines, it’s probably trying to do too much_._
+If your function is longer than 20 lines, it’s probably trying to do too much*.*
 
 Short functions are sharp functions. They hit their mark every time.
 
 Long, bloated functions are messy and hard to read, but short functions are clear and focused. Here is how your large functions should break down:
 
-```
+```javascript
 function updateCart(cart, item) {
     addItemToCart(cart, item);
     let total = calculateTotal(cart);
@@ -777,26 +791,27 @@ function addItemToCart(cart, item) {
 
 Let me explain this code so you understand why breaking down large functions is a winning strategy.
 
-1.  **The Main Function:** `updateCart()` calls smaller helper functions to handle specific tasks like:
+1. **The Main Function:** `updateCart()` calls smaller helper functions to handle specific tasks like:
     
-    -   Adds the item to the cart.
+    * Adds the item to the cart.
         
-    -   Calculates the total price.
+    * Calculates the total price.
         
-    -   Logs the details of the transaction.
+    * Logs the details of the transaction.
         
-    -   Finally, it returns the total price.
+    * Finally, it returns the total price.
         
 
 Instead of one long block of code that tries to do everything, it delegates tasks to helper functions.
 
-2.  **Helper Function:** `addItemToCart()` This function **only** handles adding the item to the cart. if you need to change how items are added (for example, checking for duplicates). You could just edit this small function instead of digging through a giant block of code in `updateCart`. That’s how you write clean code functions that’s a joy to read and easy to maintain.
+2. **Helper Function:** `addItemToCart()` This function **only** handles adding the item to the cart. if you need to change how items are added (for example, checking for duplicates). You could just edit this small function instead of digging through a giant block of code in `updateCart`. That’s how you write clean code functions that’s a joy to read and easy to maintain.
+    
 
 **What Happens If Functions Are Too Long? 💤**
 
 Let’s say you didn’t break down the `updateCart` function. Here’s what it might look like:
 
-```
+```javascript
 function updateCart(cart, item) {
     cart.items.push(item);
     let total = 0;
@@ -810,11 +825,11 @@ function updateCart(cart, item) {
 
 What are the problems here?
 
--   It’s trying to do everything.
+* It’s trying to do everything.
     
--   It’s hard to read, especially if it grows bigger.
+* It’s hard to read, especially if it grows bigger.
     
--   If something breaks, you’ll waste time figuring out which part is the problem.
+* If something breaks, you’ll waste time figuring out which part is the problem.
     
 
 Now the choice is yours: stick with the messy all-in-one approach or practice the clean one function one job mindset.
@@ -829,7 +844,7 @@ In coding terms, every time you touch the codebase, **make it better.** Clean it
 
 Here is an example. Instead of improving it, we’re just adding more layers of complexity:
 
-```
+```javascript
 // Original code: Hard to read, poorly named variables
 function calc(a, b) {
   let x = a + b;
@@ -847,7 +862,7 @@ function calcDiscount(a, b, discountRate) {
 
 After: it gets better every time. Here’s how a disciplined coder works — they improve as they go:
 
-```
+```javascript
 // Improved code: Clear names, refactored for clarity
 function calculateSubtotal(price, quantity) {
   return price * quantity;
@@ -866,7 +881,7 @@ Now, anyone can tell what’s happening at a glance. Because we’ve broken down
 
 This design principle suggests your code should be designed to allow extensions without changing the existing foundation.
 
-You want to add features _—_ not rip it apart every time you upgrade_._ Modifying old code to fit new requirements is exactly like trying to rebuild your house every time you buy new furniture. It’s not sustainable.
+You want to add features *—* not rip it apart every time you upgrade*.* Modifying old code to fit new requirements is exactly like trying to rebuild your house every time you buy new furniture. It’s not sustainable.
 
 Let’s see how you can build smarter, scalable code that lets you add features without breaking everything else.
 
@@ -874,11 +889,11 @@ Let’s see how you can build smarter, scalable code that lets you add features 
 
 You’ve got a class to handle payments — simple enough. At first, it just handles credit cards.
 
-But then your boss shows up and says, _“Hey, now we need PayPal support.”_
+But then your boss shows up and says, *“Hey, now we need PayPal support.”*
 
 And because you didn’t bother learning clean code, your code looks like a spaghetti monster straight out of a legacy enterprise system from 1995. Here’s the masterpiece you’ve crafted:
 
-```
+```javascript
 class PaymentProcessor {
   processPayment(paymentType, amount) {
     if (paymentType === "creditCard") {
@@ -898,9 +913,9 @@ paymentProcessor.processPayment("paypal", 200);
 
 Alas! Every new payment type (like Apple Pay, Google Pay, and so on) requires modifying the `processPayment` method. Needless to say, you risk breaking existing functionality while adding new features. If you had learned this principle, you might not be in this mess.
 
-Don’t worry: I’ll help you to fix this. First, we need to refactor the code. Instead of modifying the existing class, we’ll extend its functionality using [polymorphism][32]:
+Don’t worry: I’ll help you to fix this. First, we need to refactor the code. Instead of modifying the existing class, we’ll extend its functionality using [polymorphism](https://stackify.com/oop-concept-polymorphism/):
 
-```
+```javascript
 javascriptCopy code// Base class
 class PaymentProcessor {
   processPayment(amount) {
@@ -941,9 +956,9 @@ payments.forEach((payment) => payment.processPayment(100));
 
 Now, adding new payment methods doesn’t require changing the existing `PaymentProcessor` class. You just created a new subclass. So the original code remains untouched, meaning there’s no risk of breaking existing features.
 
-Each payment type has its own class, and adding PayPal payment support, for example, doesn’t break the code. Now you can reply to your boss: _“Of course, I will add this feature in 5 minutes.”_ Your promotion is waiting for you to accept it.
+Each payment type has its own class, and adding PayPal payment support, for example, doesn’t break the code. Now you can reply to your boss: *“Of course, I will add this feature in 5 minutes.”* Your promotion is waiting for you to accept it.
 
-I share even more tips in my book [Clean Code Zero to One][33].
+I share even more tips in my book [Clean Code Zero to One](https://codewithshahan.gumroad.com/l/cleancode-zero-to-one).
 
 ## Modern Best Practices to Help You Write Clean Code: A Summary 🥷
 
@@ -951,56 +966,56 @@ Now let me show you the best practices and summarise our 12 Clean Code design pr
 
 ### 🔎 Common Code Smells and How to Fix Them
 
--   💊 Duplication: If you're copying code, you’re creating more work for yourself. Extract it into a function, and do it right.
+* 💊 Duplication: If you're copying code, you’re creating more work for yourself. Extract it into a function, and do it right.
     
--   🛤️ Long methods: If your method needs a scroll bar, it's doing too much. Break it down, keep it focused.
+* 🛤️ Long methods: If your method needs a scroll bar, it's doing too much. Break it down, keep it focused.
     
--   👑 King objects: No class should be doing everything. Simplify responsibilities, or your codebase will become messy.
+* 👑 King objects: No class should be doing everything. Simplify responsibilities, or your codebase will become messy.
     
 
 ### 💬 Effective Commenting Practices
 
--   💭 When to comment: Only comment if the code isn't clear. If it is, comments are just clutter.
+* 💭 When to comment: Only comment if the code isn't clear. If it is, comments are just clutter.
     
--   🫗 Clarity: Comments should tell why, not what. If your code needs explaining, it might be too complex.
+* 🫗 Clarity: Comments should tell why, not what. If your code needs explaining, it might be too complex.
     
--   🌴 Avoid redundancy: Don't comment what's obvious. If your function is addNumbers, don't comment it does that.
+* 🌴 Avoid redundancy: Don't comment what's obvious. If your function is addNumbers, don't comment it does that.
     
 
 ### 🧼 Refactoring Techniques for Clean Code
 
--   🏭 Extract methods: Big methods? Break them down. It's not just about cleanliness –– it's about control.
+* 🏭 Extract methods: Big methods? Break them down. It's not just about cleanliness –– it's about control.
     
--   🫕Rename variables: If your variable names don’t shout their purpose, change and improve them. Precision in naming is precision in thought.
+* 🫕Rename variables: If your variable names don’t shout their purpose, change and improve them. Precision in naming is precision in thought.
     
--   🍃 Simplify conditionals: If your conditionals look like algebra, simplify them. If a == true, just write if(a).
+* 🍃 Simplify conditionals: If your conditionals look like algebra, simplify them. If a == true, just write if(a).
     
 
 ### 🧪 Testing and Clean Code
 
--   🧙 Unit tests: Test every piece of code like you're interrogating a suspect. No stone unturned.
+* 🧙 Unit tests: Test every piece of code like you're interrogating a suspect. No stone unturned.
     
--   🏇TDD (Test Driven Development): Write tests first. It's not just about catching bugs, it's about knowing exactly what your code should do before you write it.
+* 🏇TDD (Test Driven Development): Write tests first. It's not just about catching bugs, it's about knowing exactly what your code should do before you write it.
     
--   🧽 Clean tests: Your tests should be as clean as your code. If they're messy, they’re not going to be helpful.
+* 🧽 Clean tests: Your tests should be as clean as your code. If they're messy, they’re not going to be helpful.
     
 
 ### 🐛 Error Handling and Clean Code
 
--   ⁉️ Exceptions: Use them. They're not just for errors, they're also for keeping your code clean from error clutter.
+* ⁉️ Exceptions: Use them. They're not just for errors, they're also for keeping your code clean from error clutter.
     
--   🖍️ Fail fast: If something's wrong, stop right there. Don't let errors add up. Deal with them immediately.
+* 🖍️ Fail fast: If something's wrong, stop right there. Don't let errors add up. Deal with them immediately.
     
--   🚨 Logging: Log like you're documenting a crime scene. Clear, precise, and only what's necessary.
+* 🚨 Logging: Log like you're documenting a crime scene. Clear, precise, and only what's necessary.
     
 
 ### 🌱 Code Reviews and Clean Code
 
--   🚢 Process: Have a system. No cowboy coding. Review, critique, improve.
+* 🚢 Process: Have a system. No cowboy coding. Review, critique, improve.
     
--   🔪 Tools: Use tools that make reviews easy. They're not just for catching mistakes, they're also for teaching discipline.
+* 🔪 Tools: Use tools that make reviews easy. They're not just for catching mistakes, they're also for teaching discipline.
     
--   🧦 Culture: Cultivate a culture where feedback is gold. Help your team learn how to handle and receive critiques.
+* 🧦 Culture: Cultivate a culture where feedback is gold. Help your team learn how to handle and receive critiques.
     
 
 ## Automated Tools for Maintaining Clean Code ⚓
@@ -1009,11 +1024,11 @@ Tools and automation techniques can be really helpful in writing clean code. If 
 
 You think you can "eyeball" your way through code quality? Guess again. Without automation, this is what happens:
 
-1.  👎 You miss obvious mistakes because you're "too busy."
+1. 👎 You miss obvious mistakes because you're "too busy."
     
-2.  🤕 Your code looks different in every file, making collaboration a headache.
+2. 🤕 Your code looks different in every file, making collaboration a headache.
     
-3.  🪦 Deployment breaks because you skipped a critical test.
+3. 🪦 Deployment breaks because you skipped a critical test.
     
 
 Successful developers use the right tools to automate code and get things done. Here are four strategies for maintaining clean code using modern tools.
@@ -1024,53 +1039,57 @@ Static analysis is actually a code inspector that reads through your code and po
 
 #### **How does it work?**
 
-1.  **Syntax checking**: It looks at your code to analyze everything written in the correct syntax. If you misspell a variable or forget a closing bracket, it’ll call you out instantly.
+1. **Syntax checking**: It looks at your code to analyze everything written in the correct syntax. If you misspell a variable or forget a closing bracket, it’ll call you out instantly.
     
-2.  **Code quality rules**: Tools like ESLint enforce rules like consistent indentation, avoiding unused variables, and sticking to best practices.
+2. **Code quality rules**: Tools like ESLint enforce rules like consistent indentation, avoiding unused variables, and sticking to best practices.
     
-3.  **Error prevention**: It identifies logic errors, such as using variables that haven’t been defined, or making comparisons that don’t make sense.
+3. **Error prevention**: It identifies logic errors, such as using variables that haven’t been defined, or making comparisons that don’t make sense.
     
 
 Here’s how static analysis works in action:
 
 #### 🚨 Before static analysis:
 
-```
+```javascript
 let sum = (a, b) => { return a + b; }
 console.log(sume(2, 3)); // Typo, unnoticed until runtime
 ```
 
--   **Problem**: The typo in `sume` will only cause an error when the code runs, and that could lead to frustrating debugging sessions or worse — breaking the app in production.
+* **Problem**: The typo in `sume` will only cause an error when the code runs, and that could lead to frustrating debugging sessions or worse — breaking the app in production.
+    
 
 #### 🚑 After static analysis (using ESLint):
 
-```
+```javascript
 codeError: 'sume' is not defined.
 ```
 
--   **Solution**: [ESLint][34] immediately flags the typo before you even run the code. The error is caught early, saving you time and headaches.
+* **Solution**: [ESLint](https://eslint.org/) immediately flags the typo before you even run the code. The error is caught early, saving you time and headaches.
+    
 
 ### **2️⃣ Automated Code Formatting**
 
 Before Formatting:
 
-```
+```javascript
 function calculate ( x , y ){ return x+ y;}
-console.log( calculate (2,3 ) )
+console.log( calculate (2,3 ) ) 
 ```
 
--   **Problem**: Inconsistent spacing and formatting make the code harder to read.
+* **Problem**: Inconsistent spacing and formatting make the code harder to read.
+    
 
 #### After using Prettier:
 
-```
+```javascript
 function calculate(x, y) {
   return x + y;
 }
 console.log(calculate(2, 3));
 ```
 
--   **Solution**: Clean, consistent, and professional formatting is applied automatically. No more nitpicking over spaces or alignment.
+* **Solution**: Clean, consistent, and professional formatting is applied automatically. No more nitpicking over spaces or alignment.
+    
 
 Pretty basic stuff though. I covered this in case you write code in notepad or something where IDE is not provided (for example, a job interview).
 
@@ -1080,22 +1099,22 @@ CI testing make sure every new change to your code is verified automatically. It
 
 #### **How Does CI Testing Work?**
 
-1.  **Triggers on change**: Each time code is committed, the CI tool (like [GitHub Actions][35], [Jenkins][36]) runs automated tests.
+1. **Triggers on change**: Each time code is committed, the CI tool (like [GitHub Actions](https://github.com/features/actions), [Jenkins](https://www.jenkins.io/)) runs automated tests.
     
-2.  **Feedback**: It gives you instant feedback if something fails.
+2. **Feedback**: It gives you instant feedback if something fails.
     
-3.  **Prevents broken code**: Commits only clean, and the working code gets merged into the main branch.
+3. **Prevents broken code**: Commits only clean, and the working code gets merged into the main branch.
     
 
 ### **4️⃣ CI/CD pipelines**
 
-We also use CI/CD pipelines as a continuous process that includes code building, testing, and deployment, while CI testing is a part of that process that focuses on automating the testing of code changes.
+We also use CI/CD pipelines as a continuous process that includes code building, testing, and deployment, while CI testing is a part of that process that focuses on automating the testing of code changes. 
 
 **Differece between CI/CD pipelines vs CI testing:**
 
--   **CI/CD pipelines:** A CI/CD pipeline combines code building, testing, and deployment into a single process. This process make sure that all changes to the main branch code are releasable to production. CI/CD pipelines can reduce deployment time, decrease costs, and improve team collaboration.
+* **CI/CD pipelines:** A CI/CD pipeline combines code building, testing, and deployment into a single process. This process make sure that all changes to the main branch code are releasable to production. CI/CD pipelines can reduce deployment time, decrease costs, and improve team collaboration. 
     
--   **CI testing:** CI testing is the process of automatically testing code changes that are integrated into a central repository. CI testing focuses on making sure the codebase is stable and that integration issues are resolved. CI testing help developer build software that is stable, bug-free, and meets functional requirements
+* **CI testing:** CI testing is the process of automatically testing code changes that are integrated into a central repository. CI testing focuses on making sure the codebase is stable and that integration issues are resolved. CI testing help developer build software that is stable, bug-free, and meets functional requirements
     
 
 🚧 This is what CI testing CI/CD pipelines concepts are really about. Not as complex as it seems. So let me elaborate more on CI testing with GitHub Actions, as we usually run tests through automated tools nowadays.
@@ -1110,7 +1129,7 @@ As I said earlier, CI tools run automated tests every time you push code or open
 
 Set up a GitHub repository for your project. Then, push your code to GitHub using the following commands:
 
-```
+```bash
 git init
 git add .
 git commit -m "Initial commit for CI Testing"
@@ -1121,23 +1140,23 @@ git push -u origin main
 
 Or you can create a new repo from your GitHub account without using the command. Just login to your GItHub account and visit dashboard. Here you will find a “New” button to create a brand new repo:
 
-![image of creating a new repo on github by Shahan](https://cdn.hashnode.com/res/hashnode/image/upload/v1737618697327/dcef8be8-0d08-45d7-8000-34c4c65df425.png)
+![image of creating a new repo on github by Shahan](https://cdn.hashnode.com/res/hashnode/image/upload/v1737618697327/dcef8be8-0d08-45d7-8000-34c4c65df425.png align="center")
 
 **Step 2: Add a GitHub Actions Workflow**
 
 Navigate to your repository’s **Actions** tab. To do this, first, you have to visit your repo on Github (you will find the link after creating your repo). In this case, I created a new repo called “codewithshahan”. Here, look for the **Actions** tab on the right side of the navigation bar.
 
-![Image of github actions navigation tab by shahan](https://cdn.hashnode.com/res/hashnode/image/upload/v1737618879398/7c5aa37a-72be-4701-a8f8-9ea9e05c0d5d.png)
+![Image of github actions navigation tab by shahan](https://cdn.hashnode.com/res/hashnode/image/upload/v1737618879398/7c5aa37a-72be-4701-a8f8-9ea9e05c0d5d.png align="center")
 
 After navigating the Actions tab, scroll down a little and you will find the **continuous integration** section:
 
-![Image of CI (Continuous Integration) testing on Github Actions Page by Shahan](https://cdn.hashnode.com/res/hashnode/image/upload/v1737619002674/60003e57-f2b2-48f1-bef8-9bde39149faf.png)
+![Image of CI (Continuous Integration) testing on Github Actions Page by Shahan](https://cdn.hashnode.com/res/hashnode/image/upload/v1737619002674/60003e57-f2b2-48f1-bef8-9bde39149faf.png align="center")
 
 Choose a setup workflow yourself. I will use Node.js for this project.
 
 After clicking the configure button, a `node.js.yml` file will be created automatically, and you can adjust the code depending on your goals.
 
-![Image of GitHub workflow snippet for automated testing by Shahan](https://cdn.hashnode.com/res/hashnode/image/upload/v1737619475568/74da6d46-c105-42c8-8662-fc72e9410bda.png)
+![Image of GitHub workflow snippet for automated testing by Shahan](https://cdn.hashnode.com/res/hashnode/image/upload/v1737619475568/74da6d46-c105-42c8-8662-fc72e9410bda.png align="center")
 
 I won’t go into detail about how should modify your `.yml` file. It depends on your project goals and personal preference. Also, it is a whole different broader topic and as this article has already become quite long, so I’ll explain it in a future article. For now, just stick with this foundational knowledge.
 
@@ -1151,15 +1170,15 @@ If you want your code to be top-notch, you need to understand how to write good 
 
 When you write documentation, you're not just throwing down some instructions for how to use the code. You're telling the next person (or even yourself in the future) why this piece of code exists in the first place. That’s the difference between good and bad documentation.
 
-Bad docs leave people scratching their heads. They’re too vague, too simple, and they don’t answer the big questions. If your documentation is unclear, that likely means your thinking is unclear. You’re basically saying, _"I don’t care if you understand this, it works, just use it."_ That’s not helpful.
+Bad docs leave people scratching their heads. They’re too vague, too simple, and they don’t answer the big questions. If your documentation is unclear, that likely means your thinking is unclear. You’re basically saying, *"I don’t care if you understand this, it works, just use it."* That’s not helpful.
 
 Great documentation answers the tough questions:
 
--   ✅ Why did you choose this approach over another?
+* ✅ Why did you choose this approach over another?
     
--   ✅ Why does this function exist? What problem does it solve?
+* ✅ Why does this function exist? What problem does it solve?
     
--   ✅ Why did you write this code the way you did?
+* ✅ Why did you write this code the way you did?
     
 
 If your docs are just regurgitating how to use the code, you’re not being as helpful as you can be. Start thinking deeper and explaining the reasoning behind everything.
@@ -1190,55 +1209,15 @@ Clean code isn't a nice-to-have –– it's a must-have for those who aim to lea
 
 ## Frequently Asked Questions About Clean Code 🧯
 
-1.  **What is clean code?** It's code that doesn't make you want to throw your laptop out the window.
+1. **What is clean code?** It's code that doesn't make you want to throw your laptop out the window.
     
-2.  **Why is clean code important in Agile?** Because Agile is about speed and change, and you can't be quick with a mess.
+2. **Why is clean code important in Agile?** Because Agile is about speed and change, and you can't be quick with a mess.
     
-3.  **What are code smells?** Signs that you're about to lose control of your codebase.
+3. **What are code smells?** Signs that you're about to lose control of your codebase.
     
-4.  **How can I improve commenting?** Only comment on what's necessary, and make sure each comment adds value, not noise.
+4. **How can I improve commenting?** Only comment on what's necessary, and make sure each comment adds value, not noise.
     
 
-Thank you for being with me. You can visit my [Twitter account][37] or [my website][38] to read more posts about clean code and Agile application development. Until next time… keep improving your codebase.
+Thank you for being with me. You can visit my [Twitter account](https://x.com/shahancd) or [my website](https://www.codewithshahan.com) to read more posts about clean code and Agile application development. Until next time… keep improving your codebase.
 
-If you’re serious about mastering clean code and taking your programming career to the next level, then my book is for you: [**Clean Code Zero to One**][39]. This book is your full guide from zero to one in clean code, from messy code to masterpiece. I am offering a 50% discount using the code "earlybird" — only for the first 50 copies. Plus, there’s a 30-day money-back guarantee — no risk, all reward.
-
-[1]: #heading-the-cost-of-bad-code
-[2]: #heading-clean-coder-vs-messy-coder
-[3]: #heading-ai-cant-save-you-if-your-code-is-a-mess
-[4]: #heading-12-clean-code-design-patterns-for-building-agile-applications
-[5]: #heading-use-names-that-mean-something
-[6]: #heading-keep-functions-laser-focused-srp
-[7]: #heading-use-comments-thoughtfully
-[8]: #heading-best-practices-for-writing-good-comments
-[9]: #heading-make-your-code-readable
-[10]: #heading-test-everything-you-write
-[11]: #heading-use-dependency-injection
-[12]: #heading-clean-project-structures
-[13]: #heading-be-consistent-with-formatting
-[14]: #heading-stop-hardcoding-values
-[15]: #heading-keep-functions-short
-[16]: #heading-follow-the-boy-scout-rule
-[17]: #heading-follow-the-openclosed-principle
-[18]: #heading-modern-best-practices-to-help-you-write-clean-code-a-summary
-[19]: #heading-automated-tools-for-maintaining-clean-code
-[20]: #heading-1-static-analysis
-[21]: #heading-2-automated-code-formatting
-[22]: #heading-3-continuous-integration-ci-testing
-[23]: #heading-4-cicd-pipelines
-[24]: #heading-the-role-of-documentation-in-agile-software-development
-[25]: #heading-conclusion
-[26]: #heading-frequently-asked-questions-about-clean-code
-[27]: http://cisq.org
-[28]: https://www.it-cisq.org/the-cost-of-poor-quality-software-in-the-us-a-2022-report/
-[29]: https://vfunction.com/blog/how-to-manage-technical-debt
-[30]: https://prettier.io/
-[31]: https://eslint.org/
-[32]: https://stackify.com/oop-concept-polymorphism/
-[33]: https://codewithshahan.gumroad.com/l/cleancode-zero-to-one
-[34]: https://eslint.org/
-[35]: https://github.com/features/actions
-[36]: https://www.jenkins.io/
-[37]: https://x.com/shahancd
-[38]: https://www.codewithshahan.com
-[39]: https://codewithshahan.gumroad.com/l/cleancode-zero-to-one
+If you’re serious about mastering clean code and taking your programming career to the next level, then my book is for you: [**Clean Code Zero to One**](https://codewithshahan.gumroad.com/l/cleancode-zero-to-one). This book is your full guide from zero to one in clean code, from messy code to masterpiece. I am offering a 50% discount using the code "earlybird" — only for the first 50 copies. Plus, there’s a 30-day money-back guarantee — no risk, all reward.

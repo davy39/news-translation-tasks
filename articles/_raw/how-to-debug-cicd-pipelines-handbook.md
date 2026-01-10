@@ -1,49 +1,68 @@
 ---
-title: "How to Debug CI/CD Pipelines: A Handbook on Troubleshooting with
-  Observability Tools"
-date: 2025-06-20T16:34:01.032Z
+title: 'How to Debug CI/CD Pipelines: A Handbook on Troubleshooting with Observability
+  Tools'
+subtitle: ''
 author: Opaluwa Emidowojo
-authorURL: https://www.freecodecamp.org/news/author/Tech-On-Diapers/
-originalURL: https://www.freecodecamp.org/news/how-to-debug-cicd-pipelines-handbook/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2025-06-16T23:34:03.425Z'
+originalURL: https://freecodecamp.org/news/how-to-debug-cicd-pipelines-handbook
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1748620971355/d4893ec5-8016-491e-9626-15d971f0c885.png
+tags:
+- name: Devops
+  slug: devops
+- name: observability
+  slug: observability
+- name: '#prometheus'
+  slug: prometheus
+- name: Grafana
+  slug: grafana
+- name: promql
+  slug: promql
+- name: loki
+  slug: loki
+- name: handbook
+  slug: handbook
+seo_title: null
+seo_desc: Observability is a game-changer for CI/CD pipelines, and it’s one of the
+  most exciting aspects of DevOps. When I started working with CI/CD systems, I assumed
+  the hardest part would be building the pipeline. But with increasingly complex setups,
+  the ...
 ---
 
 Observability is a game-changer for CI/CD pipelines, and it’s one of the most exciting aspects of DevOps. When I started working with CI/CD systems, I assumed the hardest part would be building the pipeline. But with increasingly complex setups, the real challenge is debugging failures, like builds crashing or tests failing only in production.
-
-<!-- more -->
 
 Observability tools, such as logs, metrics, and traces, provide the visibility you need to pinpoint issues quickly. In this handbook, we’ll explore free and open-source tools you can use to make your CI/CD pipelines more reliable. We’ll use practical steps to troubleshoot like a pro – no enterprise licenses required.
 
 ## Table of Contents
 
-1.  [Prerequisites][1]
+1. [Prerequisites](#heading-prerequisites)
     
-2.  [Why Observability is Important][2]
+2. [Why Observability is Important](#heading-why-observability-is-important)
     
-3.  [How to Install and Configure Grafana Loki on Budget Infrastructure][3]
+3. [How to Install and Configure Grafana Loki on Budget Infrastructure](#heading-how-to-install-and-configure-grafana-loki-on-budget-infrastructure)
     
-4.  [How to Implement an ELK Stack Alternative for Pipeline Observability][4]
+4. [How to Implement an ELK Stack Alternative for Pipeline Observability](#heading-how-to-implement-an-elk-stack-alternative-for-pipeline-observability)
     
-5.  [How to Create a Unified Logging Strategy Across Pipeline Components][5]
+5. [How to Create a Unified Logging Strategy Across Pipeline Components](#heading-how-to-create-a-unified-logging-strategy-across-pipeline-components)
     
-6.  [How to Query and Analyze Logs for Effective Troubleshooting][6]
+6. [How to Query and Analyze Logs for Effective Troubleshooting](#heading-how-to-query-and-analyze-logs-for-effective-troubleshooting)
     
-7.  [How to Set Up Prometheus Metrics Alongside Your Logs][7]
+7. [How to Set Up Prometheus Metrics Alongside Your Logs](#heading-how-to-set-up-prometheus-metrics-alongside-your-logs)
     
-8.  [How to Create Grafana Dashboards That Combine Metrics and Logs][8]
+8. [How to Create Grafana Dashboards That Combine Metrics and Logs](#heading-how-to-create-grafana-dashboards-that-combine-metrics-and-logs)
     
-9.  [How to Use Exemplars to Jump from Metrics to Relevant Logs][9]
+9. [How to Use Exemplars to Jump from Metrics to Relevant Logs](#heading-how-to-use-exemplars-to-jump-from-metrics-to-relevant-logs)
     
-10.  [How to Diagnose and Fix Common CI/CD Problems][10]
+10. [How to Diagnose and Fix Common CI/CD Problems](#heading-how-to-diagnose-and-fix-common-cicd-problems)
     
-11.  [How to Implement Advanced Debugging Techniques][11]
+11. [How to Implement Advanced Debugging Techniques](#heading-how-to-implement-advanced-debugging-techniques)
     
-12.  [How to Conduct Effective Postmortems Using Logs][12]
+12. [How to Conduct Effective Postmortems Using Logs](#heading-how-to-conduct-effective-postmortems-using-logs)
     
-13.  [How to Optimize Log Storage and Management][13]
+13. [How to Optimize Log Storage and Management](#heading-how-to-optimize-log-storage-and-management)
     
-14.  [Conclusion][14]
+14. [Conclusion](#heading-conclusion)
     
 
 ### Prerequisites
@@ -52,48 +71,48 @@ There are some things you should know and have to get the most out of this handb
 
 #### Technical Knowledge:
 
--   Basic understanding of [CI/CD pipelines][15] (for example, build, test, deploy stages).
+* Basic understanding of [CI/CD pipelines](https://www.freecodecamp.org/news/what-is-ci-cd/) (for example, build, test, deploy stages).
     
--   Familiarity with [Linux/Unix commands][16] (for example, `mkdir`, `grep`, `curl`).
+* Familiarity with [Linux/Unix commands](https://www.freecodecamp.org/news/helpful-linux-commands-you-should-know/) (for example, `mkdir`, `grep`, `curl`).
     
--   Comfortable with [Docker basics][17] (for example, `docker run`, `docker-compose up`).
+* Comfortable with [Docker basics](https://www.freecodecamp.org/news/the-docker-handbook/) (for example, `docker run`, `docker-compose up`).
     
--   Optional: Awareness of [observability concepts][18] (logs, metrics, traces) or YAML configuration.
+* Optional: Awareness of [observability concepts](https://www.freecodecamp.org/news/observability-in-cloud-native-applications/) (logs, metrics, traces) or YAML configuration.
     
 
 #### Software and Tools:
 
--   **Docker and Docker Compose**: Installed and running (verify with `docker --version` and `docker-compose --version`).
+* **Docker and Docker Compose**: Installed and running (verify with `docker --version` and `docker-compose --version`).
     
--   **CI/CD Platform**: Access to GitHub Actions, Jenkins, or GitLab CI with a sample pipeline that generates logs.
+* **CI/CD Platform**: Access to GitHub Actions, Jenkins, or GitLab CI with a sample pipeline that generates logs.
     
--   **Text Editor**: For editing YAML files (for example, VS Code, Nano).
+* **Text Editor**: For editing YAML files (for example, VS Code, Nano).
     
--   **Web Browser**: To access tool UIs (for example, Grafana on port 3000, Kibana on 5601).
+* **Web Browser**: To access tool UIs (for example, Grafana on port 3000, Kibana on 5601).
     
--   Optional: `curl` for testing log forwarding, Git for version control.
+* Optional: `curl` for testing log forwarding, Git for version control.
     
 
 #### Hardware and Infrastructure:
 
--   Machine with:
+* Machine with:
     
-    -   OS: Linux, Windows (with WSL2), or macOS.
+    * OS: Linux, Windows (with WSL2), or macOS.
         
-    -   4GB RAM (8GB recommended), 20GB free disk space.
+    * 4GB RAM (8GB recommended), 20GB free disk space.
         
-    -   Stable internet and ability to open ports (for example, 3100 for Loki, 9200 for Elasticsearch).
+    * Stable internet and ability to open ports (for example, 3100 for Loki, 9200 for Elasticsearch).
         
--   Optional: Cloud provider access (for example, AWS, GCP) for scalable setups.
+* Optional: Cloud provider access (for example, AWS, GCP) for scalable setups.
     
 
 #### Access and Permissions:
 
--   Admin access to install Docker and configure CI/CD tools.
+* Admin access to install Docker and configure CI/CD tools.
     
--   Permissions to modify pipeline configs (for example, `.github/workflows`, `.gitlab-ci.yml`).
+* Permissions to modify pipeline configs (for example, `.github/workflows`, `.gitlab-ci.yml`).
     
--   Optional: Container registry access (for example, Docker Hub) for custom images.
+* Optional: Container registry access (for example, Docker Hub) for custom images.
     
 
 ## **Why Observability is Important**
@@ -102,32 +121,32 @@ Modern CI/CD pipelines are no longer linear scripts – they are now complex, di
 
 So when something breaks, you’re left chasing logs across tools, guessing where the issue originated, and wasting hours trying to reproduce it.
 
-And worse still, traditional debugging tools often stop at the surface, only showing failed jobs without the context of _why_ they failed or _where_ in the system the fault actually lies.
+And worse still, traditional debugging tools often stop at the surface, only showing failed jobs without the context of *why* they failed or *where* in the system the fault actually lies.
 
 Observability flips the script. Instead of hunting through disconnected logs or rerunning failed builds blindly, observability gives you **insight**, not just data. By combining structured logs, metrics, and traces, you can:
 
--   Reconstruct exactly what happened in a pipeline failure
+* Reconstruct exactly what happened in a pipeline failure
     
--   Trace a failure across CI agents, deployment steps, and containers
+* Trace a failure across CI agents, deployment steps, and containers
     
--   Visualize patterns and anomalies before they become outages
+* Visualize patterns and anomalies before they become outages
     
 
 More importantly, observability helps you **move from reactive debugging to proactive prevention**.
 
 Here’s what you’ll learn about and accomplish in this guide:
 
--   Set up cost-effective observability using Grafana Loki, lightweight ELK, and OpenTelemetry
+* Set up cost-effective observability using Grafana Loki, lightweight ELK, and OpenTelemetry
     
--   Create a unified logging strategy to connect your pipeline
+* Create a unified logging strategy to connect your pipeline
     
--   Write precise queries to quickly pinpoint root causes, correlate logs, metrics, and traces for comprehensive debugging
+* Write precise queries to quickly pinpoint root causes, correlate logs, metrics, and traces for comprehensive debugging
     
--   Troubleshoot CI/CD issues like build failures, flaky tests, and container crashes
+* Troubleshoot CI/CD issues like build failures, flaky tests, and container crashes
     
--   Build custom dashboards and automated diagnostic tools
+* Build custom dashboards and automated diagnostic tools
     
--   Promote observability through documentation and post-mortems
+* Promote observability through documentation and post-mortems
     
 
 Whether you're a solo developer or part of a DevOps team, this guide will transform your chaotic CI/CD pipelines into clear, reliable, and observable systems.
@@ -144,11 +163,11 @@ Here’s a quick comparison of Grafana Loki, Lightweight ELK, and Vector for CI/
 
 How to choose:
 
--   **Loki**: Ideal for startups or solo devs with limited resources. Integrates well with Prometheus/Grafana.
+* **Loki**: Ideal for startups or solo devs with limited resources. Integrates well with Prometheus/Grafana.
     
--   **ELK**: Best for teams needing Kibana’s advanced visualizations or handling large log volumes.
+* **ELK**: Best for teams needing Kibana’s advanced visualizations or handling large log volumes.
     
--   **Vector**: Great for lightweight log forwarding in distributed CI/CD setups.
+* **Vector**: Great for lightweight log forwarding in distributed CI/CD setups.
     
 
 **Grafana Loki** is a log aggregation system like ELK, but it's more lightweight, and it’s ideal for CI/CD pipelines with limited infrastructure.
@@ -157,103 +176,103 @@ How to choose:
 
 ### 🛠 Option A: Quick Docker Setup (Recommended for Budget Infra)
 
-1.  **Create a directory for configuration:**
+1. **Create a directory for configuration:**
     
-    ```
-     mkdir -p ~/loki-setup && cd ~/loki-setup
-    ```
-    
-2.  **Create a** `docker-compose.yml`:
-    
-    ```
-     # Defines a Docker Compose setup for Grafana Loki and Promtail to aggregate and scrape logs efficiently.
-     version: "3"
-    
-     services:
-       loki:
-         image: grafana/loki:2.9.4  # Uses Loki version 2.9.4 for lightweight log aggregation.
-         ports:
-           - "3100:3100"  # Exposes Loki’s HTTP API port for log ingestion and queries.
-         command: -config.file=/etc/loki/loki-config.yaml  # Specifies the configuration file for Loki.
-         volumes:
-           - ./loki-config.yaml:/etc/loki/loki-config.yaml  # Mounts the local config file into the container.
-    
-       promtail:
-         image: grafana/promtail:2.9.4  # Uses Promtail version 2.9.4 to scrape and forward logs to Loki.
-         volumes:
-           - /var/log:/var/log  # Mounts the host’s log directory for Promtail to scrape.
-           - ./promtail-config.yaml:/etc/promtail/promtail-config.yaml  # Mounts the Promtail config file.
-         command: -config.file=/etc/promtail/promtail-config.yaml  # Specifies the configuration file for Promtail.
+    ```bash
+    mkdir -p ~/loki-setup && cd ~/loki-setup
     ```
     
-3.  **Create a basic** `loki-config.yaml`:
+2. **Create a** `docker-compose.yml`:
     
-    ```
-     # Configures Grafana Loki for lightweight log storage and querying in a CI/CD environment.
-     auth_enabled: false  # Disables authentication for simplicity (not recommended for production).
+    ```yaml
+    # Defines a Docker Compose setup for Grafana Loki and Promtail to aggregate and scrape logs efficiently.
+    version: "3"
     
-     server:
-       http_listen_port: 3100  # Sets the port for Loki’s HTTP API.
+    services:
+      loki:
+        image: grafana/loki:2.9.4  # Uses Loki version 2.9.4 for lightweight log aggregation.
+        ports:
+          - "3100:3100"  # Exposes Loki’s HTTP API port for log ingestion and queries.
+        command: -config.file=/etc/loki/loki-config.yaml  # Specifies the configuration file for Loki.
+        volumes:
+          - ./loki-config.yaml:/etc/loki/loki-config.yaml  # Mounts the local config file into the container.
     
-     ingester:
-       lifecycler:
-         ring:
-           kvstore:
-             store: inmemory  # Uses in-memory storage for the ring, suitable for small setups.
-           replication_factor: 1  # Sets single replica for minimal resource use.
-       chunk_idle_period: 3m  # Flushes chunks to storage after 3 minutes of inactivity.
-       max_chunk_age: 1h  # Retires chunks after 1 hour to balance storage and query performance.
-    
-     schema_config:
-       configs:
-         - from: 2023-01-01  # Defines the schema start date.
-           store: boltdb-shipper  # Uses BoltDB for indexing logs.
-           object_store: filesystem  # Stores logs on the local filesystem.
-           schema: v11  # Specifies schema version for log storage.
-           index:
-             prefix: index_  # Prefix for index files.
-             period: 24h  # Rotates indexes daily.
-    
-     storage_config:
-       boltdb_shipper:
-         active_index_directory: /tmp/loki/index  # Directory for active index files.
-         cache_location: /tmp/loki/boltdb-cache  # Cache location for BoltDB.
-       filesystem:
-         directory: /tmp/loki/chunks  # Directory for storing log chunks.
-    
-     limits_config:
-       enforce_metric_name: false  # Disables strict metric name enforcement for flexibility.
+      promtail:
+        image: grafana/promtail:2.9.4  # Uses Promtail version 2.9.4 to scrape and forward logs to Loki.
+        volumes:
+          - /var/log:/var/log  # Mounts the host’s log directory for Promtail to scrape.
+          - ./promtail-config.yaml:/etc/promtail/promtail-config.yaml  # Mounts the Promtail config file.
+        command: -config.file=/etc/promtail/promtail-config.yaml  # Specifies the configuration file for Promtail.
     ```
     
-4.  **Create a basic** `promtail-config.yaml`:
+3. **Create a basic** `loki-config.yaml`:
     
+    ```yaml
+    # Configures Grafana Loki for lightweight log storage and querying in a CI/CD environment.
+    auth_enabled: false  # Disables authentication for simplicity (not recommended for production).
+    
+    server:
+      http_listen_port: 3100  # Sets the port for Loki’s HTTP API.
+    
+    ingester:
+      lifecycler:
+        ring:
+          kvstore:
+            store: inmemory  # Uses in-memory storage for the ring, suitable for small setups.
+          replication_factor: 1  # Sets single replica for minimal resource use.
+      chunk_idle_period: 3m  # Flushes chunks to storage after 3 minutes of inactivity.
+      max_chunk_age: 1h  # Retires chunks after 1 hour to balance storage and query performance.
+    
+    schema_config:
+      configs:
+        - from: 2023-01-01  # Defines the schema start date.
+          store: boltdb-shipper  # Uses BoltDB for indexing logs.
+          object_store: filesystem  # Stores logs on the local filesystem.
+          schema: v11  # Specifies schema version for log storage.
+          index:
+            prefix: index_  # Prefix for index files.
+            period: 24h  # Rotates indexes daily.
+    
+    storage_config:
+      boltdb_shipper:
+        active_index_directory: /tmp/loki/index  # Directory for active index files.
+        cache_location: /tmp/loki/boltdb-cache  # Cache location for BoltDB.
+      filesystem:
+        directory: /tmp/loki/chunks  # Directory for storing log chunks.
+    
+    limits_config:
+      enforce_metric_name: false  # Disables strict metric name enforcement for flexibility.
     ```
-     # Configures Promtail to scrape system logs and forward them to Loki.
-     server:
-       http_listen_port: 9080  # Sets Promtail’s HTTP port for metrics and health checks.
-       grpc_listen_port: 0  # Disables gRPC to reduce resource usage.
     
-     positions:
-       filename: /tmp/positions.yaml  # Stores the position of scraped logs to resume after restarts.
+4. **Create a basic** `promtail-config.yaml`:
     
-     clients:
-       - url: http://loki:3100/loki/api/v1/push  # Specifies the Loki endpoint for log ingestion.
+    ```yaml
+    # Configures Promtail to scrape system logs and forward them to Loki.
+    server:
+      http_listen_port: 9080  # Sets Promtail’s HTTP port for metrics and health checks.
+      grpc_listen_port: 0  # Disables gRPC to reduce resource usage.
     
-     scrape_configs:
-       - job_name: system  # Defines a scraping job for system logs.
-         static_configs:
-           - targets:
-               - localhost  # Targets the local host for log collection.
-             labels:
-               job: varlogs  # Labels logs for easy querying in Loki.
-               __path__: /var/log/*.log  # Scrapes all log files in /var/log directory.
+    positions:
+      filename: /tmp/positions.yaml  # Stores the position of scraped logs to resume after restarts.
+    
+    clients:
+      - url: http://loki:3100/loki/api/v1/push  # Specifies the Loki endpoint for log ingestion.
+    
+    scrape_configs:
+      - job_name: system  # Defines a scraping job for system logs.
+        static_configs:
+          - targets:
+              - localhost  # Targets the local host for log collection.
+            labels:
+              job: varlogs  # Labels logs for easy querying in Loki.
+              __path__: /var/log/*.log  # Scrapes all log files in /var/log directory.
     ```
     
-5.  **Run it:**
+5. **Run it:**
     
-    ```
-     # Starts the Loki and Promtail containers in detached mode for background operation.
-     docker-compose up -d
+    ```bash
+    # Starts the Loki and Promtail containers in detached mode for background operation.
+    docker-compose up -d
     ```
     
 
@@ -263,15 +282,18 @@ How to choose:
 
 If Loki or Promtail fails to start, one of the following may be the issue:
 
-1.  **Container crashes**: Check logs with `docker logs loki` or `docker logs promtail`. Look for errors like _“out of memory”_ or _“port already in use.”_
+1. **Container crashes**: Check logs with `docker logs loki` or `docker logs promtail`. Look for errors like *“out of memory”* or *“port already in use.”*
     
-    -   Fix: Increase memory (for example, `docker-compose.yml` resource limits) or change ports (e.g., `3101:3100`).
-2.  **Logs not ingested**: Verify Promtail is scraping the correct path (`/var/log/ci/*.log`) using `docker exec promtail cat /etc/promtail/promtail-config.yaml`
+    * Fix: Increase memory (for example, `docker-compose.yml` resource limits) or change ports (e.g., `3101:3100`).
+        
+2. **Logs not ingested**: Verify Promtail is scraping the correct path (`/var/log/ci/*.log`) using `docker exec promtail cat /etc/promtail/promtail-config.yaml`
     
-    -   Fix: Update `__path__` in `promtail-config.yaml` to match your CI/CD log directory.
-3.  **Resource Constraints**: Monitor resource usage with `docker stats` or `top` on the host.
+    * Fix: Update `__path__` in `promtail-config.yaml` to match your CI/CD log directory.
+        
+3. **Resource Constraints**: Monitor resource usage with `docker stats` or `top` on the host.
     
-    -   Fix: Ensure your machine has at least 4GB RAM and 20GB disk space, as specified in the prerequisites.
+    * Fix: Ensure your machine has at least 4GB RAM and 20GB disk space, as specified in the prerequisites.
+        
 
 ### Configuration for CI/CD Logging
 
@@ -283,7 +305,7 @@ For example, GitHub Actions with a custom runner can write logs to `/var/log/gha
 
 Update Promtail:
 
-```
+```yaml
 # Configures Promtail to scrape logs from GitHub Actions runners for CI/CD observability.
 scrape_configs:
   - job_name: github_actions  # Defines a scraping job for GitHub Actions logs.
@@ -300,7 +322,7 @@ Make sure your CI/CD tools or scripts output logs in structured format:
 
 Example:
 
-```
+```json
 # Example of a structured JSON log for CI/CD pipelines, enabling easy parsing and querying.
 {
   "timestamp": "2025-05-10T13:00:00Z",  # UTC timestamp for log entry.
@@ -324,14 +346,14 @@ Your CI agents write log files to disk, and Promtail (running on the same machin
 
 If your CI agents run in Docker containers, you install a special Loki plugin that automatically captures all container output and sends it directly to Loki without needing separate log files.
 
-```
+```bash
 # Installs the Loki Docker logging driver to send container logs directly to Loki.
 docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all-permissions
 ```
 
 Then run your agent container:
 
-```
+```bash
 # Runs a CI agent container with the Loki logging driver to forward logs.
 docker run --log-driver=loki \
   --log-opt loki-url="http://<your-loki-host>:3100/loki/api/v1/push" \
@@ -340,7 +362,7 @@ docker run --log-driver=loki \
 
 #### Option 3 – Remote setup:
 
-If you can't install Promtail locally, you can use a log forwarding tool like [Fluent Bit][19] or [Vector][20] to collect logs and push them to Loki over the network.
+If you can't install Promtail locally, you can use a log forwarding tool like [Fluent Bit](https://fluentbit.io/) or [Vector](https://vector.dev/) to collect logs and push them to Loki over the network.
 
 **The goal:** Regardless of which option you choose, you’ll end up with all your CI pipeline logs centralized in Loki, where you can search through them, create dashboards in Grafana, and set up alerts when things go wrong.
 
@@ -358,7 +380,7 @@ Goal: Stand up a minimal yet functional ELK stack for debugging CI/CD pipelines.
 
 Create a `docker-compose.yml`:
 
-```
+```yaml
 # Defines a Docker Compose setup for a lightweight ELK stack to aggregate and visualize CI/CD logs.
 version: '3.7'
 
@@ -397,7 +419,7 @@ volumes:
 
 #### 2\. Minimal Logstash pipeline configuration (logstash.conf)
 
-```
+```javascript
 // Configures Logstash to process and forward CI/CD logs to Elasticsearch.
 input {
   beats {
@@ -423,15 +445,18 @@ output {
 
 If Elasticsearch, Logstash, or Kibana fails to start, one of the following might be the issue:
 
-1.  **Container crashes**: Check logs with `docker logs elasticsearch`, `docker logs logstash`, or `docker logs kibana`. Look for errors like _“insufficient disk space”_ or _“port conflict”_ (for example, 9200, 5601).
+1. **Container crashes**: Check logs with `docker logs elasticsearch`, `docker logs logstash`, or `docker logs kibana`. Look for errors like *“insufficient disk space”* or *“port conflict”* (for example, 9200, 5601).
     
-    -   Fix: Free up disk space (ensure at least 20GB available) or change ports in `docker-compose.yml` (for example, `9201:9200`).
-2.  **Logs not ingested**: Verify Logstash is receiving data from Filebeat or Vector using `docker logs logstash`. Check the `logstash.conf` input port (for example, 5044).
+    * Fix: Free up disk space (ensure at least 20GB available) or change ports in `docker-compose.yml` (for example, `9201:9200`).
+        
+2. **Logs not ingested**: Verify Logstash is receiving data from Filebeat or Vector using `docker logs logstash`. Check the `logstash.conf` input port (for example, 5044).
     
-    -   Fix: Ensure Filebeat or Vector is configured to send to the correct Logstash endpoint (e.g., `localhost:5044`) and update if needed.
-3.  **Resource constraints**: Monitor resource usage with Docker stats or top on the host.
+    * Fix: Ensure Filebeat or Vector is configured to send to the correct Logstash endpoint (e.g., `localhost:5044`) and update if needed.
+        
+3. **Resource constraints**: Monitor resource usage with Docker stats or top on the host.
     
-    -   Fix: Allocate at least 8GB RAM and 30GB disk space, as Elasticsearch requires more resources than Loki. Adjust memory limits in `docker-compose.yml` if necessary.
+    * Fix: Allocate at least 8GB RAM and 30GB disk space, as Elasticsearch requires more resources than Loki. Adjust memory limits in `docker-compose.yml` if necessary.
+        
 
 ### How to Configure Log Shippers for Different CI/CD Components
 
@@ -439,11 +464,11 @@ Goal: Get logs from your pipeline into Logstash or Elasticsearch.
 
 #### Option 1: Use Filebeat (lightweight log shipper)
 
-Install [Filebeat][21] on your CI/CD hosts (GitHub runner, Jenkins node, GitLab runner, and so on).
+Install [Filebeat](https://www.elastic.co/beats/filebeat) on your CI/CD hosts (GitHub runner, Jenkins node, GitLab runner, and so on).
 
 Filebeat config snippet (filebeat.yml):
 
-```
+```yaml
 # Configures Filebeat to collect CI/CD logs and forward them to Logstash.
 filebeat.inputs:
   - type: log  # Specifies log file input.
@@ -457,7 +482,7 @@ output.logstash:
 
 Then run:
 
-```
+```bash
 # Runs Filebeat with the specified configuration file for log collection.
 filebeat -e -c filebeat.yml
 ```
@@ -466,7 +491,7 @@ filebeat -e -c filebeat.yml
 
 Vector configuration (vector.toml):
 
-```
+```toml
 # Configures Vector to collect, parse, and forward CI/CD logs to Elasticsearch efficiently.
 [sources.ci_logs]
   type = "file"  # Specifies file-based log collection.
@@ -488,7 +513,7 @@ Vector configuration (vector.toml):
 
 Run:
 
-```
+```bash
 # Runs Vector with the specified configuration file for log processing.
 vector -c vector.toml
 ```
@@ -497,29 +522,29 @@ vector -c vector.toml
 
 Goal: Make CI/CD logs queryable and visual in Kibana.
 
-#### 1\. Open Kibana ([http://localhost:5601][22])
+#### 1\. Open Kibana ([http://localhost:5601](http://localhost:5601/))
 
--   Go to **Stack Management → Index Patterns**
+* Go to **Stack Management → Index Patterns**
     
--   Create a new pattern: `ci-logs-*`
+* Create a new pattern: `ci-logs-*`
     
--   Choose a time field like `@timestamp`
+* Choose a time field like `@timestamp`
     
 
 #### 2\. Visualizations for Common CI/CD Use Cases
 
--   **Bar charts**: Number of failed vs passed builds per day
+* **Bar charts**: Number of failed vs passed builds per day
     
--   **Pie chart**: Top error types or most frequent failing test names
+* **Pie chart**: Top error types or most frequent failing test names
     
--   **Line chart**: Duration of builds over time (if duration is logged)
+* **Line chart**: Duration of builds over time (if duration is logged)
     
 
 #### 3\. Saved Searches & Dashboards
 
 You can save a search like this:
 
-```
+```javascript
 message: "error" AND job_name: "build"
 ```
 
@@ -539,20 +564,20 @@ There are also some best practices you should follow when formatting logs:
 
 There are also some key fields you should include:
 
--   `timestamp`: The time the log entry was created (preferably in UTC).
+* `timestamp`: The time the log entry was created (preferably in UTC).
     
--   `log_level`: Indicate whether the log is an `INFO`, `ERROR`, `DEBUG`, and so on.
+* `log_level`: Indicate whether the log is an `INFO`, `ERROR`, `DEBUG`, and so on.
     
--   `service`: The service or component generating the log.
+* `service`: The service or component generating the log.
     
--   `message`: A concise description of the event or error.
+* `message`: A concise description of the event or error.
     
--   `correlation_id`: A unique identifier for requests to trace logs across systems.
+* `correlation_id`: A unique identifier for requests to trace logs across systems.
     
 
 Here’s an example of a consistent log in JSON format:
 
-```
+```json
 {
   "timestamp": "2025-05-10T12:34:56Z",
   "log_level": "ERROR",
@@ -572,7 +597,7 @@ For GitHub Actions, you can configure workflows to write logs to a file or send 
 You can store logs in files and then forward them to a logging system (like Loki or Elasticsearch).  
 Here’s an example in a GitHub Action workflow:
 
-```
+```yaml
 # Defines a GitHub Actions workflow to run tests and forward logs for observability.
 jobs:
   build:
@@ -597,14 +622,14 @@ Jenkins logs can be forwarded to external systems (like Elasticsearch or Loki) b
 
 **You can use the Logstash Plugin** to forward Jenkins logs to an ELK stack or other systems:
 
--   Install the Logstash plugin on Jenkins.
+* Install the Logstash plugin on Jenkins.
     
--   Configure the plugin to forward logs to an Elasticsearch server or a logging system of choice.
+* Configure the plugin to forward logs to an Elasticsearch server or a logging system of choice.
     
--   In Jenkins, add log forwarding configurations:
+* In Jenkins, add log forwarding configurations:
     
 
-```
+```javascript
 pipeline {
   agent any
   stages {
@@ -623,7 +648,7 @@ pipeline {
 **Forward to Loki:**  
 Jenkins supports the `loki` logging driver for containers if running Jenkins in Docker. You can send logs directly to Loki using this driver:
 
-```
+```bash
 # Runs a Jenkins container with the Loki logging driver to send logs directly to Loki.
 docker run --log-driver=loki --log-opt loki-url=http://loki:3100 jenkins/jenkins:lts
 ```
@@ -635,7 +660,7 @@ GitLab CI allows logs to be forwarded to external systems for centralized collec
 **Use GitLab CI/CD to Output Logs**:  
 Example in `.gitlab-ci.yml`:
 
-```
+```yaml
 # Defines a GitLab CI/CD pipeline to run a build and forward logs to Loki.
 stages:
   - build
@@ -666,7 +691,7 @@ Many logging libraries (for example, `winston` for Node.js, `log4j` for Java) su
 
 Here’s an example in Node.js (using `winston`):
 
-```
+```javascript
 // Sets up Winston for structured logging with correlation IDs in a CI/CD pipeline.
 const { createLogger, transports, format } = require('winston');
 const { printf } = format;
@@ -694,7 +719,7 @@ logger.info('Pipeline execution started');
 
 In CI/CD tools, you can configure your pipeline to inject the correlation ID into logs. For example, in GitHub Actions, you can generate a correlation ID in the `env` section and propagate it in each job:
 
-```
+```yaml
 # Defines a GitHub Actions workflow that includes a correlation ID for log tracing.
 jobs:
   build:
@@ -714,13 +739,13 @@ You’ll want to make sure that logs from all components in the pipeline (GitHub
 
 #### Visualize Your Log Flow
 
-You can create a diagram showing how logs move from your CI/CD tool (for example, GitHub Actions) to Promtail/Vector, then to Loki/Elasticsearch, and finally to Grafana/Kibana for visualization. Use tools like [Draw.io][23] to map your pipeline’s observability flow
+You can create a diagram showing how logs move from your CI/CD tool (for example, GitHub Actions) to Promtail/Vector, then to Loki/Elasticsearch, and finally to Grafana/Kibana for visualization. Use tools like [Draw.io](http://Draw.io) to map your pipeline’s observability flow
 
 ## How to Query and Analyze Logs for Effective Troubleshooting
 
 In this section, you’ll learn how to use LogQL (Loki's query language) to cut through the noise and find the specific logs that matter. Whether you're hunting down a mysterious build failure or tracking deployment issues across multiple services, these query patterns always help.
 
-![Bar chart showing CI/CD build results from May 20-26, 2025. Blue bars represent successful builds ranging from 39-52 per day, while red bars show failed builds ranging from 1-9 per day. The chart demonstrates consistently high success rates with low failure rates throughout the week, with May 23 showing the highest failure count at 9 builds.](https://cdn.hashnode.com/res/hashnode/image/upload/v1748224707087/d348accc-0ef8-4ebb-9cb9-49995404b0ec.png)
+![Bar chart showing CI/CD build results from May 20-26, 2025. Blue bars represent successful builds ranging from 39-52 per day, while red bars show failed builds ranging from 1-9 per day. The chart demonstrates consistently high success rates with low failure rates throughout the week, with May 23 showing the highest failure count at 9 builds.](https://cdn.hashnode.com/res/hashnode/image/upload/v1748224707087/d348accc-0ef8-4ebb-9cb9-49995404b0ec.png align="center")
 
 This bar chart illustrates the CI/CD build performance from May 20 to May 26, 2025. It compares the number of successful builds (in blue) to failed builds (in pink) each day. Successful builds consistently range between 40 and 50, while failed builds peak at 10 on May 23, with other days showing 2 to 8 failures. This indicates a generally stable pipeline with occasional issues.
 
@@ -732,7 +757,7 @@ LogQL is Grafana Loki's query language, designed for querying logs with a syntax
 
 **1\. Log Streams:**
 
-```
+```javascript
 {job="ci_cd", level="error"}
 ```
 
@@ -740,7 +765,7 @@ This query retrieves logs where the `job` label is `ci_cd` and the `level` label
 
 **2\. Log Filters:**
 
-```
+```javascript
 {job="ci_cd"} |= "build failed"
 ```
 
@@ -748,7 +773,7 @@ The `|=` operator filters logs to include only those that contain the specified 
 
 **3\. Regular Expressions:**
 
-```
+```javascript
 {job="ci_cd"} |~ "error.*timeout"
 ```
 
@@ -760,7 +785,7 @@ This uses the `|~` operator to filter logs using a regular expression. In this c
 
 If your pipeline uses a specific label for build names:
 
-```
+```javascript
 {job="ci_cd", build="build123"} |= "failure"
 ```
 
@@ -770,13 +795,13 @@ This finds logs related to the `build123` job that contain the word "failure".
 
 To find error logs in the last 15 minutes:
 
-```
+```javascript
 {job="ci_cd", level="error"} | "build failed" | range(start="15m")
 ```
 
 To group logs by job and error type:
 
-```
+```javascript
 sum by (job) (count_over_time({job="ci_cd", level="error"}[5m]))
 ```
 
@@ -790,7 +815,7 @@ This will return the count of error logs per job, grouped by job name, over the 
 
 If your CI system logs contain build errors, you can identify them with:
 
-```
+```javascript
 {job="ci_cd", level="error"} |= "build failed"
 ```
 
@@ -800,7 +825,7 @@ You can extend this to filter by specific steps or stages, for example, “test 
 
 Logs from your test runner (for example, Jest, Mocha, JUnit) can contain specific failure messages:
 
-```
+```javascript
 {job="ci_cd", stage="test"} |= "test failed"
 ```
 
@@ -808,13 +833,13 @@ Logs from your test runner (for example, Jest, Mocha, JUnit) can contain specifi
 
 If your pipeline is failing due to missing or conflicting dependencies, look for `npm`, `maven`, or `docker` related errors:
 
-```
+```javascript
 {job="ci_cd", image="node"} |= "npm ERR!"
 ```
 
 Or for Maven-related issues:
 
-```
+```javascript
 {job="ci_cd", image="maven"} |= "[ERROR]"
 ```
 
@@ -822,13 +847,13 @@ Or for Maven-related issues:
 
 If you experience resource constraints, you might see logs like "OutOfMemoryError":
 
-```
+```javascript
 {job="ci_cd", level="error"} |= "OutOfMemoryError"
 ```
 
 **Example of combining filters:**
 
-```
+```javascript
 {job="ci_cd", level="error"} |= "build failed" |~ "timeout|dependency" | range(start="1h")
 ```
 
@@ -844,7 +869,7 @@ Alerts help detect recurring issues proactively. They notify you when a specific
 
 First, define the log pattern you want to monitor. For example, an alert for build failures:
 
-```
+```javascript
 {job="ci_cd", level="error"} |= "build failed"
 ```
 
@@ -852,15 +877,15 @@ First, define the log pattern you want to monitor. For example, an alert for bui
 
 Follow these steps to set up Grafana alerts:
 
--   Go to your Grafana dashboard.
+* Go to your Grafana dashboard.
     
--   Choose the panel you want to set the alert on (or create a new panel for this purpose).
+* Choose the panel you want to set the alert on (or create a new panel for this purpose).
     
--   In the panel, click the **Alert** tab.
+* In the panel, click the **Alert** tab.
     
--   Set the **Query** field to your LogQL query, such as the one above.
+* Set the **Query** field to your LogQL query, such as the one above.
     
--   Under **Conditions**, define when the alert should trigger, e.g., if the error occurs more than `3` times within `5 minutes`.
+* Under **Conditions**, define when the alert should trigger, e.g., if the error occurs more than `3` times within `5 minutes`.
     
 
 **3\. Alert Settings:**
@@ -869,7 +894,7 @@ Now you’ll want to set up the alert evaluation interval and conditions for tri
 
 **Here’s an example:** Trigger an alert if the number of errors exceeds 5 within 5 minutes:
 
-```
+```javascript
 count_over_time({job="ci_cd", level="error"} |= "build failed"[5m]) > 5
 ```
 
@@ -879,7 +904,7 @@ You can choose where you want the alert to be sent (like to Slack, email, or Pag
 
 **Example alert query for test failures:**
 
-```
+```javascript
 count_over_time({job="ci_cd", stage="test"} |= "test failed"[5m]) > 3
 ```
 
@@ -891,30 +916,30 @@ Kibana Query Language (KQL) is a powerful tool for searching and filtering logs 
 
 #### Basic Query Syntax:
 
--   **Field:**
+* **Field:**
     
-    ```
-      textCopyEditfieldname:value
+    ```javascript
+    textCopyEditfieldname:value
     ```
     
     Example: `status: "failure"`
     
--   **Wildcard:** Use `*` to match any number of characters:
+* **Wildcard:** Use `*` to match any number of characters:
     
-    ```
-      textCopyEditmessage: "test*"
-    ```
-    
--   **Range Queries:** To search for logs within a specific time frame:
-    
-    ```
-      textCopyEdittimestamp:[2023-05-01 TO 2023-05-15]
+    ```javascript
+    textCopyEditmessage: "test*"
     ```
     
--   **Boolean Queries:** Combine queries using `AND`, `OR`, and `NOT`:
+* **Range Queries:** To search for logs within a specific time frame:
     
+    ```javascript
+    textCopyEdittimestamp:[2023-05-01 TO 2023-05-15]
     ```
-      textCopyEditstatus: "failure" AND build_id: "12345"
+    
+* **Boolean Queries:** Combine queries using `AND`, `OR`, and `NOT`:
+    
+    ```javascript
+    textCopyEditstatus: "failure" AND build_id: "12345"
     ```
     
 
@@ -922,7 +947,7 @@ Kibana Query Language (KQL) is a powerful tool for searching and filtering logs 
 
 Since CI/CD logs are often tied to time-sensitive operations (builds, deployments), KQL allows you to filter logs by time:
 
-```
+```javascript
 textCopyEdit@timestamp:[now-1d TO now]
 ```
 
@@ -930,7 +955,7 @@ textCopyEdit@timestamp:[now-1d TO now]
 
 CI/CD logs can have nested or multi-level structures (for example, logs within containers). You can query these nested fields:
 
-```
+```javascript
 textCopyEditpipeline.logs.message: "build failed"
 ```
 
@@ -938,7 +963,7 @@ textCopyEditpipeline.logs.message: "build failed"
 
 You can aggregate logs based on certain fields to identify trends or recurring issues:
 
-```
+```javascript
 textCopyEditterms aggregation on "status" field
 ```
 
@@ -948,7 +973,7 @@ This helps identify the most common failure statuses in your pipeline.
 
 When debugging specific components like a build tool or deployment step, you can filter by those component-specific fields:
 
-```
+```javascript
 textCopyEditbuild_tool: "Jenkins" AND status: "failure"
 ```
 
@@ -964,14 +989,14 @@ Run your desired query in the Kibana Discover tab. Click on the “Save” butto
 
 Create saved searches that focus on specific recurring issues like:
 
--   Build failures based on a specific tool or version.
+* Build failures based on a specific tool or version.
     
--   Test failures within a particular module or set of tests.
+* Test failures within a particular module or set of tests.
     
 
 Example search for “flaky tests”:
 
-```
+```javascript
 textCopyEdittest_status: "failed" AND error_message: "*timeout*"
 ```
 
@@ -979,11 +1004,11 @@ textCopyEdittest_status: "failed" AND error_message: "*timeout*"
 
 You can save multiple variations of queries based on different error types or CI/CD tools:
 
--   **Failed Jobs:** `status: "failure"`
+* **Failed Jobs:** `status: "failure"`
     
--   **Test Failures in Build:** `log_type: "test" AND status: "failure"`
+* **Test Failures in Build:** `log_type: "test" AND status: "failure"`
     
--   **Resource Constraints:** `error_message: "*memory*"`
+* **Resource Constraints:** `error_message: "*memory*"`
     
 
 These saved searches will allow you to quickly troubleshoot specific issues that occur frequently.
@@ -996,22 +1021,22 @@ Once you have saved searches, Kibana allows you to create visualizations from yo
 
 Go to the **Visualize** tab in Kibana. Select the appropriate visualization type. Common visualizations for debugging CI/CD pipelines include:
 
--   **Line Chart:** Track build failure rates over time.
+* **Line Chart:** Track build failure rates over time.
     
--   **Bar Chart:** Show the number of failures per CI tool or service.
+* **Bar Chart:** Show the number of failures per CI tool or service.
     
--   **Pie Chart:** Breakdown of failure reasons (for example, compilation errors, test failures, resource constraints).
+* **Pie Chart:** Breakdown of failure reasons (for example, compilation errors, test failures, resource constraints).
     
 
 **2\. Track Failure Trends Over Time:**
 
 Create a line chart to track build failures over a given period:
 
--   **X-Axis:** Time (for example, daily or weekly).
+* **X-Axis:** Time (for example, daily or weekly).
     
--   **Y-Axis:** Count of build failures.
+* **Y-Axis:** Count of build failures.
     
--   **Aggregation:** Date histogram with `@timestamp` field.
+* **Aggregation:** Date histogram with `@timestamp` field.
     
 
 This will help you visualize how build failures are trending, making it easier to identify recurring issues or spikes in failures.
@@ -1020,11 +1045,11 @@ This will help you visualize how build failures are trending, making it easier t
 
 Create a bar chart that shows the number of failures broken down by CI tool:
 
--   **X-Axis:** CI tool (Jenkins, GitHub Actions, GitLab, and so on).
+* **X-Axis:** CI tool (Jenkins, GitHub Actions, GitLab, and so on).
     
--   **Y-Axis:** Count of failures.
+* **Y-Axis:** Count of failures.
     
--   **Aggregation:** Terms aggregation on the `ci_tool` field.
+* **Aggregation:** Terms aggregation on the `ci_tool` field.
     
 
 This visualization helps identify which CI tool is experiencing the most failures and focus troubleshooting efforts there.
@@ -1033,11 +1058,11 @@ This visualization helps identify which CI tool is experiencing the most failure
 
 You can visualize which error messages appear most frequently, helping you understand what might be causing recurring issues:
 
--   **X-Axis:** Error message type.
+* **X-Axis:** Error message type.
     
--   **Y-Axis:** Count of occurrences.
+* **Y-Axis:** Count of occurrences.
     
--   **Aggregation:** Terms aggregation on the `error_message` field.
+* **Aggregation:** Terms aggregation on the `error_message` field.
     
 
 **5\. Dashboard for Holistic Monitoring:**
@@ -1048,16 +1073,16 @@ Create a dashboard that brings together multiple visualizations. You can have on
 
 There are various advanced techniques you can use to dig further into your data.
 
--   **Heatmaps**: Use heatmaps to spot time-based anomalies in build durations or test failures.
+* **Heatmaps**: Use heatmaps to spot time-based anomalies in build durations or test failures.
     
--   **Anomaly Detection**: Kibana has built-in anomaly detection that can be applied to log data to automatically detect patterns that deviate from the norm. This is especially useful for catching rare or unexpected errors in your CI/CD pipeline.
+* **Anomaly Detection**: Kibana has built-in anomaly detection that can be applied to log data to automatically detect patterns that deviate from the norm. This is especially useful for catching rare or unexpected errors in your CI/CD pipeline.
     
     Example for anomaly detection:
     
-    ```
-      textCopyEditfield: duration
-      aggregation: average
-      anomaly detection model: "baseline"
+    ```javascript
+    textCopyEditfield: duration
+    aggregation: average
+    anomaly detection model: "baseline"
     ```
     
 
@@ -1073,7 +1098,7 @@ You can install Prometheus using Docker or Kubernetes for easy deployment.
 
 For Docker-based installation:
 
-```
+```bash
 docker run -d -p 9090:9090 --name prometheus prom/prometheus
 ```
 
@@ -1083,7 +1108,7 @@ Prometheus needs to be configured to scrape metrics from your CI/CD services.
 
 Edit the `prometheus.yml` file:
 
-```
+```yaml
 scrape_configs:
   - job_name: 'ci_cd_metrics'
     static_configs:
@@ -1094,7 +1119,7 @@ scrape_configs:
 
 To expose metrics, you need to integrate Prometheus client libraries into your CI/CD services.
 
-For example, to expose build metrics from a Jenkins job, use the [Prometheus plugin for Jenkins][24]. In GitHub Actions, you can use [Prometheus][25] to expose job metrics.
+For example, to expose build metrics from a Jenkins job, use the [Prometheus plugin for Jenkins](https://plugins.jenkins.io/prometheus/). In GitHub Actions, you can use [Prometheus](https://github.com/prometheus/prometheus) to expose job metrics.
 
 #### **4\. Expose Metrics Endpoint:**
 
@@ -1104,15 +1129,18 @@ You’ll want to make sure your services expose a `/metrics` endpoint that Prome
 
 If Prometheus fails to start or scrape metrics, here are some things that might be going wrong:
 
-1.  **Container Crashes**: Check logs with `docker logs prometheus`. Look for errors like “port already in use” (for example, 9090) or configuration parsing issues.
+1. **Container Crashes**: Check logs with `docker logs prometheus`. Look for errors like “port already in use” (for example, 9090) or configuration parsing issues.
     
-    -   Fix: Change the port in `docker run` (for example, `-p 9091:9090`) or correct the `prometheus.yml` file syntax.
-2.  **Metrics Not Scraped**: Verify targets are reachable using `docker logs prometheus` or test with curl `http://localhost:9090/targets`. Check `prometheus.yml` for correct endpoints.
+    * Fix: Change the port in `docker run` (for example, `-p 9091:9090`) or correct the `prometheus.yml` file syntax.
+        
+2. **Metrics Not Scraped**: Verify targets are reachable using `docker logs prometheus` or test with curl `http://localhost:9090/targets`. Check `prometheus.yml` for correct endpoints.
     
-    -   Fix: Update `targets` in `scrape_configs` (for example, `localhost:8080`) to match your CI/CD service’s metrics endpoint.
-3.  **Resource Constraints**: Monitor usage with docker stats or top on the host.
+    * Fix: Update `targets` in `scrape_configs` (for example, `localhost:8080`) to match your CI/CD service’s metrics endpoint.
+        
+3. **Resource Constraints**: Monitor usage with docker stats or top on the host.
     
-    -   Fix: Ensure at least 4GB RAM and 10GB disk space. Increase storage retention or reduce scrape frequency in `prometheus.yml` if needed.
+    * Fix: Ensure at least 4GB RAM and 10GB disk space. Increase storage retention or reduce scrape frequency in `prometheus.yml` if needed.
+        
 
 ## How to Create Grafana Dashboards That Combine Metrics and Logs
 
@@ -1122,11 +1150,11 @@ Once Prometheus is collecting metrics, the next step is to visualize and correla
 
 First, you’ll need to install Grafana. You can use Docker or Kubernetes for quick deployment:
 
-```
+```bash
 docker run -d -p 3000:3000 --name grafana grafana/grafana
 ```
 
-Next, configure Grafana to use Prometheus as a data source. To do this, log in to Grafana (`localhost:3000` by default). Go to `Configuration` > `Data Sources` > `Add Data Source` > Choose `Prometheus`. Enter your Prometheus server URL (for example, `http://localhost:9090`) and click `Save & Test`.
+Next, configure Grafana to use Prometheus as a data source. To do this, log in to Grafana (`localhost:3000` by default). Go to `Configuration` &gt; `Data Sources` &gt; `Add Data Source` &gt; Choose `Prometheus`. Enter your Prometheus server URL (for example, `http://localhost:9090`) and click `Save & Test`.
 
 Now it’s time to build a unified dashboard. To do this, create a new dashboard in Grafana that combines both logs (Loki) and metrics (Prometheus).
 
@@ -1150,7 +1178,7 @@ Many libraries support adding exemplars to Prometheus metrics, such as `prom-cli
 
 Here’s an example in Node.js:
 
-```
+```javascript
 // Demonstrates adding an exemplar to a Prometheus metric for linking to logs or traces.
 const promClient = require('prom-client');
 
@@ -1192,11 +1220,11 @@ When debugging build failures, you need to first examine the logs from the compi
 
 There are a few common types of error messages you might get. They are:
 
--   **Syntax errors**: Look for lines indicating that there's a mismatch in syntax, such as missing semicolons, undeclared variables, or incorrect function calls.
+* **Syntax errors**: Look for lines indicating that there's a mismatch in syntax, such as missing semicolons, undeclared variables, or incorrect function calls.
     
--   **Linker errors**: These often occur when the required libraries or dependencies are not found. You'll typically see errors like `undefined reference` or `symbol not found`.
+* **Linker errors**: These often occur when the required libraries or dependencies are not found. You'll typically see errors like `undefined reference` or `symbol not found`.
     
--   **Build tool errors**: If you are using build systems like Maven, Gradle, or MSBuild, their logs will give specific error codes or missing configurations.
+* **Build tool errors**: If you are using build systems like Maven, Gradle, or MSBuild, their logs will give specific error codes or missing configurations.
     
 
 #### 2\. Look for Common Error Patterns:
@@ -1209,9 +1237,9 @@ You can use regular expressions to search for keywords in the logs that match co
 
 **As an example:**
 
--   If the build fails with an "Out of Memory" error, search for any memory allocation issues or settings that can be increased.
+* If the build fails with an "Out of Memory" error, search for any memory allocation issues or settings that can be increased.
     
--   If test failures are related to specific modules, inspect those modules for recent changes or dependency issues.
+* If test failures are related to specific modules, inspect those modules for recent changes or dependency issues.
     
 
 ### Strategy 2: Troubleshooting Dependency Issues with Log Analysis
@@ -1288,21 +1316,24 @@ Resource constraints are a common cause of pipeline failures. These can include 
 
 #### Key Indicators in Logs:
 
--   **Memory Issues**: Look for messages like _"out of memory"_, _"memory limit exceeded"_, or _"OOM killed"_ in your logs. Here’s an example in Kubernetes logs:
+* **Memory Issues**: Look for messages like *"out of memory"*, *"memory limit exceeded"*, or *"OOM killed"* in your logs. Here’s an example in Kubernetes logs:
+    
 
-```
+```javascript
 pod has been OOMKilled
 ```
 
--   **CPU Limits**: Watch for logs showing that a process exceeded CPU limits or was throttled. Here’s an example:
+* **CPU Limits**: Watch for logs showing that a process exceeded CPU limits or was throttled. Here’s an example:
+    
 
-```
+```javascript
 process 'foo' hit CPU limit, throttling at 100%
 ```
 
--   **Disk Space**: Logs may show file write errors or messages about a disk being full. Here’s an example:
+* **Disk Space**: Logs may show file write errors or messages about a disk being full. Here’s an example:
+    
 
-```
+```javascript
 Unable to write to file, disk space is full.
 ```
 
@@ -1324,11 +1355,11 @@ Look for messages related to failed logins, incorrect credentials, or invalid to
 
 Here’s an example:
 
-```
+```javascript
 Authentication failed for user 'admin'
 ```
 
-```
+```javascript
 Invalid API token provided.
 ```
 
@@ -1338,21 +1369,21 @@ Logs may indicate that the CI/CD pipeline lacks the permissions to perform a cer
 
 Here’s an example:
 
-```
+```javascript
 Access denied for /path/to/deployment/target
 ```
 
-```
+```javascript
 Unauthorized request to cloud service.
 ```
 
 **How to resolve these errors**:
 
--   **Credentials**: Ensure the credentials (API keys, access tokens, SSH keys) used in the pipeline are up-to-date and correctly configured.
+* **Credentials**: Ensure the credentials (API keys, access tokens, SSH keys) used in the pipeline are up-to-date and correctly configured.
     
--   **Permissions**: Review and update the role-based access control (RBAC) settings for the service account running the pipeline to ensure it has the necessary permissions.
+* **Permissions**: Review and update the role-based access control (RBAC) settings for the service account running the pipeline to ensure it has the necessary permissions.
     
--   **Secrets Management**: Use tools like Vault, AWS Secrets Manager, or Azure Key Vault to securely manage secrets and credentials.
+* **Secrets Management**: Use tools like Vault, AWS Secrets Manager, or Azure Key Vault to securely manage secrets and credentials.
     
 
 **Troubleshooting Configuration Drift Between Environments**
@@ -1365,7 +1396,7 @@ Look out for these key indicators in the logs:
 
 If you’re using environment variables, check for discrepancies across different stages. For example:
 
-```
+```javascript
 Environment variable DATABASE_URL not found in production
 ```
 
@@ -1375,7 +1406,7 @@ Mismatched versions of dependencies between environments can cause unexpected is
 
 Here’s an example:
 
-```
+```javascript
 Error: Dependency 'libxyz' version mismatch between environments
 ```
 
@@ -1385,20 +1416,21 @@ Look for configuration-related errors that might not be present in a development
 
 Here’s an example:
 
-```
+```javascript
 Error: Invalid config in 'production-config.yaml'
 ```
 
 **How to resolve these errors**:
 
--   **Use Infrastructure as Code (IaC)**: Tools like Terraform, Ansible, or CloudFormation can help ensure that environments are provisioned consistently.
+* **Use Infrastructure as Code (IaC)**: Tools like Terraform, Ansible, or CloudFormation can help ensure that environments are provisioned consistently.
     
--   **Automated Configuration Management**: Use CI/CD pipeline steps to automate environment setup to avoid manual changes that can cause drift.
+* **Automated Configuration Management**: Use CI/CD pipeline steps to automate environment setup to avoid manual changes that can cause drift.
     
--   **Environment Consistency Checks**: Implement checks to compare configurations and dependencies across environments before deployment.
+* **Environment Consistency Checks**: Implement checks to compare configurations and dependencies across environments before deployment.
     
-    -   Example: You can add a pre-deployment stage to run a script that compares environment variables, configurations, and dependency versions between staging and production.
--   **Configuration Management Tools**: Use configuration management tools like Chef, Puppet, or SaltStack to maintain consistent configurations across environments.
+    * Example: You can add a pre-deployment stage to run a script that compares environment variables, configurations, and dependency versions between staging and production.
+        
+* **Configuration Management Tools**: Use configuration management tools like Chef, Puppet, or SaltStack to maintain consistent configurations across environments.
     
 
 ### How to Debug Container-Based Deployment Issues
@@ -1415,7 +1447,7 @@ Here’s how you can collect container logs:
 
 You can use Docker’s `logs` command to view logs of a specific container:
 
-```
+```bash
 docker logs <container_name_or_id>
 ```
 
@@ -1425,13 +1457,13 @@ If your container uses a logging driver (like `json-file` or `fluentd`), ensure 
 
 For Kubernetes-managed containers, use `kubectl` to access pod logs:
 
-```
+```bash
 kubectl logs <pod_name>
 ```
 
 To view logs for all containers in a pod:
 
-```
+```bash
 kubectl logs <pod_name> --all-containers=true
 ```
 
@@ -1445,7 +1477,7 @@ You can integrate with centralized logging systems (like, **Grafana Loki**, **El
 
 Use `grep` to filter logs for specific error messages or patterns:
 
-```
+```bash
 docker logs <container_name> | grep "ERROR"
 ```
 
@@ -1463,18 +1495,18 @@ Container deployment failures often stem from issues related to image pulling or
 
 There are some common issues you might see, such as:
 
--   **Authentication failures:** If the container registry requires authentication, ensure your credentials (username/password or tokens) are correct.
+* **Authentication failures:** If the container registry requires authentication, ensure your credentials (username/password or tokens) are correct.
     
--   **Network connectivity:** Check if the container can access the registry endpoint. Often, firewalls or DNS issues block the image pull.
+* **Network connectivity:** Check if the container can access the registry endpoint. Often, firewalls or DNS issues block the image pull.
     
--   **Image not found:** Verify the image name and tag are correct. Use `docker pull` to manually pull the image to see if the issue is specific to the deployment process.
+* **Image not found:** Verify the image name and tag are correct. Use `docker pull` to manually pull the image to see if the issue is specific to the deployment process.
     
 
 There are various ways to diagnose them:
 
 For **Docker**, use:
 
-```
+```bash
 docker pull <image_name>
 ```
 
@@ -1482,7 +1514,7 @@ This will output the specific error message if the image pull fails.
 
 For **Kubernetes**, check the event logs for the pod:
 
-```
+```bash
 kubectl describe pod <pod_name>
 ```
 
@@ -1492,11 +1524,11 @@ Look for the `Failed` status under "Events" for information about why the image 
 
 Some common issues you may encounter are:
 
--   **DNS resolution problems:** Containers may fail to resolve hostnames if DNS configurations are incorrect.
+* **DNS resolution problems:** Containers may fail to resolve hostnames if DNS configurations are incorrect.
     
--   **Network policies and firewall rules:** Network policies or firewalls may block necessary ports.
+* **Network policies and firewall rules:** Network policies or firewalls may block necessary ports.
     
--   **Inter-container communication:** If containers need to talk to each other, ensure they’re on the same network or subnet.
+* **Inter-container communication:** If containers need to talk to each other, ensure they’re on the same network or subnet.
     
 
 Again, there are various ways to diagnose these issues:
@@ -1505,13 +1537,13 @@ Again, there are various ways to diagnose these issues:
 
 You can do this to view all Docker networks:
 
-```
+```bash
 docker network ls
 ```
 
 You can also inspect the network of your container like this:
 
-```
+```bash
 docker network inspect <network_name>
 ```
 
@@ -1521,13 +1553,13 @@ Check if the container is correctly attached to the network and if necessary por
 
 You can use `kubectl` to check network policies:
 
-```
+```bash
 kubectl get networkpolicies
 ```
 
 You can also check the pod’s network settings like this:
 
-```
+```bash
 kubectl describe pod <pod_name> | grep -i "Network"
 ```
 
@@ -1535,7 +1567,7 @@ kubectl describe pod <pod_name> | grep -i "Network"
 
 For Docker, exec into the container and test:
 
-```
+```bash
 docker exec -it <container_id> /bin/bash
 ping <hostname_or_ip>
 curl http://<service_address>:<port>
@@ -1543,7 +1575,7 @@ curl http://<service_address>:<port>
 
 In Kubernetes, use `kubectl exec` to access the pod and test connectivity:
 
-```
+```bash
 kubectl exec -it <pod_name> -- /bin/bash
 ```
 
@@ -1561,7 +1593,7 @@ Ephemeral debug containers allow you to run diagnostic commands (like shell acce
 
 You can create a new container for debugging by running a container with the same network settings as the failing container:
 
-```
+```bash
 docker run -it --network container:<container_name_or_id> --entrypoint /bin/bash <debug_image>
 ```
 
@@ -1571,7 +1603,7 @@ This command runs an interactive shell inside the debug container using the same
 
 Kubernetes allows you to inject an ephemeral debug container into a running pod. You can add a temporary debug container to your pod using the following command:
 
-```
+```bash
 kubectl debug <pod_name> -it --image=<debug_image> --target=<container_name>
 ```
 
@@ -1599,11 +1631,11 @@ Distributed tracing enables you to monitor a request’s path through various se
 
 When to choose each one:
 
--   **Jaeger**: Ideal for quick, local tracing setups with minimal overhead.
+* **Jaeger**: Ideal for quick, local tracing setups with minimal overhead.
     
--   **Tempo**: Best for teams already using Grafana Loki/Prometheus for unified observability.
+* **Tempo**: Best for teams already using Grafana Loki/Prometheus for unified observability.
     
--   **Hosted Solutions**: Suited for large-scale pipelines needing managed scalability.
+* **Hosted Solutions**: Suited for large-scale pipelines needing managed scalability.
     
 
 ### How to Set Up Distributed Tracing on a Budget
@@ -1612,7 +1644,7 @@ Distributed tracing is crucial for debugging and observing complex, multi-step o
 
 #### How to Use OpenTelemetry with Free Backends
 
-[OpenTelemetry][26] is an open-source framework that enables you to collect, process, and export telemetry data like traces and metrics. It supports multiple backends, and we’ll focus on using free, budget-friendly backends for trace storage and analysis.
+[OpenTelemetry](https://www.freecodecamp.org/news/how-to-use-opentelementry-to-trace-node-js-applications/) is an open-source framework that enables you to collect, process, and export telemetry data like traces and metrics. It supports multiple backends, and we’ll focus on using free, budget-friendly backends for trace storage and analysis.
 
 **1\. Install OpenTelemetry Collector:**
 
@@ -1620,13 +1652,13 @@ OpenTelemetry provides an agent (collector) that collects traces and metrics fro
 
 To install the OpenTelemetry Collector, download the binary for your OS or use Docker to deploy it:
 
-```
+```bash
 docker pull otel/opentelemetry-collector:latest
 ```
 
 Then run the OpenTelemetry Collector in Docker with a configuration file:
 
-```
+```bash
 docker run -d --name opentelemetry-collector -p 55680:55680 -p 14250:14250 otel/opentelemetry-collector
 ```
 
@@ -1638,7 +1670,7 @@ We’ll start with **Jaeger**, an open-source tracing backend. It’s highly sca
 
 You can use the Docker version for easy deployment:
 
-```
+```bash
 docker run -d --name jaeger -e COLLECTOR_ZIPKIN_HTTP_PORT=9411 -p 5775:5775 -p 6831:6831/udp -p 6832:6832/udp -p 5778:5778 -p 16686:16686 -p 14250:14250 -p 14268:14268 -p 14250:14250 -p 9431:9431 jaegertracing/all-in-one:1.30
 ```
 
@@ -1650,7 +1682,7 @@ Tempo is a distributed tracing backend built by Grafana that integrates well wit
 
 You can install Tempo using Docker:
 
-```
+```bash
 docker run -d --name tempo -p 14268:14268 grafana/tempo:latest
 ```
 
@@ -1660,19 +1692,19 @@ For Python/Node.js/Java/Go applications, you can install the appropriate OpenTel
 
 Here’s a Python example:
 
-```
+```bash
 pip install opentelemetry-api opentelemetry-sdk opentelemetry-instrumentation
 ```
 
 And a Node.js example:
 
-```
+```bash
 npm install @opentelemetry/api @opentelemetry/sdk-node @opentelemetry/instrumentation
 ```
 
 And one in Java:
 
-```
+```xml
 <dependency>
     <groupId>io.opentelemetry</groupId>
     <artifactId>opentelemetry-api</artifactId>
@@ -1686,7 +1718,7 @@ After installation, you can use the OpenTelemetry SDK to instrument the applicat
 
 You can configure the SDK to send trace data to your OpenTelemetry Collector, which will then forward it to your backend (Jaeger, Tempo, and so on). Here’s an example for Python:
 
-```
+```python
 from opentelemetry import trace
 from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
 from opentelemetry.sdk.trace import TracerProvider
@@ -1700,15 +1732,18 @@ trace.get_tracer_provider().add_span_processor(processor)
 
 If traces aren’t appearing, several issues might be occurring:
 
-1.  **Collector fails to start**: Check logs with `docker logs otel-collector`. Look for errors like “port conflict” or “invalid config.”
+1. **Collector fails to start**: Check logs with `docker logs otel-collector`. Look for errors like “port conflict” or “invalid config.”
     
-    -   Fix: Change ports (for example, `55681:55680`) or verify the config file.
-2.  **No traces in Jaeger**: Ensure the collector is sending data to Jaeger (`http://localhost:14250`). Test with `curl http://localhost:55680`.
+    * Fix: Change ports (for example, `55681:55680`) or verify the config file.
+        
+2. **No traces in Jaeger**: Ensure the collector is sending data to Jaeger (`http://localhost:14250`). Test with `curl http://localhost:55680`.
     
-    -   Fix: Update the exporter endpoint in your SDK configuration.
-3.  **Resource constraints**: Monitor usage with `docker stats`.
+    * Fix: Update the exporter endpoint in your SDK configuration.
+        
+3. **Resource constraints**: Monitor usage with `docker stats`.
     
-    -   Fix: Allocate at least 2GB RAM and 10GB disk space for the collector and backend.
+    * Fix: Allocate at least 2GB RAM and 10GB disk space for the collector and backend.
+        
 
 #### Correlating Traces with Logs and Metrics
 
@@ -1724,7 +1759,7 @@ When generating logs, include trace and span IDs in the log entries. This allows
 
 Here’s an example:
 
-```
+```json
 {
   "timestamp": "2025-05-10T12:00:00Z",
   "level": "error",
@@ -1740,11 +1775,11 @@ Grafana can integrate traces from Jaeger or Tempo and correlate them with logs f
 
 To do this:
 
-1.  **Set up Loki and Tempo in Grafana.**
+1. **Set up Loki and Tempo in Grafana.**
     
-2.  In Grafana’s Explore view, you can search logs and traces side-by-side.
+2. In Grafana’s Explore view, you can search logs and traces side-by-side.
     
-3.  Create dashboards that show metrics, logs, and traces for a complete view of a request flow.
+3. Create dashboards that show metrics, logs, and traces for a complete view of a request flow.
     
 
 **3\. Using Prometheus Metrics with Traces:**
@@ -1759,7 +1794,7 @@ You can visualize traces with Jaeger or Tempo.
 
 **To do this in Jaeger:**
 
-Once your traces are in Jaeger, you can access the Jaeger UI ([`http://localhost:16686`][27] by default) and use the search functionality to explore traces based on service name, trace ID, or specific operations.
+Once your traces are in Jaeger, you can access the Jaeger UI ([`http://localhost:16686`](http://localhost:16686) by default) and use the search functionality to explore traces based on service name, trace ID, or specific operations.
 
 Jaeger allows you to create custom dashboards to visualize the latency, throughput, and errors of requests across services.
 
@@ -1769,11 +1804,11 @@ Tempo integrates with Grafana, where you can create dashboards that visualize tr
 
 **Create a Grafana dashboard:**
 
-1.  Add Tempo as a data source in Grafana.
+1. Add Tempo as a data source in Grafana.
     
-2.  Use the "Trace" panel to query and visualize traces.
+2. Use the "Trace" panel to query and visualize traces.
     
-3.  Combine trace visualizations with metrics (from Prometheus) and logs (from Loki) to get a unified view of your pipeline.
+3. Combine trace visualizations with metrics (from Prometheus) and logs (from Loki) to get a unified view of your pipeline.
     
 
 A typical trace visualization dashboard could show the duration of each step in your pipeline (build, test, deploy) and highlight where delays or errors occur, such as slow database queries or flaky tests.
@@ -1782,17 +1817,20 @@ A typical trace visualization dashboard could show the duration of each step in 
 
 If Tempo fails to collect or display traces:
 
-1.  **Container fails to start**: Check logs with `docker logs tempo`. Look for errors like “port already in use” (for example, 14268) or “storage backend unavailable.”
+1. **Container fails to start**: Check logs with `docker logs tempo`. Look for errors like “port already in use” (for example, 14268) or “storage backend unavailable.”
     
-    -   Fix: Change ports in the Docker command (for example, `-p 14269:14268`) or ensure the storage directory (for example, `/tmp/tempo`) exists and is writable.
-2.  **No traces in Tempo**: Verify the OpenTelemetry Collector is sending traces to Tempo’s endpoint (`http://localhost:14268`). Test connectivity with `curl http://localhost:14268`.
+    * Fix: Change ports in the Docker command (for example, `-p 14269:14268`) or ensure the storage directory (for example, `/tmp/tempo`) exists and is writable.
+        
+2. **No traces in Tempo**: Verify the OpenTelemetry Collector is sending traces to Tempo’s endpoint (`http://localhost:14268`). Test connectivity with `curl http://localhost:14268`.
     
-    -   Fix: Update the collector’s exporter configuration to point to the correct Tempo endpoint, and ensure no firewalls are blocking the connection.
-3.  **Resource constraints**: Monitor usage with `docker stats` or `top` on the host.
+    * Fix: Update the collector’s exporter configuration to point to the correct Tempo endpoint, and ensure no firewalls are blocking the connection.
+        
+3. **Resource constraints**: Monitor usage with `docker stats` or `top` on the host.
     
-    -   Fix: Allocate at least 2GB RAM and 10GB disk space for Tempo, as tracing data can grow quickly with high-volume pipelines.
+    * Fix: Allocate at least 2GB RAM and 10GB disk space for Tempo, as tracing data can grow quickly with high-volume pipelines.
+        
 
-![Bar chart showing CI/CD pipeline trace latency for May 2025. Three pipeline stages are displayed: Build stage (blue bar) shows approximately 1,200ms latency, Test stage (yellow bar) shows approximately 800ms latency, and Deploy stage (red bar) shows approximately 1,500ms latency. The Deploy stage has the highest latency, followed by Build, then Test.](https://cdn.hashnode.com/res/hashnode/image/upload/v1748226837500/c9865f8c-f737-49a5-a346-a56f4fac37fd.png)
+![Bar chart showing CI/CD pipeline trace latency for May 2025. Three pipeline stages are displayed: Build stage (blue bar) shows approximately 1,200ms latency, Test stage (yellow bar) shows approximately 800ms latency, and Deploy stage (red bar) shows approximately 1,500ms latency. The Deploy stage has the highest latency, followed by Build, then Test.](https://cdn.hashnode.com/res/hashnode/image/upload/v1748226837500/c9865f8c-f737-49a5-a346-a56f4fac37fd.png align="center")
 
 This bar chart displays the average latency (in milliseconds) for key stages of a CI/CD pipeline in May 2025. The Build stage averages around 1,200 ms (blue), the Test stage around 800 ms (yellow), and the Deploy stage around 1,500 ms (pink), highlighting that deployment is the most time-intensive step.
 
@@ -1806,22 +1844,22 @@ This section explains how to create Grafana dashboards to troubleshoot CI/CD pip
 
 When designing a Grafana dashboard for debugging, you should focus on metrics and logs that help identify issues in the pipeline. These could include:
 
--   **Build failures**: Errors during build processes (compilation, test failures).
+* **Build failures**: Errors during build processes (compilation, test failures).
     
--   **Deployment failures**: Issues in deployment, such as failed jobs, resource limitations, or misconfigurations.
+* **Deployment failures**: Issues in deployment, such as failed jobs, resource limitations, or misconfigurations.
     
--   **Container logs**: Information about container status and logs (if using containers in your pipeline).
+* **Container logs**: Information about container status and logs (if using containers in your pipeline).
     
--   **System resource usage**: CPU, memory, and disk usage that may lead to performance bottlenecks.
+* **System resource usage**: CPU, memory, and disk usage that may lead to performance bottlenecks.
     
--   **CI/CD-specific metrics**: Number of successful vs. failed pipeline runs, job duration, job queue times.
+* **CI/CD-specific metrics**: Number of successful vs. failed pipeline runs, job duration, job queue times.
     
 
 #### Step 2: Set Up Data Sources
 
-To start building the dashboard, you’ll need to set up your data sources in Grafana. First, connect your Prometheus instance for collecting metrics. To do this, go to `Configuration` > `Data Sources` in Grafana. Then just add `Prometheus` as a data source and enter the URL (for example, [`http://localhost:9090`][28]).
+To start building the dashboard, you’ll need to set up your data sources in Grafana. First, connect your Prometheus instance for collecting metrics. To do this, go to `Configuration` &gt; `Data Sources` in Grafana. Then just add `Prometheus` as a data source and enter the URL (for example, [`http://localhost:9090`](http://localhost:9090)).
 
-Next, you need to connect your Loki instance for logs. So go ahead and add `Loki` as a data source by specifying the URL (for example, [`http://localhost:3100`][29]).
+Next, you need to connect your Loki instance for logs. So go ahead and add `Loki` as a data source by specifying the URL (for example, [`http://localhost:3100`](http://localhost:3100)).
 
 Note that if you're using other sources like InfluxDB or Elasticsearch, you’ll need to make sure that they’re properly connected as data sources.
 
@@ -1829,38 +1867,43 @@ Note that if you're using other sources like InfluxDB or Elasticsearch, you’ll
 
 Now that your data sources are connected, you can start building your dashboard with the following panels:
 
--   **Build Status Panel:**
+* **Build Status Panel:**
     
-    -   Create a **stat panel** or **gauge panel** to show the success/failure ratio of pipeline runs.
+    * Create a **stat panel** or **gauge panel** to show the success/failure ratio of pipeline runs.
         
-    -   Query Prometheus or Loki for data like build status (success or failure), number of errors, and job durations.
+    * Query Prometheus or Loki for data like build status (success or failure), number of errors, and job durations.
         
--   **Error Breakdown Panel:**
+* **Error Breakdown Panel:**
     
-    -   Use a **pie chart** to visualize the types of errors (for example, build, deployment, or system resource failures).
+    * Use a **pie chart** to visualize the types of errors (for example, build, deployment, or system resource failures).
         
-    -   Query the logs in Loki to break down error types based on the CI tool (for example, Jenkins, GitHub Actions).
+    * Query the logs in Loki to break down error types based on the CI tool (for example, Jenkins, GitHub Actions).
         
--   **Resource Utilization Panel:**
+* **Resource Utilization Panel:**
     
-    -   Use **time series graphs** to monitor CPU, memory, and disk usage over time, especially for resource-heavy builds or deployments.
--   **Job Duration Panel:**
+    * Use **time series graphs** to monitor CPU, memory, and disk usage over time, especially for resource-heavy builds or deployments.
+        
+* **Job Duration Panel:**
     
-    -   Use **bar charts** or **line graphs** to track the average duration of jobs over time. Set thresholds for warning signs if a job takes longer than expected.
+    * Use **bar charts** or **line graphs** to track the average duration of jobs over time. Set thresholds for warning signs if a job takes longer than expected.
+        
 
 #### Troubleshooting Grafana Dashboard Issues
 
 If Grafana dashboards fail to display data or show errors, you might be having one of these issues:
 
-1.  **Missing data sources**: If metrics, logs, or traces aren’t appearing, verify data source connections in Grafana (for example, Prometheus, Loki, Tempo). Check under Configuration > Data Sources.
+1. **Missing data sources**: If metrics, logs, or traces aren’t appearing, verify data source connections in Grafana (for example, Prometheus, Loki, Tempo). Check under Configuration &gt; Data Sources.
     
-    -   Fix: Ensure the data source URLs are correct (for example, `http://localhost:9090` for Prometheus) and test the connection. Re-add the data source if needed.
-2.  **Incorrect Trace IDs**: If trace visualizations (for example, Tempo panels) show no data, confirm that trace IDs in logs match those in Tempo. Use a query like `{job="ci_cd"} | json | trace_id="1234567890abcdef"` in Loki to cross-check.
+    * Fix: Ensure the data source URLs are correct (for example, `http://localhost:9090` for Prometheus) and test the connection. Re-add the data source if needed.
+        
+2. **Incorrect Trace IDs**: If trace visualizations (for example, Tempo panels) show no data, confirm that trace IDs in logs match those in Tempo. Use a query like `{job="ci_cd"} | json | trace_id="1234567890abcdef"` in Loki to cross-check.
     
-    -   Fix: Ensure your application logs include trace and span IDs, and verify the OpenTelemetry SDK is correctly instrumented to send traces to Tempo.
-3.  **Resource Constraints**: Monitor Grafana’s resource usage with `docker stats` if running in a container, or `top` on the host.
+    * Fix: Ensure your application logs include trace and span IDs, and verify the OpenTelemetry SDK is correctly instrumented to send traces to Tempo.
+        
+3. **Resource Constraints**: Monitor Grafana’s resource usage with `docker stats` if running in a container, or `top` on the host.
     
-    -   Fix: Allocate at least 4GB RAM and 10GB disk space for Grafana, especially when rendering complex dashboards with multiple data sources.
+    * Fix: Allocate at least 4GB RAM and 10GB disk space for Grafana, especially when rendering complex dashboards with multiple data sources.
+        
 
 ### How to Set Up Drill-Down Paths from High-Level to Detailed Views
 
@@ -1868,9 +1911,9 @@ If Grafana dashboards fail to display data or show errors, you might be having o
 
 At the top of the dashboard, include a high-level overview panel that summarizes the overall status of the pipeline. This could be:
 
--   **Success/Failure Count**: A simple stat panel showing the count of successful vs. failed runs.
+* **Success/Failure Count**: A simple stat panel showing the count of successful vs. failed runs.
     
--   **Pipeline Health Status**: Display an overall health check of your pipeline using color-coded indicators (green for healthy, red for issues).
+* **Pipeline Health Status**: Display an overall health check of your pipeline using color-coded indicators (green for healthy, red for issues).
     
 
 #### Step 2: Set Up Drill-Down Links
@@ -1899,7 +1942,7 @@ To enhance drill-down functionality, you can add a **time range filter** to allo
 
 Once your dashboard is designed, you can share it with your team for collaborative troubleshooting:
 
-First, you’ll want to make sure that the correct permissions are set up for your team. You can define specific roles in Grafana with access to the dashboard. Go to `Dashboard Settings` > `Permissions`, and grant view or edit access to users or teams.
+First, you’ll want to make sure that the correct permissions are set up for your team. You can define specific roles in Grafana with access to the dashboard. Go to `Dashboard Settings` &gt; `Permissions`, and grant view or edit access to users or teams.
 
 Next, you can directly share a link to the dashboard with your team members. Use the `Share` option in the top-right corner of the dashboard, which provides a direct URL and also options to embed the dashboard into other tools (for example, Slack, email).
 
@@ -1925,7 +1968,7 @@ To automate log collection during failures, you need scripts that can capture lo
 
 You can leverage the exit status codes of your CI/CD tools to detect failures. For example, in GitLab CI/CD or GitHub Actions, you can check if the last command failed by inspecting `$?` in Unix-based systems.
 
-```
+```bash
 # Example for GitLab CI/CD
 if [ $? -ne 0 ]; then
     echo "Failure detected, collecting logs..."
@@ -1934,11 +1977,11 @@ if [ $? -ne 0 ]; then
 fi
 ```
 
-**2\. Log Collection Script (collect\_**[**logs.sh**][30]**):**
+**2\. Log Collection Script (collect\_**[**logs.sh**](http://logs.sh)**):**
 
 The script should collect relevant logs, system metrics, and trace information. For instance:
 
-```
+```bash
 #!/bin/bash
 LOG_DIR="/path/to/logs"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
@@ -1957,7 +2000,7 @@ For platforms like GitLab, GitHub Actions, or Jenkins, you can upload logs as ar
 
 Here’s an example for GitHub Actions:
 
-```
+```yaml
 steps:
   - name: Run Tests
     run: |
@@ -1984,7 +2027,7 @@ Establish error signatures or patterns that are common in your CI/CD process, su
 
 You can use regex or regular expressions to capture these patterns. Here’s an example – define a regex for failed test patterns:
 
-```
+```bash
 TEST_FAILURE_REGEX=".*FAILURE.*"
 ```
 
@@ -1994,7 +2037,7 @@ Next, you can write a script that scans logs for these common patterns. The scri
 
 Here’s an example using `grep` to detect failure patterns:
 
-```
+```bash
 #!/bin/bash
 LOG_DIR="/path/to/logs"
 ERROR_LOG="${LOG_DIR}/error_patterns.log"
@@ -2018,7 +2061,7 @@ Once an error pattern is detected, you can integrate the log analysis script wit
 
 Here’s an example of sending a Slack notification:
 
-```
+```bash
 if [ -s $ERROR_LOG ]; then
     curl -X POST -H 'Content-type: application/json' \
          --data '{"text":"Error detected in CI pipeline. Check error log."}' \
@@ -2042,7 +2085,7 @@ Identify recurring issues (for example, dependency issues, build timeouts, flaky
 
 Here’s an example of automatically retrying a failed step if it is a known flaky test:
 
-```
+```yaml
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -2063,7 +2106,7 @@ Set up a rollback process for failed deployments. For instance, if a deployment 
 
 Example in GitLab CI/CD:
 
-```
+```yaml
 deploy_production:
   script:
     - ./deploy.sh
@@ -2077,7 +2120,7 @@ Implement retry logic for transient issues (like network glitches) that often ca
 
 Example of retrying a step in GitHub Actions:
 
-```
+```yaml
 steps:
   - name: Retry Deployment
     run: |
@@ -2096,7 +2139,7 @@ steps:
 
 Set up automatic fixes for dependency-related failures, like clearing caches or re-installing dependencies:
 
-```
+```bash
 if [[ $(cat error.log) =~ "dependency not found" ]]; then
     echo "Dependency issue detected, reinstalling dependencies..."
     npm install
@@ -2127,13 +2170,13 @@ You can use timestamp filters in your log UI (for example, Kibana, Grafana Explo
 
 Look for key lifecycle events, like:
 
--   Start and completion of pipeline steps
+* Start and completion of pipeline steps
     
--   Status changes (for example, "test failed", "deployment started", "build queued")
+* Status changes (for example, "test failed", "deployment started", "build queued")
     
--   Error messages and warnings
+* Error messages and warnings
     
--   Retry events or unexpected restarts
+* Retry events or unexpected restarts
     
 
 #### Step 3: Extract Logs Programmatically (optional):
@@ -2144,7 +2187,7 @@ Use queries (LogQL, Elasticsearch DSL) to export relevant logs for analysis or i
 
 To go beyond symptoms and find the real issue, there are various steps you can take.
 
-Start by **looking for the first failure**. You can filter logs by `level=error` or use log pattern matching to identify the _earliest_ sign of failure. Then trace backward from the failure using correlation IDs or pipeline step identifiers.
+Start by **looking for the first failure**. You can filter logs by `level=error` or use log pattern matching to identify the *earliest* sign of failure. Then trace backward from the failure using correlation IDs or pipeline step identifiers.
 
 Second, make sure you **correlate logs across systems.** Match logs across CI/CD tools (like GitHub Actions → Docker logs → Kubernetes logs). You can use shared correlation IDs or job IDs to group logs from related events.
 
@@ -2160,26 +2203,26 @@ There are various things you can do to turn your findings into meaningful proces
 
 Create a structured post-mortem doc that includes:
 
--   Timeline of events with log excerpts
+* Timeline of events with log excerpts
     
--   Immediate trigger and root cause (based on logs)
+* Immediate trigger and root cause (based on logs)
     
--   Impact summary and affected components
+* Impact summary and affected components
     
--   Screenshots or saved log queries for reference
+* Screenshots or saved log queries for reference
     
 
 **2\. Define Preventive Actions:**
 
 Examples include:
 
--   Adding missing alerts or log-based monitors
+* Adding missing alerts or log-based monitors
     
--   Improving log verbosity or adding missing metadata
+* Improving log verbosity or adding missing metadata
     
--   Fixing brittle test cases or deployment scripts
+* Fixing brittle test cases or deployment scripts
     
--   Updating infrastructure limits or retry strategies
+* Updating infrastructure limits or retry strategies
     
 
 **3\. Assign Ownership and Deadlines:**
@@ -2204,7 +2247,7 @@ Log rotation involves creating new log files after a size or time threshold and 
 
 **Linux logrotate tool** – Configure `/etc/logrotate.d/<your-app>`:
 
-```
+```javascript
 /var/log/ci_cd/*.log {
     daily
     rotate 7
@@ -2217,16 +2260,16 @@ Log rotation involves creating new log files after a size or time threshold and 
 
 This example:
 
--   Rotates daily
+* Rotates daily
     
--   Keeps 7 days of logs
+* Keeps 7 days of logs
     
--   Compresses old logs to save space
+* Compresses old logs to save space
     
 
 **Docker logs rotation** – in `daemon.json`:
 
-```
+```json
 {
   "log-driver": "json-file",
   "log-opts": {
@@ -2240,7 +2283,7 @@ Retention policies ensure that old logs are automatically deleted based on age o
 
 You can set one up in Loki like this:
 
-```
+```yaml
 table_manager:
   retention_deletes_enabled: true
   retention_period: 168h  # 7 days
@@ -2248,7 +2291,7 @@ table_manager:
 
 Or in Elasticsearch, use Index Lifecycle Management (ILM):
 
-```
+```json
 {
   "policy": {
     "phases": {
@@ -2276,168 +2319,127 @@ There are various different compaction techniques you can try. Here are a couple
 
 **1\. Loki (boltdb-shipper mode)**:
 
--   Uses compaction to merge log chunks and reduce storage.
+* Uses compaction to merge log chunks and reduce storage.
     
--   Configure in `loki-config.yaml`:
+* Configure in `loki-config.yaml`:
     
+    ```yaml
+    schema_config:
+      configs:
+        - from: 2023-01-01
+          store: boltdb-shipper
+          object_store: filesystem
+          schema: v11
     ```
-      schema_config:
-        configs:
-          - from: 2023-01-01
-            store: boltdb-shipper
-            object_store: filesystem
-            schema: v11
-    ```
     
--   Use a low-retention, high-compaction strategy for archived logs.
+* Use a low-retention, high-compaction strategy for archived logs.
     
 
 **2\. Elasticsearch**:
 
--   Use **rollup jobs** to reduce resolution of old data.
+* Use **rollup jobs** to reduce resolution of old data.
     
--   Stores summarized logs, for example, hourly counts of similar events.
+* Stores summarized logs, for example, hourly counts of similar events.
     
 
 **3\. Archive to cheaper storage**:
 
--   Move infrequent-access logs to S3 or Azure Blob Storage using lifecycle rules.
+* Move infrequent-access logs to S3 or Azure Blob Storage using lifecycle rules.
+    
 
 ### How to Balance Observability with Resource Constraints
 
 More logs = more observability, but also more cost and overhead. This means that you need a balance. There are various strategies that can help you achieve this balance:
 
-1.  **Log at appropriate levels**:
+1. **Log at appropriate levels**:
     
-    -   Avoid excessive `debug` or `trace` logs in production.
+    * Avoid excessive `debug` or `trace` logs in production.
         
-    -   Use `info` and `warn` levels judiciously.
+    * Use `info` and `warn` levels judiciously.
         
-    -   Only use `error` or `critical` for actionable failures.
+    * Only use `error` or `critical` for actionable failures.
         
-2.  **Sample logs**:
+2. **Sample logs**:
     
-    -   If high-volume pipelines generate repetitive logs, enable log sampling to reduce duplicates.
+    * If high-volume pipelines generate repetitive logs, enable log sampling to reduce duplicates.
         
-    -   Tools like Vector or Fluent Bit support sampling.
+    * Tools like Vector or Fluent Bit support sampling.
         
-3.  **Filter out noise**:
+3. **Filter out noise**:
     
-    -   Use log filters to exclude non-critical logs before they reach the central system.
-4.  **Separate hot vs. cold logs**:
+    * Use log filters to exclude non-critical logs before they reach the central system.
+        
+4. **Separate hot vs. cold logs**:
     
-    -   **Hot logs**: recent, real-time data for active debugging.
+    * **Hot logs**: recent, real-time data for active debugging.
         
-    -   **Cold logs**: archived for compliance, stored with lower performance/storage priority.
+    * **Cold logs**: archived for compliance, stored with lower performance/storage priority.
         
-5.  **Compress everything**:
+5. **Compress everything**:
     
-    -   Use gzip/zstd compression for both stored and transmitted logs.
+    * Use gzip/zstd compression for both stored and transmitted logs.
         
-    -   Loki, Elasticsearch, and Vector support compression out of the box.
+    * Loki, Elasticsearch, and Vector support compression out of the box.
         
 
 ## **Conclusion**
 
 In this handbook, you have built a full-stack observability layer specifically optimized for CI/CD pipelines without breaking your infrastructure budget. You now have the tools and know-how to:
 
--   Deploy Grafana Loki or a lightweight ELK alternative to capture structured logs from all parts of your pipeline.
+* Deploy Grafana Loki or a lightweight ELK alternative to capture structured logs from all parts of your pipeline.
     
--   Unify and enrich logs across CI/CD tools (for example, GitHub Actions, Jenkins, GitLab) using consistent formats and correlation IDs.
+* Unify and enrich logs across CI/CD tools (for example, GitHub Actions, Jenkins, GitLab) using consistent formats and correlation IDs.
     
--   Use powerful log queries (LogQL, Kibana Query Language) to diagnose build failures, flaky tests, and deployment issues with precision.
+* Use powerful log queries (LogQL, Kibana Query Language) to diagnose build failures, flaky tests, and deployment issues with precision.
     
--   Correlate logs with metrics and traces to gain deep, contextual visibility into pipeline behavior.
+* Correlate logs with metrics and traces to gain deep, contextual visibility into pipeline behavior.
     
--   Design reusable debugging dashboards and automation that turn raw logs into insights and action.
+* Design reusable debugging dashboards and automation that turn raw logs into insights and action.
     
--   Build a culture of shared troubleshooting knowledge through post-mortems, runbooks, and log-driven retrospectives.
+* Build a culture of shared troubleshooting knowledge through post-mortems, runbooks, and log-driven retrospectives.
     
 
-To see the full-stack observability layer in action, check out the complete code and configurations in my GitHub repository: [github.com/Emidowojo/CICDObservability][31]. This repo includes all the setups for Grafana Loki, OpenTelemetry, Prometheus, and more, so you can deploy and explore the entire pipeline observability stack.
+To see the full-stack observability layer in action, check out the complete code and configurations in my GitHub repository: [github.com/Emidowojo/CICDObservability](https://github.com/Emidowojo/CICDObservability.git). This repo includes all the setups for Grafana Loki, OpenTelemetry, Prometheus, and more, so you can deploy and explore the entire pipeline observability stack.
 
 ### Next Steps for Advanced Observability Implementation
 
 Here’s how you can take your setup even further:
 
-1.  **Fully integrate distributed tracing**: Deploy OpenTelemetry agents across your build and deployment stages. This will help you visualize how code, builds, and deployments flow across systems in real-time.
+1. **Fully integrate distributed tracing**: Deploy OpenTelemetry agents across your build and deployment stages. This will help you visualize how code, builds, and deployments flow across systems in real-time.
     
-2.  **Automate diagnostic scripts and alerts**: Build scripts to auto-collect logs and metrics on failure, and trigger alerts when known patterns reoccur. This enables faster detection and even self-healing pipelines.
+2. **Automate diagnostic scripts and alerts**: Build scripts to auto-collect logs and metrics on failure, and trigger alerts when known patterns reoccur. This enables faster detection and even self-healing pipelines.
     
-3.  **Scale and harden your log infrastructure**: As usage grows, implement log retention, compaction, and storage policies. Explore scalable backends like ClickHouse or object storage (e.g., S3) for long-term archiving.
+3. **Scale and harden your log infrastructure**: As usage grows, implement log retention, compaction, and storage policies. Explore scalable backends like ClickHouse or object storage (e.g., S3) for long-term archiving.
     
-4.  **Train your team on observability best practices**: Share dashboards, create onboarding docs, and schedule log-analysis sessions to build team familiarity with your tools and practices.
+4. **Train your team on observability best practices**: Share dashboards, create onboarding docs, and schedule log-analysis sessions to build team familiarity with your tools and practices.
     
 
 ### 📚 Resources for Continued Learning
 
 **Official Docs and Tools:**
 
--   [Grafana Loki Documentation][32]
+* [Grafana Loki Documentation](https://grafana.com/docs/loki/)
     
--   [Promtail Configuration Guide][33]
+* [Promtail Configuration Guide](https://grafana.com/docs/loki/latest/clients/promtail/)
     
--   [OpenTelemetry][34]
+* [OpenTelemetry](https://opentelemetry.io/docs/)
     
--   [LogQL Syntax][35]
+* [LogQL Syntax](https://grafana.com/docs/loki/latest/logql/)
     
--   [Kibana Query Language][36]
+* [Kibana Query Language](https://www.elastic.co/guide/en/kibana/current/kuery-query.html)
     
--   [Vector (log forwarding)][37]
+* [Vector (log forwarding)](https://vector.dev/docs/)
     
 
 **Communities:**
 
--   [r/devops on Reddit][38]
+* [r/devops on Reddit](https://www.reddit.com/r/devops/)
     
--   [CNCF Slack – #observability channel][39]
+* [CNCF Slack – #observability channel](https://slack.cncf.io/)
     
--   [Log Management Best Practices on Stack Overflow][40]
+* [Log Management Best Practices on Stack Overflow](https://stackoverflow.com/questions/tagged/logging)
     
 
 By investing in observability early and thoughtfully, you not only reduce the time to detect and resolve issues, you also build a more resilient, predictable, and transparent delivery process for your entire engineering team.
 
-I hope this comes in handy for you someday. If you made it to the end of this handbook, thanks for reading! You can connect with me on [LinkedIn][41] or on X [@Emidowojo][42] if you’d like to stay in touch.
-
-[1]: #heading-prerequisites
-[2]: #heading-why-observability-is-important
-[3]: #heading-how-to-install-and-configure-grafana-loki-on-budget-infrastructure
-[4]: #heading-how-to-implement-an-elk-stack-alternative-for-pipeline-observability
-[5]: #heading-how-to-create-a-unified-logging-strategy-across-pipeline-components
-[6]: #heading-how-to-query-and-analyze-logs-for-effective-troubleshooting
-[7]: #heading-how-to-set-up-prometheus-metrics-alongside-your-logs
-[8]: #heading-how-to-create-grafana-dashboards-that-combine-metrics-and-logs
-[9]: #heading-how-to-use-exemplars-to-jump-from-metrics-to-relevant-logs
-[10]: #heading-how-to-diagnose-and-fix-common-cicd-problems
-[11]: #heading-how-to-implement-advanced-debugging-techniques
-[12]: #heading-how-to-conduct-effective-postmortems-using-logs
-[13]: #heading-how-to-optimize-log-storage-and-management
-[14]: #heading-conclusion
-[15]: https://www.freecodecamp.org/news/what-is-ci-cd/
-[16]: https://www.freecodecamp.org/news/helpful-linux-commands-you-should-know/
-[17]: https://www.freecodecamp.org/news/the-docker-handbook/
-[18]: https://www.freecodecamp.org/news/observability-in-cloud-native-applications/
-[19]: https://fluentbit.io/
-[20]: https://vector.dev/
-[21]: https://www.elastic.co/beats/filebeat
-[22]: http://localhost:5601/
-[23]: http://Draw.io
-[24]: https://plugins.jenkins.io/prometheus/
-[25]: https://github.com/prometheus/prometheus
-[26]: https://www.freecodecamp.org/news/how-to-use-opentelementry-to-trace-node-js-applications/
-[27]: http://localhost:16686
-[28]: http://localhost:9090
-[29]: http://localhost:3100
-[30]: http://logs.sh
-[31]: https://github.com/Emidowojo/CICDObservability.git
-[32]: https://grafana.com/docs/loki/
-[33]: https://grafana.com/docs/loki/latest/clients/promtail/
-[34]: https://opentelemetry.io/docs/
-[35]: https://grafana.com/docs/loki/latest/logql/
-[36]: https://www.elastic.co/guide/en/kibana/current/kuery-query.html
-[37]: https://vector.dev/docs/
-[38]: https://www.reddit.com/r/devops/
-[39]: https://slack.cncf.io/
-[40]: https://stackoverflow.com/questions/tagged/logging
-[41]: https://www.linkedin.com/in/emidowojo/
-[42]: https://x.com/Emidowojo
+I hope this comes in handy for you someday. If you made it to the end of this handbook, thanks for reading! You can connect with me on [LinkedIn](https://www.linkedin.com/in/emidowojo/) or on X [@Emidowojo](https://x.com/Emidowojo) if you’d like to stay in touch.

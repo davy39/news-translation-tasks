@@ -1,0 +1,45 @@
+---
+title: 'Code Briefing: Let’s celebrate Linux’s 25th birthday with 25 Linux facts.'
+subtitle: ''
+author: Quincy Larson
+co_authors: []
+series: null
+date: '2016-08-28T09:48:49.000Z'
+originalURL: https://freecodecamp.org/news/code-briefing-lets-celebrate-linux-s-25th-birthday-with-25-stunning-facts-about-linux-d1f5b143d019
+coverImage: https://cdn-media-1.freecodecamp.org/images/1*rJhi7ZUBdXiIcH_UU6uAiA.jpeg
+tags:
+- name: Design
+  slug: design
+- name: General Programming
+  slug: programming
+- name: startup
+  slug: startup
+- name: 'tech '
+  slug: tech
+- name: Web Development
+  slug: web-development
+seo_title: null
+seo_desc: 'Here are three stories we published this week that are worth your time:
+
+
+  Linux is 25. Yay! Let’s celebrate with 25 stunning facts about Linux: 6 minute read
+
+  Learning How to Learn: The Most Important Developer Skill: 10 minute read
+
+  The moment when you...'
+---
+
+Here are three stories we published this week that are worth your time:
+
+1. Linux is 25. Yay! Let’s celebrate with 25 stunning facts about Linux: [6 minute read](http://bit.ly/2bYg80I)
+2. Learning How to Learn: The Most Important Developer Skill: [10 minute read](http://bit.ly/2bA0LM0)
+3. The moment when you realize every server in the world is vulnerable: [7 minute read](http://bit.ly/2bu7iKV)
+
+Bonus: If you want to learn more about data science but don’t know where to start, check out Nate Silver’s [The Signal and the Noise: Why So Many Predictions Fail — but Some Don’t](http://amzn.to/2bwrGY2)**.**
+
+You can get the audiobook for free with a free trial of Audible, then learn while you commute: [16 hour listen](http://amzn.to/2bwrGY2)
+
+Happy coding,
+
+Quincy Larson, teacher at Free Code Camp
+

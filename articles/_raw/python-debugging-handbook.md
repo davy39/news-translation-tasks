@@ -1,128 +1,141 @@
 ---
-title: Common Code Error Messages
-date: 2024-08-19T13:34:29.374Z
+title: Python Debugging Handbook – How to Debug Your Python Code
+subtitle: ''
 author: Samyak Jain
-authorURL: https://www.freecodecamp.org/news/author/samyak/
-originalURL: https://www.freecodecamp.org/news/python-debugging-handbook/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2024-01-24T12:24:00.000Z'
+originalURL: https://freecodecamp.org/news/python-debugging-handbook
+coverImage: https://www.freecodecamp.org/news/content/images/2024/01/The-Python-Debugging-Handbook-Cover--1-.png
+tags:
+- name: debugging
+  slug: debugging
+- name: handbook
+  slug: handbook
+- name: Python
+  slug: python
+seo_title: null
+seo_desc: 'Programming is an art, and bugs are an inevitable part of the creative
+  process. Every developer encounters errors in their code – there''s really no exception
+  to it.
+
+  Because of this, understanding how to effectively debug is a crucial skill that
+  can s...'
 ---
 
 Programming is an art, and bugs are an inevitable part of the creative process. Every developer encounters errors in their code – there's really no exception to it.
 
-<!-- more -->
-
-Because of this, understanding how to effectively debug is a crucial skill that can save you time and frustration.
+Because of this, understanding how to effectively debug is a crucial skill that can save you time and frustration. 
 
 In this tutorial, we will delve into the fundamentals of debugging Python code. We'll explore common error messages, leverage the community, and utilize print statements to identify and resolve issues. The primary goal is to identify and fix errors in your code, and the key to successful debugging lies in a systematic approach.
 
 ## Table of Contents
 
-1.  **[Common Code Error Messages][1]**
+1. **[Common Code Error Messages](#heading-common-code-error-messages)**
 
--   [SyntaxError: invalid syntax][2]
--   [IndentationError: unexpected indent][3]
--   [NameError: name 'variable' is not defined][4]
--   [AttributeError: 'module' object has no attribute 'attribute\_name'][5]
--   [FileNotFoundError: \[Errno 2\] No such file or directory: 'filename'][6]
--   [IndexError: list index out of range][7]
--   [ImportError: No module named 'module\_name'][8]
--   [TypeError][9]
--   [ValueError][10]
+* [SyntaxError: invalid syntax](#heading-1-syntaxerror-invalid-syntax)
+* [IndentationError: unexpected indent](#heading-2-indentationerror-unexpected-indent)
+* [NameError: name 'variable' is not defined](#heading-3-nameerror-name-variable-is-not-defined)
+* [AttributeError: 'module' object has no attribute 'attribute_name'](#heading-4-attributeerror-module-object-has-no-attribute-attributename)
+* [FileNotFoundError: [Errno 2] No such file or directory: 'filename'](#heading-5-filenotfounderror-errno-2-no-such-file-or-directory-filename)
+* [IndexError: list index out of range](#heading-6-indexerror-list-index-out-of-range)
+* [ImportError: No module named 'module_name'](#heading-7-importerror-no-module-named-modulename)
+* [TypeError](#heading-8-typeerror)
+* [ValueError](#heading-9-valueerror)
 
-2\.  **[How to Debug Python Code][11]**
+2.   **  [How to Debug Python Code](#heading-how-to-debug-python-code)**
 
-3\.   [**Foundational Debugging** **Techniques**][12]
+3.   [**Foundational Debugging** **Techniques**](#heading-foundational-debugging-techniques)
 
--   [Print Statements][13]
--   [Logging][14]
--   [Exception Handling][15]
--   [Assertions][16]
+* [Print Statements](#heading-print-statements)
+* [Logging](#heading-logging)
+* [Exception Handling](#heading-exception-handling)
+* [Assertions](#heading-assertions)
 
-4.   [**Advanced Debugging Techniques**][17]
+4.   ****   [**Advanced Debugging Techniques**](#heading-advanced-debugging-techniques)
 
--   [Unit Testing][18]
--   [Interactive Debugger (PDB)][19]
--   [Remote Debugging][20]
+* [Unit Testing](#heading-unit-testing)
+* [Interactive Debugger (PDB)](#heading-how-to-use-the-interactive-debugger-pdb)
+* [Remote Debugging](#heading-remote-debugging)
 
-5\.  [**Performance Debugging**][21]
+5.   ****  [**Performance Debugging**](#performance-debugging--1)
 
--   [Code Linters and Analyzers][22]
--   [Profiling][23]
+* [Code Linters and Analyzers](#heading-code-linters-and-analyzers)
+* [Profiling](#heading-profiling)
 
-6\.  **[IDE Features for Debugging][24]**
+6.   **  [IDE Features for Debugging](#heading-ide-features-for-debugging)**
 
-7.   **[Some Additional Tips for Efficient Debugging][25]**
+7.   **   [Some Additional Tips for Efficient Debugging](#heading-some-additional-tips-for-efficient-debugging)**
 
-8.   **[How to Search for Solutions to Bugs and Errors][26]**
+8.   **   [How to Search for Solutions to Bugs and Errors](#heading-how-to-search-for-solutions-to-bugs-and-errors)**
 
--   [Effective Search Strategies][27]
--   [Leveraging Web Resources][28]
+* [Effective Search Strategies](#heading-1-effective-search-strategies)
+* [Leveraging Web Resources](#heading-2-leveraging-web-resources)
 
 # Common Code Error Messages
 
 Before moving on to debugging, let's first examine some common error messages and their meanings:
 
-_If you're already familiar with common code error messages, feel free to skip this section and move straight to the [Debugging Techniques][29]._
+_If you're already familiar with common code error messages, feel free to skip this section and move straight to the [Debugging Techniques](#heading-how-to-debug-python-code)._
 
-## 1\. SyntaxError: invalid syntax
+## 1. SyntaxError: invalid syntax
 
 This error occurs when the Python interpreter encounters code that doesn't follow the correct syntax rules. It could be a missing parenthesis, a misplaced colon, or some other syntax-related issue.
 
 To fix these types of errors, check for missing syntax elements and ensure proper pairing of quotes, parentheses, and brackets.
 
-## 2\. IndentationError: unexpected indent
+## 2. IndentationError: unexpected indent
 
 Python relies on indentation to define code blocks. This error occurs when indentation is inconsistent or incorrect.
 
 To avoid these errors, ensure proper and consistent indentation using spaces or tabs as required by the programming language.
 
-## 3\. NameError: name 'variable' is not defined
+## 3. NameError: name 'variable' is not defined
 
 These types of errors can result from attempting to use a variable or function that hasn't been defined.
 
 Make sure to check for typos in variable or function names, and make sure they are defined before use.
 
-## 4\. AttributeError: 'module' object has no attribute 'attribute\_name'
+## 4. AttributeError: 'module' object has no attribute 'attribute_name'
 
 You may get this type of error when trying to access an attribute or method that doesn't exist for a module or object.
 
 To fix this, review the code and confirm that the attribute or method being called is correct and available.
 
-## 5\. FileNotFoundError: \[Errno 2\] No such file or directory: 'filename'
+## 5. FileNotFoundError: [Errno 2] No such file or directory: 'filename'
 
 You'll get this error when attempting to access a file that doesn't exist.
 
 You should check the file path and make sure the file exists at the specified location.
 
-## 6\. IndexError: list index out of range
+## 6. IndexError: list index out of range
 
 This type of error happens when you're trying to access an index in a sequence (like a list or a string) that doesn't exist. The same error can happen for strings and tuples for the same reason.
 
 To fix it, make sure that the index being used is within the valid range of the sequence.
 
-## 7\. ImportError: No module named 'module\_name'
+## 7. ImportError: No module named 'module_name'
 
 You'll get this error if you attempt to import a module that isn't installed or accessible.
 
 To avoid this, install the required module using a package manager (pip) or check the module name for typos.
 
-## 8\. TypeError:
+## 8. TypeError: 
 
 This is a common exception in Python that occurs when an operation or function is applied to an object of an inappropriate type. Here are some common types of `TypeError`:
 
-1.  `TypeError: unsupported operand type(s) for +: 'type1' and 'type2'`**:**  This error occurs when trying to perform an operation on two objects with incompatible types. For example, attempting to add a string and an integer or multiply a list by a string.
-2.  `TypeError: function_name() takes X positional arguments but Y were given`**:** This error occurs when calling a function with an incorrect number of arguments. It indicates that the function expects a specific number of arguments, but a different number is provided.
-3.  `TypeError: 'int' object is not callable`:  This error occurs when you try to call an object as if it were a function, but it's not callable. For example, attempting to call an integer.
+1. `TypeError: unsupported operand type(s) for +: 'type1' and 'type2'`**:**  This error occurs when trying to perform an operation on two objects with incompatible types. For example, attempting to add a string and an integer or multiply a list by a string. 
+2. `TypeError: function_name() takes X positional arguments but Y were given`**:** This error occurs when calling a function with an incorrect number of arguments. It indicates that the function expects a specific number of arguments, but a different number is provided.
+3. `TypeError: 'int' object is not callable`:  This error occurs when you try to call an object as if it were a function, but it's not callable. For example, attempting to call an integer.
 
-## 9\. ValueError:
+## 9. ValueError: 
 
 This type of error occurs when a function receives an argument of the correct type but with an inappropriate value.
 
-1.  `ValueError: invalid literal for int() with base X: 'non-numeric'`:  This occurs when attempting to convert a string to an integer using `int()`, but the string is not a valid representation of an integer in the specified base (X). For example, trying to convert a non-numeric string or a string with an invalid format (for example, containing letters) to an integer.
-2.  `ValueError: could not convert string to float: 'non-numeric'`:  This happens when trying to convert a string to a floating-point number using `float()`, but the string is not a valid representation of a number. Similar to the first case, it often involves non-numeric characters or an incorrect format.
-3.  `ValueError: invalid literal for int() with base 10: 'non-numeric'`:  Similar to the first case, this error occurs when trying to convert a string to an integer using `int()`, but the string is not a valid numeric representation in base 10. It is a more general form of the first type, where the base is explicitly set to 10.
-4.  `ValueError: unhashable type: 'mutable_type'`:  This error occurs when trying to use a mutable type (for example, list, dictionary) as a key in a dictionary or as an element in a set. Dictionaries and sets require keys and elements to be of a hashable (immutable) type. To resolve this, convert the mutable type to an immutable one or consider a different data structure that supports mutable elements.
+1. `ValueError: invalid literal for int() with base X: 'non-numeric'`:  This occurs when attempting to convert a string to an integer using `int()`, but the string is not a valid representation of an integer in the specified base (X). For example, trying to convert a non-numeric string or a string with an invalid format (for example, containing letters) to an integer.
+2. `ValueError: could not convert string to float: 'non-numeric'`:  This happens when trying to convert a string to a floating-point number using `float()`, but the string is not a valid representation of a number. Similar to the first case, it often involves non-numeric characters or an incorrect format.
+3. `ValueError: invalid literal for int() with base 10: 'non-numeric'`:  Similar to the first case, this error occurs when trying to convert a string to an integer using `int()`, but the string is not a valid numeric representation in base 10. It is a more general form of the first type, where the base is explicitly set to 10.
+4. `ValueError: unhashable type: 'mutable_type'`:  This error occurs when trying to use a mutable type (for example, list, dictionary) as a key in a dictionary or as an element in a set. Dictionaries and sets require keys and elements to be of a hashable (immutable) type. To resolve this, convert the mutable type to an immutable one or consider a different data structure that supports mutable elements.
 
 Understanding these common errors provides a foundation for effective debugging.
 
@@ -134,7 +147,7 @@ Now that you understand some common error types, let's explore various technique
 
 ### Print Statements
 
-When you're writing code, especially in complex programs, it's essential to understand how your code is executing and the values of variables at different points in the program. Print statements allow you to insert messages in your code that get printed to the console or terminal when the program runs.
+When you're writing code, especially in complex programs, it's essential to understand how your code is executing and the values of variables at different points in the program. Print statements allow you to insert messages in your code that get printed to the console or terminal when the program runs. 
 
 By strategically placing print statements at different parts of your code, you can create a log of sorts that shows the order in which different sections of your code are being executed. This can help you understand the control flow and pinpoint where the program might be deviating from your expectations.
 
@@ -148,6 +161,7 @@ def my_function(x, y):
     print(f'Result: {result}')
     print("Exiting my_function")
     return result
+
 ```
 
 While `print` statements are often the quickest and most straightforward way to get a glimpse into a program's execution flow, especially during initial development., they can be cumbersome to manage and may not be appropriate for production code and therefore comes Logging, which provides a structured way to record information.
@@ -160,11 +174,11 @@ You can configure logging to control the level of detail in log messages and spe
 
 #### Logging Levels:
 
--   **DEBUG:** Detailed information, useful for developers during debugging.
--   **INFO:** General information about what's happening in the program.
--   **WARNING:** Indicates something unexpected happened, but the program can still continue.
--   **ERROR:** Something went wrong, and the program can't proceed as planned.
--   **CRITICAL:** A very serious error, possibly causing the program to crash.
+* **DEBUG:** Detailed information, useful for developers during debugging.
+* **INFO:** General information about what's happening in the program.
+* **WARNING:** Indicates something unexpected happened, but the program can still continue.
+* **ERROR:** Something went wrong, and the program can't proceed as planned.
+* **CRITICAL:** A very serious error, possibly causing the program to crash.
 
 Here's an example of logging:
 
@@ -186,10 +200,10 @@ if result > 10:
     logging.error("Result exceeds the expected maximum.")
 ```
 
--   **`level=logging.INFO`** sets the root logger's level to `INFO`. This means that log messages with severity `INFO` and above will be captured, while messages with a lower severity (such as `DEBUG`) will be ignored. It writes logs to a file named `example.log`
--   Inside the `example_function`, `logging.debug()` is used to log information about input values and the result. These messages will only be displayed if the logging level is set to `DEBUG` or lower.
--   An error message is logged using `logging.error()` if the result exceeds the expected maximum (in this case, 10).
--   Logging can be configured to write messages to both the console and a file named `example.log`. The `format` parameter can be used to customize the appearance of log messages, including the timestamp, log level, and the actual log message.
+* **`level=logging.INFO`** sets the root logger's level to `INFO`. This means that log messages with severity `INFO` and above will be captured, while messages with a lower severity (such as `DEBUG`) will be ignored. It writes logs to a file named `example.log`
+* Inside the `example_function`, `logging.debug()` is used to log information about input values and the result. These messages will only be displayed if the logging level is set to `DEBUG` or lower.
+* An error message is logged using `logging.error()` if the result exceeds the expected maximum (in this case, 10).
+* Logging can be configured to write messages to both the console and a file named `example.log`. The `format` parameter can be used to customize the appearance of log messages, including the timestamp, log level, and the actual log message.
 
 ```python
 # Optional
@@ -204,7 +218,7 @@ logging.basicConfig(
 
 **Note** : In larger applications, it's common to use loggers instead of the root logger directly. This approach allows for more granular control over logging in different parts of the application. You can read more about logging and loggers here.
 
-To learn more about logging and loggers in Python, check out this blog: [https://www.samyakinfo.tech/blog/logging-in-python][30]
+To learn more about logging and loggers in Python, check out this blog: [https://www.samyakinfo.tech/blog/logging-in-python](https://www.samyakinfo.tech/blog/logging-in-python)
 
 ### Exception Handling
 
@@ -218,12 +232,13 @@ try:
 except ExceptionType as e:
     print(f"An exception of type {type(e).__name__} occurred: {e}")
     # Additional handling logic, if needed
+
 ```
 
--   **`try` Block:** Contains the code that might raise an exception.
--   **`except` Block:** Contains the code that is executed if an exception of the specified type occurs in the `try` block.
--   **Exception Type:** Specifies the type of exception to catch. You can catch specific exceptions or a more general `Exception` type to catch any exception.
--   **`as e:`:** Assigns the exception object to the variable `e`, allowing you to access information about the exception.
+* **`try` Block:** Contains the code that might raise an exception.
+* **`except` Block:** Contains the code that is executed if an exception of the specified type occurs in the `try` block.
+* **Exception Type:** Specifies the type of exception to catch. You can catch specific exceptions or a more general `Exception` type to catch any exception.
+* **`as e:`:** Assigns the exception object to the variable `e`, allowing you to access information about the exception.
 
 ```python
 def safe_divide(x, y):
@@ -242,6 +257,7 @@ def safe_divide(x, y):
 # Eg.
 safe_divide(10, 2)
 safe_divide(5, 0)
+
 ```
 
 In this example, the `safe_divide` function attempts to perform a division operation. If a `ZeroDivisionError` occurs (division by zero), it's caught in the first `except` block. If any other type of exception occurs, it's caught in the second `except` block. The `finally` block always executes, regardless of whether an exception occurred.
@@ -265,15 +281,16 @@ try:
     assert x > 0, "x should be greater than zero"
 except AssertionError as e:
     print(f"Assertion failed: {e}")
+
 ```
 
 In this example, the `assert y != 0` checks whether the divisor (`y`) is not zero. If it is zero, the assertion fails, and the program raises an `AssertionError` with the specified error message.
 
 #### Considerations When Using Assertions:
 
--   Assertions are typically used during development and debugging. In a production environment, you may choose to disable assertions  for performance reasons. To disable it, use the `-O` (eg. `python -O script.py` ) command-line option or the `PYTHONOPTIMIZE` environment variable. The `-O`(optimize) flag turns off assert statements.
--   Assertions are not meant for input validation from users or external systems. They are more for catching logical errors in your code.
--   Assertions should be simple conditions that are easy to check and understand. Avoid complex expressions or side effects.
+* Assertions are typically used during development and debugging. In a production environment, you may choose to disable assertions  for performance reasons. To disable it, use the `-O` (eg. `python -O script.py` ) command-line option or the `PYTHONOPTIMIZE` environment variable. The `-O`(optimize) flag turns off assert statements.
+* Assertions are not meant for input validation from users or external systems. They are more for catching logical errors in your code.
+* Assertions should be simple conditions that are easy to check and understand. Avoid complex expressions or side effects.
 
 ## Advanced Debugging Techniques:
 
@@ -281,9 +298,9 @@ In this example, the `assert y != 0` checks whether the divisor (`y`) is not zer
 
 Unit testing is a software testing methodology where individual components or functions of a program are tested in isolation to ensure that they function correctly. In Python, units typically refer to functions, methods, or classes.
 
-1.  Unit tests help catch bugs early in the development process, preventing them from escalating into more complex problems.
-2.  Unit tests focus on specific functions or methods in isolation. This allows for pinpointing the source of errors when they occur.
-3.  As code evolves, unit tests act as a safety net, ensuring that new changes do not inadvertently break existing functionality.
+1. Unit tests help catch bugs early in the development process, preventing them from escalating into more complex problems.
+2. Unit tests focus on specific functions or methods in isolation. This allows for pinpointing the source of errors when they occur.
+3. As code evolves, unit tests act as a safety net, ensuring that new changes do not inadvertently break existing functionality.
 
 ### How to use `unittest`
 
@@ -291,16 +308,17 @@ Unit testing is a software testing methodology where individual components or fu
 
 Let's start with a simple example. Suppose we have a function that adds two numbers:
 
-```Python
+```python
 # my_module.py
 
 def add_numbers(a, b):
     return a + b
+
 ```
 
 Now, we can create a corresponding test file:
 
-```Python
+```python
 # test_my_module.py
 import unittest
 from my_module import add_numbers
@@ -312,12 +330,14 @@ class TestAddNumbers(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 ```
 
 To run the tests, execute the following command in the terminal:
 
 ```
 python -m unittest test_my_module.py
+
 ```
 
 ### How to use `pytest`
@@ -326,7 +346,7 @@ python -m unittest test_my_module.py
 
 Using the same example as before, a `pytest` test might look like this:
 
-```Python
+```python
 # test_my_module.py
 
 from my_module import add_numbers
@@ -334,19 +354,21 @@ from my_module import add_numbers
 def test_add_numbers():
     result = add_numbers(2, 3)
     assert result == 5
+
 ```
 
 To run the tests, simply execute:
 
 ```
 pytest test_my_module.py
+
 ```
 
 ### How to Use the Interactive Debugger (PDB)
 
-Python comes with a built-in debugger called PDB (Python Debugger). It allows you to pause the execution of your Python code, inspect variables, and step through your code line by line to find and fix issues.
+Python comes with a built-in debugger called PDB (Python Debugger). It allows you to pause the execution of your Python code, inspect variables, and step through your code line by line to find and fix issues. 
 
-While print statements and logging are helpful for basic debugging, PDB takes debugging to the next level by allowing you to intervene and analyze your code in real-time.
+While print statements and logging are helpful for basic debugging, PDB takes debugging to the next level by allowing you to intervene and analyze your code in real-time. 
 
 In your Python script, you start by importing the `pdb` module. This module provides the functionality for debugging Python code. `import pdb`
 
@@ -357,6 +379,7 @@ def example_function(x, y):
     pdb.set_trace()
     result = x + y
     return result
+
 ```
 
 #### Setting breakpoints
@@ -367,6 +390,7 @@ To start debugging at a specific point in your code, you insert the `pdb.set_tra
 def some_function():
     pdb.set_trace()  # This line sets a breakpoint
     print("Hello, World!")
+
 ```
 
 When the program reaches this line during execution, it will pause, and the debugger will be activated.
@@ -390,6 +414,7 @@ def some_function():
     print("Hello, World!")
 
 some_function()
+
 ```
 
 **b.** **Running the Script with `-m pdb` Option:**
@@ -398,15 +423,15 @@ Alternatively, you can run your Python script with the `-m pdb` option, which au
 
 ```
 python -m pdb your_script.py
+
 ```
 
 #### Entering Debugger Mode:
 
 When your code encounters the breakpoint (either set using `pdb.set_trace()` or `pdb.breakpoint()`), it enters the interactive debugger mode. This is indicated by the `(Pdb)` prompt.
 
-![Screenshot-2024-01-18-212824-1](https://www.freecodecamp.org/news/content/images/2024/01/Screenshot-2024-01-18-212824-1.png)
-
-A snapshot of Interactive debugger mode in terminal
+![Image](https://www.freecodecamp.org/news/content/images/2024/01/Screenshot-2024-01-18-212824-1.png)
+_A snapshot of Interactive debugger mode in terminal_
 
 #### Basic Commands:
 
@@ -414,15 +439,16 @@ Now, you can interact with the debugger and use various commands to inspect vari
 
 Some common commands in the pdb debugger include:
 
--   `n` (next): Continue execution until the next line in the current function is reached. If the current line contains a function call, it will not step into the called function.
--   `c` (continue): Continue execution until the next breakpoint is encountered.
--   `s` (step): Execute the current line of code and stop at the first possible occasion (either in a function that is called or at the next line in the current function).
--   `q` (quit): Exit the debugger and terminate the program.
--   **`break` (or `b`):** `break [file:]line_number` or `break [function_name]`                  Sets a breakpoint at the specified line number or function. When the program execution reaches the breakpoint, it will pause, allowing you to inspect variables and step through the code.
+* `n` (next): Continue execution until the next line in the current function is reached. If the current line contains a function call, it will not step into the called function.
+* `c` (continue): Continue execution until the next breakpoint is encountered.
+* `s` (step): Execute the current line of code and stop at the first possible occasion (either in a function that is called or at the next line in the current function).
+* `q` (quit): Exit the debugger and terminate the program.
+* **`break` (or `b`):** `break [file:]line_number` or `break [function_name]`                  Sets a breakpoint at the specified line number or function. When the program execution reaches the breakpoint, it will pause, allowing you to inspect variables and step through the code.
 
 By strategically placing breakpoints and using these commands, you can effectively debug your Python code and identify the source of issues in a systematic manner.
 
-<table style="
+<table
+  style="
     box-sizing: border-box;
     margin: 25px auto;
     padding: 0px;
@@ -451,14 +477,20 @@ By strategically placing breakpoints and using these commands, you can effective
     text-decoration-thickness: initial;
     text-decoration-style: initial;
     text-decoration-color: initial;
-  "><tbody style="
+  "
+>
+  <tbody
+    style="
       box-sizing: border-box;
       margin: 0px;
       padding: 0px;
       border: 0px;
       font-size: 17px;
       vertical-align: baseline;
-    "><tr style="
+    "
+  >
+    <tr
+      style="
         box-sizing: border-box;
         margin: 0px;
         padding: 0px;
@@ -466,7 +498,10 @@ By strategically placing breakpoints and using these commands, you can effective
         font-size: 17px;
         vertical-align: baseline;
         background-color: var(--gfg-body-color);
-      "><td style="
+      "
+    >
+      <td
+        style="
           box-sizing: border-box;
           margin: 0px;
           padding: 14px 10px;
@@ -476,14 +511,22 @@ By strategically placing breakpoints and using these commands, you can effective
           width: 120px;
           font-weight: 400;
           text-align: center;
-        "><strong style="
+        "
+      >
+        <strong
+          style="
             box-sizing: border-box;
             margin: 0px;
             padding: 0px;
             border: 0px;
             font-size: var(--font-secondary);
             vertical-align: baseline;
-          ">Command</strong></td><td style="
+          "
+          >Command</strong
+        >
+      </td>
+      <td
+        style="
           box-sizing: border-box;
           margin: 0px;
           padding: 14px 10px;
@@ -492,14 +535,23 @@ By strategically placing breakpoints and using these commands, you can effective
           vertical-align: middle;
           font-weight: 400;
           text-align: center;
-        "><strong style="
+        "
+      >
+        <strong
+          style="
             box-sizing: border-box;
             margin: 0px;
             padding: 0px;
             border: 0px;
             font-size: var(--font-secondary);
             vertical-align: baseline;
-          ">Functionality</strong></td></tr><tr style="
+          "
+          >Functionality</strong
+        >
+      </td>
+    </tr>
+    <tr
+    style="
       box-sizing: border-box;
       margin: 0px;
       padding: 0px;
@@ -507,7 +559,10 @@ By strategically placing breakpoints and using these commands, you can effective
       font-size: 17px;
       vertical-align: baseline;
       background-color: var(--gfg-body-color);
-    "><td style="
+    "
+  >
+    <td
+      style="
         box-sizing: border-box;
         margin: 0px;
         padding: 14px 10px;
@@ -516,7 +571,12 @@ By strategically placing breakpoints and using these commands, you can effective
         vertical-align: middle;
         font-weight: 400;
         text-align: center;
-      ">list (or l)</td><td style="
+      "
+    >
+    list (or l)
+    </td>
+    <td
+      style="
         box-sizing: border-box;
         margin: 0px;
         padding: 14px 10px;
@@ -525,7 +585,14 @@ By strategically placing breakpoints and using these commands, you can effective
         vertical-align: middle;
         font-weight: 400;
         text-align: center;
-      "><strong>list or list [first[, last]]:</strong> Display the source code around the current line. Optionally, you can specify a range of lines to display.</td></tr><tr style="
+      "
+    >
+    <strong>list or list [first[, last]]:</strong> Display the source code around the current line. Optionally, you can specify a range of lines to display.
+    </td>
+  </tr>
+
+  <tr
+  style="
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
@@ -533,7 +600,10 @@ By strategically placing breakpoints and using these commands, you can effective
     font-size: 17px;
     vertical-align: baseline;
     background-color: var(--gfg-body-color);
-  "><td style="
+  "
+>
+  <td
+    style="
       box-sizing: border-box;
       margin: 0px;
       padding: 14px 10px;
@@ -542,7 +612,12 @@ By strategically placing breakpoints and using these commands, you can effective
       vertical-align: middle;
       font-weight: 400;
       text-align: center;
-    ">print (or p)</td><td style="
+    "
+  >
+  print (or p)
+  </td>
+  <td
+    style="
       box-sizing: border-box;
       margin: 0px;
       padding: 14px 10px;
@@ -551,7 +626,14 @@ By strategically placing breakpoints and using these commands, you can effective
       vertical-align: middle;
       font-weight: 400;
       text-align: center;
-    "><b>print expression:</b> Evaluate and print the value of the specified expression. This is useful for inspecting variables.</td></tr><tr style="
+    "
+  >
+  <b>print expression:</b> Evaluate and print the value of the specified expression. This is useful for inspecting variables.
+  </td>
+</tr>
+
+<tr
+style="
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
@@ -559,7 +641,10 @@ By strategically placing breakpoints and using these commands, you can effective
   font-size: 17px;
   vertical-align: baseline;
   background-color: var(--gfg-body-color);
-"><td style="
+"
+>
+<td
+  style="
     box-sizing: border-box;
     margin: 0px;
     padding: 14px 10px;
@@ -568,7 +653,12 @@ By strategically placing breakpoints and using these commands, you can effective
     vertical-align: middle;
     font-weight: 400;
     text-align: center;
-  ">break (or b)</td><td style="
+  "
+>
+break (or b)
+</td>
+<td
+  style="
     box-sizing: border-box;
     margin: 0px;
     padding: 14px 10px;
@@ -577,14 +667,23 @@ By strategically placing breakpoints and using these commands, you can effective
     vertical-align: middle;
     font-weight: 400;
     text-align: center;
-  "><b>[file:]line_number or break [function_name]:</b> Sets a breakpoint at the specified line number or function. When the program execution reaches the breakpoint, it will pause, allowing you to inspect variables and step through the code.</td></tr><tr style="
+  "
+>
+<b>[file:]line_number or break [function_name]:</b> Sets a breakpoint at the specified line number or function. When the program execution reaches the breakpoint, it will pause, allowing you to inspect variables and step through the code.
+</td>
+</tr>
+    <tr
+      style="
         box-sizing: border-box;
         margin: 0px;
         padding: 0px;
         border: 0.3px solid rgb(223, 223, 223);
         font-size: 17px;
         vertical-align: baseline;
-      "><td style="
+      "
+    >
+      <td
+        style="
           box-sizing: border-box;
           margin: 0px;
           padding: 14px 10px;
@@ -593,7 +692,12 @@ By strategically placing breakpoints and using these commands, you can effective
           vertical-align: middle;
           font-weight: 400;
           text-align: center;
-        ">help</td><td style="
+        "
+      >
+        help
+      </td>
+      <td
+        style="
           box-sizing: border-box;
           margin: 0px;
           padding: 14px 10px;
@@ -602,7 +706,13 @@ By strategically placing breakpoints and using these commands, you can effective
           vertical-align: middle;
           font-weight: 400;
           text-align: center;
-        ">Displays list of commands or provide information about a specific command or topic(eg. help breakpoints)</td></tr><tr style="
+        "
+      >
+        Displays list of commands or provide information about a specific command or topic(eg. help breakpoints)
+      </td>
+    </tr>
+    <tr
+      style="
         box-sizing: border-box;
         margin: 0px;
         padding: 0px;
@@ -610,7 +720,10 @@ By strategically placing breakpoints and using these commands, you can effective
         font-size: 17px;
         vertical-align: baseline;
         background-color: var(--gfg-body-color);
-      "><td style="
+      "
+    >
+      <td
+        style="
           box-sizing: border-box;
           margin: 0px;
           padding: 14px 10px;
@@ -619,7 +732,12 @@ By strategically placing breakpoints and using these commands, you can effective
           vertical-align: middle;
           font-weight: 400;
           text-align: center;
-        ">where</td><td style="
+        "
+      >
+        where
+      </td>
+      <td
+        style="
           box-sizing: border-box;
           margin: 0px;
           padding: 14px 10px;
@@ -628,19 +746,26 @@ By strategically placing breakpoints and using these commands, you can effective
           vertical-align: middle;
           font-weight: 400;
           text-align: center;
-        ">Display a stack traceback of the function calls leading up to the current point in the code. Each line of the traceback typically includes the function name, the file name, and the line number where the function was called.</td></tr></tbody></table>
+        "
+      >
+      Display a stack traceback of the function calls leading up to the current point in the code. Each line of the traceback typically includes the function name, the file name, and the line number where the function was called.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 
 #### Debugger Extensions
 
-Consider using third-party debugging tools and extensions, such as `pdbpp`, `pudb` and `ipdb`, which enhance the functionality of the built-in PDB debugger.
+Consider using third-party debugging tools and extensions, such as `pdbpp`, `pudb` and `ipdb`, which enhance the functionality of the built-in PDB debugger. 
 
 `pdbpp` provides additional features such as syntax highlighting, tab-completion, and better navigation capabilities.
 
 `ipdb` is an IPython-based debugger, integrating the powerful features of IPython into the debugging experience. It offers an interactive and user-friendly interface for debugging Python code. It Supports IPython magic commands, making it easier to perform complex debugging tasks.
 
-`pudb` is a full-screen, console-based visual debugger that provides syntax highlighting and an interactive and visually appealing debugging experience. It includes a visual interface with a code browser, making it easy to navigate through your code.
+`pudb` is a full-screen, console-based visual debugger that provides syntax highlighting and an interactive and visually appealing debugging experience. It includes a visual interface with a code browser, making it easy to navigate through your code. 
 
-To use any of them, replace `pdb` with the corresponding debugger you want to use. For eg.  `import pdb; pdb.set_trace()` with `import pdbpp; pdbpp.set_trace()` in your code.
+To use any of them, replace `pdb` with the corresponding debugger you want to use. For eg.  `import pdb; pdb.set_trace()` with `import pdbpp; pdbpp.set_trace()` in your code.
 
 ### Remote Debugging
 
@@ -650,8 +775,8 @@ You connect your local Integrated Development Environment (IDE) to the remote en
 
 You can do this in two ways:
 
--   **IDE with Remote Debugging Support:** Popular integrated development environments (IDEs) like PyCharm, Visual Studio Code, and others provide built-in support for remote debugging.
--   **pdb or pydevd Library:** Python's built-in `pdb` module can be used for basic debugging. Alternatively, you can use `pydevd`, a powerful remote debugger.
+* **IDE with Remote Debugging Support:** Popular integrated development environments (IDEs) like PyCharm, Visual Studio Code, and others provide built-in support for remote debugging.
+* **pdb or pydevd Library:** Python's built-in `pdb` module can be used for basic debugging. Alternatively, you can use `pydevd`, a powerful remote debugger.
 
 Remote breakpoints, stepping through code, variable inspection, and other debugging features are employed, similar to local debugging.
 
@@ -661,15 +786,14 @@ Most Integrated Development Environments (IDEs) for Python, such as PyCharm, Vis
 
 ### Visual Breakpoints:
 
-Breakpoints are markers that pause the execution of your Python program at a specific line of code, allowing you to inspect variables, evaluate expressions, and understand the flow of your program at that point.
+Breakpoints are markers that pause the execution of your Python program at a specific line of code, allowing you to inspect variables, evaluate expressions, and understand the flow of your program at that point. 
 
--   **PyCharm:** Simply click on the left margin next to the line number where you want to set the breakpoint.
--   **Visual Studio Code:** Click on the left margin, or use the shortcut `F9`.
--   **IDLE:** You can add the line `import pdb; pdb.set_trace()` at the desired location.
+* **PyCharm:** Simply click on the left margin next to the line number where you want to set the breakpoint.
+* **Visual Studio Code:** Click on the left margin, or use the shortcut `F9`.
+* **IDLE:** You can add the line `import pdb; pdb.set_trace()` at the desired location.
 
-![image-101](https://www.freecodecamp.org/news/content/images/2024/01/image-101.png)
-
-A snapshot of Breakpoint(red dot) in PyCharm
+![Image](https://www.freecodecamp.org/news/content/images/2024/01/image-101.png)
+_A snapshot of Breakpoint(red dot) in PyCharm_
 
 Once a breakpoint is set, run your program in debug mode to stop execution at that specific point.
 
@@ -677,13 +801,12 @@ Once a breakpoint is set, run your program in debug mode to stop execution at th
 
 After hitting a breakpoint, you can step through your code line by line to understand its behavior. Three common options for this are:
 
--   **Step Into (F7):** Moves to the next line of code and enters function calls if applicable.
--   **Step Over (F8):** Executes the current line of code and stops at the next line, skipping function calls.
--   **Step Out (Shift + F8):** Completes the execution of the current function and stops at the calling function.
+* **Step Into (F7):** Moves to the next line of code and enters function calls if applicable.
+* **Step Over (F8):** Executes the current line of code and stops at the next line, skipping function calls.
+* **Step Out (Shift + F8):** Completes the execution of the current function and stops at the calling function.
 
-![image-119](https://www.freecodecamp.org/news/content/images/2024/01/image-119.png)
-
-Stepping through code options
+![Image](https://www.freecodecamp.org/news/content/images/2024/01/image-119.png)
+_Stepping through code options_
 
 Debuggers in IDEs allow you to execute your code step by step. This includes stepping into functions, stepping over lines, and stepping out of functions. This fine-grained control helps you trace the flow of your program and identify the exact location of an issue.
 
@@ -699,44 +822,43 @@ PyCharm, for instance, displays the call stack in the debugger tool window.
 
 Inspecting variables is crucial for understanding how data changes during program execution. IDEs provide a Variables panel where you can view the current state of variables, making it easier to identify bugs. Simply hover over a variable or check the Variables tab to see its current value.
 
--   **PyCharm:** Utilizes a dedicated "Variables" pane during debugging.
--   **Visual Studio Code:** Provides variable inspection in the "Watch" and "Variables" panes.
--   **IDLE:** Allows you to type variable names in the interactive console during debugging.
+* **PyCharm:** Utilizes a dedicated "Variables" pane during debugging.
+* **Visual Studio Code:** Provides variable inspection in the "Watch" and "Variables" panes.
+* **IDLE:** Allows you to type variable names in the interactive console during debugging.
 
-Inspecting variables is crucial for understanding how data changes during program execution.
+Inspecting variables is crucial for understanding how data changes during program execution. 
 
 ### Conditional Breakpoints:
 
 In addition to standard breakpoints, some IDEs allow you to set breakpoints with conditions. This means the debugger will only pause if a specified condition is met. This can be helpful when you want to investigate a specific scenario or condition in your code.
 
--   **PyCharm:** Right-click on a breakpoint and set conditions.
--   **Visual Studio Code:** Right-click on a breakpoint, select "Edit Breakpoint," and define a condition.
--   **IDLE:** Utilize the `pdb` library to set conditional breakpoints within your code.
+* **PyCharm:** Right-click on a breakpoint and set conditions.
+* **Visual Studio Code:** Right-click on a breakpoint, select "Edit Breakpoint," and define a condition.
+* **IDLE:** Utilize the `pdb` library to set conditional breakpoints within your code.
 
-![hitCount--1-](https://www.freecodecamp.org/news/content/images/2024/01/hitCount--1-.gif)
-
-A snapshot illustrating the process of setting Conditional breakpoint in Python code within PyCharm
+![Image](https://www.freecodecamp.org/news/content/images/2024/01/hitCount--1-.gif)
+_A snapshot illustrating the process of setting Conditional breakpoint in Python code within PyCharm_
 
 ### Watch Expressions:
 
 Watch expressions allow you to monitor specific variables or expressions continuously as your program runs. This feature is beneficial when you want to keep an eye on certain values without manually inspecting them at each breakpoint.
 
--   **PyCharm:** Add expressions to the "Watches" pane to monitor them throughout debugging.
--   **Visual Studio Code:** Use the "Watch" pane to add expressions for continuous monitoring.
--   **IDLE:** While at a breakpoint, type expressions in the interactive console to observe their values.
+* **PyCharm:** Add expressions to the "Watches" pane to monitor them throughout debugging.
+* **Visual Studio Code:** Use the "Watch" pane to add expressions for continuous monitoring.
+* **IDLE:** While at a breakpoint, type expressions in the interactive console to observe their values.
 
 By utilizing watch expressions, you can track the evolution of specific variables or expressions and identify patterns or unexpected changes during runtime.
 
 There are more tools that IDE provides for debugging purposes like:
 
--   "Python Profiler" in VSCode and the built-in profiler in PyCharm as **Profiling Tools.**
--   "Code With Me" in PyCharm and Extensions like "Live Share" in VSCode for **Collaborative Debugging.**
+* "Python Profiler" in VSCode and the built-in profiler in PyCharm as **Profiling Tools.** 
+* "Code With Me" in PyCharm and Extensions like "Live Share" in VSCode for **Collaborative Debugging.**
 
 ## Performance Debugging:
 
-### Code Linters and Analyzers
+### Code Linters and Analyzers 
 
-Code linters and static analyzers are tools that help identify potential issues in your code by analyzing the source code without executing it. They can catch common programming errors, enforce coding standards, and provide valuable suggestions for improvement.
+Code linters and static analyzers are tools that help identify potential issues in your code by analyzing the source code without executing it. They can catch common programming errors, enforce coding standards, and provide valuable suggestions for improvement. 
 
 Here, we'll talk about a couple of these tools – PyLint and mypy – so you can see how to install them and how they work.
 
@@ -744,12 +866,14 @@ Here, we'll talk about a couple of these tools – PyLint and mypy – so you c
 
 ```
 pip install pylint
+
 ```
 
 Run `pylint` on your Python script or module using this command:
 
 ```
 pylint your_script.py
+
 ```
 
 When you run PyLint, it generates a detailed report with information about potential issues, coding convention violations, and other insights. The output includes a score for your code, along with messages indicating areas for improvement.
@@ -762,6 +886,7 @@ enable = all
 
 [MESSAGES CONTROL]
 disable = missing-docstring
+
 ```
 
 In this example, we enable all checks except for the missing docstring check. You can tailor the configuration to match your coding style and project requirements.
@@ -784,18 +909,19 @@ Mypy is particularly useful when you use type annotations in your Python code. I
 
 Let's discuss some other code formatters as well.
 
-### flake8
+### flake8 
 
 flake8 combines three main tools:
 
-1.  **PyFlakes:** This tool performs static code analysis to find errors in your Python code without executing it.
-2.  **pycodestyle:** Formerly known as pep8, this tool checks your code against the style guide outlined in PEP 8, providing feedback on coding style violations.
-3.  **McCabe:** This complexity checker identifies complex code blocks that may be harder to understand or maintain.
+1. **PyFlakes:** This tool performs static code analysis to find errors in your Python code without executing it.
+2. **pycodestyle:** Formerly known as pep8, this tool checks your code against the style guide outlined in PEP 8, providing feedback on coding style violations.
+3. **McCabe:** This complexity checker identifies complex code blocks that may be harder to understand or maintain.
 
 #### How to install flake8:
 
 ```
 pip install flake8
+
 ```
 
 Similar to PyLint, you can run flake8 on your Python code by executing the following command in your terminal:
@@ -803,6 +929,7 @@ Similar to PyLint, you can run flake8 on your Python code by executing the follo
 ```
 flake8 your_file.py 
 #Replace your_file.py with the actual name of your Python file.
+
 ```
 
 Similar to PyLint, flake8 can be configured to suit your project's requirements. You can create a configuration file (usually named `.flake8`) in your project's root directory. eg.
@@ -811,11 +938,12 @@ Similar to PyLint, flake8 can be configured to suit your project's requirements.
 [flake8]
 max-line-length = 88
 extend-ignore = E203, W503
+
 ```
 
 In this example, we set the maximum line length to 88 characters and extend the list of ignored errors.
 
-### Black
+### Black 
 
 Black is an opinionated code formatter that automates formatting decisions for consistent and readable code.
 
@@ -825,12 +953,14 @@ You can install Black using this command:
 
 ```
 pip install black
+
 ```
 
 And here's how you use it:
 
 ```
 black your_file.py
+
 ```
 
 Black complements traditional linters like PyLint and flake8. You can use these tools in combination to ensure both code quality and consistent formatting.
@@ -841,9 +971,9 @@ Many popular editors like Visual Studio Code, Atom, and Sublime Text have extens
 
 Profiling involves analyzing the performance of your code to identify bottlenecks and areas that can be optimized. Python provides built-in tools and external libraries for profiling, helping developers gain insights into their code's execution time and resource usage.
 
--   **Identify Performance Issues:** Profiling allows you to pinpoint sections of your code that consume the most time and resources, aiding in optimization efforts.
--   **Optimize Code:** Once bottlenecks are identified, developers can focus on optimizing specific functions or code blocks to enhance overall performance.
--   **Memory Usage Analysis:** Profiling tools can also help in analyzing memory consumption, aiding in the detection of memory leaks and inefficient memory usage.
+* **Identify Performance Issues:** Profiling allows you to pinpoint sections of your code that consume the most time and resources, aiding in optimization efforts.
+* **Optimize Code:** Once bottlenecks are identified, developers can focus on optimizing specific functions or code blocks to enhance overall performance.
+* **Memory Usage Analysis:** Profiling tools can also help in analyzing memory consumption, aiding in the detection of memory leaks and inefficient memory usage.
 
 Python comes with built-in modules for basic profiling. The two main modules are `cProfile` and `profile`.
 
@@ -853,7 +983,7 @@ Python comes with built-in modules for basic profiling. The two main modules are
 
 **Example:**
 
-```Python
+```python
 import cProfile
 
 def example_function():
@@ -861,6 +991,7 @@ def example_function():
 
 if __name__ == "__main__":
     cProfile.run('example_function()')
+
 ```
 
 This will output a detailed report of function calls, their execution time, and the percentage of total time spent in each function.
@@ -869,7 +1000,7 @@ This will output a detailed report of function calls, their execution time, and 
 
 The `profile` module is similar to `cProfile` but is implemented in pure Python. It provides a more detailed analysis of function calls and can be used when a more fine-grained profiling is needed.
 
-```Python
+```python
 import profile
 
 def example_function():
@@ -877,6 +1008,7 @@ def example_function():
 
 if __name__ == "__main__":
     profile.run('example_function()')
+
 ```
 
 Both `cProfile` and `profile` produce similar outputs, but the former is generally preferred for its lower overhead.
@@ -885,15 +1017,16 @@ Both `cProfile` and `profile` produce similar outputs, but the former is general
 
 While the built-in modules provide textual reports, visualizing the results can make it easier to understand and analyze. One popular tool for this is `snakeviz`.
 
-#### ****Installing snakeviz:****
+#### **Installing snakeviz:**
 
 ```
 pip install snakeviz
+
 ```
 
-#### ****Using snakeviz:****
+#### **Using snakeviz:**
 
-```Python
+```python
 import cProfile
 import snakeviz
 
@@ -903,6 +1036,7 @@ def example_function():
 if __name__ == "__main__":
     cProfile.run('example_function()', 'profile_results')
     snakeviz.view('profile_results')
+
 ```
 
 This will open a browser window displaying an interactive visualization of the profiling results.
@@ -911,19 +1045,20 @@ This will open a browser window displaying an interactive visualization of the p
 
 While the built-in profiling tools offer valuable insights, more advanced techniques and external libraries can provide additional information.
 
-#### ****Line Profiling:****
+#### **Line Profiling:**
 
 Line profiling allows you to see how much time is spent on each line of code within a function. The `line_profiler` module is commonly used for this purpose.
 
-#### Installing line\_profiler:
+#### Installing line_profiler:
 
 ```
 pip install line_profiler
+
 ```
 
-#### Using line\_profiler:
+#### Using line_profiler:
 
-```Python
+```python
 from line_profiler import LineProfiler
 
 def example_function():
@@ -937,6 +1072,7 @@ if __name__ == "__main__":
 
     # Display the results
     profiler.print_stats()
+
 ```
 
 This will show a detailed report with the time spent on each line within the `example_function`.
@@ -945,15 +1081,16 @@ This will show a detailed report with the time spent on each line within the `ex
 
 Understanding memory usage is crucial for optimizing code. The `memory_profiler` module helps in profiling memory consumption.
 
-#### Installing memory\_profiler:
+#### Installing memory_profiler:
 
 ```
 pip install memory-profiler
+
 ```
 
-#### Using memory\_profiler:
+#### Using memory_profiler:
 
-```Python
+```python
 from memory_profiler import profile
 
 @profile
@@ -962,6 +1099,7 @@ def example_function():
 
 if __name__ == "__main__":
     example_function()
+
 ```
 
 When executed, this will display a line-by-line analysis of memory usage during the execution of the `example_function`
@@ -972,69 +1110,39 @@ While these techniques cover a broad range of debugging scenarios, it's importan
 
 # Some Additional Tips for Efficient Debugging:
 
--   **Version Control and Git Bisect:** Leverage features provided by your version control system to track changes and revert to working versions if needed.. If the bug was introduced recently and you have version control (e.g., Git) in place, using git bisect can help you identify the exact commit that introduced the issue.
--   **Documentation and Code Comments**: Writing  well-documented code and comments can help in understanding the purpose of specific functions or code blocks, making debugging more straightforward for both you and others who might work on the code.
--   **Break Down Complex Problems**: Divide large code blocks into smaller, testable functions for easier debugging and maintenance.
--   **Take Breaks**: Stepping away and returning with a fresh perspective can often reveal solutions that weren't apparent earlier.
--   **Rubber Duck Debugging**: It's like having a therapy session for your code, except the therapist is a rubber duck. Imagine you're stuck on a tricky coding issue. Instead of asking a person for help, you talk to a rubber duck. Yes, an actual rubber duck! You explain your code to the duck, line by line, as if it understands everything. Even though the duck is quite rude and doesn't reply, something magical happens. By talking through your problem out loud, you start to see the solution yourself.
+* **Version Control and Git Bisect:** Leverage features provided by your version control system to track changes and revert to working versions if needed.. If the bug was introduced recently and you have version control (e.g., Git) in place, using git bisect can help you identify the exact commit that introduced the issue.
+* **Documentation and Code Comments**: Writing  well-documented code and comments can help in understanding the purpose of specific functions or code blocks, making debugging more straightforward for both you and others who might work on the code. 
+* **Break Down Complex Problems**: Divide large code blocks into smaller, testable functions for easier debugging and maintenance.
+* **Take Breaks**: Stepping away and returning with a fresh perspective can often reveal solutions that weren't apparent earlier.
+* **Rubber Duck Debugging**: It's like having a therapy session for your code, except the therapist is a rubber duck. Imagine you're stuck on a tricky coding issue. Instead of asking a person for help, you talk to a rubber duck. Yes, an actual rubber duck! You explain your code to the duck, line by line, as if it understands everything. Even though the duck is quite rude and doesn't reply, something magical happens. By talking through your problem out loud, you start to see the solution yourself.
 
 # How to Search for Solutions to Bugs and Errors
 
-## 1\. Effective Search Strategies:
+## 1. Effective Search Strategies:
 
--   ****Understand the Error Message:**** Start by understanding the error message or bug description. Identify key terms and error codes that can be used in your search.
--   **Include context details**:**** for example, operating system, version number of the software, libraries, or frameworks you are working with. Bugs and solutions can vary between different versions.
--   ****Quotation Marks:**** Use quotation marks to search for an exact phrase. This is useful when searching for specific error messages or code snippets.
--   ****Use Descriptive Keywords:**** Use specific and descriptive keywords related to the error. Include programming languages, frameworks, and relevant technologies in your search. Whenever possible, include code snippets or examples in your search query. This can narrow down results to those including practical implementations.
+* **Understand the Error Message:** Start by understanding the error message or bug description. Identify key terms and error codes that can be used in your search.
+* **Include context details**:**** for example, operating system, version number of the software, libraries, or frameworks you are working with. Bugs and solutions can vary between different versions.
+*  **Quotation Marks:** Use quotation marks to search for an exact phrase. This is useful when searching for specific error messages or code snippets.
+* **Use Descriptive Keywords:** Use specific and descriptive keywords related to the error. Include programming languages, frameworks, and relevant technologies in your search. Whenever possible, include code snippets or examples in your search query. This can narrow down results to those including practical implementations.
 
-## 2\. Leveraging Web Resources:
+## 2. Leveraging Web Resources:
 
--   ****GitHub Repositories:**** Search GitHub repositories for similar issues. Many projects have issue trackers where users discuss problems and solutions.
--   ****Documentation and Manuals:**** Check official documentation and manuals for the technologies you are using. Sometimes, the answer might be found in the official documentation.
--   ****Site-specific Searches:**** Use the "site:" operator to search within a specific website or domain. This can be useful when looking for solutions on particular forums, documentation, or blogs.
--   Some useful forums/sites are: Stack Overflow, GitHub discussions, Reddit, and other developer communities. These platforms often have discussions about common bugs and their solutions.
+* **GitHub Repositories:** Search GitHub repositories for similar issues. Many projects have issue trackers where users discuss problems and solutions.
+* **Documentation and Manuals:** Check official documentation and manuals for the technologies you are using. Sometimes, the answer might be found in the official documentation.
+* **Site-specific Searches:** Use the "site:" operator to search within a specific website or domain. This can be useful when looking for solutions on particular forums, documentation, or blogs.
+* Some useful forums/sites are: Stack Overflow, GitHub discussions, Reddit, and other developer communities. These platforms often have discussions about common bugs and their solutions.
 
-These are the ways how you can find the solution for your problem. Even if you don’t find an exact match to your problem, similar issues might provide insights into potential solutions.
+These are the ways how you can find the solution for your problem. Even if you don’t find an exact match to your problem, similar issues might provide insights into potential solutions. 
 
-If you can't find a solution at all, consider posting your problem on relevant forums or communities. Others may have faced similar issues and can offer assistance.
+If you can't find a solution at all, consider posting your problem on relevant forums or communities. Others may have faced similar issues and can offer assistance. 
 
-Bug resolution may require some patience. Be persistent and try different search queries, especially if the issue is complex.
+Bug resolution may require some patience. Be persistent and try different search queries, especially if the issue is complex. 
 
 # Conclusion
 
-In this debugging handbook, we've explored common error messages, learned effective search strategies, and discovered the practical utility of print statements.
+In this debugging handbook, we've explored common error messages, learned effective search strategies, and discovered the practical utility of print statements. 
 
-Debugging is an integral part of the software development process. It's an art of patience, persistence, and problem-solving. By employing a combination of print statements, logging, built-in debugging tools, and third-party utilities, you can effectively identify and resolve issues in your Python code.
+Debugging is an integral part of the software development process. It's an art of patience, persistence, and problem-solving. By employing a combination of print statements, logging, built-in debugging tools, and third-party utilities, you can effectively identify and resolve issues in your Python code. 
 
-Developing good debugging habits and leveraging the available tools will not only save you time but also enhance the overall quality and reliability of your programs.
+Developing good debugging habits and leveraging the available tools will not only save you time but also enhance the overall quality and reliability of your programs. 
 
-[1]: #common-code-error-messages
-[2]: #1-syntaxerror-invalid-syntax
-[3]: #2-indentationerror-unexpected-indent
-[4]: #3-nameerror-name-variable-is-not-defined
-[5]: #4-attributeerror-module-object-has-no-attribute-attribute_name-
-[6]: #5-filenotfounderror-errno-2-no-such-file-or-directory-filename-
-[7]: #6-indexerror-list-index-out-of-range
-[8]: #7-importerror-no-module-named-module_name-
-[9]: #8-typeerror-
-[10]: #9-valueerror-
-[11]: #how-to-debug-python-code
-[12]: #foundational-debugging-techniques-
-[13]: #print-statements
-[14]: #logging
-[15]: #exception-handling
-[16]: #assertions
-[17]: #advanced-debugging-techniques-
-[18]: #unit-testing
-[19]: #how-to-use-the-interactive-debugger-pdb-
-[20]: #remote-debugging
-[21]: #performance-debugging--1
-[22]: #code-linters-and-analyzers
-[23]: #profiling
-[24]: #ide-features-for-debugging
-[25]: #some-additional-tips-for-efficient-debugging-
-[26]: #how-to-search-for-solutions-to-bugs-and-errors
-[27]: #1-effective-search-strategies-
-[28]: #2-leveraging-web-resources-
-[29]: #how-to-debug-python-code
-[30]: https://www.samyakinfo.tech/blog/logging-in-python

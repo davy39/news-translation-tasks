@@ -1,16 +1,28 @@
 ---
-title: "Learn Linux for Beginners: From Basics to Advanced Techniques [Full Book]"
-date: 2024-08-19T09:06:00.637Z
+title: 'Learn Linux for Beginners: From Basics to Advanced Techniques [Full Book]'
+subtitle: ''
 author: Zaira Hira
-authorURL: https://www.freecodecamp.org/news/author/zaira/
-originalURL: https://www.freecodecamp.org/news/learn-linux-for-beginners-book-basic-to-advanced/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2024-07-12T13:18:40.568Z'
+originalURL: https://freecodecamp.org/news/learn-linux-for-beginners-book-basic-to-advanced
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1720790242560/764782a4-1bf3-45a5-857c-7fe3921bfb08.png
+tags:
+- name: Linux
+  slug: linux
+- name: book
+  slug: book
+- name: beginner
+  slug: beginner
+seo_title: null
+seo_desc: 'Learning Linux is one of the most valuable skills in the tech industry.
+  It can help you get things done faster and more efficiently. Many of the world''s
+  powerful servers and supercomputers run on Linux.
+
+  While empowering you in your current role, lear...'
 ---
 
 Learning Linux is one of the most valuable skills in the tech industry. It can help you get things done faster and more efficiently. Many of the world's powerful servers and supercomputers run on Linux.
-
-<!-- more -->
 
 While empowering you in your current role, learning Linux can also help you transition into other tech careers like DevOps, Cybersecurity, and Cloud Computing.
 
@@ -20,79 +32,85 @@ Important Note: All examples in this book are demonstrated in Ubuntu 22.04.2 LTS
 
 ## Table of Contents
 
--   [Part 1: Introduction to Linux][1]
+* [Part 1: Introduction to Linux](#heading-part-1-introduction-to-linux)
     
-    -   [1.1. Getting Started with Linux][2]
--   [Part 2: Introduction to Bash Shell and System Commands][3]
+    * [1.1. Getting Started with Linux](#heading-11-getting-started-with-linux)
+        
+* [Part 2: Introduction to Bash Shell and System Commands](#heading-part-2-introduction-to-bash-shell-and-system-commands)
     
-    -   [2.1. Getting Started with the Bash shell][4]
+    * [2.1. Getting Started with the Bash shell](#heading-21-getting-started-with-the-bash-shell)
         
-    -   [2.2. Command Structure][5]
+    * [2.2. Command Structure](#heading-22-command-structure)
         
-    -   [2.3. Bash Commands and Keyboard Shortcuts][6]
+    * [2.3. Bash Commands and Keyboard Shortcuts](#heading-23-bash-commands-and-keyboard-shortcuts)
         
-    -   [2.4. Identifying Yourself: The `whoami` Command][7]
+    * [2.4. Identifying Yourself: The `whoami` Command](#heading-24-identifying-yourself-the-whoami-command)
         
--   [Part 3: Understanding Your Linux System][8]
+* [Part 3: Understanding Your Linux System](#heading-part-3-understanding-your-linux-system)
     
-    -   [3.1. Discovering Your OS and Specs][9]
--   [Part 4: Managing Files From the Command line][10]
+    * [3.1. Discovering Your OS and Specs](#heading-31-discovering-your-os-and-specs)
+        
+* [Part 4: Managing Files From the Command line](#heading-part-4-managing-files-from-the-command-line)
     
-    -   [4.1. The Linux File-system Hierarchy][11]
+    * [4.1. The Linux File-system Hierarchy](#heading-41-the-linux-file-system-hierarchy)
         
-    -   [4.2. Navigating the Linux File-system][12]
+    * [4.2. Navigating the Linux File-system](#heading-42-navigating-the-linux-file-system)
         
-    -   [4.3. Managing Files and Directories][13]
+    * [4.3. Managing Files and Directories](#heading-43-managing-files-and-directories)
         
-    -   [4.5. Basic Commands for Viewing Files][14]
+    * [4.5. Basic Commands for Viewing Files](#heading-45-basic-commands-for-viewing-files)
         
--   [Part 5: The Essentials of Text Editing in Linux][15]
+* [Part 5: The Essentials of Text Editing in Linux](#heading-part-5-the-essentials-of-text-editing-in-linux)
     
-    -   [5.1. Mastering Vim: The Complete Guide][16]
+    * [5.1. Mastering Vim: The Complete Guide](#heading-51-mastering-vim-the-complete-guide)
         
-    -   [5.2. Mastering Nano][17]
+    * [5.2. Mastering Nano](#heading-52-mastering-nano)
         
--   [Part 6: Bash Scripting][18]
+* [Part 6: Bash Scripting](#heading-part-6-bash-scripting)
     
-    -   [6.1. Definition of Bash scripting][19]
+    * [6.1. Definition of Bash scripting](#heading-61-definition-of-bash-scripting)
         
-    -   [6.2. Advantages of Bash Scripting][20]
+    * [6.2. Advantages of Bash Scripting](#heading-62-advantages-of-bash-scripting)
         
-    -   [6.3. Overview of Bash Shell and Command Line Interface][21]
+    * [6.3. Overview of Bash Shell and Command Line Interface](#heading-63-overview-of-bash-shell-and-command-line-interface)
         
-    -   [6.4. How to Create and Execute Bash scripts][22]
+    * [6.4. How to Create and Execute Bash scripts](#heading-64-how-to-create-and-execute-bash-scripts)
         
-    -   [6.5. Bash Scripting Basics][23]
+    * [6.5. Bash Scripting Basics](#heading-65-bash-scripting-basics)
         
--   [Part 7: Managing Software Packages in Linux][24]
+* [Part 7: Managing Software Packages in Linux](#heading-part-7-managing-software-packages-in-linux)
     
-    -   [7.1. Packages and Package Management][25]
+    * [7.1. Packages and Package Management](#heading-71-packages-and-package-management)
         
-    -   [7.2. Installing a Package via Command Line][26]
+    * [7.2. Installing a Package via Command Line](#heading-72-installing-a-package-via-command-line)
         
-    -   [7.3. Installing a Package via an Advanced Graphical Method – Synaptic][27]
+    * [7.3. Installing a Package via an Advanced Graphical Method – Synaptic](#heading-73-installing-a-package-via-an-advanced-graphical-method-synaptic)
         
-    -   [7.4. Installing downloaded packages from a website][28]
+    * [7.4. Installing downloaded packages from a website](#heading-74-installing-downloaded-packages-from-a-website)
         
--   [Part 8: Advanced Linux Topics][29]
+* [Part 8: Advanced Linux Topics](#heading-part-8-advanced-linux-topics)
     
-    -   [8.1. User Management][30]
+    * [8.1. User Management](#heading-81-user-management)
         
-    -   [8.2 Connecting to Remote Servers via SSH][31]
+    * [8.2 Connecting to Remote Servers via SSH](#heading-82-connecting-to-remote-servers-via-ssh)
         
-    -   [8.3. Advanced Log Parsing and Analysis][32]
+    * [8.3. Advanced Log Parsing and Analysis](#heading-83-advanced-log-parsing-and-analysis)
         
-    -   [8.4. Managing Linux Processes via Command Line][33]
+    * [8.4. Managing Linux Processes via Command Line](#heading-84-managing-linux-processes-via-command-line)
         
-    -   [8.5. Standard Input and Output Streams in Linux][34]
+    * [8.5. Standard Input and Output Streams in Linux](#heading-85-standard-input-and-output-streams-in-linux)
         
-    -   [8.6 Automation in Linux – Automate Tasks with Cron Jobs][35]
+    * [8.6 Automation in Linux – Automate Tasks with Cron Jobs](#heading-86-automation-in-linux-automate-tasks-with-cron-jobs)
         
-    -   [8.7. Linux Networking Basics][36]
+    * [8.7. Linux Networking Basics](#heading-87-linux-networking-basics)
         
-    -   [8.8. Linux Troubleshooting: Tools and Techniques][37][8.9. General Troubleshooting Strategy for Servers][38]
+    * [8.8. Linux Troubleshooting: Tools and Techniques](#heading-88-linux-troubleshooting-tools-and-techniques)
         
--   [Conclusion][39]
+    * [8.9. General Troubleshooting Strategy for Servers](#heading-89-general-troubleshooting-strategy-for-servers)
+        
+    * [8.10 Diagnosing Hardware Problems](#heading-810-diagnosing-hardware-problems)
+        
+* [Conclusion](#heading-conclusion)
     
 
 ## Part 1: Introduction to Linux
@@ -111,13 +129,13 @@ In today's data center landscape, Linux and Microsoft Windows stand out as the p
 
 Here are several compelling reasons to learn Linux:
 
--   Given the prevalence of Linux hosting, there is a high chance that your application will be hosted on Linux. So learning Linux as a developer becomes increasingly valuable.
+* Given the prevalence of Linux hosting, there is a high chance that your application will be hosted on Linux. So learning Linux as a developer becomes increasingly valuable.
     
--   With cloud computing becoming the norm, chances are high that your cloud instances will rely on Linux.
+* With cloud computing becoming the norm, chances are high that your cloud instances will rely on Linux.
     
--   Linux serves as the foundation for many operating systems for the Internet of Things (IoT) and mobile applications.
+* Linux serves as the foundation for many operating systems for the Internet of Things (IoT) and mobile applications.
     
--   In IT, there are many opportunities for those skilled in Linux.
+* In IT, there are many opportunities for those skilled in Linux.
     
 
 #### What does it mean that Linux is an open-source operating system?
@@ -144,9 +162,9 @@ The kernel acts as a bridge between applications and the hardware-level data pro
 
 The kernel loads into memory first when an operating system starts and remains there until the system shuts down. It is responsible for tasks like disk management, task management, and memory management.
 
-![Linux Kernel Layout showing interaction of kernal with applications and OS](https://cdn.hashnode.com/res/hashnode/image/upload/v1719844849011/f4bb226e-f319-4cb5-bfc9-c1a80401123e.png)
+![Linux Kernel Layout showing interaction of kernal with applications and OS](https://cdn.hashnode.com/res/hashnode/image/upload/v1719844849011/f4bb226e-f319-4cb5-bfc9-c1a80401123e.png align="center")
 
-If you are curious about what the Linux kernel looks like, [here][40] is the GitHub link.
+If you are curious about what the Linux kernel looks like, [here](https://github.com/torvalds/linux) is the GitHub link.
 
 #### What is a Linux distribution?
 
@@ -160,16 +178,16 @@ Today, there are thousands of Linux distributions to choose from, offering diffe
 
 Distributions vary from one to the other, but they generally have several common characteristics:
 
--   A distribution consists of a Linux kernel.
+* A distribution consists of a Linux kernel.
     
--   It supports user space programs.
+* It supports user space programs.
     
--   A distribution may be small and single-purpose or include thousands of open-source programs.
+* A distribution may be small and single-purpose or include thousands of open-source programs.
     
--   Some means of installing and updating the distribution and its components should be provided.
+* Some means of installing and updating the distribution and its components should be provided.
     
 
-If you view the [Linux Distributions Timeline][41], you'll see two major distros: Slackware and Debian. Several distributions are derived from them. For example, Ubuntu and Kali are derived from Debian.
+If you view the [Linux Distributions Timeline](https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg), you'll see two major distros: Slackware and Debian. Several distributions are derived from them. For example, Ubuntu and Kali are derived from Debian.
 
 **What are the advantages of derivation?** There are various advantages of derivation. Derived distributions can leverage the stability, security, and large software repositories of the parent distribution.
 
@@ -177,15 +195,15 @@ When building on an existing foundation, developers can drive their focus and ef
 
 Some popular Linux distributions are:
 
-1.  **Ubuntu**: One of the most widely used and popular Linux distributions. It is user-friendly and recommended for beginners. [Learn more about Ubuntu here][42].
+1. **Ubuntu**: One of the most widely used and popular Linux distributions. It is user-friendly and recommended for beginners. [Learn more about Ubuntu here](https://ubuntu.com/).
     
-2.  **Linux Mint**: Based on Ubuntu, Linux Mint provides a user-friendly experience with a focus on multimedia support. [Learn more about Linux Mint here][43].
+2. **Linux Mint**: Based on Ubuntu, Linux Mint provides a user-friendly experience with a focus on multimedia support. [Learn more about Linux Mint here](https://linuxmint.com/).
     
-3.  **Arch Linux**: Popular among experienced users, Arch is a lightweight and flexible distribution aimed at users who prefer a DIY approach. [Learn more about Arch Linux here][44].
+3. **Arch Linux**: Popular among experienced users, Arch is a lightweight and flexible distribution aimed at users who prefer a DIY approach. [Learn more about Arch Linux here](https://www.archlinux.org/).
     
-4.  **Manjaro**: Based on Arch Linux, Manjaro provides a user-friendly experience with pre-installed software and easy system management tools. [Learn more about Manjaro here][45].
+4. **Manjaro**: Based on Arch Linux, Manjaro provides a user-friendly experience with pre-installed software and easy system management tools. [Learn more about Manjaro here](https://manjaro.org/).
     
-5.  **Kali Linux**: Kali Linux provides a comprehensive suite of security tools and is mostly focused on cybersecurity and hacking. [Learn more about Kali Linux here][46].
+5. **Kali Linux**: Kali Linux provides a comprehensive suite of security tools and is mostly focused on cybersecurity and hacking. [Learn more about Kali Linux here](https://www.kali.org/).
     
 
 #### How to install and access Linux
@@ -200,45 +218,45 @@ Installing Linux as the primary OS is the most efficient way to use Linux, as yo
 
 In this section, you will learn how to install Ubuntu, which is one of the most popular Linux distributions. I have left out other distributions for now, as I want to keep things simple. You can always explore other distributions once you are comfortable with Ubuntu.
 
--   **Step 1 – Download the Ubuntu iso:** Go to the official [website][47] and download the iso file. Make sure to select a stable release that is labeled "LTS". LTS stands for Long Term Support which means you can get free security and maintenance updates for a long time (usually 5 years).
+* **Step 1 – Download the Ubuntu iso:** Go to the official [website](https://ubuntu.com/download/desktop) and download the iso file. Make sure to select a stable release that is labeled "LTS". LTS stands for Long Term Support which means you can get free security and maintenance updates for a long time (usually 5 years).
     
--   **Step 2 – Create a bootable pendrive:** There are a number of softwares that can create a bootable pendrive. I recommend using Rufus, as it is quite easy to use. You can download it from [here][48].
+* **Step 2 – Create a bootable pendrive:** There are a number of softwares that can create a bootable pendrive. I recommend using Rufus, as it is quite easy to use. You can download it from [here](https://rufus.ie/).
     
--   **Step 3 – Boot from the pendrive:** Once your bootable pendrive is ready, insert it and boot from the pendrive. The boot menu depends on your laptop. You can google the boot menu for your laptop model.
+* **Step 3 – Boot from the pendrive:** Once your bootable pendrive is ready, insert it and boot from the pendrive. The boot menu depends on your laptop. You can google the boot menu for your laptop model.
     
--   **Step 4 – Follow the prompts.** Once, the boot process starts, select `try or install ubuntu`.
+* **Step 4 – Follow the prompts.** Once, the boot process starts, select `try or install ubuntu`.
     
-    ![Screen prompt to either try or install Ubuntu](https://cdn.hashnode.com/res/hashnode/image/upload/v1719304227675/5b706f94-7368-47ca-a4d6-d55a0d92eff9.png)
+    ![Screen prompt to either try or install Ubuntu](https://cdn.hashnode.com/res/hashnode/image/upload/v1719304227675/5b706f94-7368-47ca-a4d6-d55a0d92eff9.png align="center")
     
     The process will take some time. Once the GUI appears, you can select the language, and keyboard layout and continue. Enter your login and name. Remember the credentials as you will need them to log in to your system and access full privileges. Wait for the installation to complete.
     
--   **Step 5 – Restart:** Click on restart now and remove the pen drive.
+* **Step 5 – Restart:** Click on restart now and remove the pen drive.
     
--   **Step 6 – Login:** Login with the credentials you entered earlier.
+* **Step 6 – Login:** Login with the credentials you entered earlier.
     
 
 And there you go! Now you can install apps and customize your desktop.
 
-![Ubuntu 22.04.4 LTS Desktop screen](https://cdn.hashnode.com/res/hashnode/image/upload/v1719304547967/d150c6eb-d04e-47e0-8473-d1a837df45c4.png)
+![Ubuntu 22.04.4 LTS Desktop screen](https://cdn.hashnode.com/res/hashnode/image/upload/v1719304547967/d150c6eb-d04e-47e0-8473-d1a837df45c4.png align="center")
 
 For advanced installation, you can explore the following topics:
 
--   Disk partitioning.
+* Disk partitioning.
     
--   Setting swap memory for enabling hibernation.
+* Setting swap memory for enabling hibernation.
     
 
 **Accessing the terminal**
 
 An important part of this handbook is learning about the terminal where you'll run all the commands and see the magic happen. You can search for the terminal by pressing the "windows" key and typing "terminal". You can pin the Terminal in the dock where other apps are located for easy access.
 
-![Search results for "terminal"](https://cdn.hashnode.com/res/hashnode/image/upload/v1719305113272/4dd30c5e-da73-4cd4-86bb-7dcd8cd2084c.png)
+![Search results for "terminal"](https://cdn.hashnode.com/res/hashnode/image/upload/v1719305113272/4dd30c5e-da73-4cd4-86bb-7dcd8cd2084c.png align="center")
 
 > 💡 The shortcut for opening the terminal is `ctrl+alt+t`
 
 You can also open the terminal from inside a folder. Right click where you are and click on "Open in Terminal". This will open the terminal in the same path.
 
-![Opening the terminal with right click menu](https://cdn.hashnode.com/res/hashnode/image/upload/v1719305289021/284a4a53-2d1a-4eaa-925a-1002a32c1dce.png)
+![Opening the terminal with right click menu](https://cdn.hashnode.com/res/hashnode/image/upload/v1719305289021/284a4a53-2d1a-4eaa-925a-1002a32c1dce.png align="center")
 
 ##### How to use Linux on a Windows machine
 
@@ -258,52 +276,53 @@ Using WSL has some advantages. The setup for WSL is simple and not time-consumin
 
 First, enable the Windows Subsystem for Linux option in settings.
 
--   Go to Start. Search for "Turn Windows features on or off."
+* Go to Start. Search for "Turn Windows features on or off."
     
--   Check the option "Windows Subsystem for Linux" if it isn't already.
+* Check the option "Windows Subsystem for Linux" if it isn't already.
     
-    ![Checking the option "Windows Subsystem for Linux" in Windows features](https://cdn.hashnode.com/res/hashnode/image/upload/v1719306102095/84f23bae-faa5-4ece-a9b6-e40f8789a061.png)
+    ![Checking the option "Windows Subsystem for Linux" in Windows features](https://cdn.hashnode.com/res/hashnode/image/upload/v1719306102095/84f23bae-faa5-4ece-a9b6-e40f8789a061.png align="center")
     
--   Next, open your command prompt and provide the installation commands.
+* Next, open your command prompt and provide the installation commands.
     
--   Open Command Prompt as an administrator:
+* Open Command Prompt as an administrator:
     
-    ![Running command prompt as an admin by right clicking the app and choosing "run as admin£](https://cdn.hashnode.com/res/hashnode/image/upload/v1720451480640/6052c9b4-cf07-47e0-ae89-18c3a2d3e385.png)
+    ![Running command prompt as an admin by right clicking the app and choosing "run as admin£](https://cdn.hashnode.com/res/hashnode/image/upload/v1720451480640/6052c9b4-cf07-47e0-ae89-18c3a2d3e385.png align="center")
     
--   Run the command below:
+* Run the command below:
     
 
-```
+```markdown
 wsl --install
 ```
 
 This is the output:
 
-![Downloading progress of Ubuntu](https://cdn.hashnode.com/res/hashnode/image/upload/v1719306131053/b7272031-ddb7-4e04-8d7b-bafc0911da04.png)
+![Downloading progress of Ubuntu](https://cdn.hashnode.com/res/hashnode/image/upload/v1719306131053/b7272031-ddb7-4e04-8d7b-bafc0911da04.png align="center")
 
 Note: By default, Ubuntu will be installed.
 
-![Ubuntu installed by default using WSL](https://cdn.hashnode.com/res/hashnode/image/upload/v1719306144861/a01f95df-1d95-4b79-bff9-08759be0d3dc.png)
+![Ubuntu installed by default using WSL](https://cdn.hashnode.com/res/hashnode/image/upload/v1719306144861/a01f95df-1d95-4b79-bff9-08759be0d3dc.png align="center")
 
--   Once installation is complete, you'll need to reboot your Windows machine. So, restart your Windows machine.
+* Once installation is complete, you'll need to reboot your Windows machine. So, restart your Windows machine.
+    
 
 After restarting, you might see a window like this:
 
-![Window that shows after a restart](https://cdn.hashnode.com/res/hashnode/image/upload/v1719306157704/15620fbe-59d1-40da-9cd6-119a1fab0802.png)
+![Window that shows after a restart](https://cdn.hashnode.com/res/hashnode/image/upload/v1719306157704/15620fbe-59d1-40da-9cd6-119a1fab0802.png align="center")
 
 Once installation of Ubuntu is complete, you'll be prompted to enter your username and password.
 
-![User prompted to enter a username and password](https://cdn.hashnode.com/res/hashnode/image/upload/v1719306167380/5e3058cd-b7a1-45b1-a16d-c23b5a451504.png)
+![User prompted to enter a username and password](https://cdn.hashnode.com/res/hashnode/image/upload/v1719306167380/5e3058cd-b7a1-45b1-a16d-c23b5a451504.png align="center")
 
 And, that's it! You are ready to use Ubuntu.
 
 Launch Ubuntu by searching from the start menu.
 
-![Launching Ubuntu from the start menu](https://cdn.hashnode.com/res/hashnode/image/upload/v1719306185110/77c17856-08ac-4ec7-9380-5b06f93be095.png)
+![Launching Ubuntu from the start menu](https://cdn.hashnode.com/res/hashnode/image/upload/v1719306185110/77c17856-08ac-4ec7-9380-5b06f93be095.png align="center")
 
 And here we have your Ubuntu instance launched.
 
-![Successful installation of Ubuntu using WSL](https://cdn.hashnode.com/res/hashnode/image/upload/v1719306196320/13be3a71-5b40-440c-a6bf-d742e5b5934b.png)
+![Successful installation of Ubuntu using WSL](https://cdn.hashnode.com/res/hashnode/image/upload/v1719306196320/13be3a71-5b40-440c-a6bf-d742e5b5934b.png align="center")
 
 **Option 3: Use a Virtual Machine (VM)**
 
@@ -315,11 +334,11 @@ VM software provides options to allocate and manage hardware resources for each 
 
 Here are some of the common options available for virtualization:
 
--   [Oracle virtual box][49]
+* [Oracle virtual box](https://www.virtualbox.org/)
     
--   [Multipass][50]
+* [Multipass](https://multipass.run/)
     
--   [VMware workstation player][51]
+* [VMware workstation player](https://www.vmware.com/content/vmware/vmware-published-sites/us/products/workstation-player.html.html)
     
 
 **Option 4: Use a Browser-based Solution**
@@ -332,17 +351,17 @@ You can either use online code editors or web-based terminals to access Linux. N
 
 Online code editors offer editors with built-in Linux terminals. While their primary purpose is coding, you can also utilize the Linux terminal to execute commands and perform tasks.
 
-[Replit][52] is an example of an online code editor, where you can write your code and access the Linux shell at the same time.
+[Replit](https://replit.com/) is an example of an online code editor, where you can write your code and access the Linux shell at the same time.
 
-![Running scripts and a bash shell in Replit](https://cdn.hashnode.com/res/hashnode/image/upload/v1719306257260/d85d5541-b78f-4c8b-99a8-dbd8c097f661.gif)
+![Running scripts and a bash shell in Replit](https://cdn.hashnode.com/res/hashnode/image/upload/v1719306257260/d85d5541-b78f-4c8b-99a8-dbd8c097f661.gif align="center")
 
 #### **Web-based Linux terminals:**
 
 Online Linux terminals allow you to access a Linux command-line interface directly from your browser. These terminals provide a web-based interface to a Linux shell, enabling you to execute commands and work with Linux utilities.
 
-One such example is [JSLinux][53]. The screenshot below shows a ready-to-use Linux environment:
+One such example is [JSLinux](https://jslinux.org/). The screenshot below shows a ready-to-use Linux environment:
 
-![Using JSLinux to access Linux terminal](https://cdn.hashnode.com/res/hashnode/image/upload/v1719306276915/ddaabfc3-9a20-43b2-bedc-0af6875d2008.png)
+![Using JSLinux to access Linux terminal](https://cdn.hashnode.com/res/hashnode/image/upload/v1719306276915/ddaabfc3-9a20-43b2-bedc-0af6875d2008.png align="center")
 
 **Option 5: Use a Cloud-based Solution**
 
@@ -362,20 +381,20 @@ Different users can be configured to use different shells. But, most users prefe
 
 To find out your current shell, open your terminal and enter the following command:
 
-```
+```bash
 echo $SHELL
 ```
 
 Command breakdown:
 
--   The `echo` command is used to print on the terminal.
+* The `echo` command is used to print on the terminal.
     
--   The `$SHELL` is a special variable that holds the name of the current shell.
+* The `$SHELL` is a special variable that holds the name of the current shell.
     
 
 In my setup, the output is `/bin/bash`. This means that I am using the bash shell.
 
-```
+```bash
 # output
 echo $SHELL
 /bin/bash
@@ -405,17 +424,17 @@ A command is a program that performs a specific operation. Once you have access 
 
 Generally, Linux commands follow this syntax:
 
-```
+```bash
 command [options] [arguments]
 ```
 
 Here is the breakdown of the above syntax:
 
--   `command`: This is the name of the command you want to execute. `ls` (list), `cp` (copy), and `rm` (remove) are common Linux commands.
+* `command`: This is the name of the command you want to execute. `ls` (list), `cp` (copy), and `rm` (remove) are common Linux commands.
     
--   `[options]`: Options, or flags, often preceded by a hyphen (-) or double hyphen (--), modify the behavior of the command. They can change how the command operates. For example, `ls -a` uses the `-a` option to display hidden files in the current directory.
+* `[options]`: Options, or flags, often preceded by a hyphen (-) or double hyphen (--), modify the behavior of the command. They can change how the command operates. For example, `ls -a` uses the `-a` option to display hidden files in the current directory.
     
--   `[arguments]`: Arguments are the inputs for the commands that require one. These could be filenames, user names, or other data that the command will act upon. For example, in the command `cat access.log`, `cat` is the command and `access.log` is the input. As a result, the `cat` command displays the contents of the `access.log` file.
+* `[arguments]`: Arguments are the inputs for the commands that require one. These could be filenames, user names, or other data that the command will act upon. For example, in the command `cat access.log`, `cat` is the command and `access.log` is the input. As a result, the `cat` command displays the contents of the `access.log` file.
     
 
 Options and arguments are not required for all commands. Some commands can be run without any options or arguments, while others might require one or both to function correctly. You can always refer to the command's manual to check the options and arguments it supports.
@@ -424,7 +443,7 @@ Options and arguments are not required for all commands. Some commands can be ru
 
 You can access the manual page for `ls` with `man ls`, and it'll look like this:
 
-![5b1232a6-8c0b-4a97-86f0-9f15f2e14ed7](https://cdn.hashnode.com/res/hashnode/image/upload/v1719312523336/5b1232a6-8c0b-4a97-86f0-9f15f2e14ed7.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1719312523336/5b1232a6-8c0b-4a97-86f0-9f15f2e14ed7.png align="center")
 
 Manual pages are a great and quick way to access the documentation. I highly recommend going through man pages for the commands that you use the most.
 
@@ -449,13 +468,13 @@ You can get the username you are logged in with by using the `whoami` command. T
 
 Just after the `$` sign, type `whoami` and press enter.
 
-```
+```bash
 whoami
 ```
 
 This is the output I got.
 
-```
+```bash
 zaira@zaira-ThinkPad:~$ whoami
 zaira
 ```
@@ -470,7 +489,7 @@ You can get detailed system information from the `uname` command.
 
 When you provide the `-a` option, it prints all the system information.
 
-```
+```bash
 uname -a
 # output
 Linux zaira 6.5.0-21-generic #21~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb  9 13:32:52 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
@@ -478,33 +497,33 @@ Linux zaira 6.5.0-21-generic #21~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb  9 1
 
 In the output above,
 
--   `Linux`: Indicates the operating system.
+* `Linux`: Indicates the operating system.
     
--   `zaira`: Represents the hostname of the machine.
+* `zaira`: Represents the hostname of the machine.
     
--   `6.5.0-21-generic #21~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb 9 13:32:52 UTC 2`: Provides information about the kernel version, build date, and some additional details.
+* `6.5.0-21-generic #21~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Feb 9 13:32:52 UTC 2`: Provides information about the kernel version, build date, and some additional details.
     
--   `x86_64 x86_64 x86_64`: Indicates the architecture of the system.
+* `x86_64 x86_64 x86_64`: Indicates the architecture of the system.
     
--   `GNU/Linux`: Represents the operating system type.
+* `GNU/Linux`: Represents the operating system type.
     
 
 #### Find details of the CPU architecture using the `lscpu` Command
 
 The `lscpu` command in Linux is used to display information about the CPU architecture. When you run `lscpu` in the terminal, it provides details such as:
 
--   The architecture of the CPU (for example, x86\_64)
+* The architecture of the CPU (for example, x86\_64)
     
--   CPU op-mode(s) (for example, 32-bit, 64-bit)
+* CPU op-mode(s) (for example, 32-bit, 64-bit)
     
--   Byte Order (for example, Little Endian)
+* Byte Order (for example, Little Endian)
     
--   CPU(s) (number of CPUs), and so on
+* CPU(s) (number of CPUs), and so on
     
     Let's try it out:
     
 
-```
+```bash
 lscpu
 # output
 Architecture:            x86_64
@@ -537,7 +556,7 @@ The image below shows the complete file system hierarchy. Each directory servers
 
 Note that this is not an exhaustive list and different distributions may have different configurations.
 
-![Linux file system hierarchy](https://cdn.hashnode.com/res/hashnode/image/upload/v1719322457140/02fdbf2c-f4fa-438b-af2f-c23f59f9ddf4.png)
+![Linux file system hierarchy](https://cdn.hashnode.com/res/hashnode/image/upload/v1719322457140/02fdbf2c-f4fa-438b-af2f-c23f59f9ddf4.png align="center")
 
 Here is a table that shows the purpose of each directory:
 
@@ -559,7 +578,7 @@ Here is a table that shows the purpose of each directory:
 
 You can check your file system using the `tree -d -L 1` command. You can modify the `-L` flag to change the depth of the tree.
 
-```
+```bash
 tree -d -L 1
 # output
 .
@@ -608,7 +627,7 @@ It is easy to lose your way in the Linux file system, especially if you are new 
 
 Here is an example:
 
-```
+```bash
 pwd
 # output
 /home/zaira/scripts/python/free-mem.py
@@ -622,11 +641,11 @@ You can use a relative path or an absolute path.
 
 For example, if you want to navigate the below file structure (following the red lines):
 
-![Example file structure](https://cdn.hashnode.com/res/hashnode/image/upload/v1719389950079/640cce46-6c52-4f38-9787-581747fb9798.png)
+![Example file structure](https://cdn.hashnode.com/res/hashnode/image/upload/v1719389950079/640cce46-6c52-4f38-9787-581747fb9798.png align="center")
 
 and you are standing at "home", the command would be like this:
 
-```
+```bash
 cd home/bob/documents/work/project
 ```
 
@@ -645,20 +664,20 @@ When working with files and directories, you might want to copy, move, remove, a
 
 💡**Tip:** You can differentiate between a file and folder by looking at the first letter in the output of `ls -l`. A`'-'` represents a file and a `'d'` represents a folder.
 
-!["d" represents a folder](https://cdn.hashnode.com/res/hashnode/image/upload/v1719390306244/4f1688cd-ded5-43fe-b13a-9ca44ac7c4ad.png)
+!["d" represents a folder](https://cdn.hashnode.com/res/hashnode/image/upload/v1719390306244/4f1688cd-ded5-43fe-b13a-9ca44ac7c4ad.png align="center")
 
 #### Creating new directories using the `mkdir` command
 
 You can create an empty directory using the `mkdir` command.
 
-```
+```bash
 # creates an empty directory named "foo" in the current folder
 mkdir foo
 ```
 
 You can also create directories recursively using the `-p` option.
 
-```
+```bash
 mkdir -p tools/index/helper-scripts
 # output of tree
 .
@@ -673,14 +692,14 @@ mkdir -p tools/index/helper-scripts
 
 The `touch` command creates an empty file. You can use it like this:
 
-```
+```bash
 # creates empty file "file.txt" in the current folder
 touch file.txt
 ```
 
 The file names can be chained together if you want to create multiple files in a single command.
 
-```
+```bash
 # creates empty files "file1.txt", "file2.txt", and "file3.txt" in the current folder
 
 touch file1.txt file2.txt file3.txt
@@ -703,11 +722,12 @@ You can use the `rm` command to remove both files and non-empty directories.
 
 To copy files in Linux, use the `cp` command.
 
--   **Syntax to copy files:**`cp source_file destination_of_file`
+* **Syntax to copy files:**`cp source_file destination_of_file`
+    
 
 This command copies a file named `file1.txt` to a new file location `/home/adam/logs`.
 
-```
+```bash
 cp file1.txt /home/adam/logs
 ```
 
@@ -715,7 +735,7 @@ The `cp` command also creates a copy of one file with the provided name.
 
 This command copies a file named `file1.txt` to another file named `file2.txt` in the same folder.
 
-```
+```bash
 cp file1.txt file2.txt
 ```
 
@@ -727,13 +747,13 @@ The `mv` command is used to move files and folders from one directory to the oth
 
 **Example:** Move a file named `file1.txt` to a directory named `backup`:
 
-```
+```bash
 mv file1.txt backup/
 ```
 
 To move a directory and its contents:
 
-```
+```bash
 mv dir1/ backup/
 ```
 
@@ -743,13 +763,13 @@ Renaming files and folders in Linux is also done with the `mv` command.
 
 **Example:** Rename a file from `file1.txt` to `file2.txt`:
 
-```
+```bash
 mv file1.txt file2.txt
 ```
 
 Rename a directory from `dir1` to `dir2`:
 
-```
+```bash
 mv dir1 dir2
 ```
 
@@ -759,29 +779,29 @@ The `find` command lets you efficiently search for files, folders, and character
 
 Below is the basic syntax of the `find` command:
 
-```
+```bash
 find /path/ -type f -name file-to-search
 ```
 
 Where,
 
--   `/path` is the path where the file is expected to be found. This is the starting point for searching files. The path can also be`/`or `.` which represents the root and current directory, respectively.
+* `/path` is the path where the file is expected to be found. This is the starting point for searching files. The path can also be`/`or `.` which represents the root and current directory, respectively.
     
--   `-type` represents the file descriptors. They can be any of the below:  
+* `-type` represents the file descriptors. They can be any of the below:  
     `f` – **Regular file** such as text files, images, and hidden files.  
     `d` – **Directory**. These are the folders under consideration.  
     `l` – **Symbolic link**. Symbolic links point to files and are similar to shortcuts.  
     `c` – **Character devices**. Files that are used to access character devices are called character device files. Drivers communicate with character devices by sending and receiving single characters (bytes, octets). Examples include keyboards, sound cards, and the mouse.  
     `b` – **Block devices**. Files that are used to access block devices are called block device files. Drivers communicate with block devices by sending and receiving entire blocks of data. Examples include USB and CD-ROM
     
--   `-name` is the name of the file type that you want to search.
+* `-name` is the name of the file type that you want to search.
     
 
 #### How to search files by name or extension
 
 Suppose we need to find files that contain "style" in their name. We'll use this command:
 
-```
+```bash
 find . -type f -name "style*"
 #output
 ./style.css
@@ -790,7 +810,7 @@ find . -type f -name "style*"
 
 Now let's say we want to find files with a particular extension like `.html`. We'll modify the command like this:
 
-```
+```bash
 find . -type f -name "*.html"
 # output
 ./services.html
@@ -804,13 +824,13 @@ A dot at the beginning of the filename represents hidden files. They are normall
 
 We can modify the `find` command as shown below to search for hidden files:
 
-```
+```bash
 find . -type f -name ".*"
 ```
 
 **List and find hidden files**
 
-```
+```bash
 ls -la
 # folder contents
 total 5
@@ -833,13 +853,13 @@ Above you can see a list of hidden files in my home directory.
 
 Log files usually have the extension `.log`, and we can find them like this:
 
-```
+```bash
  find . -type f -name "*.log"
 ```
 
 Similarly, we can search for configuration files like this:
 
-```
+```bash
  find . -type f -name "*.conf"
 ```
 
@@ -847,13 +867,13 @@ Similarly, we can search for configuration files like this:
 
 We can search for character block files by providing `c` to `-type`:
 
-```
+```bash
 find / -type c
 ```
 
 Similarly, we can find device block files by using `b`:
 
-```
+```bash
 find / -type b
 ```
 
@@ -861,7 +881,7 @@ find / -type b
 
 In the example below, we are finding the folders using the `-type d` flag.
 
-```
+```bash
 ls -l
 # list folder contents
 drwxrwxr-x 2 zaira zaira 4096 Mar 26 14:22 hosts
@@ -869,7 +889,7 @@ drwxrwxr-x 2 zaira zaira 4096 Mar 26 14:22 hosts
 drwxrwxr-x 2 zaira zaira 4096 Mar 26 14:22 images
 drwxrwxr-x 2 zaira zaira 4096 Mar 26 14:23 style
 drwxrwxr-x 2 zaira zaira 4096 Mar 26 14:22 webp 
-
+ 
 find . -type d 
 # find directory output
 .
@@ -883,7 +903,7 @@ find . -type d
 
 An incredibly helpful use of the `find` command is to list files based on a particular size.
 
-```
+```bash
 find / -size +250M
 ```
 
@@ -891,18 +911,18 @@ Here, we are listing files whose size exceeds `250MB`.
 
 Other units include:
 
--   `G`: GigaBytes.
+* `G`: GigaBytes.
     
--   `M`: MegaBytes.
+* `M`: MegaBytes.
     
--   `K`: KiloBytes
+* `K`: KiloBytes
     
--   `c` : bytes.
+* `c` : bytes.
     
 
 Just replace with the relevant unit.
 
-```
+```bash
 find <directory> -type f -size +N<Unit Type>
 ```
 
@@ -910,17 +930,17 @@ find <directory> -type f -size +N<Unit Type>
 
 By using the `-mtime` flag, you can filter files and folders based on the modification time.
 
-```
+```bash
 find /path -name "*.txt" -mtime -10
 ```
 
 For example,
 
--   **\-mtime +10** means you are looking for a file modified 10 days ago.
+* **\-mtime +10** means you are looking for a file modified 10 days ago.
     
--   **\-mtime -10** means less than 10 days.
+* **\-mtime -10** means less than 10 days.
     
--   **\-mtime 10** If you skip + or – it means exactly 10 days.
+* **\-mtime 10** If you skip + or – it means exactly 10 days.
     
 
 ### 4.5. Basic Commands for Viewing Files
@@ -931,7 +951,7 @@ The `cat` command in Linux is used to display the contents of a file. It can als
 
 Here is the basic syntax of the `cat` command:
 
-```
+```bash
 cat [options] [file]
 ```
 
@@ -939,7 +959,7 @@ The simplest way to use `cat` is without any options or arguments. This will dis
 
 For example, if you want to view the contents of a file named `file.txt`, you can use the following command:
 
-```
+```bash
 cat file.txt
 ```
 
@@ -951,7 +971,7 @@ While `cat` displays the entire file at once, `less` and `more` allow you to vie
 
 The syntax of the `less` command is:
 
-```
+```bash
 less [options] [file]
 ```
 
@@ -959,7 +979,7 @@ The `more` command is similar to `less` but has fewer features. It is used to di
 
 The syntax of the `more` command is:
 
-```
+```bash
 more [options] [file]
 ```
 
@@ -975,7 +995,7 @@ For example, `tail file.txt` will display the last 10 lines of the file `file.tx
 
 If you want to display a different number of lines, you can use the `-n` option followed by the number of lines you want to display.
 
-```
+```bash
 # Display the last 50 lines of the file file.txt
 tail -n 50 file.txt
 ```
@@ -996,17 +1016,17 @@ You can count words, lines and characters in a file using the `wc` command.
 
 For example, running `wc syslog.log` gave me the following output:
 
-```
+```bash
 1669 9623 64367 syslog.log
 ```
 
 In the output above,
 
--   `1669` represents the number of lines in the file `syslog.log`.
+* `1669` represents the number of lines in the file `syslog.log`.
     
--   `9623` represents the number of words in the file `syslog.log`.
+* `9623` represents the number of words in the file `syslog.log`.
     
--   `64367` represents the number of characters in the file `syslog.log`.
+* `64367` represents the number of characters in the file `syslog.log`.
     
 
 So, the command `wc syslog.log` counted `1669` lines, `9623` words, and `64367` characters in the file `syslog.log`.
@@ -1017,13 +1037,13 @@ Comparing and finding differences between two files is a common task in Linux. Y
 
 The basic syntax of the `diff` command is:
 
-```
+```bash
 diff [options] file1 file2
 ```
 
 Here are two files, `hello.py` and `also-hello.py`, that we will compare using the `diff` command:
 
-```
+```bash
 # contents of hello.py
 
 def greet(name):
@@ -1033,7 +1053,7 @@ user = input("Enter your name: ")
 print(greet(user))
 ```
 
-```
+```bash
 # contents of also-hello.py
 
 more also-hello.py
@@ -1045,20 +1065,22 @@ print(greet(user))
 print("Nice to meet you")
 ```
 
-1.  Check whether the files are the same or not
+1. Check whether the files are the same or not
+    
 
-```
+```bash
 diff -q hello.py also-hello.py
 # Output
 Files hello.py and also-hello.py differ
 ```
 
-2.  See how the files differ. For that, you can use the `-u` flag to see a unified output:
+2. See how the files differ. For that, you can use the `-u` flag to see a unified output:
+    
 
-```
+```bash
 diff -u hello.py also-hello.py
---- hello.py    2024-05-24 18:31:29.891690478 +0500
-+++ also-hello.py    2024-05-24 18:32:17.207921795 +0500
+--- hello.py	2024-05-24 18:31:29.891690478 +0500
++++ also-hello.py	2024-05-24 18:32:17.207921795 +0500
 @@ -3,4 +3,5 @@
 
  user = input(Enter your name: )
@@ -1068,37 +1090,38 @@ diff -u hello.py also-hello.py
 
 In the above output:
 
--   `--- hello.py 2024-05-24 18:31:29.891690478 +0500` indicates the file being compared and its timestamp.
+* `--- hello.py 2024-05-24 18:31:29.891690478 +0500` indicates the file being compared and its timestamp.
     
--   `+++ also-hello.py 2024-05-24 18:32:17.207921795 +0500` indicates the other file being compared and its timestamp.
+* `+++ also-hello.py 2024-05-24 18:32:17.207921795 +0500` indicates the other file being compared and its timestamp.
     
--   `@@ -3,4 +3,5 @@` shows the line numbers where the changes occur. In this case, it indicates that lines 3 to 4 in the original file have changed to lines 3 to 5 in the modified file.
+* `@@ -3,4 +3,5 @@` shows the line numbers where the changes occur. In this case, it indicates that lines 3 to 4 in the original file have changed to lines 3 to 5 in the modified file.
     
--   `user = input(Enter your name: )` is a line from the original file.
+* `user = input(Enter your name: )` is a line from the original file.
     
--   `print(greet(user))` is another line from the original file.
+* `print(greet(user))` is another line from the original file.
     
--   `+print("Nice to meet you")` is the additional line in the modified file.
+* `+print("Nice to meet you")` is the additional line in the modified file.
     
 
-3.  To see the diff in a side-by-side format, you can use the `-y` flag:
+3. To see the diff in a side-by-side format, you can use the `-y` flag:
+    
 
-```
+```bash
 diff -y hello.py also-hello.py
 # Output
-def greet(name):                        def greet(name):
-    return fHello, {name}!                        return fHello, {name}!
+def greet(name):						def greet(name):
+    return fHello, {name}!					    return fHello, {name}!
 
-user = input(Enter your name: )                    user = input(Enter your name: )
-print(greet(user))                        print(greet(user))
-                                        >    print("Nice to meet you")
+user = input(Enter your name: )					user = input(Enter your name: )
+print(greet(user))						print(greet(user))
+							            >	print("Nice to meet you")
 ```
 
 In the output:
 
--   The lines that are the same in both files are displayed side by side.
+* The lines that are the same in both files are displayed side by side.
     
--   Lines that are different are shown with a `>` symbol indicating the line is only present in one of the files.
+* Lines that are different are shown with a `>` symbol indicating the line is only present in one of the files.
     
 
 ## Part 5: The Essentials of Text Editing in Linux
@@ -1113,13 +1136,13 @@ I suggest that you master any one text editor of your choice and stick to it. It
 
 Vim is a popular text editing tool for the command line. Vim comes with its advantages: it is powerful, customizable, and fast. Here are some reasons why you should consider learning Vim:
 
--   Most servers are accessed via a CLI, so in system administration, you don't necessarily have the luxury of a GUI. But Vim has got your back – it'll always be there.
+* Most servers are accessed via a CLI, so in system administration, you don't necessarily have the luxury of a GUI. But Vim has got your back – it'll always be there.
     
--   Vim uses a keyboard-centric approach, as it is designed to be used without a mouse, which can significantly speed up editing tasks once you have learned the keyboard shortcuts. This also makes it faster than GUI tools.
+* Vim uses a keyboard-centric approach, as it is designed to be used without a mouse, which can significantly speed up editing tasks once you have learned the keyboard shortcuts. This also makes it faster than GUI tools.
     
--   Some Linux utilities, for example editing cron jobs, work in the same editing format as Vim.
+* Some Linux utilities, for example editing cron jobs, work in the same editing format as Vim.
     
--   Vim is suitable for all – beginners and advanced users. Vim supports complex string searches, highlighting searches, and much more. Through plugins, Vim provides extended capabilities to developers and system admins that includes code completion, syntax highlighting, file management, version control, and more.
+* Vim is suitable for all – beginners and advanced users. Vim supports complex string searches, highlighting searches, and much more. Through plugins, Vim provides extended capabilities to developers and system admins that includes code completion, syntax highlighting, file management, version control, and more.
     
 
 Vim has two variations: Vim (`vim`) and Vim tiny (`vi`). Vim tiny is a smaller version of Vim that lacks some features of Vim.
@@ -1128,7 +1151,7 @@ Vim has two variations: Vim (`vim`) and Vim tiny (`vi`). Vim tiny is a smaller v
 
 Start using Vim with this command:
 
-```
+```bash
 vim your-file.txt
 ```
 
@@ -1144,17 +1167,17 @@ Note: Although arrow keys would work totally fine, you can still experiment with
 
 💡**Tip:** To remember the `hjkl` sequence, use this: **h**ang back, **j**ump down, **k**ick up, **l**eap forward.
 
-![hjkl navigation guide](https://cdn.hashnode.com/res/hashnode/image/upload/v1719392462442/1a667ede-5f03-4acb-b40f-b10cefc64de3.png)
+![hjkl navigation guide](https://cdn.hashnode.com/res/hashnode/image/upload/v1719392462442/1a667ede-5f03-4acb-b40f-b10cefc64de3.png align="center")
 
 #### The three Vim modes
 
 You need to know the 3 operating modes of Vim and how to switch between them. Keystrokes behave differently in each command mode. The three modes are as follows:
 
-1.  Command mode.
+1. Command mode.
     
-2.  Edit mode.
+2. Edit mode.
     
-3.  Visual mode.
+3. Visual mode.
     
 
 **Command Mode.** When you start Vim, you land in the command mode by default. This mode allows you to access other modes.
@@ -1165,22 +1188,22 @@ You need to know the 3 operating modes of Vim and how to switch between them. Ke
 
 This mode allows you to make changes to the file. To enter edit mode, press `I` while in command mode. Note the `'-- INSERT'` switch at the end of the screen.
 
-![Insert mode in Vim](https://cdn.hashnode.com/res/hashnode/image/upload/v1719392526710/d44cecd7-64be-4c89-9a31-dbf395b77fcb.png)
+![Insert mode in Vim](https://cdn.hashnode.com/res/hashnode/image/upload/v1719392526710/d44cecd7-64be-4c89-9a31-dbf395b77fcb.png align="center")
 
 **Visual mode**
 
 This mode allows you to work on a single character, a block of text, or lines of text. Let's break it down into simple steps. Remember, use the below combinations when in command mode.
 
--   `Shift + V` → Select multiple lines.
+* `Shift + V` → Select multiple lines.
     
--   `Ctrl + V` → Block mode
+* `Ctrl + V` → Block mode
     
--   `V` → Character mode
+* `V` → Character mode
     
 
 The visual mode comes in handy when you need to copy and paste or edit lines in bulk.
 
-![Selectind text using visual mode](https://cdn.hashnode.com/res/hashnode/image/upload/v1719392557097/b61a1515-cac0-4470-856b-b2c15de581e8.gif)
+![Selectind text using visual mode](https://cdn.hashnode.com/res/hashnode/image/upload/v1719392557097/b61a1515-cac0-4470-856b-b2c15de581e8.gif align="center")
 
 **Extended command mode.**
 
@@ -1194,11 +1217,11 @@ How to stay on track? If you forget your current mode, just press `ESC` twice an
 
 Copy-paste is known as 'yank' and 'put' in Linux terms. To copy-paste, follow these steps:
 
--   Select text in visual mode.
+* Select text in visual mode.
     
--   Press `'y'` to copy/ yank.
+* Press `'y'` to copy/ yank.
     
--   Move your cursor to the required position and press `'p'`.
+* Move your cursor to the required position and press `'p'`.
     
 
 **2\. How to search for text in Vim**
@@ -1209,96 +1232,96 @@ In the command mode, type `:set hls` and press `enter`. Search using `/string-to
 
 Let's search a few strings:
 
-![Highlighting searches in Vim](https://cdn.hashnode.com/res/hashnode/image/upload/v1719392684097/11c4a45e-0698-4fb7-bef7-f193684ea21a.gif)
+![Highlighting searches in Vim](https://cdn.hashnode.com/res/hashnode/image/upload/v1719392684097/11c4a45e-0698-4fb7-bef7-f193684ea21a.gif align="center")
 
 **3\. How to exit Vim**
 
 First, move to command mode (by pressing escape twice) and then use these flags:
 
--   Exit without saving → `:q!`
+* Exit without saving → `:q!`
     
--   Exit and save → `:wq!`
+* Exit and save → `:wq!`
     
 
 #### Shortcuts in Vim: Making Editing Faster
 
 Note: All these shortcuts work in the command mode only.
 
--   **Basic Navigation**
+* **Basic Navigation**
     
-    -   `h`: Move left
+    * `h`: Move left
         
-    -   `j`: Move down
+    * `j`: Move down
         
-    -   `k`: Move up
+    * `k`: Move up
         
-    -   `l`: Move right
+    * `l`: Move right
         
-    -   `0`: Move to the beginning of the line
+    * `0`: Move to the beginning of the line
         
-    -   `$`: Move to the end of the line
+    * `$`: Move to the end of the line
         
-    -   `gg`: Move to the beginning of the file
+    * `gg`: Move to the beginning of the file
         
-    -   `G`: Move to the end of the file
+    * `G`: Move to the end of the file
         
-    -   `Ctrl+d`: Move half-page down
+    * `Ctrl+d`: Move half-page down
         
-    -   `Ctrl+u`: Move half-page up
+    * `Ctrl+u`: Move half-page up
         
--   **Editing**
+* **Editing**
     
-    -   `i`: Enter insert mode before the cursor
+    * `i`: Enter insert mode before the cursor
         
-    -   `I`: Enter insert mode at the beginning of the line
+    * `I`: Enter insert mode at the beginning of the line
         
-    -   `a`: Enter insert mode after the cursor
+    * `a`: Enter insert mode after the cursor
         
-    -   `A`: Enter insert mode at the end of the line
+    * `A`: Enter insert mode at the end of the line
         
-    -   `o`: Open a new line below the current line and enter insert mode
+    * `o`: Open a new line below the current line and enter insert mode
         
-    -   `O`: Open a new line above the current line and enter insert mode
+    * `O`: Open a new line above the current line and enter insert mode
         
-    -   `x`: Delete the character under the cursor
+    * `x`: Delete the character under the cursor
         
-    -   `dd`: Delete the current line
+    * `dd`: Delete the current line
         
-    -   `yy`: Yank (copy) the current line (use this in visual mode)
+    * `yy`: Yank (copy) the current line (use this in visual mode)
         
-    -   `p`: Paste below the cursor
+    * `p`: Paste below the cursor
         
-    -   `P`: Paste above the cursor
+    * `P`: Paste above the cursor
         
--   **Searching and Replacing**
+* **Searching and Replacing**
     
-    -   `/`: Search for a pattern which will take you to its next occurrence
+    * `/`: Search for a pattern which will take you to its next occurrence
         
-    -   `?`: Search for a pattern that will take you to its previous occurrence
+    * `?`: Search for a pattern that will take you to its previous occurrence
         
-    -   `n`: Repeat the last search in the same direction
+    * `n`: Repeat the last search in the same direction
         
-    -   `N`: Repeat the last search in the opposite direction
+    * `N`: Repeat the last search in the opposite direction
         
-    -   `:%s/old/new/g`: Replace all occurrences of `old` with `new` in the file
+    * `:%s/old/new/g`: Replace all occurrences of `old` with `new` in the file
         
--   **Exiting**
+* **Exiting**
     
-    -   `:w`: Save the file but don't exit
+    * `:w`: Save the file but don't exit
         
-    -   `:q`: Quit Vim (fails if there are unsaved changes)
+    * `:q`: Quit Vim (fails if there are unsaved changes)
         
-    -   `:wq` or `:x`: Save and quit
+    * `:wq` or `:x`: Save and quit
         
-    -   `:q!`: Quit without saving
+    * `:q!`: Quit without saving
         
--   **Multiple Windows**
+* **Multiple Windows**
     
-    -   `:split` or `:sp`: Split the window horizontally
+    * `:split` or `:sp`: Split the window horizontally
         
-    -   `:vsplit` or `:vsp`: Split the window vertically
+    * `:vsplit` or `:vsp`: Split the window vertically
         
-    -   `Ctrl+w followed by h/j/k/l`: Navigate between split windows
+    * `Ctrl+w followed by h/j/k/l`: Navigate between split windows
         
 
 ### 5.2. Mastering Nano
@@ -1309,13 +1332,13 @@ Nano is a user-friendly text editor that is easy to use and is perfect for begin
 
 To create a new file using Nano, use the following command:
 
-```
+```bash
 nano
 ```
 
 To start editing an existing file with Nano, use the following command:
 
-```
+```bash
 nano filename
 ```
 
@@ -1359,59 +1382,59 @@ You can also initiate search for a string with `CTRL + W` and press Enter. If yo
 
 #### Summary of keybindings in Nano
 
--   **General**
+* **General**
     
-    -   `Ctrl+X`: Exit Nano (prompting to save if changes are made)
+    * `Ctrl+X`: Exit Nano (prompting to save if changes are made)
         
-    -   `Ctrl+O`: Save the file
+    * `Ctrl+O`: Save the file
         
-    -   `Ctrl+R`: Read a file into the current file
+    * `Ctrl+R`: Read a file into the current file
         
-    -   `Ctrl+G`: Display the help text
+    * `Ctrl+G`: Display the help text
         
--   **Editing**
+* **Editing**
     
-    -   `Ctrl+K`: Cut the current line and store it in the cutbuffer
+    * `Ctrl+K`: Cut the current line and store it in the cutbuffer
         
-    -   `Ctrl+U`: Paste the contents of the cutbuffer into the current line
+    * `Ctrl+U`: Paste the contents of the cutbuffer into the current line
         
-    -   `Alt+6`: Copy the current line and store it in the cutbuffer
+    * `Alt+6`: Copy the current line and store it in the cutbuffer
         
-    -   `Ctrl+J`: Justify the current paragraph
+    * `Ctrl+J`: Justify the current paragraph
         
--   **Navigation**
+* **Navigation**
     
-    -   `Ctrl+A`: Move to the beginning of the line
+    * `Ctrl+A`: Move to the beginning of the line
         
-    -   `Ctrl+E`: Move to the end of the line
+    * `Ctrl+E`: Move to the end of the line
         
-    -   `Ctrl+C`: Display the current line number and file information
+    * `Ctrl+C`: Display the current line number and file information
         
-    -   `Ctrl+_` (`Ctrl+Shift+-`): Go to a specific line (and optionally, column) number
+    * `Ctrl+_` (`Ctrl+Shift+-`): Go to a specific line (and optionally, column) number
         
-    -   `Ctrl+Y`: Scroll up one page
+    * `Ctrl+Y`: Scroll up one page
         
-    -   `Ctrl+V`: Scroll down one page
+    * `Ctrl+V`: Scroll down one page
         
--   **Search and Replace**
+* **Search and Replace**
     
-    -   `Ctrl+W`: Search for a string (then `Enter` to search again)
+    * `Ctrl+W`: Search for a string (then `Enter` to search again)
         
-    -   `Alt+W`: Repeat the last search but in the opposite direction
+    * `Alt+W`: Repeat the last search but in the opposite direction
         
-    -   `Ctrl+\`: Search and replace
+    * `Ctrl+\`: Search and replace
         
--   **Miscellaneous**
+* **Miscellaneous**
     
-    -   `Ctrl+T`: Invoke the spell checker, if available
+    * `Ctrl+T`: Invoke the spell checker, if available
         
-    -   `Ctrl+D`: Delete the character under the cursor (does not cut it)
+    * `Ctrl+D`: Delete the character under the cursor (does not cut it)
         
-    -   `Ctrl+L`: Refresh (redraw) the current screen
+    * `Ctrl+L`: Refresh (redraw) the current screen
         
-    -   `Alt+U`: Undo the last operation
+    * `Alt+U`: Undo the last operation
         
-    -   `Alt+E`: Redo the last undone operation
+    * `Alt+E`: Redo the last undone operation
         
 
 ## Part 6: Bash Scripting
@@ -1428,17 +1451,17 @@ Bash scripting is a powerful and versatile tool for automating system administra
 
 Some advantages of shell scripting are:
 
--   **Automation**: Shell scripts allow you to automate repetitive tasks and processes, saving time and reducing the risk of errors that can occur with manual execution.
+* **Automation**: Shell scripts allow you to automate repetitive tasks and processes, saving time and reducing the risk of errors that can occur with manual execution.
     
--   **Portability**: Shell scripts can be run on various platforms and operating systems, including Unix, Linux, macOS, and even Windows through the use of emulators or virtual machines.
+* **Portability**: Shell scripts can be run on various platforms and operating systems, including Unix, Linux, macOS, and even Windows through the use of emulators or virtual machines.
     
--   **Flexibility**: Shell scripts are highly customizable and can be easily modified to suit specific requirements. They can also be combined with other programming languages or utilities to create more powerful scripts.
+* **Flexibility**: Shell scripts are highly customizable and can be easily modified to suit specific requirements. They can also be combined with other programming languages or utilities to create more powerful scripts.
     
--   **Accessibility**: Shell scripts are easy to write and don't require any special tools or software. They can be edited using any text editor, and most operating systems have a built-in shell interpreter.
+* **Accessibility**: Shell scripts are easy to write and don't require any special tools or software. They can be edited using any text editor, and most operating systems have a built-in shell interpreter.
     
--   **Integration**: Shell scripts can be integrated with other tools and applications, such as databases, web servers, and cloud services, allowing for more complex automation and system management tasks.
+* **Integration**: Shell scripts can be integrated with other tools and applications, such as databases, web servers, and cloud services, allowing for more complex automation and system management tasks.
     
--   **Debugging**: Shell scripts are easy to debug, and most shells have built-in debugging and error-reporting tools that can help identify and fix issues quickly.
+* **Debugging**: Shell scripts are easy to debug, and most shells have built-in debugging and error-reporting tools that can help identify and fix issues quickly.
     
 
 ### 6.3. Overview of Bash Shell and Command Line Interface
@@ -1453,7 +1476,7 @@ Although Bash is a type of shell, there are other shells available as well, such
 
 You can determine your shell type using the `ps` command:
 
-```
+```markdown
 ps
 # output:
 
@@ -1478,13 +1501,13 @@ Bash scripts start with a `shebang`. Shebang is a combination of `bash #` and `b
 
 Below is an example of the shebang statement.
 
-```
+```bash
 #!/bin/bash
 ```
 
 You can find your bash shell path (which may vary from the above) using the command:
 
-```
+```bash
 which bash
 ```
 
@@ -1494,13 +1517,13 @@ Our first script prompts the user to enter a path. In return, its contents will 
 
 Create a file named `run_all.sh` using any editor of your choice.
 
-```
+```bash
 vim run_all.sh
 ```
 
 Add the following commands in your file and save it:
 
-```
+```bash
 #!/bin/bash
 echo "Today is " `date`
 
@@ -1513,7 +1536,7 @@ ls $the_path
 
 Let's take a deeper look at the script line by line. I am displaying the same script again, but this time with line numbers.
 
-```
+```bash
   1 #!/bin/bash
   2 echo "Today is " `date`
   3
@@ -1524,46 +1547,46 @@ Let's take a deeper look at the script line by line. I am displaying the same sc
   8 ls $the_path
 ```
 
--   Line #1: The shebang (`#!/bin/bash`) points toward the bash shell path.
+* Line #1: The shebang (`#!/bin/bash`) points toward the bash shell path.
     
--   Line #2: The `echo` command displays the current date and time on the terminal. Note that the `date` is in backticks.
+* Line #2: The `echo` command displays the current date and time on the terminal. Note that the `date` is in backticks.
     
--   Line #4: We want the user to enter a valid path.
+* Line #4: We want the user to enter a valid path.
     
--   Line #5: The `read` command reads the input and stores it in the variable `the_path`.
+* Line #5: The `read` command reads the input and stores it in the variable `the_path`.
     
--   line #8: The `ls` command takes the variable with the stored path and displays the current files and folders.
+* line #8: The `ls` command takes the variable with the stored path and displays the current files and folders.
     
 
 **Executing the bash script**
 
 To make the script executable, assign execution rights to your user using this command:
 
-```
+```bash
 chmod u+x run_all.sh
 ```
 
 Here,
 
--   `chmod` modifies the ownership of a file for the current user :`u`.
+* `chmod` modifies the ownership of a file for the current user :`u`.
     
--   `+x` adds the execution rights to the current user. This means that the user who is the owner can now run the script.
+* `+x` adds the execution rights to the current user. This means that the user who is the owner can now run the script.
     
--   `run_all.sh` is the file we wish to run.
+* `run_all.sh` is the file we wish to run.
     
 
 You can run the script using any of the mentioned methods:
 
--   `sh run_all.sh`
+* `sh run_all.sh`
     
--   `bash run_all.sh`
+* `bash run_all.sh`
     
--   `./run_all.sh`
+* `./run_all.sh`
     
 
 Let's see it running in action 🚀
 
-![Running a bash script](https://www.freecodecamp.org/news/content/images/2023/03/run-script-bash-2.gif)
+![Running a bash script](https://www.freecodecamp.org/news/content/images/2023/03/run-script-bash-2.gif align="left")
 
 ### 6.5. Bash Scripting Basics
 
@@ -1575,7 +1598,7 @@ Comments are very helpful in documenting the code, and it is a good practice to 
 
 These are examples of comments:
 
-```
+```bash
 # This is an example comment
 # Both of these lines will be ignored by the interpreter
 ```
@@ -1588,15 +1611,16 @@ There are no data types in Bash. In Bash, a variable is capable of storing numer
 
 In Bash, you can use and set the variable values in the following ways:
 
-1.  Assign the value directly:
+1. Assign the value directly:
+    
 
-```
+```bash
 country=Netherlands
 ```
 
-2\. Assign the value based on the output obtained from a program or command, using command substitution. Note that `$` is required to access an existing variable's value.
+2\.  Assign the value based on the output obtained from a program or command, using command substitution. Note that `$` is required to access an existing variable's value.
 
-```
+```bash
 same_country=$country
 ```
 
@@ -1604,7 +1628,7 @@ This assigns the value of `country` to the new variable `same_country`.
 
 To access the variable value, append `$` to the variable name.
 
-```
+```bash
 country=Netherlands
 echo $country
 # output
@@ -1621,22 +1645,22 @@ Above, you can see an example of assigning and printing variable values.
 
 In Bash scripting, the following are the variable naming conventions:
 
-1.  Variable names should start with a letter or an underscore (`_`).
+1. Variable names should start with a letter or an underscore (`_`).
     
-2.  Variable names can contain letters, numbers, and underscores (`_`).
+2. Variable names can contain letters, numbers, and underscores (`_`).
     
-3.  Variable names are case-sensitive.
+3. Variable names are case-sensitive.
     
-4.  Variable names should not contain spaces or special characters.
+4. Variable names should not contain spaces or special characters.
     
-5.  Use descriptive names that reflect the purpose of the variable.
+5. Use descriptive names that reflect the purpose of the variable.
     
-6.  Avoid using reserved keywords, such as `if`, `then`, `else`, `fi`, and so on as variable names.
+6. Avoid using reserved keywords, such as `if`, `then`, `else`, `fi`, and so on as variable names.
     
 
 Here are some examples of valid variable names in Bash:
 
-```
+```bash
 name
 count
 _var
@@ -1646,7 +1670,7 @@ MY_VAR
 
 And here are some examples of invalid variable names:
 
-```
+```bash
 # invalid variable names
 
 2ndvar (variable name starts with a number)
@@ -1662,37 +1686,38 @@ Following these naming conventions helps make Bash scripts more readable and eas
 
 In this section, we'll discuss some methods to provide input to our scripts.
 
-1.  Reading the user input and storing it in a variable
+1. Reading the user input and storing it in a variable
+    
 
 We can read the user input using the `read` command.
 
-```
+```bash
 #!/bin/bash
 echo "What's your name?"
 read entered_name
 echo -e "\nWelcome to bash tutorial" $entered_name
 ```
 
-![Reading the name from a script](https://www.freecodecamp.org/news/content/images/2023/03/name-sh.gif)
+![Reading the name from a script](https://www.freecodecamp.org/news/content/images/2023/03/name-sh.gif align="left")
 
-2\. Reading from a file
+2\.  Reading from a file
 
 This code reads each line from a file named `input.txt` and prints it to the terminal. We'll study while loops later in this section.
 
-```
+```bash
 while read line
 do
   echo $line
 done < input.txt
 ```
 
-3\. Command line arguments
+3\.  Command line arguments
 
 In a bash script or function, `$1` denotes the initial argument passed, `$2` denotes the second argument passed, and so forth.
 
 This script takes a name as a command-line argument and prints a personalized greeting.
 
-```
+```bash
 #!/bin/bash
 echo "Hello, $1!"
 ```
@@ -1701,39 +1726,40 @@ We have supplied `Zaira` as our argument to the script.
 
 **Output:**
 
-![Providing arguments to the bash script](https://www.freecodecamp.org/news/content/images/2023/03/name-sh-1.gif)
+![Providing arguments to the bash script](https://www.freecodecamp.org/news/content/images/2023/03/name-sh-1.gif align="left")
 
 #### Displaying output
 
 Here we'll discuss some methods to receive output from the scripts.
 
-1.  Printing to the terminal:
+1. Printing to the terminal:
+    
 
-```
+```bash
 echo "Hello, World!"
 ```
 
 This prints the text "Hello, World!" to the terminal.
 
-2\. Writing to a file:
+2\.  Writing to a file:
 
-```
+```bash
 echo "This is some text." > output.txt
 ```
 
 This writes the text "This is some text." to a file named `output.txt`. Note that the `>` operator overwrites a file if it already has some content.
 
-3\. Appending to a file:
+3\.  Appending to a file:
 
-```
+```bash
 echo "More text." >> output.txt
 ```
 
 This appends the text "More text." to the end of the file `output.txt`.
 
-4\. Redirecting output:
+4\.  Redirecting output:
 
-```
+```bash
 ls > files.txt
 ```
 
@@ -1747,14 +1773,14 @@ Expressions that produce a boolean result, either true or false, are called cond
 
 **Syntax**:
 
-```
+```bash
 if [[ condition ]];
 then
-    statement
+	statement
 elif [[ condition ]]; then
-    statement 
+	statement 
 else
-    do this by default
+	do this by default
 fi
 ```
 
@@ -1762,7 +1788,7 @@ fi
 
 We can use logical operators such as AND `-a` and OR `-o` to make comparisons that have more significance.
 
-```
+```bash
 if [ $a -gt 60 -a $b -lt 100 ]
 ```
 
@@ -1770,7 +1796,7 @@ This statement checks if both conditions are `true`: `a` is greater than `60` AN
 
 Let's see an example of a Bash script that uses `if`, `if-else`, and `if-elif-else` statements to determine if a user-inputted number is positive, negative, or zero:
 
-```
+```bash
 #!/bin/bash
 
 # Script to determine if a number is positive, negative, or zero
@@ -1795,7 +1821,7 @@ Finally, if the number is neither greater than `0` nor less than `0`, the script
 
 Seeing it in action 🚀
 
-![Checking if a number is even or odd](https://www.freecodecamp.org/news/content/images/2023/03/test-odd.gif)
+![Checking if a number is even or odd](https://www.freecodecamp.org/news/content/images/2023/03/test-odd.gif align="left")
 
 #### Looping and branching in Bash
 
@@ -1805,7 +1831,7 @@ While loops check for a condition and loop until the condition remains `true`. W
 
 In the example below, `(( i += 1 ))` is the counter statement that increments the value of `i`. The loop will run exactly 10 times.
 
-```
+```bash
 #!/bin/bash
 i=1
 while [[ $i -le 10 ]] ; do
@@ -1814,7 +1840,7 @@ while [[ $i -le 10 ]] ; do
 done
 ```
 
-![Looping from 1 to 10 using ](https://www.freecodecamp.org/news/content/images/2023/03/image-187.png)
+![Looping from 1 to 10 using ](https://www.freecodecamp.org/news/content/images/2023/03/image-187.png align="left")
 
 **For loop**
 
@@ -1822,7 +1848,7 @@ The `for` loop, just like the `while` loop, allows you to execute statements a s
 
 In the example below, the loop will iterate 5 times.
 
-```
+```bash
 #!/bin/bash
 
 for i in {1..5}
@@ -1831,13 +1857,13 @@ do
 done
 ```
 
-![Looping from 1 to 10 using ](https://www.freecodecamp.org/news/content/images/2023/03/image-186.png)
+![Looping from 1 to 10 using ](https://www.freecodecamp.org/news/content/images/2023/03/image-186.png align="left")
 
 **Case statements**
 
 In Bash, case statements are used to compare a given value against a list of patterns and execute a block of code based on the first pattern that matches. The syntax for a case statement in Bash is as follows:
 
-```
+```bash
 case expression in
     pattern1)
         # code to execute if expression matches pattern1
@@ -1860,7 +1886,7 @@ The double semicolon ";;" separates each block of code to execute for each patte
 
 Let's see an example:
 
-```
+```bash
 fruit="apple"
 
 case $fruit in
@@ -1899,13 +1925,13 @@ In addition to the files required for the program to run, packages also contain 
 
 Programmers write source code in a programming language. This source code is then compiled into machine code that the computer can understand. The compiled code is called binary code.
 
-When you download a package, you can either get the _source code_ or the _binary code._ The source code is the human-readable code that can be compiled into binary code. The binary code is the compiled code that the computer can understand.
+When you download a package, you can either get the *source code* or the *binary code.* The source code is the human-readable code that can be compiled into binary code. The binary code is the compiled code that the computer can understand.
 
 Source packages can be used with any type of machine if the source code is compiled properly. Binary, on the other hand, is compiled code that is specific to a particular type of machine or architecture.
 
 You can find the architecture of your machine using the `uname -m` command.
 
-```
+```bash
 uname -m
 # output
 x86_64
@@ -1939,17 +1965,17 @@ A package manager also stores an index of all of the packages available from a r
 
 The generic process of downloading software from a repo looks something like this:
 
-![Rrocess of downloading software from a remote repo](https://cdn.hashnode.com/res/hashnode/image/upload/v1719313472889/f4961606-b9c4-4ed7-8edc-61e0fc6908e4.png)
+![Rrocess of downloading software from a remote repo](https://cdn.hashnode.com/res/hashnode/image/upload/v1719313472889/f4961606-b9c4-4ed7-8edc-61e0fc6908e4.png align="center")
 
 If we talk specifically about Ubuntu,
 
-1.  Index is fetched using `apt update.` (`apt` is explained in next section).
+1. Index is fetched using `apt update.` (`apt` is explained in next section).
     
-2.  Required files/ dependencies requested according to index using `apt install`
+2. Required files/ dependencies requested according to index using `apt install`
     
-3.  Packages and dependencies installed locally.
+3. Packages and dependencies installed locally.
     
-4.  Update dependencies and packages when required using `apt update` and `apt upgrade`
+4. Update dependencies and packages when required using `apt update` and `apt upgrade`
     
 
 On Debian-based distros, you can file the list of repos (repositories) in `/etc/apt/sources.list`.
@@ -1968,7 +1994,7 @@ Following are the uses of the `apt` command:
 
 For example, to install the `htop` package, you can use the following command:
 
-```
+```bash
 sudo apt install htop
 ```
 
@@ -1976,7 +2002,7 @@ sudo apt install htop
 
 The package list index is a list of all the packages available in the repositories. To update the local package list index, you can use the following command:
 
-```
+```bash
 sudo apt update
 ```
 
@@ -1986,7 +2012,7 @@ Installed packages on your system can get updates containing bug fixes, security
 
 To upgrade the packages, you can use the following command:
 
-```
+```bash
 sudo apt upgrade
 ```
 
@@ -1994,7 +2020,7 @@ sudo apt upgrade
 
 To remove a package, like `htop`, you can use the following command:
 
-```
+```bash
 sudo apt remove htop
 ```
 
@@ -2004,11 +2030,11 @@ If you are not comfortable with the command line, you can use a GUI application 
 
 Synaptic is a GUI package management application that helps in listing the installed packages, their status, pending updates, and so on. It offers custom filters to help you narrow down the search results.
 
-![0f362ed7-c371-4a58-96c2-c359178cdbd9](https://cdn.hashnode.com/res/hashnode/image/upload/v1719313599636/0f362ed7-c371-4a58-96c2-c359178cdbd9.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1719313599636/0f362ed7-c371-4a58-96c2-c359178cdbd9.png align="center")
 
 You can also right-click on a package and view further details like the dependencies, maintainer, size, and the installed files.
 
-![View a package's detail](https://cdn.hashnode.com/res/hashnode/image/upload/v1719313607397/33b7ad76-2492-4805-8133-35c8cd3c4a0a.png)
+![View a package's detail](https://cdn.hashnode.com/res/hashnode/image/upload/v1719313607397/33b7ad76-2492-4805-8133-35c8cd3c4a0a.png align="center")
 
 ### 7.4. Installing downloaded packages from a website
 
@@ -2016,7 +2042,7 @@ You may want to install a package you have downloaded from a website, rather tha
 
 **Using**`dpkg`**to install packages:**`dpkg` is a command-line tool used to install packages. To install a package with **dpkg**, open the Terminal and type the following:
 
-```
+```bash
 cd directory
 sudo dpkg -i package_name.deb
 ```
@@ -2025,7 +2051,7 @@ Note: Replace "directory" with the directory where the package is stored and "pa
 
 Alternatively, you can right-click, select "Open With Other Application," and choose a GUI app of your choice.
 
-![Installing a software using an app](https://cdn.hashnode.com/res/hashnode/image/upload/v1719322161581/f16d83ac-ca9a-4502-a80c-e6a25dee5c68.png)
+![Installing a software using an app](https://cdn.hashnode.com/res/hashnode/image/upload/v1719322161581/f16d83ac-ca9a-4502-a80c-e6a25dee5c68.png align="center")
 
 💡 **Tip:** In Ubuntu, you can see a list of installed packages with `dpkg --list`.
 
@@ -2047,29 +2073,29 @@ User accounts form the foundations of system security. File ownership is also as
 
 There are three main types of user accounts:
 
-1.  **Superuser**: The superuser has complete access to the system. The name of the superuser is `root`. It has a `UID` of 0.
+1. **Superuser**: The superuser has complete access to the system. The name of the superuser is `root`. It has a `UID` of 0.
     
-2.  **System user**: The system user has user accounts that are used to run system services. These accounts are used to run system services and are not meant for human interaction.
+2. **System user**: The system user has user accounts that are used to run system services. These accounts are used to run system services and are not meant for human interaction.
     
-3.  **Regular user**: Regular users are human users who have access to the system.
+3. **Regular user**: Regular users are human users who have access to the system.
     
 
 The `id` command displays the user ID and group ID of the current user.
 
-```
+```bash
 id
 uid=1000(john) gid=1000(john) groups=1000(john),4(adm),24(cdrom),27(sudo),30(dip)... output truncated
 ```
 
 To view the basic information of another user, pass the username as an argument to the `id` command.
 
-```
+```bash
 id username
 ```
 
 To view user-related information for processes, use the `ps` command with the `-u` flag.
 
-```
+```bash
 ps -u
 # Output
 USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
@@ -2081,25 +2107,25 @@ By default, systems use the `/etc/passwd` file to store user information.
 
 Here is a line from the `/etc/passwd` file:
 
-```
+```bash
 root:x:0:0:root:/root:/bin/bash
 ```
 
 The `/etc/passwd` file contains the following information about each user:
 
-1.  Username: `root` – The username of the user account.
+1. Username: `root` – The username of the user account.
     
-2.  Password: `x` – The password in encrypted format for the user account that is stored in the `/etc/shadow` file for security reasons.
+2. Password: `x` – The password in encrypted format for the user account that is stored in the `/etc/shadow` file for security reasons.
     
-3.  User ID (UID): `0` – The unique numerical identifier for the user account.
+3. User ID (UID): `0` – The unique numerical identifier for the user account.
     
-4.  Group ID (GID): `0` – The primary group identifier for the user account.
+4. Group ID (GID): `0` – The primary group identifier for the user account.
     
-5.  User Info: `root` – The real name for the user account.
+5. User Info: `root` – The real name for the user account.
     
-6.  Home directory: `/root` – The home directory for the user account.
+6. Home directory: `/root` – The home directory for the user account.
     
-7.  Shell: `/bin/bash` – The default shell for the user account. A system user might use `/sbin/nologin` if interactive logins are not allowed for that user.
+7. Shell: `/bin/bash` – The default shell for the user account. A system user might use `/sbin/nologin` if interactive logins are not allowed for that user.
     
 
 #### What is a group?
@@ -2110,61 +2136,61 @@ By default, the information about groups is stored in the `/etc/group` file.
 
 Here is an entry from the `/etc/group` file:
 
-```
+```bash
 adm:x:4:syslog,john
 ```
 
 Here is the breakdown of the fields in the given entry:
 
-1.  Group name: `adm` – The name of the group.
+1. Group name: `adm` – The name of the group.
     
-2.  Password: `x` – The password for the group is stored in the `/etc/gshadow` file for security reasons. The password is optional and appears empty if not set.
+2. Password: `x` – The password for the group is stored in the `/etc/gshadow` file for security reasons. The password is optional and appears empty if not set.
     
-3.  Group ID (GID): `4` – The unique numerical identifier for the group.
+3. Group ID (GID): `4` – The unique numerical identifier for the group.
     
-4.  Group members: `syslog,john` – The list of usernames that are members of the group. In this case, the group `adm` has two members: `syslog` and `john`.
+4. Group members: `syslog,john` – The list of usernames that are members of the group. In this case, the group `adm` has two members: `syslog` and `john`.
     
 
 In this specific entry, the group name is `adm`, the group ID is `4`, and the group has two members: `syslog` and `john`. The password field is typically set to `x` to indicate that the group password is stored in the `/etc/gshadow` file.
 
-The groups are further divided into '_primary'_ and '_supplementary'_ groups.
+The groups are further divided into '*primary'* and '*supplementary'* groups.
 
--   Primary Group: Each user is assigned one primary group by default. This group usually has the same name as the user and is created when the user account is made. Files and directories created by the user are typically owned by this primary group.
+* Primary Group: Each user is assigned one primary group by default. This group usually has the same name as the user and is created when the user account is made. Files and directories created by the user are typically owned by this primary group.
     
--   Supplementary Groups: These are extra groups a user can belong to in addition to their primary group. Users can be members of multiple supplementary groups. These groups let a user have permissions for resources shared among those groups. They help provide access to shared resources without affecting the system’s file permissions and keeping the security intact. While a user must belong to one primary group, belonging to supplementary groups is optional.
+* Supplementary Groups: These are extra groups a user can belong to in addition to their primary group. Users can be members of multiple supplementary groups. These groups let a user have permissions for resources shared among those groups. They help provide access to shared resources without affecting the system’s file permissions and keeping the security intact. While a user must belong to one primary group, belonging to supplementary groups is optional.
     
 
 #### Access control: finding and understanding file permission
 
 File ownership can be viewed using the `ls -l` command. The first column in the output of the `ls -l` command shows the permissions of the file. Other columns show the owner of the file and the group that the file belongs to.
 
-![Detailed output of ls -l](https://www.freecodecamp.org/news/content/images/2022/04/image-146.png)
+![Detailed output of ls -l](https://www.freecodecamp.org/news/content/images/2022/04/image-146.png align="left")
 
 Let's have a closer look into the `mode` column:
 
-![Permission classes and file types](https://www.freecodecamp.org/news/content/images/2022/04/image-147.png)
+![Permission classes and file types](https://www.freecodecamp.org/news/content/images/2022/04/image-147.png align="left")
 
-**Mode** defines two things:
+**Mode** defines two things:
 
--   **File type:** File type defines the type of the file. For regular files that contain simple data it is blank `-`. For other special file types the symbol is different. For a directory which is a special file, it is `d`. Special files are treated differently by the OS.
+* **File type:** File type defines the type of the file. For regular files that contain simple data it is blank `-`. For other special file types the symbol is different. For a directory which is a special file, it is `d`. Special files are treated differently by the OS.
     
--   **Permission classes:** The next set of characters define the permissions for user, group, and others respectively.  
-    – **User**: This is the owner of a file and owner of the file belongs to this class.  
-    – **Group**: The members of the file’s group belong to this class  
-    – **Other**: Any users that are not part of the user or group classes belong to this class.
+* **Permission classes:** The next set of characters define the permissions for user, group, and others respectively.  
+    – **User**: This is the owner of a file and owner of the file belongs to this class.  
+    – **Group**: The members of the file’s group belong to this class  
+    – **Other**: Any users that are not part of the user or group classes belong to this class.
     
 
 💡**Tip:** Directory ownership can be viewed using the `ls -ld` command.
 
 ##### How to Read Symbolic Permissions or the `rwx` permissions
 
-The `rwx` representation is known as the Symbolic representation of permissions. In the set of permissions,
+The `rwx` representation is known as the Symbolic representation of permissions. In the set of permissions,
 
--   `r` stands for **read**. It is indicated in the first character of the triad.
+* `r` stands for **read**. It is indicated in the first character of the triad.
     
--   `w` stands for **write**. It is indicated in the second character of the triad.
+* `w` stands for **write**. It is indicated in the second character of the triad.
     
--   `x` stands for **execution**. It is indicated in the third character of the triad.
+* `x` stands for **execution**. It is indicated in the third character of the triad.
     
 
 **Read:**
@@ -2183,11 +2209,11 @@ For folders, write permissions enable a user to modify its contents (create, del
 
 Now that we know how to read permissions, let's see some examples.
 
--   `-rwx------`: A file that is only accessible and executable by its owner.
+* `-rwx------`: A file that is only accessible and executable by its owner.
     
     `-rw-rw-r--`: A file that is open to modification by its owner and group but not by others.
     
--   `drwxrwx---`: A directory that can be modified by its owner and group.
+* `drwxrwx---`: A directory that can be modified by its owner and group.
     
 
 **Execute:**
@@ -2196,26 +2222,26 @@ For files, execute permissions allows the user to run an executable script. For 
 
 ##### How to Change File Permissions and Ownership in Linux using `chmod` and `chown`
 
-Now that we know the basics of ownerships and permissions, let's see how we can modify permissions using the `chmod` command.
+Now that we know the basics of ownerships and permissions, let's see how we can modify permissions using the `chmod` command.
 
 **Syntax of**`chmod`:
 
-```
+```bash
 chmod permissions filename
 ```
 
 Where,
 
--   `permissions` can be read, write, execute or a combination of them.
+* `permissions` can be read, write, execute or a combination of them.
     
--   `filename` is the name of the file for which the permissions need to change. This parameter can also be a list if files to change permissions in bulk.
+* `filename` is the name of the file for which the permissions need to change. This parameter can also be a list if files to change permissions in bulk.
     
 
 We can change permissions using two modes:
 
-1.  **Symbolic mode**: this method uses symbols like `u`, `g`, `o` to represent users, groups, and others. Permissions are represented as `r, w, x` for read, write, and execute, respectively. You can modify permissions using +, - and =.
+1. **Symbolic mode**: this method uses symbols like `u`, `g`, `o` to represent users, groups, and others. Permissions are represented as  `r, w, x` for read, write, and execute, respectively. You can modify permissions using +, - and =.
     
-2.  **Absolute mode**: this method represents permissions as 3-digit octal numbers ranging from 0-7.
+2. **Absolute mode**: this method represents permissions as 3-digit octal numbers ranging from 0-7.
     
 
 Now, let's see them in detail.
@@ -2236,39 +2262,39 @@ We can use mathematical operators to add, remove, and assign permissions. The ta
 | --- | --- |
 | + | Adds a permission to a file or directory |
 | – | Removes the permission |
-| \\= | Sets the permission if not present before. Also overrides the permissions if set earlier. |
+| \= | Sets the permission if not present before. Also overrides the permissions if set earlier. |
 
 **Example:**
 
-Suppose I have a script and I want to make it executable for the owner of the file `zaira`.
+Suppose I have a script and I want to make it executable for the owner of the file `zaira`.
 
 Current file permissions are as follows:
 
-![image-161](https://www.freecodecamp.org/news/content/images/2022/04/image-161.png)
+![image-161](https://www.freecodecamp.org/news/content/images/2022/04/image-161.png align="left")
 
 Let's split the permissions like this:
 
-![Splitting file permissions](https://www.freecodecamp.org/news/content/images/2022/04/image-160.png)
+![Splitting file permissions](https://www.freecodecamp.org/news/content/images/2022/04/image-160.png align="left")
 
 To add execution rights (`x`) to owner (`u`) using symbolic mode, we can use the command below:
 
-```
+```bash
 chmod u+x mymotd.sh
 ```
 
 **Output:**
 
-Now, we can see that the execution permissions have been added for owner `zaira`.
+Now, we can see that the execution permissions have been added for owner `zaira`.
 
-![Permission updated](https://www.freecodecamp.org/news/content/images/2022/04/image-162.png)
+![Permission updated](https://www.freecodecamp.org/news/content/images/2022/04/image-162.png align="left")
 
 **Additional examples for changing permissions via symbolic method:**
 
--   Removing `read` and `write` permission for `group` and `others`: `chmod go-rw`.
+* Removing `read` and `write` permission for `group` and `others`: `chmod go-rw`.
     
--   Removing `read` permissions for `others`: `chmod o-r`.
+* Removing `read` permissions for `others`: `chmod o-r`.
     
--   Assigning `write` permission to `group` and overriding existing permission: `chmod g=w`.
+* Assigning `write` permission to `group` and overriding existing permission: `chmod g=w`.
     
 
 ##### How to Change Permissions using Absolute Mode
@@ -2293,73 +2319,76 @@ Permissions can be revoked using subtraction. The below table shows how you can 
 
 **Example**:
 
--   Set `read` (add 4) for `user`, `read` (add 4) and `execute` (add 1) for group, and only `execute` (add 1) for others.
+* Set `read` (add 4) for `user`, `read` (add 4) and `execute` (add 1) for group, and only `execute` (add 1) for others.
+    
 
 `chmod 451 file-name`
 
 This is how we performed the calculation:
 
-![Calculation breakdown for adding permissions](https://www.freecodecamp.org/news/content/images/2022/04/image-163.png)
+![Calculation breakdown for adding permissions](https://www.freecodecamp.org/news/content/images/2022/04/image-163.png align="left")
 
-Note that this is the same as `r--r-x--x`.
+Note that this is the same as `r--r-x--x`.
 
--   Remove `execution` rights from `other` and `group`.
+* Remove `execution` rights from `other` and `group`.
+    
 
-To remove execution from `other` and `group`, subtract 1 from the execute part of last 2 octets.
+To remove execution from `other` and `group`, subtract 1 from the execute part of last 2 octets.
 
-![Calculation breakdown for removing permissions](https://www.freecodecamp.org/news/content/images/2022/04/image-164.png)
+![Calculation breakdown for removing permissions](https://www.freecodecamp.org/news/content/images/2022/04/image-164.png align="left")
 
--   Assign `read`, `write` and `execute` to `user`, `read` and `execute` to `group` and only `read` to others.
+* Assign `read`, `write` and `execute` to `user`, `read` and `execute` to `group` and only `read` to others.
+    
 
-This would be the same as `rwxr-xr--`.
+This would be the same as `rwxr-xr--`.
 
-![Calculation breakdown for adding permissions](https://www.freecodecamp.org/news/content/images/2022/04/image-165.png)
+![Calculation breakdown for adding permissions](https://www.freecodecamp.org/news/content/images/2022/04/image-165.png align="left")
 
-##### How to Change Ownership using the `chown` Command
+##### How to Change Ownership using the `chown` Command
 
-Next, we will learn how to change the ownership of a file. You can change the ownership of a file or folder using the `chown` command. In some cases, changing ownership requires `sudo` permissions.
+Next, we will learn how to change the ownership of a file. You can change the ownership of a file or folder using the `chown` command. In some cases, changing ownership requires `sudo` permissions.
 
-Syntax of `chown`:
+Syntax of `chown`:
 
-```
+```bash
 chown user filename
 ```
 
-##### How to change user ownership with `chown`
+##### How to change user ownership with `chown`
 
-Let's transfer the ownership from user `zaira` to user `news`.
+Let's transfer the ownership from user `zaira` to user `news`.
 
 `chown news mymotd.sh`
 
-![view current owner](https://www.freecodecamp.org/news/content/images/2022/04/image-167.png)
+![view current owner](https://www.freecodecamp.org/news/content/images/2022/04/image-167.png align="left")
 
-Command to change ownership: `sudo chown news mymotd.sh`.
+Command to change ownership: `sudo chown news mymotd.sh`.
 
 **Output:**
 
-![Ownership changed](https://www.freecodecamp.org/news/content/images/2022/04/image-168.png)
+![Ownership changed](https://www.freecodecamp.org/news/content/images/2022/04/image-168.png align="left")
 
 ##### How to change user and group ownership simultaneously
 
-We can also use `chown` to change user and group simultaneously.
+We can also use `chown` to change user and group simultaneously.
 
-```
+```bash
 chown user:group filename
 ```
 
 ##### How to change directory ownership
 
-You can change ownership recursively for contents in a directory. The example below changes the ownership of the `/opt/script` folder to allow user `admin`.
+You can change ownership recursively for contents in a directory. The example below changes the ownership of the `/opt/script` folder to allow user `admin`.
 
-```
+```bash
 chown -R admin /opt/script
 ```
 
 ##### How to change group ownership
 
-In case we only need to change the group owner, we can use `chown` by preceding the group name by a colon `:`
+In case we only need to change the group owner, we can use `chown` by preceding the group name by a colon `:`
 
-```
+```bash
 chown :admins /opt/script
 ```
 
@@ -2367,7 +2396,7 @@ chown :admins /opt/script
 
 You can switch between users using the `su` command.
 
-```
+```bash
 [user01@host ~]$ su user02
 Password:
 [user02@host ~]$
@@ -2381,7 +2410,7 @@ With great power comes great responsibility. If the root user is compromised, so
 
 If you omit the username, the `su` command switches to the root user account by default.
 
-```
+```bash
 [user01@host ~]$ su
 Password:
 [root@host ~]#
@@ -2399,13 +2428,13 @@ Also, `sudo` logs all commands that are run with it, providing an audit trail of
 
 In Ubuntu, you can find the audit logs here:
 
-```
+```bash
 cat /var/log/auth.log | grep sudo
 ```
 
 For a user that does not have access to `sudo`, it gets flagged in logs and prompts a message like this:
 
-```
+```bash
 user01 is not in the sudoers file.  This incident will be reported.
 ```
 
@@ -2415,7 +2444,7 @@ user01 is not in the sudoers file.  This incident will be reported.
 
 The command used to add a new user is:
 
-```
+```bash
 sudo useradd username
 ```
 
@@ -2427,63 +2456,63 @@ The `usermod` command is used to modify existing users. Here are some of the com
 
 Here are some examples of the `usermod` command in Linux:
 
-1.  **Change a user's login name:**
+1. **Change a user's login name:**
     
-    ```
-     sudo usermod -l newusername oldusername
-    ```
-    
-2.  **Change a user's home directory:**
-    
-    ```
-     sudo usermod -d /new/home/directory -m username
+    ```bash
+    sudo usermod -l newusername oldusername
     ```
     
-3.  **Add a user to a supplementary group:**
+2. **Change a user's home directory:**
     
-    ```
-     sudo usermod -aG groupname username
-    ```
-    
-4.  **Change a user's shell:**
-    
-    ```
-     sudo usermod -s /bin/bash username
+    ```bash
+    sudo usermod -d /new/home/directory -m username
     ```
     
-5.  **Lock a user's account:**
+3. **Add a user to a supplementary group:**
     
-    ```
-     sudo usermod -L username
-    ```
-    
-6.  **Unlock a user's account:**
-    
-    ```
-     sudo usermod -U username
+    ```bash
+    sudo usermod -aG groupname username
     ```
     
-7.  **Set an expiration date for a user account:**
+4. **Change a user's shell:**
     
-    ```
-     sudo usermod -e YYYY-MM-DD username
-    ```
-    
-8.  **Change a user's user ID (UID):**
-    
-    ```
-     sudo usermod -u newUID username
+    ```bash
+    sudo usermod -s /bin/bash username
     ```
     
-9.  **Change a user's primary group:**
+5. **Lock a user's account:**
     
-    ```
-     sudo usermod -g newgroup username
+    ```bash
+    sudo usermod -L username
     ```
     
-10.  **Remove a user from a supplementary group:**
+6. **Unlock a user's account:**
     
+    ```bash
+    sudo usermod -U username
     ```
+    
+7. **Set an expiration date for a user account:**
+    
+    ```bash
+    sudo usermod -e YYYY-MM-DD username
+    ```
+    
+8. **Change a user's user ID (UID):**
+    
+    ```bash
+    sudo usermod -u newUID username
+    ```
+    
+9. **Change a user's primary group:**
+    
+    ```bash
+    sudo usermod -g newgroup username
+    ```
+    
+10. **Remove a user from a supplementary group:**
+    
+    ```bash
     sudo gpasswd -d username groupname
     ```
     
@@ -2492,16 +2521,17 @@ Here are some examples of the `usermod` command in Linux:
 
 The `userdel` command is used to delete a user account and related files from the system.
 
--   `sudo userdel username`: removes the user's details from `/etc/passwd` but keeps the user's home directory.
+* `sudo userdel username`: removes the user's details from `/etc/passwd` but keeps the user's home directory.
     
--   The `sudo userdel -r username` command removes the user's details from `/etc/passwd` and also deletes the user's home directory.
+* The `sudo userdel -r username` command removes the user's details from `/etc/passwd` and also deletes the user's home directory.
     
 
 ##### Changing user passwords
 
 The `passwd` command is used to change a user's password.
 
--   `sudo passwd username`: sets the initial password or changes the existing password of username. It is also used to change the password of the currently logged in user.
+* `sudo passwd username`: sets the initial password or changes the existing password of username. It is also used to change the password of the currently logged in user.
+    
 
 ### 8.2 Connecting to Remote Servers via SSH
 
@@ -2515,22 +2545,22 @@ The default port for SSH is `22`.
 
 The two participants while communicating via SSH are:
 
--   The server: the machine that you want access to.
+* The server: the machine that you want access to.
     
--   The client: The system that you are accessing the server from.
+* The client: The system that you are accessing the server from.
     
 
 Connection to a server follows these steps:
 
-1.  Initiate Connection: The client sends a connection request to the server.
+1. Initiate Connection: The client sends a connection request to the server.
     
-2.  Exchange of Keys: The server sends its public key to the client. Both agree on the encryption methods to use.
+2. Exchange of Keys: The server sends its public key to the client. Both agree on the encryption methods to use.
     
-3.  Session Key Generation: The client and server use the Diffie-Hellman key exchange to create a shared session key.
+3. Session Key Generation: The client and server use the Diffie-Hellman key exchange to create a shared session key.
     
-4.  Client Authentication: The client logs in to the server using a password, private key, or another method.
+4. Client Authentication: The client logs in to the server using a password, private key, or another method.
     
-5.  Secure Communication: After authentication, the client and server communicate securely with encryption.
+5. Secure Communication: After authentication, the client and server communicate securely with encryption.
     
 
 **How to connect to a remote server using SSH?**
@@ -2541,28 +2571,28 @@ Here, we are talking about how the client would make a connection to the server.
 
 Prior to connecting to a server, you need to have the following information:
 
--   The IP address or the domain name of the server.
+* The IP address or the domain name of the server.
     
--   The username and password of the server.
+* The username and password of the server.
     
--   The port number that you have access to in the server.
+* The port number that you have access to in the server.
     
 
 The basic syntax of the `ssh` command is:
 
-```
+```bash
 ssh username@server_ip
 ```
 
 For example, if your username is `john` and the server IP is `192.168.1.10`, the command would be:
 
-```
+```bash
 ssh john@192.168.1.10
 ```
 
 After that, you'll be prompted to enter the secret password. Your screen will look similar to this:
 
-```
+```bash
 john@192.168.1.10's password: 
 Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 5.4.0-70-generic x86_64)
 
@@ -2585,7 +2615,7 @@ Now you can execute the relevant commands on the server `192.168.1.10`.
 
 ⚠️ The default port for ssh is `22` but it is also vulnerable, as hackers will likely attempt here first. Your server can expose another port and share the access with you. To connect to a different port, use the `-p` flag.
 
-```
+```bash
 ssh -p port_number username@server_ip
 ```
 
@@ -2595,7 +2625,7 @@ Log files, when configured, are generated by your system for a variety of useful
 
 Here is an example of a log file:
 
-```
+```bash
 # sample log file
 2024-04-25 09:00:00 INFO Startup: Application starting
 2024-04-25 09:01:00 INFO Config: Configuration loaded successfully
@@ -2611,15 +2641,15 @@ Here is an example of a log file:
 
 A log file usually contains the following columns:
 
--   Timestamp: The date and time when the event occurred.
+* Timestamp: The date and time when the event occurred.
     
--   Log Level: The severity of the event (INFO, DEBUG, WARN, ERROR).
+* Log Level: The severity of the event (INFO, DEBUG, WARN, ERROR).
     
--   Component: The component of the system that generated the event (Startup, Config, Database, User, Security, Network, Email, API, Session, Shutdown).
+* Component: The component of the system that generated the event (Startup, Config, Database, User, Security, Network, Email, API, Session, Shutdown).
     
--   Message: A description of the event that occurred.
+* Message: A description of the event that occurred.
     
--   Additional Information: Additional information related to the event.
+* Additional Information: Additional information related to the event.
     
 
 In real-time systems, log files tend to be thousands of lines long and are generated every second. They can be very wordy depending on the configuration. Every column in a log file is a piece of information that can be used to track down issues. This makes log files difficult to read and understand manually.
@@ -2636,66 +2666,66 @@ Grep is a built-in bash utility. It stands for "global regular expression print"
 
 Here are some common uses of `grep`:
 
-1.  **Search for a specific string in a file:**
+1. **Search for a specific string in a file:**
     
-    ```
-     grep "search_string" filename
+    ```bash
+    grep "search_string" filename
     ```
     
     This command searches for "search\_string" in the file named `filename`.
     
-2.  **Search recursively in directories:**
+2. **Search recursively in directories:**
     
-    ```
-     grep -r "search_string" /path/to/directory
+    ```bash
+    grep -r "search_string" /path/to/directory
     ```
     
     This command searches for "`search_string"` in all files within the specified directory and its subdirectories.
     
-3.  **Ignore case while searching:**
+3. **Ignore case while searching:**
     
-    ```
-     grep -i "search_string" filename
+    ```bash
+    grep -i "search_string" filename
     ```
     
     This command performs a case-insensitive search for "search\_string" in the file named `filename`.
     
-4.  **Display line numbers with matching lines:**
+4. **Display line numbers with matching lines:**
     
-    ```
-     grep -n "search_string" filename
+    ```bash
+    grep -n "search_string" filename
     ```
     
     This command shows the line numbers along with the matching lines in the file named `filename`.
     
-5.  **Count the number of matching lines:**
+5. **Count the number of matching lines:**
     
-    ```
-     grep -c "search_string" filename
+    ```bash
+    grep -c "search_string" filename
     ```
     
     This command counts the number of lines that contain "search\_string" in the file named `filename`.
     
-6.  **Invert match to display lines that do not match:**
+6. **Invert match to display lines that do not match:**
     
-    ```
-     grep -v "search_string" filename
+    ```bash
+    grep -v "search_string" filename
     ```
     
     This command displays all lines that do not contain "search\_string" in the file named `filename`.
     
-7.  **Search for a whole word:**
+7. **Search for a whole word:**
     
-    ```
-     grep -w "word" filename
+    ```bash
+    grep -w "word" filename
     ```
     
     This command searches for the whole word "word" in the file named `filename`.
     
-8.  **Use extended regular expressions:**
+8. **Use extended regular expressions:**
     
-    ```
-     grep -E "pattern" filename
+    ```bash
+    grep -E "pattern" filename
     ```
     
     This command allows the use of extended regular expressions for more complex pattern matching in the file named `filename`.
@@ -2703,7 +2733,7 @@ Here are some common uses of `grep`:
 
 **💡 Tip:** If there are multiple files in a folder, you can use the below command to find the list of files containing the desired strings.
 
-```
+```bash
 # find the list of files containing the desired strings
 grep -l "String to Match" /path/to/directory
 ```
@@ -2716,7 +2746,7 @@ grep -l "String to Match" /path/to/directory
 
 The basic syntax of `sed` is as follows:
 
-```
+```bash
 sed [options] 'command' file_name
 ```
 
@@ -2728,13 +2758,13 @@ Here, `command` is used to perform operations like substitution, deletion, inser
 
 The `s` flag is used to replace text. The `old-text` is replaced with `new-text`:
 
-```
+```bash
 sed 's/old-text/new-text/' filename
 ```
 
 For example, to change all instances of "error" to "warning" in the log file `system.log`:
 
-```
+```bash
 sed 's/error/warning/' system.log
 ```
 
@@ -2742,13 +2772,13 @@ sed 's/error/warning/' system.log
 
 Using `sed` to filter and display lines that match a specific pattern:
 
-```
+```bash
 sed -n '/pattern/p' filename
 ```
 
 For instance, to find all lines containing "ERROR":
 
-```
+```bash
 sed -n '/ERROR/p' system.log
 ```
 
@@ -2756,13 +2786,13 @@ sed -n '/ERROR/p' system.log
 
 You can delete lines from the output that match a specific pattern:
 
-```
+```bash
 sed '/pattern/d' filename
 ```
 
 For example, to remove all lines containing "DEBUG":
 
-```
+```bash
 sed '/DEBUG/d' system.log
 ```
 
@@ -2770,7 +2800,7 @@ sed '/DEBUG/d' system.log
 
 You can use regular expressions to extract parts of lines. Suppose each log line starts with a date in the format "YYYY-MM-DD". You could extract just the date from each line:
 
-```
+```bash
 sed -n 's/^\([0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}\).*/\1/p' system.log
 ```
 
@@ -2782,7 +2812,7 @@ sed -n 's/^\([0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}\).*/\1/p' system.log
 
 The basic syntax of `awk` is:
 
-```
+```bash
 awk 'pattern { action }' file_name
 ```
 
@@ -2790,7 +2820,7 @@ Here, `pattern` is a condition that must be met for the `action` to be performed
 
 In the coming examples, you'll use this log file as an example:
 
-```
+```bash
 2024-04-25 09:00:00 INFO Startup: Application starting
 2024-04-25 09:01:00 INFO Config: Configuration loaded successfully
 2024-04-25 09:02:00 INFO Database: Database connection established
@@ -2804,11 +2834,12 @@ In the coming examples, you'll use this log file as an example:
   INFO
 ```
 
--   **Accessing columns using**`awk`
+* **Accessing columns using**`awk`
+    
 
 The fields in `awk` (separated by spaces by default) can be accessed using `$1`, `$2`, `$3`, and so on.
 
-```
+```bash
 zaira@zaira-ThinkPad:~$ awk '{ print $1 }' sample.log
 # output
 2024-04-25
@@ -2836,9 +2867,10 @@ zaira@zaira-ThinkPad:~$ awk '{ print $2 }' sample.log
 09:09:00
 ```
 
--   **Print lines containing a specific pattern (for example, ERROR)**
+* **Print lines containing a specific pattern (for example, ERROR)**
+    
 
-```
+```bash
 awk '/ERROR/ { print $0 }' logfile.log
 
 # output
@@ -2847,9 +2879,10 @@ awk '/ERROR/ { print $0 }' logfile.log
 
 This prints all lines that contain "ERROR".
 
--   **Extract the first field (Date and Time)**
+* **Extract the first field (Date and Time)**
+    
 
-```
+```bash
 awk '{ print $1, $2 }' logfile.log
 # output
 2024-04-25 09:00:00
@@ -2866,9 +2899,10 @@ awk '{ print $1, $2 }' logfile.log
 
 This will extract the first two fields from each line, which in this case would be the date and time.
 
--   **Summarize occurrences of each log level**
+* **Summarize occurrences of each log level**
+    
 
-```
+```bash
 awk '{ count[$3]++ } END { for (level in count) print level, count[level] }' logfile.log
 
 # output
@@ -2881,9 +2915,10 @@ INFO 6
 
 The output will be a summary of the number of occurrences of each log level.
 
--   **Filter out specific fields (for example, where the 3rd field is INFO)**
+* **Filter out specific fields (for example, where the 3rd field is INFO)**
+    
 
-```
+```bash
 awk '{ $3="INFO"; print }' sample.log
 
 # output
@@ -2910,22 +2945,22 @@ The `cut` command is a simple yet powerful command used to extract sections of t
 
 The basic syntax of the cut command is:
 
-```
+```bash
 cut [options] [file]
 ```
 
 Some commonly used options for the cut command:
 
--   `-d` : Specifies a delimiter used as the field separator.
+* `-d` : Specifies a delimiter used as the field separator.
     
--   `-f` : Selects the fields to be displayed.
+* `-f` : Selects the fields to be displayed.
     
--   `-c` : Specifies character positions.
+* `-c` : Specifies character positions.
     
 
 For example, the command below would extract the first field (separated by a space) from each line of the log file:
 
-```
+```bash
 cut -d ' ' -f 1 logfile.log
 ```
 
@@ -2933,7 +2968,7 @@ cut -d ' ' -f 1 logfile.log
 
 Assume you have a log file structured as follows, where fields are space-separated:
 
-```
+```bash
 2024-04-25 08:23:01 INFO 192.168.1.10 User logged in successfully.
 2024-04-25 08:24:15 WARNING 192.168.1.10 Disk usage exceeds 90%.
 2024-04-25 08:25:02 ERROR 10.0.0.5 Connection timed out.
@@ -2942,9 +2977,10 @@ Assume you have a log file structured as follows, where fields are space-separat
 
 `cut` can be used in the following ways:
 
-1.  **Extracting the time from each log entry**:
+1. **Extracting the time from each log entry**:
+    
 
-```
+```bash
 cut -d ' ' -f 2 system.log
 
 # Output
@@ -2956,9 +2992,10 @@ cut -d ' ' -f 2 system.log
 
 This command uses a space as a delimiter and selects the second field, which is the time component of each log entry.
 
-2.  **Extracting the IP addresses from the logs**:
+2. **Extracting the IP addresses from the logs**:
+    
 
-```
+```bash
 cut -d ' ' -f 4 system.log
 
 # Output
@@ -2969,9 +3006,10 @@ cut -d ' ' -f 4 system.log
 
 This command extracts the fourth field, which is the IP address from each log entry.
 
-3.  **Extracting log levels (INFO, WARNING, ERROR)**:
+3. **Extracting log levels (INFO, WARNING, ERROR)**:
+    
 
-```
+```bash
 cut -d ' ' -f 3 system.log
 
 # Output
@@ -2982,11 +3020,12 @@ ERROR
 
 This extracts the third field which contains the log level.
 
-4.  **Combining**`cut`**with other commands:**
+4. **Combining**`cut`**with other commands:**
+    
 
 The output of other commands can be piped to the `cut` command. Let's say you want to filter logs before cutting. You can use `grep` to extract lines containing "ERROR" and then use `cut` to get specific information from those lines:
 
-```
+```bash
 grep "ERROR" system.log | cut -d ' ' -f 1,2 
 
 # Output
@@ -2995,11 +3034,12 @@ grep "ERROR" system.log | cut -d ' ' -f 1,2
 
 This command first filters lines that include "ERROR", then extracts the date and time from these lines.
 
-5.  **Extracting multiple fields**:
+5. **Extracting multiple fields**:
+    
 
 It is possible to extract multiple fields at once by specifying a range or a comma-separated list of fields:
 
-```
+```bash
 cut -d ' ' -f 1,2,3 system.log` 
 
 # Output
@@ -3019,43 +3059,43 @@ Sorting and removing duplicates are common operations when working with log file
 
 The `sort` command organizes lines of text alphabetically or numerically.
 
-```
+```bash
 sort [options] [file]
 ```
 
 Some key options for the sort command:
 
--   `-n`: Sorts the file assuming the contents are numerical.
+* `-n`: Sorts the file assuming the contents are numerical.
     
--   `-r`: Reverses the order of sort.
+* `-r`: Reverses the order of sort.
     
--   `-k`: Specifies a key or column number to sort on.
+* `-k`: Specifies a key or column number to sort on.
     
--   `-u`: Sorts and removes duplicate lines.
+* `-u`: Sorts and removes duplicate lines.
     
 
 The `uniq` command is used to filter or count and report repeated lines in a file.
 
 The syntax of `uniq` is:
 
-```
+```bash
 uniq [options] [input_file] [output_file]
 ```
 
 Some key options for the `uniq` command are:
 
--   `-c`: Prefixes lines by the number of occurrences.
+* `-c`: Prefixes lines by the number of occurrences.
     
--   `-d`: Only prints duplicate lines.
+* `-d`: Only prints duplicate lines.
     
--   `-u`: Only prints unique lines.
+* `-u`: Only prints unique lines.
     
 
 #### Examples of using `sort` and `uniq` together for log parsing
 
 Let's assume the following example log entries for these demonstrations:
 
-```
+```bash
 2024-04-25 INFO User logged in successfully.
 2024-04-25 WARNING Disk usage exceeds 90%.
 2024-04-26 ERROR Connection timed out.
@@ -3064,9 +3104,10 @@ Let's assume the following example log entries for these demonstrations:
 2024-04-26 ERROR Connection timed out.
 ```
 
-1.  **Sorting log entries by date**:
+1. **Sorting log entries by date**:
+    
 
-```
+```bash
 sort system.log
 
 # Output
@@ -3080,9 +3121,10 @@ sort system.log
 
 This sorts the log entries alphabetically, which effectively sorts them by date if the date is the first field.
 
-1.  **Sorting and removing duplicates**:
+1. **Sorting and removing duplicates**:
+    
 
-```
+```bash
 sort system.log | uniq
 
 # Output
@@ -3094,9 +3136,10 @@ sort system.log | uniq
 
 This command sorts the log file and pipes it to `uniq`, removing duplicate lines.
 
-1.  **Counting occurrences of each line**:
+1. **Counting occurrences of each line**:
+    
 
-```
+```bash
 sort system.log | uniq -c
 
 # Output
@@ -3108,9 +3151,10 @@ sort system.log | uniq -c
 
 Sorts the log entries and then counts each unique line. According to the output, the line `'2024-04-25 INFO User logged in successfully.'` appeared 2 times in the file.
 
-1.  **Identifying unique log entries**:
+1. **Identifying unique log entries**:
+    
 
-```
+```bash
 sort system.log | uniq -u
 
 # Output
@@ -3121,9 +3165,10 @@ sort system.log | uniq -u
 
 This command shows lines that are unique.
 
-2.  **Sorting by log level**:
+2. **Sorting by log level**:
+    
 
-```
+```bash
 sort -k2 system.log
 
 # Output
@@ -3141,20 +3186,20 @@ Sorts the entries based on the second field, which is the log level.
 
 A process is a running instance of a program. A process consists of:
 
--   An address space of the allocated memory.
+* An address space of the allocated memory.
     
--   Process states.
+* Process states.
     
--   Properties such as ownership, security attributes, and resource usage.
+* Properties such as ownership, security attributes, and resource usage.
     
 
 A process also has an environment that consists of:
 
--   Local and global variables
+* Local and global variables
     
--   The current scheduling context
+* The current scheduling context
     
--   Allocated system resources, such as network ports or file descriptors.
+* Allocated system resources, such as network ports or file descriptors.
     
 
 When you run the `ls -l` command, the operating system creates a new process to execute the command. The process has an ID, a state, and runs until the command completes.
@@ -3167,7 +3212,7 @@ The `systemd` process has a process ID (PID) of `1` and is responsible for initi
 
 A parent process duplicates its own address space (fork) to create a new (child) process structure. Each new process is assigned a unique process ID (PID) for tracking and security purposes. The PID and the parent's process ID (PPID) are part of the new process environment. Any process can create a child process.
 
-![Process and its initialization to parent and child](https://cdn.hashnode.com/res/hashnode/image/upload/v1719584071059/f24fac4b-18f3-4a39-8659-93d32c533256.png)
+![Process and its initialization to parent and child](https://cdn.hashnode.com/res/hashnode/image/upload/v1719584071059/f24fac4b-18f3-4a39-8659-93d32c533256.png align="center")
 
 Through the fork routine, a child process inherits security identities, previous and current file descriptors, port and resource privileges, environment variables, and program code. A child process may then execute its own program code.
 
@@ -3179,7 +3224,7 @@ Upon exiting, the child process has already closed or discarded its resources an
 
 Processes in Linux assume different states during their lifecycle. The state of a process indicates what the process is currently doing and how it is interacting with the system. The processes transition between states based on their execution status and the system's scheduling algorithm.
 
-![Linux process states and transitions](https://cdn.hashnode.com/res/hashnode/image/upload/v1719584116150/3054dfe2-c42c-4d62-9e12-e3aec479d53a.png)
+![Linux process states and transitions](https://cdn.hashnode.com/res/hashnode/image/upload/v1719584116150/3054dfe2-c42c-4d62-9e12-e3aec479d53a.png align="center")
 
 The processes in a Linux system can be in one of the following states:
 
@@ -3217,7 +3262,7 @@ The processes transition between these states in the following ways:
 
 You can use the `ps` command along with a combination of options to view processes on a Linux system. The `ps` command is used to display information about a selection of active processes. For example, `ps aux` displays all processes running on the system.
 
-```
+```bash
 zaira@zaira:~$ ps aux
 # Output
 USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
@@ -3235,39 +3280,39 @@ root          13  0.0  0.0      0     0 ?        I    May21   0:00 [rcu_tasks_ru
 
 The output above shows a snapshot of the currently running processes on the system. Each row represents a process with the following columns:
 
-1.  `USER`: The user who owns the process.
+1. `USER`: The user who owns the process.
     
-2.  `PID`: The process ID.
+2. `PID`: The process ID.
     
-3.  `%CPU`: The CPU usage of the process.
+3. `%CPU`: The CPU usage of the process.
     
-4.  `%MEM`: The memory usage of the process.
+4. `%MEM`: The memory usage of the process.
     
-5.  `VSZ`: The virtual memory size of the process.
+5. `VSZ`: The virtual memory size of the process.
     
-6.  `RSS`: The resident set size, that is the non-swapped physical memory that a task has used.
+6. `RSS`: The resident set size, that is the non-swapped physical memory that a task has used.
     
-7.  `TTY`: The controlling terminal of the process. A `?` indicates no controlling terminal.
+7. `TTY`: The controlling terminal of the process. A `?` indicates no controlling terminal.
     
-8.  `STAT`: The process state.
+8. `STAT`: The process state.
     
-    -   `R`: Running
+    * `R`: Running
         
-    -   `I` or `S`: Interruptible sleep (waiting for an event to complete)
+    * `I` or `S`: Interruptible sleep (waiting for an event to complete)
         
-    -   `D`: Uninterruptible sleep (usually IO)
+    * `D`: Uninterruptible sleep (usually IO)
         
-    -   `T`: Stopped (either by a job control signal or because it is being traced)
+    * `T`: Stopped (either by a job control signal or because it is being traced)
         
-    -   `Z`: Zombie (terminated but not reaped by its parent)
+    * `Z`: Zombie (terminated but not reaped by its parent)
         
-    -   `Ss`: Session leader. This is a process that has started a session, and it is a leader of a group of processes and can control terminal signals. The first `S` indicates the sleeping state, and the second `s` indicates it is a session leader.
+    * `Ss`: Session leader. This is a process that has started a session, and it is a leader of a group of processes and can control terminal signals. The first `S` indicates the sleeping state, and the second `s` indicates it is a session leader.
         
-9.  `START`: The starting time or date of the process.
+9. `START`: The starting time or date of the process.
     
-10.  `TIME`: The cumulative CPU time.
+10. `TIME`: The cumulative CPU time.
     
-11.  `COMMAND`: The command that started the process.
+11. `COMMAND`: The command that started the process.
     
 
 #### Background and foreground processes
@@ -3278,11 +3323,12 @@ A job is a process that is started by a shell. When you run a command in the ter
 
 To demonstrate control, you'll first create 3 processes and then run them in the background. After that, you'll list the processes and alternate them between the foreground and background. You'll see how to put them to sleep or exit completely.
 
-1.  Create Three Processes
+1. Create Three Processes
+    
 
 Open a terminal and start three long-running processes. Use the `sleep` command, that keeps the process running for a specified number of seconds.
 
-```
+```bash
 # run sleep command for 300, 400, and 500 seconds
 sleep 300 &
 sleep 400 &
@@ -3291,40 +3337,43 @@ sleep 500 &
 
 The `&` at the end of each command moves the process to the background.
 
-2.  Display Background Jobs
+2. Display Background Jobs
+    
 
 Use the `jobs` command to display the list of background jobs.
 
-```
+```bash
 jobs
 ```
 
 The output should look something like this:
 
-```
+```bash
 jobs
 [1]   Running                 sleep 300 &
 [2]-  Running                 sleep 400 &
 [3]+  Running                 sleep 500 &
 ```
 
-3.  Bring a Background Job to the Foreground
+3. Bring a Background Job to the Foreground
+    
 
 To bring a background job to the foreground, use the `fg` command followed by the job number. For example, to bring the first job (`sleep 300`) to the foreground:
 
-```
+```bash
 fg %1
 ```
 
 This will bring job `1` to the foreground.
 
-4.  Move the Foreground Job Back to the Background
+4. Move the Foreground Job Back to the Background
+    
 
 While the job is running in the foreground, you can suspend it and move it back to the background by pressing `Ctrl+Z` to suspend the job.
 
 A suspended job will look like this:
 
-```
+```bash
 zaira@zaira:~$ fg %1
 sleep 300
 
@@ -3340,15 +3389,16 @@ zaira@zaira:~$ jobs
 
 Now use the `bg` command to resume the job with ID 1 in the background.
 
-```
+```bash
 # Press Ctrl+Z to suspend the foreground job
 # Then, resume it in the background
 bg %1
 ```
 
-5.  Display the jobs again
+5. Display the jobs again
+    
 
-```
+```bash
 jobs
 [1]   Running                 sleep 300 &
 [2]-  Running                 sleep 400 &
@@ -3357,15 +3407,15 @@ jobs
 
 In this exercise, you:
 
--   Started three background processes using sleep commands.
+* Started three background processes using sleep commands.
     
--   Used jobs to display the list of background jobs.
+* Used jobs to display the list of background jobs.
     
--   Brought a job to the foreground with `fg %job_number`.
+* Brought a job to the foreground with `fg %job_number`.
     
--   Suspended the job with `Ctrl+Z` and moved it back to the background with `bg %job_number`.
+* Suspended the job with `Ctrl+Z` and moved it back to the background with `bg %job_number`.
     
--   Used jobs again to verify the status of the background jobs.
+* Used jobs again to verify the status of the background jobs.
     
 
 Now you know how to control jobs.
@@ -3376,56 +3426,56 @@ It is possible to terminate an unresponsive or unwanted process using the `kill`
 
 A number of options are available with the `kill` command.
 
-```
+```bash
 # Options available with kill
 
 kill -l
- 1) SIGHUP     2) SIGINT     3) SIGQUIT     4) SIGILL     5) SIGTRAP
- 6) SIGABRT     7) SIGBUS     8) SIGFPE     9) SIGKILL    10) SIGUSR1
-11) SIGSEGV    12) SIGUSR2    13) SIGPIPE    14) SIGALRM    15) SIGTERM
-16) SIGSTKFLT    17) SIGCHLD    18) SIGCONT    19) SIGSTOP    20) SIGTSTP
-21) SIGTTIN    22) SIGTTOU    23) SIGURG    24) 
+ 1) SIGHUP	 2) SIGINT	 3) SIGQUIT	 4) SIGILL	 5) SIGTRAP
+ 6) SIGABRT	 7) SIGBUS	 8) SIGFPE	 9) SIGKILL	10) SIGUSR1
+11) SIGSEGV	12) SIGUSR2	13) SIGPIPE	14) SIGALRM	15) SIGTERM
+16) SIGSTKFLT	17) SIGCHLD	18) SIGCONT	19) SIGSTOP	20) SIGTSTP
+21) SIGTTIN	22) SIGTTOU	23) SIGURG	24) 
 ...terminated
 ```
 
 Here are some examples of the `kill` command in Linux:
 
-1.  **Kill a process by PID (Process ID):**
+1. **Kill a process by PID (Process ID):**
     
-    ```
-     kill 1234
+    ```bash
+    kill 1234
     ```
     
     This command sends the default `SIGTERM` signal to the process with PID 1234, requesting it to terminate.
     
-2.  **Kill a process by name:**
+2. **Kill a process by name:**
     
-    ```
-     pkill process_name
+    ```bash
+    pkill process_name
     ```
     
     This command sends the default `SIGTERM` signal to all processes with the specified name.
     
-3.  **Forcefully kill a process:**
+3. **Forcefully kill a process:**
     
-    ```
-     kill -9 1234
+    ```bash
+    kill -9 1234
     ```
     
     This command sends the `SIGKILL` signal to the process with PID 1234, forcefully terminating it.
     
-4.  **Send a specific signal to a process:**
+4. **Send a specific signal to a process:**
     
-    ```
-     kill -s SIGSTOP 1234
+    ```bash
+    kill -s SIGSTOP 1234
     ```
     
     This command sends the `SIGSTOP` signal to the process with PID 1234, stopping it.
     
-5.  **Kill all processes owned by a specific user:**
+5. **Kill all processes owned by a specific user:**
     
-    ```
-     pkill -u username
+    ```bash
+    pkill -u username
     ```
     
     This command sends the default `SIGTERM` signal to all processes owned by the specified user.
@@ -3462,20 +3512,20 @@ Here is the information about the `kill` command options and signals in a tabula
 
 Reading an input and writing an output is an essential part of understanding the command line and shell scripting. In Linux, every process has three default streams:
 
-1.  Standard Input (`stdin`): This stream is used for input, typically from the keyboard. When a program reads from `stdin`, it receives data entered by the user or redirected from a file. A file descriptor is a unique identifier that the operating system assigns to an open file in order to keep track of open files.
+1. Standard Input (`stdin`): This stream is used for input, typically from the keyboard. When a program reads from `stdin`, it receives data entered by the user or redirected from a file. A file descriptor is a unique identifier that the operating system assigns to an open file in order to keep track of open files.
     
     The file descriptor for `stdin` is `0`.
     
-2.  Standard Output (`stdout`): This is the default output stream where a process writes its output. By default, the standard output is the terminal. The output can also be redirected to a file or another program. The file descriptor for `stdout` is `1`.
+2. Standard Output (`stdout`): This is the default output stream where a process writes its output. By default, the standard output is the terminal. The output can also be redirected to a file or another program. The file descriptor for `stdout` is `1`.
     
-3.  Standard Error (`stderr`): This is the default error stream where a process writes its error messages. By default, the standard error is the terminal, allowing error messages to be seen even if `stdout` is redirected. The file descriptor for `stderr` is `2`.
+3. Standard Error (`stderr`): This is the default error stream where a process writes its error messages. By default, the standard error is the terminal, allowing error messages to be seen even if `stdout` is redirected. The file descriptor for `stderr` is `2`.
     
 
 #### Redirection and Pipelines
 
 **Redirection:** You can redirect the error and output streams to files or other commands. For example:
 
-```
+```bash
 # Redirecting stdout to a file
 ls > output.txt
 
@@ -3488,11 +3538,11 @@ ls non_existent_directory > all_output.txt 2>&1
 
 In the last command,
 
--   `ls non_existent_directory`: lists the contents of a directory named non\_existent\_directory. Since this directory does not exist, `ls` will generate an error message.
+* `ls non_existent_directory`: lists the contents of a directory named non\_existent\_directory. Since this directory does not exist, `ls` will generate an error message.
     
--   `> all_output.txt`: The `>` operator redirects the standard output (`stdout`) of the `ls` command to the file `all_output.txt`. If the file does not exist, it will be created. If it does exist, its contents will be overwritten.
+* `> all_output.txt`: The `>` operator redirects the standard output (`stdout`) of the `ls` command to the file `all_output.txt`. If the file does not exist, it will be created. If it does exist, its contents will be overwritten.
     
--   `2>&1:`: Here, `2` represents the file descriptor for standard error (`stderr`). `&1` represents the file descriptor for standard output (`stdout`). The `&` character is used to specify that `1` is not the file name but a file descriptor.
+* `2>&1:`: Here, `2` represents the file descriptor for standard error (`stderr`). `&1` represents the file descriptor for standard output (`stdout`). The `&` character is used to specify that `1` is not the file name but a file descriptor.
     
 
 So, `2>&1` means "redirect stderr (2) to wherever stdout (1) is currently going," which in this case is the file `all_output.txt`. Therefore, both the output (if there were any) and the error message from `ls` will be written to `all_output.txt`.
@@ -3501,7 +3551,7 @@ So, `2>&1` means "redirect stderr (2) to wherever stdout (1) is currently going,
 
 You can use pipes (`|`) to pass the output of one command as the input to another:
 
-```
+```bash
 ls | grep image
 # Output
 image-10.png
@@ -3531,11 +3581,11 @@ In order to use cron jobs, an admin needs to allow cron jobs to be added for use
 
 If you get a prompt like this, it means you don't have permission to use cron.
 
-![Cron job addition denied for user John.](https://www.freecodecamp.org/news/content/images/2021/11/image-51.png)
+![Cron job addition denied for user John.](https://www.freecodecamp.org/news/content/images/2021/11/image-51.png align="left")
 
 To allow John to use crons, include his name in `/etc/cron.allow`. Create the file if it doesn't exist. This will allow John to create and edit cron jobs.
 
-![Allowing John in file cron.allow](https://www.freecodecamp.org/news/content/images/2021/11/image-52.png)
+![Allowing John in file cron.allow](https://www.freecodecamp.org/news/content/images/2021/11/image-52.png align="left")
 
 Users can also be denied access to cron job access by entering their usernames in the file `/etc/cron.d/cron.deny`.
 
@@ -3543,7 +3593,7 @@ Users can also be denied access to cron job access by entering their usernames i
 
 First, to use cron jobs, you'll need to check the status of the cron service. If cron is not installed, you can easily download it through the package manager. Just use this to check:
 
-```
+```bash
 # Check cron service on Linux system
 sudo systemctl status cron.service
 ```
@@ -3552,25 +3602,26 @@ sudo systemctl status cron.service
 
 Crontabs use the following flags for adding and listing cron jobs:
 
--   `crontab -e`: edits crontab entries to add, delete, or edit cron jobs.
+* `crontab -e`: edits crontab entries to add, delete, or edit cron jobs.
     
--   `crontab -l`: list all the cron jobs for the current user.
+* `crontab -l`: list all the cron jobs for the current user.
     
--   `crontab -u username -l`: list another user's crons.
+* `crontab -u username -l`: list another user's crons.
     
--   `crontab -u username -e`: edit another user's crons.
+* `crontab -u username -e`: edit another user's crons.
     
 
 When you list crons and they exist, you'll see something like this:
 
-```
+```bash
 # Cron job example
 * * * * * sh /path/to/script.sh
 ```
 
 In the above example,
 
--   `*` represents minute(s) hour(s) day(s) month(s) weekday(s), respectively. See details of these values below:
+* `*` represents minute(s) hour(s) day(s) month(s) weekday(s), respectively. See details of these values below:
+    
 
 |  | **VALUE** | **DESCRIPTION** |
 | --- | --- | --- |
@@ -3580,14 +3631,14 @@ In the above example,
 | Months | 1-12 | The month in which tasks need to be executed. |
 | Weekdays | 0-6 | Days of the week where commands will run. Here, 0 is Sunday. |
 
--   `sh` represents that the script is a bash script and should be run from `/bin/bash`.
+* `sh` represents that the script is a bash script and should be run from `/bin/bash`.
     
--   `/path/to/script.sh` specifies the path to the script.
+* `/path/to/script.sh` specifies the path to the script.
     
 
 Below is a summary of the cron job syntax:
 
-```
+```markdown
 *   *   *   *   *  sh /path/to/script/script.sh
 |   |   |   |   |              |
 |   |   |   |   |      Command or Script to Execute        
@@ -3615,37 +3666,38 @@ Below are some examples of scheduling cron jobs.
 | `5 4 * * 6` | At 04:05 on Saturday. |
 | `0 22 * * 1-5` | At 22:00 on every day-of-week from Monday through Friday. |
 
-It's okay if you are unable to grasp this all at once. You can practice and generate cron schedules with the [crontab guru][54] website.
+It's okay if you are unable to grasp this all at once. You can practice and generate cron schedules with the [crontab guru](https://crontab.guru/) website.
 
 #### How to set up a cron job
 
 In this section, we will look at an example of how to schedule a simple script with a cron job.
 
-1.  Create a script called `date-script.sh` which prints the system date and time and appends it to a file. The script is shown below:
+1. Create a script called `date-script.sh` which prints the system date and time and appends it to a file. The script is shown below:
+    
 
-```
+```bash
 #!/bin/bash
 
 echo `date` >> date-out.txt
 ```
 
-2\. Make the script executable by giving it execution rights.
+2\.  Make the script executable by giving it execution rights.
 
-```
+```bash
 chmod 775 date-script.sh
 ```
 
-3\. Add the script in the crontab using `crontab -e`.
+3\.  Add the script in the crontab using `crontab -e`.
 
 Here, we have scheduled it to run per minute.
 
-```
+```bash
 */1 * * * * /bin/sh /root/date-script.sh
 ```
 
-4\. Check the output of the file `date-out.txt`. According to the script, the system date should be printed to this file every minute.
+4\.  Check the output of the file `date-out.txt`. According to the script, the system date should be printed to this file every minute.
 
-```
+```bash
 cat date-out.txt
 # output
 Wed 26 Jun 16:59:33 PKT 2024
@@ -3675,7 +3727,7 @@ If there is an entry in these logs at the correct time, it means the cron has ru
 
 Below are the logs of our cron job example. Note the first column which shows the timestamp. The path of the script is also mentioned at the end of the line. Line #1, 3, and 5 show that the script ran as intended.
 
-```
+```bash
 1 Jun 26 17:02:01 zaira-ThinkPad CRON[27834]: (zaira) CMD (/bin/sh /home/zaira/date-script.sh)
 2 Jun 26 17:02:02 zaira-ThinkPad systemd[2094]: Started Tracker metadata extractor.
 3 Jun 26 17:03:01 zaira-ThinkPad CRON[28255]: (zaira) CMD (/bin/sh /home/zaira/date-script.sh)
@@ -3687,7 +3739,7 @@ Below are the logs of our cron job example. Note the first column which shows th
 
 You can redirect a cron's output to a file and check the file for any possible errors.
 
-```
+```bash
 # Redirect cron output to a file
 * * * * * sh /path/to/script.sh &> log_file.log
 ```
@@ -3700,7 +3752,7 @@ Linux offers a number of commands to view network related information. In this s
 
 The `ifconfig` command gives information about network interfaces. Here is an example output:
 
-```
+```bash
 ifconfig
 
 # Output
@@ -3735,63 +3787,63 @@ The `netstat` command shows network activity and stats by giving the following i
 
 Here are some examples of using the `netstat` command in the command line:
 
-1.  **Display all listening and non-listening sockets:**
+1. **Display all listening and non-listening sockets:**
     
-    ```
-     netstat -a
-    ```
-    
-2.  **Show only listening ports:**
-    
-    ```
-     netstat -l
+    ```bash
+    netstat -a
     ```
     
-3.  **Display network statistics:**
+2. **Show only listening ports:**
     
-    ```
-     netstat -s
-    ```
-    
-4.  **Show routing table:**
-    
-    ```
-     netstat -r
+    ```bash
+    netstat -l
     ```
     
-5.  **Display TCP connections:**
+3. **Display network statistics:**
     
-    ```
-     netstat -t
-    ```
-    
-6.  **Display UDP connections:**
-    
-    ```
-     netstat -u
+    ```bash
+    netstat -s
     ```
     
-7.  **Show network interfaces:**
+4. **Show routing table:**
     
-    ```
-     netstat -i
-    ```
-    
-8.  **Display PID and program names for connections:**
-    
-    ```
-     netstat -p
+    ```bash
+    netstat -r
     ```
     
-9.  **Show statistics for a specific protocol (for example, TCP):**
+5. **Display TCP connections:**
     
-    ```
-     netstat -st
+    ```bash
+    netstat -t
     ```
     
-10.  **Display extended information:**
+6. **Display UDP connections:**
     
+    ```bash
+    netstat -u
     ```
+    
+7. **Show network interfaces:**
+    
+    ```bash
+    netstat -i
+    ```
+    
+8. **Display PID and program names for connections:**
+    
+    ```bash
+    netstat -p
+    ```
+    
+9. **Show statistics for a specific protocol (for example, TCP):**
+    
+    ```bash
+    netstat -st
+    ```
+    
+10. **Display extended information:**
+    
+    ```bash
     netstat -e
     ```
     
@@ -3800,13 +3852,13 @@ Here are some examples of using the `netstat` command in the command line:
 
 `ping` is used to test network connectivity between two devices. It sends ICMP packets to the target device and waits for a response.
 
-```
+```bash
 ping google.com
 ```
 
 `ping` tests if you get a response back without getting a timeout.
 
-```
+```bash
 ping google.com
 PING google.com (142.250.181.46) 56(84) bytes of data.
 64 bytes from fjr04s06-in-f14.1e100.net (142.250.181.46): icmp_seq=1 ttl=60 time=78.3 ms
@@ -3825,26 +3877,29 @@ You can stop the response with `Ctrl + C`.
 
 The `curl` command stands for "client URL". It is used to transfer data to or from a server. It can also be used to test API endpoints that helps in troubleshooting system and application errors.
 
-As an example, you can use [`http://www.official-joke-api.appspot.com/`][55] to experiment with the `curl` command.
+As an example, you can use [`http://www.official-joke-api.appspot.com/`](http://www.official-joke-api.appspot.com/) to experiment with the `curl` command.
 
--   The `curl` command without any options uses the GET method by default.
+* The `curl` command without any options uses the GET method by default.
+    
 
-```
+```bash
 curl http://www.official-joke-api.appspot.com/random_joke
 {"type":"general",
 "setup":"What did the fish say when it hit the wall?","punchline":"Dam.","id":1}
 ```
 
--   `curl -o` saves the output to the mentioned file.
+* `curl -o` saves the output to the mentioned file.
+    
 
-```
+```bash
 curl -o random_joke.json http://www.official-joke-api.appspot.com/random_joke
 # saves the output to random_joke.json
 ```
 
--   `curl -I` fetches only the headers.
+* `curl -I` fetches only the headers.
+    
 
-```
+```bash
 curl -I http://www.official-joke-api.appspot.com/random_joke
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
@@ -3874,16 +3929,16 @@ Once the status is active, the system will start collecting various stats that y
 
 The syntax of the `sar` command is as follows:
 
-```
+```bash
 sar [options] [interval] [count]
 ```
 
 For example, `sar -u 1 3` will display CPU utilization statistics every second for three times.
 
-```
+```bash
 sar -u 1 3
 # Output
-Linux 6.5.0-28-generic (zaira-ThinkPad)     04/06/24     _x86_64_    (12 CPU)
+Linux 6.5.0-28-generic (zaira-ThinkPad) 	04/06/24 	_x86_64_	(12 CPU)
 
 19:09:26        CPU     %user     %nice   %system   %iowait    %steal     %idle
 19:09:27        all      3.78      0.00      2.18      0.08      0.00     93.96
@@ -3900,10 +3955,10 @@ Here are some common use cases and examples of how to use the `sar` command.
 
 To check memory usage (free and used), use:
 
-```
+```bash
 sar -r 1 3
 
-Linux 6.5.0-28-generic (zaira-ThinkPad)     04/06/24     _x86_64_    (12 CPU)
+Linux 6.5.0-28-generic (zaira-ThinkPad) 	04/06/24 	_x86_64_	(12 CPU)
 
 19:10:46    kbmemfree   kbavail kbmemused  %memused kbbuffers  kbcached  kbcommit   %commit  kbactive   kbinact   kbdirty
 19:10:47      4600104   8934352   5502124     36.32    375844   4158352  15532012     65.99   6830564   2481260       264
@@ -3918,11 +3973,11 @@ This command displays memory statistics every second three times.
 
 To view swap space utilization statistics, use:
 
-```
+```bash
 sar -S 1 3
 
 sar -S 1 3
-Linux 6.5.0-28-generic (zaira-ThinkPad)     04/06/24     _x86_64_    (12 CPU)
+Linux 6.5.0-28-generic (zaira-ThinkPad) 	04/06/24 	_x86_64_	(12 CPU)
 
 19:11:20    kbswpfree kbswpused  %swpused  kbswpcad   %swpcad
 19:11:21      8388604         0      0.00         0      0.00
@@ -3937,7 +3992,7 @@ This command helps monitor the swap usage, which is crucial for systems running 
 
 To report activity for block devices and block device partitions:
 
-```
+```bash
 sar -d 1 3
 ```
 
@@ -3947,11 +4002,11 @@ This command provides detailed stats about data transfers to and from block devi
 
 To view network statistics, like number of packets received (transmitted) by the network interface:
 
-```
+```bash
 sar -n DEV 1 3
 # -n DEV tells sar to report network device interfaces
 sar -n DEV 1 3
-Linux 6.5.0-28-generic (zaira-ThinkPad)     04/06/24     _x86_64_    (12 CPU)
+Linux 6.5.0-28-generic (zaira-ThinkPad) 	04/06/24 	_x86_64_	(12 CPU)
 
 19:12:47        IFACE   rxpck/s   txpck/s    rxkB/s    txkB/s   rxcmp/s   txcmp/s  rxmcst/s   %ifutil
 19:12:48           lo      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00
@@ -3974,45 +4029,45 @@ This displays network statistics every second for three seconds, helping in moni
 
 Recall that previously we installed the `sysstat` package and ran the service. Follow the steps below to enable and access historical data.
 
-1.  **Enable data collection:** Edit the `sysstat` configuration file to enable data collection.
+1. **Enable data collection:** Edit the `sysstat` configuration file to enable data collection.
     
-    ```
-     sudo nano /etc/default/sysstat
+    ```bash
+    sudo nano /etc/default/sysstat
     ```
     
     Change `ENABLED="false"` to `ENABLED="true"`.
     
-    ```
-     vim /etc/default/sysstat
-     #
-     # Default settings for /etc/init.d/sysstat, /etc/cron.d/sysstat
-     # and /etc/cron.daily/sysstat files
-     #
+    ```bash
+    vim /etc/default/sysstat
+    #
+    # Default settings for /etc/init.d/sysstat, /etc/cron.d/sysstat
+    # and /etc/cron.daily/sysstat files
+    #
     
-     # Should sadc collect system activity informations? Valid values
-     # are "true" and "false". Please do not put other values, they
-     # will be overwritten by debconf!
-     ENABLED="true"
+    # Should sadc collect system activity informations? Valid values
+    # are "true" and "false". Please do not put other values, they
+    # will be overwritten by debconf!
+    ENABLED="true"
     ```
     
-2.  **Configure data collection interval:** Edit the cron job configuration to set the data collection interval.
+2. **Configure data collection interval:** Edit the cron job configuration to set the data collection interval.
     
-    ```
-     sudo nano /etc/cron.d/sysstat
+    ```bash
+    sudo nano /etc/cron.d/sysstat
     ```
     
     By default, it collects data every 10 minutes. You can adjust the interval by modifying the cron job schedule. The relevant files will go to the `/var/log/sysstat` folder.
     
-3.  **View historical data:** Use the `sar` command to view historical data. For example, to view CPU usage for the current day:
+3. **View historical data:** Use the `sar` command to view historical data. For example, to view CPU usage for the current day:
     
-    ```
-     sar -u
+    ```bash
+    sar -u
     ```
     
     To view data from a specific date:
     
-    ```
-     sar -u -f /var/log/sysstat/sa<DD>
+    ```bash
+    sar -u -f /var/log/sysstat/sa<DD>
     ```
     
     Replace `<DD>` with the day of the month for which you want to view the data.
@@ -4020,13 +4075,13 @@ Recall that previously we installed the `sysstat` package and ran the service. F
     In the below command, `/var/log/sysstat/sa04` gives stats for the 4th day of the current month.
     
 
-```
+```bash
 sar -u -f /var/log/sysstat/sa04
-Linux 6.5.0-28-generic (zaira-ThinkPad)     04/06/24     _x86_64_    (12 CPU)
+Linux 6.5.0-28-generic (zaira-ThinkPad) 	04/06/24 	_x86_64_	(12 CPU)
 
-15:20:49     LINUX RESTART    (12 CPU)
+15:20:49     LINUX RESTART	(12 CPU)
 
-16:13:30     LINUX RESTART    (12 CPU)
+16:13:30     LINUX RESTART	(12 CPU)
 
 18:16:00        CPU     %user     %nice   %system   %iowait    %steal     %idle
 18:16:01        all      0.25      0.00      0.67      0.08      0.00     99.00
@@ -4037,11 +4092,11 @@ Average:        all      0.25      0.00      0.67      0.08      0.00     99.00
 
 To observe real-time interrupts per second served by the CPU, use this command:
 
-```
+```bash
 sar -I SUM 1 3
 
 # Output
-Linux 6.5.0-28-generic (zaira-ThinkPad)     04/06/24     _x86_64_    (12 CPU)
+Linux 6.5.0-28-generic (zaira-ThinkPad) 	04/06/24 	_x86_64_	(12 CPU)
 
 19:14:22         INTR    intr/s
 19:14:23          sum   5784.00
@@ -4066,7 +4121,7 @@ Linux offers very powerful tools to gauge system health. In this section, you'll
 
 System reboots may occur which can sometimes mess up some configurations. To check how long the machine has been up, use the command: `uptime`. In addition to the uptime, the command also displays load average.
 
-```
+```bash
 [user@host ~]$ uptime 19:15:00 up 1:04, 0 users, load average: 2.92, 4.48, 5.20
 ```
 
@@ -4078,7 +4133,7 @@ Per-CPU load can be calculated by dividing load average with the total number of
 
 To find the number of CPUs, use the command `lscpu.`
 
-```
+```bash
 lscpu
 # output
 Architecture:            x86_64
@@ -4099,7 +4154,7 @@ If the load average seems to increase and does not come down, the CPUs are overl
 
 Sometimes, high memory utilization might be causing problems. To check the available memory and the memory in use, use the `free` command.
 
-```
+```bash
 free -mh
 # output
                total        used        free      shared  buff/cache   available
@@ -4113,7 +4168,7 @@ To ensure the system is healthy, don't forget about the disk space. To list all 
 
 The `df` command provides detailed disk spaces.
 
-```
+```bash
 df -h
 Filesystem      Size  Used Avail Use% Mounted on
 tmpfs           1.5G  2.4M  1.5G   1% /run
@@ -4132,7 +4187,7 @@ Process states can be monitored to see any stuck process with a high memory or C
 
 We saw previously that the `ps` command gives useful information about a process. Have a look at the `CPU` and `MEM` columns.
 
-```
+```bash
 [user@host ~]$ ps aux
 USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
  runner         1  0.1  0.0 1535464 15576 ?       S  19:18   0:00 /inject/init
@@ -4175,7 +4230,7 @@ Let's explore how we can analyze port-related information in Linux.
 
 **Port ranges:** Port ranges are defined in the system, and range can be increased/decreased accordingly. In the below snippet, the range is from `15000` to `65000`, which makes a total of `50000` (65000 - 15000) available ports. If utilized ports are reaching or exceeding this limit, then there is an issue.
 
-```
+```bash
 [user@host ~]$ /sbin/sysctl net.ipv4.ip_local_port_range
 net.ipv4.ip_local_port_range = 15000    65000
 ```
@@ -4188,7 +4243,7 @@ In system monitoring, we need to ensure that the outgoing and incoming communica
 
 One helpful command is `ping`. `ping` hits the destination system and brings the response back. Note the last few lines of statistics that show packet loss percentage and time.
 
-```
+```bash
 # ping destination IP
 [user@host ~]$ ping 10.13.6.113
  PING 10.13.6.141 (10.13.6.141) 56(84) bytes of data.
@@ -4213,15 +4268,17 @@ It is always a good practice to gather certain stats that would be useful for id
 
 Below are some of the methods to capture system snapshot.
 
--   **Logs Backup**
+* **Logs Backup**
+    
 
 Before making any changes, copy log files to another location. This is crucial for understanding what condition the system was in during time of issue. Sometimes log files are the only window to look into past system states as other runtime stats are lost.
 
--   **TCP Dump**
+* **TCP Dump**
+    
 
 Tcpdump is a command-line utility that allows you to capture and analyze incoming and outgoing network traffic. It is mostly used to help troubleshoot network issues. If you feel that system traffic is being impacted, take `tcpdump` as follows:
 
-```
+```bash
 sudo tcpdump -i any -w
 
 # Where,
@@ -4234,100 +4291,294 @@ sudo tcpdump -i any -w
 
 Once `tcpdump` is captured, you can use tools like Wireshark to visually analyze the traffic.
 
+## 8.10 **Diagnosing Hardware Problems**
+
+Troubleshooting unexpected issues is a part of the learning process. Sometimes, you may notice frequent segmentation faults (`SIGSEGV`), overheating, or random crashes across unrelated applications. The issue could either be software or hardware related. While software-related issues depend on the specific application itself, hardware issues can be diagnosed with some standard steps.
+
+In this section, we will discuss how to diagnose and rule out hardware issues related to memory, CPU, system sensors, power supply, and more.
+
+### **8.10.1 Analyzing Memory Performance**
+
+**Determine Available RAM**
+
+If you feel your system is getting slow and taking longer to finish tasks, check your system's available memory. This will ensure there is enough available memory including the swap memory.
+
+The command to check available memory is `free -mh`, where `-h` is for human-readable output and `-m` is for displaying memory in MB.
+
+```bash
+free -mh
+               total        used        free      shared  buff/cache   available
+Mem:            14Gi       5.1Gi       2.4Gi        77Mi       7.3Gi       9.3Gi
+Swap:          4.0Gi          0B       4.0Gi
+```
+
+In the above output, look at the "available" column in the "Mem" row. This shows how much RAM is free for use.
+
+Another way to check the memory in real time is to use the `top` command. There are 2 ways to do this:
+
+* When you are in `top`, press `Shift + M` to sort the processes by memory usage.
+    
+* Alternately, press `m` to see the memory usage in a progress bar like format:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1739275886121/f1695a67-13d6-4222-b71c-07176a52acb8.png align="center")
+
+If you see the memory consumed near to `100%`, you might want to consider identifying the process that is consuming the memory and take necessary action. You might also want to consider adding more memory to your system.
+
+**Run a stress test on your hardware**
+
+The `memtester` command is a utility used for diagnosing memory-related issues by stressing the memory and checking for faults. It is often used in situations where you suspect faulty RAM might be causing system instability or crashes.
+
+Here's how to use it effectively:
+
+* First, install `memtester`.
+    
+    ```bash
+    sudo apt install memtester
+    ```
+    
+* Determine the amount of RAM to test and the number of passes you’d like your RAM to go through. In the command below, `1G` is the amount of RAM to test (1 GB), and `5` is the number of test passes:
+    
+    ```bash
+    sudo memtester 1G 5
+    ```
+    
+
+If all tests pass, your RAM is likely error-free. If errors are reported, your RAM might be faulty and could require replacement or further inspection. You can always run the test again with a different amount of RAM or test passes.
+
+Note that, you shouldn't test too much memory at once, as your system also needs memory for running processes. If you have more RAM than can be tested at once, test in smaller segments sequentially.
+
+Below is a snippet of the `memtester` output if all tests pass. Notice the `”ok”` status for each test.
+
+```bash
+memtester version 4.5.1 (64-bit)
+Copyright (C) 2001-2020 Charles Cazabon.
+Licensed under the GNU General Public License version 2 (only).
+
+pagesize is 4096
+pagesizemask is 0xfffffffffffff000
+want 1024MB (1073741824 bytes)
+got  1024MB (1073741824 bytes), trying mlock ...locked.
+Loop 1/5:
+  Stuck Address       : ok
+  Random Value        : ok
+  Compare XOR         : ok
+  Compare SUB         : ok
+  Compare MUL         : ok
+  Compare DIV         : ok
+  Compare OR          : ok
+  Compare AND         : ok
+  Sequential Increment: ok
+  Solid Bits          : ok
+  Block Sequential    : ok
+  Checkerboard        : ok
+  Bit Spread          : ok
+  Bit Flip            : ok
+  Walking Ones        : ok
+  Walking Zeroes      : ok
+  8-bit Writes        : ok
+  16-bit Writes       : ok
+.
+.
+.
+```
+
+Below is a snippet of the output if a test fails. Notice the `FAILURE` status for each test.
+
+```bash
+memtester version 4.5.1 (64-bit)
+Copyright (C) 2001-2020 Charles Cazabon.
+Licensed under the GNU General Public License version 2 (only).
+
+pagesize is 4096
+pagesizemask is 0xfffffffffffff000
+want 1024MB (1073741824 bytes)
+got  1024MB (1073741824 bytes), trying mlock ...locked.
+Loop 1/5:
+  Stuck Address       : testing   1FAILURE: possible bad address line at offset 0x25378a58.
+Skipping to next test...
+  Random Value        : FAILURE: 0x4df704aaafdf8848 != 0x4df704aaafdfc848 at offset 0x05379a48.
+  Compare XOR         : ok
+  Compare SUB         : ok
+  Compare MUL         : ok
+  Compare DIV         : ok
+  Compare OR          : ok
+  Compare AND         : ok
+  Sequential Increment: ok
+  Solid Bits          : testing   6FAILURE: 0x00000000 != 0x00004000 at offset 0x05379a48.
+  Block Sequential    : testing   3FAILURE: 0x303030303030303 != 0x303030303034303 at offset 0x05379a48.
+  Checkerboard        : testing   0FAILURE: 0xaaaaaaaaaaaaaaaa != 0xaaaaaaaaaaaaeaaa at offset 0x05379a48.
+  Bit Spread          : testing  12FAILURE: 0xffffffffffffafff != 0xffffffffffffefff at offset 0x05379a48.
+  Bit Flip            : testing   0FAILURE: 0x00000001 != 0x00004001 at offset 0x05379a48.
+  Walking Ones        : ok
+  Walking Zeroes      : testing   0FAILURE: 0x00000001 != 0x00001001 at offset 0x053af9f8.
+  8-bit Writes        : -FAILURE: 0x57c7c8ba7d6f5b3b != 0x57c7c8ba7d6f1b3b at offset 0x0537da28.
+  16-bit Writes       : -FAILURE: 0xd7768894fbf79099 != 0xd7768894fbf7d099 at offset 0x05379a48.
+FAILURE: 0xfffc5633ffefca5d != 0xfffc5633ffefda5d at offset 0x053a5a38.
+.
+.
+.
+```
+
+If errors persist across all test loops, it strongly suggests hardware issues, not transient software glitches.
+
+### **8.10.2 Identifying Overheating Issues**
+
+Overheating can cause unexpected errors and crashes. To diagnose overheating issues, you can use a command line utility `lm-sensors`.
+
+`lm-sensors` allow syou monitor hardware health by reading data from various sensors. It provides information about system temperatures, voltages, and fan speeds.
+
+Here's how you can identify and monitor your system temperature using `lm-sensors`:
+
+* First, install `lm-sensors`:
+    
+    ```bash
+    sudo apt install lm-sensors
+    ```
+    
+* Detect the available sensors on your system:
+    
+    ```bash
+    sudo sensors-detect
+    ```
+    
+    Follow the prompts and answer “YES” to detect the available sensors on your system.
+    
+* Once the available sensors are detected, you can view the temperature of your system using the `sensors` command:
+    
+    ```bash
+    sensors
+    ```
+    
+    In the output below, you can see the temperature reading at the edge of the GPU, which is 41.0 degrees Celsius. You can also see other pieces of information like voltage supplied, power consumption and voltage supplied.
+    
+    ```bash
+    amdgpu-pci-0400
+    Adapter: PCI adapter
+    vddgfx:      731.00 mV 
+    vddnb:       687.00 mV 
+    edge:         +41.0°C  
+    PPT:           7.00 W
+    ```
+    
+    Using `lm-sensors` ensures that the system is operating within safe parameters. It helps to detect potential hardware problems early and take corrective actions to prevent hardware damage.
+    
+
+### **8.10.3 Evaluating Hard Drive Health**
+
+Disk errors can also cause application crashes. To identify disk issues, you can run disk check using `smartmontools`:
+
+* First, install `smartmontools`:
+    
+    ```bash
+    sudo apt install smartmontools
+    ```
+    
+* Run a quick health check using the command below and replace `/dev/sdX` with your disk name (check with `lsblk`).
+    
+    ```bash
+    sudo smartctl -H /dev/sdX
+    ```
+    
+* Here is the result I got when I ran the command on my disk `/dev/nvme0n1`:
+    
+    ```bash
+    sudo smartctl -H /dev/nvme0n1
+    smartctl 7.4 2023-08-01 r5530 [x86_64-linux-6.8.0-52-generic] (local build)
+    Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
+    
+    === START OF SMART DATA SECTION ===
+    SMART overall-health self-assessment test result: PASSED
+    ```
+    
+* You can also run a detailed test:
+    
+    ```bash
+    sudo smartctl -a /dev/nvme0n1
+    ```
+    
+
+The detailed test provides a full report, including:
+
+* Temperature
+    
+* Power-on hours
+    
+* Error counts
+    
+* Wear leveling (for SSDs), and more.
+    
+
+### **8.10.4 Conducting a CPU Stress Test**
+
+Faulty CPUs can also lead to a number of performance issues. To test your CPU, you can use the `stress-ng` utility:
+
+* Install `stress-ng`:
+    
+    ```bash
+    sudo apt install stress-ng
+    ```
+    
+* Run a CPU stress test:
+    
+    ```bash
+    stress-ng --cpu 4 --timeout 60
+    ```
+    
+
+In the above command, `4` is the number of CPU cores you’d like to test and `60` is the duration in seconds. The command will stress all 4 CPU cores for 60 seconds. Notice the CPU is at `100%` load during the test:
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1739277374316/9ab475c2-7f09-4c40-989b-e474e334935c.png align="center")
+
+If the system crashes during this test, the CPU may be faulty.
+
+### **8.10.5 Examining System Logs for Errors**
+
+`systemd` is a Linux system manager responsible for booting the system, managing system processes, and handling system services.
+
+`journalctl` is a command to query the `systemd` journal logs. It provides detailed logging for system processes, kernel events, user applications, and more.
+
+You can check system logs for hardware-related errors using the command: `journalctl -k | grep -iE "error|fault|panic"`.
+
+In the logs, look for messages about:
+
+* Memory faults.
+    
+* I/O errors.
+    
+* Hardware timeouts.
+    
+
+Here is what errors in the log file can look like:
+
+```bash
+Feb 11 10:15:32 hostname kernel: [Hardware Error]: CPU 0: Machine Check: 0 Bank 4: b200000000070f0f
+Feb 11 10:15:32 hostname kernel: [Hardware Error]: TSC 0 ADDR fef1c000 MISC 38a0000086 
+Feb 11 10:15:32 hostname kernel: [Hardware Error]: PROCESSOR 0:306a9 TIME 1613045732 SOCKET 0 APIC 0 microcode 1f
+Feb 11 10:16:45 hostname kernel: EXT4-fs error (device sda1): ext4_find_entry:1453: inode #2: comm ls: reading directory lblock 0
+Feb 11 10:17:12 hostname kernel: [drm:drm_atomic_helper_commit_cleanup_done [drm_kms_helper]] *ERROR* [CRTC:36:pipe A] flip_done timed out
+Feb 11 10:18:05 hostname kernel: Kernel panic - not syncing: Fatal exception
+```
+
 ### Conclusion
 
 Thank you for reading the book until the end. If you found it helpful, consider sharing it with others.
 
-This book doesn't end here, though. I will continue to improve it and add new materials in the future. If you found any issues or if you would like to suggest any improvements, [feel free to open a PR/ Issue.][56]
+This book doesn't end here, though. I will continue to improve it and add new materials in the future. If you found any issues or if you would like to suggest any improvements, [feel free to open a PR/ Issue.](https://github.com/zairahira/Mastering-Linux-Handbook)
 
 **Stay Connected and Continue Your Learning Journey!**
 
 Your journey with Linux doesn't have to end here. Stay connected and take your skills to the next level:
 
-1.  **Follow Me on Social Media**:
+1. **Follow Me on Social Media**:
     
-    -   [X][57]: I share useful short form content there. My DMs are always open.
+    * [X](https://twitter.com/hira_zaira): I share useful short form content there. My DMs are always open.
         
-    -   [LinkedIn][58]: I share articles and posts on tech there. Leave a recommendation on LinkedIn and endorse me on relevant skills.
+    * [LinkedIn](https://www.linkedin.com/in/zaira-hira/): I share articles and posts on tech there. Leave a recommendation on LinkedIn and endorse me on relevant skills.
         
-2.  **Get access to exclusive content**: For one-on-one help and exclusive content go [here][59].
+2. **Get access to exclusive content**: For one-on-one help and exclusive content go [here](https://buymeacoffee.com/zairah/extras).
     
 
-My [articles][60] and books, like this one, are part of my mission to increase accessibility to quality content for everyone. This book will also be open to translation in other languages. Each piece takes a lot of time and effort to write. This book will be free, forever. If you've enjoyed my work and want to keep me motivated, consider [buying me a coffee][61].
+My [articles](https://www.freecodecamp.org/news/author/zaira/) and books, like this one, are part of my mission to increase accessibility to quality content for everyone. This book will also be open to translation in other languages. Each piece takes a lot of time and effort to write. This book will be free, forever. If you've enjoyed my work and want to keep me motivated, consider [buying me a coffee](https://buymeacoffee.com/zairah).
 
 Thank you once again and happy learning!
-
----
-
-![Zaira Hira](https://cdn.hashnode.com/res/hashnode/image/upload/v1720621509664/nj6hWYEsR.png)
-
-Making complex topics easy for you to understand.
-
----
-
-If you read this far, thank the author to show them you care. Say Thanks
-
-Learn to code for free. freeCodeCamp's open source curriculum has helped more than 40,000 people get jobs as developers. [Get started][62]
-
-[1]: #heading-part-1-introduction-to-linux
-[2]: #heading-11-getting-started-with-linux
-[3]: #heading-part-2-introduction-to-bash-shell-and-system-commands
-[4]: #heading-21-getting-started-with-the-bash-shell
-[5]: #heading-22-command-structure
-[6]: #heading-23-bash-commands-and-keyboard-shortcuts
-[7]: #heading-24-identifying-yourself-the-whoami-command
-[8]: #heading-part-3-understanding-your-linux-system
-[9]: #heading-31-discovering-your-os-and-specs
-[10]: #heading-part-4-managing-files-from-the-command-line
-[11]: #heading-41-the-linux-file-system-hierarchy
-[12]: #heading-42-navigating-the-linux-file-system
-[13]: #heading-43-managing-files-and-directories
-[14]: #heading-45-basic-commands-for-viewing-files
-[15]: #heading-part-5-the-essentials-of-text-editing-in-linux
-[16]: #heading-51-mastering-vim-the-complete-guide
-[17]: #heading-52-mastering-nano
-[18]: #heading-part-6-bash-scripting
-[19]: #heading-61-definition-of-bash-scripting
-[20]: #heading-62-advantages-of-bash-scripting
-[21]: #heading-63-overview-of-bash-shell-and-command-line-interface
-[22]: #heading-64-how-to-create-and-execute-bash-scripts
-[23]: #heading-65-bash-scripting-basics
-[24]: #heading-part-7-managing-software-packages-in-linux
-[25]: #heading-71-packages-and-package-management
-[26]: #heading-72-installing-a-package-via-command-line
-[27]: #heading-73-installing-a-package-via-an-advanced-graphical-method-synaptic
-[28]: #heading-74-installing-downloaded-packages-from-a-website
-[29]: #heading-part-8-advanced-linux-topics
-[30]: #heading-81-user-management
-[31]: #heading-82-connecting-to-remote-servers-via-ssh
-[32]: #heading-83-advanced-log-parsing-and-analysis
-[33]: #heading-84-managing-linux-processes-via-command-line
-[34]: #heading-85-standard-input-and-output-streams-in-linux
-[35]: #heading-86-automation-in-linux-automate-tasks-with-cron-jobs
-[36]: #heading-87-linux-networking-basics
-[37]: #heading-88-linux-troubleshooting-tools-and-techniques
-[38]: #heading-89-general-troubleshooting-strategy-for-servers
-[39]: #heading-conclusion
-[40]: https://github.com/torvalds/linux
-[41]: https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg
-[42]: https://ubuntu.com/
-[43]: https://linuxmint.com/
-[44]: https://www.archlinux.org/
-[45]: https://manjaro.org/
-[46]: https://www.kali.org/
-[47]: https://ubuntu.com/download/desktop
-[48]: https://rufus.ie/
-[49]: https://www.virtualbox.org/
-[50]: https://multipass.run/
-[51]: https://www.vmware.com/content/vmware/vmware-published-sites/us/products/workstation-player.html.html
-[52]: https://replit.com/
-[53]: https://jslinux.org/
-[54]: https://crontab.guru/
-[55]: http://www.official-joke-api.appspot.com/
-[56]: https://github.com/zairahira/Mastering-Linux-Handbook
-[57]: https://twitter.com/hira_zaira
-[58]: https://www.linkedin.com/in/zaira-hira/
-[59]: https://buymeacoffee.com/zairah/extras
-[60]: https://www.freecodecamp.org/news/author/zaira/
-[61]: https://buymeacoffee.com/zairah
-[62]: https://www.freecodecamp.org/learn/

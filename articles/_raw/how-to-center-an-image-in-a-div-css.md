@@ -1,16 +1,30 @@
 ---
 title: CSS Image Centering – How to Center an Image in a Div
-date: 2024-08-22T14:13:37.301Z
+subtitle: ''
 author: Joel Olawanle
-authorURL: https://www.freecodecamp.org/news/author/joel-olawanle/
-originalURL: https://www.freecodecamp.org/news/how-to-center-an-image-in-a-div-css/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2022-08-16T19:32:10.000Z'
+originalURL: https://freecodecamp.org/news/how-to-center-an-image-in-a-div-css
+coverImage: https://www.freecodecamp.org/news/content/images/2022/08/cover-template.png
+tags:
+- name: CSS
+  slug: css
+- name: css flex
+  slug: css-flex
+- name: flexbox
+  slug: flexbox
+- name: Web Development
+  slug: web-development
+seo_title: null
+seo_desc: 'When you''re working on the front-end of a web page, you sometimes need
+  to center an image within a div (container).
+
+  This can become tricky at times. And based on certain conditions, a particular method
+  may not work at some point, leaving you searchin...'
 ---
 
 When you're working on the front-end of a web page, you sometimes need to center an image within a `div` (container).
-
-<!-- more -->
 
 This can become tricky at times. And based on certain conditions, a particular method may not work at some point, leaving you searching for alternatives.
 
@@ -20,13 +34,13 @@ In this article, you will learn how to center an image in a `div` with CSS.
 
 You center an image in a `div` in two ways: horizontally and vertically. When you put these two methods together, you will have an entirely centered image:
 
-![s_E4F69027FF573CB7A65859895F7B6CD8342925344584ACB8BE37F8B299430A72_1660599829888_Untitled](https://paper-attachments.dropbox.com/s_E4F69027FF573CB7A65859895F7B6CD8342925344584ACB8BE37F8B299430A72_1660599829888_Untitled.png)
+![](https://paper-attachments.dropbox.com/s_E4F69027FF573CB7A65859895F7B6CD8342925344584ACB8BE37F8B299430A72_1660599829888_Untitled.png align="left")
 
 By default, web content always begins from the top-left corner of the screen and moves from `ltr` (left to right) – except for certain languages like Arabic, which goes from `rtl` (right to left).
 
 Let’s start by seeing how to center an image within a `div` horizontally. Then we'll see how to center vertically. Finally, we'll see how you can do both together.
 
-![s_E4F69027FF573CB7A65859895F7B6CD8342925344584ACB8BE37F8B299430A72_1660702367688_image](https://paper-attachments.dropbox.com/s_E4F69027FF573CB7A65859895F7B6CD8342925344584ACB8BE37F8B299430A72_1660702367688_image.png)
+![](https://paper-attachments.dropbox.com/s_E4F69027FF573CB7A65859895F7B6CD8342925344584ACB8BE37F8B299430A72_1660702367688_image.png align="left")
 
 ### How to Center an Image in a Div Horizontally with Text-align
 
@@ -160,11 +174,11 @@ But this alone doesn't work. You also need to define the position where you want
 }
 ```
 
-**Note:** The `display: flex` property is not supported in older versions of browsers. You can read more [here][1]. You’ll also notice that the width and height of the image are defined to ensure the image doesn't shrink.
+**Note:** The `display: flex` property is not supported in older versions of browsers. You can read more [here](https://caniuse.com/#search=display%20flex). You’ll also notice that the width and height of the image are defined to ensure the image doesn't shrink.
 
 Let’s now learn how to center an image in a `div` vertically. Later we'll see how to center an image in a `div` horizontally and vertically together, making it a perfect center.
 
-![s_E4F69027FF573CB7A65859895F7B6CD8342925344584ACB8BE37F8B299430A72_1660702330431_image](https://paper-attachments.dropbox.com/s_E4F69027FF573CB7A65859895F7B6CD8342925344584ACB8BE37F8B299430A72_1660702330431_image.png)
+![](https://paper-attachments.dropbox.com/s_E4F69027FF573CB7A65859895F7B6CD8342925344584ACB8BE37F8B299430A72_1660702330431_image.png align="left")
 
 ### How to Center an Image in a Div Vertically with Display-Flex
 
@@ -214,7 +228,7 @@ But this time around, you won't use `left` or `right,`. Instead you will use `to
 
 You have learned how to center an image within a `div` horizontally and vertically using all possible methods. Let’s now learn how to center both horizontally and vertically.
 
-![s_E4F69027FF573CB7A65859895F7B6CD8342925344584ACB8BE37F8B299430A72_1660702293626_image](https://paper-attachments.dropbox.com/s_E4F69027FF573CB7A65859895F7B6CD8342925344584ACB8BE37F8B299430A72_1660702293626_image.png)
+![](https://paper-attachments.dropbox.com/s_E4F69027FF573CB7A65859895F7B6CD8342925344584ACB8BE37F8B299430A72_1660702293626_image.png align="left")
 
 ### How to Center an Image in a Div Horizontally and Vertically with Display-Flex
 
@@ -286,10 +300,6 @@ In this article, you have learned how to center an image in a div vertically, ho
 
 You will often use the Flexbox method when moving an image to the center because the `position` method can distort your web page and works very trickily.
 
-You can learn more about the [CSS position method here][2] and then more about the [flexbox method here.][3]
+You can learn more about the [CSS position method here](https://www.freecodecamp.org/news/css-position-property-explained/) and then more about the [flexbox method here.](https://www.freecodecamp.org/news/css-flexbox-tutorial-with-cheatsheet/)
 
 Have fun coding!
-
-[1]: https://caniuse.com/#search=display%20flex
-[2]: https://www.freecodecamp.org/news/css-position-property-explained/
-[3]: https://www.freecodecamp.org/news/css-flexbox-tutorial-with-cheatsheet/

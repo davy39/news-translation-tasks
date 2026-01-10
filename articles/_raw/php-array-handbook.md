@@ -1,16 +1,27 @@
 ---
 title: PHP Array Handbook – How to Create, Work with, and Loop Through Arrays
-date: 2024-09-04T15:40:24.407Z
+subtitle: ''
 author: Kolade Chris
-authorURL: https://www.freecodecamp.org/news/author/koladechris/
-originalURL: https://www.freecodecamp.org/news/php-array-handbook/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2024-05-08T22:25:55.000Z'
+originalURL: https://freecodecamp.org/news/php-array-handbook
+coverImage: https://www.freecodecamp.org/news/content/images/2024/05/PHP-Array-Handbook-Cover-1.png
+tags:
+- name: arrays
+  slug: arrays
+- name: handbook
+  slug: handbook
+- name: PHP
+  slug: php
+seo_title: null
+seo_desc: In every programming language, arrays provide a flexible option to store
+  more than one data type in a single variable. They are one of the most versatile
+  data structures in the programming world, which is one reason a lot of external
+  data and many AP...
 ---
 
 In every programming language, arrays provide a flexible option to store more than one data type in a single variable. They are one of the most versatile data structures in the programming world, which is one reason a lot of external data and many APIs come as arrays.
-
-<!-- more -->
 
 When you create an array in PHP, you'll want to be able to use it. To do so, you have to manipulate or loop through it. PHP provides several built-in functions for manipulating arrays and several ways to loop through arrays.
 
@@ -20,47 +31,83 @@ Note that this is the first part of a two-article series. The second part will f
 
 ## What We'll Cover
 
--   [How to Create Arrays in PHP][1]
-    -   [How to Create Arrays with the Array Function][2]
-    -   [How to Create Arrays with the Square Bracket Syntax][3]
--   [How to Print Arrays in PHP][4]
-    -   [How to Print an Array with the `print_r()` Function][5]
-    -   [How to Print an Array with the var\_dump() Function][6]
--   [PHP Array Functions][7]
-    -   [The `count()` Array Function][8]
-    -   [The `array_push()` Array Function][9]
-    -   [The `array_pop()` Function][10]
-    -   [The `array_shift()` Function][11]
-    -   [The `array_unshift()` Function][12]
-    -   [The `array_splice()` Function][13]
-    -   [The `array_keys()` Function][14]
-    -   [The `array_values()` Function][15]
-    -   [The `array_reduce()` Function][16]
-    -   [The `sort()` Function][17]
-    -   [The `rsort()` Function][18]
-    -   [The `array_replace()` Function][19]
-    -   [The `array_reverse()` Function][20]
-    -   [The `array_slice()` Function][21]
-    -   [The `array_sum()` Function][22]
-    -   [The `array_merge()` Function][23]
-    -   [The `array_filter()` Function][24]
-    -   [The `array_map()` Function][25]
-    -   [The `array_search()` Function][26]
-    -   [The `array_column()` Function][27]
-    -   [The `in_array()` Function][28]
--   [How to Loop Through Arrays in PHP][29]
-    -   [How to Loop through an Indexed Array][30]
-    -   [How to Loop through an Associative Array][31]
-    -   [How to Loop through an Array Inside the HTML Template][32]
--   [Conclusion][33]
+* [How to Create Arrays in PHP](#heading-how-to-create-arrays-in-php)
+    
+    * [How to Create Arrays with the Array Function](#heading-how-to-create-arrays-with-the-array-function)
+        
+    * [How to Create Arrays with the Square Bracket Syntax](#heading-how-to-create-arrays-with-the-square-bracket-syntax)
+        
+* [How to Print Arrays in PHP](#heading-how-to-print-arrays-in-php)
+    
+    * [How to Print an Array with the `print_r()` Function](#howtoprintanarraywiththeprintrfunction)
+        
+    * [How to Print an Array with the var\_dump() Function](#howtoprintanarraywiththevardumpfunction)
+        
+* [PHP Array Functions](#heading-php-array-functions)
+    
+    * [The `count()` Array Function](#heading-the-count-array-function)
+        
+    * [The `array_push()` Array Function](#thearraypush_arrayfunction)
+        
+    * [The `array_pop()` Function](#heading-the-arraypop-function)
+        
+    * [The `array_shift()` Function](#heading-the-arrayshift-function)
+        
+    * [The `array_unshift()` Function](#heading-the-arrayunshift-function)
+        
+    * [The `array_splice()` Function](#heading-the-arraysplice-function)
+        
+    * [The `array_keys()` Function](#heading-the-arraykeys-function)
+        
+    * [The `array_values()` Function](#heading-the-arrayvalues-function)
+        
+    * [The `array_reduce()` Function](#heading-the-arrayreduce-function)
+        
+    * [The `sort()` Function](#heading-the-sort-function)
+        
+    * [The `rsort()` Function](#heading-the-rsort-function)
+        
+    * [The `array_replace()` Function](#heading-the-arrayreplace-function)
+        
+    * [The `array_reverse()` Function](#heading-the-arrayreverse-function)
+        
+    * [The `array_slice()` Function](#heading-the-arrayslice-function)
+        
+    * [The `array_sum()` Function](#heading-the-arraysum-function)
+        
+    * [The `array_merge()` Function](#heading-the-arraymerge-function)
+        
+    * [The `array_filter()` Function](#heading-the-arrayfilter-function)
+        
+    * [The `array_map()` Function](#thearraymap_function)
+        
+    * [The `array_search()` Function](#heading-the-arraysearch-function)
+        
+    * [The `array_column()` Function](#thearraycolumnfunction)
+        
+    * [The `in_array()` Function](#heading-the-inarray-function)
+        
+* [How to Loop Through Arrays in PHP](#heading-how-to-loop-through-arrays-in-php)
+    
+    * [How to Loop through an Indexed Array](#heading-how-to-loop-through-an-indexed-array)
+        
+    * [How to Loop through an Associative Array](#heading-how-to-loop-through-an-associative-array)
+        
+    * [How to Loop through an Array Inside the HTML Template](#heading-how-to-loop-through-an-array-inside-the-html-template)
+        
+* [Conclusion](#heading-conclusion)
+    
 
 ## How to Create Arrays in PHP
 
 In PHP, arrays exist in 3 forms:
 
--   **indexed** – a regular array with predefined indexes
--   **multidimensional** – an array with arrays within it
--   **associative** – an array with string indexes
+* **indexed** – a regular array with predefined indexes
+    
+* **multidimensional** – an array with arrays within it
+    
+* **associative** – an array with string indexes
+    
 
 There are two ways you can create any of those 3 forms of arrays in PHP. You can either use the `Array()` function or the square brackets syntax (`[ ]`).
 
@@ -70,13 +117,16 @@ To create a PHP array with the `array()` function, just pass the elements into t
 
 Here's the catch:
 
--   a **regular array** is created with the `array()` function by passing the elements directly into the function
--   a **multidimensional array** is created with the `array()` function by nesting one or more `array()` functions inside one `array()` function
--   an **associative array** is created with the `array()` function by separating the key and values with a fat arrow (`=>`) and separating each entry with a comma
+* a **regular array** is created with the `array()` function by passing the elements directly into the function
+    
+* a **multidimensional array** is created with the `array()` function by nesting one or more `array()` functions inside one `array()` function
+    
+* an **associative array** is created with the `array()` function by separating the key and values with a fat arrow (`=>`) and separating each entry with a comma
+    
 
 Here's examples of all of them in code:
 
-```
+```php
 // regular array with the array function
 $myFruitsArr1 = array("Apple", "Banana", "Cashew", "Mango");
 
@@ -105,7 +155,7 @@ The square bracket syntax is the most common way to create an array in PHP (and 
 
 To create an array with the square bracket syntax, replace every occurrence of `array()` with opening and closing square brackets:
 
-```
+```php
 // regular array with the square bracket syntax
 $myFruitsArr1 = ["Apple", "Banana", "Cashew", "Mango"];
 
@@ -140,7 +190,7 @@ The `print_r()` function displays structured information about a variable in a h
 
 `print_r()` is particularly useful for displaying and inspecting the contents of complex data structures like arrays and objects. You use it by passing the array identifier into it:
 
-```
+```php
 print_r($myFruitsArr1);
 print_r($myFruitsArr2);
 print_r($myFruitsArr3);
@@ -150,7 +200,9 @@ Even if the array or object has nested elements, `print_r()` will traverse the e
 
 Here's what each of the 3 types of arrays looks like when you print them with the `print_r()` function:
 
-![Image](https://www.freecodecamp.org/news/content/images/2024/05/image6-1.png) _Regular, multidimensional, and associative array examples._
+![Image](https://www.freecodecamp.org/news/content/images/2024/05/image6-1.png align="left")
+
+*Regular, multidimensional, and associative array examples.*
 
 ### How to Print an Array with the `var_dump()` Function
 
@@ -158,7 +210,7 @@ The `var_dump()` function lets you print an array or variable like the `print_r(
 
 Here's how to use the `var_dump()` function:
 
-```
+```php
 var_dump($myFruitsArr1);
 var_dump($myFruitsArr2);
 var_dump($myFruitsArr3);
@@ -166,7 +218,9 @@ var_dump($myFruitsArr3);
 
 And here's what each of the 3 types of array looks like when you print them with the `var_dump()` function:
 
-![Image](https://www.freecodecamp.org/news/content/images/2024/05/image3.png) \_Regular, multidimensional, and associative arrays printed with var_dump()_
+![Image](https://www.freecodecamp.org/news/content/images/2024/05/image3.png align="left")
+
+*Regular, multidimensional, and associative arrays printed with var\_dump()*
 
 ## PHP Array Functions
 
@@ -176,40 +230,61 @@ There are more than 70 array functions you can use in PHP, so we won't be able t
 
 Here are the ones we’ll cover:
 
--   `count()`
--   `array_push()`
--   `array_pop()`
--   `array_shift()`
--   `array_unshift()`
--   `array_splice()`
--   `array_keys()`
--   `array_values()`
--   `array_reduce()`
--   `sort()`
--   `rsort()`
--   `array_replace()`
--   `array_reverse()`
--   `array_slice()`
--   `array_sum()`
--   `array_merge()`
--   `array_filter()`
--   `array_map()`
--   `array_search()`
--   `array_column()`
--   `in_array()`
+* `count()`
+    
+* `array_push()`
+    
+* `array_pop()`
+    
+* `array_shift()`
+    
+* `array_unshift()`
+    
+* `array_splice()`
+    
+* `array_keys()`
+    
+* `array_values()`
+    
+* `array_reduce()`
+    
+* `sort()`
+    
+* `rsort()`
+    
+* `array_replace()`
+    
+* `array_reverse()`
+    
+* `array_slice()`
+    
+* `array_sum()`
+    
+* `array_merge()`
+    
+* `array_filter()`
+    
+* `array_map()`
+    
+* `array_search()`
+    
+* `array_column()`
+    
+* `in_array()`
+    
 
 ### The `count()` Array Function
 
 The `count()` function does what its name implies — it goes through an array, counts the items, and returns an integer representing the array's length.
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango"];
 echo count($myFruitsArr); // 4
 ```
 
 `count()` can be helpful if you want to do something based on the length of a particular array:
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango"];
 
 
@@ -225,7 +300,7 @@ if (count($myFruitsArr) === 4) {
 
 Because `count()` gets the length of an array, its commonly used in loops:
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango"];
 
 
@@ -251,7 +326,7 @@ Mango
 
 `array_push` takes a compulsory `array` argument and the element you want to push into the existing array:
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango"];
 
 
@@ -261,7 +336,7 @@ print_r($myFruitsArr); // Array ( [0] => Apple [1] => Banana [2] => Cashew [3] =
 
 You can echo out the `<pre>` tag to format the resulting array better:
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango"];
 
 
@@ -292,7 +367,7 @@ array(5) {
 
 You can also push two or more items:
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango"];
 
 
@@ -329,7 +404,7 @@ array(6) {
 
 To use the `array_pop()` function, you only need to pass in the array you want to remove from:
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango"];
 array_pop($myFruitsArr);
 
@@ -356,7 +431,7 @@ array(3) {
 
 You can echo out the popped element because `array_pop()` modifies the original array:
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango"];
 $poppedElem = array_pop($myFruitsArr);
 
@@ -368,7 +443,7 @@ echo $poppedElem; // Mango
 
 `array_shift()` is like `array_pop`, but it removes the first element of an array and not the last. So, it's helpful in queue-based data structures.
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango"];
 array_shift($myFruitsArr);
 var_dump($myFruitsArr);
@@ -391,7 +466,7 @@ array(3) {
 
 Because the `array_shift()` function modifies the original array, it reorders the indices:
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango"];
 
 
@@ -407,11 +482,13 @@ array_shift($myFruitsArr);
 var_dump($myFruitsArr);
 ```
 
-![Image](https://www.freecodecamp.org/news/content/images/2024/05/image5.png) _Before and after using the shift() function_
+![Image](https://www.freecodecamp.org/news/content/images/2024/05/image5.png align="left")
+
+*Before and after using the shift() function*
 
 `array_shift()` also returns the removed array because it modifies the original array:
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango"];
 $shiftedElem = array_shift($myFruitsArr);
 
@@ -426,7 +503,7 @@ It takes the array you want to add to and the element you want to add as the arg
 
 Here’s an example:
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango"];
 array_unshift($myFruitsArr, "Avocado");
 
@@ -454,18 +531,22 @@ The `array_splice()` method removes an item from an array and replaces it with t
 
 `array_splice()` takes up to 4 arguments, as you can see in its basic syntax below:
 
-```
+```php
 array_splice(array, startingIndex, length, replacement)
 ```
 
--   `array` is the array you’re using the `array_splice()` function on
--   `startingIndex` is the position where you want to start removing the item(s) in the array. That means if you specify `0`, it will remove the first element in the array.
--   `length` is how far you want the splicing to go. For instance, if you specify `2`, two items will be removed starting from the specified `startingIndex`
--   `replacement` is the item that will replace the item to be removed. This could be a single item or another array.
+* `array` is the array you’re using the `array_splice()` function on
+    
+* `startingIndex` is the position where you want to start removing the item(s) in the array. That means if you specify `0`, it will remove the first element in the array.
+    
+* `length` is how far you want the splicing to go. For instance, if you specify `2`, two items will be removed starting from the specified `startingIndex`
+    
+* `replacement` is the item that will replace the item to be removed. This could be a single item or another array.
+    
 
 Here’s an example with an array and a string replacement:
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango"];
 $splicedItem = array_splice($myFruitsArr, 1, 1, "Avocado");
 
@@ -500,7 +581,7 @@ array(1) {
 
 Here’s another example with an array as the replacement:
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango"];
 $splicedItem = array_splice($myFruitsArr, 1, 1, array("Avocado", "Apricot", "Abiu"));
 
@@ -543,7 +624,7 @@ The `array_keys` function extracts the keys of the items in an array.
 
 If the array is a regular array, it lists the indices of the array as the keys:
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango"];
 $myFruitsArrKeys = array_keys($myFruitsArr);
 
@@ -563,7 +644,7 @@ Array
 
 If the array is an associative array, it lists out the keys you specified for each item in the array:
 
-```
+```php
 $myFruitsWithColors = [
  "apple" => "red",
  "banana" => "yellow",
@@ -593,7 +674,7 @@ Array
 
 If you specify an item as that second argument, `array_keys()` will return the key for that item only:
 
-```
+```php
 $myFruitsWithColors = [
  "apple" => "red",
  "banana" => "yellow",
@@ -619,7 +700,7 @@ Array
 
 The `array_values()` function extracts the other part of an array – the values.
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango"];
 $myFruitsArrValues = array_values($myFruitsArr);
 
@@ -641,7 +722,7 @@ The output of `array_values()` looks like what happens when you print a regular 
 
 An example with an associative array would make that clearer:
 
-```
+```php
 $myFruitsWithColors = [
  "apple" => "red",
  "banana" => "yellow",
@@ -677,17 +758,20 @@ That means you can use it for data aggregation and computation, like calculating
 
 `array_reduce()` takes 2 required arguments and 1 optional argument. Here’s the syntax:
 
-```
+```php
 array_reduce(arraytoReduce, callbackFunction, initialValue)
 ```
 
--   `arrayToReduce` is the array you’re using `reduce` on
--   `callbackFunction` is the function that will “reduce” the items of the array into a single value
--   `initialValue` is optional. It specifies the initial value of the accumulator. If provided, it will be used as the initial value for the first call to the callback function. If not provided, the first element of the array will be used as the initial accumulator value.
+* `arrayToReduce` is the array you’re using `reduce` on
+    
+* `callbackFunction` is the function that will “reduce” the items of the array into a single value
+    
+* `initialValue` is optional. It specifies the initial value of the accumulator. If provided, it will be used as the initial value for the first call to the callback function. If not provided, the first element of the array will be used as the initial accumulator value.
+    
 
 `array_reduce()` is usually used with numbers:
 
-```
+```php
 $myNumbers = [5, 89, 19, 10, 49];
 
 $total = array_reduce($myNumbers, function ($carry, $item) {
@@ -699,7 +783,7 @@ echo $total; // 172
 
 You can extract that callback function into a separate function and pass it in as one of the arguments of the `array_reduce()` function:
 
-```
+```php
 $myNumbers = [5, 89, 19, 10, 49];
 
 
@@ -715,7 +799,7 @@ echo $total; // 172
 
 `array_reduce()` also works with strings:
 
-```
+```php
 $words = ["Hello", "camper!", "How", "are", "you", "today?"];
 
 // Use array_reduce to concatenate all the strings
@@ -732,7 +816,7 @@ The `sort()` function takes an array and sorts it in ascending order based on th
 
 If you have some data in an array that you want to organize in ascending order, the `sort()` function is perfect for that.
 
-```
+```php
 $myNums = [4, 2, 1, 3, 5];
 sort($myNums);
 
@@ -756,7 +840,7 @@ Array
 
 The `rsort()` function is similar to `sort()`, but it sorts the array in descending order instead of ascending order.
 
-```
+```php
 $myNums = array(4, 2, 1, 3, 5);
 rsort($myNums);
 
@@ -782,7 +866,7 @@ The `array_replace()` function is used to replace the values of the first array 
 
 `array_replace()` takes two arguments – the array you want to replace, and the new array.
 
-```
+```php
 $myNamesArr1 = ["Zen", "Kay", "Luger"];
 $myNamesArr2 = ["Yuan", "Jay", "John"];
 
@@ -803,7 +887,7 @@ Array
 
 If you don’t provide a second value, it returns the only argument you provide:
 
-```
+```php
 $myNamesArr1 = ["Zen", "Kay", "Luger"];
 $myNamesArr2 = ["Yuan", "Jay", "John"];
 
@@ -824,7 +908,7 @@ Array
 
 If you pass in three or more arrays as the arguments, the last argument will be the replacement for the first one, not the second:
 
-```
+```php
 $myNamesArr1 = ["Zen", "Kay", "Luger"];
 $myNamesArr2 = ["Yuan", "Jay", "John"];
 $myNamesArr3 = ["Eddy", "White", "Jane"];
@@ -847,7 +931,7 @@ Array
 
 You can selectively replace an item in a particular index too:
 
-```
+```php
 $myFruitsArr1 = ["a" => "apple", "b" => "banana", "c" => "cherry"];
 $myFruitsArr2 = array("b" => "blueberry", "c" => "cranberry");
 $replaceRes = array_replace($myFruitsArr1, $myFruitsArr2);
@@ -869,7 +953,7 @@ Array
 
 The `array_reverse()` function is used to reverse the order of elements in an array. It creates a new array with the elements in reverse order.
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango"];
 $reversedArr = array_reverse($myFruitsArr);
 
@@ -896,18 +980,22 @@ If you want to extract a particular part of an array and return it as a separate
 
 `array_slice()` allows you to specify the start index, the length of the slice, and whether to preserve the keys of the original array. Here’s the basic syntax:
 
-```
+```php
 array_slice(arrayToSlice, startIndex, length, preserve)
 ```
 
--   `arrayToSlice` is the array you want to use `array_slice()` on
--   `startIndex` is the index you want to start the slicing from
--   `length` is how far you want the slicing to go in the `arrayToSlice`. It is optional.
--   `preserve` specifies whether you want the index(es) of the array to change or not. It’s a boolean.
+* `arrayToSlice` is the array you want to use `array_slice()` on
+    
+* `startIndex` is the index you want to start the slicing from
+    
+* `length` is how far you want the slicing to go in the `arrayToSlice`. It is optional.
+    
+* `preserve` specifies whether you want the index(es) of the array to change or not. It’s a boolean.
+    
 
 The example below starts the slicing from the second element in the array, which means it’ll leave the first element out and return the others:
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango", "Avocado", "Pineapple"];
 $slicedArr = array_slice($myFruitsArr, 1);
 
@@ -929,7 +1017,7 @@ Array
 
 Don’t forget you can specify the number of items you want from the slicing by specifying a third optional argument:
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango", "Avocado", "Pineapple"];
 $slicedArr = array_slice($myFruitsArr, 1, 3);
 
@@ -949,7 +1037,7 @@ Array
 
 If you want to preserve the indexes, you can specify a fourth optional boolean argument of `true`:
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango", "Avocado", "Pineapple"];
 $slicedArr = array_slice($myFruitsArr, 1, 3, true);
 
@@ -971,27 +1059,29 @@ Array
 
 `array_sum()` adds all the numeric values in an array together and returns the result. The only parameter it takes is the array containing the numeric values.
 
-```
+```php
 $myNums = [5, 6, 9, 20, 1];
 
 $total = array_sum($myNums);
 echo $total; // 41
 ```
 
-If used on an array containing strings, `array_sum()` throws the error `Warning: array_sum(): Addition is not supported on type string in /location/index.php on line #`:
+If used on an array containing strings, `array_sum()` throws the error `Warning: array_sum(): Addition is not supported on type string in /location/index.php on line #` :
 
-```
+```php
 $myFruitsArr = ["Apple", "Banana", "Cashew", "Mango", "Avocado", "Pineapple"];
 $total = array_sum($myFruitsArr);
 ```
 
-![Image](https://www.freecodecamp.org/news/content/images/2024/05/image2.png) _sum() function error_
+![Image](https://www.freecodecamp.org/news/content/images/2024/05/image2.png align="left")
+
+*sum() function error*
 
 ### The `array_merge()` Function
 
 `array_merge()` merges two or more arrays. That means it's ideal for combining multiple arrays into one giant array.
 
-```
+```php
 $array1 = [1, 2, 3];
 $array2 = [4, 5, 6, 7, 8];
 
@@ -1018,7 +1108,7 @@ Array
 
 You can also use `array_merge()` on associative arrays:
 
-```
+```php
 $array1 = [
  'fname' => 'John',
  'sex' => 'male',
@@ -1048,7 +1138,7 @@ Array
 
 If the arrays contain similar keys, the last one overrides the previous one(s) in the result:
 
-```
+```php
 $array1 = [
  'fname' => 'John',
  'sex' => 'male',
@@ -1077,7 +1167,7 @@ Array
 
 If a single array is passed into `array_merge()` and the keys are not sequential integers starting from 0, but rather a sequence like `3`, `7`, `8`, the resulting array will have its keys reindexed starting from `0`:
 
-```
+```php
 $myArray = [3 => 'Barn', 7 => 'Silo', 8 => 'Tank'];
 $res = array_merge($myArray);
 
@@ -1101,17 +1191,20 @@ If the callback function returns `true` for an element in the array, that elemen
 
 `array_filter()` takes up to 3 arguments. The basic syntax looks like this:
 
-```
+```php
 array_filter(arrayToFilter, callbackFunction, flag)
 ```
 
--   `arrayToFilter` is the array you want to filter. It’s a compulsory argument.
--   `callbackFunction` is the callback function you want to apply to each element of the array. If not provided, all elements evaluated to `true` will be included in the result.
--   `flag` specifies whether the array keys will be preserved or reindexed. Possible values are `ARRAY_FILTER_USE_KEY`, `ARRAY_FILTER_USE_BOTH`, and `ARRAY_FILTER_USE_BOTH`.
+* `arrayToFilter` is the array you want to filter. It’s a compulsory argument.
+    
+* `callbackFunction` is the callback function you want to apply to each element of the array. If not provided, all elements evaluated to `true` will be included in the result.
+    
+* `flag` specifies whether the array keys will be preserved or reindexed. Possible values are `ARRAY_FILTER_USE_KEY`, `ARRAY_FILTER_USE_BOTH`, and `ARRAY_FILTER_USE_BOTH`.
+    
 
 Here’s an example that gets the even numbers from an array of numbers:
 
-```
+```php
 $array = [76, 11, 12, 22, 13, 43, 54];
 $getEvenNums = array_filter($array, function ($value) {
  return $value % 2 == 0;
@@ -1134,7 +1227,7 @@ Array
 
 Here’s a more complex example of getting everyone with the first name “John” in a multidimensional associative array:
 
-```
+```php
 $persons = [
  ['first' => 'John', 'last' => 'Doe'],
  ['first' => 'Janet', 'last' => 'Jackson'],
@@ -1180,7 +1273,7 @@ Array
 
 Remember that if you pass in the array as the only argument, the resulting array will contain every item that evaluates to `true`:
 
-```
+```php
 $array = [9, 4, 10, 0, 3];
 $result = array_filter($array);
 
@@ -1212,7 +1305,7 @@ You can think about `array_map()` as a more convenient way to "loop" through an 
 
 Here's an example in which all the numbers of an array are squared:
 
-```
+```php
 $numbers = [5, 8, 3, 4];
 
 $squaredNumbers = array_map(function ($num) {
@@ -1236,7 +1329,7 @@ Array
 
 You can also extract the callback function into a separate function and pass it in:
 
-```
+```php
 function squareNums($num)
 {
  return $num * $num;
@@ -1262,7 +1355,7 @@ Array
 
 You can also use the `array_map()` function on an array of strings. The example below converts all the fruits in the `$fruitsArr` array to uppercase:
 
-```
+```php
 $fruitsArr = ['mango', 'apple', 'orange', 'strawberry'];
 
 function toUpperCase($str)
@@ -1289,7 +1382,7 @@ Array
 
 Here's an example using an associative array where all the values are prefixed with `prefix_`:
 
-```
+```php
 $fruitsArr = [
  'fruit1' => 'mango',
  'fruit2' => 'banana',
@@ -1318,7 +1411,7 @@ Array
 */
 ```
 
-> **Note**: If you're wondering what the difference between `array_map()` and `array_filter()` is, the catch is that **`array_map()` transforms all the elements of the array based on a callback function**. In contrast, **`array_filter()` returns any element of the array that matches the callback function passed into it**.
+> **Note**: If you're wondering what the difference between `array_map()` and `array_filter()` is, the catch is that `array_map()` transforms all the elements of the array based on a callback function. In contrast, `array_filter()` returns any element of the array that matches the callback function passed into it.
 
 ### The `array_search()` Function
 
@@ -1326,17 +1419,20 @@ The `array_search()` function is used to search for a given value within an arra
 
 `array_search()` takes up to 3 arguments. Here's the syntax:
 
-```
+```php
 array_search(valueToSearch, arrayToSearch, strict)
 ```
 
--   `valueToSearch` is the value you're looking for
--   `arrayToSearch` is the array in which you want to search for the value
--   `strict` is an optional boolean argument that determines whether a strict comparison operator should be used in the search. It's `false` by default. But if set to `true`, it will search for identical elements in the array and return them. For example, `"1"` and `1`.
+* `valueToSearch` is the value you're looking for
+    
+* `arrayToSearch` is the array in which you want to search for the value
+    
+* `strict` is an optional boolean argument that determines whether a strict comparison operator should be used in the search. It's `false` by default. But if set to `true`, it will search for identical elements in the array and return them. For example, `"1"` and `1`.
+    
 
 Here's an example checking for the item `Cashew` in an array of fruits:
 
-```
+```php
 $myFruitsArr = [
  "fruit1" => "Apple",
  "fruit2" => "Banana",
@@ -1353,7 +1449,7 @@ echo $checkForCashew; // fruit3
 
 And if you use it on a regular array, it will still return the index of the array, which is the key under the hood:
 
-```
+```php
 $myFruitsArr = [
  "Apple",
  "Banana",
@@ -1378,17 +1474,20 @@ That means `array_column` is useful when you want to make an array out of the co
 
 `array_column()` takes up to 3 arguments. Here's the syntax:
 
-```
+```php
 array_column(parentArray, columKey, indexKey)
 ```
 
--   `parentArray`: usually a multidimensional array, it's the array to extract the column of values from
--   `columnKey`: the key or index of the column to extract values from. This can be an integer index or a string key representing the column name.
--   `indexKey` (optional): the column to use as the index for the returned array. If omitted or set to null, numerical indexes are used.
+* `parentArray`: usually a multidimensional array, it's the array to extract the column of values from
+    
+* `columnKey`: the key or index of the column to extract values from. This can be an integer index or a string key representing the column name.
+    
+* `indexKey` (optional): the column to use as the index for the returned array. If omitted or set to null, numerical indexes are used.
+    
 
 The example below uses the name key of the array to create a new array:
 
-```
+```php
 $pupils = [
  ["id" => 1, "name" => "John", "score" => 90],
  ["id" => 2, "name" => "Jane", "score" => 79],
@@ -1417,7 +1516,7 @@ Array
 
 Remember you can pass in another key in the array to make its values the indexes of the resulting array. I'll use the `"id"` for that:
 
-```
+```php
 $pupils = [
  ["id" => 1, "name" => "John", "score" => 90],
  ["id" => 2, "name" => "Jane", "score" => 79],
@@ -1452,17 +1551,20 @@ Array
 
 Here's the syntax:
 
-```
+```php
 in_array(itemToSearch, arrayToSearchThrough, strict)
 ```
 
--   `itemToSearch` is the element you're looking for. It's compulsory.
--   `arrayToSearchThrough` is the array in which you want to search for `itemToSearch`. It's also compulsory.
--   `strict` is a boolean value that lets you specify whether you want the search to be done with loose comparison (`==`) or strict comparison (`===`). It defaults to `false`.
+* `itemToSearch` is the element you're looking for. It's compulsory.
+    
+* `arrayToSearchThrough` is the array in which you want to search for `itemToSearch`. It's also compulsory.
+    
+* `strict` is a boolean value that lets you specify whether you want the search to be done with loose comparison (`==`) or strict comparison (`===`). It defaults to `false`.
+    
 
 Here's the `in_array()` function in action:
 
-```
+```php
 $myFruitsArr1 = ["Apple", "Banana", "Cashew", "Mango"];
 var_dump(in_array("Banana", $myFruitsArr1)); // bool(true)
 var_dump(in_array("banana", $myFruitsArr1)); // bool(false)
@@ -1470,7 +1572,7 @@ var_dump(in_array("banana", $myFruitsArr1)); // bool(false)
 
 Because the result of `in_array()` is a boolean, it's commonly used in conditionals:
 
-```
+```php
 $myFruitsArr1 = ["Apple", "Banana", "Cashew", "Mango"];
 
 
@@ -1489,7 +1591,7 @@ PHP provides the traditional `for` loop for iterating through both indexed and a
 
 Here's the basic syntax for looping through an array with a `for` loop:
 
-```
+```php
 for ($i=0; $i < count($arr); $i++) {
  # do something with $arr ...
 }
@@ -1497,7 +1599,7 @@ for ($i=0; $i < count($arr); $i++) {
 
 And here's that of `foreach()`:
 
-```
+```php
 foreach ($arrs as $arr) {
  # do something with $arr
 }
@@ -1505,7 +1607,7 @@ foreach ($arrs as $arr) {
 
 Here's an example using the `for` loop to loop through an array of strings:
 
-```
+```php
 $retiredBallers = ["Pele", "Maradona", "Zidane", "Lampard", "Okocha"];
 
 for ($i = 0; $i < count($retiredBallers); $i++) {
@@ -1525,7 +1627,7 @@ Okocha
 
 You can loop through numbers the same way:
 
-```
+```php
 for ($i = 0; $i < count($myNums); $i++) {
  echo $myNums[$i] . "<br>";
 }
@@ -1543,7 +1645,7 @@ Output:
 
 You can also print the index for each element of the array:
 
-```
+```php
 for ($i = 0; $i < count($myNums); $i++) {
  echo $myNums[$i] . " is at index " . $i . "<br>";
 }
@@ -1561,7 +1663,7 @@ Output:
 
 Don't forget you can use `foreach` to loop through any array too:
 
-```
+```php
 foreach ($retiredBallers as $retiredBaller) {
  echo $retiredBaller . "<br>";
 }
@@ -1578,7 +1680,7 @@ Okocha
 
 You can get the index this way as well:
 
-```
+```php
 foreach ($retiredBallers as $key => $retiredBaller) {
  echo $retiredBaller . " is at index " . $key . "<br>";
 }
@@ -1599,7 +1701,7 @@ An associative array can be complex with items nested deep into it. So, you have
 
 Here's how I got the name and country of some retired footballers from a `$retiredFootballers` array:
 
-```
+```php
 $retiredFootballers = [
  [
    "name" => "Pele",
@@ -1656,7 +1758,7 @@ for ($i = 0; $i < count($retiredFootballers); $i++) {
 
 Doing the same with `foreach()` is cleaner because you don't need an `$i` variable:
 
-```
+```php
 foreach ($retiredFootballers as $retiredFootballer) {
  echo $retiredFootballer["name"] . " is from " . $retiredFootballer["country"] . "<br>";
  echo "<hr>";
@@ -1669,7 +1771,7 @@ Any HTML in your PHP file is the template for that PHP file. This means you can 
 
 Here's how you can do that:
 
-```
+```php
 <?php
 $retiredBallers = ["Pele", "Maradona", "Zidane", "Lampard", "Okocha"];
 ?>
@@ -1688,7 +1790,7 @@ $retiredBallers = ["Pele", "Maradona", "Zidane", "Lampard", "Okocha"];
 
 You can do the same with `foreach()`:
 
-```
+```php
 <?php
 $retiredBallers = ["Pele", "Maradona", "Zidane", "Lampard", "Okocha"];
 ?>
@@ -1708,11 +1810,13 @@ $retiredBallers = ["Pele", "Maradona", "Zidane", "Lampard", "Okocha"];
 
 Here's what that looks like in the browser:
 
-![Image](https://www.freecodecamp.org/news/content/images/2024/05/image4.png) _Looping through arrays using PHP for loop inside HTML_
+![Image](https://www.freecodecamp.org/news/content/images/2024/05/image4.png align="left")
+
+*Looping through arrays using PHP for loop inside HTML*
 
 Let's use `foreach()` to display the `$retiredFootballers` associative array too:
 
-```
+```php
 <h1 class="text-center mt-3 bd-highlight">Looping Through Arrays in PHP</h1>
 
 
@@ -1727,7 +1831,9 @@ Let's use `foreach()` to display the `$retiredFootballers` associative array too
  </ul>
 ```
 
-![Image](https://www.freecodecamp.org/news/content/images/2024/05/image1.png) _Looping through arrays using PHP foreach function inside HTML_
+![Image](https://www.freecodecamp.org/news/content/images/2024/05/image1.png align="left")
+
+*Looping through arrays using PHP foreach function inside HTML*
 
 ## Conclusion
 
@@ -1737,40 +1843,8 @@ You should now be confident using arrays to effectively manage data in PHP, whet
 
 Moving forward, I encourage you to experiment with various array functions to improve your code and tackle different programming challenges. Also, consider exploring multidimensional and associative arrays for more complex data scenarios.
 
-As you grow more proficient with PHP arrays, integrating them with database operations can further enhance your web applications, so look out for the second article of this series.
+As you grow more proficient with PHP arrays, integrating them with database operations can further enhance your web applications. A good example is MongoDB, a NoSQL database that integrates seamlessly with PHP. Check out the [MongoDB PHP docs](https://www.mongodb.com/docs/languages/php/) for more info.  
+  
+Also, look out for the second article of this series.
 
 Keep coding!
-
-[1]: #heading-how-to-create-arrays-in-php
-[2]: #heading-how-to-create-arrays-with-the-array-function
-[3]: #heading-how-to-create-arrays-with-the-square-bracket-syntax
-[4]: #heading-how-to-print-arrays-in-php
-[5]: #howtoprintanarraywiththeprintrfunction
-[6]: #howtoprintanarraywiththevardumpfunction
-[7]: #heading-php-array-functions
-[8]: #heading-the-count-array-function
-[9]: #thearraypush_arrayfunction
-[10]: #heading-the-arraypop-function
-[11]: #heading-the-arrayshift-function
-[12]: #heading-the-arrayunshift-function
-[13]: #heading-the-arraysplice-function
-[14]: #heading-the-arraykeys-function
-[15]: #heading-the-arrayvalues-function
-[16]: #heading-the-arrayreduce-function
-[17]: #heading-the-sort-function
-[18]: #heading-the-rsort-function
-[19]: #heading-the-arrayreplace-function
-[20]: #heading-the-arrayreverse-function
-[21]: #heading-the-arrayslice-function
-[22]: #heading-the-arraysum-function
-[23]: #heading-the-arraymerge-function
-[24]: #heading-the-arrayfilter-function
-[25]: #thearraymap_function
-[26]: #heading-the-arraysearch-function
-[27]: #thearraycolumnfunction
-[28]: #heading-the-inarray-function
-[29]: #heading-how-to-loop-through-arrays-in-php
-[30]: #heading-how-to-loop-through-an-indexed-array
-[31]: #heading-how-to-loop-through-an-associative-array
-[32]: #heading-how-to-loop-through-an-array-inside-the-html-template
-[33]: #heading-conclusion

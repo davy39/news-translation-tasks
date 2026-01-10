@@ -1,47 +1,60 @@
 ---
 title: How to install Ubuntu on VirtualBox
-date: 2024-09-27T11:14:36.705Z
-authorURL: ""
-originalURL: https://www.freecodecamp.org/news/how-to-install-ubuntu-with-oracle-virtualbox/
-posteditor: ""
-proofreader: ""
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2019-12-06T12:10:50.000Z'
+originalURL: https://freecodecamp.org/news/how-to-install-ubuntu-with-oracle-virtualbox
+coverImage: https://www.freecodecamp.org/news/content/images/2019/12/ubuntu-1479782_1280.jpg
+tags:
+- name: Ubuntu
+  slug: ubuntu
+- name: 'VirtualBox '
+  slug: virtualbox
+seo_title: null
+seo_desc: 'By Thanoshan MV
+
+  What is VirtualBox?
+
+  Oracle VM VirtualBox is a cross-platform virtualization application developed by
+  the Oracle Corporation. It allows users to install operating systems on virtual
+  hard disks such as Windows, macOS, Solaris and Linux....'
 ---
 
 By Thanoshan MV
-
-<!-- more -->
 
 ## What is VirtualBox?
 
 Oracle VM VirtualBox is a cross-platform virtualization application developed by the Oracle Corporation. It allows users to install operating systems on virtual hard disks such as Windows, macOS, Solaris and Linux.
 
-As an example, you can run Windows and Linux on your Mac, run Windows server on your Linux server, or run Linux on your Windows PC while running your other existing applications.
+As an example, you can run Windows and Linux on your Mac, run Windows server on your Linux server, or run Linux on your Windows PC while running your other existing applications. 
 
 Disk space and memory are the only problems that you'll face when installing multiple virtual machines.
 
 ## Why You’ll Need It
 
--   Oracle’s VirtualBox is easy to install and use
--   It's free
--   You can run and experience any operating system safely
--   If you’re a developer, VirtualBox can be used as a tool for safely testing your own development projects in multiple OS environments
--   It can run everywhere from small embedded systems to laptops
--   It's good for testing and disaster recovery as it can be easily copied, backed-up, and transported between hosts
+* Oracle’s VirtualBox is easy to install and use
+* It's free
+* You can run and experience any operating system safely
+* If you’re a developer, VirtualBox can be used as a tool for safely testing your own development projects in multiple OS environments
+* It can run everywhere from small embedded systems to laptops
+* It's good for testing and disaster recovery as it can be easily copied, backed-up, and transported between hosts
 
 ## VirtualBox Installation
 
-VirtualBox can be downloaded here: [VirtualBox Downloads][1]
+VirtualBox can be downloaded here: [VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads)
 
 ## Why Ubuntu?
 
--   It's free
--   Easy customization: The GNOME desktop environment helps you customize easily
--   It's secure
--   Ubuntu is open-source
--   Friendly and supportive community
--   Low system requirements
--   According to [FOSSBYTES][2], Ubuntu is the second best Linux distro for programming and developers \[2019 Edition\]
--   It's beginner friendly
+* It's free
+* Easy customization: The GNOME desktop environment helps you customize easily
+* It's secure
+* Ubuntu is open-source
+* Friendly and supportive community
+* Low system requirements
+* According to [FOSSBYTES](https://fossbytes.com/best-linux-distros-for-programming-developers/), Ubuntu is the second best Linux distro for programming and developers [2019 Edition]
+* It's beginner friendly
 
 ## Setup for Ubuntu
 
@@ -77,16 +90,16 @@ After creating a virtual hard disk, you'll see Ubuntu in your dashboard.
 
 Now, we have to set up the Ubuntu disk image file (.iso).
 
-The Ubuntu disk image file can be downloaded here: [Ubuntu OS download][3]
+The Ubuntu disk image file can be downloaded here: [Ubuntu OS download](https://ubuntu.com/#download)
 
 ![Image](https://www.freecodecamp.org/news/content/images/2019/11/Screenshot--23-.png)
 
 To set up the Ubuntu disk image file, go to settings and follow these steps:
 
-1.  Click "Storage"
-2.  In storage devices, click "Empty"
-3.  In attributes, click the disk image and "Choose Virtual Optical Disk File"
-4.  Select the Ubuntu disk image file and open it
+1. Click "Storage"
+2. In storage devices, click "Empty"
+3. In attributes, click the disk image and "Choose Virtual Optical Disk File"
+4. Select the Ubuntu disk image file and open it
 
 ![Image](https://www.freecodecamp.org/news/content/images/2019/11/Screenshot--25-.png)
 
@@ -146,8 +159,8 @@ We have successfully installed Ubuntu in VirtualBox. It's ready to use for your 
 
 Open your terminal (Press Ctrl+Alt+T) and type in the commands below and check if they work.
 
-1.  pwd: This will print the current working directory
-2.  ls: This will list all items in your current directory
+1. pwd: This will print the current working directory
+2. ls: This will list all items in your current directory
 
 ![Image](https://www.freecodecamp.org/news/content/images/2019/11/Screenshot--43-.png)
 
@@ -161,18 +174,13 @@ poweroff
 
 ## Conclusion
 
-VirtualBox is free and is a great tool for running multiple operating systems on a single OS. Ubuntu has many benefits. If you're a beginner to Linux, I would recommend you use Ubuntu as it's beginner friendly.
+VirtualBox is free and is a great tool for running multiple operating systems on a single OS. Ubuntu has many benefits. If you're a beginner to Linux, I would recommend you use Ubuntu as it's beginner friendly. 
 
 Please feel free to let me know if you have any questions.
 
-You can contact and connect with me on [Twitter][4] and [Medium][5].
+You can contact and connect with me on [Twitter](https://twitter.com/ThanoshanMV) and [Medium](https://medium.com/@mvthanoshan9).
 
 Thank you for reading.
 
 **Happy Coding!**
 
-[1]: https://www.virtualbox.org/wiki/Downloads
-[2]: https://fossbytes.com/best-linux-distros-for-programming-developers/
-[3]: https://ubuntu.com/#download
-[4]: https://twitter.com/ThanoshanMV
-[5]: https://medium.com/@mvthanoshan9

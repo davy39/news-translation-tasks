@@ -1,39 +1,50 @@
 ---
 title: freeCodeCamp Turns 10 + Major Certification Updates
-date: 2024-11-06T19:29:34.785Z
+subtitle: ''
 author: Quincy Larson
-authorURL: https://www.freecodecamp.org/news/author/quincy/
-originalURL: https://www.freecodecamp.org/news/freecodecamp-turns-10-major-curriculum-updates/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2024-10-28T16:57:06.055Z'
+originalURL: https://freecodecamp.org/news/freecodecamp-turns-10-major-curriculum-updates
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1730133354055/767f41f9-70e6-4e1c-b0d5-1927a925c9cc.png
+tags:
+- name: community
+  slug: community
+- name: Open Source
+  slug: opensource
+seo_title: null
+seo_desc: '10 years ago today I sat down in the closet of my San Francisco apartment
+  and coded the first few hundred lines of freeCodeCamp.
+
+
+  I didn''t know it at the time, but fCC would quickly grow into a global community
+  of busy adults learning to code togethe...'
 ---
 
 10 years ago today I sat down in the closet of my San Francisco apartment and coded the first few hundred lines of freeCodeCamp.
 
-<!-- more -->
-
-![Quincy's closet office](https://cdn.hashnode.com/res/hashnode/image/upload/v1730133437567/a29ae1ca-0350-4e94-b57a-296eb35dae6f.jpeg)
+![Quincy's closet office](https://cdn.hashnode.com/res/hashnode/image/upload/v1730133437567/a29ae1ca-0350-4e94-b57a-296eb35dae6f.jpeg align="center")
 
 I didn't know it at the time, but fCC would quickly grow into a global community of busy adults learning to code together.
 
 Many of these campers – as we now call ourselves – have gotten jobs as software engineers. And many campers have also contributed code to fCC's open source codebase.
 
-![Campers at an NYC freeCodeCamp event](https://cdn.hashnode.com/res/hashnode/image/upload/v1730133483889/9fe0f108-361f-4384-bbb9-774b9bbe7fe2.webp)
+![Campers at an NYC freeCodeCamp event](https://cdn.hashnode.com/res/hashnode/image/upload/v1730133483889/9fe0f108-361f-4384-bbb9-774b9bbe7fe2.webp align="center")
 
 Over the past 10 years, we've built:
 
-1.  An interactive 3,000-hour core curriculum that teaches Math, Programming, and Computer Science
+1. An interactive 3,000-hour core curriculum that teaches Math, Programming, and Computer Science
     
-2.  A library of more than 12,000 programming tutorials – and dozens of full-length books – on our publication, [freecodecamp.org/news][1]
+2. A library of more than 12,000 programming tutorials – and dozens of full-length books – on our publication, [freecodecamp.org/news](http://freecodecamp.org/news)
     
-3.  A YouTube channel with more than 1,000 free full-length courses. We just hit 10 million subscribers a few days ago.
+3. A YouTube channel with more than 1,000 free full-length courses. We just hit 10 million subscribers a few days ago.
     
-4.  The kindest, most supportive programming forum on the planet. And we have a similarly kind Discord server, too.
+4. The kindest, most supportive programming forum on the planet. And we have a similarly kind Discord server, too.
     
 
 The team has grown from just me to a staff of 35 teachers and engineers. And this is just the tip of the iceberg. A huge chunk of the work is done by the open source community itself. Every day, volunteers step forward to improve our codebase, create new open learning resources, and help one another on the forum.
 
-![a screenshot of the freecodecamp github repo](https://cdn.hashnode.com/res/hashnode/image/upload/v1730133557095/089e4ec6-16aa-49df-81c3-6b27c3001ed4.jpeg)
+![a screenshot of the freecodecamp github repo](https://cdn.hashnode.com/res/hashnode/image/upload/v1730133557095/089e4ec6-16aa-49df-81c3-6b27c3001ed4.jpeg align="center")
 
 And we're just getting started. So rather than a sentimental write-up about the **first** 10 years of freeCodeCamp, we're going to focus instead on our plans for the **next** 10 years ahead of us.
 
@@ -49,82 +60,82 @@ We've sought inspiration from established developer certification nonprofits lik
 
 Our new certifications will:
 
--   Be even more comprehensive
+* Be even more comprehensive
     
--   Involve a final exam
+* Involve a final exam
     
--   Involve a capstone project
+* Involve a capstone project
     
--   And be valid for 3 years, with a path to renewal
+* And be valid for 3 years, with a path to renewal
     
 
 And as with everything freeCodeCamp creates, these certifications will remain **completely free**.
 
 The Certified Full Stack Developer certification prep curriculum will cover:
 
--   Semantic HTML
+* Semantic HTML
     
--   Accessibility
+* Accessibility
     
--   CSS Fundamentals
+* CSS Fundamentals
     
--   CSS Flexbox
+* CSS Flexbox
     
--   Design for Developers
+* Design for Developers
     
--   Typography
+* Typography
     
--   Code Editors
+* Code Editors
     
--   JavaScript Fundamentals
+* JavaScript Fundamentals
     
--   Functional Programming
+* Functional Programming
     
--   Higher Order Functions and Callbacks
+* Higher Order Functions and Callbacks
     
--   DOM Manipulation and events
+* DOM Manipulation and events
     
--   Web Standards
+* Web Standards
     
--   React Fundamentals
+* React Fundamentals
     
--   TypeScript Fundamentals
+* TypeScript Fundamentals
     
--   Testing Concepts
+* Testing Concepts
     
--   Bash Scripting
+* Bash Scripting
     
--   SQL and Relational Databases
+* SQL and Relational Databases
     
--   Git & GitHub
+* Git & GitHub
     
--   Security and Privacy
+* Security and Privacy
     
--   Node.js
+* Node.js
     
--   Express.js
+* Express.js
     
--   Python Fundamentals
+* Python Fundamentals
     
--   Algorithmic Thinking
+* Algorithmic Thinking
     
--   Data Structures
+* Data Structures
     
--   Object Oriented Programming
+* Object Oriented Programming
     
--   Dynamic Programming
+* Dynamic Programming
     
--   Security for Web Developers
+* Security for Web Developers
     
--   Tooling and Deployment
+* Tooling and Deployment
     
--   Working with APIs
+* Working with APIs
     
--   AI Engineering Fundamentals
+* AI Engineering Fundamentals
     
--   How to Get a Developer Job
+* How to Get a Developer Job
     
--   and more
+* and more
     
 
 And by popular request, we're going to cover a **lot** more theory – right in the core curriculum.
@@ -141,19 +152,19 @@ And we'll drop you into the "blank canvas" style coding labs much earlier into t
 
 Here's the full contents of the new Certified Full Stack Developer path. It's a doozy:
 
--   **64 Workshops** – Interactive step-by-step coding courses on tools ranging from HTML to SQL to Python
+* **64 Workshops** – Interactive step-by-step coding courses on tools ranging from HTML to SQL to Python
     
--   **513 Lectures** – Short videos covering computer science concepts, with multiple choice questions to check your comprehension
+* **513 Lectures** – Short videos covering computer science concepts, with multiple choice questions to check your comprehension
     
--   **83 Labs** – Projects where you start with a blank editor and a test suite, and have to build your project so that all the tests pass
+* **83 Labs** – Projects where you start with a blank editor and a test suite, and have to build your project so that all the tests pass
     
--   **62 Review Pages** – Comprehensive lists of topics from each module that you can review to help you prepare for quizzes and exams
+* **62 Review Pages** – Comprehensive lists of topics from each module that you can review to help you prepare for quizzes and exams
     
--   **66 Quizzes** and **6 Prep Exams** – To affirm your grasp of full stack development concepts and tools
+* **66 Quizzes** and **6 Prep Exams** – To affirm your grasp of full stack development concepts and tools
     
--   **1 Capstone Project** – a large, unique project that you'll build for your portfolio, reviewed by teachers within the freeCodeCamp community
+* **1 Capstone Project** – a large, unique project that you'll build for your portfolio, reviewed by teachers within the freeCodeCamp community
     
--   **1 Final Exam** – a comprehensive proctored 90-question certification exam taken within freeCodeCamp's exam environment
+* **1 Final Exam** – a comprehensive proctored 90-question certification exam taken within freeCodeCamp's exam environment
     
 
 After you've completed all this course work, you'll qualify to sit for a final exam. We've built our own open source Exam Environment where you can take an in-depth exam on everything you've learned throughout all our prep work.
@@ -168,7 +179,7 @@ And once you've passed, you'll earn a free verified, serialized certification th
 
 Here's a 5 minute video that will walk you through some of the big updates to freeCodeCamp's curriculum.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1fZ0hTX-ut4" style="aspect-ratio: 16 / 9; width: 100%; height: auto;" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" loading="lazy"></iframe>
+%[https://youtu.be/1fZ0hTX-ut4] 
 
 ## We're Developing Three Other Certifications as Well
 
@@ -234,7 +245,7 @@ Some of the certifications will share a few common projects and lectures. For ex
 
 Expired certs will still show up on your profile, and direct links to them will still continue to function. They'll be clearly marked as "Expired \[date\]" until you renew them. Again, this will not happen to any fCC certs until December 31, 2027 at the earliest.
 
-## What will happen to the 11 certifications currently listed on [freecodecamp.org/learn][2]?
+## What will happen to the 11 certifications currently listed on [freecodecamp.org/learn](http://freecodecamp.org/learn)?
 
 They will continue to be available there for at least a few more years – listed as legacy certifications. Most of the coursework inside them will be repurposed and improved to serve as part of these new certifications.
 
@@ -254,11 +265,11 @@ We've been working hard to create an interactive English curriculum to help camp
 
 We teach through a combination of videos and interactive exercises, followed by a formal certification exam.
 
-![A screenshot of freeCodeCamp's English curriculum User Interface](https://cdn.hashnode.com/res/hashnode/image/upload/v1730133715267/450940c6-2799-48ac-8f8d-dbc4eece8951.jpeg)
+![A screenshot of freeCodeCamp's English curriculum User Interface](https://cdn.hashnode.com/res/hashnode/image/upload/v1730133715267/450940c6-2799-48ac-8f8d-dbc4eece8951.jpeg align="center")
 
 We're currently finishing Level A2, and starting work on level B1.
 
-![A chart of CEFR levels](https://cdn.hashnode.com/res/hashnode/image/upload/v1730133738714/206d46e8-7a31-4229-b673-5c11e386cfee.png)
+![A chart of CEFR levels](https://cdn.hashnode.com/res/hashnode/image/upload/v1730133738714/206d46e8-7a31-4229-b673-5c11e386cfee.png align="center")
 
 ## How is the free University Degree Program coming along?
 
@@ -268,35 +279,27 @@ freeCodeCamp has a small team of instructional designers, and right now we're mo
 
 ## 10 Years is Nothing.
 
-![Some of the freeCodeCamp team in front of a Dallas public library](https://cdn.hashnode.com/res/hashnode/image/upload/v1730133954038/aeb1874c-1804-4910-8088-c262aa95c5cf.jpeg)
+![Some of the freeCodeCamp team in front of a Dallas public library](https://cdn.hashnode.com/res/hashnode/image/upload/v1730133954038/aeb1874c-1804-4910-8088-c262aa95c5cf.jpeg align="center")
 
 It’s amazing how much we’ve accomplished as a community in just 10 years.
 
--   A free curriculum of 3,000 hours of interactive learning resources
+* A free curriculum of 3,000 hours of interactive learning resources
     
--   1,000s of extra-curricular video courses, books, and tutorials
+* 1,000s of extra-curricular video courses, books, and tutorials
     
--   10,000s of campers who’ve gotten jobs as developers
+* 10,000s of campers who’ve gotten jobs as developers
     
--   10,000s of contributors who are getting experience by volunteering their time and talents through open source and through helping fellow campers
+* 10,000s of contributors who are getting experience by volunteering their time and talents through open source and through helping fellow campers
     
 
 And we’re just getting started.
 
-I encourage you to get involved in the global freeCodeCamp community. You can browse our [2024 Top Open Source Contributors][3]. Here’s [our contributor guide][4] if you want to dive in.
+I encourage you to get involved in the global freeCodeCamp community. You can browse our [2024 Top Open Source Contributors](https://www.freecodecamp.org/news/freecodecamps-top-open-source-contributors-of-2024/). Here’s [our contributor guide](https://contribute.freecodecamp.org) if you want to dive in.
 
-I also encourage you [to become a supporter][5]. And if you're already supporting us each month, and want to make a year-end gift to our charity, by all means. Here are some [tax-deductible ways you can support our mission][6].
+I also encourage you [to become a supporter](https://www.freecodecamp.org/donate). And if you're already supporting us each month, and want to make a year-end gift to our charity, by all means. Here are some [tax-deductible ways you can support our mission](https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp/).
 
-And if you have any questions about ways you can support our charity's mission, or just need a donation receipt for your taxes, please email me directly: [quincy@freecodecamp.org][7]
+And if you have any questions about ways you can support our charity's mission, or just need a donation receipt for your taxes, please email me directly: [quincy@freecodecamp.org](mailto:quincy@freecodecamp.org)
 
 Here’s to the next 10 years.
 
 – Quincy
-
-[1]: http://freecodecamp.org/news
-[2]: http://freecodecamp.org/learn
-[3]: https://www.freecodecamp.org/news/freecodecamps-top-open-source-contributors-of-2024/
-[4]: https://contribute.freecodecamp.org
-[5]: https://www.freecodecamp.org/donate
-[6]: https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp/
-[7]: mailto:quincy@freecodecamp.org

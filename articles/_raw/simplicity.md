@@ -1,0 +1,90 @@
+---
+title: Simplicity is sophistication
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2019-07-07T09:54:58.000Z'
+originalURL: https://freecodecamp.org/news/simplicity
+coverImage: https://cdn-media-2.freecodecamp.org/w1280/5f9ca1a3740569d1a4ca4fc9.jpg
+tags:
+- name: Clean Architecture
+  slug: clean-architecture
+- name: mental models
+  slug: mental-models
+- name: Mindset
+  slug: mindset
+- name: soft skill
+  slug: soft-skill
+- name: software architecture
+  slug: software-architecture
+seo_title: null
+seo_desc: 'By Srinivasan C
+
+  Recently I attended a meeting with multiple stakeholders from the business side.
+  When asked to explain a feature, I started explaining them the details of the feature
+  and its implementation. After the meeting one of my colleagues told...'
+---
+
+By Srinivasan C
+
+Recently I attended a meeting with multiple stakeholders from the business side. When asked to explain a feature, I started explaining them the details of the feature and its implementation. After the meeting one of my colleagues told me even though I explained it in detail, they will be requesting a follow-up meeting to discuss the same thing and it was true — the next day we had a meeting invite for the same thing as a follow-up. He explained to me that the reason was I had provided them more details than necessary which probably confused them. This incident led me to the principle of Occam’s Razor.
+
+Quoted from Wikipedia
+
+> _Occam’s razor or the law of parsimony is the problem-solving principle that essentially states that “simpler solutions are more likely to be correct than complex ones.” When presented with competing hypotheses to solve a problem, one should select the solution with the fewest assumptions. The idea is attributed to English Franciscan friar William of Ockham (c. 1287–1347), a scholastic philosopher and theologian._
+
+We have all heard the famous quote by Sherlock Holmes
+
+> _Once you eliminate the impossible, whatever remains, no matter however improbable, must be the truth._
+
+This follows directly from Occam’s Razor. This principle states that given two explanations of a situation, the one in which there is the least number of variables(simpler) however improbable is the most likely explanation. This principle is very helpful and it can be used in a wide variety of situations but it is especially powerful in the hands of software professional.
+
+There are many areas of Software development which can benefit from this principle. A few of them are:
+
+### Coding
+
+The first and foremost area is coding. As developers, we make hundreds of decisions every day which directly affects the health of the codebase and in turn the business. Few of the mistakes we make include adding unwanted abstractions, designing for the future, making it “extensible”(whatever that means). These code with unwanted additional complexity slowly rots over time and becomes “that” part of the codebase that no one understands and nobody is willing to touch. These are the things we do either knowingly or unknowingly which can put a dent on our codebase health in the long-run.
+
+To overcome this it would be prudent for us to think in terms of Occam’s Razor. Always do the simplest thing possible at any point in time. Principles like YAGNI and KISS are examples of Occam’s Razor in coding. If you want to combine 3 design patterns to accommodate a feature request you expect in the future, restrain your primal instincts and stick with a single class for now. Using Occam’s razor during the development process would keep the codebase simple and readable and your future peers will really thank you.
+
+A word of caution here is, this principle should not be used as an excuse to write bad code or take shortcuts. If there is a real need to add complexity, by all means, you should do that. Consider this a framework for you to step back and think for a moment and weigh the cost of your decision in the long run.
+
+### Debugging
+
+Another interesting application of this principle is while debugging. The hard part about debugging is nobody knows the answer especially when you work in a legacy code base with business critical functionalities. Bigger the codebase, more complex the debugging process and thus the Occam’s Razor comes in really handy. All the good software developers I know trace the root cause of a bug by using this principle without even realising it.
+
+Let's say there you write a program to display a few stats in the dashboard. You observe that each time the dashboard is updated you get 2x instead of x for a particular stat. What would be your first instinct? Is it a double counting issue or some thread level race condition? I am guessing most of you with go with the former. This is Occam’s Razor in action. You picked the choice which provides the simplest explanation for the issue intuitively.
+
+This is not to say that always the simplest explanation is the right one. Instead, you start from the simplest one and eliminate one by one either by theory or experimentation until you arrive at the actual root cause for the problem. This provides a framework for you to tackle problems methodically.
+
+### Communication
+
+One of the most under-rated functions of a software developer is communication. Be it with peers/ managers/ stakeholders, communication is as important as coding for any developer. As developers, we are the closest to any given problem and it is natural for people to rely on us for understanding the whole picture of a product/feature. This makes what you communicate and how you communicate extremely crucial from a business standpoint.
+
+As we are closest to a problem, we will have a lot of technical and domain knowledge around it. But it is extremely important to communicate the right things to the right people. Assume you are in a mail thread with Sr. engineer, PM, Manager, and a Business development executive, you need to provide just the right amount of detail so that the Engineer can get the technical challenges and the others can also understand the complexity technically as well as the business justification. You need to achieve the right amount of balance in the technical/business mixture for the audience to understand and not lose interest. This is where Occam’s razor comes in. You need to provide the least level of detail in the mail and schedule a follow up for the people who need to understand more.
+
+Take this as an example “we did a POC on x and we were able to achieve y. Even though we discussed A in the previous mail, we could not achieve A due to the complexities in a library that we were using. There were a lot of assumptions in the threading model in the library and thus it prevented us from achieving A”.
+
+Now, what do you think the different stakeholders will understand?
+
+1. Engineer — Yes I get the issue.
+2. PM- So basically we cant achieve A. And what is a threading model?
+3. Manager — Did he try enough to achieve A?
+
+Instead, if we write “we did a POC on x and were able to achieve y. A was targetted but not achieved. I’ll schedule a meeting to demo the POC and go into details on the blocker for A.” After that, you have all the time in the world to explain in detail the blockers for the right audience and achieve a consensus.
+
+Now, what is the thought process after the demo?
+
+1. Engineer — Makes sense.
+2. PM — The POC is good for now. I guess we can drop A for now and proceed without it.
+3. Manager — He has done an in-depth analysis and knows what he is doing.
+
+### Conclusion
+
+Occam’s Razor can be employed in a wide variety of scenarios and these are just a few examples. Developers use this principle intuitively without knowing it. But knowing it and using it deliberately in various situations will greatly improve you as a software developer. If you can think of any other area of Software where this principle is being used feel free to leave your thoughts in comments.
+
+---
+
+If you liked this article, feel free to reach out to me at [https://kaizencoder.com/contact](https://kaizencoder.com/contact).
+

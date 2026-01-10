@@ -1,17 +1,32 @@
 ---
-title: "The CI/CD Handbook: Learn Continuous Integration and Delivery with
-  GitHub Actions, Docker, and Google Cloud Run"
-date: 2025-07-17T02:10:48.442Z
+title: 'The CI/CD Handbook: Learn Continuous Integration and Delivery with GitHub
+  Actions, Docker, and Google Cloud Run'
+subtitle: ''
 author: Prince Onukwili
-authorURL: https://www.freecodecamp.org/news/author/onukwilip/
-originalURL: https://www.freecodecamp.org/news/learn-continuous-integration-delivery-and-deployment/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2024-12-05T16:21:12.535Z'
+originalURL: https://freecodecamp.org/news/learn-continuous-integration-delivery-and-deployment
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1734119999570/cfbf3375-1e95-41df-b5b0-8fbb8b827f59.png
+tags:
+- name: Continuous Integration
+  slug: continuous-integration
+- name: continuous delivery
+  slug: continuous-delivery
+- name: continuous deployment
+  slug: continuous-deployment
+- name: GitHub Actions
+  slug: github-actions
+- name: CI/CD
+  slug: cicd
+seo_title: null
+seo_desc: Hey everyone! 🌟 If you’re in the tech space, chances are you’ve come across
+  terms like Continuous Integration (CI), Continuous Delivery (CD), and Continuous
+  Deployment. You’ve probably also heard about automation pipelines, staging environments,
+  pro...
 ---
 
 Hey everyone! 🌟 If you’re in the tech space, chances are you’ve come across terms like **Continuous Integration (CI)**, **Continuous Delivery (CD)**, and **Continuous Deployment**. You’ve probably also heard about automation pipelines, staging environments, production environments, and concepts like testing workflows.
-
-<!-- more -->
 
 These terms might seem complex or interchangeable at first glance, leaving you wondering: What do they actually mean? How do they differ from one another? 🤔
 
@@ -19,44 +34,44 @@ In this handbook, I’ll break down these concepts in a clear and approachable w
 
 Together, we’ll:
 
--   Set up a Node.js project. ✨
+* Set up a Node.js project. ✨
     
--   Implement automated tests using Jest and Supertest. 🛠️
+* Implement automated tests using Jest and Supertest. 🛠️
     
--   Set up a CI/CD workflow using GitHub Actions, triggered on push, and pull requests, or after a new release. ⚙️
+* Set up a CI/CD workflow using GitHub Actions, triggered on push, and pull requests, or after a new release. ⚙️
     
--   Build and publish a Docker image of your application to Docker Hub. 📦
+* Build and publish a Docker image of your application to Docker Hub. 📦
     
--   Deploy your application to a staging environment for testing. 🚀
+* Deploy your application to a staging environment for testing. 🚀
     
--   Finally, roll it out to a production environment, making it live! 🌐
+* Finally, roll it out to a production environment, making it live! 🌐
     
 
 By the end of this guide, not only will you understand the difference between CI/CD concepts, but you’ll also have practical experience in building your own automated pipeline. 😃
 
 ### Table of Contents
 
-1.  [**What is Continuous Integration, Deployment, and Delivery?**][1]
+1. [**What is Continuous Integration, Deployment, and Delivery?**](#heading-what-is-continuous-integration-deployment-and-delivery)
     
-2.  [**Differences Between Continuous Integration, Continuous Delivery, and Continuous Deployment**][2]
+2. [**Differences Between Continuous Integration, Continuous Delivery, and Continuous Deployment**](#heading-differences-between-continuous-integration-continuous-delivery-and-continuous-deployment)
     
-3.  [**How to Set Up a Node.js Project with a Web Server and Automated Tests**][3]
+3. [**How to Set Up a Node.js Project with a Web Server and Automated Tests**](#heading-how-to-set-up-a-nodejs-project-with-a-web-server-and-automated-tests)
     
-4.  [**How to Create a GitHub Repository to Host Your Codebase**][4]
+4. [**How to Create a GitHub Repository to Host Your Codebase**](#heading-how-to-create-a-github-repository-to-host-your-codebase)
     
-5.  [**How to Set Up the CI and CD Workflows Within Your Project**][5]
+5. [**How to Set Up the CI and CD Workflows Within Your Project**](#heading-how-to-set-up-the-ci-and-cd-workflows-within-your-project)
     
-6.  [**Set Up a Docker Hub Repository for the Project's Image and Generate an Access Token for Publishing the Image**][6]
+6. [**Set Up a Docker Hub Repository for the Project's Image and Generate an Access Token for Publishing the Image**](#heading-set-up-a-docker-hub-repository-for-the-projects-image-and-generate-an-access-token-for-publishing-the-image)
     
-7.  [**Create a Google Cloud Account, Project, and Billing Account**][7]
+7. [**Create a Google Cloud Account, Project, and Billing Account**](#heading-create-a-google-cloud-account-project-and-billing-account)
     
-8.  [**Create a Google Cloud Service Account to Enable Deployment of the Node.js Application to Google Cloud Run via the CD Pipeline**][8]
+8. [**Create a Google Cloud Service Account to Enable Deployment of the Node.js Application to Google Cloud Run via the CD Pipeline**](#heading-create-a-google-cloud-service-account-to-enable-deployment-of-the-nodejs-application-to-google-cloud-run-via-the-cd-pipeline)
     
-9.  [**Create the Staging Branch and Merge the Feature Branch into It (Continuous Integration and Continuous Delivery)**][9]
+9. [**Create the Staging Branch and Merge the Feature Branch into It (Continuous Integration and Continuous Delivery)**](#heading-create-the-staging-branch-and-merge-the-feature-branch-into-it-continuous-integration-and-continuous-delivery)
     
-10.  [**Merge the Staging Branch into the Main Branch (Continuous Integration and Continuous Deployment)**][10]
+10. [**Merge the Staging Branch into the Main Branch (Continuous Integration and Continuous Deployment)**](#heading-merge-the-staging-branch-into-the-main-branch-continuous-integration-and-continuous-deployment)
     
-11.  [**Conclusion**][11]
+11. [**Conclusion**](#heading-conclusion)
     
 
 ## **What is Continuous Integration, Deployment, and Delivery?** 🤔
@@ -65,7 +80,7 @@ By the end of this guide, not only will you understand the difference between CI
 
 Imagine you’re part of a team of six developers, all working on the same project. Without a proper system, chaos would ensue.
 
-Let’s say Mr. A is building a new login feature, Mrs. B is fixing a bug in the search bar, and Mr. C is tweaking the dashboard UI—all at the same time. If everyone is editing the same "folder" or codebase directly, things could go horribly wrong: _"Hey! Who just broke the app?!"_ 😱
+Let’s say Mr. A is building a new login feature, Mrs. B is fixing a bug in the search bar, and Mr. C is tweaking the dashboard UI—all at the same time. If everyone is editing the same "folder" or codebase directly, things could go horribly wrong: *"Hey! Who just broke the app?!"* 😱
 
 To keep everything in order, teams use **Version Control Systems (VCS)** like GitHub, GitLab, or BitBucket. Think of it as a digital workspace where everyone can safely collaborate without stepping on each other’s toes. 🗂️✨
 
@@ -83,9 +98,9 @@ When someone like Mr. A wants to work on a new feature, they create a **feature 
 
 When Mr. A is satisfied with his feature, he doesn’t just shove it into the main branch—CI ensures it’s done safely:
 
--   **Automated Tests**: Before merging, CI tools automatically run tests on Mr. A’s code to check for bugs or errors. Think of it as a bouncer guarding the main branch, ensuring no bad code gets in. 🕵️‍♂️
+* **Automated Tests**: Before merging, CI tools automatically run tests on Mr. A’s code to check for bugs or errors. Think of it as a bouncer guarding the main branch, ensuring no bad code gets in. 🕵️‍♂️
     
--   **Build Verification**: The feature branch code is also "built" (converted into a deployable version of the app) to confirm it works as intended.
+* **Build Verification**: The feature branch code is also "built" (converted into a deployable version of the app) to confirm it works as intended.
     
 
 Once these checks are passed, Mr. A’s feature branch is merged into the main branch. This frequent merging of changes is what we call **Continuous Integration**.
@@ -124,11 +139,11 @@ Now, you’re confident that the application is free of bugs and ready to shine 
 
 In **Continuous Deployment**, this final step of deploying changes to the live environment happens **automatically**. The pipeline triggers whenever specific events occur, such as:
 
--   A **Pull Request (PR)** is merged into the **main branch**.
+* A **Pull Request (PR)** is merged into the **main branch**.
     
--   A new **release version** is created.
+* A new **release version** is created.
     
--   A **commit** is pushed directly to the production branch (though this is rare for most teams).
+* A **commit** is pushed directly to the production branch (though this is rare for most teams).
     
 
 Once triggered, the pipeline springs into action, building, testing, and finally deploying the updated codebase to the production environment. 📡
@@ -158,22 +173,22 @@ Ready to bring your project to life? Let’s get started! 🚀✨
 
 To get started, you’ll need to have **Node.js** installed on your machine. Node.js provides the JavaScript runtime we’ll use to create our web server.
 
-1.  Visit [https://nodejs.org/en/download/package-manager][12]
+1. Visit [https://nodejs.org/en/download/package-manager](https://nodejs.org/en/download/package-manager)
     
-2.  Choose your operating system (Windows, macOS, or Linux) and download the installer.
+2. Choose your operating system (Windows, macOS, or Linux) and download the installer.
     
-3.  Follow the installation instructions to complete the setup.
+3. Follow the installation instructions to complete the setup.
     
 
 To verify that Node.js was installed successfully, open your terminal and run `node -v`. This should display the installed version of Node.js
 
 ### Step 2: Clone the Starter Repository 📂
 
-The next step is to grab the starter code from GitHub. If you don’t have Git installed, you can download it at [https://git-scm.com/downloads][13]. Choose your OS and follow the instructions to install Git. Once you’re set, it’s time to clone the repository.
+The next step is to grab the starter code from GitHub. If you don’t have Git installed, you can download it at [https://git-scm.com/downloads](https://git-scm.com/downloads). Choose your OS and follow the instructions to install Git. Once you’re set, it’s time to clone the repository.
 
 Run the following command in your terminal to clone the boilerplate code:
 
-```
+```bash
 git clone --single-branch --branch initial https://github.com/onukwilip/ci-cd-tutorial
 ```
 
@@ -181,7 +196,7 @@ This will download the project files from the `initial` branch, which contains t
 
 Navigate into the project directory:
 
-```
+```bash
 cd ci-cd-tutorial
 ```
 
@@ -189,7 +204,7 @@ cd ci-cd-tutorial
 
 Once you’re in the project directory, install the required dependencies for the Node.js project. These are the packages that power the application:
 
-```
+```bash
 npm install --force
 ```
 
@@ -199,55 +214,55 @@ This will download and set up all the libraries specified in the project. Alrigh
 
 Before diving into the code, let’s confirm that the automated tests are functioning correctly. Run:
 
-```
+```bash
 npm test
 ```
 
 You should see two successful test results in your terminal. This indicates that the starter project is correctly configured with working automated tests.
 
-![Successful test run](https://cdn.hashnode.com/res/hashnode/image/upload/v1733074280408/93b4ea86-1dfa-42eb-a163-b97c19c2a053.png)
+![Successful test run](https://cdn.hashnode.com/res/hashnode/image/upload/v1733074280408/93b4ea86-1dfa-42eb-a163-b97c19c2a053.png align="center")
 
 ### Step 5: Start the Web Server 🌐
 
 Finally, let’s start the web server and see it in action. Run the following command:
 
-```
+```bash
 npm start
 ```
 
-Wait for the application to start running. Open your browser and visit [http://localhost:5000][14]. 🎉 You should see the starter web server up and running, ready for your CI/CD magic:
+Wait for the application to start running. Open your browser and visit [http://localhost:5000](http://localhost:5000/). 🎉 You should see the starter web server up and running, ready for your CI/CD magic:
 
-![Successful project run](https://cdn.hashnode.com/res/hashnode/image/upload/v1733074667521/7b80bb21-1f43-430e-8a56-2bff8b81ddad.png)
+![Successful project run](https://cdn.hashnode.com/res/hashnode/image/upload/v1733074667521/7b80bb21-1f43-430e-8a56-2bff8b81ddad.png align="center")
 
 ## **How to Create a GitHub Repository to Host Your Codebase 📂**
 
 ### Step 1: Sign In to GitHub
 
-1.  **Go to GitHub**: Open your browser and visit GitHub - [https://github.com][15].
+1. **Go to GitHub**: Open your browser and visit GitHub - [https://github.com](https://github.com/).
     
-2.  **Sign In**: Click on the **Sign In** button in the top-right corner and enter your username and password to log in, OR create an account if you don’t have one by clicking the **Sign up** button.
+2. **Sign In**: Click on the **Sign In** button in the top-right corner and enter your username and password to log in, OR create an account if you don’t have one by clicking the **Sign up** button.
     
 
 ### Step 2: Create a New Repository
 
 Once you're signed in, on the main GitHub page, you’ll see a "+" sign in the top-right corner next to your profile picture. Click on it, and select **“New repository”** from the dropdown.
 
-![New GitHub repository](https://cdn.hashnode.com/res/hashnode/image/upload/v1733130465203/dac28dee-74da-4fd4-8a96-bc90aef01207.png)
+![New GitHub repository](https://cdn.hashnode.com/res/hashnode/image/upload/v1733130465203/dac28dee-74da-4fd4-8a96-bc90aef01207.png align="center")
 
 Now it’s time to set the repository details. You’ll include:
 
--   **Repository Name**: Choose a name for your repository. For example, you can call it `ci-cd-tutorial`.
+* **Repository Name**: Choose a name for your repository. For example, you can call it `ci-cd-tutorial`.
     
--   **Description** (Optional): You can add a short description, like “A tutorial project for CI/CD with Docker and GitHub Actions.”
+* **Description** (Optional): You can add a short description, like “A tutorial project for CI/CD with Docker and GitHub Actions.”
     
--   **Visibility**: Choose whether you want your repository to be **public** (accessible by anyone) or **private** (only accessible by you and those you invite). For the sake of this tutorial, make it **public**.
+* **Visibility**: Choose whether you want your repository to be **public** (accessible by anyone) or **private** (only accessible by you and those you invite). For the sake of this tutorial, make it **public**.
     
--   **Do Not Check the Add a README File Box**: **Important**: Make sure you **do not check** the option to **Add a README file**. This will automatically create a `README.md` file in your repository, which could cause conflicts later when you push your local files. We'll add the README file manually if needed later.
+* **Do Not Check the Add a README File Box**: **Important**: Make sure you **do not check** the option to **Add a README file**. This will automatically create a `README.md` file in your repository, which could cause conflicts later when you push your local files. We'll add the README file manually if needed later.
     
 
 After filling out the details, click on **“Create repository”**.
 
-![Create GitHub repository](https://cdn.hashnode.com/res/hashnode/image/upload/v1733130890582/04e09ac8-0ee6-4d26-a9f2-007c0e6ca08f.png)
+![Create GitHub repository](https://cdn.hashnode.com/res/hashnode/image/upload/v1733130890582/04e09ac8-0ee6-4d26-a9f2-007c0e6ca08f.png align="center")
 
 ### Step 3: Change the Remote Destination and Push to Your New Repository
 
@@ -259,7 +274,7 @@ Copy your repository URL (the URL of the page you were redirected to after creat
 
 Open your terminal in the project directory and run the following commands:
 
-```
+```bash
 git remote set-url origin <your-repo-url>
 ```
 
@@ -269,7 +284,7 @@ Replace `<your-repo-url>` with your GitHub repository URL which you copied earli
 
 If your branch is named something other than `main`, you can rename it to `main` using:
 
-```
+```bash
 git branch -M main
 ```
 
@@ -277,7 +292,7 @@ git branch -M main
 
 Finally, commit any changes you’ve made and push your local repository to the new remote GitHub repository by running:
 
-```
+```bash
 git add .
 git commit -m 'Created boilerplate'
 git push -u origin main
@@ -295,7 +310,7 @@ Before adding the CI/CD pipelines, it's a good practice to first create a featur
 
 To create and switch to a new branch, run the following command:
 
-```
+```bash
 git checkout -b feature/ci-cd-pipeline
 ```
 
@@ -315,7 +330,7 @@ First, inside the `workflows` directory, create a file named `ci-pipeline.yml`.
 
 Paste the following code into the file:
 
-```
+```yaml
 name: CI Pipeline to staging/production environment
 on:
   pull_request:
@@ -348,20 +363,20 @@ jobs:
 
 Here’s a breakdown of each section in the workflow:
 
-1.  `name: CI Pipeline to staging/production environment`: This is the title of your workflow. It helps you identify this pipeline in GitHub Actions.
+1. `name: CI Pipeline to staging/production environment`: This is the title of your workflow. It helps you identify this pipeline in GitHub Actions.
     
-2.  `on`: The `on` parameter is what determines the events that trigger your workflow. When the workflow YAML file is pushed to the remote GitHub repository, GitHub Actions automatically registers the workflow using the configured triggers in the `on` field. These triggers act as event listeners that tell GitHub when to execute the workflow
+2. `on`: The `on` parameter is what determines the events that trigger your workflow. When the workflow YAML file is pushed to the remote GitHub repository, GitHub Actions automatically registers the workflow using the configured triggers in the `on` field. These triggers act as event listeners that tell GitHub when to execute the workflow
     
     **For example:**
     
     If we set `pull_request` as the value for the `on` parameter and specify the branches we want to monitor using the `branches` key, GitHub sets up event listeners for pull requests to those branches.
     
-    ```
-     on:
-       pull_request:
-         branches:
-           - main
-           - staging
+    ```yaml
+    on:
+      pull_request:
+        branches:
+          - main
+          - staging
     ```
     
     This configuration means that GitHub will trigger the workflow whenever a pull request is made to the `main` or `staging` branches.
@@ -369,68 +384,68 @@ Here’s a breakdown of each section in the workflow:
     **Multiple Triggers**:  
     You can define multiple event listeners in the `on` parameter. For instance, in addition to pull requests, you can add a listener for push events.
     
-    ```
-     on:
-       pull_request:
-         branches:
-           - main
-           - staging
-       push:
-         branches:
-           - main
+    ```yaml
+    on:
+      pull_request:
+        branches:
+          - main
+          - staging
+      push:
+        branches:
+          - main
     ```
     
     This configuration ensures that the workflow is triggered when:
     
-    -   A pull request is made to either the `main` or `staging` branch.
+    * A pull request is made to either the `main` or `staging` branch.
         
-    -   A push is made directly to the `main` branch.
+    * A push is made directly to the `main` branch.
         
-
-📘 **Learn more about triggers:** Check out the [official GitHub documentation here][16].
-
-3.  `jobs`: The `jobs` section outlines the specific tasks (or jobs) that the workflow will execute. Each job is an independent unit of work that runs on a separate virtual machine (VM). This isolation ensures a clean, unique environment for every job, avoiding potential conflicts between tasks.
+    
+    📘 **Learn more about triggers:** Check out the [official GitHub documentation here](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows).
+    
+3. `jobs`: The `jobs` section outlines the specific tasks (or jobs) that the workflow will execute. Each job is an independent unit of work that runs on a separate virtual machine (VM). This isolation ensures a clean, unique environment for every job, avoiding potential conflicts between tasks.
     
     **Key Points About Jobs:**
     
-    1.  **Clean VM for Each Job**: When GitHub Actions runs a workflow, it assigns a dedicated VM instance to each job. This means the environment is reset for every job, ensuring there’s no overlap or interference between tasks.
+    1. **Clean VM for Each Job**: When GitHub Actions runs a workflow, it assigns a dedicated VM instance to each job. This means the environment is reset for every job, ensuring there’s no overlap or interference between tasks.
         
-    2.  **Multiple Jobs**: Workflows can have multiple jobs, each responsible for a specific task. For example:
+    2. **Multiple Jobs**: Workflows can have multiple jobs, each responsible for a specific task. For example:
         
-        -   A **Test** job to install dependencies and run automated tests.
+        * A **Test** job to install dependencies and run automated tests.
             
-        -   A **Build** job to compile the application.
+        * A **Build** job to compile the application.
             
-    3.  **Job Organization**: Jobs can be organized to run:
+    3. **Job Organization**: Jobs can be organized to run:
         
-        -   **Sequentially**: Ensures one job is completed before the next starts, for example the Test job must finish before the Build job. This sequential flow mimics the "pipeline" structure.
+        * **Sequentially**: Ensures one job is completed before the next starts, for example the Test job must finish before the Build job. This sequential flow mimics the "pipeline" structure.
             
-        -   **Simultaneously**: Multiple jobs can run in parallel to save time, especially if the jobs are independent of one another.
+        * **Simultaneously**: Multiple jobs can run in parallel to save time, especially if the jobs are independent of one another.
             
-    4.  **Single Job in This Workflow**: In our current workflow, there is only one job, `test`, which:
+    4. **Single Job in This Workflow**: In our current workflow, there is only one job, `test`, which:
         
-        -   Installs dependencies.
+        * Installs dependencies.
             
-        -   Runs automated tests.
+        * Runs automated tests.
             
-        -   Builds the application.
+        * Builds the application.
             
-
-📘 **Learn more about jobs:** Dive into the [GitHub Actions jobs documentation here][17].
-
-4.  `runs-on: ubuntu-latest`: Specifies the operating system the job will run on. GitHub provides pre-configured virtual environments, and we’re using the latest Ubuntu image.
     
-5.  `env`: Sets environment variables for the job. Here, we define the **PORT** variable used by our application.
+    📘 **Learn more about jobs:** Dive into the [GitHub Actions jobs documentation here](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/using-jobs-in-a-workflow).
     
-6.  **Steps**: Steps define the individual actions to execute within a job:
+4. `runs-on: ubuntu-latest`: Specifies the operating system the job will run on. GitHub provides pre-configured virtual environments, and we’re using the latest Ubuntu image.
     
-    -   `Checkout`: Uses the `actions/checkout` action to clone the repository containing the codebase in the feature branch into the virtual machine instance environment. This step ensures the pipeline has access to the project files.
+5. `env`: Sets environment variables for the job. Here, we define the **PORT** variable used by our application.
+    
+6. **Steps**: Steps define the individual actions to execute within a job:
+    
+    * `Checkout`: Uses the `actions/checkout` action to clone the repository containing the codebase in the feature branch into the virtual machine instance environment. This step ensures the pipeline has access to the project files.
         
-    -   `Install dependencies`: Runs `npm ci` to install the required Node.js packages.
+    * `Install dependencies`: Runs `npm ci` to install the required Node.js packages.
         
-    -   `Test application`: Runs the automated tests using the `npm test` command. This validates the codebase for errors or failing test cases.
+    * `Test application`: Runs the automated tests using the `npm test` command. This validates the codebase for errors or failing test cases.
         
-    -   `Build application`: Builds the application if a build script is defined in the `package.json`. The `--if-present` flag ensures this step doesn’t fail if no build script is present.
+    * `Build application`: Builds the application if a build script is defined in the `package.json`. The `--if-present` flag ensures this step doesn’t fail if no build script is present.
         
 
 Now that we’ve completed the CI pipeline, which runs on pull requests to the `main` or `staging` branches, let’s move on to setting up the **Continuous Delivery (CD)** and **Continuous Deployment** pipelines. 🚀
@@ -443,7 +458,7 @@ In the `.github/workflows` folder, create a new file called `cd-pipeline.yml`. T
 **Next, paste the configuration**:  
 Copy and paste the following configuration into the `cd-pipeline.yml` file:
 
-```
+```yaml
 name: CD Pipeline to Google Cloud Run (staging and production)
 on:
   push:
@@ -528,28 +543,28 @@ The **CD pipeline** configuration combines Continuous Delivery and Continuous De
 
 #### Explanation of the CD pipeline:
 
-1.  #### Workflow Triggers (`on`)
+1. #### Workflow Triggers (`on`)
     
 
--   `push`: Workflow triggers on pushes to the `staging` branch.
+* `push`: Workflow triggers on pushes to the `staging` branch.
     
--   `workflow_dispatch`: Enables manual execution of the workflow via the GitHub Actions interface.
+* `workflow_dispatch`: Enables manual execution of the workflow via the GitHub Actions interface.
     
--   `release`: Triggers when a new release is published.  
+* `release`: Triggers when a new release is published.  
     Example: When a release is published from the `main` branch, the app deploys to the production environment.
     
 
-2.  **Job 1 – Testing the Codebase:** The first job in the pipeline, Test, ensures the codebase is functional and error-free before proceeding with delivery or deployment
+2. **Job 1 – Testing the Codebase:** The first job in the pipeline, Test, ensures the codebase is functional and error-free before proceeding with delivery or deployment
     
-3.  **Job 2 – Building and Deploying the Application:** Aha! Moment ✨: These jobs run sequentially. 😃 The **Build** job begins only after the **Test** job is completed successfully. It prepares the application for deployment and manages the actual deployment process.
+3. **Job 2 – Building and Deploying the Application:** Aha! Moment ✨: These jobs run sequentially. 😃 The **Build** job begins only after the **Test** job is completed successfully. It prepares the application for deployment and manages the actual deployment process.
     
     Here's what happens:
     
-    -   **Authorization for GCP and Docker Hub**: The workflow authenticates with both Google Cloud Platform (GCP) and Docker Hub. For GCP, it uses the `google-github-actions/auth@v0` action to handle service account credentials stored as secrets. Similarly, it logs into Docker Hub with stored credentials to enable image uploads.
+    * **Authorization for GCP and Docker Hub**: The workflow authenticates with both Google Cloud Platform (GCP) and Docker Hub. For GCP, it uses the `google-github-actions/auth@v0` action to handle service account credentials stored as secrets. Similarly, it logs into Docker Hub with stored credentials to enable image uploads.
         
-    -   **Build and Push Docker Image**: The application is built into a Docker image and tagged with a unique identifier (`${{env.IMAGE}}`). This image is then pushed to Docker Hub, making it accessible for deployment.
+    * **Build and Push Docker Image**: The application is built into a Docker image and tagged with a unique identifier (`${{env.IMAGE}}`). This image is then pushed to Docker Hub, making it accessible for deployment.
         
-    -   **Deploy to Google Cloud Run**: Based on the event that triggered the workflow, the application is **deployed to either the staging or production environment** in Google Cloud Run. A **push** to the `staging` branch deploys to the staging environment (Continuous Delivery), while a **release** from the `main` branch deploys to production (Continuous Deployment).
+    * **Deploy to Google Cloud Run**: Based on the event that triggered the workflow, the application is **deployed to either the staging or production environment** in Google Cloud Run. A **push** to the `staging` branch deploys to the staging environment (Continuous Delivery), while a **release** from the `main` branch deploys to production (Continuous Deployment).
         
 
 To ensure the security and flexibility of our pipeline, we rely on external variables and secrets rather than hardcoding sensitive information directly into the workflow file.
@@ -558,9 +573,9 @@ Why? Workflow configuration files are part of your repository and accessible to 
 
 Instead, we use GitHub’s **Secrets** to securely store and access this information. Secrets allow us to define variables that are encrypted and only accessible by our workflows. For example:
 
--   **DockerHub Credentials**: We’ll add a Docker username and access token to the repository’s secrets. These are essential for authenticating with DockerHub to upload the built Docker images.
+* **DockerHub Credentials**: We’ll add a Docker username and access token to the repository’s secrets. These are essential for authenticating with DockerHub to upload the built Docker images.
     
--   **Google Cloud Service Account Key**: This key will grant the pipeline the necessary permissions to deploy the application on **Google Cloud Run** securely.
+* **Google Cloud Service Account Key**: This key will grant the pipeline the necessary permissions to deploy the application on **Google Cloud Run** securely.
     
 
 We'll set up these variables and secrets incrementally as we proceed, ensuring each step is fully secure and functional. 🎯
@@ -575,15 +590,15 @@ Think of a container image as a snapshot of your application, ready to be deploy
 
 Here are the steps to follow to sign up for Docker Hub:
 
-1.  **Go to the Docker Hub website**: Open your web browser and visit Docker Hub - [https://hub.docker.com/][18].
+1. **Go to the Docker Hub website**: Open your web browser and visit Docker Hub - [https://hub.docker.com/](https://hub.docker.com/).
     
-2.  **Create an account**: On the Docker Hub homepage, you’ll see a button labelled **"Sign Up"** in the top-right corner. Click on it.
+2. **Create an account**: On the Docker Hub homepage, you’ll see a button labelled **"Sign Up"** in the top-right corner. Click on it.
     
-3.  **Fill in your details**: You'll be asked to provide a few details like your username, email address, and password. Choose a strong password that you can remember.
+3. **Fill in your details**: You'll be asked to provide a few details like your username, email address, and password. Choose a strong password that you can remember.
     
-4.  **Agree to the terms**: You’ll need to check a box to agree to Docker’s terms of service. After that, click **“Sign Up”** to create your account.
+4. **Agree to the terms**: You’ll need to check a box to agree to Docker’s terms of service. After that, click **“Sign Up”** to create your account.
     
-5.  **Verify your email**: Docker Hub will send you an email to verify your account. Open that email and click on the verification link to complete your account creation.
+5. **Verify your email**: Docker Hub will send you an email to verify your account. Open that email and click on the verification link to complete your account creation.
     
 
 ### Step 2: Sign In to Docker Hub
@@ -604,11 +619,11 @@ You’ll be asked to give your token a description. You can name it something li
 
 After giving it a description, click on the “**Access permissions dropdown**“ and select **“Read & Write“,** or **“Read, Write, Delete“**. Click “**Generate**“
 
-![Create Docker access token](https://cdn.hashnode.com/res/hashnode/image/upload/v1733129374816/c725f041-c0ef-49a0-b8ef-ca62acafc1ee.png)
+![Create Docker access token](https://cdn.hashnode.com/res/hashnode/image/upload/v1733129374816/c725f041-c0ef-49a0-b8ef-ca62acafc1ee.png align="center")
 
 Now, you need to copy the credentials. After clicking the generate button, Docker Hub will create an access token. **Immediately copy this token along with your username** and save it somewhere safe, like in a file (don’t worry, we’ll add it to our GitHub secrets). You won’t be able to see this token again, so make sure you save it!
 
-![Copy Docker username + access token](https://cdn.hashnode.com/res/hashnode/image/upload/v1733133363382/33dbf334-a7ec-4151-8639-5368c3ccaedb.png)
+![Copy Docker username + access token](https://cdn.hashnode.com/res/hashnode/image/upload/v1733133363382/33dbf334-a7ec-4151-8639-5368c3ccaedb.png align="center")
 
 ### Step 4: Add the Token to GitHub as a Secret
 
@@ -616,19 +631,20 @@ To do this, open your GitHub repository where the codebase is hosted. In the Git
 
 Then on the left sidebar, scroll down and click on **“Secrets and Variables”**, then choose **“Actions”**.
 
-1.  ![Open GitHub Actions Secrets](https://cdn.hashnode.com/res/hashnode/image/upload/v1733133003023/75c3bd35-1a5b-46fa-845a-0f4fd8305d53.png)
+1. ![Open GitHub Actions Secrets](https://cdn.hashnode.com/res/hashnode/image/upload/v1733133003023/75c3bd35-1a5b-46fa-845a-0f4fd8305d53.png align="center")
+    
 
 Here are the steps to create and manage your new secret:
 
-1.  **Add a new secret**: Click on the **“New repository secret”** button.
+1. **Add a new secret**: Click on the **“New repository secret”** button.
     
-2.  **Set up the secret**:
+2. **Set up the secret**:
     
-    -   In the **Name** field, type `DOCKER_PASSWORD`.
+    * In the **Name** field, type `DOCKER_PASSWORD`.
         
-    -   In the **Value** field, paste the access token you copied earlier.
+    * In the **Value** field, paste the access token you copied earlier.
         
-3.  **Save the secret**: Finally, click **Add secret** to save your Docker access token securely in GitHub.
+3. **Save the secret**: Finally, click **Add secret** to save your Docker access token securely in GitHub.
     
 
 Then you’ll repeat the process for your Docker username. Create a new secret called `DOCKER_USER` and add your Docker username that you copied earlier.
@@ -641,14 +657,14 @@ Before you can build and publish the Docker image to Docker Hub, you need to cre
 
 Follow the steps below to create the `Dockerfile` in the root folder of your project:
 
-1.  Navigate to your project’s root folder.
+1. Navigate to your project’s root folder.
     
-2.  Create a new file named `Dockerfile`.
+2. Create a new file named `Dockerfile`.
     
-3.  Open the **Dockerfile** in a text editor and paste the following content into it:
+3. Open the **Dockerfile** in a text editor and paste the following content into it:
     
 
-```
+```dockerfile
 FROM node:18-slim
 
 WORKDIR /app
@@ -667,19 +683,19 @@ CMD ["npm", "start"]
 
 #### Explanation of the Dockerfile:
 
--   `FROM node:18-slim`: This sets the base image for the Docker container, which is a slim version of the official Node.js image based on version 18.
+* `FROM node:18-slim`: This sets the base image for the Docker container, which is a slim version of the official Node.js image based on version 18.
     
--   `WORKDIR /app`: Sets the working directory for the application inside the container to `/app`.
+* `WORKDIR /app`: Sets the working directory for the application inside the container to `/app`.
     
--   `COPY package.json .`: Copies the `package.json` file into the working directory.
+* `COPY package.json .`: Copies the `package.json` file into the working directory.
     
--   `RUN npm install -f`: Installs the project dependencies using `npm`.
+* `RUN npm install -f`: Installs the project dependencies using `npm`.
     
--   `COPY . .`: Copies the rest of the project files into the container.
+* `COPY . .`: Copies the rest of the project files into the container.
     
--   `EXPOSE 5001`: This tells Docker to expose port `5001`, which is the port our app will run on inside the container.
+* `EXPOSE 5001`: This tells Docker to expose port `5001`, which is the port our app will run on inside the container.
     
--   `CMD ["npm", "start"]`: This sets the default command to start the application when the container is run, using `npm start`.
+* `CMD ["npm", "start"]`: This sets the default command to start the application when the container is run, using `npm start`.
     
 
 ## **Create a Google Cloud Account, Project, and Billing Account** ☁️
@@ -690,7 +706,7 @@ Finally, we’ll enable billing so you can unlock the cloud services needed for 
 
 ### Step 1: Create or Sign in to a Google Cloud Account 🌐
 
-First, go to [Google Cloud Console][19]. If you don’t have a Google Cloud account, you’ll need to create one.
+First, go to [Google Cloud Console](https://console.cloud.google.com). If you don’t have a Google Cloud account, you’ll need to create one.
 
 To do this, click on **Get Started for Free** and follow the steps to set up your account (you’ll need to provide payment information, but Google offers $300 in free credits to get started). If you already have a Google account, simply sign in using your credentials.
 
@@ -702,13 +718,13 @@ At the top left of the Google Cloud Console, you’ll see a drop-down menu besid
 
 Now it’s time to create a new project. In the top-left corner of the pop-up modal, click on the **New Project** button.
 
-![Create Google Cloud Project](https://cdn.hashnode.com/res/hashnode/image/upload/v1733134260252/6769909a-cf9c-4c91-9d79-7676500f3981.webp)
+![Create Google Cloud Project](https://cdn.hashnode.com/res/hashnode/image/upload/v1733134260252/6769909a-cf9c-4c91-9d79-7676500f3981.webp align="center")
 
 You’ll be redirected to a page where you’ll need to provide some basic details for your new project. So now enter the following information:
 
--   **Project Name:** Enter a name of your choice for the project (for example, `gcr-ci-cd-project`).
+* **Project Name:** Enter a name of your choice for the project (for example, `gcr-ci-cd-project`).
     
--   **Location:** Select a location for your project. You can leave it as the default "No organization" if you're just getting started.
+* **Location:** Select a location for your project. You can leave it as the default "No organization" if you're just getting started.
     
 
 Once you've entered the project name, click the **Create** button. Google Cloud will now start creating your new project. It may take a few seconds.
@@ -725,7 +741,7 @@ Then click on the project name (for example, `gcr-ci-cd-project`) to enter your 
 
 To access the billing page, in the Google Cloud Console, find the **Navigation Menu** (the three horizontal lines) at the top left of the screen. Click on it to open a list of options. Scroll down and click on **Billing**. This will take you to the billing section of your Google Cloud account.
 
-![Navigate to Google Cloud Billing dashboard/section ](https://cdn.hashnode.com/res/hashnode/image/upload/v1733134747962/745c8a0e-13c5-4dde-849b-303c1200f495.png)
+![Navigate to Google Cloud Billing dashboard/section ](https://cdn.hashnode.com/res/hashnode/image/upload/v1733134747962/745c8a0e-13c5-4dde-849b-303c1200f495.png align="center")
 
 If you haven't set up a billing account yet, you'll be prompted to do so. Click on the **"Link a billing account"** button to start the process.
 
@@ -733,13 +749,13 @@ Now you can create a new billing account (if you don’t have one). You’ll be 
 
 Provide the necessary details, including:
 
--   **Account name** (for example, "Personal Billing Account" or your business name).
+* **Account name** (for example, "Personal Billing Account" or your business name).
     
--   **Country**: Choose the country where your business or account is based.
+* **Country**: Choose the country where your business or account is based.
     
--   **Currency**: Choose the currency in which you want to be billed.
+* **Currency**: Choose the currency in which you want to be billed.
     
-    ![Create Google Cloud billing account](https://cdn.hashnode.com/res/hashnode/image/upload/v1733135153425/1287ab53-e9c5-45b5-a09d-3d3a13840ca4.png)
+    ![Create Google Cloud billing account](https://cdn.hashnode.com/res/hashnode/image/upload/v1733135153425/1287ab53-e9c5-45b5-a09d-3d3a13840ca4.png align="center")
     
 
 Next, enter your payment information (credit card or bank account details). Google Cloud will verify your payment method, so make sure the information is correct.
@@ -748,7 +764,7 @@ Read and agree to the Google Cloud Terms of Service and Billing Account Terms. O
 
 After setting up your billing account, you’ll be taken to a page that asks you to **link** it to your project. Select the billing account you just created or an existing billing account you want to use. Click Set Account to link the billing account to your project.
 
-![Link Google Cloud billing account to project](https://cdn.hashnode.com/res/hashnode/image/upload/v1733337276189/b80702dd-2ff6-42db-a325-c2082e8059e5.png)
+![Link Google Cloud billing account to project](https://cdn.hashnode.com/res/hashnode/image/upload/v1733337276189/b80702dd-2ff6-42db-a325-c2082e8059e5.png align="center")
 
 After you’ve linked your billing account to your project, you should see a confirmation message indicating that billing has been successfully enabled for your project.
 
@@ -766,11 +782,11 @@ The **service account key** is a JSON file containing the credentials used for a
 
 Here are the steps you can follow to set up your service account and get your key:
 
-First, visit the Google Cloud Console at [https://console.cloud.google.com/][20]. Ensure you’ve selected the correct project (e.g. `gcr-ci-cd-project`). To change projects, click the drop-down menu next to the Google Cloud logo at the top-left corner and select your project.
+First, visit the Google Cloud Console at [https://console.cloud.google.com/](https://console.cloud.google.com/). Ensure you’ve selected the correct project (e.g. `gcr-ci-cd-project`). To change projects, click the drop-down menu next to the Google Cloud logo at the top-left corner and select your project.
 
-Then navigate to the Navigation Menu (three horizontal lines in the top-left corner) and click on **IAM & Admin > Service Accounts**.
+Then navigate to the Navigation Menu (three horizontal lines in the top-left corner) and click on **IAM & Admin &gt; Service Accounts**.
 
-![Navigate to Google Cloud IAM - Service Account](https://cdn.hashnode.com/res/hashnode/image/upload/v1733147553088/e3647442-ca8e-4197-ab5f-91cee5a6d6b0.png)
+![Navigate to Google Cloud IAM - Service Account](https://cdn.hashnode.com/res/hashnode/image/upload/v1733147553088/e3647442-ca8e-4197-ab5f-91cee5a6d6b0.png align="center")
 
 ### Step 2: Create a New Service Account
 
@@ -778,42 +794,42 @@ Click on the "Create Service Account" button. This will open a form where you’
 
 Next, enter the Service Account details:
 
--   **Name**: Enter a descriptive name (for example, `ci-cd-sa`).
+* **Name**: Enter a descriptive name (for example, `ci-cd-sa`).
     
--   **ID**: This will auto-fill based on the name.
+* **ID**: This will auto-fill based on the name.
     
--   **Description**: Add a description to help identify its purpose, such as “Used for deploying Node.js app to Cloud Run.”
+* **Description**: Add a description to help identify its purpose, such as “Used for deploying Node.js app to Cloud Run.”
     
--   Click **Create and Continue** to proceed.
+* Click **Create and Continue** to proceed.
     
 
 ### Step 3: Assign Necessary Roles (Permissions)
 
 On the next screen, you’ll assign roles to the service account. Add the following roles one by one:
 
--   **Cloud Run Admin**: Allows management of Cloud Run services.
+* **Cloud Run Admin**: Allows management of Cloud Run services.
     
--   **Service Account User**: Grants the ability to use service accounts.
+* **Service Account User**: Grants the ability to use service accounts.
     
--   **Service Usage Admin**: Enables control over enabling APIs.
+* **Service Usage Admin**: Enables control over enabling APIs.
     
--   **Viewer**: Provides read-only access to view resources.
+* **Viewer**: Provides read-only access to view resources.
     
 
 To add a role:
 
--   Click on **"Select a Role"**.
+* Click on **"Select a Role"**.
     
--   Use the search bar to type the role name (for example, "Cloud Run Admin") and select it.
+* Use the search bar to type the role name (for example, "Cloud Run Admin") and select it.
     
--   Repeat for all four roles.
+* Repeat for all four roles.
     
 
-![Create Google Cloud Service Account - Add role to a service account during creation](https://cdn.hashnode.com/res/hashnode/image/upload/v1733147870701/393833c9-c320-49e3-8743-dbc0d739b99b.png)
+![Create Google Cloud Service Account - Add role to a service account during creation](https://cdn.hashnode.com/res/hashnode/image/upload/v1733147870701/393833c9-c320-49e3-8743-dbc0d739b99b.png align="center")
 
 Your screen should look similar to this:
 
-![Create a Google Cloud service account (SA) - Done assigning all roles to SA](https://cdn.hashnode.com/res/hashnode/image/upload/v1733147949148/c509c810-767d-4900-aa44-a737cc1c8dc1.png)
+![Create a Google Cloud service account (SA) - Done assigning all roles to SA](https://cdn.hashnode.com/res/hashnode/image/upload/v1733147949148/c509c810-767d-4900-aa44-a737cc1c8dc1.png align="center")
 
 After assigning the roles, click **Continue**.
 
@@ -827,13 +843,13 @@ You should now see your newly created service account in the list. Find the row 
 
 To add a new key:
 
--   Click on **"Add Key" > "Create New Key"**.
+* Click on **"Add Key" &gt; "Create New Key"**.
     
--   In the pop-up dialog, select **JSON** as the key type.
+* In the pop-up dialog, select **JSON** as the key type.
     
--   Click **Create**.
+* Click **Create**.
     
-    ![Create Google Cloud service account key](https://cdn.hashnode.com/res/hashnode/image/upload/v1733148120618/c7014982-ae7d-40ed-bbfb-0c8f5c4b8090.png)
+    ![Create Google Cloud service account key](https://cdn.hashnode.com/res/hashnode/image/upload/v1733148120618/c7014982-ae7d-40ed-bbfb-0c8f5c4b8090.png align="center")
     
 
 Now, download the key file. A JSON file will automatically be downloaded to your computer. This file contains the credentials needed to authenticate with Google Cloud.
@@ -844,19 +860,19 @@ Make sure you keep the key secure and store it in a safe location. Don’t share
 
 Start by opening the downloaded JSON file using a text editor (like Notepad or VS Code). Then select and copy the entire contents of the file.
 
-Then navigate to the repository you created for this project on GitHub. Click on the **Settings** tab at the top of the repository. Scroll down and find the **Secrets and variables > Actions** section.
+Then navigate to the repository you created for this project on GitHub. Click on the **Settings** tab at the top of the repository. Scroll down and find the **Secrets and variables &gt; Actions** section.
 
 Now you need to add a new secret. Click the **"New repository secret"** button. In the **Name** field, enter `GCP_SERVICE_ACCOUNT`. In the **Value** field, paste the JSON content you copied earlier. Click **Add secret** to save it.
 
 Do the same for the `GCP_PROJECT_ID` secret, but now add your Google Project ID as the value. To get your project ID, follow these steps:
 
-1.  **Navigate to the Google Cloud Console**: Open Google Cloud Console at [https://console.cloud.google.com/][21].
+1. **Navigate to the Google Cloud Console**: Open Google Cloud Console at [https://console.cloud.google.com/](https://console.cloud.google.com/).
     
-2.  **Locate the Project Dropdown**: At the top-left of the screen, next to the **Google Cloud logo**, you will see a drop-down that shows the name of your current project.
+2. **Locate the Project Dropdown**: At the top-left of the screen, next to the **Google Cloud logo**, you will see a drop-down that shows the name of your current project.
     
-3.  **View the Project ID**: Click the drop-down, and you'll see a list of all your projects. Your **Project ID** will be displayed next to the project name. It is a unique identifier used by Google Cloud.
+3. **View the Project ID**: Click the drop-down, and you'll see a list of all your projects. Your **Project ID** will be displayed next to the project name. It is a unique identifier used by Google Cloud.
     
-4.  **Copy the Project ID**: Copy the **Project ID** that is displayed, and add it as the value of the `GCP_PROJECT_ID` secret.
+4. **Copy the Project ID**: Copy the **Project ID** that is displayed, and add it as the value of the `GCP_PROJECT_ID` secret.
     
 
 ### Step 7: Adding External Variables to the GitHub Repository 🔧
@@ -865,21 +881,21 @@ Before proceeding with deployment, we need to define some external variables tha
 
 Here are the steps you’ll need to follow to do this:
 
-1.  First, go to your repository on GitHub.
+1. First, go to your repository on GitHub.
     
-2.  Click the **Settings** tab at the top of the repository. Scroll down to **Secrets and variables > Actions**.
+2. Click the **Settings** tab at the top of the repository. Scroll down to **Secrets and variables &gt; Actions**.
     
-3.  Click on the **Variables** tab next to **Secrets**. Click **"New repository variable"** for each variable. Then you’ll need to define these variables:
+3. Click on the **Variables** tab next to **Secrets**. Click **"New repository variable"** for each variable. Then you’ll need to define these variables:
     
-    -   `GCR_PROJECT_NAME`: Set this to the name of your Cloud Run service for the production/live environment. For example, `gcr-ci-cd-app`.
+    * `GCR_PROJECT_NAME`: Set this to the name of your Cloud Run service for the production/live environment. For example, `gcr-ci-cd-app`.
         
-    -   `GCR_STAGING_PROJECT_NAME`: Set this to the name of your Cloud Run service for the staging/test environment. For example, `gcr-ci-cd-staging`.
+    * `GCR_STAGING_PROJECT_NAME`: Set this to the name of your Cloud Run service for the staging/test environment. For example, `gcr-ci-cd-staging`.
         
-    -   `GCR_REGION`: Enter the region where you’d like to deploy the services. For this tutorial, set it to `us-central1`.
+    * `GCR_REGION`: Enter the region where you’d like to deploy the services. For this tutorial, set it to `us-central1`.
         
-    -   `IMAGE`: Specify the name of the Docker image/container registry where the published image will be uploaded. For example, `<dockerhub-username>/ci-cd-tutorial-app`.
+    * `IMAGE`: Specify the name of the Docker image/container registry where the published image will be uploaded. For example, `<dockerhub-username>/ci-cd-tutorial-app`.
         
-4.  After entering each variable name and value, click **Add variable**.
+4. After entering each variable name and value, click **Add variable**.
     
 
 ### Enabling the Service Usage API on the Google Cloud Project 🌐
@@ -888,19 +904,19 @@ To deploy your application, the **Service Usage API** must be enabled in your Go
 
 Follow these steps to enable it:
 
-1.  First, visit the Google Cloud Console at [https://console.cloud.google.com/][22].
+1. First, visit the Google Cloud Console at [https://console.cloud.google.com/](https://console.cloud.google.com/).
     
-2.  Then make sure you’re in the correct project. Click the project drop-down menu near the **Google Cloud logo** at the top-left corner. Select `gcr-ci-cd-project` , or the name you gave your project from the list of projects.
+2. Then make sure you’re in the correct project. Click the project drop-down menu near the **Google Cloud logo** at the top-left corner. Select `gcr-ci-cd-project` , or the name you gave your project from the list of projects.
     
-3.  Next you’ll need to access the API library. Open the **Navigation Menu** (three horizontal lines in the top-left corner). Select **APIs & Services > Library** from the menu.
+3. Next you’ll need to access the API library. Open the **Navigation Menu** (three horizontal lines in the top-left corner). Select **APIs & Services &gt; Library** from the menu.
     
-4.  In the API Library, use the search bar to search for **"Service Usage API"**.
+4. In the API Library, use the search bar to search for **"Service Usage API"**.
     
-5.  Click on the **Service Usage API** from the search results. On the API’s details page, click **Enable**.
+5. Click on the **Service Usage API** from the search results. On the API’s details page, click **Enable**.
     
-6.  To verify, go to **APIs & Services > Enabled APIs & Services** in the Google Cloud Console. Confirm that the **Service Usage API** appears in the list of enabled APIs.
+6. To verify, go to **APIs & Services &gt; Enabled APIs & Services** in the Google Cloud Console. Confirm that the **Service Usage API** appears in the list of enabled APIs.
     
-    ![Enable the Google Cloud "Service Usage API" in the project](https://cdn.hashnode.com/res/hashnode/image/upload/v1733150269757/00a4e20b-72ac-4bd4-b05f-af6e61600e09.png)
+    ![Enable the Google Cloud "Service Usage API" in the project](https://cdn.hashnode.com/res/hashnode/image/upload/v1733150269757/00a4e20b-72ac-4bd4-b05f-af6e61600e09.png align="center")
     
 
 ## **Create the Staging Branch and Merge the Feature Branch into It (Continuous Integration and Continuous Delivery) 🌟**
@@ -915,15 +931,15 @@ To enable the CI/CD pipeline, we’ll first create a `staging` branch on the rem
 
 To create the `staging` branch directly on GitHub, follow these steps:
 
-1.  First, navigate to your repository on GitHub. Open your web browser and go to the GitHub repository where you want to create the new `staging` branch.
+1. First, navigate to your repository on GitHub. Open your web browser and go to the GitHub repository where you want to create the new `staging` branch.
     
-2.  Then, switch to the `main` branch. On the top of the repository page, locate the **Branch** dropdown (usually labelled as `main` or the current branch name). Click on the dropdown and make sure you are on the `main` branch.
+2. Then, switch to the `main` branch. On the top of the repository page, locate the **Branch** dropdown (usually labelled as `main` or the current branch name). Click on the dropdown and make sure you are on the `main` branch.
     
-3.  Next, create the `staging` branch. In the same dropdown where you see the `main` branch, type `staging` into the text box. Once you start typing, GitHub will offer you the option to create a new branch called `staging`. Select the **Create branch: staging** option from the dropdown.
+3. Next, create the `staging` branch. In the same dropdown where you see the `main` branch, type `staging` into the text box. Once you start typing, GitHub will offer you the option to create a new branch called `staging`. Select the **Create branch: staging** option from the dropdown.
     
-4.  Finally, verify the branch\*\*.\*\* After creating the `staging` branch, GitHub will automatically switch to it. You should now see `staging` in the branch dropdown, confirming the new branch was created.
+4. Finally, verify the branch\*\*.\*\* After creating the `staging` branch, GitHub will automatically switch to it. You should now see `staging` in the branch dropdown, confirming the new branch was created.
     
-    ![Create a new Staging branch in the GitHub repository](https://cdn.hashnode.com/res/hashnode/image/upload/v1733152232155/e6215137-5e3b-474b-88f8-af03269eccc2.png)
+    ![Create a new Staging branch in the GitHub repository](https://cdn.hashnode.com/res/hashnode/image/upload/v1733152232155/e6215137-5e3b-474b-88f8-af03269eccc2.png align="center")
     
 
 ### **Merge Your Feature Branch into the Staging Branch via a Pull Request (PR)**
@@ -934,19 +950,19 @@ This process combines both Continuous Integration (CI) and Continuous Delivery (
 
 First, you’ll want to make sure that you are on the correct branch (the feature branch) by running:
 
-```
+```bash
 git status
 ```
 
 If you are not on the `feature/ci-cd-pipeline` branch, switch to it by running:
 
-```
+```bash
 git checkout feature/ci-cd-pipeline
 ```
 
 Now, it’s time to add your changes you made for the commit:
 
-```
+```bash
 git add .
 ```
 
@@ -954,13 +970,13 @@ This stages all changes, including new files, modified files, and deleted files.
 
 Next, commit your changes with a clear and descriptive message:
 
-```
+```bash
 git commit -m "Set up CI/CD pipelines for the project"
 ```
 
 Then you can verify your commit by running:
 
-```
+```bash
 git log
 ```
 
@@ -970,7 +986,7 @@ This will display your most recent commits, and you should see the commit messag
 
 After committing your changes, push them to the remote repository:
 
-```
+```bash
 git push origin feature/ci-cd-pipeline
 ```
 
@@ -988,9 +1004,9 @@ Now, it’s time to choose the base and compare branches. On the PR creation pag
 
 You’ll want to come up with a good PR description for this. Write a clear title and description for the pull request, explaining what changes you're merging and why. For example:
 
--   **Title**: "Merge CI/CD setup changes from feature branch"
+* **Title**: "Merge CI/CD setup changes from feature branch"
     
--   **Description**: "This pull request adds the CI/CD pipelines for GitHub Actions and Docker Hub integration to the project. It includes the configurations for both CI and CD workflows."
+* **Description**: "This pull request adds the CI/CD pipelines for GitHub Actions and Docker Hub integration to the project. It includes the configurations for both CI and CD workflows."
     
 
 Now GitHub will show a list of all the changes that will be merged. Take a moment to review them and ensure everything looks correct.
@@ -999,9 +1015,9 @@ If all looks good after reviewing, click on the **Create pull request** button. 
 
 Wait a few seconds, and you should see a message indicating that all the checks have passed. Click on the link with the description "**CI Pipeline to staging/production environment...**". This should direct you to the Continuous Integration workflow, where you can view the steps that ran
 
-![Create a new pull request (PR) from the feature to the staging branch](https://cdn.hashnode.com/res/hashnode/image/upload/v1733153444873/6ecdb277-0a45-44ec-981c-c7ee671cd2f0.png)
+![Create a new pull request (PR) from the feature to the staging branch](https://cdn.hashnode.com/res/hashnode/image/upload/v1733153444873/6ecdb277-0a45-44ec-981c-c7ee671cd2f0.png align="center")
 
-![CI workflow run from PR (feature to staging branch)](https://cdn.hashnode.com/res/hashnode/image/upload/v1733153637817/e12fefde-9259-41a3-9bd1-63b5da1d88ea.png)
+![CI workflow run from PR (feature to staging branch)](https://cdn.hashnode.com/res/hashnode/image/upload/v1733153637817/e12fefde-9259-41a3-9bd1-63b5da1d88ea.png align="center")
 
 #### The Continuous Integration (CI) Process
 
@@ -1021,20 +1037,20 @@ After merging, you can go to the `staging` branch to verify that the changes wer
 
 Once you have successfully merged your pull request from the `feature/ci-cd-pipeline` branch into the `staging` branch, the Continuous Delivery (CD) pipeline will be triggered. To view the progress of the CD pipeline, navigate to the **Actions** tab in your GitHub repository. Here's how to do it:
 
-1.  Go to your GitHub repository.
+1. Go to your GitHub repository.
     
-2.  At the top of the page, you will see the **Actions** tab next to the **Code** tab. Click on it.
+2. At the top of the page, you will see the **Actions** tab next to the **Code** tab. Click on it.
     
-3.  On the Actions page, you will see a list of workflows that have been triggered. Look for the one labelled **CD Pipeline to Google Cloud Run (staging and production)**. It should appear as a new run after the PR merge.
+3. On the Actions page, you will see a list of workflows that have been triggered. Look for the one labelled **CD Pipeline to Google Cloud Run (staging and production)**. It should appear as a new run after the PR merge.
     
-4.  Click on the workflow run to view its progress and see the detailed logs for each step.
+4. Click on the workflow run to view its progress and see the detailed logs for each step.
     
 
-![Continuous Delivery workflow from merge to staging (feature to staging)](https://cdn.hashnode.com/res/hashnode/image/upload/v1733154575368/96e236a2-ae66-494b-b544-f96955a18ac9.png)
+![Continuous Delivery workflow from merge to staging (feature to staging)](https://cdn.hashnode.com/res/hashnode/image/upload/v1733154575368/96e236a2-ae66-494b-b544-f96955a18ac9.png align="center")
 
-![Continuous Delivery workflow Jobs from merge to staging (feature to staging)](https://cdn.hashnode.com/res/hashnode/image/upload/v1733159329441/cb7e26a9-7a20-4b1b-9869-e00facc695c1.png)
+![Continuous Delivery workflow Jobs from merge to staging (feature to staging)](https://cdn.hashnode.com/res/hashnode/image/upload/v1733159329441/cb7e26a9-7a20-4b1b-9869-e00facc695c1.png align="center")
 
-![Continuous Delivery workflow steps from merge to staging (feature to staging)](https://cdn.hashnode.com/res/hashnode/image/upload/v1733160506355/4682afe3-bb04-405d-af4e-fd9bd3494659.png)
+![Continuous Delivery workflow steps from merge to staging (feature to staging)](https://cdn.hashnode.com/res/hashnode/image/upload/v1733160506355/4682afe3-bb04-405d-af4e-fd9bd3494659.png align="center")
 
 This will allow you to monitor the status of the CD pipeline and check if there are any issues during deployment.
 
@@ -1046,11 +1062,11 @@ The **Continuous Delivery (CD) Pipeline** automates the process of deploying the
 
 The pipeline consists of multiple stages:
 
-1.  **Test Job:** The pipeline begins by setting up the environment and running tests using the `npm test` command. If the tests pass, the process moves forward.
+1. **Test Job:** The pipeline begins by setting up the environment and running tests using the `npm test` command. If the tests pass, the process moves forward.
     
-2.  **Build Job:** The next step builds the Docker image of the Node.js application, tags it, and then pushes it to Docker Hub.
+2. **Build Job:** The next step builds the Docker image of the Node.js application, tags it, and then pushes it to Docker Hub.
     
-3.  **Deployment to GCP:** After the image is pushed, the workflow authenticates to Google Cloud and deploys the application. If the event is a release (that is, a push to the `main` branch), the application is deployed to the production environment. If the event is a push to `staging`, the app is deployed to the staging environment.
+3. **Deployment to GCP:** After the image is pushed, the workflow authenticates to Google Cloud and deploys the application. If the event is a release (that is, a push to the `main` branch), the application is deployed to the production environment. If the event is a push to `staging`, the app is deployed to the staging environment.
     
 
 The CD process ensures that any changes made to the `staging` branch are automatically tested, built, and deployed to the staging environment, ready for further validation. When a release is published, it will trigger deployment to production, ensuring your app is always up to date.
@@ -1061,17 +1077,17 @@ Once the deployment to Google Cloud Run is successfully completed, you'll want t
 
 #### 1\. **Navigate to the Google Cloud Console**
 
-Open the Google Cloud Console in your browser by visiting [https://console.cloud.google.com][23]. If you're not already signed in, make sure you log in with your Google account.
+Open the Google Cloud Console in your browser by visiting [https://console.cloud.google.com](https://console.cloud.google.com). If you're not already signed in, make sure you log in with your Google account.
 
 #### 2\. **Go to the Cloud Run Dashboard**
 
-In the Google Cloud Console, use the Search bar at the top or navigate through the left-hand menu: Go to **Cloud Run** (you can type this into the search bar, or find it under **Products & services** > **Compute** > **Cloud Run**). Click on **Cloud Run** to open the Cloud Run dashboard.
+In the Google Cloud Console, use the Search bar at the top or navigate through the left-hand menu: Go to **Cloud Run** (you can type this into the search bar, or find it under **Products & services** &gt; **Compute** &gt; **Cloud Run**). Click on **Cloud Run** to open the Cloud Run dashboard.
 
 #### 3\. **Select Your Staging Service**
 
 In the **Cloud Run dashboard**, you should see a list of all your services deployed across various environments. Find the service associated with the staging environment. The name should be similar to what you defined in your workflow (for example, `gcr-ci-cd-staging`).
 
-![Google Cloud Run service for the staging environment](https://cdn.hashnode.com/res/hashnode/image/upload/v1733159635861/4ac895d2-5071-4d3f-9ed1-5af2bcca8835.png)
+![Google Cloud Run service for the staging environment](https://cdn.hashnode.com/res/hashnode/image/upload/v1733159635861/4ac895d2-5071-4d3f-9ed1-5af2bcca8835.png align="center")
 
 #### 4\. **Access the Service URL**
 
@@ -1082,7 +1098,7 @@ On this page, look for the **URL** section under the **Service URL** heading. Th
 
 Click on the **Service URL**, and it will open your staging environment in a new tab in your browser. You can now interact with your application as if it were live, but in the **staging environment**.
 
-![Google Cloud Run service URL for the staging environment](https://cdn.hashnode.com/res/hashnode/image/upload/v1733160050763/b097e647-bf6d-442e-87df-fc7d82d3585c.png)
+![Google Cloud Run service URL for the staging environment](https://cdn.hashnode.com/res/hashnode/image/upload/v1733160050763/b097e647-bf6d-442e-87df-fc7d82d3585c.png align="center")
 
 ## **Merge the Staging Branch into the Main Branch (Continuous Integration and Continuous Deployment) 🌐**
 
@@ -1104,11 +1120,11 @@ After merging the pull request, the **Continuous Integration (CI)** pipeline wil
 
 #### Pipeline Steps:
 
--   **Code Checkout**: The workflow fetches the latest code from the **main branch**.
+* **Code Checkout**: The workflow fetches the latest code from the **main branch**.
     
--   **Dependency Installation**: The pipeline installs all required dependencies.
+* **Dependency Installation**: The pipeline installs all required dependencies.
     
--   **Testing**: Automated tests are run to validate the application's stability.
+* **Testing**: Automated tests are run to validate the application's stability.
     
 
 ### Step 3: Create a New Release
@@ -1119,13 +1135,13 @@ Let’s walk through the steps to create a release.
 
 On your GitHub repository page, click on the **Releases** section (located under the **Code** tab).
 
-![Navigate to the Release page in theGitHub repo](https://cdn.hashnode.com/res/hashnode/image/upload/v1733338781623/c21e7f03-5381-47f9-8807-b5a3360245ad.png)
+![Navigate to the Release page in theGitHub repo](https://cdn.hashnode.com/res/hashnode/image/upload/v1733338781623/c21e7f03-5381-47f9-8807-b5a3360245ad.png align="center")
 
 Next, click **Draft a new release**. Set the **Target** branch to **main**. Enter a **Tag version** (for example, `v1.0.0`) following semantic versioning. Add a **Release title** and an optional description of the changes.
 
 Then, click **Publish Release** to finalize.
 
-![Create a new release in the GitHub repo](https://cdn.hashnode.com/res/hashnode/image/upload/v1733161473858/6e14214c-31fb-49b3-9dff-a719b9ec1d40.png)
+![Create a new release in the GitHub repo](https://cdn.hashnode.com/res/hashnode/image/upload/v1733161473858/6e14214c-31fb-49b3-9dff-a719b9ec1d40.png align="center")
 
 #### Why run the Continuous Deployment pipeline on release instead of on push? 🤔
 
@@ -1143,20 +1159,20 @@ Ultimately, this approach helps maintain a smooth user experience. Instead of se
 
 After the release is published, the CD pipeline for the production environment is triggered. To monitor this repeat the process taken for the Continuous Delivery workflow, follow these steps:
 
-1.  **Go to the GitHub Actions tab**: In your GitHub repository, click on the **Actions** tab.
+1. **Go to the GitHub Actions tab**: In your GitHub repository, click on the **Actions** tab.
     
-2.  **Locate the deployment workflow**: Look for the **CD Pipeline to Google Cloud Run (staging and production)** workflow. You’ll notice that the workflow has been triggered on the **main branch** due to the push event.
+2. **Locate the deployment workflow**: Look for the **CD Pipeline to Google Cloud Run (staging and production)** workflow. You’ll notice that the workflow has been triggered on the **main branch** due to the push event.
     
-3.  **Open the workflow details**: Click on the workflow to view detailed steps, logs, and statuses for each part of the deployment process.
+3. **Open the workflow details**: Click on the workflow to view detailed steps, logs, and statuses for each part of the deployment process.
     
 
 This time, the Continuous delivery workflow deploys the application to the **production**/**live** environment.
 
-![Continuous Deployment workflow from merge to main (staging to main)](https://cdn.hashnode.com/res/hashnode/image/upload/v1733164741827/303cd415-5bb9-4149-aa5d-7088d0eab582.png)
+![Continuous Deployment workflow from merge to main (staging to main)](https://cdn.hashnode.com/res/hashnode/image/upload/v1733164741827/303cd415-5bb9-4149-aa5d-7088d0eab582.png align="center")
 
 ### Step 5: Access the Live Application
 
-Once the deployment is complete, go to Google Cloud Console at [https://console.cloud.google.com][24].
+Once the deployment is complete, go to Google Cloud Console at [https://console.cloud.google.com](https://console.cloud.google.com).
 
 Navigate to **Cloud Run** from the menu. Select the service corresponding to the **production environment** (for example, `gcr-ci-cd-app`).
 
@@ -1178,46 +1194,15 @@ This approach gives teams the flexibility to push and test incomplete features w
 
 If you would like to learn more about Continuous Integration, Delivery, and Deployment you can check out the courses below:
 
--   [**Continuous Integration and Continuous Delivery (CI/CD) (from IBM Coursera**][25]**)**
+* [**Continuous Integration and Continuous Delivery (CI/CD) (from IBM Coursera**](https://www.coursera.org/learn/continuous-integration-and-continuous-delivery-ci-cd)**)**
     
--   [**GitHub Actions - The Complete Guide (from Udemy**][26]**)**
+* [**GitHub Actions - The Complete Guide (from Udemy**](https://www.udemy.com/course/github-actions-the-complete-guide/?couponCode=CMCPSALE24)**)**
     
--   [**Learn CI/CD by buliding a project (freeCodeCamp tutorial)**][27]
+* [**Learn CI/CD by buliding a project (freeCodeCamp tutorial)**](https://www.freecodecamp.org/news/what-is-ci-cd/)
     
 
 ### About the Author 👨‍💻
 
 Hi, I’m Prince! I’m a software engineer passionate about building scalable applications and sharing knowledge with the tech community.
 
-If you enjoyed this article, you can learn more about me by exploring more of my blogs and projects on my [LinkedIn profile][28]. You can find my [LinkedIn articles here][29]. And you can [visit my website][30] to read more of my articles as well. Let’s connect and grow together! 😊
-
-[1]: #heading-what-is-continuous-integration-deployment-and-delivery
-[2]: #heading-differences-between-continuous-integration-continuous-delivery-and-continuous-deployment
-[3]: #heading-how-to-set-up-a-nodejs-project-with-a-web-server-and-automated-tests
-[4]: #heading-how-to-create-a-github-repository-to-host-your-codebase
-[5]: #heading-how-to-set-up-the-ci-and-cd-workflows-within-your-project
-[6]: #heading-set-up-a-docker-hub-repository-for-the-projects-image-and-generate-an-access-token-for-publishing-the-image
-[7]: #heading-create-a-google-cloud-account-project-and-billing-account
-[8]: #heading-create-a-google-cloud-service-account-to-enable-deployment-of-the-nodejs-application-to-google-cloud-run-via-the-cd-pipeline
-[9]: #heading-create-the-staging-branch-and-merge-the-feature-branch-into-it-continuous-integration-and-continuous-delivery
-[10]: #heading-merge-the-staging-branch-into-the-main-branch-continuous-integration-and-continuous-deployment
-[11]: #heading-conclusion
-[12]: https://nodejs.org/en/download/package-manager
-[13]: https://git-scm.com/downloads
-[14]: http://localhost:5000/
-[15]: https://github.com/
-[16]: https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows
-[17]: https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/using-jobs-in-a-workflow
-[18]: https://hub.docker.com/
-[19]: https://console.cloud.google.com
-[20]: https://console.cloud.google.com/
-[21]: https://console.cloud.google.com/
-[22]: https://console.cloud.google.com/
-[23]: https://console.cloud.google.com
-[24]: https://console.cloud.google.com
-[25]: https://www.coursera.org/learn/continuous-integration-and-continuous-delivery-ci-cd
-[26]: https://www.udemy.com/course/github-actions-the-complete-guide/?couponCode=CMCPSALE24
-[27]: https://www.freecodecamp.org/news/what-is-ci-cd/
-[28]: https://www.linkedin.com/in/prince-onukwili-a82143233/
-[29]: https://www.linkedin.com/in/prince-onukwili-a82143233/details/publications/
-[30]: https://prince-onuk.vercel.app/achievements#articles
+If you enjoyed this article, you can learn more about me by exploring more of my blogs and projects on my [LinkedIn profile](https://www.linkedin.com/in/prince-onukwili-a82143233/). You can find my [LinkedIn articles here](https://www.linkedin.com/in/prince-onukwili-a82143233/details/publications/). And you can [visit my website](https://prince-onuk.vercel.app/achievements#articles) to read more of my articles as well. Let’s connect and grow together! 😊

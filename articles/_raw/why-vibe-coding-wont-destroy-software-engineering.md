@@ -1,38 +1,57 @@
 ---
 title: Why Vibe Coding Won't Destroy Software Engineering
-date: 2025-06-03T03:38:40.544Z
+subtitle: ''
 author: Ben
-authorURL: https://www.freecodecamp.org/news/author/justanothertechlead/
-originalURL: https://www.freecodecamp.org/news/why-vibe-coding-wont-destroy-software-engineering/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2025-05-21T15:46:37.887Z'
+originalURL: https://freecodecamp.org/news/why-vibe-coding-wont-destroy-software-engineering
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1747835351675/3d178f26-c528-48b8-8ac2-32811a5672cf.png
+tags:
+- name: vibe coding
+  slug: vibe-coding
+- name: AI Coding Assistant
+  slug: ai-coding-assistant
+- name: AI
+  slug: ai
+- name: '#ai-tools'
+  slug: ai-tools
+- name: software development
+  slug: software-development
+- name: Software Engineering
+  slug: software-engineering
+seo_title: null
+seo_desc: 'AI is disrupting all industries at a pace not seen at any time in history.
+
+  Technologies and industries that were once dominated by one or two companies or
+  were very much “human-focused” are coming under threat.
+
+  Google is losing ground to AI search, t...'
 ---
 
 AI is disrupting all industries at a pace not seen at any time in history.
 
-<!-- more -->
-
 Technologies and industries that were once dominated by one or two companies or were very much “human-focused” are coming under threat.
 
-[Google is losing ground to AI search][1], [truck drivers][2] may soon be a thing of the past, and low-skilled clerical [jobs are being lost every day][3].
+[Google is losing ground to AI search](https://www.smoothseo.co/blog/misc/what-the-numbers-say-about-ais-growing-role-in-search/), [truck drivers](https://www.axios.com/2022/03/28/automation-long-haul-truckers-jobs) may soon be a thing of the past, and low-skilled clerical [jobs are being lost every day](https://news.sky.com/story/ai-risks-up-to-eight-million-uk-job-losses-with-low-skilled-worst-hit-report-warns-13102214).
 
 Will this disruption destroy the Software Engineering industry? I don’t think so, and I’ll tell you why.
 
 ### Here’s what we’ll discuss:
 
-1.  [The Phenomenon of "Vibe Coding"][4]
+1. [The Phenomenon of "Vibe Coding"](#heading-the-phenomenon-of-vibe-coding)
     
-2.  [How AI Has Changed Software Development][5]
+2. [How AI Has Changed Software Development](#heading-how-ai-has-changed-software-development)
     
-3.  [The Productivity Paradox][6]
+3. [The Productivity Paradox](#heading-the-productivity-paradox)
     
-4.  [Why Human Engineers Are Still Critical][7]
+4. [Why Human Engineers Are Still Critical](#heading-why-human-engineers-are-still-critical)
     
-5.  [AI as a “Capability Multiplier”][8]
+5. [AI as a “Capability Multiplier”](#heading-ai-as-a-capability-multiplier)
     
-6.  [Critical Skills for the AI Era][9]
+6. [Critical Skills for the AI Era](#heading-critical-skills-for-the-ai-era)
     
-7.  [The Path Forward][10]
+7. [The Path Forward](#heading-the-path-forward)
     
 
 ## **The Phenomenon of "Vibe Coding"**
@@ -51,15 +70,15 @@ The software industry has seen rapid adoption of AI coding tools based on Large 
 
 These tools have transformed daily programming work by:
 
--   Suggesting complete functions as you type
+* Suggesting complete functions as you type
     
--   Creating API endpoints from plain language descriptions
+* Creating API endpoints from plain language descriptions
     
--   Eliminating hours spent on standard code patterns
+* Eliminating hours spent on standard code patterns
     
--   Automating documentation tasks
+* Automating documentation tasks
     
--   Handling repetitive logic quickly
+* Handling repetitive logic quickly
     
 
 This shift toward "vibe coding" speeds up feature delivery. Programmers can now build without mastering every technical detail – they describe what they want, get AI suggestions, and adjust until the code works.
@@ -70,15 +89,15 @@ There's also a concerning trend of non-programmers selling AI-built applications
 
 For anyone considering building software who isn’t a software engineer, there are a few basic levels of security that you need to consider:
 
--   Adding authentication to your API endpoints: People can scan for open ports and endpoints across the internet. If they can then call your API endpoints without being authenticated, it can cause all sorts of problems
+* Adding authentication to your API endpoints: People can scan for open ports and endpoints across the internet. If they can then call your API endpoints without being authenticated, it can cause all sorts of problems
     
--   Do not store passwords in plain text. This is a big no no. If you do this and your database gets exposed, those passwords are there for all to see. And if we’re being real, people re-use passwords, so those passwords will be their passwords for other sites too.
+* Do not store passwords in plain text. This is a big no no. If you do this and your database gets exposed, those passwords are there for all to see. And if we’re being real, people re-use passwords, so those passwords will be their passwords for other sites too.
     
--   SSL: Make sure your website is secure and has an up to date SSL certificate. Transmitting data in plain text is dangerous.
+* SSL: Make sure your website is secure and has an up to date SSL certificate. Transmitting data in plain text is dangerous.
     
--   Lock down unused ports: If you are hosting a backend service, make sure that any ports that you don’t use are locked down and people aren’t able to connect to them.
+* Lock down unused ports: If you are hosting a backend service, make sure that any ports that you don’t use are locked down and people aren’t able to connect to them.
     
--   If you have areas where people can upload files, limit the uploads to specific file types.
+* If you have areas where people can upload files, limit the uploads to specific file types.
     
 
 Those are just a few considerations around security for your site or product, but there are many more.
@@ -97,15 +116,15 @@ Consider this scenario: A developer implements an AI-created authentication syst
 
 While AI tools handle syntax well, they cannot:
 
-1.  Plan systems that grow with user demand
+1. Plan systems that grow with user demand
     
-2.  Create reliable deployment and testing pipelines
+2. Create reliable deployment and testing pipelines
     
-3.  Anticipate unusual but critical failure cases
+3. Anticipate unusual but critical failure cases
     
-4.  Make smart tradeoffs between performance and cost
+4. Make smart tradeoffs between performance and cost
     
-5.  Find non-obvious security weaknesses
+5. Find non-obvious security weaknesses
     
 
 Great engineers think beyond code. They develop patterns that help entire teams, select the right technologies, and plan both for success and failure scenarios.
@@ -120,11 +139,11 @@ Per the above, there are some things that AI without proper oversight can not do
 
 AI can, for instance, be great at passing simple prompts to create solutions to well known problems. If you use this prompt, for example:
 
-![Prompt: "Create a Python module that will tell you if some input JSON is valid"](https://cdn.hashnode.com/res/hashnode/image/upload/v1747771377197/8aae1332-f852-435a-a724-a1770a4163bf.png)
+![Prompt: "Create a Python module that will tell you if some input JSON is valid"](https://cdn.hashnode.com/res/hashnode/image/upload/v1747771377197/8aae1332-f852-435a-a724-a1770a4163bf.png align="center")
 
 Here’s the code you might get:
 
-```
+```python
 import json
 
 def is_valid_json(input_string: str) -> bool:
@@ -158,17 +177,17 @@ Pretty basic.
 
 I would not, though, ask an AI to build me a complex Forex Trading platform.
 
-![d212d814-7785-4391-8e01-79e80c05da44](https://cdn.hashnode.com/res/hashnode/image/upload/v1747771546630/d212d814-7785-4391-8e01-79e80c05da44.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1747771546630/d212d814-7785-4391-8e01-79e80c05da44.png align="center")
 
 I’ll save you reading through all of the response, but suffice it to say that it was not able to do this for me.
 
 I thought I’d break that down to a slightly smaller subset of a financial trading platform:
 
-![Prompt: "Create me an endpoint for a FIX message for an FX Financial security. Make it in Python and I want to be able to accept J messages. Security is key here, so I need this to be as secure as possible."](https://cdn.hashnode.com/res/hashnode/image/upload/v1747771773603/b65e1a13-97aa-4276-81c7-55303e5a04c6.png)
+![Prompt: "Create me an endpoint for a FIX message for an FX Financial security. Make it in Python and I want to be able to accept J messages. Security is key here, so I need this to be as secure as possible."](https://cdn.hashnode.com/res/hashnode/image/upload/v1747771773603/b65e1a13-97aa-4276-81c7-55303e5a04c6.png align="center")
 
 Now, I will admit, this got closer. Here was the result:
 
-```
+```python
 from fastapi import FastAPI, Request, HTTPException, Header
 from pydantic import BaseModel, Field
 from typing import Optional
@@ -239,13 +258,13 @@ These AI tools help magnify existing capabilities rather than replacing them. Sk
 
 Effective engineers use AI to:
 
--   Handle basic implementation tasks
+* Handle basic implementation tasks
     
--   Create initial project frameworks
+* Create initial project frameworks
     
--   Compare different solution approaches
+* Compare different solution approaches
     
--   Move past challenging problems
+* Move past challenging problems
     
 
 Meanwhile, less capable developers use AI to mask skill gaps, implementing solutions they neither understand nor can modify. When these implementations fail, they lack the knowledge to fix them independently.
@@ -256,7 +275,7 @@ A good example of something that AI is perfect for is translation logic:
 
 Let’s say I have Python Dataclass representing an" “InternalUser”. I also have a Django ORM representation of the same entity. If I wanted to convert one to the other, I can just paste both representations in to ChatGPT and get it create me a conversion function. Notice that the conversion function also takes into account that the field names aren’t exact matches:
 
-```
+```python
 @dataclass
 class InternalUser:
     id: str
@@ -274,7 +293,7 @@ class InternalUser:
     notes: Optional[str] = None
 ```
 
-```
+```python
 class InternalUser(models.Model):
     id = models.CharField(primary_key=True, max_length=100)  # Use UUIDField if preferred
     email = models.EmailField(unique=True)
@@ -296,7 +315,7 @@ class InternalUser(models.Model):
         return f"{self.fullName} ({self.email})"
 ```
 
-```
+```python
 from typing import Optional
 from myapp.models import InternalUser as ORMInternalUser, Address as ORMAddress, Preferences as ORMPreferences, LoginActivity as ORMLoginActivity
 from mydataclasses import InternalUser as DCInternalUser  # assuming your dataclass lives here
@@ -352,7 +371,7 @@ This is a basic example, but extrapolate this out to an entire internal data mod
 
 You can even then ask it to create you the function stubs of the tests:
 
-```
+```python
 import pytest
 from datetime import datetime
 from yourmodule.dataclasses import InternalUser, Address, Preferences, LoginActivity, UserRole, AccountStatus
@@ -411,9 +430,9 @@ As AI handles more coding tasks, successful engineers must develop strengths in 
 
 Systems thinking becomes the primary skill – understanding component interactions, identifying potential failures, and designing for future growth. This capability comes from experience, not prompting.
 
-You should build expertise in infrastructure and deployment processes. Software that works in development but fails in production creates no value. So, learn about [continuous integration][11], [monitoring][12] systems, and [cloud platform capabilities][13].
+You should build expertise in infrastructure and deployment processes. Software that works in development but fails in production creates no value. So, learn about [continuous integration](https://www.freecodecamp.org/news/learn-continuous-integration-delivery-and-deployment/), [monitoring](https://www.freecodecamp.org/news/how-to-set-up-monitoring-for-nodejs-applications-using-elastic/) systems, and [cloud platform capabilities](https://www.freecodecamp.org/news/beginners-guide-to-cloud-computing-with-aws/).
 
-You should also master [API design][14] – the interfaces between systems. [Well-designed APIs][15] enable team independence. Poor interfaces create bottlenecks affecting everyone.
+You should also master [API design](https://www.freecodecamp.org/news/rest-api-design-best-practices-build-a-rest-api/) – the interfaces between systems. [Well-designed APIs](https://www.freecodecamp.org/news/design-an-api-application-program-interface/) enable team independence. Poor interfaces create bottlenecks affecting everyone.
 
 Another key skill is being able to integrate security throughout the development process. A single oversight can result in breaches, damaging both customer trust and business standing.
 
@@ -439,22 +458,4 @@ People online are giving away “free prompts” to generate code. These prompts
 
 The future belongs to those who view AI as a collaborative tool rather than a replacement. Software development remains fundamentally human-driven, now supported by increasingly powerful assistance.
 
-_In his spare time, Ben writes his tech blog_ [_Just Another Tech Lead_][16] _and runs a site on SEO,_ [_SmoothSEO_][17]_._
-
-[1]: https://www.smoothseo.co/blog/misc/what-the-numbers-say-about-ais-growing-role-in-search/
-[2]: https://www.axios.com/2022/03/28/automation-long-haul-truckers-jobs
-[3]: https://news.sky.com/story/ai-risks-up-to-eight-million-uk-job-losses-with-low-skilled-worst-hit-report-warns-13102214
-[4]: #heading-the-phenomenon-of-vibe-coding
-[5]: #heading-how-ai-has-changed-software-development
-[6]: #heading-the-productivity-paradox
-[7]: #heading-why-human-engineers-are-still-critical
-[8]: #heading-ai-as-a-capability-multiplier
-[9]: #heading-critical-skills-for-the-ai-era
-[10]: #heading-the-path-forward
-[11]: https://www.freecodecamp.org/news/learn-continuous-integration-delivery-and-deployment/
-[12]: https://www.freecodecamp.org/news/how-to-set-up-monitoring-for-nodejs-applications-using-elastic/
-[13]: https://www.freecodecamp.org/news/beginners-guide-to-cloud-computing-with-aws/
-[14]: https://www.freecodecamp.org/news/rest-api-design-best-practices-build-a-rest-api/
-[15]: https://www.freecodecamp.org/news/design-an-api-application-program-interface/
-[16]: https://justanothertechlead.com/
-[17]: https://www.smoothseo.co
+*In his spare time, Ben writes his tech blog* [*Just Another Tech Lead*](https://justanothertechlead.com/) *and runs a site on SEO,* [*SmoothSEO*](https://www.smoothseo.co)*.*

@@ -1,17 +1,39 @@
 ---
 title: Learn TypeScript in 5 minutes - A tutorial for beginners
-date: 2024-09-15T04:04:14.343Z
-authorURL: ""
-originalURL: https://www.freecodecamp.org/news/learn-typescript-in-5-minutes-13eda868daeb/
-posteditor: ""
-proofreader: ""
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2018-07-02T16:44:56.000Z'
+originalURL: https://freecodecamp.org/news/learn-typescript-in-5-minutes-13eda868daeb
+coverImage: https://www.freecodecamp.org/news/content/images/2019/06/1_2cFbIAg4bow_0pdaBNr7Cw.png
+tags:
+- name: JavaScript
+  slug: javascript
+- name: General Programming
+  slug: programming
+- name: React
+  slug: reactjs
+- name: TypeScript
+  slug: typescript
+- name: Vue.js
+  slug: vuejs
+seo_title: null
+seo_desc: 'By Per Harald Borgen
+
+
+  _Click here to check out the free Scrimba course on TypeScript_
+
+  TypeScript is a typed superset of JavaScript, aimed at making the language more
+  scalable and reliable.
+
+  It’s open-source and has been maintained by Microsoft since t...'
 ---
 
 By Per Harald Borgen
 
-<!-- more -->
-
-![Image](https://www.freecodecamp.org/news/content/images/2019/06/Screenshot-2019-06-06-at-07.58.51.png) \_[Click here to check out the free Scrimba course on TypeScript][1]\_
+![Image](https://www.freecodecamp.org/news/content/images/2019/06/Screenshot-2019-06-06-at-07.58.51.png)
+_[Click here to check out the free Scrimba course on TypeScript](https://scrimba.com/p/gintrototypescript?utm_source=freecodecamp.org&amp;utm_medium=referral&amp;utm_campaign=gintrototypescript_5_minute_article)_
 
 TypeScript is a typed superset of JavaScript, aimed at making the language more scalable and reliable.
 
@@ -19,7 +41,7 @@ It’s open-source and has been maintained by Microsoft since they created it in
 
 In this tutorial, you’ll learn the basics of TypeScript with the help of practical examples.
 
-**We are also about to launch a free 22-part TypeScript course on Scrimba.** [**Leave your email here if you want early access!**][2]
+**We are also about to launch a free 22-part TypeScript course on Scrimba.** [**Leave your email here if you want early access!**](http://eepurl.com/dyqJAj)
 
 Let’s get started.
 
@@ -27,8 +49,9 @@ Let’s get started.
 
 Before we start coding, we need to install TypeScript on our computer. We’ll use `npm` for this, so just open the terminal and type the following command:
 
-```
+```sh
 npm install -g typescript
+
 ```
 
 Once it is installed, we can verify it by running the command `tsc -v` which will display the version of the TypeScript installed.
@@ -39,12 +62,13 @@ Let’s create our first TypeScript file and write some code inside it. Open up 
 
 For now, we’re just going to write a few lines of plain old JavaScript, as all JavaScript code also is valid TypeScript code:
 
-```
+```js
 let a = 5;  
 let b = 5;  
 let c = a + b;
 
 console.log(c);
+
 ```
 
 The next step is to compile our TypeScript into plain JavaScript, as browsers want `.js` files to read.
@@ -55,8 +79,9 @@ To compile, we’ll run the command of `tsc filename.ts`, which creates a JavaSc
 
 So open up the terminal at the location of the file and run the following command:
 
-```
+```sh
 tsc first.ts
+
 ```
 
 **Tip**: If you want to compile all the TypeScript files inside any folder, use the command: `tsc *.ts`
@@ -75,18 +100,20 @@ There are three different types in TypeScript: the `any` type, the `Built-in` ty
 
 The `any` data type is the superset of all the data types in TypeScript. Giving any variable the type of `any` is equivalent to opting out of type checking for a variable.
 
-```
+```ts
 let myVariable: any = 'This is a string'
+
 ```
 
 #### Built-in types
 
 These are the types which are built in TypeScript. They include `number`, `string`, `boolean`, `void`, `null` and `undefined`.
 
-```
+```ts
 let num: number = 5;  
 let name: string = 'Alex';  
 let isPresent: boolean = true;
+
 ```
 
 #### User-defined types
@@ -103,7 +130,7 @@ In object-oriented programming, a class is the template of objects. A class defi
 
 TypeScript has built-in support for classes, which were unsupported by ES5 and earlier versions. This means we can use the `class` keyword to easily declare one.
 
-```
+```ts
 class Car {
 
 // fields  
@@ -122,15 +149,17 @@ displayMake(): void {
   }
 
 }
+
 ```
 
 In the above example, we have declared a `Car` class, along with some of its properties, which we’re initializing in the `constructor`. We also have a method which would display some message using its property.
 
 Let’s see how we can create a new instance of this class:
 
-```
+```ts
 const Prius = new Car('Prius', 4, true);  
 Prius.displayMake(); // This car is Prius
+
 ```
 
 To create an object of a class, we use the keyword of `new` and call the constructor of the class and pass it the properties. Now this object `Prius` has its own properties of `model`, `doors`, and `isElectric`. The object also can call the method of `displayMake`, which would have access to the properties of `Prius`.
@@ -141,27 +170,29 @@ The concept of interfaces is another powerful feature of TypeScript, which allow
 
 Interfaces are best described through an actual example. So, suppose we have an object of `Car`:
 
-```
+```ts
 const Car = {  
   model: 'Prius',  
   make: 'Toyota',  
   display() => { console.log('hi'); }  
 }
+
 ```
 
 If we look at the object above and try to extract its signature, it would be:
 
-```
+```ts
 {  
   model: String,  
   make: String,  
   display(): void  
 }
+
 ```
 
 If we want to reuse this signature, we can declare it in the form of an interface. To create an interface, we use the keyword `interface`.
 
-```
+```ts
 interface ICar {  
   model: String,  
   make: String,  
@@ -173,6 +204,7 @@ const Car: ICar = {
   make: 'Toyota',  
   display() => { console.log('hi'); }  
 }
+
 ```
 
 Here, we’ve declared an interface called `ICar` , and created an object `Car`. `Car` is now binding to the `ICar` interface, ensuring that the `Car` object defines all the properties which are in the interface.
@@ -187,12 +219,9 @@ Happy coding :)
 
 ---
 
-Thanks for reading! My name is Per Borgen, I'm the co-founder of [Scrimba][3] – the easiest way to learn to code. You should check out our [responsive web design bootcamp][4] if want to learn to build modern website on a professional level.
+Thanks for reading! My name is Per Borgen, I'm the co-founder of [Scrimba](https://scrimba.com?utm_source=freecodecamp.org&utm_medium=referral&utm_campaign=gintrototypescript_5_minute_article) – the easiest way to learn to code. You should check out our [responsive web design bootcamp](https://scrimba.com/g/gresponsive?utm_source=freecodecamp.org&utm_medium=referral&utm_campaign=gintrototypescript_5_minute_article) if want to learn to build modern website on a professional level.
 
-![Image](https://www.freecodecamp.org/news/content/images/2019/08/bootcamp-banner.png) \_[Click here to get to the advanced bootcamp.][5]\_
+![Image](https://www.freecodecamp.org/news/content/images/2019/08/bootcamp-banner.png)
+_[Click here to get to the advanced bootcamp.](https://scrimba.com/g/gresponsive?utm_source=freecodecamp.org&amp;utm_medium=referral&amp;utm_campaign=gintrototypescript_5_minute_article)_
 
-[1]: https://scrimba.com/p/gintrototypescript?utm_source=freecodecamp.org&utm_medium=referral&utm_campaign=gintrototypescript_5_minute_article
-[2]: http://eepurl.com/dyqJAj
-[3]: https://scrimba.com?utm_source=freecodecamp.org&utm_medium=referral&utm_campaign=gintrototypescript_5_minute_article
-[4]: https://scrimba.com/g/gresponsive?utm_source=freecodecamp.org&utm_medium=referral&utm_campaign=gintrototypescript_5_minute_article
-[5]: https://scrimba.com/g/gresponsive?utm_source=freecodecamp.org&utm_medium=referral&utm_campaign=gintrototypescript_5_minute_article
+

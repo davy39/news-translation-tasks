@@ -1,15 +1,32 @@
 ---
-title: What is Git?
-date: 2024-09-15T04:01:38.776Z
-authorURL: ""
-originalURL: https://www.freecodecamp.org/news/the-beginners-guide-to-git-github/
-posteditor: ""
-proofreader: ""
+title: The beginner’s guide to Git & GitHub
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2019-11-06T17:02:56.000Z'
+originalURL: https://freecodecamp.org/news/the-beginners-guide-to-git-github
+coverImage: https://www.freecodecamp.org/news/content/images/2019/11/cover-pic.jpeg
+tags:
+- name: Git
+  slug: git
+- name: GitHub
+  slug: github
+- name: version control
+  slug: version-control
+seo_title: null
+seo_desc: 'By Thanoshan MV
+
+  What is Git?
+
+  Git is a free, open-source version control software. It was created by Linus Torvalds
+  in 2005. This tool is a version control system that was initially developed to work
+  with several developers on the Linux kernel.
+
+  This b...'
 ---
 
 By Thanoshan MV
-
-<!-- more -->
 
 # **What is Git?**
 
@@ -23,15 +40,16 @@ Also, the requirements in such projects change often. So a version control syste
 
 The branch system in Git allows developers to work individually on a task (For example: One branch -> One task OR One branch -> One developer). Basically think of Git as a small software application that controls your code base, if you’re a developer.
 
-![Image](https://www.freecodecamp.org/news/content/images/2019/11/vcs.png) _Shows how Git works_
+![Image](https://www.freecodecamp.org/news/content/images/2019/11/vcs.png)
+_Shows how Git works_
 
 # **Git Repositories**
 
-If we want to start using Git, we need to know where to host our repositories.
+If we want to start using Git, we need to know where to host our repositories. 
 
-A repository (or “Repo” for short) is a project that contains multiple files. In our case a repository will contain code-based files.
+A repository (or “Repo” for short) is a project that contains multiple files. In our case a repository will contain code-based files. 
 
-There are two ways you can host your repositories. One is online (on the cloud) and the second is offline (self-installed on your server).
+There are two ways you can host your repositories. One is online (on the cloud) and the second is offline (self-installed on your server). 
 
 There are three popular Git hosting services: GitHub (owned by Microsoft), GitLab (owned by GitLab) and BitBucket. We’ll use GitHub as our hosting service.
 
@@ -39,7 +57,7 @@ There are three popular Git hosting services: GitHub (owned by Microsoft), GitLa
 
 ### Git makes it easy to contribute to open source projects
 
-Nearly every open-source project uses GitHub to manage their projects. Using GitHub is free if your project is open source, and it includes a wiki and issue tracker that makes it easy to include more in-depth documentation and get feedback about your project.
+Nearly every open-source project uses GitHub to manage their projects. Using GitHub is free if your project is open source, and it includes a wiki and issue tracker that makes it easy to include more in-depth documentation and get feedback about your project. 
 
 If you want to contribute, you just fork (get a copy of) a project, make your changes, and then send the project a pull request using GitHub's web interface. This pull request is your way of telling the project you're ready for them to review your changes.
 
@@ -53,15 +71,15 @@ GitHub can integrate with common platforms such as Amazon and Google Cloud, with
 
 ### Track changes in your code across versions
 
-When multiple people collaborate on a project, it’s hard to keep track of revisions — who changed what, when, and where those files are stored.
+When multiple people collaborate on a project, it’s hard to keep track of revisions — who changed what, when, and where those files are stored. 
 
-GitHub takes care of this problem by keeping track of all the changes that have been pushed to the repository.
+GitHub takes care of this problem by keeping track of all the changes that have been pushed to the repository. 
 
 Much like using Microsoft Word or Google Drive, you can have a version history of your code so that previous versions are not lost with every iteration. It’s easy to come back to the previous version and contribute your work.
 
 ### Showcase your work
 
-Are you a developer who wishes to attract recruiters? GitHub is the best tool you can rely on for this.
+Are you a developer who wishes to attract recruiters? GitHub is the best tool you can rely on for this. 
 
 Today, when searching for new recruits for their projects, most companies look at GitHub profiles. If your profile is available, you will have a higher chance of being recruited even if you are not from a great university or college.
 
@@ -69,9 +87,10 @@ Today, when searching for new recruits for their projects, most companies look a
 
 ### GitHub account creation
 
-To create your account, you need to go to [GitHub][1]'s website and fill out the registration form.
+To create your account, you need to go to [GitHub](https://github.com/)'s website and fill out the registration form.
 
-![Image](https://www.freecodecamp.org/news/content/images/2019/11/github-webpage.png) _GitHub official web page_
+![Image](https://www.freecodecamp.org/news/content/images/2019/11/github-webpage.png)
+_GitHub official web page_
 
 ### Git installation
 
@@ -79,25 +98,25 @@ Now we need to install Git's tools on our computer. We’ll use CLI to communica
 
 For Ubuntu:
 
-1.  First, update your packages.
+1. First, update your packages.
 
 ```
 sudo apt update
 ```
 
-2.  Next, install Git and GitHub with apt-get
+2. Next, install Git and GitHub with apt-get
 
 ```
 sudo apt-get install git
 ```
 
-3.  Finally, verify that Git is installed correctly
+3. Finally, verify that Git is installed correctly
 
 ```
 git --version
 ```
 
-4.  Run the following commands with your information to set a default username and email when you’re going to save your work.
+4. Run the following commands with your information to set a default username and email when you’re going to save your work.
 
 ```
 git config --global user.name "MV Thanoshan"
@@ -122,7 +141,7 @@ Pick a name for your first repository, add a small description, check the ‘Ini
 
 Well done! Your first GitHub repository is created.
 
-Your first mission is to get a copy of the repository on your computer. To do that, you need to “clone” the repository on your computer.
+Your first mission is to get a copy of the repository on your computer. To do that, you need to “clone” the repository on your computer. 
 
 To clone a repository means that you're taking a repository that’s on the server and cloning it to your computer – just like downloading it. On the repository page, you need to get the “HTTPS” address.
 
@@ -136,7 +155,8 @@ git clone [HTTPS ADDRESS]
 
 This command will make a local copy of the repository hosted at the given address.
 
-![Image](https://www.freecodecamp.org/news/content/images/2019/11/cmd-1.png) _Output message of “git clone” command_
+![Image](https://www.freecodecamp.org/news/content/images/2019/11/cmd-1.png)
+_Output message of “git clone” command_
 
 Now, your repository is on your computer. You need to move in it with the following command.
 
@@ -158,7 +178,7 @@ cd [NAME OF REPOSITORY]
 
 Now, in the terminal, you’re in your repository directory. There are 4 steps in a commit: ‘status’ , ‘add’ , ‘commit’ and ‘push’. All the following steps must be performed within your project. Let's go through them one by one.
 
-1.  “status”: The first thing you need to do is to check the files you have modified. To do this, you can type the following command to make a list of changes appear.
+1. “status”: The first thing you need to do is to check the files you have modified. To do this, you can type the following command to make a list of changes appear.
 
 ```
 git status
@@ -166,7 +186,7 @@ git status
 
 ![Image](https://www.freecodecamp.org/news/content/images/2019/11/git-status-1.png)
 
-2.  “add”: With the help of the change list, you can add all files you want to upload with the following command,
+2. “add”: With the help of the change list, you can add all files you want to upload with the following command,
 
 ```
 git add [FILENAME] [FILENAME] [...]
@@ -180,7 +200,7 @@ git add sample.html
 
 ![Image](https://www.freecodecamp.org/news/content/images/2019/11/sample.png)
 
-3.  “commit”: Now that we have added the files of our choice, we need to write a message to explain what we have done. This message may be useful later if we want to check the change history. Here is an example of what we can put in our case.
+3. “commit”: Now that we have added the files of our choice, we need to write a message to explain what we have done. This message may be useful later if we want to check the change history. Here is an example of what we can put in our case.
 
 ```
 git commit -m "Added sample HTML file that contain basic syntax"
@@ -188,7 +208,7 @@ git commit -m "Added sample HTML file that contain basic syntax"
 
 ![Image](https://www.freecodecamp.org/news/content/images/2019/11/commit-1.png)
 
-4.  “push”: Now we can put our work on GitHub. To do that we have to ‘push’ our files to Remote. Remote is a duplicate instance of our repository that lives somewhere else on a remote server. To do this, we must know the remote’s name (Mostly remote is named origin). To figure out that name, type the following command.
+4. “push”: Now we can put our work on GitHub. To do that we have to ‘push’ our files to Remote. Remote is a duplicate instance of our repository that lives somewhere else on a remote server. To do this, we must know the remote’s name (Mostly remote is named origin). To figure out that name, type the following command.
 
 ```
 git remote
@@ -216,7 +236,8 @@ and ENTER.
 
 ![Image](https://www.freecodecamp.org/news/content/images/2019/11/-q.png)
 
-![Image](https://www.freecodecamp.org/news/content/images/2019/11/explanation.png) _Describes how pull & push work_
+![Image](https://www.freecodecamp.org/news/content/images/2019/11/explanation.png)
+_Describes how pull &amp; push work_
 
 Pulling is the act of receiving from GitHub.
 
@@ -320,11 +341,9 @@ After completing these steps one by one, if you go to GitHub you can find your r
 
 Thank you everyone for reading. I just explained the basics of Git and GitHub. I strongly encourage you all to read more related articles on Git and GitHub. I hope this article helped you.
 
-[Check out][2] my original article in Medium.
+[Check out](https://medium.com/@mvthanoshan9/ubuntu-a-beginners-guide-to-git-github-44a2d2fda0b8) my original article in Medium.
 
 Thank you.
 
 **Happy Coding!**
 
-[1]: https://github.com/
-[2]: https://medium.com/@mvthanoshan9/ubuntu-a-beginners-guide-to-git-github-44a2d2fda0b8

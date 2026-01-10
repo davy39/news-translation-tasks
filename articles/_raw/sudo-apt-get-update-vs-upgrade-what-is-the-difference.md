@@ -1,16 +1,28 @@
 ---
 title: sudo apt-get update vs upgrade – What is the Difference?
-date: 2024-10-18T11:41:07.424Z
+subtitle: ''
 author: Kristofer Koishigawa
-authorURL: https://www.freecodecamp.org/news/author/scissorsneedfoodtoo/
-originalURL: https://www.freecodecamp.org/news/sudo-apt-get-update-vs-upgrade-what-is-the-difference/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2022-05-02T19:30:12.000Z'
+originalURL: https://freecodecamp.org/news/sudo-apt-get-update-vs-upgrade-what-is-the-difference
+coverImage: https://www.freecodecamp.org/news/content/images/2022/04/gabriel-heinzer-4Mw7nkQDByk-unsplash.jpg
+tags:
+- name: Bash
+  slug: bash
+- name: command line
+  slug: command-line
+- name: Linux
+  slug: linux
+seo_title: null
+seo_desc: 'sudo apt-get update and sudo apt-get upgrade are two commands you can use
+  to keep all of your packages up to date in Debian or a Debian-based Linux distribution.
+
+  They''re common commands for Linux admins and people doing DevOps, but are handy
+  to know ...'
 ---
 
 `sudo apt-get update` and `sudo apt-get upgrade` are two commands you can use to keep all of your packages up to date in Debian or a Debian-based Linux distribution.
-
-<!-- more -->
 
 They're common commands for Linux admins and people doing DevOps, but are handy to know even if you don't use the command line often.
 
@@ -32,7 +44,7 @@ In the terminal, enter `sudo apt-get update` in the command line, enter in your 
 
 If there are updates, you'll see an output similar to this:
 
-```
+```bash
 kris@pihole:~ $ sudo apt-get update
 Hit:1 https://ftp.harukasan.org/raspbian/raspbian bullseye InRelease
 Get:2 https://download.docker.com/linux/raspbian bullseye InRelease [26.7 kB]
@@ -49,7 +61,7 @@ Reading state information... Done
 
 If you want to see which packages can be upgraded, run `apt list --upgradable`:
 
-```
+```bash
 kris@pihole:~ $ apt list --upgradable
 Listing... Done
 libcamera0/stable 0~git20220426+18e68a9b-1 armhf [upgradable from: 0~git20220303+e68e0f1e-1]
@@ -59,7 +71,7 @@ rpi-eeprom/stable 13.13-1 armhf [upgradable from: 13.12-1]
 
 But if there are no newer versions of packages or dependencies in your distro's software repository, you'll see an output like this:
 
-```
+```bash
 kris@pihole:~ $ sudo apt-get update
 Get:1 https://download.docker.com/linux/raspbian bullseye InRelease [26.7 kB]
 Hit:2 https://ftp.harukasan.org/raspbian/raspbian bullseye InRelease           
@@ -77,7 +89,7 @@ You can always run `apt list --upgradable` again to see if anything can be upgra
 
 Or you can use the more modern `sudo apt update` command instead. This command will always show you the number of packages that can be upgraded, or a note saying everything is up to date.
 
-For more information about the differences between `apt` and `apt-get`, [check out this section below][1].
+For more information about the differences between `apt` and `apt-get`, [check out this section below](#what-s-the-difference-between-apt-get-and-apt).
 
 ## How to Use the `sudo apt-get upgrade` Command
 
@@ -85,7 +97,7 @@ After running the `sudo apt-get update` command, in the same terminal window, ty
 
 Then, you'll see an output similar to this:
 
-```
+```bash
 kris@pihole:~ $ sudo apt-get upgrade
 Reading package lists... Done
 Building dependency tree... Done
@@ -96,12 +108,12 @@ The following packages will be upgraded:
 3 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Need to get 2,616 kB of archives.
 After this operation, 1,596 kB of additional disk space will be used.
-Do you want to continue? [Y/n]
+Do you want to continue? [Y/n] 
 ```
 
 Towards the bottom of the output, you'll see the packages that will be upgraded:
 
-```
+```bash
 The following packages will be upgraded:
   libcamera0 raspi-config rpi-eeprom
 3 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
@@ -109,22 +121,22 @@ The following packages will be upgraded:
 
 The amount of data that needs to be fetched, and the amount of storage space the upgraded packages will use once installed:
 
-```
+```bash
 Need to get 2,616 kB of archives.
 After this operation, 1,596 kB of additional disk space will be used.
 ```
 
 And finally, you'll see a prompt asking if you want to continue with the upgrade:
 
-```
-Do you want to continue? [Y/n]
+```bash
+Do you want to continue? [Y/n] 
 ```
 
 You can enter `y`, `Y`, or `yes` to continue with the upgrade, or `n`, `N`, or `no` to exit out of the `upgrade` command.
 
 If you choose to exit out, you'll see an output like this:
 
-```
+```bash
 kris@pihole:~ $ sudo apt-get upgrade
 Reading package lists... Done
 Building dependency tree... Done
@@ -141,7 +153,7 @@ Abort.
 
 If you choose to continue with the upgrade, you'll see a long output like this:
 
-```
+```bash
 kris@pihole:~ $ sudo apt-get upgrade
 Reading package lists... Done
 Building dependency tree... Done
@@ -174,13 +186,13 @@ Processing triggers for libc-bin (2.31-13+rpt2+rpi1+deb11u2) ...
 
 And once that's complete, all of the outdated packages and dependencies will be updated.
 
-One important thing to remember about the `sudo apt-get upgrade` command is that it only upgrades what it can without removing anything.
+One important thing to remember about the `sudo apt-get upgrade` command is that it only upgrades what it can without removing anything. 
 
 For example, if an upgrade requires a new dependency, the `upgrade` command will download and install it, but it will not remove the old dependency. Removing old dependencies requires a different command. You'll see this a lot when you upgrade to a new kernel version.
 
 If you see a message similar to this after upgrading:
 
-```
+```bash
 The following packages were automatically installed and are no longer required:
   g++-8 gir1.2-mutter-4 libapache2-mod-php7.2 libcrystalhd3
 Use 'sudo apt autoremove' to remove them.
@@ -196,7 +208,7 @@ There are a number of special options or parameters that you can use with the `s
 
 The `--dry-run` (alternatively, `-s` or `--simulate`) option simulates what would happen during the upgrade process, but doesn't actually change anything on your system:
 
-```
+```bash
 kris@pihole:~ $ sudo apt-get upgrade --dry-run
 Reading package lists... Done
 Building dependency tree... Done
@@ -219,7 +231,7 @@ Though again, while Debian and Debian-based distros are very stable, this option
 
 The `--yes` (alternatively, `-y` or `--assume-yes`) option automatically answers yes to any prompts if it's safe to do so:
 
-```
+```bash
 kris@pihole:~ $ sudo apt-get upgrade --yes
 Reading package lists... Done
 Building dependency tree... Done
@@ -264,7 +276,7 @@ But if you run `sudo reboot`, then enter your admin password, you will run the `
 
 `apt` is a more modern tool for installing and managing applications on Debian and Debian-based distros.
 
-For the most part, `apt` and `apt-get` can be used interchangeably – `sudo apt update` and `sudo apt-get update` both update the package list on your system.
+For the most part, `apt` and `apt-get` can be used interchangeably – `sudo apt update` and `sudo apt-get update` both update the package list on your system. 
 
 The main differences you'll notice is that `apt` is easier to type, its output is generally more useful, and it includes some user-friendly features like a progress bar when installing packages.
 
@@ -286,7 +298,7 @@ While both `sudo apt-get update` and `sudo apt-get upgrade` run pretty quickly, 
 
 With the `&&` operator, you can chain multiple commands together like this:
 
-```
+```bash
 sudo apt-get update && sudo apt-get upgrade
 ```
 
@@ -296,7 +308,7 @@ Using the example above, `sudo apt-get upgrade` only runs if `sudo apt-get updat
 
 ### What Are `sudo apt-get dist-upgrade` and `sudo apt full-upgrade`, and Are They Safe to Use?
 
-According to [this Stack Overflow thread][2], these commands do the same thing under the hood – they upgrade outdated packages, and also intelligently remove some packages whenever necessary.
+According to [this Stack Overflow thread](https://askubuntu.com/questions/770135/apt-full-upgrade-versus-apt-get-dist-upgrade), these commands do the same thing under the hood – they upgrade outdated packages, and also intelligently remove some packages whenever necessary.
 
 Essentially they're like the combination of the `sudo apt-get upgrade` and `sudo apt autoremove` commands.
 
@@ -308,8 +320,5 @@ But a lot of people, myself included, recommend using `sudo apt-get update` and 
 
 If you found this breakdown on `sudo apt-get update` and `sudo apt-get upgrade` useful, please share it with your friends so more people can benefit from it.
 
-Also, feel free to reach out on [Twitter][3] and let me know what you think.
+Also, feel free to reach out on [Twitter](https://twitter.com/kriskoishigawa) and let me know what you think.
 
-[1]: #what-s-the-difference-between-apt-get-and-apt
-[2]: https://askubuntu.com/questions/770135/apt-full-upgrade-versus-apt-get-dist-upgrade
-[3]: https://twitter.com/kriskoishigawa

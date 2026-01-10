@@ -1,16 +1,34 @@
 ---
 title: Learn TypeScript – A Handbook for Developers
-date: 2025-03-07T04:51:19.827Z
-author: oghenekparobo Stephen
-authorURL: https://www.freecodecamp.org/news/author/Xtephen/
-originalURL: https://www.freecodecamp.org/news/learn-typescript-with-react-handbook/
-posteditor: ""
-proofreader: ""
+subtitle: ''
+author: Oghenekparobo Stephen
+co_authors: []
+series: null
+date: '2025-02-07T15:26:48.805Z'
+originalURL: https://freecodecamp.org/news/learn-typescript-with-react-handbook
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1738941922431/cfb485ae-1c59-415a-ad56-393a9803d4d8.png
+tags:
+- name: TypeScript
+  slug: typescript
+- name: JavaScript
+  slug: javascript
+- name: Programming Blogs
+  slug: programming-blogs
+- name: 'Technical writing '
+  slug: technical-writing-1
+- name: software development
+  slug: software-development
+- name: handbook
+  slug: handbook
+seo_title: null
+seo_desc: 'This handbook will teach you the basics of TypeScript, including what it
+  is, why it is useful, and the key features it offers.
+
+  TypeScript was created by Anders Hejlsberg, a prominent software engineer at Microsoft
+  who’s also known for his work on C# ...'
 ---
 
 This handbook will teach you the basics of TypeScript, including what it is, why it is useful, and the key features it offers.
-
-<!-- more -->
 
 TypeScript was created by Anders Hejlsberg, a prominent software engineer at Microsoft who’s also known for his work on C# and Delphi. TypeScript was designed to enhance JavaScript by adding static types, making it easier to build and maintain large-scale applications.
 
@@ -26,56 +44,57 @@ I assume you are already familiar with the fundamentals of JavaScript and React.
 
 ## Table of Contents
 
-1.  [What is TypeScript?][1]
+1. [What is TypeScript?](heading-what-is-typescript)
     
-2.  [Setting Up the Project][2]
+2. [Setting Up the Project](#heading-setting-up-the-project)
     
-3.  [Type Annotations and Type Inference][3]
+3. [Type Annotations and Type Inference](heading-type-annotations-and-type-inference)
     
-    -   [Commonly Used Type Annotations][4]
+    * [Commonly Used Type Annotations](heading-commonly-used-type-annotations)
         
-    -   [Type Inference][5]
+    * [Type Inference](heading-type-inference)
         
-4.  [The Union and Any Types][6]
+4. [The Union and Any Types](#heading-the-union-and-any-types)
     
-    -   [Be Careful When Using any in TypeScript][7]
+    * [Be Careful When Using any in TypeScript](heading-be-careful-when-using-any-in-typescript)
         
-    -   [Using unknown as a Safer Alternative to any in TypeScript][8]
+    * [Using unknown as a Safer Alternative to any in TypeScript](#heading-unknown-as-a-safer-alternative-to-any-in-typescript)
         
-5.  [Objects in TypeScript][9]
+5. [Objects in TypeScript](#heading-objects-in-typescript)
     
-    -   [The Problem of Mutability][10]
+    * [The Problem of Mutability](heading-the-problem-of-mutability)
         
-    -   [Readonly on Object Properties][11]
+    * [Readonly on Object Properties](heading-readonly-on-object-properties)
         
-    -   [Readonly Arrays][12]
+    * [Readonly Arrays](heading-readonly-arrays)
         
-6.  [Function Params And Function Returns][13]
+6. [Function Params And Function Returns](heading-function-params-and-function-returns)
     
-    -   [The Risks of Using any][14]
+    * [The Risks of Using any](heading-the-risks-of-using-any)
         
-    -   [Use Explicit Types for Parameters and Return Values][15]
+    * [Use Explicit Types for Parameters and Return Values](heading-use-explicit-types-for-parameters-and-return-values)
         
-    -   [Using unknown as a Safer Alternative to any in TypeScript][16]
+    * [Using unknown as a Safer Alternative to any in TypeScript](heading-using-unknown-as-a-safer-alternative-to-any-in-typescript)
         
-    -   [Handling Optional, Default in TypeScript][17]
+    * [Handling Optional, Default in TypeScript](heading-handling-optional-default-in-typescript)
         
-7.  [Rest Parameters][18]
+7. [Rest Parameters](heading-rest-parameters)
     
-8.  [Objects as Parameters in TypeScript][19]
+8. [Objects as Parameters in TypeScript](heading-objects-as-parameters-in-typescript)
     
-9.  [Type Aliases in TypeScript][20]
+9. [Type Aliases in TypeScript](#heading-type-aliases-in-typescript)
     
-    -   [What is an Intersection Type in TypeScript?][21]
-10.  [Interfaces in TypeScript][22]
+    * [What is an Intersection Type in TypeScript?](heading-what-is-an-intersection-type-in-typescript)
+        
+10. [Interfaces in TypeScript](heading-interfaces-in-typescript)
     
-11.  [Tuples and Enums][23]
+11. [Tuples and Enums](heading-tuples-and-enums)
     
-12.  [Type Assertion, Type Unknown, and Type Never in TypeScript][24]
+12. [Type Assertion, Type Unknown, and Type Never in TypeScript](heading-type-assertion-type-unknown-and-type-never-in-typescript)
     
-13.  [Generics in TypeScript][25]
+13. [Generics in TypeScript](#heading-generics-in-typescript)
     
-14.  [Conclusion][26]
+14. [Conclusion](heading-conclusion)
     
 
 ## What is TypeScript?
@@ -86,7 +105,7 @@ For example, you might accidentally assign a value of the wrong type to a variab
 
 Here’s an example of JavaScript that demonstrates this issue:
 
-```
+```javascript
 let userName = "Alice";
 userName = 42; // No error during assignment, but this might break the code later.
 
@@ -95,6 +114,7 @@ function greetUser(name) {
 }
 
 greetUser(userName); // Throws an error because `userName` is a number, not a string.
+
 ```
 
 This error can be challenging to debug, as it only surfaces at runtime, making large projects harder to maintain and more prone to bugs.
@@ -103,7 +123,7 @@ This is where TypeScript comes into the picture. TypeScript is a programming lan
 
 For example, here’s the same code written in TypeScript:
 
-```
+```javascript
 let userName: string = "Alice";
 // userName = 42; // Error: Type 'number' is not assignable to type 'string'.
 
@@ -116,51 +136,51 @@ greetUser(userName); // Works perfectly since `userName` is correctly typed.
 
 ## Setting Up the Project
 
-We will be using [Vite][27] to set up our TypeScript project. Vite is a modern build tool designed to offer a faster and leaner development experience for web projects.
+We will be using [Vite](https://vite.dev/guide/) to set up our TypeScript project. Vite is a modern build tool designed to offer a faster and leaner development experience for web projects.
 
 To get started, run the following command to create a new Vite project with TypeScript support:
 
-```
+```javascript
 npm create vite@latest
 ```
 
 Then enter a name for your project (you may choose any name you prefer). Follow the instructions carefully in the subsequent steps
 
-![creating a project with npm create vite@latest](https://cdn.hashnode.com/res/hashnode/image/upload/v1736769678848/93e22821-6044-4b06-b5ba-86cd3f01ca98.png)
+![creating a project with npm create vite@latest](https://cdn.hashnode.com/res/hashnode/image/upload/v1736769678848/93e22821-6044-4b06-b5ba-86cd3f01ca98.png align="center")
 
 Select your project template by choosing ‘React’ from the available options. We will be using React with TypeScript for this project's development.
 
-![project template when you run, create vite@latest](https://cdn.hashnode.com/res/hashnode/image/upload/v1736769912180/e94dc70c-32e2-4f9f-89cc-d70d35e3a86e.png)
+![project template when you run, create vite@latest](https://cdn.hashnode.com/res/hashnode/image/upload/v1736769912180/e94dc70c-32e2-4f9f-89cc-d70d35e3a86e.png align="center")
 
 When prompted for a variant selection, choose 'TypeScript' from the available options.
 
-![variant selection of typescript, in create vite@latest template](https://cdn.hashnode.com/res/hashnode/image/upload/v1736770059262/d605726e-8d4f-4e73-8fb7-3854ce0b4e72.png)
+![variant selection of typescript, in create vite@latest template](https://cdn.hashnode.com/res/hashnode/image/upload/v1736770059262/d605726e-8d4f-4e73-8fb7-3854ce0b4e72.png align="center")
 
 After completing these steps, you will be prompted to navigate to your project directory and run `npm install`. You can use any code editor of your choice. For this example, I will be using VS Code.
 
-![e3f81f8b-19b7-4fb6-a439-2f24e3f55df5](https://cdn.hashnode.com/res/hashnode/image/upload/v1736771043869/e3f81f8b-19b7-4fb6-a439-2f24e3f55df5.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1736771043869/e3f81f8b-19b7-4fb6-a439-2f24e3f55df5.png align="center")
 
-![overview of your project in vscode and running npm install to install project dependencies](https://cdn.hashnode.com/res/hashnode/image/upload/v1736771426441/4c524149-4557-40bf-b50a-79400c6c3c91.png)
+![overview of your project in vscode and running npm install to install project dependencies](https://cdn.hashnode.com/res/hashnode/image/upload/v1736771426441/4c524149-4557-40bf-b50a-79400c6c3c91.png align="center")
 
 After running `npm install`, run `npm run dev` to start the project on the local server. Once that’s up and running, we are ready to dive into learning TypeScript concepts.
 
-![our landing page after running npm run dev in our project](https://cdn.hashnode.com/res/hashnode/image/upload/v1736772238962/36f9523c-d316-43e3-ae05-e1ebfa9398f1.png)
+![our landing page after running npm run dev in our project](https://cdn.hashnode.com/res/hashnode/image/upload/v1736772238962/36f9523c-d316-43e3-ae05-e1ebfa9398f1.png align="center")
 
 But first, let's create our first TypeScript file, `test.ts` (you can choose to use `.ts` or `.tsx`). Create the `test.ts` file inside the `src` folder of your project, and add the following code to log a test message:
 
 `test.ts`
 
-```
+```javascript
 console.log('Testing our first TypeScript file');
 ```
 
 To view this in the console, import the `test.ts` file into the `main.tsx` file located in the `src` folder.
 
-![highlighting the main.tsx and test.tsx file](https://cdn.hashnode.com/res/hashnode/image/upload/v1736773745661/8492e586-7bc0-44a8-ac54-fb576119cdea.png)
+![highlighting the main.tsx and test.tsx file](https://cdn.hashnode.com/res/hashnode/image/upload/v1736773745661/8492e586-7bc0-44a8-ac54-fb576119cdea.png align="center")
 
 `main.tsx`
 
-```
+```javascript
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
@@ -178,7 +198,7 @@ To view the log in the console, make sure to import the `test.ts` file into the 
 
 **Voilà!**
 
-![our result in console.log](https://cdn.hashnode.com/res/hashnode/image/upload/v1736774231199/9a270631-0639-40e0-84de-513143b4478d.png)
+![our result in console.log](https://cdn.hashnode.com/res/hashnode/image/upload/v1736774231199/9a270631-0639-40e0-84de-513143b4478d.png align="center")
 
 Now let’s get down to the real business of learning TypeScript.
 
@@ -192,7 +212,7 @@ To define a type annotation in TypeScript, you simply append a colon `:` followe
 
 `test.ts`
 
-```
+```javascript
 let name: string = 'Stephen';
 ```
 
@@ -204,24 +224,24 @@ In this example, we have declared a variable `name` and specified that its type 
 
 Here are some of the most commonly used type annotations in TypeScript:
 
--   `string`: Represents text values.
+* `string`: Represents text values.
     
--   `number`: Represents numeric values (both integers and floating-point numbers).
+* `number`: Represents numeric values (both integers and floating-point numbers).
     
--   `boolean`: Represents a value that is either `true` or `false`.
+* `boolean`: Represents a value that is either `true` or `false`.
     
--   `any`: A fallback type that allows any value to be assigned to a variable, disabling type checking.
+* `any`: A fallback type that allows any value to be assigned to a variable, disabling type checking.
     
--   `void`: Typically used for functions that do not return a value.
+* `void`: Typically used for functions that do not return a value.
     
--   `null` and `undefined`: Used to represent the absence of a value.
+* `null` and `undefined`: Used to represent the absence of a value.
     
 
 Once you define a variable with a type annotation, TypeScript ensures that it can only hold values of that specified type. You can also access the methods associated with that type. For example, if you declare a string variable, TypeScript provides access to all string methods, such as `.toUpperCase()`.
 
 `test.ts`
 
-```
+```javascript
 let name: string = 'Stephen';  // Type is explicitly set as string
 name = 'John';  // This is fine, as it's still a string
 
@@ -235,7 +255,7 @@ You can also define arrays with type annotations. This ensures that the array on
 
 `test.ts`
 
-```
+```javascript
 let numbers: number[] = [1, 2, 3];  // Type is explicitly set as an array of numbers
 numbers.push(4);  // This is fine, as 4 is a number
 
@@ -251,7 +271,7 @@ For instance:
 
 `test.ts`
 
-```
+```javascript
 let name: string = 'Stephen';
 name = 2;  // Error: Type '2' is not assignable to type 'string'
 ```
@@ -262,7 +282,7 @@ Similarly, for an array:
 
 `test.ts`
 
-```
+```javascript
 let numbers: number[] = [1, 2, 3];
 numbers = 'Hello';  // Error: Type 'string' is not assignable to type 'number[]'
 ```
@@ -277,7 +297,7 @@ Now that you've seen how type annotations work with strings and arrays, it's tim
 
 `test.ts`
 
-```
+```typescript
 let booleanArray: Array<boolean> = [true, false, true];
 
 // Accessing array method
@@ -290,7 +310,7 @@ In this example, the array `booleanArray` is explicitly declared to hold only `b
 
 `test.ts`
 
-```
+```javascript
 let numberArray: Array<number> = [1, 2, 3];
 
 // Accessing array method
@@ -309,7 +329,7 @@ With type inference, TypeScript can predict the type of a variable by analyzing 
 
 `test.ts`
 
-```
+```typescript
 let message = "Hello, TypeScript!";  // TypeScript infers 'message' as a string
 console.log(message.toUpperCase());  // Output: HELLO, TYPESCRIPT!
 ```
@@ -320,7 +340,7 @@ In this example, TypeScript automatically infers the type of `message` as a `str
 
 `test.ts`
 
-```
+```typescript
 let count = 42;  // TypeScript infers 'count' as a number
 console.log(count + 8);  // Output: 50
 ```
@@ -331,7 +351,7 @@ Here, TypeScript infers the type of `count` as a `number` based on the value `42
 
 `test.ts`
 
-```
+```typescript
 let numbers = [1, 2, 3];  // TypeScript infers 'numbers' as an array of numbers (number[])
 console.log(numbers.length);  // Output: 3
 ```
@@ -344,7 +364,7 @@ In this case, TypeScript infers that `numbers` is an array of type `number[]` be
 
 `test.ts`
 
-```
+```typescript
 let count = 42;  // TypeScript infers 'count' as a number
 count = "Not a number";  // Error: Type 'string' is not assignable to type 'number'
 ```
@@ -355,7 +375,7 @@ Even though TypeScript inferred that `count` is a number, attempting to assign a
 
 `test.ts`
 
-```
+```typescript
 let mixedArray = [1, "apple", true];  // TypeScript infers 'mixedArray' as (string | number | boolean)[]
 console.log(mixedArray[0].toFixed(2));  // Error: Property 'toFixed' does not exist on type 'string | boolean'.
 ```
@@ -366,7 +386,7 @@ In this example, TypeScript infers `mixedArray` as an array containing multiple 
 
 `test.ts`
 
-```
+```typescript
 let price = 99.99;  // TypeScript infers 'price' as a number
 price = "Free";  // Error: Type 'string' is not assignable to type 'number'
 ```
@@ -385,7 +405,7 @@ Union types allow variables or parameters to hold multiple specific types, offer
 
 `test.ts`
 
-```
+```typescript
 let value: string | number;
 
 value = "Hello";  // ✅ Correct
@@ -399,11 +419,11 @@ value = true;  // ❌ Error: Type 'boolean' is not assignable to type 'string | 
 
 In this example, `value` can either be a string or a number. Any other type of assignment results in a type error.
 
-**Union Type in Function Parameters:**
-
+**Union Type in Function Parameters:**  
+  
 `test.ts`
 
-```
+```typescript
 function printId(id: string | number): void {
   console.log(`Your ID is: ${id}`);
 }
@@ -417,11 +437,11 @@ Here, the `id` **the** parameter can only accept a `string` or `number`, ensurin
 
 **Custom Union Type:**
 
-You can create custom types using the `type` keyword for better readability and reusability.
-
+You can create custom types using the `type` keyword for better readability and reusability.  
+  
 `test.ts`
 
-```
+```typescript
 type ID = string | number;
 
 function getUser(id: ID): void {
@@ -439,11 +459,11 @@ The `any` type is the most flexible type in TypeScript. It allows a variable to 
 
 The `any` type sacrifices type safety for maximum flexibility. This is useful in scenarios where you are unsure about the type or you’re working with dynamic data.
 
-##### **Example 1**: Array of any Type
-
+##### **Example 1**: Array of any Type  
+  
 `test.ts`
 
-```
+```typescript
 let mixedArray: any[] = [1, "apple", true];
 
 console.log(mixedArray[0]);  // Output: 1
@@ -455,9 +475,9 @@ Here, the `mixedArray` can hold elements of any type without triggering type err
 
 #### **When to Use Union vs.** `any`
 
--   **Union Types**: Use union types when the possible values are known or constrained to a few specific types. It provides type safety and avoids runtime errors.
+* **Union Types**: Use union types when the possible values are known or constrained to a few specific types. It provides type safety and avoids runtime errors.
     
--   `any` **Type**: Use `any` as a last resort when the type is unknown or dynamic.
+* `any` **Type**: Use `any` as a last resort when the type is unknown or dynamic.
     
 
 Just remember that overusing `any` can negate the benefits of TypeScript’s type system. By carefully choosing between union types and `any`, you can write TypeScript code that is both flexible and type-safe.
@@ -470,7 +490,7 @@ Let’s explore an example to understand the potential pitfalls.
 
 Here’s a function that demonstrates the risks:
 
-```
+```typescript
 function combineValues(value: any) {
   let anotherValue: number = 10;
 
@@ -494,11 +514,11 @@ Third, there’s no error when calling an undefined method. After the function i
 
 #### **The Risks of Using** `any`
 
-1.  **Loss of type safety**: You lose the benefits of TypeScript’s type system, like compile-time error checking. Potential runtime errors can go unnoticed during development.
+1. **Loss of type safety**: You lose the benefits of TypeScript’s type system, like compile-time error checking. Potential runtime errors can go unnoticed during development.
     
-2.  **Accidental behavior**: The function could accept unexpected inputs (e.g., strings, arrays, or objects), leading to incorrect results or crashes.
+2. **Accidental behavior**: The function could accept unexpected inputs (e.g., strings, arrays, or objects), leading to incorrect results or crashes.
     
-3.  **Debugging complexity**: Since the type is not enforced, debugging issues caused by incorrect types becomes more challenging.
+3. **Debugging complexity**: Since the type is not enforced, debugging issues caused by incorrect types becomes more challenging.
     
 
 ### **How to Fix This**
@@ -507,7 +527,7 @@ Third, there’s no error when calling an undefined method. After the function i
 
 Here’s an improved version with proper type annotations:
 
-```
+```typescript
 function combineValues(value: number): number {
   let anotherValue: number = 10;
 
@@ -518,20 +538,20 @@ const result = combineValues(5);
 // result.someUndefinedMethod(); // Error: Property 'someUndefinedMethod' does not exist on type 'number'.
 ```
 
-1.  **Parameter type**: The function now explicitly expects a `number` for the `value` parameter.
+1. **Parameter type**: The function now explicitly expects a `number` for the `value` parameter.
     
-2.  **Return type**: The return type is declared as `number`, ensuring that only numbers are returned.
+2. **Return type**: The return type is declared as `number`, ensuring that only numbers are returned.
     
 
 This ensures that TypeScript will throw errors if you try to pass invalid types or call methods that don’t exist on the return value.
 
 #### **Key Takeaways**
 
--   The `any` type disables TypeScript’s type checking, making your code vulnerable to runtime errors.
+* The `any` type disables TypeScript’s type checking, making your code vulnerable to runtime errors.
     
--   Avoid using `any` whenever possible. Instead, use explicit types or stricter alternatives like `unknown` (if the type cannot be determined upfront).
+* Avoid using `any` whenever possible. Instead, use explicit types or stricter alternatives like `unknown` (if the type cannot be determined upfront).
     
--   Explicit types enhance code clarity, maintainability, and reliability by leveraging TypeScript’s compile-time checks.
+* Explicit types enhance code clarity, maintainability, and reliability by leveraging TypeScript’s compile-time checks.
     
 
 If you’re tempted to use `any` because the type isn’t clear, consider refactoring your code or using `unknown` combined with type guards for better safety.
@@ -540,7 +560,7 @@ If you’re tempted to use `any` because the type isn’t clear, consider refact
 
 The `unknown` type in TypeScript is a stricter and safer alternative to `any`. While both `any` and `unknown` can hold values of any type, `unknown` requires you to perform type checks before using the value. This ensures greater type safety while still offering flexibility.
 
-```
+```typescript
 function processValue(input: unknown): string {
   if (typeof input === 'string') {
     return `The value is a string: ${input}`;
@@ -558,11 +578,11 @@ console.log(processValue(true)); // The value is of an unknown type
 
 Using `unknown` instead of any has a few benefits:
 
-1.  **Type-safe handling**: Unlike `any`, `unknown` forces you to check the type of the value before using it. This prevents runtime errors caused by invalid operations on unexpected types.
+1. **Type-safe handling**: Unlike `any`, `unknown` forces you to check the type of the value before using it. This prevents runtime errors caused by invalid operations on unexpected types.
     
-2.  **Explicit type narrowing**: TypeScript requires you to narrow `unknown` to a specific type (e.g., `string`, `number`) using type guards (`typeof`, `instanceof`, etc.) before you can access its properties or methods.
+2. **Explicit type narrowing**: TypeScript requires you to narrow `unknown` to a specific type (e.g., `string`, `number`) using type guards (`typeof`, `instanceof`, etc.) before you can access its properties or methods.
     
-3.  **Enhanced code clarity**: By using `unknown`, you signal to other developers that the type is deliberately uncertain and must be checked before use.
+3. **Enhanced code clarity**: By using `unknown`, you signal to other developers that the type is deliberately uncertain and must be checked before use.
     
 
 ### **Key Differences:** `any` vs. `unknown`
@@ -579,9 +599,10 @@ So to summarize, use `unknown` over `any` whenever you deal with values of uncer
 
 In TypeScript, objects are collections of properties where each property has a name (key) and a value. TypeScript allows us to define types for these properties, ensuring that objects conform to a specific structure.
 
+  
 `test.ts`
 
-```
+```typescript
 let car = { car: 'Toyota', brand: 2024 };
 console.log(car);
 ```
@@ -594,7 +615,7 @@ When we want to define the shape of an object explicitly, we can use inline type
 
 `test.ts`
 
-```
+```typescript
 let carOne: { car: string; brand: number } = { car: 'Evil Spirit', brand: 2025 };
 console.log(carOne);
 ```
@@ -605,13 +626,13 @@ Let’s say we want to add a `color` property to `carOne`:
 
 `test.ts`
 
-```
+```typescript
 let carOne: { car: string; brand: number } = { car: 'Evil Spirit', brand: 2025, color: 'Black' };
 ```
 
 The code above will show a redline because `color` is not part of the defined type `{ car: string; brand: number }`. The error will look something like this:
 
-![8a3d48dd-3ae0-4769-9e13-fa1f6ca37331](https://cdn.hashnode.com/res/hashnode/image/upload/v1736933755272/8a3d48dd-3ae0-4769-9e13-fa1f6ca37331.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1736933755272/8a3d48dd-3ae0-4769-9e13-fa1f6ca37331.png align="center")
 
 > Type '{ car: string; brand: number; color: string; }' is not assignable to type '{ car: string; brand: number; }'. Object literal may only specify known properties, and 'color' does not exist in type '{ car: string; brand: number; }'.
 
@@ -619,7 +640,7 @@ Similarly, if you try to change the type of `brand` to a `string`:
 
 `test.ts`
 
-```
+```typescript
 carOne.brand = "2026";
 ```
 
@@ -637,7 +658,7 @@ In TypeScript, we often deal with arrays of objects, where each object has a spe
 
 Imagine you are managing a grocery store, and you want to keep track of your vegetables. Here’s how you might start:
 
-```
+```typescript
 let tomato = { name: 'Tomato', price: 2 };
 let potato = { name: 'Potato', price: 1 };
 let carrot = { name: 'Carrot' };
@@ -651,7 +672,7 @@ When TypeScript checks this code, it throws an error because `carrot` doesn’t 
 
 If the `price` is not always known or applicable (for example, maybe the carrot's price is still being negotiated), you can make the `price` property optional. You can do this by adding a `?` after the property name:
 
-```
+```typescript
 let vegetables: { name: string; price?: number }[] = [tomato, potato, carrot];
 ```
 
@@ -659,9 +680,9 @@ Now, TypeScript knows that the `price` property is optional. This means objects 
 
 When a property is optional, TypeScript allows it to be either:
 
-1.  Present with the specified type.
+1. Present with the specified type.
     
-2.  Absent altogether.
+2. Absent altogether.
     
 
 This flexibility eliminates the error for objects like `carrot`, which lack the `price` property.
@@ -676,7 +697,7 @@ Let’s continue with our vegetable store example and see how `readonly` works.
 
 Imagine we have this setup:
 
-```
+```typescript
 let tomato = { name: 'Tomato', price: 2 };
 let potato = { name: 'Potato', price: 1 };
 let carrot = { name: 'Carrot' };
@@ -686,7 +707,7 @@ let vegetables: { name: string; price?: number }[] = [tomato, potato, carrot];
 
 If someone accidentally tries to change the `name` of the `tomato` object or remove the `carrot` object from the `vegetables` array, TypeScript won’t complain:
 
-```
+```typescript
 vegetables[0].name = 'Cucumber'; // No error, but this could be unintended!
 vegetables.pop(); // Removes the last vegetable, no warning.
 ```
@@ -697,7 +718,7 @@ We can use `readonly` to make these objects and arrays immutable, ensuring their
 
 To make the properties of each vegetable immutable, you can do the following:
 
-```
+```typescript
 let vegetables: { readonly name: string; readonly price?: number }[] = [
   { name: 'Tomato', price: 2 },
   { name: 'Potato', price: 1 },
@@ -707,7 +728,7 @@ let vegetables: { readonly name: string; readonly price?: number }[] = [
 
 Now, if you try to change the `name` or `price` of any vegetable, TypeScript throws an error:
 
-```
+```typescript
 typescriptCopy codevegetables[0].name = 'Cucumber'; // Error: Cannot assign to 'name' because it is a read-only
 ```
 
@@ -715,7 +736,7 @@ typescriptCopy codevegetables[0].name = 'Cucumber'; // Error: Cannot assign to '
 
 You can also make the entire `vegetables` array immutable by declaring it as `readonly`:
 
-```
+```typescript
 let vegetables: readonly { name: string; price?: number }[] = [
   { name: 'Tomato', price: 2 },
   { name: 'Potato', price: 1 },
@@ -725,23 +746,23 @@ let vegetables: readonly { name: string; price?: number }[] = [
 
 This prevents operations that modify the array itself, such as `push`, `pop`, or `splice`:
 
-```
+```typescript
 vegetables.push({ name: 'Onion', price: 3 }); // Error: Property 'push' does not exist on type 'readonly { name: string; price?: number; }[]'.
 vegetables.pop(); // Error: Property 'pop' does not exist on type 'readonly { name: string; price?: number; }[]'.
 ```
 
 ### **When to Use** `readonly`
 
-1.  **Immutable data**: Use `readonly` when you want to enforce immutability for objects or arrays, especially in contexts where data should remain constant (e.g., configurations, initial states, constants).
+1. **Immutable data**: Use `readonly` when you want to enforce immutability for objects or arrays, especially in contexts where data should remain constant (e.g., configurations, initial states, constants).
     
-2.  **Prevent bugs**: Protect your data from accidental changes caused by other parts of the code.
+2. **Prevent bugs**: Protect your data from accidental changes caused by other parts of the code.
     
 
 ### **Complete Example**
 
 Here’s an updated example with `readonly` in action:
 
-```
+```typescript
 let vegetables: readonly { readonly name: string; readonly price?: number }[] = [
   { name: 'Tomato', price: 2 },
   { name: 'Potato', price: 1 },
@@ -757,11 +778,11 @@ console.log(vegetables);
 
 Here’s what you should know about readonly, summarized:
 
--   `readonly` on properties ensures individual fields of objects cannot be changed.
+* `readonly` on properties ensures individual fields of objects cannot be changed.
     
--   `readonly` on arrays makes the array itself immutable, preventing operations like `push` and `pop`.
+* `readonly` on arrays makes the array itself immutable, preventing operations like `push` and `pop`.
     
--   Combining both provides full immutability for objects within an array.
+* Combining both provides full immutability for objects within an array.
     
 
 By using `readonly`, you create safer, more predictable code, reducing bugs caused by unintended mutations.
@@ -772,7 +793,7 @@ Functions in TypeScript allow you to define both the **parameters** and the **re
 
 ### **Inferred Return Type**
 
-```
+```typescript
 function arithmeticOp(price: number) {
   return price * 9;
 }
@@ -780,16 +801,16 @@ function arithmeticOp(price: number) {
 const FP = arithmeticOp(2); // The result is 18.
 ```
 
-1.  The parameter `price` is explicitly defined as a `number`.
+1. The parameter `price` is explicitly defined as a `number`.
     
-2.  The return type is not explicitly stated, but TypeScript **infers** it to be a `number` because the function returns `price * 9`, which is a numeric operation.
+2. The return type is not explicitly stated, but TypeScript **infers** it to be a `number` because the function returns `price * 9`, which is a numeric operation.
     
 
 TypeScript is smart enough to infer the return type of the function based on the return statement. In this case, it correctly infers that `arithmeticOp` returns a `number`.
 
 ### **Explicit Return Type**
 
-```
+```typescript
 function arithmeticOp(price: number): number {
   return price * 9;
 }
@@ -797,16 +818,16 @@ function arithmeticOp(price: number): number {
 const FP = arithmeticOp(2); // The result is still 18.
 ```
 
-1.  The function explicitly declares the return type as `number` using the syntax `functionName(parameters): returnType`.
+1. The function explicitly declares the return type as `number` using the syntax `functionName(parameters): returnType`.
     
-2.  This doesn’t change the result but makes the function declaration clearer.
+2. This doesn’t change the result but makes the function declaration clearer.
     
 
 So why should you use explicit return types? Well, first of all it improves code readability and ensures that future changes don’t accidentally alter the return type. And second, it serves as documentation for other developers.
 
 ### **Return Type Mismatch**
 
-```
+```typescript
 function arithmeticOp(price: number): number {
   if (hasDiscount) {
     return 'discount'; // Error here!
@@ -825,7 +846,7 @@ This happens because TypeScript enforces the declared return type. If you say a 
 
 If you want the function to return multiple types (for example, `number` or `string`), use a **union type**:
 
-```
+```typescript
 function arithmeticOp(price: number): number | string {
   if (hasDiscount) {
     return 'discount'; // Now valid!
@@ -840,13 +861,13 @@ The return type `number | string` tells TypeScript that the function can return 
 
 #### Key Takeaways:
 
-1.  TypeScript **infers** return types when they are not explicitly defined but encourages explicit return types for clarity and maintainability.
+1. TypeScript **infers** return types when they are not explicitly defined but encourages explicit return types for clarity and maintainability.
     
-2.  The declared return type ensures the function only returns values of the specified type.
+2. The declared return type ensures the function only returns values of the specified type.
     
-3.  Type mismatches, like returning a `string` from a function expected to return a `number`, result in TypeScript errors.
+3. Type mismatches, like returning a `string` from a function expected to return a `number`, result in TypeScript errors.
     
-4.  Union types (`type1 | type2`) allow functions to return multiple types when needed.
+4. Union types (`type1 | type2`) allow functions to return multiple types when needed.
     
 
 ### **Handling Optional, Default in TypeScript**
@@ -857,7 +878,7 @@ When working with TypeScript functions, specifying parameter behavior is crucial
 
 Consider the following function:
 
-```
+```typescript
 function calculateFinalScore(baseScore: number, deductions: number): number {
   return baseScore - deductions;
 }
@@ -868,7 +889,7 @@ let scoreWithoutDeductions = calculateFinalScore(50); // Error
 
 The first call to `calculateFinalScore` works perfectly. But the second call throws a TypeScript error:
 
-```
+```typescript
 ⚠ Error (TS2554) | Expected 2 arguments, but got 1.
 Tutorial.ts(7, 47): An argument for 'deductions' was not provided.
 ```
@@ -879,7 +900,7 @@ This happens because TypeScript expects both `baseScore` and `deductions` to be 
 
 To resolve this issue, we can define a default value for the `deductions` parameter. Default parameters provide a fallback value if no argument is passed.
 
-```
+```typescript
 function calculateFinalScore(baseScore: number, deductions: number = 0): number {
   return baseScore - deductions;
 }
@@ -890,9 +911,9 @@ let scoreWithoutDeductions = calculateFinalScore(50);  // 50
 
 In this updated example:
 
--   The `deductions` parameter defaults to `0` if it is not explicitly provided.
+* The `deductions` parameter defaults to `0` if it is not explicitly provided.
     
--   Both calls now work without errors.
+* Both calls now work without errors.
     
 
 ### Why This Solution Works
@@ -909,7 +930,7 @@ To use rest parameters, you write three dots (`...`) before the parameter name, 
 
 Let’s say you want to combine multiple words into a single sentence:
 
-```
+```typescript
 function joinWords(...words: string[]): string {
   return words.join(" ");
 }
@@ -918,16 +939,16 @@ let sentence = joinWords("TypeScript", "makes", "coding", "fun");
 console.log(sentence); // "TypeScript makes coding fun"
 ```
 
--   `...words` collects all the arguments into an array (`["TypeScript", "makes", "coding", "fun"]`).
+* `...words` collects all the arguments into an array (`["TypeScript", "makes", "coding", "fun"]`).
     
--   The `join` method combines them into a single string, separated by spaces.
+* The `join` method combines them into a single string, separated by spaces.
     
 
 ### Rest Parameters with Numbers
 
 Now, suppose you want to add multiple numbers:
 
-```
+```typescript
 function sumNumbers(...numbers: number[]): number {
   return numbers.reduce((total, num) => total + num, 0);
 }
@@ -936,14 +957,14 @@ let total = sumNumbers(10, 20, 30);
 console.log(total); // 60
 ```
 
--   `...numbers` gathers all the numbers into an array (`[10, 20, 30]`).
+* `...numbers` gathers all the numbers into an array (`[10, 20, 30]`).
     
--   The `reduce` method adds them together to get the total.
+* The `reduce` method adds them together to get the total.
     
 
 We can also use rest parameters to merge multiple arrays into one:
 
-```
+```typescript
 function mergeArrays(...arrays: number[][]): number[] {
   return arrays.flat();
 }
@@ -952,14 +973,14 @@ let combined = mergeArrays([1, 2], [3, 4], [5, 6]);
 console.log(combined); // [1, 2, 3, 4, 5, 6]
 ```
 
--   `...arrays` collects each argument as an array into an array of arrays (`[[1, 2], [3, 4], [5, 6]]`).
+* `...arrays` collects each argument as an array into an array of arrays (`[[1, 2], [3, 4], [5, 6]]`).
     
--   The `flat` method combines them into one array.
+* The `flat` method combines them into one array.
     
 
 Rest parameters must always come last in the parameter list. For example:
 
-```
+```typescript
 function example(a: string, ...others: number[]): void {
   console.log(a, others);
 }
@@ -975,7 +996,7 @@ In TypeScript, functions can accept objects as parameters. This is particularly 
 
 Here's a function that takes an object with an `id` property and returns a new object:
 
-```
+```typescript
 function createEmployee({ id }: { id: number }): { id: number; isActive: boolean } {
   return { id, isActive: id % 2 === 0 };
 }
@@ -989,22 +1010,23 @@ console.log(secondEmployee); // { id: 2, isActive: true }
 
 The function `createEmployee`:
 
--   Takes an object with a single property, `id`, as a parameter.
+* Takes an object with a single property, `id`, as a parameter.
     
--   Returns a new object with two properties: `id` and `isActive`.
+* Returns a new object with two properties: `id` and `isActive`.
     
 
 The `isActive` property is determined by checking if the `id` is even (`id % 2 === 0`).
 
 **Destructuring** is used in the parameter:
 
--   `{ id }` extracts the `id` property from the input object directly.
+* `{ id }` extracts the `id` property from the input object directly.
+    
 
 ### Accepting More Complex Objects
 
 Now, let’s look at a function that takes an object with multiple properties:
 
-```
+```typescript
 function createStudent(student: { id: number; name: string }): void {
   console.log(`Welcome to the course, ${student.name}!`);
 }
@@ -1015,9 +1037,9 @@ createStudent(newStudent); // "Welcome to the course, John!"
 
 The function `createStudent`:
 
--   Accepts an object with two properties: `id` and `name`.
+* Accepts an object with two properties: `id` and `name`.
     
--   Logs a welcome message using the `name` property.
+* Logs a welcome message using the `name` property.
     
 
 The `newStudent` object matches the structure expected by the function, so it’s passed directly.
@@ -1034,7 +1056,7 @@ In TypeScript, excess property checks help ensure that objects passed to functio
 
 Here’s a function that accepts an object with `id` and `name`, but no extra properties:
 
-```
+```typescript
 function createStudent(student: { id: number; name: string }): void {
   console.log(`Welcome, ${student.name}!`);
 }
@@ -1050,7 +1072,7 @@ TypeScript gives an error because the `age` property is not part of the expected
 
 To avoid the error, just remove any extra properties:
 
-```
+```typescript
 const validStudent = { id: 1, name: "John" };
 createStudent(validStudent); // This works fine
 ```
@@ -1061,18 +1083,18 @@ This works because the object only has the expected properties: `id` and `name`.
 
 If you really need to pass an object with extra properties, you can use **type assertion** to tell TypeScript to ignore the extra properties:
 
-```
+```typescript
 const studentWithExtras = { id: 1, name: "John", age: 20 };
 createStudent(studentWithExtras as { id: number; name: string }); // Bypasses the error
 ```
 
 While this works, it’s better to match the expected structure instead of using type assertion.
 
--   TypeScript expects objects to match the exact shape of the parameter type.
+* TypeScript expects objects to match the exact shape of the parameter type.
     
--   Excess properties cause errors to ensure the structure is correct.
+* Excess properties cause errors to ensure the structure is correct.
     
--   Fix the object or use type assertion (carefully) if you need extra properties.
+* Fix the object or use type assertion (carefully) if you need extra properties.
     
 
 Excess property checks help keep your code safe and ensure only the right data is passed to functions.
@@ -1085,7 +1107,7 @@ This doesn't create a new type, but instead gives an existing type a new identif
 
 Here’s an example before using a type alias:
 
-```
+```typescript
 // Without type alias
 function getUserInfo(user: UserInfo) {
   console.log(`User Info: 
@@ -1101,7 +1123,7 @@ getUserInfo(user);
 
 Now, let’s use a type alias for the function parameters to make the code more readable:
 
-```
+```typescript
 // Using type alias
 type UserInfo = { name: string, age: number, address: string };
 
@@ -1119,9 +1141,9 @@ getUserInfo(user);
 
 In the example above:
 
--   Before the type alias, we define the parameters separately within the function.
+* Before the type alias, we define the parameters separately within the function.
     
--   After defining a type alias (`UserInfo`), we use it in the function parameter to make the function signature simpler and more readable.
+* After defining a type alias (`UserInfo`), we use it in the function parameter to make the function signature simpler and more readable.
     
 
 This **doesn’t change the functionality** of the code. It just makes it easier to work with by using the alias. The alias acts as a reusable reference to a complex type, and if the shape of the `UserInfo` changes, we only need to update it in one place, making the code easier to maintain.
@@ -1132,13 +1154,13 @@ A type alias allows you to define a new name for a type. This new name can repre
 
 You define a type alias using the `type` keyword followed by a name and the structure of the type.
 
-```
+```typescript
 ttype TypeName = TypeStructure;
 ```
 
 For example, let’s create a type alias for a User object:
 
-```
+```typescript
 type User = {
   name: string;
   age: number;
@@ -1146,9 +1168,9 @@ type User = {
 
 This means `User` is a type that expects an object with two properties:
 
--   `name` should be a string.
+* `name` should be a string.
     
--   `age` should be a number.
+* `age` should be a number.
     
 
 ### Why Use Type Aliases?
@@ -1157,7 +1179,7 @@ There are several reasons to use type aliases in your code. First of all, a type
 
 #### with Type Alias:
 
-```
+```typescript
 type User = {
   name: string;
   age: number;
@@ -1175,7 +1197,7 @@ In this example, we defined the `User` type alias to specify that `user` objects
 
 TypeScript will catch errors if you attempt to assign an object that does not match this structure, like this:
 
-```
+```typescript
 // This will result in a TypeScript error:
 const invalidUser: User = { name: "Alice" }; // Missing 'age' property
 ```
@@ -1190,7 +1212,7 @@ You can combine any number of types, and the resulting type must satisfy every c
 
 To define an intersection type, you use the `&` operator to combine two or more types.
 
-```
+```typescript
 type TypeA & TypeB;
 ```
 
@@ -1198,7 +1220,7 @@ type TypeA & TypeB;
 
 Imagine you want to extend the `User` type to include the user’s address. Instead of modifying the original `User` type, you can use an **intersection type** to combine `User` and `Address`.
 
-```
+```typescript
 type Address = {
   city: string;
   country: string;
@@ -1213,7 +1235,7 @@ Now, `UserWithAddress` will require both the properties from `User` and the prop
 
 Here’s how you can use this in a function:
 
-```
+```typescript
 type User = {
   name: string;
   age: number;
@@ -1243,14 +1265,14 @@ console.log(getUserDetails(user));
 
 In this case:
 
--   `UserWithAddress` is an intersection type, which means the `user` object must have both the properties of `User` and `Address`.
+* `UserWithAddress` is an intersection type, which means the `user` object must have both the properties of `User` and `Address`.
     
--   TypeScript checks that both `name` and `age` (from `User`), as well as `city` and `country` (from `Address`), are present in the object.
+* TypeScript checks that both `name` and `age` (from `User`), as well as `city` and `country` (from `Address`), are present in the object.
     
 
 If we missed any of these properties, TypeScript would show an error.
 
-```
+```typescript
 // This will result in a TypeScript error:
 const incompleteUser: UserWithAddress = {
   name: "Alice",
@@ -1274,9 +1296,9 @@ Intersection types are useful in several scenarios. First, they let you extend e
 
 ### When to Use Each One
 
--   Use type aliases when you want to define a **single type** for an object, function, or other data structure. They help with clarity, reuse, and type safety.
+* Use type aliases when you want to define a **single type** for an object, function, or other data structure. They help with clarity, reuse, and type safety.
     
--   Use intersection types when you want to **combine multiple types** into one. It’s ideal for scenarios where an object needs to fulfill multiple contracts at once, such as when combining different types or extending the functionality of an existing type.
+* Use intersection types when you want to **combine multiple types** into one. It’s ideal for scenarios where an object needs to fulfill multiple contracts at once, such as when combining different types or extending the functionality of an existing type.
     
 
 By leveraging Type Alias and Intersection Types in TypeScript, your code becomes easier to understand, safer, and more maintainable. These features provide structure to your data, helping to catch bugs earlier.
@@ -1291,7 +1313,7 @@ An interface is a blueprint for an object, defining what properties and methods 
 
 Here’s a basic example:
 
-```
+```typescript
 interface User {
   name: string;
   age: number;
@@ -1313,27 +1335,27 @@ console.log(getUserInfo(user)); // Output: Alice (30 years old) lives at 123 Mai
 
 In this example:
 
--   The `User` interface defines the shape of the object.
+* The `User` interface defines the shape of the object.
     
--   Any object of type `User` must have `name`, `age`, and `address` properties with the specified types.
+* Any object of type `User` must have `name`, `age`, and `address` properties with the specified types.
     
--   The `getUserInfo` function ensures the `user` parameter adheres to the `User` interface.
+* The `getUserInfo` function ensures the `user` parameter adheres to the `User` interface.
     
 
 ### Similarities Between Interfaces and Type Aliases
 
--   Both interfaces and type aliases can define the structure of objects.
+* Both interfaces and type aliases can define the structure of objects.
     
--   Both can be extended, though the syntax differs.
+* Both can be extended, though the syntax differs.
     
--   Both improve code readability and reusability.
+* Both improve code readability and reusability.
     
--   In most cases, you can use interfaces or type aliases interchangeably to define object types.
+* In most cases, you can use interfaces or type aliases interchangeably to define object types.
     
 
 Example with a type alias:
 
-```
+```typescript
 type User = {
   name: string;
   age: number;
@@ -1364,7 +1386,7 @@ Let’s also summarize their key differences:
 
 **Extending Interfaces:**
 
-```
+```typescript
 interface Address {
   city: string;
   country: string;
@@ -1385,7 +1407,7 @@ const user: User = {
 
 **Using Type Alias for Intersection:**
 
-```
+```typescript
 type Address = {
   city: string;
   country: string;
@@ -1412,7 +1434,7 @@ Both approaches result in the same outcome, but the syntax is different.
 
 Interfaces can define properties as optional using the `?` symbol:
 
-```
+```typescript
 interface User {
   name: string;
   age?: number; // Optional
@@ -1426,7 +1448,7 @@ const user2: User = { name: "Bob", age: 25 };
 
 Use the `readonly` modifier to make properties immutable:
 
-```
+```typescript
 interface User {
   readonly id: number;
   name: string;
@@ -1440,7 +1462,7 @@ const user: User = { id: 1, name: "Alice" };
 
 Interfaces can define function signatures:
 
-```
+```typescript
 interface Add {
   (a: number, b: number): number;
 }
@@ -1453,7 +1475,7 @@ console.log(add(5, 3)); // Output: 8
 
 Interfaces can define dynamic property names:
 
-```
+```typescript
 interface StringDictionary {
   [key: string]: string;
 }
@@ -1468,7 +1490,7 @@ const dictionary: StringDictionary = {
 
 An interface can extend multiple interfaces:
 
-```
+```typescript
 interface A {
   propA: string;
 }
@@ -1490,16 +1512,16 @@ const obj: C = {
 
 ### When to Use Interfaces vs. Type Aliases
 
--   Use **interfaces** when you need to define object shapes, especially if you plan to extend them. Also use interfaces if you need declaration merging, as type aliases don’t support it.
+* Use **interfaces** when you need to define object shapes, especially if you plan to extend them. Also use interfaces if you need declaration merging, as type aliases don’t support it.
     
--   Use **type aliases** for more complex types, such as unions or intersections
+* Use **type aliases** for more complex types, such as unions or intersections
     
 
 ## Tuples and Enums
 
 A **tuple** in TypeScript is a special type of array that has a fixed number of elements, where each element can have a different type. Tuples ensure that the order and types of values remain consistent.
 
-```
+```typescript
 // A tuple with a string and a number
 let user: [string, number] = ["Alice", 25];
 
@@ -1511,7 +1533,7 @@ In this example, the tuple `user` contains a string (name) and a number (age). T
 
 #### **Tuple with Optional Elements:**
 
-```
+```typescript
 let person: [string, number, boolean?] = ["Bob", 30];
 
 console.log(person); // Output: ["Bob", 30]
@@ -1521,7 +1543,7 @@ Here, the third element (boolean) is optional.
 
 #### **Tuple with Read-Only Property:**
 
-```
+```typescript
 const coordinates: readonly [number, number] = [10, 20];
 
 // coordinates[0] = 50; // Error: Cannot assign to '0' because it is a read-only tuple
@@ -1535,7 +1557,7 @@ An **enum** in TypeScript is a way to define a set of named constants. Enums mak
 
 #### **Numeric Enums (Default):**
 
-```
+```typescript
 enum Status {
   Pending,   // 0
   InProgress, // 1
@@ -1550,7 +1572,7 @@ By default, TypeScript assigns numeric values starting from `0`.
 
 #### **Custom Number Values in Enums:**
 
-```
+```typescript
 enum OrderStatus {
   Pending = 1,
   Shipped = 5,
@@ -1564,7 +1586,7 @@ Here, custom values are assigned to each status.
 
 #### **String Enums:**
 
-```
+```typescript
 enum Direction {
   Up = "UP",
   Down = "DOWN",
@@ -1579,7 +1601,7 @@ String enums store fixed text values instead of numbers.
 
 #### **Using Enums in a Function:**
 
-```
+```typescript
 function getStatusText(status: Status): string {
   switch (status) {
     case Status.Pending:
@@ -1606,7 +1628,7 @@ Tuples define fixed-length arrays with different data types, while enums provide
 
 Type assertion tells TypeScript to treat a value as a specific type. It does not change the value but helps the compiler understand the type.
 
-```
+```typescript
 let value: unknown = "Hello, TypeScript!";
 
 // Using type assertion to treat 'value' as a string
@@ -1619,7 +1641,7 @@ Here, `value` is initially `unknown`, but type assertion (`as string`) allows tr
 
 And here’s an alternative way to write type assertion:
 
-```
+```typescript
 let num = <number>(10);
 console.log(num); // Output: 10
 ```
@@ -1630,7 +1652,7 @@ The `<number>` syntax also performs type assertion.
 
 Let’s briefly revisit the `unknown` type now. Remember that it’s a safer alternative to `any` and can hold any value – but TypeScript requires type checking before using it.
 
-```
+```typescript
 let data: unknown;
 
 data = "Hello";
@@ -1649,7 +1671,7 @@ Since `data` is `unknown`, TypeScript does not allow direct operations without c
 
 The `never` type represents values that never occur. It is often used for functions that never return or always throw an error.
 
-```
+```typescript
 function throwError(message: string): never {
   throw new Error(message);
 }
@@ -1661,7 +1683,7 @@ Here, `throwError` does not return anything because it always throws an error.
 
 #### **Example of Type Never in a Switch Case:**
 
-```
+```typescript
 type Status = "success" | "failure";
 
 function checkStatus(status: Status): void {
@@ -1696,7 +1718,7 @@ Generics allow writing flexible, reusable, and type-safe code. Instead of specif
 
 A generic function works with any type while keeping type safety.
 
-```
+```typescript
 function identity<T>(value: T): T {
   return value;
 }
@@ -1713,7 +1735,7 @@ Generics help enforce type safety in arrays.
 
 Here’s an example of reversing an array with generics:
 
-```
+```typescript
 function reverseArray<T>(arr: T[]): T[] {
   return arr.reverse();
 }
@@ -1728,7 +1750,7 @@ This ensures that the function always returns the same type of array it receives
 
 Generics can be used in interfaces to define flexible object structures.
 
-```
+```typescript
 interface StorageBox<T> {
   content: T;
 }
@@ -1748,7 +1770,7 @@ Generics also work in classes, making them more reusable.
 
 Here’s an example of a generic queue class:
 
-```
+```typescript
 lass Queue<T> {
   private items: T[] = [];
 
@@ -1780,7 +1802,7 @@ A function or class can accept more than one generic type.
 
 Here’s an example of a function that swaps two values:
 
-```
+```typescript
 function swap<T, U>(first: T, second: U): [U, T] {
   return [second, first];
 }
@@ -1797,7 +1819,7 @@ Sometimes, a generic type should follow certain rules. **Constraints** ensure th
 
 Here’s an example of ensuring that a type has a `length` property:
 
-```
+```typescript
 function getLength<T extends { length: number }>(item: T): number {
   return item.length;
 }
@@ -1814,7 +1836,7 @@ The `keyof` operator can be used to ensure valid property names.
 
 Here’s an example of getting a property value by name:
 
-```
+```typescript
 typescriptCopyEditfunction getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
   return obj[key];
 }
@@ -1832,31 +1854,3 @@ Here, `K extends keyof T` ensures that `key` is a valid property of `T`.
 In this handbook, you got an in-depth overview of how you can use TypeScript basics in React. We discussed important concepts like type annotations, type inference, and managing objects and arrays, showing how TypeScript improves code stability and maintenance.
 
 We also covered some advanced topics such as union and any types, readonly properties, and the use of generics, type aliases, and interfaces. I hope the examples helped you understand how TypeScript can enhance your JavaScript development, making TS a valuable tool for building robust, large-scale applications.
-
-[1]: heading-what-is-typescript
-[2]: #heading-setting-up-the-project
-[3]: heading-type-annotations-and-type-inference
-[4]: heading-commonly-used-type-annotations
-[5]: heading-type-inference
-[6]: #heading-the-union-and-any-types
-[7]: heading-be-careful-when-using-any-in-typescript
-[8]: #heading-unknown-as-a-safer-alternative-to-any-in-typescript
-[9]: #heading-objects-in-typescript
-[10]: heading-the-problem-of-mutability
-[11]: heading-readonly-on-object-properties
-[12]: heading-readonly-arrays
-[13]: heading-function-params-and-function-returns
-[14]: heading-the-risks-of-using-any
-[15]: heading-use-explicit-types-for-parameters-and-return-values
-[16]: heading-using-unknown-as-a-safer-alternative-to-any-in-typescript
-[17]: heading-handling-optional-default-in-typescript
-[18]: heading-rest-parameters
-[19]: heading-objects-as-parameters-in-typescript
-[20]: #heading-type-aliases-in-typescript
-[21]: heading-what-is-an-intersection-type-in-typescript
-[22]: heading-interfaces-in-typescript
-[23]: heading-tuples-and-enums
-[24]: heading-type-assertion-type-unknown-and-type-never-in-typescript
-[25]: #heading-generics-in-typescript
-[26]: heading-conclusion
-[27]: https://vite.dev/guide/

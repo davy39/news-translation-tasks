@@ -1,28 +1,43 @@
 ---
 title: How to Use Props in Vue.js
-date: 2024-09-30T02:50:36.362Z
-authorURL: ""
-originalURL: https://www.freecodecamp.org/news/how-to-use-props-in-vuejs/
-posteditor: ""
-proofreader: ""
+subtitle: ''
+author: Joel Olawanle
+co_authors: []
+series: null
+date: '2021-08-11T19:51:52.000Z'
+originalURL: https://freecodecamp.org/news/how-to-use-props-in-vuejs
+coverImage: https://www.freecodecamp.org/news/content/images/2021/08/Yellow-and-Purple-Geometric-Covid-19-General-Facts-Twitter-Post.png
+tags:
+- name: Vue.js
+  slug: vuejs
+seo_title: null
+seo_desc: 'We use props to pass information/data from a parent component to child
+  components. In this article, I will explain everything you need to know about props
+  and why you should use props in Vue.js.
+
+  Here''s a brief outline of what we''ll cover in this guid...'
 ---
-
-By Joel Olawanle
-
-<!-- more -->
 
 We use props to pass information/data from a parent component to child components. In this article, I will explain everything you need to know about props and why you should use props in Vue.js.
 
 Here's a brief outline of what we'll cover in this guide:
 
--   What are props in Vue.js?
--   How to register props inside a component
--   How to work with multiple props
--   Vue.js prop types
--   How to pass data to props
--   How to pass functions to props
--   How to validate props
--   How to set default values for props
+* What are props in Vue.js?
+    
+* How to register props inside a component
+    
+* How to work with multiple props
+    
+* Vue.js prop types
+    
+* How to pass data to props
+    
+* How to pass functions to props
+    
+* How to validate props
+    
+* How to set default values for props
+    
 
 ## What are Props in Vue.js?
 
@@ -40,7 +55,7 @@ Let’s balance things up now – the parent components pass props to the child 
 
 Let's now take a look at how we can register props inside a component.
 
-```
+```javascript
 Vue.component('user-detail', {
   props: ['name'],
   template: '<p>Hi {{ name }}</p>'
@@ -50,7 +65,7 @@ Vue.component('user-detail', {
 
 or, in a Vue Single File Component:
 
-```
+```bash
 <template>
   <p>{{ name }}</p>
 </template>
@@ -70,7 +85,7 @@ Note: This is the child component and this prop is going to receive data from th
 
 You can have more than one prop by appending them to the props array, just like this:
 
-```
+```bash
 Vue.component('user-detail', {
   props: ['firstName', 'lastName'],
   template: '<p>Hi {{ firstName }} {{ lastName }}</p>'
@@ -79,7 +94,7 @@ Vue.component('user-detail', {
 
 or, in a Vue Single File Component:
 
-```
+```bash
 <template>
   <p>Hi {{ firstName }} {{ lastName }}</p>
 </template>
@@ -100,16 +115,24 @@ To specify the type of prop you want to use in Vue, you will use an object inste
 
 If the type of the data passed does not match the prop type, Vue sends an alert (in development mode) in the console with a warning. The valid types you can use are:
 
--   String
--   Number
--   Boolean
--   Array
--   Object
--   Date
--   Function
--   Symbol
+* String
+    
+* Number
+    
+* Boolean
+    
+* Array
+    
+* Object
+    
+* Date
+    
+* Function
+    
+* Symbol
+    
 
-```
+```bash
 Vue.component('user-detail', {
   props: {
     firstName: String,
@@ -121,7 +144,7 @@ Vue.component('user-detail', {
 
 or, in a Vue Single File Component:
 
-```
+```bash
 <template>
   <p>Hi {{ firstName }} {{ lastName }}</p>
 </template>
@@ -140,7 +163,7 @@ export default {
 
 The major goal of using props is to pass down data/information. You can either pass your value as a data property using v-bind, such as in this code:
 
-```
+```bash
 <template>
   <ComponentName :title=title />
 </template>
@@ -160,7 +183,7 @@ export default {
 
 or as a static value like this:
 
-```
+```bash
 <ComponentName title="Understanding Props in vuejs" />
 ```
 
@@ -168,7 +191,7 @@ Suppose we are building an app which has so many buttons with different text/bac
 
 Here's the parent component:
 
-```
+```bash
 <template>
   <div id="app">
     <Button :name='btnName' bgColor='red' />
@@ -196,7 +219,7 @@ export default {
 
 And here's the child component:
 
-```
+```bash
 <template>
   <button class="btn" :style="{backgroundColor:bgColor}">{{name}}</button>
 </template>
@@ -215,7 +238,7 @@ The above code shows you how to use both data property and static values when yo
 
 **Note:** you can also use a ternary operator inside the prop value to check a truthy condition and pass a value that depends on it.
 
-```
+```javascript
 <template>
   <div id="app">
     <Button :tagUser="signedUp ? 'Logout' : 'Login'" bgColor='red' />
@@ -243,15 +266,15 @@ In the above code, we are checking the `signedUp` data property. If it’s true,
 
 Passing a function or a method down to a child component as a prop is relatively straightforward. It's basically the same process as passing any other variable.
 
-But there are reasons why you shouldn't use props as functions – instead you should use emit. This article properly explains [why][1].
+But there are reasons why you shouldn't use props as functions – instead you should use emit. This article properly explains [why](https://michaelnthiessen.com/pass-function-as-prop/).
 
-```
+```javascript
 <template>
   <ChildComponent :function="newFunction" />
 </template>
 ```
 
-```
+```javascript
 <script>
 export default {
   methods: {
@@ -267,7 +290,7 @@ export default {
 
 Vue makes validating props very easy. All you have to do is add the required key and its value to the prop. We can validate with both the prop type and by using `required`:
 
-```
+```javascript
 props: {
   name: {
     type: String,
@@ -282,7 +305,7 @@ Before concluding this article, let’s now see how to set default values to our
 
 Vue allows you to specify a default value, just as we specified `required` earlier.
 
-```
+```javascript
 props: {
   name: {
     type: String,
@@ -304,15 +327,12 @@ In this article, we have learned what props do and how props works in Vue.js.
 
 In summary, we use props to pass down data from the parent components to the child component(s). The child component also emit events to the parent component(s) in case you need to send data/events from the child to the parent component.
 
-![Image](https://www.freecodecamp.org/news/content/images/2021/08/image-50.png)
+![Image](https://www.freecodecamp.org/news/content/images/2021/08/image-50.png align="left")
 
 Thank you for reading!
 
 **Useful Links**
 
--   [Vue.js Component Props - flaviocopes][2]
--   [Props - Vue documentation][3]
-
-[1]: https://michaelnthiessen.com/pass-function-as-prop/
-[2]: https://flaviocopes.com/vue-props/
-[3]: https://vuejs.org/v2/guide/components-props.html
+* [Vue.js Component Props - flaviocopes](https://flaviocopes.com/vue-props/)
+    
+* [Props - Vue documentation](https://vuejs.org/v2/guide/components-props.html)

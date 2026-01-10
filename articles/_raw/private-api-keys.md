@@ -1,15 +1,28 @@
 ---
-title: Demo
-date: 2024-10-03T00:27:10.546Z
-authorURL: ""
-originalURL: https://www.freecodecamp.org/news/private-api-keys/
-posteditor: ""
-proofreader: ""
+title: How to avoid exposing your API key in your public front-end apps
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2019-10-23T02:50:37.000Z'
+originalURL: https://freecodecamp.org/news/private-api-keys
+coverImage: https://cdn-media-2.freecodecamp.org/w1280/5f9c9fd5740569d1a4ca44e3.jpg
+tags:
+- name: backend
+  slug: backend
+seo_title: null
+seo_desc: 'By Jackson Bates
+
+  The Problem
+
+  All you want to do is fetch some JSON from an API endpoint for the weather, some
+  book reviews, or something similarly simple.
+
+  The fetch query in your front-end is easy enough, but you have to paste your secret
+  API key rig...'
 ---
 
 By Jackson Bates
-
-<!-- more -->
 
 ## The Problem
 
@@ -17,7 +30,7 @@ All you want to do is fetch some JSON from an API endpoint for the weather, some
 
 The fetch query in your front-end is easy enough, but you have to paste your secret API key right there in the front-end code for anybody to find with a trivial amount of digging!
 
-Also, pushing your API keys to your GitHub repository is a major problem: [Dev put AWS keys on Github. Then BAD THINGS happened][1].
+Also, pushing your API keys to your GitHub repository is a major problem: [Dev put AWS keys on Github. Then BAD THINGS happened](https://www.theregister.co.uk/2015/01/06/dev_blunder_shows_github_crawling_with_keyslurping_bots/).
 
 > "Why is this so hard?!" – You, probably 15 minutes ago
 
@@ -33,13 +46,13 @@ You're just trying to do a front-end demo for your portfolio! You haven't learne
 
 I've encountered this problem often enough that I've decided to stop coming up with silly hacks and implement a solution that works with minimal back-end code.
 
-In this demo I set up a back-end that listens for POST requests and sends them to the [GoodReads API][2]. To use this you need to implement **your own** front-end that can send the appropriate POST request to this back-end. Your front-end won't communicate with GoodReads directly, so no API key is exposed.
+In this demo I set up a back-end that listens for POST requests and sends them to the [GoodReads API](https://www.goodreads.com/api). To use this you need to implement **your own** front-end that can send the appropriate POST request to this back-end. Your front-end won't communicate with GoodReads directly, so no API key is exposed.
 
 ## You will need
 
--   [Node][3] (this has been tested with v10.16.0, later versions will be fine, earlier ones may encounter problems)
--   [git][4]
--   This repo: https://github.com/JacksonBates/example-goodreads-api-relay
+* [Node](https://nodejs.org/en/download/) (this has been tested with v10.16.0, later versions will be fine, earlier ones may encounter problems)
+* [git](https://git-scm.com/downloads)
+* This repo: https://github.com/JacksonBates/example-goodreads-api-relay
 
 ### Get started
 
@@ -65,6 +78,7 @@ Example:
 
 ```
 GOODREADS_API_KEY=AABBCCDDEEFF00112233445566778899
+
 ```
 
 Now run the server:
@@ -79,7 +93,7 @@ Now read the `app.js` file thoroughly.
 
 I've commented the code heavily to help you understand what is going on if you haven't seen node / express much before.
 
-```
+```js
 // app.js
 
 // These import necessary modules and set some initial variables
@@ -98,8 +112,8 @@ const port = 3000;
 // app.set('trust proxy', 1);
 
 const limiter = rateLimit({
-    windowMs: 1000, // 1 second
-    max: 1, // limit each IP to 1 requests per windowMs
+	windowMs: 1000, // 1 second
+	max: 1, // limit each IP to 1 requests per windowMs
 })
 
 //  apply to all requests
@@ -113,53 +127,55 @@ app.get("/", (req, res) => res.send("Hello World!"));
 
 // Our Goodreads relay route!
 app.get("/api/search", async (req, res) => {
-    try {
-        // This uses string interpolation to make our search query string
-        // it pulls the posted query param and reformats it for goodreads
-        const searchString = `q=${req.query.q}`;
+	try {
+		// This uses string interpolation to make our search query string
+		// it pulls the posted query param and reformats it for goodreads
+		const searchString = `q=${req.query.q}`;
 
-        // It uses node-fetch to call the goodreads api, and reads the key from .env
-        const response = await fetch(`https://www.goodreads.com/search/index.xml?key=${process.env.GOODREADS_API_KEY}&${searchString}`);
-        //more info here https://www.goodreads.com/api/index#search.books
-        const xml = await response.text();
+		// It uses node-fetch to call the goodreads api, and reads the key from .env
+		const response = await fetch(`https://www.goodreads.com/search/index.xml?key=${process.env.GOODREADS_API_KEY}&${searchString}`);
+		//more info here https://www.goodreads.com/api/index#search.books
+		const xml = await response.text();
 
-        // Goodreads API returns XML, so to use it easily on the front end, we can
-        // convert that to JSON:
-        const json = convert.xml2json(xml, { compact: true, spaces: 2 });
+		// Goodreads API returns XML, so to use it easily on the front end, we can
+		// convert that to JSON:
+		const json = convert.xml2json(xml, { compact: true, spaces: 2 });
 
-        // The API returns stuff we don't care about, so we may as well strip out
-        // everything except the results:
-        const results = JSON.parse(json).GoodreadsResponse.search.results;
+		// The API returns stuff we don't care about, so we may as well strip out
+		// everything except the results:
+		const results = JSON.parse(json).GoodreadsResponse.search.results;
 
-        return res.json({
+		return res.json({
             success: true,
             results
         })
-    } catch (err) {
-        return res.status(500).json({
-            success: false,
-            message: err.message,
-        })
-    }
+	} catch (err) {
+		return res.status(500).json({
+			success: false,
+			message: err.message,
+		})
+	}
 })
 
 // This spins up our sever and generates logs for us to use.
 // Any console.log statements you use in node for debugging will show up in your
 // terminal, not in the browser console!
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
 ```
 
-**Update**: Huge thanks to Gouri Shankar Kumawat for contributing a PR that improved this code! You can follow him on Twitter at [@dev\_gskumawat][5], or on GitHub: [gskumawat0][6]
+**Update**: Huge thanks to Gouri Shankar Kumawat for contributing a PR that improved this code! You can follow him on Twitter at [@dev_gskumawat](https://https://twitter.com/dev_gskumawat), or on GitHub: [gskumawat0](https://github.com/gskumawat0)
 
 ### Test the API relay
 
-Use [Postman][7] to test the API.
+Use [Postman](https://www.getpostman.com/) to test the API.
 
 Set Postman to GET and paste this in the url: `localhost:3000/api/search?q=hobbit`
 
 Postman will show you the JSON response below.
 
-![Image](https://www.freecodecamp.org/news/content/images/2019/10/get_request.png) _Screenshot of Postman showing the returned JSON from our new back-end_
+![Image](https://www.freecodecamp.org/news/content/images/2019/10/get_request.png)
+_Screenshot of Postman showing the returned JSON from our new back-end_
 
 ### How do you use this in your front end?
 
@@ -171,7 +187,7 @@ This is only configured to handle search queries - if you want to use other Good
 
 You can't deploy your front-end and still have this on localhost - obviously you need to deploy this, too.
 
-I recommend [Heroku][8].
+I recommend [Heroku](https://devcenter.heroku.com/articles/deploying-nodejs).
 
 ## Extra Credit
 
@@ -179,20 +195,9 @@ If you wanted to extend this, you could consider how you might only make this ac
 
 ---
 
-This was hastily put together in response to a discussion on the [forum][9]. If you spot any issues in this post or the example code, please don't hesitate to reply to the [forum thread][10] that started it all. I'll keep the article and repo up-to-date with improvements.
+This was hastily put together in response to a discussion on the [forum](https://www.freecodecamp.org/forum). If you spot any issues in this post or the example code, please don't hesitate to reply to the [forum thread](https://www.freecodecamp.org/forum/t/trying-to-fetch-response-from-goodreads-api/323312?u=jacksonbates) that started it all. I'll keep the article and repo up-to-date with improvements. 
 
 Feel free to submit PRs if you have valuable contributions to make :)
 
-You can also reach out to me via Twitter: [@JacksonBates][11].
+You can also reach out to me via Twitter: [@JacksonBates](https://twitter.com/jacksonbates).
 
-[1]: https://www.theregister.co.uk/2015/01/06/dev_blunder_shows_github_crawling_with_keyslurping_bots/
-[2]: https://www.goodreads.com/api
-[3]: https://nodejs.org/en/download/
-[4]: https://git-scm.com/downloads
-[5]: https://https://twitter.com/dev_gskumawat
-[6]: https://github.com/gskumawat0
-[7]: https://www.getpostman.com/
-[8]: https://devcenter.heroku.com/articles/deploying-nodejs
-[9]: https://www.freecodecamp.org/forum
-[10]: https://www.freecodecamp.org/forum/t/trying-to-fetch-response-from-goodreads-api/323312?u=jacksonbates
-[11]: https://twitter.com/jacksonbates

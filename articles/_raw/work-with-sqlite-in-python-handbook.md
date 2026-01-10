@@ -1,16 +1,29 @@
 ---
 title: How to Work with SQLite in Python – A Handbook for Beginners
-date: 2024-11-04T13:16:41.256Z
+subtitle: ''
 author: Ashutosh Krishna
-authorURL: https://www.freecodecamp.org/news/author/ashutoshkrris/
-originalURL: https://www.freecodecamp.org/news/work-with-sqlite-in-python-handbook/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2024-10-02T09:44:37.000Z'
+originalURL: https://freecodecamp.org/news/work-with-sqlite-in-python-handbook
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1727862097228/24433377-ebb8-49b5-b0ee-5736f629399d.png
+tags:
+- name: SQLite
+  slug: sqlite
+- name: Python
+  slug: python
+- name: database
+  slug: database
+- name: handbook
+  slug: handbook
+seo_title: null
+seo_desc: SQLite is one of the most popular relational database management systems
+  (RDBMS). It’s lightweight, meaning that it doesn’t take up much space on your system.
+  One of its best features is that it’s serverless, so you don’t need to install or
+  manage a ...
 ---
 
 SQLite is one of the most popular relational database management systems (RDBMS). It’s lightweight, meaning that it doesn’t take up much space on your system. One of its best features is that it’s serverless, so you don’t need to install or manage a separate server to use it.
-
-<!-- more -->
 
 Instead, it stores everything in a simple file on your computer. It also requires zero configuration, so there’s no complicated setup process, making it perfect for beginners and small projects.
 
@@ -18,27 +31,27 @@ SQLite is a great choice for small to medium applications because it’s easy to
 
 In this tutorial, you'll learn how to work with SQLite using Python. Here’s what we’re going to cover in this tutorial:
 
--   [How to Set Up Your Python Environment][1]
+* [How to Set Up Your Python Environment](#heading-how-to-set-up-your-python-environment)
     
--   [How to Create an SQLite Database][2]
+* [How to Create an SQLite Database](#heading-how-to-create-an-sqlite-database)
     
--   [How to Create Database Tables][3]
+* [How to Create Database Tables](#heading-how-to-create-database-tables)
     
--   [How to Insert Data into a Table][4]
+* [How to Insert Data into a Table](#heading-how-to-insert-data-into-a-table)
     
--   [How to Query Data][5]
+* [How to Query Data](#heading-how-to-query-data)
     
--   [How to Update and Delete Data][6]
+* [How to Update and Delete Data](#heading-how-to-update-and-delete-data)
     
--   [How to Use Transactions][7]
+* [How to Use Transactions](#heading-how-to-use-transactions)
     
--   [How to Optimize SQLite Query Performance with Indexing][8]
+* [How to Optimize SQLite Query Performance with Indexing](#heading-how-to-optimize-sqlite-query-performance-with-indexing)
     
--   [How to Handle Errors and Exceptions][9]
+* [How to Handle Errors and Exceptions](#heading-how-to-handle-errors-and-exceptions)
     
--   [How to Export and Import Data \[Bonus Section\]][10]
+* [How to Export and Import Data \[Bonus Section\]](#heading-how-to-export-and-import-data-bonus-section)
     
--   [Wrapping Up][11]
+* [Wrapping Up](#heading-wrapping-up)
     
 
 This tutorial is perfect for anyone who wants to get started with databases without diving into complex setups.
@@ -49,11 +62,11 @@ Before working with SQLite, let’s ensure your Python environment is ready. Her
 
 ### Installing Python
 
-If you don’t have Python installed on your system yet, you can download it from the official [Python website][12]. Follow the installation instructions for your operating system (Windows, macOS, or Linux).
+If you don’t have Python installed on your system yet, you can download it from the official [Python website](https://www.python.org/downloads/). Follow the installation instructions for your operating system (Windows, macOS, or Linux).
 
 To check if Python is installed, open your terminal (or command prompt) and type:
 
-```
+```bash
 python --version
 ```
 
@@ -69,20 +82,21 @@ It’s a good idea to create a virtual environment for each project to keep your
 
 To create a virtual environment, follow these steps:
 
-1.  First, open your terminal or command prompt and navigate to the directory where you want to create your project.
+1. First, open your terminal or command prompt and navigate to the directory where you want to create your project.
     
-2.  Run the following command to create a virtual environment:
+2. Run the following command to create a virtual environment:
     
 
-```
+```bash
 python -m venv env
 ```
 
 Here, `env` is the name of the virtual environment. You can name it anything you like.
 
-3.  Activate the virtual environment:
+3. Activate the virtual environment:
+    
 
-```
+```bash
 # Use the command for Windows
 env\Scripts\activate
 
@@ -96,14 +110,14 @@ After activating the virtual environment, you’ll notice that your terminal pro
 
 We’ll need a few additional libraries for this project. Specifically, we’ll use:
 
--   `pandas`: This is an optional library for handling and displaying data in tabular format, useful for advanced use cases.
+* `pandas`: This is an optional library for handling and displaying data in tabular format, useful for advanced use cases.
     
--   `faker`: This library will help us generate fake data, like random names and addresses, which we can insert into our database for testing.
+* `faker`: This library will help us generate fake data, like random names and addresses, which we can insert into our database for testing.
     
 
 To install `pandas` and `faker`, simply run the following commands:
 
-```
+```bash
 pip install pandas faker
 ```
 
@@ -125,7 +139,7 @@ Let’s create a new SQLite database and learn how to interact with it using Pyt
 
 Since `sqlite3` is pre-installed, you just need to import it in your Python script. To create a new database or connect to an existing one, we use the `sqlite3.connect()` method. This method takes the name of the database file as an argument. If the file doesn’t exist, SQLite will automatically create it.
 
-```
+```python
 import sqlite3
 
 # Connect to the SQLite database (or create it if it doesn't exist)
@@ -138,7 +152,7 @@ In this example, a file named `my_database.db` is created in the same directory 
 
 Once you have a connection, the next step is to create a cursor object. The cursor is responsible for executing SQL commands and queries on the database.
 
-```
+```python
 # Create a cursor object
 cursor = connection.cursor()
 ```
@@ -147,7 +161,7 @@ cursor = connection.cursor()
 
 After you’ve finished working with the database, it’s important to close the connection to free up any resources. You can close the connection with the following command:
 
-```
+```python
 # Close the database connection
 connection.close()
 ```
@@ -162,7 +176,7 @@ Python provides a more efficient and cleaner way to handle database connections 
 
 Here’s how you can use the `with` statement to handle database connections:
 
-```
+```python
 import sqlite3
 
 # Step 1: Use 'with' to connect to the database (or create one) and automatically close it when done
@@ -186,18 +200,18 @@ To create a table, we use SQL's `CREATE TABLE` statement. This command defines t
 
 Here’s a simple SQL command to create a `Students` table with the following fields:
 
--   `id`: A unique identifier for each student (an integer).
+* `id`: A unique identifier for each student (an integer).
     
--   **name**: The student's name (text).
+* **name**: The student's name (text).
     
--   **age**: The student's age (an integer).
+* **age**: The student's age (an integer).
     
--   **email**: The student's email address (text).
+* **email**: The student's email address (text).
     
 
 The SQL command to create this table would look like this:
 
-```
+```sql
 CREATE TABLE Students (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
@@ -208,7 +222,7 @@ CREATE TABLE Students (
 
 We can execute this `CREATE TABLE` SQL command in Python using the `sqlite3` library. Let’s see how to do that.
 
-```
+```python
 import sqlite3
 
 # Use 'with' to connect to the SQLite database and automatically close the connection when done
@@ -237,16 +251,16 @@ with sqlite3.connect('my_database.db') as connection:
     print("Table 'Students' created successfully!")
 ```
 
--   `IF NOT EXISTS`: This ensures that the table is only created if it doesn’t already exist, preventing errors if the table has been created before.
+* `IF NOT EXISTS`: This ensures that the table is only created if it doesn’t already exist, preventing errors if the table has been created before.
     
--   `connection.commit()`: This saves (commits) the changes to the database.
+* `connection.commit()`: This saves (commits) the changes to the database.
     
 
 When you run the Python code above, it will create the `Students` table in the `my_database.db` database file. You’ll also see a message in the terminal confirming that the table has been created successfully.
 
-If you’re using Visual Studio Code, you can install the [SQLite Viewer][13] extension to view SQLite databases.
+If you’re using Visual Studio Code, you can install the [SQLite Viewer](https://marketplace.visualstudio.com/items?itemName=qwtel.sqlite-viewer) extension to view SQLite databases.
 
-![SQLite Viewer - VS Code Extension](https://cdn.hashnode.com/res/hashnode/image/upload/v1727514353100/522fc6f1-0363-41ca-a76a-b730470cb64a.png)
+![SQLite Viewer - VS Code Extension](https://cdn.hashnode.com/res/hashnode/image/upload/v1727514353100/522fc6f1-0363-41ca-a76a-b730470cb64a.png align="center")
 
 ### Data Types in SQLite and Their Mapping to Python
 
@@ -262,11 +276,11 @@ SQLite supports several data types, which we need to understand when defining ou
 
 In our `Students` table:
 
--   `id` is of type `INTEGER`, which maps to Python’s `int`.
+* `id` is of type `INTEGER`, which maps to Python’s `int`.
     
--   `name` and `email` are of type `TEXT`, which map to Python’s `str`.
+* `name` and `email` are of type `TEXT`, which map to Python’s `str`.
     
--   `age` is also of type `INTEGER`, mapping to Python’s `int`.
+* `age` is also of type `INTEGER`, mapping to Python’s `int`.
     
 
 ## How to Insert Data into a Table
@@ -279,7 +293,7 @@ To insert data into the database, we use the `INSERT INTO` SQL command. Let’s 
 
 Here’s the basic SQL syntax for inserting a single record:
 
-```
+```sql
 INSERT INTO Students (name, age, email) 
 VALUES ('John Doe', 20, 'johndoe@example.com');
 ```
@@ -288,7 +302,7 @@ However, instead of writing SQL directly in our Python script with hardcoded val
 
 Here’s how we can insert a single record into the `Students` table using a parameterized query:
 
-```
+```python
 import sqlite3
 
 # Use 'with' to open and close the connection automatically
@@ -319,7 +333,7 @@ If you want to insert multiple records at once, you can use the `executemany()` 
 
 To make our example more dynamic, we can use the `Faker` library to generate random student data. This is useful for testing and simulating real-world scenarios.
 
-```
+```python
 from faker import Faker
 import sqlite3
 
@@ -350,11 +364,11 @@ with sqlite3.connect('my_database.db') as connection:
 
 In this code:
 
--   `Faker()` generates random names, ages, and emails for students. Passing the locale(`[‘en_IN’]`) is optional.
+* `Faker()` generates random names, ages, and emails for students. Passing the locale(`[‘en_IN’]`) is optional.
     
--   `cursor.executemany()`: This method allows us to insert multiple records at once, making the code more efficient.
+* `cursor.executemany()`: This method allows us to insert multiple records at once, making the code more efficient.
     
--   `students_data`: A list of tuples where each tuple represents one student’s data.
+* `students_data`: A list of tuples where each tuple represents one student’s data.
     
 
 ### How to Handle Common Issues: SQL Injection
@@ -369,7 +383,7 @@ Now that we’ve inserted some data into our `Students` table, let’s learn how
 
 To query data from a table, we use the `SELECT` statement. Here’s a simple SQL command to select all columns from the `Students` table:
 
-```
+```sql
 SELECT * FROM Students;
 ```
 
@@ -379,7 +393,7 @@ This command retrieves all records and columns from the `Students` table. We can
 
 Here’s how we can fetch all records from the `Students` table:
 
-```
+```python
 import sqlite3
 
 # Use 'with' to connect to the SQLite database
@@ -405,7 +419,7 @@ with sqlite3.connect('my_database.db') as connection:
 
 In this example, the `fetchall()` method retrieves all rows returned by the query as a list of tuples.
 
-```
+```bash
 All Students:
 (1, 'Jane Doe', 23, 'jane@example.com')
 (2, 'Bahadurjit Sabharwal', 18, 'tristanupadhyay@example.net')
@@ -419,7 +433,7 @@ All Students:
 
 If you want to retrieve only one record, you can use the `fetchone()` method:
 
-```
+```python
 import sqlite3
 
 # Use 'with' to connect to the SQLite database
@@ -444,7 +458,7 @@ with sqlite3.connect('my_database.db') as connection:
 
 Output:
 
-```
+```bash
 First Student:
 (1, 'Jane Doe', 23, 'jane@example.com')
 ```
@@ -453,7 +467,7 @@ First Student:
 
 To fetch a specific number of records, you can use `fetchmany(size)`:
 
-```
+```python
 import sqlite3
 
 # Use 'with' to connect to the SQLite database
@@ -479,7 +493,7 @@ with sqlite3.connect('my_database.db') as connection:
 
 Output:
 
-```
+```bash
 Three Students:
 (1, 'Jane Doe', 23, 'jane@example.com')
 (2, 'Bahadurjit Sabharwal', 18, 'tristanupadhyay@example.net')
@@ -492,7 +506,7 @@ For better data presentation, we can use the `pandas` library to create a `DataF
 
 Here’s how to fetch all records and display them as a pandas DataFrame:
 
-```
+```python
 import sqlite3
 import pandas as pd
 
@@ -511,7 +525,7 @@ print(df)
 
 Output:
 
-```
+```bash
 All Students as DataFrame:
    id                  name  age                        email
 0   1              Jane Doe   23             jane@example.com
@@ -534,7 +548,7 @@ To modify existing records in a database, we use the SQL `UPDATE` command. This 
 
 For example, if we want to update a student's age, the SQL command would look like this:
 
-```
+```sql
 UPDATE Students 
 SET age = 21 
 WHERE name = 'Jane Doe';
@@ -542,7 +556,7 @@ WHERE name = 'Jane Doe';
 
 Now, let’s write Python code to update a specific student's age in our `Students` table.
 
-```
+```python
 import sqlite3
 
 # Use 'with' to connect to the SQLite database
@@ -578,14 +592,14 @@ To remove records from a database, we use the SQL `DELETE` command. This command
 
 For example, if we want to delete a student named 'Jane Doe', the SQL command would look like this:
 
-```
+```sql
 DELETE FROM Students 
 WHERE name = 'Jane Doe';
 ```
 
 Let’s write Python code to delete a specific student from our `Students` table using the `with` statement.
 
-```
+```python
 import sqlite3
 
 # Use 'with' to connect to the SQLite database
@@ -613,11 +627,11 @@ with sqlite3.connect('my_database.db') as connection:
 
 #### Important Considerations
 
--   **Conditions**: Always use the `WHERE` clause when updating or deleting records to avoid modifying or removing all rows in the table. Without a `WHERE` clause, the command affects every row in the table.
+* **Conditions**: Always use the `WHERE` clause when updating or deleting records to avoid modifying or removing all rows in the table. Without a `WHERE` clause, the command affects every row in the table.
     
-    ![357089 rows affected Meme](https://cdn.hashnode.com/res/hashnode/image/upload/v1727519069500/f22be4cc-e75f-4492-af01-ed08f31361f3.jpeg)
+    ![357089 rows affected Meme](https://cdn.hashnode.com/res/hashnode/image/upload/v1727519069500/f22be4cc-e75f-4492-af01-ed08f31361f3.jpeg align="center")
     
--   **Backup**: It’s good practice to back up your database before performing updates or deletions, especially in production environments.
+* **Backup**: It’s good practice to back up your database before performing updates or deletions, especially in production environments.
     
 
 ## How to Use Transactions
@@ -628,24 +642,24 @@ For example, if you are transferring money between two bank accounts, you would 
 
 ### Why Use Transactions?
 
-1.  **Atomicity**: Transactions ensure that a series of operations are treated as a single unit. If one operation fails, none of the operations will be applied to the database.
+1. **Atomicity**: Transactions ensure that a series of operations are treated as a single unit. If one operation fails, none of the operations will be applied to the database.
     
-2.  **Consistency**: Transactions help maintain the integrity of the database by ensuring that all rules and constraints are followed.
+2. **Consistency**: Transactions help maintain the integrity of the database by ensuring that all rules and constraints are followed.
     
-3.  **Isolation**: Each transaction operates independently of others, preventing unintended interference.
+3. **Isolation**: Each transaction operates independently of others, preventing unintended interference.
     
-4.  **Durability**: Once a transaction is committed, the changes are permanent, even in the event of a system failure.
+4. **Durability**: Once a transaction is committed, the changes are permanent, even in the event of a system failure.
     
 
 ### When to Use Transactions?
 
 You should use transactions when:
 
--   Performing multiple related operations that must succeed or fail together.
+* Performing multiple related operations that must succeed or fail together.
     
--   Modifying critical data that requires consistency and integrity.
+* Modifying critical data that requires consistency and integrity.
     
--   Working with operations that can potentially fail, such as financial transactions or data migrations.
+* Working with operations that can potentially fail, such as financial transactions or data migrations.
     
 
 ### How to Manage Transactions in Python
@@ -656,7 +670,7 @@ In SQLite, transactions are managed using the `BEGIN`, `COMMIT`, and `ROLLBACK` 
 
 A transaction begins implicitly when you execute any SQL statement. To start a transaction explicitly, you can use the `BEGIN` command:
 
-```
+```python
 cursor.execute("BEGIN;")
 ```
 
@@ -666,7 +680,7 @@ However, it’s usually unnecessary to start a transaction manually, as SQLite s
 
 To save all changes made during a transaction, you use the `commit()` method. This makes all modifications permanent in the database.
 
-```
+```python
 connection.commit()
 ```
 
@@ -676,7 +690,7 @@ We have already used the `commit()` method in the above provided examples.
 
 If something goes wrong and you want to revert the changes made during a transaction, you can use the `rollback()` method. This will undo all changes made since the transaction started.
 
-```
+```python
 connection.rollback()
 ```
 
@@ -686,7 +700,7 @@ To illustrate the use of transactions in a real-world scenario, we’ll create a
 
 First, let's create the `Customers` table and insert two customers:
 
-```
+```python
 import sqlite3
 
 # Create the Customers table and add two customers
@@ -714,7 +728,7 @@ with sqlite3.connect('my_database.db') as connection:
 
 Now, let’s perform the funds transfer operation between Ashutosh and Krishna:
 
-```
+```python
 import sqlite3
 
 
@@ -762,7 +776,7 @@ To effectively test the impact of indexing, we need a sizable dataset. Instead o
 
 We will use the `executemany()` method to insert the records as below:
 
-```
+```python
 import sqlite3
 from faker import Faker
 
@@ -804,7 +818,7 @@ Without indexes, SQLite performs a full table scan, which means that it must che
 
 First, we’ll query the `Students` table by looking for a student with a specific name. We’ll log the time taken to execute the query using Python’s `time` module to measure the performance.
 
-```
+```python
 import sqlite3
 import time
 
@@ -844,7 +858,7 @@ query_without_index('Ojasvi Dhawan')
 
 Here’s the output:
 
-```
+```bash
 Query completed in 1578.10000 microseconds.
 Results: [(104, 'Ojasvi Dhawan', 21, 'lavanya26@example.com')]
 ```
@@ -861,7 +875,7 @@ In this section, we’ll introduce how to use `EXPLAIN QUERY PLAN` to visualize 
 
 Let’s use `EXPLAIN QUERY PLAN` to see how SQLite retrieves data from the `Students` table without any indexes. We’ll search for a student by name, and the query plan will reveal the steps SQLite takes to find the matching rows.
 
-```
+```python
 import sqlite3
 
 
@@ -891,7 +905,7 @@ explain_query('Ojasvi Dhawan')
 
 When you run this code, SQLite will return a breakdown of how it plans to execute the query. Here’s an example of what the output might look like:
 
-```
+```bash
 Query Plan:
 (2, 0, 0, 'SCAN Students')
 ```
@@ -904,13 +918,13 @@ Creating an index on a column allows SQLite to find rows more quickly during que
 
 To create an index, use the following SQL command:
 
-```
+```sql
 CREATE INDEX IF NOT EXISTS index-name ON table (column(s));
 ```
 
 In this example, we will create an index on the `name` column of the `Students` table. Here’s how you can do it using Python:
 
-```
+```python
 import sqlite3
 import time
 
@@ -938,7 +952,7 @@ def create_index():
         connection.commit()
 
         print("Index on 'name' column created successfully!")
-
+        
         # Calculate the total time taken
         elapsed_time = (end_time - start_time) / 1000
 
@@ -952,7 +966,7 @@ create_index()
 
 Output:
 
-```
+```bash
 Index on 'name' column created successfully!
 Query completed in 102768.60000 microseconds.
 ```
@@ -963,7 +977,7 @@ Even though creating the index takes this long (102768.6 microseconds), it's a o
 
 In this section, we will perform the same `SELECT` query we executed earlier, but this time we will take advantage of the index we created on the `name` column of the `Students` table. We'll measure and log the execution time to observe the performance improvements provided by the index.
 
-```
+```python
 import sqlite3
 import time
 
@@ -999,7 +1013,7 @@ query_with_index('Ojasvi Dhawan')
 
 Here’s what we get in the output:
 
-```
+```bash
 Query result: [(104, 'Ojasvi Dhawan', 21, 'lavanya26@example.com')]
 Execution time with index: 390.70000 microseconds
 ```
@@ -1008,7 +1022,7 @@ We can observe a significant reduction in execution time compared to when the qu
 
 Let’s analyze the query execution plan for the query with the index on the `name` column of the `Students` table. If you execute the same script again to explain the query, you’ll get the below output:
 
-```
+```bash
 Query Plan:
 (3, 0, 0, 'SEARCH Students USING INDEX idx_name (name=?)')
 ```
@@ -1028,9 +1042,9 @@ Now, let's summarize the performance results we obtained when querying with and 
 
 #### Performance Improvement Summary
 
--   The query with the index is approximately 4.04 times faster than the query without the index.
+* The query with the index is approximately 4.04 times faster than the query without the index.
     
--   The execution time improved by about 75.24% after adding the index.
+* The execution time improved by about 75.24% after adding the index.
     
 
 ### Best Practices for Using Indexes
@@ -1039,33 +1053,33 @@ Indexes can significantly enhance the performance of your SQLite database, but t
 
 #### When and Why to Use Indexes
 
-1.  **Frequent Query Columns**: Use indexes on columns that are frequently used in `SELECT` queries, especially those used in `WHERE`, `JOIN`, and `ORDER BY` clauses. This is because indexing these columns can drastically reduce query execution time.
+1. **Frequent Query Columns**: Use indexes on columns that are frequently used in `SELECT` queries, especially those used in `WHERE`, `JOIN`, and `ORDER BY` clauses. This is because indexing these columns can drastically reduce query execution time.
     
-2.  **Uniqueness Constraints**: When you have columns that must hold unique values (like usernames or email addresses), creating an index can enforce this constraint efficiently.
+2. **Uniqueness Constraints**: When you have columns that must hold unique values (like usernames or email addresses), creating an index can enforce this constraint efficiently.
     
-3.  **Large Datasets**: For tables with a large number of records, indexes become increasingly beneficial. They enable quick lookups, which is essential for maintaining performance as your data grows.
+3. **Large Datasets**: For tables with a large number of records, indexes become increasingly beneficial. They enable quick lookups, which is essential for maintaining performance as your data grows.
     
-4.  **Composite Indexes**: Consider creating composite indexes for queries that filter or sort by multiple columns. For example, if you often search for students by both `name` and `age`, an index on both columns can optimize such queries.
+4. **Composite Indexes**: Consider creating composite indexes for queries that filter or sort by multiple columns. For example, if you often search for students by both `name` and `age`, an index on both columns can optimize such queries.
     
 
 #### Potential Downsides of Indexes
 
 While indexes provide significant advantages, there are some potential downsides:
 
-1.  **Slower Insert/Update Operations**: When you insert or update records in a table with indexes, SQLite must also update the index, which can slow down these operations. This is because each insert or update requires additional overhead to maintain the index structure.
+1. **Slower Insert/Update Operations**: When you insert or update records in a table with indexes, SQLite must also update the index, which can slow down these operations. This is because each insert or update requires additional overhead to maintain the index structure.
     
-2.  **Increased Storage Requirements**: Indexes consume additional disk space. For large tables, the storage cost can be substantial. Consider this when designing your database schema, especially for systems with limited storage resources.
+2. **Increased Storage Requirements**: Indexes consume additional disk space. For large tables, the storage cost can be substantial. Consider this when designing your database schema, especially for systems with limited storage resources.
     
-3.  **Complex Index Management**: Having too many indexes can complicate database management. It may lead to situations where you have redundant indexes, which can degrade performance rather than enhance it. Regularly reviewing and optimizing your indexes is a good practice.
+3. **Complex Index Management**: Having too many indexes can complicate database management. It may lead to situations where you have redundant indexes, which can degrade performance rather than enhance it. Regularly reviewing and optimizing your indexes is a good practice.
     
 
 Indexes are powerful tools for optimizing database queries, but they require careful consideration. Striking a balance between improved read performance and the potential overhead on write operations is key. Here are some strategies for achieving this balance:
 
--   **Monitor Query Performance**: Use SQLite’s `EXPLAIN QUERY PLAN` to analyze how your queries perform with and without indexes. This can help identify which indexes are beneficial and which may be unnecessary.
+* **Monitor Query Performance**: Use SQLite’s `EXPLAIN QUERY PLAN` to analyze how your queries perform with and without indexes. This can help identify which indexes are beneficial and which may be unnecessary.
     
--   **Regular Maintenance**: Periodically review your indexes and assess whether they are still needed. Remove redundant or rarely used indexes to streamline your database operations.
+* **Regular Maintenance**: Periodically review your indexes and assess whether they are still needed. Remove redundant or rarely used indexes to streamline your database operations.
     
--   **Test and Evaluate**: Before implementing indexes in a production environment, conduct thorough testing to understand their impact on both read and write operations.
+* **Test and Evaluate**: Before implementing indexes in a production environment, conduct thorough testing to understand their impact on both read and write operations.
     
 
 By following these best practices, you can leverage the benefits of indexing while minimizing potential drawbacks, ultimately enhancing the performance and efficiency of your SQLite database.
@@ -1078,22 +1092,22 @@ In this section, we’ll discuss how to handle errors and exceptions when workin
 
 When interacting with an SQLite database, several common errors may arise:
 
-1.  **Constraint Violations**: This occurs when you try to insert or update data that violates a database constraint, such as primary key uniqueness or foreign key constraints. For example, trying to insert a duplicate primary key will trigger an error.
+1. **Constraint Violations**: This occurs when you try to insert or update data that violates a database constraint, such as primary key uniqueness or foreign key constraints. For example, trying to insert a duplicate primary key will trigger an error.
     
-2.  **Data Type Mismatches**: Attempting to insert data of the wrong type (for example, inserting a string where a number is expected) can lead to an error.
+2. **Data Type Mismatches**: Attempting to insert data of the wrong type (for example, inserting a string where a number is expected) can lead to an error.
     
-3.  **Database Locked Errors**: If a database is being written to by another process or connection, trying to access it can result in a "database is locked" error.
+3. **Database Locked Errors**: If a database is being written to by another process or connection, trying to access it can result in a "database is locked" error.
     
-4.  **Syntax Errors**: Mistakes in your SQL syntax will result in errors when you try to execute your commands.
+4. **Syntax Errors**: Mistakes in your SQL syntax will result in errors when you try to execute your commands.
     
 
 ### How to Use Python's Exception Handling
 
-Python’s built-in [exception handling][14] mechanisms (`try` and `except`) are essential for managing errors in SQLite operations. By using these constructs, you can catch exceptions and respond appropriately without crashing your program.
+Python’s built-in [exception handling](https://blog.ashutoshkrris.in/exception-handling-in-python) mechanisms (`try` and `except`) are essential for managing errors in SQLite operations. By using these constructs, you can catch exceptions and respond appropriately without crashing your program.
 
 Here’s a basic example of how to handle errors when inserting data into the database:
 
-```
+```python
 import sqlite3
 
 
@@ -1124,35 +1138,35 @@ add_customer_with_error_handling('Vishakha', 150.0)  # Duplicate entry
 
 In this example:
 
--   We catch `IntegrityError`, which is raised for violations like unique constraints.
+* We catch `IntegrityError`, which is raised for violations like unique constraints.
     
--   We catch `OperationalError` for general database-related issues (like database locked errors).
+* We catch `OperationalError` for general database-related issues (like database locked errors).
     
--   We also have a generic `except` block to handle any unexpected exceptions.
+* We also have a generic `except` block to handle any unexpected exceptions.
     
 
 Output:
 
-```
+```bash
 Added customer: Vishakha with balance: 100.0
 Error: Integrity constraint violated - UNIQUE constraint failed: Customers.name
 ```
 
 ### Best Practices for Ensuring Database Integrity
 
-1.  **Use Transactions**: Always use transactions (as discussed in the previous section) when performing multiple related operations. This helps ensure that either all operations succeed or none do, maintaining consistency.
+1. **Use Transactions**: Always use transactions (as discussed in the previous section) when performing multiple related operations. This helps ensure that either all operations succeed or none do, maintaining consistency.
     
-2.  **Validate Input Data**: Before executing SQL commands, validate the input data to ensure it meets the expected criteria (for example, correct types, within allowable ranges).
+2. **Validate Input Data**: Before executing SQL commands, validate the input data to ensure it meets the expected criteria (for example, correct types, within allowable ranges).
     
-3.  **Catch Specific Exceptions**: Always catch specific exceptions to handle different types of errors appropriately. This allows for clearer error handling and debugging.
+3. **Catch Specific Exceptions**: Always catch specific exceptions to handle different types of errors appropriately. This allows for clearer error handling and debugging.
     
-4.  **Log Errors**: Instead of just printing errors to the console, consider logging them to a file or monitoring system. This will help you track issues in production.
+4. **Log Errors**: Instead of just printing errors to the console, consider logging them to a file or monitoring system. This will help you track issues in production.
     
-5.  **Graceful Degradation**: Design your application to handle errors gracefully. If an operation fails, provide meaningful feedback to the user rather than crashing the application.
+5. **Graceful Degradation**: Design your application to handle errors gracefully. If an operation fails, provide meaningful feedback to the user rather than crashing the application.
     
-6.  **Regularly Backup Data**: Regularly back up your database to prevent data loss in case of critical failures or corruption.
+6. **Regularly Backup Data**: Regularly back up your database to prevent data loss in case of critical failures or corruption.
     
-7.  **Use Prepared Statements**: Prepared statements help prevent SQL injection attacks and can also provide better performance for repeated queries.
+7. **Use Prepared Statements**: Prepared statements help prevent SQL injection attacks and can also provide better performance for repeated queries.
     
 
 ## How to Export and Import Data \[Bonus Section\]
@@ -1165,7 +1179,7 @@ Exporting data to a CSV (Comma-Separated Values) file is straightforward with Py
 
 Here’s how to export data from an SQLite table to a CSV file:
 
-```
+```python
 import sqlite3
 import csv
 
@@ -1173,17 +1187,17 @@ def export_to_csv(file_name):
     """Export data from the Customers table to a CSV file."""
     with sqlite3.connect('my_database.db') as connection:
         cursor = connection.cursor()
-
+        
         # Execute a query to fetch all customer data
         cursor.execute("SELECT * FROM Customers;")
         customers = cursor.fetchall()
-
+        
         # Write data to CSV
         with open(file_name, 'w', newline='') as csv_file:
             csv_writer = csv.writer(csv_file)
             csv_writer.writerow(['ID', 'Name', 'Balance'])  # Writing header
             csv_writer.writerows(customers)  # Writing data rows
-
+            
         print(f"Data exported successfully to {file_name}.")
 
 # Example usage
@@ -1192,11 +1206,11 @@ export_to_csv('customers.csv')
 
 ### How to Export Data to JSON
 
-Similarly, you can export data to a [JSON][15] (JavaScript Object Notation) file, which is a popular format for data interchange, especially in web applications.
+Similarly, you can export data to a [JSON](https://blog.ashutoshkrris.in/a-beginners-guide-to-the-json-module-in-python) (JavaScript Object Notation) file, which is a popular format for data interchange, especially in web applications.
 
 Here’s an example of how to export data to JSON:
 
-```
+```python
 import json
 import sqlite3
 
@@ -1231,7 +1245,7 @@ You can also import data from a CSV file into an SQLite database. This is useful
 
 Here's how to import data from a CSV file:
 
-```
+```python
 import csv
 import sqlite3
 
@@ -1265,7 +1279,7 @@ Similarly, importing data from a JSON file is simple. You can read the JSON file
 
 Here's how to do it:
 
-```
+```python
 import json
 import sqlite3
 
@@ -1299,24 +1313,6 @@ Now it's time to put your newfound knowledge into practice! I encourage you to c
 
 Once you’ve completed your project, share it on Twitter and tag me! I’d love to see what you’ve created and celebrate your accomplishments.
 
-You can find all the code from this tutorial on [GitHub][16]. Thank you for following along, and happy coding!
+You can find all the code from this tutorial on [GitHub](https://github.com/ashutoshkrris/sqlite-tutorial). Thank you for following along, and happy coding!
 
-> Generate Table of Contents for your freeCodeCamp articles for free using the [TOC Generator][17] tool.
-
-[1]: #heading-how-to-set-up-your-python-environment
-[2]: #heading-how-to-create-an-sqlite-database
-[3]: #heading-how-to-create-database-tables
-[4]: #heading-how-to-insert-data-into-a-table
-[5]: #heading-how-to-query-data
-[6]: #heading-how-to-update-and-delete-data
-[7]: #heading-how-to-use-transactions
-[8]: #heading-how-to-optimize-sqlite-query-performance-with-indexing
-[9]: #heading-how-to-handle-errors-and-exceptions
-[10]: #heading-how-to-export-and-import-data-bonus-section
-[11]: #heading-wrapping-up
-[12]: https://www.python.org/downloads/
-[13]: https://marketplace.visualstudio.com/items?itemName=qwtel.sqlite-viewer
-[14]: https://blog.ashutoshkrris.in/exception-handling-in-python
-[15]: https://blog.ashutoshkrris.in/a-beginners-guide-to-the-json-module-in-python
-[16]: https://github.com/ashutoshkrris/sqlite-tutorial
-[17]: https://toc-generator.ashutoshkrris.in/freecodecamp
+> Generate Table of Contents for your freeCodeCamp articles for free using the [TOC Generator](https://toc-generator.ashutoshkrris.in/freecodecamp) tool.

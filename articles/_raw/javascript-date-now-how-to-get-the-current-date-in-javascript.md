@@ -1,16 +1,25 @@
 ---
 title: JavaScript Date Now – How to Get the Current Date in JavaScript
-date: 2024-08-21T09:05:27.390Z
-author: Vijit Ail
-authorURL: https://www.freecodecamp.org/news/author/vijit/
-originalURL: https://www.freecodecamp.org/news/javascript-date-now-how-to-get-the-current-date-in-javascript/
-posteditor: ""
-proofreader: ""
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2020-06-15T05:35:17.000Z'
+originalURL: https://freecodecamp.org/news/javascript-date-now-how-to-get-the-current-date-in-javascript
+coverImage: https://cdn-media-2.freecodecamp.org/w1280/5f9c9a4b740569d1a4ca24bd.jpg
+tags:
+- name: JavaScript
+  slug: javascript
+seo_title: null
+seo_desc: "By Vijit Ail\nMany applications you build will have some sort of a date\
+  \ component, whether it's the creation date of a resource, or the timestamp of an\
+  \ activity. \nDealing with date and timestamp formatting can be exhausting. In this\
+  \ guide, you will le..."
 ---
 
-Many applications you build will have some sort of a date component, whether it's the creation date of a resource, or the timestamp of an activity.
+By Vijit Ail
 
-<!-- more -->
+Many applications you build will have some sort of a date component, whether it's the creation date of a resource, or the timestamp of an activity. 
 
 Dealing with date and timestamp formatting can be exhausting. In this guide, you will learn how to get the current date in various formats in JavaScript.
 
@@ -46,7 +55,7 @@ const today = date.getDate();
 const currentMonth = date.getMonth() + 1; 
 ```
 
-The `getDate()` method returns the current day of the month (1-31).
+The `getDate()` method returns the current day of the month (1-31). 
 
 The `getMonth()` method returns the month of the specified date. One point to note about the `getMonth()` method is that it returns 0-indexed values (0-11) where 0 is for January and 11 for December. Hence the addition of 1 to normalize the month's value.
 
@@ -87,7 +96,7 @@ The `toLocaleDateString()` method returns the date in a locality-sensitive forma
 today.toLocaleDateString(); // "6/14/2020"
 ```
 
-You can find the complete reference for the `Date` methods in the [MDN documentation][1].
+You can find the complete reference for the `Date` methods in the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date).
 
 ## Custom Date Formatter Function
 
@@ -165,4 +174,3 @@ I hope you now have a better understanding of the `Date` object in JavaScript. Y
 
 Until next time, stay safe and keep hustling.
 
-[1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date

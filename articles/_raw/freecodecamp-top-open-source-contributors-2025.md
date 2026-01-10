@@ -1,28 +1,39 @@
 ---
 title: freeCodeCamp's Top Open Source Contributors of 2025
-date: 2025-11-28T02:46:56.103Z
+subtitle: ''
 author: Quincy Larson
-authorURL: https://www.freecodecamp.org/news/author/quincy/
-originalURL: https://www.freecodecamp.org/news/freecodecamp-top-open-source-contributors-2025/
-posteditor: ""
-proofreader: ""
+co_authors:
+- Naomi Carrigan
+series: null
+date: '2025-11-25T20:17:29.109Z'
+originalURL: https://freecodecamp.org/news/freecodecamp-top-open-source-contributors-2025
+coverImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1764105878996/9d86d805-6160-41b9-975d-c1a3573751b3.png
+tags:
+- name: community
+  slug: community
+- name: Open Source
+  slug: opensource
+seo_title: null
+seo_desc: '2025 has been a super productive year for the global freeCodeCamp community.
+  As we start our 12th year as a community, we’re firing on all cylinders, pushing
+  forward more steadily than ever.
+
+  This year we made substantial improvements to the new Full ...'
 ---
 
 2025 has been a super productive year for the global freeCodeCamp community. As we start our 12th year as a community, we’re firing on all cylinders, pushing forward more steadily than ever.
-
-<!-- more -->
 
 This year we made substantial improvements to the new Full Stack Developer curriculum. This is the 10th version of the freeCodeCamp curriculum, and includes 7 certifications. Along the way, learners build more than 100 hand-on projects and pass exams on computer science theory.
 
 Also, over the past year, the freeCodeCamp community published:
 
--   129 free video courses on the freeCodeCamp community YouTube channel
+* 129 free video courses on the freeCodeCamp community YouTube channel
     
--   45 free full length books and handbooks on the freeCodeCamp community publication
+* 45 free full length books and handbooks on the freeCodeCamp community publication
     
--   452 programming tutorials and articles on math, programming, and computer science
+* 452 programming tutorials and articles on math, programming, and computer science
     
--   50 episodes of the freeCodeCamp podcast where I interview developers, many of whom are contributors to open source freeCodeCamp projects
+* 50 episodes of the freeCodeCamp podcast where I interview developers, many of whom are contributors to open source freeCodeCamp projects
     
 
 We also merged 4,279 commits to freeCodeCamp’s open source learning platform, representing tons of improvements to user experience and accessibility. And we published our secure exam environment so that campers can take certification exams.
@@ -31,1634 +42,1250 @@ Finally, we made considerable progress on our English for Developers curriculum,
 
 We are just getting started. We’re already mapping out additional coursework on math, data science, machine learning, and other deep, skill-intensive subjects.
 
-All of this is possible thanks to the 10,342 kind folks who [donate to support our charity and our mission][1], and the thoughtful folks who their time and talents to the community.
+All of this is possible thanks to the 10,342 kind folks who [donate to support our charity and our mission](https://donate.freecodecamp.org), and the thoughtful folks who their time and talents to the community.
 
 Below is a list of our 611 most prolific open source contributors in 2025:
 
 ## GitHub Top Contributors
 
--   [Clarence Bakosi][2]
+* [Clarence Bakosi](https://github.com/clarencepenz)
     
--   [Supravisor][3]
+* [Supravisor](https://github.com/Supravisor)
     
--   [Giftea ☕][4]
+* [Giftea ☕](https://github.com/Giftea)
     
--   [Diem-Trang Pham][5]
+* [Diem-Trang Pham](https://github.com/pdtrang)
     
--   [Anna][6]
+* [Anna](https://github.com/a2937)
     
--   [c0d1ng\_ma5ter][7]
+* [c0d1ng\_ma5ter](https://github.com/c0d1ng-ma5ter)
     
--   [JungLee-Dev][8]
+* [JungLee-Dev](https://github.com/JungLee-Dev)
     
--   [hbar1st][9]
+* [hbar1st](https://github.com/hbar1st)
     
--   [dev-kamil][10]
+* [dev-kamil](https://github.com/dev-kamil)
     
--   [Ariz Faiyaz][11]
+* [Ariz Faiyaz](https://github.com/arizfaiyaz)
     
--   [agilan11][12]
+* [agilan11](https://github.com/agilan11)
     
--   [Vinson Pham][13]
+* [Vinson Pham](https://github.com/cuongpham24)
     
--   [Stuart Mosquera][14]
+* [Stuart Mosquera](https://github.com/StuartMosquera)
     
--   [Stephen Mutheu Muya][15]
+* [Stephen Mutheu Muya](https://github.com/StephenMuya)
     
--   [Mohamad Salman][16]
+* [Mohamad Salman](https://github.com/MohamadSalman11)
     
--   [Alex Goldsmith][17]
+* [Alex Goldsmith](https://github.com/alexgoldsmith)
     
--   [Vishnu D][18]
+* [Vishnu D](https://github.com/vishnudt2004)
     
--   [Kannan][19]
+* [Kannan](https://github.com/kannan-ravi)
     
--   [Tanmay Gautam][20]
+* [Tanmay Gautam](https://github.com/tanmaygautam11)
     
--   [l3onhard][21]
+* [l3onhard](https://github.com/l3onhard)
     
--   [Prabhakar Yadav][22]
+* [Prabhakar Yadav](https://github.com/prabhakaryadav2003)
     
--   [Ezoh Zhang][23]
+* [Ezoh Zhang](https://github.com/errantpianist)
     
--   [Ajay A][24]
+* [Ajay A](https://github.com/Ajay-2005)
     
--   [Vivaan Teotia][25]
+* [Vivaan Teotia](https://github.com/dragon-slayer27)
     
--   [Hassan Waqar][26]
+* [Hassan Waqar](https://github.com/hassanwaqa)
     
--   [Krzysztof G.][27]
+* [Krzysztof G.](https://github.com/gikf)
     
--   [Roberto Iacono][28]
+* [Roberto Iacono](https://github.com/roberiacono)
     
--   [Melvin Kosisochukwu][29]
+* [Melvin Kosisochukwu](https://github.com/MelvinManni)
     
--   [Lasse Jørgensen][30]
+* [Lasse Jørgensen](https://github.com/lasjorg)
     
--   [dennmar][31]
+* [dennmar](https://github.com/dennmar)
     
--   [Arif Khalid][32]
+* [Arif Khalid](https://github.com/Arif-Khalid)
     
--   [Sorya Ek][33]
+* [Sorya Ek](https://github.com/soryaek)
     
--   [Raymond Liu][34]
+* [Raymond Liu](https://github.com/RaymondLiu777)
     
--   [Ayush Sharma][35]
+* [Ayush Sharma](https://github.com/AyushSharma72)
     
--   [Yusuf Can Aşur][36]
+* [Yusuf Can Aşur](https://github.com/yusufasur)
     
--   [Karthik Bagavathy][37]
+* [Karthik Bagavathy](https://github.com/kb42)
     
--   [Naman Khandelwal][38]
+* [Naman Khandelwal](https://github.com/Sky-walkerX)
     
--   [Varshith Kalakota][39]
+* [Varshith Kalakota](https://github.com/vkalakota18)
     
--   [Omar Rafiq][40]
+* [Omar Rafiq](https://github.com/omarraf)
     
--   [Prashant Rathore][41]
+* [Prashant Rathore](https://github.com/raahthor)
     
--   [Agung Saputra][42]
+* [Agung Saputra](https://github.com/Agung1606)
     
--   [Sanchit Kathpalia][43]
+* [Sanchit Kathpalia](https://github.com/sanchitkhthpalia)
     
--   [Shashank Dangi][44]
+* [Shashank Dangi](https://github.com/shashankdangi)
     
--   [Gary Yeung][45]
+* [Gary Yeung](https://github.com/garyeung)
     
--   [Amit Upadhyay][46]
+* [Amit Upadhyay](https://github.com/ppl-call-me-tima)
     
--   [pkdvalis][47]
+* [pkdvalis](https://github.com/pkdvalis)
     
--   [sinha21Soumya][48]
+* [sinha21Soumya](https://github.com/sinha21Soumya)
     
--   [Telukula Vishal][49]
+* [Telukula Vishal](https://github.com/VishalTelukula)
     
--   [sskiragu][50]
+* [sskiragu](https://github.com/sskiragu)
     
--   [Aishwarya][51]
+* [Aishwarya](https://github.com/AishwaryaRajput09)
     
--   [Trevor Browning][52]
+* [Trevor Browning](https://github.com/TrevorBrowning)
     
--   [AilaLu][53]
+* [AilaLu](https://github.com/AilaLu)
     
--   [zxc-w][54]
+* [zxc-w](https://github.com/zxc-w)
     
--   [Anish Lukkireddy][55]
+* [Anish Lukkireddy](https://github.com/anishlukk123)
     
--   [Josue Igiraneza][56]
+* [Josue Igiraneza](https://github.com/josue-igiraneza)
     
--   [Aditya Ravichandran][57]
+* [Aditya Ravichandran](https://github.com/adityaravichandran6)
     
--   [Skye Mickens][58]
+* [Skye Mickens](https://github.com/skyewm)
     
--   [Gagan Bhullar][59]
+* [Gagan Bhullar](https://github.com/gagan-bhullar-tech)
     
--   [Aditya][60]
+* [Aditya](https://github.com/asr1325)
     
 
 ## Forum Top Contributors
 
--   [Teller][61]
+* [Teller](https://forum.freecodecamp.org/u/Teller)
     
--   [pkdvalis][62]
+* [pkdvalis](https://forum.freecodecamp.org/u/pkdvalis)
     
--   [Hassan Zaib][63]
+* [Hassan Zaib](https://forum.freecodecamp.org/u/hasanzaib1389)
     
--   [A1legalfreelance][64]
+* [A1legalfreelance](https://forum.freecodecamp.org/u/a1legalfreelance)
     
--   [Doug Badger][65]
+* [Doug Badger](https://forum.freecodecamp.org/u/igorgetmeabrain)
     
--   [Jeremy][66]
+* [Jeremy](https://forum.freecodecamp.org/u/JeremyLT)
     
--   [fcc4b6d10c4-b540-4e2][67]
+* [fcc4b6d10c4-b540-4e2](https://forum.freecodecamp.org/u/fcc4b6d10c4-b540-4e2)
     
--   [Arakhsh Q][68]
+* [Arakhsh Q](https://forum.freecodecamp.org/u/JuniorQ)
     
--   [Raymond][69]
+* [Raymond](https://forum.freecodecamp.org/u/Ray13)
     
--   [Hanaa B.][70]
+* [Hanaa B.](https://forum.freecodecamp.org/u/hbar1st)
     
--   [Lasse][71]
+* [Lasse](https://forum.freecodecamp.org/u/lasjorg)
     
--   [sanity or not][72]
+* [sanity or not](https://forum.freecodecamp.org/u/sanity)
     
--   [MostafaElbadry][73]
+* [MostafaElbadry](https://forum.freecodecamp.org/u/MostafaElbadry)
     
--   [Anna][74]
+* [Anna](https://forum.freecodecamp.org/u/a2937)
     
--   [Muhammad Subhan][75]
+* [Muhammad Subhan](https://forum.freecodecamp.org/u/seopostexpert)
     
--   [Stephen Mutheu][76]
+* [Stephen Mutheu](https://forum.freecodecamp.org/u/stephenmutheu)
     
--   [Zeynep Serra Akkaya][77]
+* [Zeynep Serra Akkaya](https://forum.freecodecamp.org/u/zs_akkaya)
     
--   [A.Bappy][78]
+* [A.Bappy](https://forum.freecodecamp.org/u/bappyasif)
     
--   [Paulo][79]
+* [Paulo](https://forum.freecodecamp.org/u/PauloRodrigues)
     
--   [StaySilent][80]
+* [StaySilent](https://forum.freecodecamp.org/u/StaySilent)
     
--   [Klexvier][81]
+* [Klexvier](https://forum.freecodecamp.org/u/Klexvier)
     
--   [Robert H.][82]
+* [Robert H.](https://forum.freecodecamp.org/u/robheyays)
     
--   [Marvin Hunkin][83]
+* [Marvin Hunkin](https://forum.freecodecamp.org/u/BlindVisionMan)
     
--   [Tracy Chacon][84]
+* [Tracy Chacon](https://forum.freecodecamp.org/u/tracy.chacon.00)
     
--   [bochard][85]
+* [bochard](https://forum.freecodecamp.org/u/bochard)
     
--   [CODY BIGGS][86]
+* [CODY BIGGS](https://forum.freecodecamp.org/u/Cody_Biggs)
     
--   [_Infinity_][87]
+* [*Infinity*](https://forum.freecodecamp.org/u/be_happy)
     
--   [Shady H. Bedda][88]
+* [Shady H. Bedda](https://forum.freecodecamp.org/u/ShadyHBedda)
     
--   [Boolean Method][89]
+* [Boolean Method](https://forum.freecodecamp.org/u/booleanmethod9)
     
--   [Ariel Leslie][90]
+* [Ariel Leslie](https://forum.freecodecamp.org/u/ArielLeslie)
     
--   [Head in Cloud][91]
+* [Head in Cloud](https://forum.freecodecamp.org/u/DanielHuebschmann)
     
--   [Dovb1ek][92]
+* [Dovb1ek](https://forum.freecodecamp.org/u/Dovb1ek)
     
--   [c0d1ng\_ma5ter][93]
+* [c0d1ng\_ma5ter](https://forum.freecodecamp.org/u/c0d1ng_ma5ter)
     
--   [evaristoc][94]
+* [evaristoc](https://forum.freecodecamp.org/u/evaristoc)
     
--   [ahr aitch][95]
+* [ahr aitch](https://forum.freecodecamp.org/u/ahraitch)
     
--   [Jay][96]
+* [Jay](https://forum.freecodecamp.org/u/jwhoisfondofit)
     
--   [AlexanderTheDev][97]
+* [AlexanderTheDev](https://forum.freecodecamp.org/u/AlexK)
     
--   [Malcolm Harrison][98]
+* [Malcolm Harrison](https://forum.freecodecamp.org/u/Malcolm-Harrison)
     
--   [Ethan1][99]
+* [Ethan1](https://forum.freecodecamp.org/u/Ethan1)
     
--   [Vikram Ingleshwar][100]
+* [Vikram Ingleshwar](https://forum.freecodecamp.org/u/vikramvi)
     
--   [Amine (Mike)][101]
+* [Amine (Mike)](https://forum.freecodecamp.org/u/constantcode9909)
     
--   [Nicolas Greenwood][102]
+* [Nicolas Greenwood](https://forum.freecodecamp.org/u/nickrg)
     
--   [Amunyelet-Ojala][103]
+* [Amunyelet-Ojala](https://forum.freecodecamp.org/u/Amunyelet-Ojala)
     
--   [anon75571083][104]
+* [anon75571083](https://forum.freecodecamp.org/u/anon75571083)
     
--   [Brenden Howlett][105]
+* [Brenden Howlett](https://forum.freecodecamp.org/u/brendenhowlett96)
     
 
 ## Translation Top Contributors
 
--   Afonso Branco (AfonsoBranco)
+* Afonso Branco (AfonsoBranco)
     
--   Michael Qu (qubycn)
+* Michael Qu (qubycn)
     
--   Alan Luo (iLtc)
+* Alan Luo (iLtc)
     
--   Nadja Sellinat (biebricherin)
+* Nadja Sellinat (biebricherin)
     
--   David Almeida (david.miguel.almeida)
+* David Almeida (david.miguel.almeida)
     
--   jeigux
+* jeigux
     
--   Nairobi (fanqie)
+* Nairobi (fanqie)
     
--   Ivan Forcati (IvanF)
+* Ivan Forcati (IvanF)
     
--   Quang Nguyen (nguyendangquang126)
+* Quang Nguyen (nguyendangquang126)
     
--   Ganebas
+* Ganebas
     
--   Kentaro Nareswara (K3N7)
+* Kentaro Nareswara (K3N7)
     
--   Alana Maia (nicegrrrl)
+* Alana Maia (nicegrrrl)
     
--   Gustavo Birman (Gustavuspqr)
+* Gustavo Birman (Gustavuspqr)
     
--   Nataliia Hrytsyk (nataliia.hrytsyk)
+* Nataliia Hrytsyk (nataliia.hrytsyk)
     
--   Filipe Oliveira (FilipeOliveira)
+* Filipe Oliveira (FilipeOliveira)
     
--   Діана Маркута (dianamarkuta)
+* Діана Маркута (dianamarkuta)
     
--   Kostiantyn Krysenko (barkode)
+* Kostiantyn Krysenko (barkode)
     
--   v4n31aa
+* v4n31aa
     
--   janni1288
+* janni1288
     
--   Nastasia Milosev (nastasia.milosev)
+* Nastasia Milosev (nastasia.milosev)
     
--   Juan Diaz (JuanPabloDiaz)
+* Juan Diaz (JuanPabloDiaz)
     
--   Stas Kinash (stasKinash)
+* Stas Kinash (stasKinash)
     
--   ToteM
+* ToteM
     
--   Tihomir Manushev (haraGADygyl)
+* Tihomir Manushev (haraGADygyl)
     
--   Maximo Sanchez (maxysanchez.06)
+* Maximo Sanchez (maxysanchez.06)
     
--   Сервило Галина (servilogalina)
+* Сервило Галина (servilogalina)
     
--   Laureline Paris (LaurelineP)
+* Laureline Paris (LaurelineP)
     
--   mubinabegimxayrullayeva
+* mubinabegimxayrullayeva
     
--   mitegab
+* mitegab
     
--   Berke Volkan (kzlpndx)
+* Berke Volkan (kzlpndx)
     
--   Dana Volovelsky (danavolovelsky)
+* Dana Volovelsky (danavolovelsky)
     
--   Isauro Rodriguez (icaro5)
+* Isauro Rodriguez (icaro5)
     
--   Yuliia Lishchuk (yuli)
+* Yuliia Lishchuk (yuli)
     
--   Palak (palakkhan2002)
+* Palak (palakkhan2002)
     
--   bahtiyorjonq777
+* bahtiyorjonq777
     
--   Olha Boretska (olha.boretskaa)
+* Olha Boretska (olha.boretskaa)
     
--   yidev27
+* yidev27
     
--   Ilona Sheremeta (lonasheremeta78)
+* Ilona Sheremeta (lonasheremeta78)
     
--   Anna Shram (annashram53)
+* Anna Shram (annashram53)
     
--   Anastasiia Perchyshyn (anastasijp2004)
+* Anastasiia Perchyshyn (anastasijp2004)
     
--   Mariia Soloshenko (Mariia\_S)
+* Mariia Soloshenko (Mariia\_S)
     
--   erickk (lucerile435)
+* erickk (lucerile435)
     
--   Fran Sanabria (fransanabria)
+* Fran Sanabria (fransanabria)
     
--   Богдана Онищук (bohdanaon9001)
+* Богдана Онищук (bohdanaon9001)
     
--   Shogo SENSUI (1000ch)
+* Shogo SENSUI (1000ch)
     
--   maysa42snow
+* maysa42snow
     
--   Halia Senkiv (haliasenkiv)
+* Halia Senkiv (haliasenkiv)
     
--   Jiyoung Suh (JiyoungSuh)
+* Jiyoung Suh (JiyoungSuh)
     
--   Anairis Carballea (acarballea)
+* Anairis Carballea (acarballea)
     
--   Johan Javier Gonzalez Perez (javiergonzalez045)
+* Johan Javier Gonzalez Perez (javiergonzalez045)
     
--   yosrmaalej47
+* yosrmaalej47
     
--   Akram Dhib (akramdhib999)
+* Akram Dhib (akramdhib999)
     
--   Bảo Nam Trần Hoàng (kipi91212)
+* Bảo Nam Trần Hoàng (kipi91212)
     
--   Eduarda Groehs (egroehs)
+* Eduarda Groehs (egroehs)
     
--   FlameC (anonymHe)
+* FlameC (anonymHe)
     
--   sohyun
+* sohyun
     
--   Xiaoyan Zhang (Drwhooooo)
+* Xiaoyan Zhang (Drwhooooo)
     
--   Gabriela Silva (gabrielaquintilho.s)
+* Gabriela Silva (gabrielaquintilho.s)
     
--   Fausto Chiacchietta (faustooch)
+* Fausto Chiacchietta (faustooch)
     
--   Seif-03
+* Seif-03
     
--   オメロ (homero304)
+* オメロ (homero304)
     
--   Msam
+* Msam
     
--   Eya (eyaaba)
+* Eya (eyaaba)
     
--   mohamed ben haj salah (mohamedbhs7)
+* mohamed ben haj salah (mohamedbhs7)
     
--   abdallah djarraya (abdallahswimmer)
+* abdallah djarraya (abdallahswimmer)
     
--   Aylin Gümüş (aylingumus)
+* Aylin Gümüş (aylingumus)
     
--   aminezribi03
+* aminezribi03
     
--   Eloy Gutiérrez (eloy.alumnes)
+* Eloy Gutiérrez (eloy.alumnes)
     
--   Ameeri22
+* Ameeri22
     
--   youssef1607
+* youssef1607
     
--   Pablo J Lebed (pjl1978)
+* Pablo J Lebed (pjl1978)
     
--   Mergen N (mn)
+* Mergen N (mn)
     
--   Yuki Shibata (kyubashi)
+* Yuki Shibata (kyubashi)
     
--   ggfly666
+* ggfly666
     
--   Amine (ersu.amine)
+* Amine (ersu.amine)
     
--   WaifuXv
+* WaifuXv
     
--   Jawnex
+* Jawnex
     
--   mamaruo
+* mamaruo
     
--   Eric Gigondan (Itsatsu)
+* Eric Gigondan (Itsatsu)
     
--   Hamzalakoud
+* Hamzalakoud
     
--   c.marget
+* c.marget
     
--   Saki Basken (sbasken)
+* Saki Basken (sbasken)
     
--   hashim rashid (hhashbrown)
+* hashim rashid (hhashbrown)
     
--   yuan-minglongze
+* yuan-minglongze
     
--   OKmimech
+* OKmimech
     
--   J.G. P.C. (kaiserpc)
+* J.G. P.C. (kaiserpc)
     
--   Fatma Ajroud (faty\_aj)
+* Fatma Ajroud (faty\_aj)
     
--   Yuna\_707
+* Yuna\_707
     
--   Franklin Solar Navarrete (fsolarnavarrete)
+* Franklin Solar Navarrete (fsolarnavarrete)
     
--   zeinebBenRayana
+* zeinebBenRayana
     
--   Mark P. (Futuraura)
+* Mark P. (Futuraura)
     
--   Ahmad Hassan (sUfi)
+* Ahmad Hassan (sUfi)
     
--   Ivrin Ivrin (Ivrin)
+* Ivrin Ivrin (Ivrin)
     
--   parapara0919
+* parapara0919
     
--   Panah (panah)
+* Panah (panah)
     
--   Mario Turtoi (MarioDev)
+* Mario Turtoi (MarioDev)
     
--   Edenilson Ulises Aguilar Diaz (UlisesDiaz0)
+* Edenilson Ulises Aguilar Diaz (UlisesDiaz0)
     
--   rustamdocstranslator
+* rustamdocstranslator
     
--   Cristian Salazar (Cristian-27)
+* Cristian Salazar (Cristian-27)
     
--   IsabelaMB
+* IsabelaMB
     
--   Khalil Sassi (khalilsassi67)
+* Khalil Sassi (khalilsassi67)
     
--   Sorayadc
+* Sorayadc
     
--   Franco Casafus (francocasafus22)
+* Franco Casafus (francocasafus22)
     
--   miwamiwamiwa (miwalaa)
+* miwamiwamiwa (miwalaa)
     
--   franciscomelov
+* franciscomelov
     
--   Juan Taroni (juanribeiro.taroni)
+* Juan Taroni (juanribeiro.taroni)
     
--   Alexander Liu Gao (aleliu)
+* Alexander Liu Gao (aleliu)
     
--   YC liou (iop52896)
+* YC liou (iop52896)
     
--   David Oliveira (EngDavidOlivr)
+* David Oliveira (EngDavidOlivr)
     
--   Campoz \_ (campozzz)
+* Campoz \_ (campozzz)
     
--   Roberta Meyrelles (rmftelier)
+* Roberta Meyrelles (rmftelier)
     
--   Polina (minlaux)
+* Polina (minlaux)
     
--   Matheus G. Oliveira (PomboObeso)
+* Matheus G. Oliveira (PomboObeso)
     
--   Hou Bowei (houbowei)
+* Hou Bowei (houbowei)
     
--   Paul (ptijero)
+* Paul (ptijero)
     
--   Danilo Parada Garcés (dparada.sistemas)
+* Danilo Parada Garcés (dparada.sistemas)
     
--   Ana\_Writer
+* Ana\_Writer
     
--   Nathalia Oliveira (royalpython)
+* Nathalia Oliveira (royalpython)
     
--   Amir (Amir\_lvx)
+* Amir (Amir\_lvx)
     
--   Eltaj Mammadzada (eltajmammadzada)
+* Eltaj Mammadzada (eltajmammadzada)
     
--   Oliver Loza (THE\_G3NES1S)
+* Oliver Loza (THE\_G3NES1S)
     
--   Jakhongir Murtazaev (jakhongir.murtazayev)
+* Jakhongir Murtazaev (jakhongir.murtazayev)
     
--   Siyana Zdravkova (BlueButterflies)
+* Siyana Zdravkova (BlueButterflies)
     
--   Vindishel (vindishel)
+* Vindishel (vindishel)
     
--   Daniel Jimenez (danjim82)
+* Daniel Jimenez (danjim82)
     
--   hk7math
+* hk7math
     
--   KAWPHUNMAN
+* KAWPHUNMAN
     
--   wdthor
+* wdthor
     
--   Snow sita2 (EnmanuelTorres)
+* Snow sita2 (EnmanuelTorres)
     
--   Aldo Vanegas (AldoLara)
+* Aldo Vanegas (AldoLara)
     
--   nmo-genio
+* nmo-genio
     
--   Pedro Daniel (pedrodanielgomes)
+* Pedro Daniel (pedrodanielgomes)
     
--   sadnessasha
+* sadnessasha
     
--   Aby Prastya Palgunadi (arcanaxvi)
+* Aby Prastya Palgunadi (arcanaxvi)
     
--   Halifolium
+* Halifolium
     
--   juan jose (Juanx64)
+* juan jose (Juanx64)
     
--   Henry Richard Flores Bazurto (hflores10)
+* Henry Richard Flores Bazurto (hflores10)
     
--   Leah
+* Leah
     
--   Emma (emmaa5)
+* Emma (emmaa5)
     
--   ANVAR ZIYODOV (ziyodovanvar1999)
+* ANVAR ZIYODOV (ziyodovanvar1999)
     
--   dharris296
+* dharris296
     
--   Juan Esteban Montoya Marín (montoyajuanes11)
+* Juan Esteban Montoya Marín (montoyajuanes11)
     
--   Yiming Sun (sunyiming008)
+* Yiming Sun (sunyiming008)
     
--   Fauzi Kurniawan (kurniawan26)
+* Fauzi Kurniawan (kurniawan26)
     
--   Royyan Ahmad Zaydan (Kasehito)
+* Royyan Ahmad Zaydan (Kasehito)
     
--   Mikadifo
+* Mikadifo
     
--   thelooter
+* thelooter
     
--   Berkcan Gümüşışık (berkcangumusisik)
+* Berkcan Gümüşışık (berkcangumusisik)
     
--   Stephen Mutheu (stephenmutheu)
+* Stephen Mutheu (stephenmutheu)
     
--   athen
+* athen
     
--   Wajahat (syedmuhammadwajahathusain)
+* Wajahat (syedmuhammadwajahathusain)
     
--   Tanish Chauhan (tanishc4444)
+* Tanish Chauhan (tanishc4444)
     
--   Satya900
+* Satya900
     
--   Luis V. (lvalderramavergara)
+* Luis V. (lvalderramavergara)
     
--   Sharvio
+* Sharvio
     
--   HibouDev
+* HibouDev
     
--   dTM99
+* dTM99
     
--   wuzzjohn
+* wuzzjohn
     
--   Gavin Xu (gavinxu2)
+* Gavin Xu (gavinxu2)
     
--   ProjektMing
+* ProjektMing
     
--   Saidkamol Saidjamolov (saidkamolxon)
+* Saidkamol Saidjamolov (saidkamolxon)
     
--   beta filip (betafilip)
+* beta filip (betafilip)
     
--   Deborah Porchia (deborah98)
+* Deborah Porchia (deborah98)
     
--   teddy\_ye
+* teddy\_ye
     
--   Rommel Hindap (rommel.b.hindap)
+* Rommel Hindap (rommel.b.hindap)
     
--   Jesús Lautaro Careglio Albornoz (JLCareglio)
+* Jesús Lautaro Careglio Albornoz (JLCareglio)
     
--   SergioBlancoFtns
+* SergioBlancoFtns
     
--   Nathalie Bour (nathalie.bour)
+* Nathalie Bour (nathalie.bour)
     
--   Qingfeng Huang (darrenhqf)
+* Qingfeng Huang (darrenhqf)
     
--   Omar (omar.fanzeres)
+* Omar (omar.fanzeres)
     
--   Atsushi Hatakeyama (atsushi729)
+* Atsushi Hatakeyama (atsushi729)
     
--   Diego Fierro (diegoefierro)
+* Diego Fierro (diegoefierro)
     
--   IsaRO (IsaR0d)
+* IsaRO (IsaR0d)
     
--   Abdulbosit Tuychiev (abdulbosit19980204)
+* Abdulbosit Tuychiev (abdulbosit19980204)
     
--   NG KA YEE (hkscsheph)
+* NG KA YEE (hkscsheph)
     
--   Floman Dizwit (Hockman)
+* Floman Dizwit (Hockman)
     
--   Karel Vanhelden (karelvanhelden)
+* Karel Vanhelden (karelvanhelden)
     
--   khay56
+* khay56
     
--   Dostonbek Matyakubov (doston12)
+* Dostonbek Matyakubov (doston12)
     
--   MarcoGeldenhuis
+* MarcoGeldenhuis
     
--   immeteor2
+* immeteor2
     
--   Freedom Fighter (1543431a)
+* Freedom Fighter (1543431a)
     
--   Ibn Hosain (ibnhosain014)
+* Ibn Hosain (ibnhosain014)
     
--   Vairus (e-oannis)
+* Vairus (e-oannis)
     
--   Elio Fang
+* Elio Fang
     
--   [YiWei][106]
+* [YiWei](https://x.com/0x99Ethan3)
     
--   [Tsukistar][107]
+* [Tsukistar](https://x.com/TsukistarCN)
     
--   luojiyin
+* luojiyin
     
--   [Qingfeng Huang][108]
+* [Qingfeng Huang](https://www.linkedin.com/in/qingfeng-huang)
     
--   wendy chen
+* wendy chen
     
--   zhizhan
+* zhizhan
     
--   HeZean
+* HeZean
     
--   Ivan Forcati
+* Ivan Forcati
     
--   Andrea Sisti
+* Andrea Sisti
     
--   [彭雪梅][109]
+* [彭雪梅](https://x.com/Xuemei525)
     
 
 ## YouTube Top Contributors
 
--   [Carlos León][110]
+* [S1ng S1ng](https://github.com/s1ngs1ng)
     
--   [Luis Canary][111]
+* [Carlos León](www.linkedin.com/in/leoncarlo/)
     
--   [Ramon Rodrigues][112]
+* [Luis Canary](www.youtube.com/@LuisCanary)
     
--   [James Pearce][113]
+* [Ramon Rodrigues](www.youtube.com/@programacaocomramon)
     
--   [Tatev Aslanyan][114]
+* [James Pearce](github.com/jamesgpearce)
     
--   [Eric Tech][115]
+* [Tatev Aslanyan](www.youtube.com/@officialtatevaslanyan)
     
--   [Rivaan Ranawat][116]
+* [Eric Tech](www.youtube.com/@EricWTech)
     
--   [Khaiser Khanam][117]
+* [Rivaan Ranawat](www.youtube.com/@RivaanRanawat)
     
--   [Paulo Dichone][118]
+* [Khaiser Khanam](www.youtube.com/@KhanamCoding)
     
--   [Hitesh Choudhary][119]
+* [Paulo Dichone](www.youtube.com/@vincibits)
     
--   [Eamonn Cottrell][120]
+* [Hitesh Choudhary](www.youtube.com/@HiteshCodeLab)
     
--   [Harsh Bhatt][121]
+* [Eamonn Cottrell](www.youtube.com/@EamonnCottrell)
     
--   [Radu Mariescu-Istodor][122]
+* [Harsh Bhatt](www.youtube.com/@harshbhatt7585)
     
--   [Imad Saddik][123]
+* [Radu Mariescu-Istodor](www.youtube.com/@radu)
     
--   [Faisal Memon][124]
+* [Imad Saddik](www.youtube.com/@3CodeCampers)
     
--   [JSLegendDev][125]
+* [Faisal Memon](www.youtube.com/@EmbarkX)
     
--   [Andrew Brown][126]
+* [JSLegendDev](www.youtube.com/@JSLegendDev)
     
--   [Dave Gray][127]
+* [Andrew Brown](www.youtube.com/@ExamProChannel)
     
--   [Ebenezer Asabre][128]
+* [Dave Gray](www.youtube.com/@DaveGrayTeachesCode)
     
--   [Alberto Lerda][129]
+* [Ebenezer Asabre](www.youtube.com/@asabretech)
     
--   [Yacine Mahdid][130]
+* [Alberto Lerda](www.youtube.com/@the-lisper)
     
--   [Alen Omeri][131]
+* [Yacine Mahdid](www.youtube.com/@deeplearningexplained)
     
--   [Tunga Bayrak][132]
+* [Alen Omeri](www.youtube.com/@codeafuture)
     
--   [Haris Iftikhar][133]
+* [Tunga Bayrak](www.youtube.com/@tungabayrak9765)
     
--   [Rola Dali][134]
+* [Haris Iftikhar](www.youtube.com/@CodingCleverly)
     
--   [Omar M. Atef][135]
+* [Rola Dali](rdali.github.io/)
     
--   [Steven Garcia][136]
+* [Omar M. Atef](www.youtube.com/@OmarMAtef)
     
--   [Rishi Kumar Tiwari][137]
+* [Steven Garcia](github.com/stevenGarciaDev)
     
--   [Cole Blender][138]
+* [Rishi Kumar Tiwari](www.youtube.com/@TrickSumo)
     
--   [Borys Cherednychenko][139]
+* [Cole Blender](www.youtube.com/@coleblender)
     
--   [Haider Malik][140]
+* [Borys Cherednychenko](www.youtube.com/@AlterYourEnglish)
     
--   [Grant Huang][141]
+* [Haider Malik](www.youtube.com/@haidermalik3402)
     
--   [Vuk Rosić][142]
+* [Grant Huang](www.youtube.com/@excel.withgrant)
     
--   [Daniel Gakwaya][143]
+* [Vuk Rosić](www.youtube.com/@vukrosic)
     
--   [Brijen Makwana][144]
+* [Daniel Gakwaya](www.youtube.com/@LearnQtGuide)
     
--   [Zura Sekhniashvili][145]
+* [Brijen Makwana](github.com/BrijenMakwana)
     
--   [Vladimirs Hisamutdinovs][146]
+* [Zura Sekhniashvili](www.youtube.com/@TheCodeholic)
     
--   [Tapas Adhikary][147]
+* [Vladimirs Hisamutdinovs](www.youtube.com/@turingtimemachine)
     
--   [Richard Topchii][148]
+* [Tapas Adhikary](www.youtube.com/@tapasadhikary)
     
--   [Abel Gideon][149]
+* [Richard Topchii](www.youtube.com/@richardtopchii)
     
--   [Chuck Schiemeyer][150]
+* [Abel Gideon](www.youtube.com/@code-with-abel)
     
--   [Alexandru Cristian][151]
+* [Chuck Schiemeyer](www.youtube.com/@MatkatMusic)
     
--   [Virginia Ocana][152]
+* [Alexandru Cristian](www.youtube.com/@programmingwithalex.585)
     
--   [Vaibhav Mehra][153]
+* [Virginia Ocana](www.youtube.com/@masterspanishacademy)
     
--   [Kshitij Sharma][154]
+* [Vaibhav Mehra](www.linkedin.com/in/vaibhav-mehra-main/)
     
--   [Bhrugen Patel][155]
+* [Kshitij Sharma](optimusprime09012004@gmail.com)
     
--   [Mohammad Fahd Abrah][156]
+* [Bhrugen Patel](www.dotnetmastery.com)
     
--   [Frank Andrade][157]
+* [Mohammad Fahd Abrah](www.youtube.com/@programmingoceanacademy)
     
--   [Chad McAllister][158]
+* [Frank Andrade](www.youtube.com/@ThePyCoach)
     
--   [Erik Yuzwa][159]
+* [Chad McAllister](www.youtube.com/@ChadsPrep)
     
--   [Bappy Ahmed][160]
+* [Erik Yuzwa](www.youtube.com/@ErikYuzwa)
     
--   [Noor Fakhry][161]
+* [Bappy Ahmed](www.youtube.com/@dswithbappy)
     
--   [Ayush Singh][162]
+* [Noor Fakhry](www.youtube.com/@Programming-Fluency)
     
--   [Gregory Kirchoff][163]
+* [Ayush Singh](www.youtube.com/@AyushSinghSh)
     
--   [Sheldon Chi][164]
+* [Gregory Kirchoff](www.youtube.com/@ever-greg)
     
--   [Muhammad Omar Al Najjar][165]
+* [Sheldon Chi](www.youtube.com/@algo.monster)
     
--   [Chumki Biswas][166]
+* [Muhammad Omar Al Najjar](www.youtube.com/@GlitchyDevs)
     
--   [Alvin Zablan][167]
+* [Chumki Biswas](www.youtube.com/@talltalksfromashortlady2798)
     
--   [Qiang Hao][168]
+* [Alvin Zablan](www.youtube.com/c/AlvinTheProgrammer)
     
--   [Marco Peix][169]
+* [Qiang Hao](www.youtube.com/@structuredcs)
     
--   [Sumit Saha][170]
+* [Marco Peix](www.youtube.com/@datasciencewithmarco)
     
--   [Yılmaz Alaca][171]
+* [Sumit Saha](www.youtube.com/@logicBaseLabs)
     
--   [Bobby Roe][172]
+* [Yılmaz Alaca](www.linkedin.com/in/yilmazalaca)
     
--   [Lane Wagner][173]
+* [Bobby Roe](www.youtube.com/@robotbobby9)
     
--   [Shad Rayhan Mazumder][174]
+* [Lane Wagner](x.com/wagslane)
     
--   [Ervis Trupja][175]
+* [Shad Rayhan Mazumder](www.youtube.com/%E2%80%AA@mobidevtalk)
     
--   [Vivek Kalyanarangan][176]
+* [Ervis Trupja](www.youtube.com/@DotNetHow)
     
--   [David J. Malan][177]
+* [Vivek Kalyanarangan](github.com/vivekkalyanarangan30)
     
--   [Carlos Leon][178]
+* [David J. Malan](www.youtube.com/@cs50)
     
--   [Carlos Valentin][179]
+* [Carlos Leon](www.linkedin.com/in/leoncarlo/)
     
--   [Parth Vyas][180]
+* [Carlos Valentin](www.youtube.com/@BlossomBuild)
     
--   [Muhammad Abdullah][181]
+* [Parth Vyas](www.youtube.com/@DestinationFAANG)
     
--   [Andrew Woan][182]
+* [Muhammad Abdullah](www.youtube.com/@codewithmuhammadabdullah)
     
--   [Alex Gordon][183]
+* [Andrew Woan](www.youtube.com/@andrewwoan)
     
--   [Karol Kurek][184]
+* [Alex Gordon](www.youtube.com/@AlexGordonHiFi)
+    
+* [Karol Kurek](http://youtube.com/@TwoWaysMath)
     
 
 ## News Top Contributors
 
--   [Manish Shivanandhan][185]
+* [Manish Shivanandhan](https://freecodecamp.org/news/author/manishshivanandhan)
     
--   [Nikheel Vishwas Savant][186]
+* [Nikheel Vishwas Savant](https://freecodecamp.org/news/author/nsavant)
     
--   [Surya Teja Appini][187]
+* [Surya Teja Appini](https://freecodecamp.org/news/author/appinisurya)
     
--   [OMOTAYO OMOYEMI][188]
+* [OMOTAYO OMOYEMI](https://freecodecamp.org/news/author/tayo4christ)
     
--   [Casmir Onyekani][189]
+* [Casmir Onyekani](https://freecodecamp.org/news/author/Casmir)
     
--   [Chukwudi Nweze][190]
+* [Chukwudi Nweze](https://freecodecamp.org/news/author/Chukwudinweze)
     
--   [German Cocca][191]
+* [German Cocca](https://freecodecamp.org/news/author/GerCocca)
     
--   [Shejan Mahamud][192]
+* [Shejan Mahamud](https://freecodecamp.org/news/author/Shejan-Mahamud)
     
--   [Hew Hahn][193]
+* [Hew Hahn](https://freecodecamp.org/news/author/hew)
     
--   [Moshe Siegel][194]
+* [Moshe Siegel](https://freecodecamp.org/news/author/curiousmoshe)
     
--   [Mark Mahoney][195]
+* [Mark Mahoney](https://freecodecamp.org/news/author/markm208)
     
--   [Atuoha Anthony][196]
+* [Atuoha Anthony](https://freecodecamp.org/news/author/atuoha)
     
--   [Bala Priya C][197]
+* [Bala Priya C](https://freecodecamp.org/news/author/balapriyac)
     
--   [Ashutosh Krishna][198]
+* [Ashutosh Krishna](https://freecodecamp.org/news/author/ashutoshkrris)
     
--   [Hitesh Chauhan][199]
+* [Hitesh Chauhan](https://freecodecamp.org/news/author/hiteshchauhan2023)
     
--   [Mah Noor][200]
+* [Mah Noor](https://freecodecamp.org/news/author/tiredmahnoor)
     
--   [Andrew Baisden][201]
+* [Andrew Baisden](https://freecodecamp.org/news/author/andrewbaisden)
     
--   [Alex Tray][202]
+* [Alex Tray](https://freecodecamp.org/news/author/trayalex812)
     
--   [Gabor Koos][203]
+* [Gabor Koos](https://freecodecamp.org/news/author/gkoos)
     
--   [Abhijeet Dave][204]
+* [Abhijeet Dave](https://freecodecamp.org/news/author/Abhidave)
     
--   [Sumit Saha][205]
+* [Sumit Saha](https://freecodecamp.org/news/author/sumitsaha)
     
--   [Opaluwa Emidowojo][206]
+* [Opaluwa Emidowojo](https://freecodecamp.org/news/author/Tech-On-Diapers)
     
--   [Oluwatobi Sofela][207]
+* [Oluwatobi Sofela](https://freecodecamp.org/news/author/oluwatobiss)
     
--   [Shola Jegede][208]
+* [Shola Jegede](https://freecodecamp.org/news/author/sholajegede)
     
--   [Michael Yuan][209]
+* [Michael Yuan](https://freecodecamp.org/news/author/michaelyuan)
     
--   [Chisom Uma][210]
+* [Chisom Uma](https://freecodecamp.org/news/author/ChisomUma123)
     
--   [Wisdom Usa][211]
+* [Wisdom Usa](https://freecodecamp.org/news/author/heywisdom)
     
--   [Kuriko Iwai][212]
+* [Kuriko Iwai](https://freecodecamp.org/news/author/kuriko)
     
--   [Cedd Burge][213]
+* [Cedd Burge](https://freecodecamp.org/news/author/ceddlyburge)
     
--   [Destiny Erhabor][214]
+* [Destiny Erhabor](https://freecodecamp.org/news/author/CaesarSage)
     
--   [Ayodele Aransiola][215]
+* [Ayodele Aransiola](https://freecodecamp.org/news/author/leomofthings)
     
--   [Temitope Oyedele][216]
+* [Temitope Oyedele](https://freecodecamp.org/news/author/Koded001)
     
--   [Emdadul Islam][217]
+* [Emdadul Islam](https://freecodecamp.org/news/author/emdadulislam)
     
--   [Oyedele Tioluwani][218]
+* [Oyedele Tioluwani](https://freecodecamp.org/news/author/Tioluwani)
     
--   [Soham Mehta][219]
+* [Soham Mehta](https://freecodecamp.org/news/author/mehtasoham)
     
--   [Agnes Olorundare][220]
+* [Agnes Olorundare](https://freecodecamp.org/news/author/Agnes28)
     
--   [Tapas Adhikary][221]
+* [Tapas Adhikary](https://freecodecamp.org/news/author/atapas)
     
--   [Chirag Agrawal][222]
+* [Chirag Agrawal](https://freecodecamp.org/news/author/chiragagrawal)
     
--   [Ajay Yadav][223]
+* [Ajay Yadav](https://freecodecamp.org/news/author/ATechAjay)
     
--   [Mayur Vekariya][224]
+* [Mayur Vekariya](https://freecodecamp.org/news/author/mayur9210)
     
--   [Sharvin Shah][225]
+* [Sharvin Shah](https://freecodecamp.org/news/author/Sharvin26)
     
--   [Adejumo Ridwan Suleiman][226]
+* [Adejumo Ridwan Suleiman](https://freecodecamp.org/news/author/adejumo)
     
--   [Sravan Karuturi][227]
+* [Sravan Karuturi](https://freecodecamp.org/news/author/sravankaruturi)
     
--   [Lane Wagner][228]
+* [Lane Wagner](https://freecodecamp.org/news/author/wagslane)
     
--   [Nitheesh Poojary][229]
+* [Nitheesh Poojary](https://freecodecamp.org/news/author/nitheeshp)
     
--   [Alma Mohapatra][230]
+* [Alma Mohapatra](https://freecodecamp.org/news/author/almamohapatra)
     
--   [Orim Dominic Adah][231]
+* [Orim Dominic Adah](https://freecodecamp.org/news/author/orimdominic)
     
--   [Arunachalam B][232]
+* [Arunachalam B](https://freecodecamp.org/news/author/arunachalamb)
     
--   [AYUSH MISHRA][233]
+* [AYUSH MISHRA](https://freecodecamp.org/news/author/Ayush01Mishra)
     
--   [Shrijal Acharya][234]
+* [Shrijal Acharya](https://freecodecamp.org/news/author/shricodev)
     
--   [Ikegah Oliver][235]
+* [Ikegah Oliver](https://freecodecamp.org/news/author/Oliverkrane)
     
--   [Olaleye Blessing][236]
+* [Olaleye Blessing](https://freecodecamp.org/news/author/Jongbo)
     
--   [Ifeoma Udu][237]
+* [Ifeoma Udu](https://freecodecamp.org/news/author/ifycodes99)
     
--   [Oluwatobi][238]
+* [Oluwatobi](https://freecodecamp.org/news/author/Tobilyn77)
     
--   [Oladeji Oluwaseun][239]
+* [Oladeji Oluwaseun](https://freecodecamp.org/news/author/oluwaseunoladeji)
     
--   [Tarun Singh][240]
+* [Tarun Singh](https://freecodecamp.org/news/author/tarunsinghofficial)
     
--   [Grant Riordan][241]
+* [Grant Riordan](https://freecodecamp.org/news/author/grantdotdev)
     
--   [Asfak Ahmed][242]
+* [Asfak Ahmed](https://freecodecamp.org/news/author/asfakahmed)
     
--   [Tech With RJ][243]
+* [Tech With RJ](https://freecodecamp.org/news/author/LeeRenJie)
     
--   [Tim Kleier][244]
+* [Tim Kleier](https://freecodecamp.org/news/author/timkleier)
     
--   [Ophy Boamah][245]
+* [Ophy Boamah](https://freecodecamp.org/news/author/CodeHemaa)
     
--   [EZINNE ANNE EMILIA][246]
+* [EZINNE ANNE EMILIA](https://freecodecamp.org/news/author/ezinnecodes)
     
--   [Happiness Omale][247]
+* [Happiness Omale](https://freecodecamp.org/news/author/Codinghappiness)
     
--   [Pedro][248]
+* [Pedro](https://freecodecamp.org/news/author/bertao)
     
--   [Amanda Ene Adoyi][249]
+* [Amanda Ene Adoyi](https://freecodecamp.org/news/author/Lonercode)
     
--   [Arun Shanmugam Kumar][250]
+* [Arun Shanmugam Kumar](https://freecodecamp.org/news/author/arunshanmugamkumar)
     
--   [Andrew Ezeani][251]
+* [Andrew Ezeani](https://freecodecamp.org/news/author/andrewezeani)
     
--   [Ajay Kalal][252]
+* [Ajay Kalal](https://freecodecamp.org/news/author/Ajay074)
     
--   [Ijeoma Igboagu][253]
+* [Ijeoma Igboagu](https://freecodecamp.org/news/author/Ijay)
     
--   [Prankur Pandey][254]
+* [Prankur Pandey](https://freecodecamp.org/news/author/prankurpandeyy)
     
--   [Augustine Alul][255]
+* [Augustine Alul](https://freecodecamp.org/news/author/augustinealul)
     
--   [Sanjay R][256]
+* [Sanjay R](https://freecodecamp.org/news/author/sanjayxr)
     
--   [Ayu Adiati][257]
+* [Ayu Adiati](https://freecodecamp.org/news/author/adiatiayu)
     
--   [Daniel García Solla][258]
+* [Daniel García Solla](https://freecodecamp.org/news/author/cardstdani)
     
--   [Isaiah Clifford Opoku][259]
+* [Isaiah Clifford Opoku](https://freecodecamp.org/news/author/Clifftech)
     
--   [Ryan Michael Kay][260]
+* [Ryan Michael Kay](https://freecodecamp.org/news/author/ryan-michael-kay)
     
--   [Idris Olubisi][261]
+* [Idris Olubisi](https://freecodecamp.org/news/author/olanetsoft)
     
--   [Aditya Vikram Kashyap][262]
+* [Aditya Vikram Kashyap](https://freecodecamp.org/news/author/wittycircuitry)
     
--   [brooklyn][263]
+* [brooklyn](https://freecodecamp.org/news/author/brkln)
     
--   [Tope Fasasi][264]
+* [Tope Fasasi](https://freecodecamp.org/news/author/TemiTope1)
     
--   [Ilknur Eren][265]
+* [Ilknur Eren](https://freecodecamp.org/news/author/ilknureren)
     
--   [Soham Banerjee][266]
+* [Soham Banerjee](https://freecodecamp.org/news/author/sohamstars)
     
--   [Vahe Aslanyan][267]
+* [Vahe Aslanyan](https://freecodecamp.org/news/author/vaheaslanyan)
     
--   [Tatev Aslanyan][268]
+* [Tatev Aslanyan](https://freecodecamp.org/news/author/tatevaslanyan)
     
--   [Henry Adepegba][269]
+* [Henry Adepegba](https://freecodecamp.org/news/author/henrywinnerman)
     
--   [Oluwadamilola Oshungboye][270]
+* [Oluwadamilola Oshungboye](https://freecodecamp.org/news/author/ThatCoolGuy)
     
--   [Shruti Kapoor][271]
+* [Shruti Kapoor](https://freecodecamp.org/news/author/shrutikapoor)
     
--   [Mfonobong Umondia][272]
+* [Mfonobong Umondia](https://freecodecamp.org/news/author/theladybella)
     
--   [Spruce Emmanuel][273]
+* [Spruce Emmanuel](https://freecodecamp.org/news/author/Spruce)
     
--   [Okoro Emmanuel Nzube][274]
+* [Okoro Emmanuel Nzube](https://freecodecamp.org/news/author/Derekvibe)
     
--   [Raju Manoj][275]
+* [Raju Manoj](https://freecodecamp.org/news/author/rajumanoj)
     
--   [Udemezue John][276]
+* [Udemezue John](https://freecodecamp.org/news/author/udemezue)
     
--   [Oluchi Nwenyi][277]
+* [Oluchi Nwenyi](https://freecodecamp.org/news/author/lulunwenyi)
     
--   [Tooba Jamal][278]
+* [Tooba Jamal](https://freecodecamp.org/news/author/toobaj)
     
--   [Victoria Nduka][279]
+* [Victoria Nduka](https://freecodecamp.org/news/author/nwanduka)
     
--   [Nneoma Uche][280]
+* [Nneoma Uche](https://freecodecamp.org/news/author/Nene23)
     
--   [Michael Ikoko][281]
+* [Michael Ikoko](https://freecodecamp.org/news/author/michaelikoko)
     
--   [Olowo Jude][282]
+* [Olowo Jude](https://freecodecamp.org/news/author/Jude-Olowo)
     
--   [Ateev Duggal][283]
+* [Ateev Duggal](https://freecodecamp.org/news/author/Ateev)
     
--   [Oluwadamisi Samuel][284]
+* [Oluwadamisi Samuel](https://freecodecamp.org/news/author/Oluwadamisi)
     
--   [Mohit Menghnani][285]
+* [Mohit Menghnani](https://freecodecamp.org/news/author/menghnani)
     
--   [Brandon Wozniewicz][286]
+* [Brandon Wozniewicz](https://freecodecamp.org/news/author/scriptedBytes)
     
--   [Hang Hu][287]
+* [Hang Hu](https://freecodecamp.org/news/author/huhuhang)
     
--   [Rufai Mustapha][288]
+* [Rufai Mustapha](https://freecodecamp.org/news/author/mrufai)
     
--   [Damilola Oniyide][289]
+* [Damilola Oniyide](https://freecodecamp.org/news/author/LolaVictoria)
     
--   [Fatuma Abdullahi][290]
+* [Fatuma Abdullahi](https://freecodecamp.org/news/author/HijabiCoder)
     
--   [Montasser Mossallem][291]
+* [Montasser Mossallem](https://freecodecamp.org/news/author/montasser1988)
     
--   [valentine Gatwiri][292]
+* [valentine Gatwiri](https://freecodecamp.org/news/author/gatwirival)
     
--   [Timothy Olanrewaju][293]
+* [Timothy Olanrewaju](https://freecodecamp.org/news/author/SmoothTech)
     
--   [Han Qi][294]
+* [Han Qi](https://freecodecamp.org/news/author/gitgithan)
     
--   [Eti Ijeoma][295]
+* [Eti Ijeoma](https://freecodecamp.org/news/author/Omah)
     
--   [Yazdun][296]
+* [Yazdun](https://freecodecamp.org/news/author/Yazdun)
     
--   [deji adesoga][297]
+* [deji adesoga](https://freecodecamp.org/news/author/desoga)
     
--   [Brian Barrow][298]
+* [Brian Barrow](https://freecodecamp.org/news/author/the_BrianB)
     
--   [Chidiadi Anyanwu][299]
+* [Chidiadi Anyanwu](https://freecodecamp.org/news/author/chidiadi01)
     
--   [Andrew Maksimchenko][300]
+* [Andrew Maksimchenko](https://freecodecamp.org/news/author/codelikeandrew)
     
--   [Mario Casari][301]
+* [Mario Casari](https://freecodecamp.org/news/author/mcasari)
     
--   [Balajee Asish Brahmandam][302]
+* [Balajee Asish Brahmandam](https://freecodecamp.org/news/author/Balajeeasish)
     
--   [Gordan Tan][303]
+* [Gordan Tan](https://freecodecamp.org/news/author/woai3c)
     
--   [Tilda Udufo][304]
+* [Tilda Udufo](https://freecodecamp.org/news/author/tildaudufo)
     
--   [Rahul gupta][305]
+* [Rahul gupta](https://freecodecamp.org/news/author/rahulgupta32)
     
--   [Eda Eren][306]
+* [Eda Eren](https://freecodecamp.org/news/author/edae)
     
--   [Josiah Adesola][307]
+* [Josiah Adesola](https://freecodecamp.org/news/author/josiahadesola)
     
--   [Venkata Sai Sandeep][308]
+* [Venkata Sai Sandeep](https://freecodecamp.org/news/author/smarttester)
     
--   [Tiago Capelo Monteiro][309]
+* [Tiago Capelo Monteiro](https://freecodecamp.org/news/author/tiagomonteiro)
     
--   [Preston Osoro][310]
+* [Preston Osoro](https://freecodecamp.org/news/author/Preston56)
     
--   [Ankur Tyagi][311]
+* [Ankur Tyagi](https://freecodecamp.org/news/author/TheAnkurTyagi)
     
--   [Ben][312]
+* [Ben](https://freecodecamp.org/news/author/justanothertechlead)
     
--   [Vikram Aruchamy][313]
+* [Vikram Aruchamy](https://freecodecamp.org/news/author/askvikram)
     
--   [Dhruv Prajapati][314]
+* [Dhruv Prajapati](https://freecodecamp.org/news/author/dhruv-007)
     
--   [Prince Onukwili][315]
+* [Prince Onukwili](https://freecodecamp.org/news/author/onukwilip)
     
--   [Daniel Adeboye][316]
+* [Daniel Adeboye](https://freecodecamp.org/news/author/AdeboyeDN)
     
--   [Kumar Anand][317]
+* [Kumar Anand](https://freecodecamp.org/news/author/kanand)
     
--   [Lucas][318]
+* [Lucas](https://freecodecamp.org/news/author/lucasgarcez)
     
--   [evaristo.c][319]
+* [evaristo.c](https://freecodecamp.org/news/author/ec001)
     
--   [Rajdeep Singh][320]
+* [Rajdeep Singh](https://freecodecamp.org/news/author/officialrajdeepsingh)
     
--   [Chaitanya Rahalkar][321]
+* [Chaitanya Rahalkar](https://freecodecamp.org/news/author/chaitanyarahalkar)
     
--   [Maham Codes][322]
+* [Maham Codes](https://freecodecamp.org/news/author/MahamCodes)
     
--   [Divya Valsala Saratchandran][323]
+* [Divya Valsala Saratchandran](https://freecodecamp.org/news/author/divyasaratchandran)
     
--   [Joan Ayebola][324]
+* [Joan Ayebola](https://freecodecamp.org/news/author/joanayebola)
     
--   [Omer Rosenbaum][325]
+* [Omer Rosenbaum](https://freecodecamp.org/news/author/omerros)
     
--   [Nazneen Ahmad][326]
+* [Nazneen Ahmad](https://freecodecamp.org/news/author/Nazneen758)
     
--   [Kunal Nalawade][327]
+* [Kunal Nalawade](https://freecodecamp.org/news/author/KunalN25)
     
--   [Shamsuddoha Ranju][328]
+* [Shamsuddoha Ranju](https://freecodecamp.org/news/author/sdranju)
     
--   [Anamol Rajbhandari][329]
+* [Anamol Rajbhandari](https://freecodecamp.org/news/author/anamol-rajbhandari)
     
--   [Sule-Balogun Olanrewaju][330]
+* [Sule-Balogun Olanrewaju](https://freecodecamp.org/news/author/suleolanrewaju)
     
--   [Sara Jadhav][331]
+* [Sara Jadhav](https://freecodecamp.org/news/author/Eccentric-)
     
--   [Daniel Anomfueme][332]
+* [Daniel Anomfueme](https://freecodecamp.org/news/author/LifeofDan-EL)
     
--   [Michael Para][333]
+* [Michael Para](https://freecodecamp.org/news/author/Michael-para)
     
--   [Elabonga Atuo][334]
+* [Elabonga Atuo](https://freecodecamp.org/news/author/Ellabee)
     
--   [Azubuike Duru][335]
+* [Azubuike Duru](https://freecodecamp.org/news/author/azubuikeduru)
     
--   [Adalbert Pungu][336]
+* [Adalbert Pungu](https://freecodecamp.org/news/author/AdalbertPungu)
     
--   [Kevine Nzapdi][337]
+* [Kevine Nzapdi](https://freecodecamp.org/news/author/gunkev)
     
--   [Hamdaan Ali][338]
+* [Hamdaan Ali](https://freecodecamp.org/news/author/hamdaan)
     
--   [Abdullah Salaudeen][339]
+* [Abdullah Salaudeen](https://freecodecamp.org/news/author/AbdullahInBytes)
     
--   [Rahul][340]
+* [Rahul](https://freecodecamp.org/news/author/RAHULISM)
     
--   [Alaran Ayobami][341]
+* [Alaran Ayobami](https://freecodecamp.org/news/author/Ayobami6)
     
--   [Omolade Ekpeni][342]
+* [Omolade Ekpeni](https://freecodecamp.org/news/author/omoladeekpeni)
     
--   [Rob Walters][343]
+* [Rob Walters](https://freecodecamp.org/news/author/rwalters)
     
--   [Vivek Sahu][344]
+* [Vivek Sahu](https://freecodecamp.org/news/author/viv1)
     
--   [oghenekparobo Stephen][345]
+* [oghenekparobo Stephen](https://freecodecamp.org/news/author/Xtephen)
     
--   [P S Mohammed Ali][346]
+* [P S Mohammed Ali](https://freecodecamp.org/news/author/psmohammedali)
     
--   [Gursimar Singh][347]
+* [Gursimar Singh](https://freecodecamp.org/news/author/gursimar)
     
--   [Olabisi Olaoye][348]
+* [Olabisi Olaoye](https://freecodecamp.org/news/author/Olabisi09)
     
--   [David Asaolu][349]
+* [David Asaolu](https://freecodecamp.org/news/author/de)
     
--   [Jacob Stopak][350]
+* [Jacob Stopak](https://freecodecamp.org/news/author/initialcommit)
     
--   [Emore Ogheneyoma Lawrence][351]
+* [Emore Ogheneyoma Lawrence](https://freecodecamp.org/news/author/Yoma)
     
--   [Hunor Márton Borbély][352]
+* [Hunor Márton Borbély](https://freecodecamp.org/news/author/hunor)
     
--   [Praise James][353]
+* [Praise James](https://freecodecamp.org/news/author/techwithpraisejames)
     
--   [Alex Pliutau][354]
+* [Alex Pliutau](https://freecodecamp.org/news/author/pltvs)
     
--   [Tanishka Makode][355]
+* [Tanishka Makode](https://freecodecamp.org/news/author/tanishkamakode)
     
--   [Sonya Moisset][356]
+* [Sonya Moisset](https://freecodecamp.org/news/author/SonyaMoisset)
     
--   [Vivek Agrawal][357]
+* [Vivek Agrawal](https://freecodecamp.org/news/author/vkweb)
     
--   [Syeda Maham Fahim][358]
+* [Syeda Maham Fahim](https://freecodecamp.org/news/author/syedamahamfahim)
     
--   [Chidera Humphrey][359]
+* [Chidera Humphrey](https://freecodecamp.org/news/author/chiderahumphrey)
     
--   [Danny][360]
+* [Danny](https://freecodecamp.org/news/author/DoableDanny)
     
--   [Stefan Muzyka][361]
+* [Stefan Muzyka](https://freecodecamp.org/news/author/stefanmuzyka)
     
--   [Samhitha Rama Prasad][362]
+* [Samhitha Rama Prasad](https://freecodecamp.org/news/author/samhitharamaprasad)
     
--   [Nitin Sharma][363]
+* [Nitin Sharma](https://freecodecamp.org/news/author/nitinfab)
     
--   [Programming with Shahan][364]
+* [Programming with Shahan](https://freecodecamp.org/news/author/codewithshahan)
     
--   [Juan P. Romano][365]
+* [Juan P. Romano](https://freecodecamp.org/news/author/jpromanonet)
     
--   [Anjan Baradwaj][366]
+* [Anjan Baradwaj](https://freecodecamp.org/news/author/anjanbaradwaj)
     
--   [Manoel][367]
+* [Manoel](https://freecodecamp.org/news/author/manocormen)
     
--   [Kayode Adeniyi][368]
+* [Kayode Adeniyi](https://freecodecamp.org/news/author/mkbadeniyi)
     
--   [Akande Olalekan Toheeb][369]
+* [Akande Olalekan Toheeb](https://freecodecamp.org/news/author/MuhToyyib)
     
--   [David Clinton][370]
+* [David Clinton](https://freecodecamp.org/news/author/dbclinton)
     
--   [Jose Vicente Nunez][371]
+* [Jose Vicente Nunez](https://freecodecamp.org/news/author/josevnz)
     
--   [Joe Attardi][372]
+* [Joe Attardi](https://freecodecamp.org/news/author/joeattardi)
     
--   [Mihail Gaberov][373]
+* [Mihail Gaberov](https://freecodecamp.org/news/author/mihailgaberov)
     
--   [Ashimi0x][374]
+* [Ashimi0x](https://freecodecamp.org/news/author/ashimi0x)
     
--   [Zubair Idris Aweda][375]
+* [Zubair Idris Aweda](https://freecodecamp.org/news/author/Zubs)
     
--   [Ibrahim Ogunbiyi][376]
+* [Ibrahim Ogunbiyi](https://freecodecamp.org/news/author/IbrahimOgunbiyi)
     
--   [Svitlana Lorman][377]
+* [Svitlana Lorman](https://freecodecamp.org/news/author/svlorman)
     
--   [Ayantunji Timilehin][378]
+* [Ayantunji Timilehin](https://freecodecamp.org/news/author/timmy471)
     
--   [Krishna Sarathi Ghosh][379]
+* [Krishna Sarathi Ghosh](https://freecodecamp.org/news/author/imkrishnasarathi)
     
--   [David Jaja][380]
+* [David Jaja](https://freecodecamp.org/news/author/Daiveed)
     
--   [Francis Ihejirika][381]
+* [Francis Ihejirika](https://freecodecamp.org/news/author/francisihe)
     
--   [Marco Venturi][382]
+* [Marco Venturi](https://freecodecamp.org/news/author/marco-venturi)
     
--   [Fanny Nyayic][383]
+* [Fanny Nyayic](https://freecodecamp.org/news/author/nyayicfanny)
     
 
 ## Discord Top Contributors
 
--   hana-banana
+* hana-banana
     
--   Science99
+* Science99
     
--   Razzle Dazzle
+* Razzle Dazzle
     
--   jeremylt (he/they)
+* jeremylt (he/they)
     
--   Makka Pakka jOoJ
+* Makka Pakka jOoJ
     
--   bradtaniguchi
+* bradtaniguchi
     
--   ʇɹǝqɯoɥɹ
+* ʇɹǝqɯoɥɹ
     
--   Versailles
+* Versailles
     
--   CapslockHero 🎃
+* CapslockHero 🎃
     
--   plamoni
+* plamoni
     
--   xCoffeeMan
+* xCoffeeMan
     
--   Dylan
+* Dylan
     
--   QC Failed (Brandon)
+* QC Failed (Brandon)
     
--   minjo70
+* minjo70
     
--   tgrtim
+* tgrtim
     
--   Yu14
+* Yu14
     
--   localhost
+* localhost
     
--   ArielLeslie
+* ArielLeslie
     
--   Wayloe
+* Wayloe
     
--   Hordian
+* Hordian
     
--   Anna
+* Anna
     
--   Starbreeze
+* Starbreeze
     
--   supertanno
+* supertanno
     
--   Hermit
+* Hermit
     
--   Aakash
+* Aakash
     
--   Ganesh
+* Ganesh
     
--   Zino
+* Zino
     
--   Cristina
+* Cristina
     
--   Pantalonians
+* Pantalonians
     
--   Cy4er
+* Cy4er
     
--   himonshuuu
+* himonshuuu
     
--   Dumb ninja
+* Dumb ninja
     
--   Kiseki 奇跡
+* Kiseki 奇跡
     
--   Sebastian
+* Sebastian
     
--   alpox
+* alpox
     
--   BasCat
+* BasCat
     
 
 Again, these are just the most prolific among the thousands of people involved in the freeCodeCamp community.
 
-If you're interested in getting involved in the freeCodeCamp community as an open source contributor, I encourage you to [read our Contributor Guide][384] and to join our [Contributor Discord][385].
+If you're interested in getting involved in the freeCodeCamp community as an open source contributor, I encourage you to [read our Contributor Guide](https://contribute.freecodecamp.org/#/) and to join our [Contributor Discord](https://discord.gg/KVUmVXA).
 
 Thanks again, and happy coding. 🏕️
-
-[1]: https://donate.freecodecamp.org
-[2]: https://github.com/clarencepenz
-[3]: https://github.com/Supravisor
-[4]: https://github.com/Giftea
-[5]: https://github.com/pdtrang
-[6]: https://github.com/a2937
-[7]: https://github.com/c0d1ng-ma5ter
-[8]: https://github.com/JungLee-Dev
-[9]: https://github.com/hbar1st
-[10]: https://github.com/dev-kamil
-[11]: https://github.com/arizfaiyaz
-[12]: https://github.com/agilan11
-[13]: https://github.com/cuongpham24
-[14]: https://github.com/StuartMosquera
-[15]: https://github.com/StephenMuya
-[16]: https://github.com/MohamadSalman11
-[17]: https://github.com/alexgoldsmith
-[18]: https://github.com/vishnudt2004
-[19]: https://github.com/kannan-ravi
-[20]: https://github.com/tanmaygautam11
-[21]: https://github.com/l3onhard
-[22]: https://github.com/prabhakaryadav2003
-[23]: https://github.com/errantpianist
-[24]: https://github.com/Ajay-2005
-[25]: https://github.com/dragon-slayer27
-[26]: https://github.com/hassanwaqa
-[27]: https://github.com/gikf
-[28]: https://github.com/roberiacono
-[29]: https://github.com/MelvinManni
-[30]: https://github.com/lasjorg
-[31]: https://github.com/dennmar
-[32]: https://github.com/Arif-Khalid
-[33]: https://github.com/soryaek
-[34]: https://github.com/RaymondLiu777
-[35]: https://github.com/AyushSharma72
-[36]: https://github.com/yusufasur
-[37]: https://github.com/kb42
-[38]: https://github.com/Sky-walkerX
-[39]: https://github.com/vkalakota18
-[40]: https://github.com/omarraf
-[41]: https://github.com/raahthor
-[42]: https://github.com/Agung1606
-[43]: https://github.com/sanchitkhthpalia
-[44]: https://github.com/shashankdangi
-[45]: https://github.com/garyeung
-[46]: https://github.com/ppl-call-me-tima
-[47]: https://github.com/pkdvalis
-[48]: https://github.com/sinha21Soumya
-[49]: https://github.com/VishalTelukula
-[50]: https://github.com/sskiragu
-[51]: https://github.com/AishwaryaRajput09
-[52]: https://github.com/TrevorBrowning
-[53]: https://github.com/AilaLu
-[54]: https://github.com/zxc-w
-[55]: https://github.com/anishlukk123
-[56]: https://github.com/josue-igiraneza
-[57]: https://github.com/adityaravichandran6
-[58]: https://github.com/skyewm
-[59]: https://github.com/gagan-bhullar-tech
-[60]: https://github.com/asr1325
-[61]: https://forum.freecodecamp.org/u/Teller
-[62]: https://forum.freecodecamp.org/u/pkdvalis
-[63]: https://forum.freecodecamp.org/u/hasanzaib1389
-[64]: https://forum.freecodecamp.org/u/a1legalfreelance
-[65]: https://forum.freecodecamp.org/u/igorgetmeabrain
-[66]: https://forum.freecodecamp.org/u/JeremyLT
-[67]: https://forum.freecodecamp.org/u/fcc4b6d10c4-b540-4e2
-[68]: https://forum.freecodecamp.org/u/JuniorQ
-[69]: https://forum.freecodecamp.org/u/Ray13
-[70]: https://forum.freecodecamp.org/u/hbar1st
-[71]: https://forum.freecodecamp.org/u/lasjorg
-[72]: https://forum.freecodecamp.org/u/sanity
-[73]: https://forum.freecodecamp.org/u/MostafaElbadry
-[74]: https://forum.freecodecamp.org/u/a2937
-[75]: https://forum.freecodecamp.org/u/seopostexpert
-[76]: https://forum.freecodecamp.org/u/stephenmutheu
-[77]: https://forum.freecodecamp.org/u/zs_akkaya
-[78]: https://forum.freecodecamp.org/u/bappyasif
-[79]: https://forum.freecodecamp.org/u/PauloRodrigues
-[80]: https://forum.freecodecamp.org/u/StaySilent
-[81]: https://forum.freecodecamp.org/u/Klexvier
-[82]: https://forum.freecodecamp.org/u/robheyays
-[83]: https://forum.freecodecamp.org/u/BlindVisionMan
-[84]: https://forum.freecodecamp.org/u/tracy.chacon.00
-[85]: https://forum.freecodecamp.org/u/bochard
-[86]: https://forum.freecodecamp.org/u/Cody_Biggs
-[87]: https://forum.freecodecamp.org/u/be_happy
-[88]: https://forum.freecodecamp.org/u/ShadyHBedda
-[89]: https://forum.freecodecamp.org/u/booleanmethod9
-[90]: https://forum.freecodecamp.org/u/ArielLeslie
-[91]: https://forum.freecodecamp.org/u/DanielHuebschmann
-[92]: https://forum.freecodecamp.org/u/Dovb1ek
-[93]: https://forum.freecodecamp.org/u/c0d1ng_ma5ter
-[94]: https://forum.freecodecamp.org/u/evaristoc
-[95]: https://forum.freecodecamp.org/u/ahraitch
-[96]: https://forum.freecodecamp.org/u/jwhoisfondofit
-[97]: https://forum.freecodecamp.org/u/AlexK
-[98]: https://forum.freecodecamp.org/u/Malcolm-Harrison
-[99]: https://forum.freecodecamp.org/u/Ethan1
-[100]: https://forum.freecodecamp.org/u/vikramvi
-[101]: https://forum.freecodecamp.org/u/constantcode9909
-[102]: https://forum.freecodecamp.org/u/nickrg
-[103]: https://forum.freecodecamp.org/u/Amunyelet-Ojala
-[104]: https://forum.freecodecamp.org/u/anon75571083
-[105]: https://forum.freecodecamp.org/u/brendenhowlett96
-[106]: https://x.com/0x99Ethan3
-[107]: https://x.com/TsukistarCN
-[108]: https://www.linkedin.com/in/qingfeng-huang
-[109]: https://x.com/Xuemei525
-[110]: www.linkedin.com/in/leoncarlo/
-[111]: www.youtube.com/@LuisCanary
-[112]: www.youtube.com/@programacaocomramon
-[113]: github.com/jamesgpearce
-[114]: www.youtube.com/@officialtatevaslanyan
-[115]: www.youtube.com/@EricWTech
-[116]: www.youtube.com/@RivaanRanawat
-[117]: www.youtube.com/@KhanamCoding
-[118]: www.youtube.com/@vincibits
-[119]: www.youtube.com/@HiteshCodeLab
-[120]: www.youtube.com/@EamonnCottrell
-[121]: www.youtube.com/@harshbhatt7585
-[122]: www.youtube.com/@radu
-[123]: www.youtube.com/@3CodeCampers
-[124]: www.youtube.com/@EmbarkX
-[125]: www.youtube.com/@JSLegendDev
-[126]: www.youtube.com/@ExamProChannel
-[127]: www.youtube.com/@DaveGrayTeachesCode
-[128]: www.youtube.com/@asabretech
-[129]: www.youtube.com/@the-lisper
-[130]: www.youtube.com/@deeplearningexplained
-[131]: www.youtube.com/@codeafuture
-[132]: www.youtube.com/@tungabayrak9765
-[133]: www.youtube.com/@CodingCleverly
-[134]: rdali.github.io/
-[135]: www.youtube.com/@OmarMAtef
-[136]: github.com/stevenGarciaDev
-[137]: www.youtube.com/@TrickSumo
-[138]: www.youtube.com/@coleblender
-[139]: www.youtube.com/@AlterYourEnglish
-[140]: www.youtube.com/@haidermalik3402
-[141]: www.youtube.com/@excel.withgrant
-[142]: www.youtube.com/@vukrosic
-[143]: www.youtube.com/@LearnQtGuide
-[144]: github.com/BrijenMakwana
-[145]: www.youtube.com/@TheCodeholic
-[146]: www.youtube.com/@turingtimemachine
-[147]: www.youtube.com/@tapasadhikary
-[148]: www.youtube.com/@richardtopchii
-[149]: www.youtube.com/@code-with-abel
-[150]: www.youtube.com/@MatkatMusic
-[151]: www.youtube.com/@programmingwithalex.585
-[152]: www.youtube.com/@masterspanishacademy
-[153]: www.linkedin.com/in/vaibhav-mehra-main/
-[154]: optimusprime09012004@gmail.com
-[155]: www.dotnetmastery.com
-[156]: www.youtube.com/@programmingoceanacademy
-[157]: www.youtube.com/@ThePyCoach
-[158]: www.youtube.com/@ChadsPrep
-[159]: www.youtube.com/@ErikYuzwa
-[160]: www.youtube.com/@dswithbappy
-[161]: www.youtube.com/@Programming-Fluency
-[162]: www.youtube.com/@AyushSinghSh
-[163]: www.youtube.com/@ever-greg
-[164]: www.youtube.com/@algo.monster
-[165]: www.youtube.com/@GlitchyDevs
-[166]: www.youtube.com/@talltalksfromashortlady2798
-[167]: www.youtube.com/c/AlvinTheProgrammer
-[168]: www.youtube.com/@structuredcs
-[169]: www.youtube.com/@datasciencewithmarco
-[170]: www.youtube.com/@logicBaseLabs
-[171]: www.linkedin.com/in/yilmazalaca
-[172]: www.youtube.com/@robotbobby9
-[173]: x.com/wagslane
-[174]: www.youtube.com/%E2%80%AA@mobidevtalk
-[175]: www.youtube.com/@DotNetHow
-[176]: github.com/vivekkalyanarangan30
-[177]: www.youtube.com/@cs50
-[178]: www.linkedin.com/in/leoncarlo/
-[179]: www.youtube.com/@BlossomBuild
-[180]: www.youtube.com/@DestinationFAANG
-[181]: www.youtube.com/@codewithmuhammadabdullah
-[182]: www.youtube.com/@andrewwoan
-[183]: www.youtube.com/@AlexGordonHiFi
-[184]: http://youtube.com/@TwoWaysMath
-[185]: https://freecodecamp.org/news/author/manishshivanandhan
-[186]: https://freecodecamp.org/news/author/nsavant
-[187]: https://freecodecamp.org/news/author/appinisurya
-[188]: https://freecodecamp.org/news/author/tayo4christ
-[189]: https://freecodecamp.org/news/author/Casmir
-[190]: https://freecodecamp.org/news/author/Chukwudinweze
-[191]: https://freecodecamp.org/news/author/GerCocca
-[192]: https://freecodecamp.org/news/author/Shejan-Mahamud
-[193]: https://freecodecamp.org/news/author/hew
-[194]: https://freecodecamp.org/news/author/curiousmoshe
-[195]: https://freecodecamp.org/news/author/markm208
-[196]: https://freecodecamp.org/news/author/atuoha
-[197]: https://freecodecamp.org/news/author/balapriyac
-[198]: https://freecodecamp.org/news/author/ashutoshkrris
-[199]: https://freecodecamp.org/news/author/hiteshchauhan2023
-[200]: https://freecodecamp.org/news/author/tiredmahnoor
-[201]: https://freecodecamp.org/news/author/andrewbaisden
-[202]: https://freecodecamp.org/news/author/trayalex812
-[203]: https://freecodecamp.org/news/author/gkoos
-[204]: https://freecodecamp.org/news/author/Abhidave
-[205]: https://freecodecamp.org/news/author/sumitsaha
-[206]: https://freecodecamp.org/news/author/Tech-On-Diapers
-[207]: https://freecodecamp.org/news/author/oluwatobiss
-[208]: https://freecodecamp.org/news/author/sholajegede
-[209]: https://freecodecamp.org/news/author/michaelyuan
-[210]: https://freecodecamp.org/news/author/ChisomUma123
-[211]: https://freecodecamp.org/news/author/heywisdom
-[212]: https://freecodecamp.org/news/author/kuriko
-[213]: https://freecodecamp.org/news/author/ceddlyburge
-[214]: https://freecodecamp.org/news/author/CaesarSage
-[215]: https://freecodecamp.org/news/author/leomofthings
-[216]: https://freecodecamp.org/news/author/Koded001
-[217]: https://freecodecamp.org/news/author/emdadulislam
-[218]: https://freecodecamp.org/news/author/Tioluwani
-[219]: https://freecodecamp.org/news/author/mehtasoham
-[220]: https://freecodecamp.org/news/author/Agnes28
-[221]: https://freecodecamp.org/news/author/atapas
-[222]: https://freecodecamp.org/news/author/chiragagrawal
-[223]: https://freecodecamp.org/news/author/ATechAjay
-[224]: https://freecodecamp.org/news/author/mayur9210
-[225]: https://freecodecamp.org/news/author/Sharvin26
-[226]: https://freecodecamp.org/news/author/adejumo
-[227]: https://freecodecamp.org/news/author/sravankaruturi
-[228]: https://freecodecamp.org/news/author/wagslane
-[229]: https://freecodecamp.org/news/author/nitheeshp
-[230]: https://freecodecamp.org/news/author/almamohapatra
-[231]: https://freecodecamp.org/news/author/orimdominic
-[232]: https://freecodecamp.org/news/author/arunachalamb
-[233]: https://freecodecamp.org/news/author/Ayush01Mishra
-[234]: https://freecodecamp.org/news/author/shricodev
-[235]: https://freecodecamp.org/news/author/Oliverkrane
-[236]: https://freecodecamp.org/news/author/Jongbo
-[237]: https://freecodecamp.org/news/author/ifycodes99
-[238]: https://freecodecamp.org/news/author/Tobilyn77
-[239]: https://freecodecamp.org/news/author/oluwaseunoladeji
-[240]: https://freecodecamp.org/news/author/tarunsinghofficial
-[241]: https://freecodecamp.org/news/author/grantdotdev
-[242]: https://freecodecamp.org/news/author/asfakahmed
-[243]: https://freecodecamp.org/news/author/LeeRenJie
-[244]: https://freecodecamp.org/news/author/timkleier
-[245]: https://freecodecamp.org/news/author/CodeHemaa
-[246]: https://freecodecamp.org/news/author/ezinnecodes
-[247]: https://freecodecamp.org/news/author/Codinghappiness
-[248]: https://freecodecamp.org/news/author/bertao
-[249]: https://freecodecamp.org/news/author/Lonercode
-[250]: https://freecodecamp.org/news/author/arunshanmugamkumar
-[251]: https://freecodecamp.org/news/author/andrewezeani
-[252]: https://freecodecamp.org/news/author/Ajay074
-[253]: https://freecodecamp.org/news/author/Ijay
-[254]: https://freecodecamp.org/news/author/prankurpandeyy
-[255]: https://freecodecamp.org/news/author/augustinealul
-[256]: https://freecodecamp.org/news/author/sanjayxr
-[257]: https://freecodecamp.org/news/author/adiatiayu
-[258]: https://freecodecamp.org/news/author/cardstdani
-[259]: https://freecodecamp.org/news/author/Clifftech
-[260]: https://freecodecamp.org/news/author/ryan-michael-kay
-[261]: https://freecodecamp.org/news/author/olanetsoft
-[262]: https://freecodecamp.org/news/author/wittycircuitry
-[263]: https://freecodecamp.org/news/author/brkln
-[264]: https://freecodecamp.org/news/author/TemiTope1
-[265]: https://freecodecamp.org/news/author/ilknureren
-[266]: https://freecodecamp.org/news/author/sohamstars
-[267]: https://freecodecamp.org/news/author/vaheaslanyan
-[268]: https://freecodecamp.org/news/author/tatevaslanyan
-[269]: https://freecodecamp.org/news/author/henrywinnerman
-[270]: https://freecodecamp.org/news/author/ThatCoolGuy
-[271]: https://freecodecamp.org/news/author/shrutikapoor
-[272]: https://freecodecamp.org/news/author/theladybella
-[273]: https://freecodecamp.org/news/author/Spruce
-[274]: https://freecodecamp.org/news/author/Derekvibe
-[275]: https://freecodecamp.org/news/author/rajumanoj
-[276]: https://freecodecamp.org/news/author/udemezue
-[277]: https://freecodecamp.org/news/author/lulunwenyi
-[278]: https://freecodecamp.org/news/author/toobaj
-[279]: https://freecodecamp.org/news/author/nwanduka
-[280]: https://freecodecamp.org/news/author/Nene23
-[281]: https://freecodecamp.org/news/author/michaelikoko
-[282]: https://freecodecamp.org/news/author/Jude-Olowo
-[283]: https://freecodecamp.org/news/author/Ateev
-[284]: https://freecodecamp.org/news/author/Oluwadamisi
-[285]: https://freecodecamp.org/news/author/menghnani
-[286]: https://freecodecamp.org/news/author/scriptedBytes
-[287]: https://freecodecamp.org/news/author/huhuhang
-[288]: https://freecodecamp.org/news/author/mrufai
-[289]: https://freecodecamp.org/news/author/LolaVictoria
-[290]: https://freecodecamp.org/news/author/HijabiCoder
-[291]: https://freecodecamp.org/news/author/montasser1988
-[292]: https://freecodecamp.org/news/author/gatwirival
-[293]: https://freecodecamp.org/news/author/SmoothTech
-[294]: https://freecodecamp.org/news/author/gitgithan
-[295]: https://freecodecamp.org/news/author/Omah
-[296]: https://freecodecamp.org/news/author/Yazdun
-[297]: https://freecodecamp.org/news/author/desoga
-[298]: https://freecodecamp.org/news/author/the_BrianB
-[299]: https://freecodecamp.org/news/author/chidiadi01
-[300]: https://freecodecamp.org/news/author/codelikeandrew
-[301]: https://freecodecamp.org/news/author/mcasari
-[302]: https://freecodecamp.org/news/author/Balajeeasish
-[303]: https://freecodecamp.org/news/author/woai3c
-[304]: https://freecodecamp.org/news/author/tildaudufo
-[305]: https://freecodecamp.org/news/author/rahulgupta32
-[306]: https://freecodecamp.org/news/author/edae
-[307]: https://freecodecamp.org/news/author/josiahadesola
-[308]: https://freecodecamp.org/news/author/smarttester
-[309]: https://freecodecamp.org/news/author/tiagomonteiro
-[310]: https://freecodecamp.org/news/author/Preston56
-[311]: https://freecodecamp.org/news/author/TheAnkurTyagi
-[312]: https://freecodecamp.org/news/author/justanothertechlead
-[313]: https://freecodecamp.org/news/author/askvikram
-[314]: https://freecodecamp.org/news/author/dhruv-007
-[315]: https://freecodecamp.org/news/author/onukwilip
-[316]: https://freecodecamp.org/news/author/AdeboyeDN
-[317]: https://freecodecamp.org/news/author/kanand
-[318]: https://freecodecamp.org/news/author/lucasgarcez
-[319]: https://freecodecamp.org/news/author/ec001
-[320]: https://freecodecamp.org/news/author/officialrajdeepsingh
-[321]: https://freecodecamp.org/news/author/chaitanyarahalkar
-[322]: https://freecodecamp.org/news/author/MahamCodes
-[323]: https://freecodecamp.org/news/author/divyasaratchandran
-[324]: https://freecodecamp.org/news/author/joanayebola
-[325]: https://freecodecamp.org/news/author/omerros
-[326]: https://freecodecamp.org/news/author/Nazneen758
-[327]: https://freecodecamp.org/news/author/KunalN25
-[328]: https://freecodecamp.org/news/author/sdranju
-[329]: https://freecodecamp.org/news/author/anamol-rajbhandari
-[330]: https://freecodecamp.org/news/author/suleolanrewaju
-[331]: https://freecodecamp.org/news/author/Eccentric-
-[332]: https://freecodecamp.org/news/author/LifeofDan-EL
-[333]: https://freecodecamp.org/news/author/Michael-para
-[334]: https://freecodecamp.org/news/author/Ellabee
-[335]: https://freecodecamp.org/news/author/azubuikeduru
-[336]: https://freecodecamp.org/news/author/AdalbertPungu
-[337]: https://freecodecamp.org/news/author/gunkev
-[338]: https://freecodecamp.org/news/author/hamdaan
-[339]: https://freecodecamp.org/news/author/AbdullahInBytes
-[340]: https://freecodecamp.org/news/author/RAHULISM
-[341]: https://freecodecamp.org/news/author/Ayobami6
-[342]: https://freecodecamp.org/news/author/omoladeekpeni
-[343]: https://freecodecamp.org/news/author/rwalters
-[344]: https://freecodecamp.org/news/author/viv1
-[345]: https://freecodecamp.org/news/author/Xtephen
-[346]: https://freecodecamp.org/news/author/psmohammedali
-[347]: https://freecodecamp.org/news/author/gursimar
-[348]: https://freecodecamp.org/news/author/Olabisi09
-[349]: https://freecodecamp.org/news/author/de
-[350]: https://freecodecamp.org/news/author/initialcommit
-[351]: https://freecodecamp.org/news/author/Yoma
-[352]: https://freecodecamp.org/news/author/hunor
-[353]: https://freecodecamp.org/news/author/techwithpraisejames
-[354]: https://freecodecamp.org/news/author/pltvs
-[355]: https://freecodecamp.org/news/author/tanishkamakode
-[356]: https://freecodecamp.org/news/author/SonyaMoisset
-[357]: https://freecodecamp.org/news/author/vkweb
-[358]: https://freecodecamp.org/news/author/syedamahamfahim
-[359]: https://freecodecamp.org/news/author/chiderahumphrey
-[360]: https://freecodecamp.org/news/author/DoableDanny
-[361]: https://freecodecamp.org/news/author/stefanmuzyka
-[362]: https://freecodecamp.org/news/author/samhitharamaprasad
-[363]: https://freecodecamp.org/news/author/nitinfab
-[364]: https://freecodecamp.org/news/author/codewithshahan
-[365]: https://freecodecamp.org/news/author/jpromanonet
-[366]: https://freecodecamp.org/news/author/anjanbaradwaj
-[367]: https://freecodecamp.org/news/author/manocormen
-[368]: https://freecodecamp.org/news/author/mkbadeniyi
-[369]: https://freecodecamp.org/news/author/MuhToyyib
-[370]: https://freecodecamp.org/news/author/dbclinton
-[371]: https://freecodecamp.org/news/author/josevnz
-[372]: https://freecodecamp.org/news/author/joeattardi
-[373]: https://freecodecamp.org/news/author/mihailgaberov
-[374]: https://freecodecamp.org/news/author/ashimi0x
-[375]: https://freecodecamp.org/news/author/Zubs
-[376]: https://freecodecamp.org/news/author/IbrahimOgunbiyi
-[377]: https://freecodecamp.org/news/author/svlorman
-[378]: https://freecodecamp.org/news/author/timmy471
-[379]: https://freecodecamp.org/news/author/imkrishnasarathi
-[380]: https://freecodecamp.org/news/author/Daiveed
-[381]: https://freecodecamp.org/news/author/francisihe
-[382]: https://freecodecamp.org/news/author/marco-venturi
-[383]: https://freecodecamp.org/news/author/nyayicfanny
-[384]: https://contribute.freecodecamp.org/#/
-[385]: https://discord.gg/KVUmVXA

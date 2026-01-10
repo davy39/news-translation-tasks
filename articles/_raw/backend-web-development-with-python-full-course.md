@@ -1,16 +1,21 @@
 ---
 title: Backend Web Development with Python - Full Course
-date: 2024-09-15T02:21:50.524Z
+subtitle: ''
 author: Beau Carnes
-authorURL: https://www.freecodecamp.org/news/author/beaucarnes/
-originalURL: https://www.freecodecamp.org/news/backend-web-development-with-python-full-course/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2021-07-01T16:51:30.000Z'
+originalURL: https://freecodecamp.org/news/backend-web-development-with-python-full-course
+coverImage: https://www.freecodecamp.org/news/content/images/2021/06/backendpython.png
+tags: []
+seo_title: null
+seo_desc: 'The backend of a website can be written in many different programming languages.
+  It is becoming increasingly common for to use Python for the backend of a website.
+
+  We just published a full backend web development with Python course on the freeCodeCam...'
 ---
 
 The backend of a website can be written in many different programming languages. It is becoming increasingly common for to use Python for the backend of a website.
-
-<!-- more -->
 
 We just published a full backend web development with Python course on the freeCodeCamp.org YouTube channel.
 
@@ -20,60 +25,60 @@ Tomi Tokko created this course. Tomi has created many popular courses both on hi
 
 Here is a full list of what is covered in this course:
 
--   Introduction To Python
--   Installation Of Python
--   Hello World In Python
--   Variables In Python
--   Strings In Python
--   Numbers In Python
--   Getting A User's Input
--   Word Replacement Exercise
--   List In Python
--   List Methods
--   Tuples In Python
--   Functions In Python
--   The Return Keyword
--   IF Statements In Python
--   Building An Even Number Checker Program
--   Dictionaries In Python
--   While Loops In Python
--   For Loops In Python
--   2D Lists
--   Comments In Python
--   Building A Basic Calculator
--   Try Except In Python
--   Reading Files
--   Writing Files
--   Classes and Objects In Python
--   Inheritance In Python
--   The Python Shell
--   Building A Simple Login and SignUp System
--   Modules and PIP In Python
--   Introduction To Django
--   Installation Of Django
--   Url Routing And Django Apps
--   Django Template Language
--   Sending Data To Template File
--   Building A Word Counter In Django
--   Get vs Post In Django
--   Static Files In Django
--   Introduction To Django Models
--   Django Admin Panel & Manipulation Of Database
--   User Registration In Django
--   User Login And Logout In Django
--   Dynamic Url Routing In Django
--   Postgresql Setup
--   Building A Blog With Django - Part 1
--   Building A Blog With Django - Part 2
--   Building A Weather App With Django - Part 1
--   Building A Weather App With Django - Part 2
--   Building A Realtime Chat Application With Django - Part 1
--   Building A Realtime Chat Application With Django - Part 2
--   Django Rest Framework Crash Course
+* Introduction To Python
+* Installation Of Python 
+* Hello World In Python
+* Variables In Python
+* Strings In Python
+* Numbers In Python
+* Getting A User's Input
+* Word Replacement Exercise
+* List In Python
+* List Methods
+* Tuples In Python
+* Functions In Python
+* The Return Keyword  
+* IF Statements In Python
+* Building An Even Number Checker Program
+* Dictionaries In Python
+* While Loops In Python
+* For Loops In Python
+* 2D Lists
+* Comments In Python
+* Building A Basic Calculator
+* Try Except In Python
+* Reading Files
+* Writing Files
+* Classes and Objects In Python
+* Inheritance In Python
+* The Python Shell
+* Building A Simple Login and SignUp System
+* Modules and PIP In Python
+* Introduction To Django
+* Installation Of Django
+* Url Routing And Django Apps
+* Django Template Language
+* Sending Data To Template File
+* Building A Word Counter In Django
+* Get vs Post In Django
+* Static Files In Django
+* Introduction To Django Models
+* Django Admin Panel & Manipulation Of Database
+* User Registration In Django
+* User Login And Logout In Django
+* Dynamic Url Routing In Django
+* Postgresql Setup
+* Building A Blog With Django - Part 1
+* Building A Blog With Django - Part 2
+* Building A Weather App With Django - Part 1
+* Building A Weather App With Django - Part 2
+* Building A Realtime Chat Application With Django - Part 1
+* Building A Realtime Chat Application With Django - Part 2
+* Django Rest Framework Crash Course
 
-Watch the full course below or [on the freeCodeCamp.org YouTube channel][1] (10-hour watch).
+Watch the full course below or [on the freeCodeCamp.org YouTube channel](https://www.youtube.com/watch?v=jBzwzrDvZ18) (10-hour watch).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jBzwzrDvZ18" style="aspect-ratio: 16 / 9; width: 100%; height: auto;" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" loading="lazy"></iframe>
+%[https://www.youtube.com/watch?v=jBzwzrDvZ18]
 
 ## Transcript
 
@@ -11847,6 +11852,5 @@ So guys, that's going to be all for this rest framework tutorial.
 
 I really hope you enjoyed it.
 
-And if you did, please don't forget to smash the like button and subscribe.
+And if you did, please don't forget to smash the like button and subscribe. 
 
-[1]: https://www.youtube.com/watch?v=jBzwzrDvZ18

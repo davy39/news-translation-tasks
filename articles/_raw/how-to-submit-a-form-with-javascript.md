@@ -1,16 +1,28 @@
 ---
 title: How to Submit a Form with JavaScript – JS Submit Button Example
-date: 2024-08-21T09:11:22.921Z
+subtitle: ''
 author: Joel Olawanle
-authorURL: https://www.freecodecamp.org/news/author/joel-olawanle/
-originalURL: https://www.freecodecamp.org/news/how-to-submit-a-form-with-javascript/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2023-01-20T22:01:03.000Z'
+originalURL: https://freecodecamp.org/news/how-to-submit-a-form-with-javascript
+coverImage: https://www.freecodecamp.org/news/content/images/2023/01/cover-template--10-.png
+tags:
+- name: forms
+  slug: forms
+- name: JavaScript
+  slug: javascript
+seo_title: null
+seo_desc: 'When building applications and websites on the internet, you’ll sometimes
+  need your users to supply information by filling out a form.
+
+  But then you might wonder – how do you get this data from the form? Well, you can
+  do this with JavaScript.
+
+  In this ...'
 ---
 
 When building applications and websites on the internet, you’ll sometimes need your users to supply information by filling out a form.
-
-<!-- more -->
 
 But then you might wonder – how do you get this data from the form? Well, you can do this with JavaScript.
 
@@ -142,7 +154,7 @@ loginForm.addEventListener("submit", (e) => {
 });
 ```
 
-See the Pen [Form Submission JS][1] by Olawanle Joel ([@olawanlejoel][2]) on [CodePen][3].
+See the Pen [Form Submission JS](https://codepen.io/olawanlejoel/pen/xxzvdqQ) by Olawanle Joel ([@olawanlejoel](https://codepen.io/olawanlejoel)) on [CodePen](https://codepen.io).
 
 ## Conclusion
 
@@ -150,9 +162,4 @@ In this article, you have learned how to submit a form with JavaScript and how i
 
 There are other ways you can do this, but this is a straightforward way to handle submission in JavaScript.
 
-You can access over 150 of my articles by [visiting my website][4]. You can also use the search field to see if I've written a specific article.
-
-[1]: https://codepen.io/olawanlejoel/pen/xxzvdqQ
-[2]: https://codepen.io/olawanlejoel
-[3]: https://codepen.io
-[4]: https://joelolawanle.com/contents
+You can access over 150 of my articles by [visiting my website](https://joelolawanle.com/contents). You can also use the search field to see if I've written a specific article.

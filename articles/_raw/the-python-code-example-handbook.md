@@ -1,16 +1,30 @@
 ---
 title: The Python Code Example Handbook
-date: 2024-08-19T13:10:13.408Z
+subtitle: ''
 author: Farhan Hasin Chowdhury
-authorURL: https://www.freecodecamp.org/news/author/farhanhasin/
-originalURL: https://www.freecodecamp.org/news/the-python-code-example-handbook/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2023-08-22T21:54:38.000Z'
+originalURL: https://freecodecamp.org/news/the-python-code-example-handbook
+coverImage: https://www.freecodecamp.org/news/content/images/2023/08/Learn-Python-with-Code-Examples-Handbook-Cover.png
+tags:
+- name: beginners guide
+  slug: beginners-guide
+- name: example
+  slug: example
+- name: handbook
+  slug: handbook
+- name: Python
+  slug: python
+seo_title: null
+seo_desc: 'Very few programming languages are as universally loved as Python. The
+  brainchild of Dutch programmer Guido van Rossum, Python is easy to learn, powerful,
+  and an utter joy to work with.
+
+  Thanks to its popularity, video and written resources about Pyth...'
 ---
 
 Very few programming languages are as universally loved as Python. The brainchild of Dutch programmer Guido van Rossum, Python is easy to learn, powerful, and an utter joy to work with.
-
-<!-- more -->
 
 Thanks to its popularity, video and written resources about Python are plentiful. This handbook, however, tries to be a bit different by not being a definitive guide to the language.
 
@@ -24,53 +38,54 @@ Without any further ado, let's jump in!
 
 ## Table of Contents
 
--   [Prerequisites][1]
--   [How to Setup Python on Your Computer][2]
--   [How to Install a Python IDE on Your Computer][3]
--   [How to Create a New Project on PyCharm][4]
--   [How to Write the Hello World Program in Python][5]
--   [How to Initialize and Publish a Git Repository From PyCharm][6]
--   [How to Work With Variables and Different Types of Data in Python][7]
--   [How to Work With Simple Numbers in Python][8]
--   [How to Take Inputs From Users in Python][9]
--   [How to Work With Strings in Python][10]
--   [What Are the Sequence Types in Python?][11]
-    -   [Lists in Python][12]
-    -   [Tuples in Python][13]
-    -   [Ranges in Python][14]
-    -   [How Indexing Works in Python][15]
--   [What Are the Iterable Types and How to Use them for Loops in Python][16]
--   [How to Use While Loops in Python][17]
--   [How to Write Nested Loops in Python][18]
--   [What Are Some Common Sequence Type Operations in Python?][19]
-    -   [How to Use the in Operator in Python][20]
-    -   [How to Use the + and \* Operators with Sequence Types in Python][21]
-    -   [How to Use the len(), min(), and max() Functions in Python][22]
--   [What Are Some String Type Operations in Python?][23]
-    -   [How to Capitalize Strings in Python][24]
-    -   [How to Convert Strings to Lower Case or Upper Case in Python][25]
-    -   [How to Count the Number of Occurrences of a Substring in a String in Python][26]
-    -   [How to Split and Join Strings in Python][27]
--   [How to Write Conditional Statements in Python][28]
--   [What are Relational and Logical Operators in Python?][29]
--   [What Are Assignment Operators in Python?][30]
--   [What Is the Set Type in Python?][31]
--   [What Is the Mapping Type in Python?][32]
-    -   [What Are Dictionary View Objects in Python?][33]
--   [How to Write Functions in Python][34]
-    -   [How to Write Anonymous or Lambda Functions in Python][35]
-    -   [How to Work with local, nonlocal and global Variables in Python][36]
-    -   [How to Pass a Variable Number of Arguments to a Function Using _args and \*_kwargs in Python][37]
--   [What Are Modules in Python?][38]
--   [How to Use the Python Documentation Efficiently][39]
--   [What's Next?][40]
-    -   [Object Oriented Programming][41]
-    -   [Algorithms and Data Structures][42]
-    -   [Django][43]
-    -   [Qt][44]
-    -   [PyGame][45]
-    -   [Data Science][46]
--   [Conclusion][47]
+- [Prerequisites](#heading-prerequisites)
+- [How to Setup Python on Your Computer](#heading-how-to-setup-python-on-your-computer)
+- [How to Install a Python IDE on Your Computer](#heading-how-to-install-a-python-ide-on-your-computer)
+- [How to Create a New Project on PyCharm](#heading-how-to-create-a-new-project-on-pycharm)
+- [How to Write the Hello World Program in Python](#heading-how-to-write-the-hello-world-program-in-python)
+- [How to Initialize and Publish a Git Repository From PyCharm](#heading-how-to-initialize-and-publish-a-git-repository-from-pycharm)
+- [How to Work With Variables and Different Types of Data in Python](#heading-how-to-work-with-variables-and-different-types-of-data-in-python)
+- [How to Work With Simple Numbers in Python](#heading-how-to-work-with-simple-numbers-in-python)
+- [How to Take Inputs From Users in Python](#heading-how-to-take-inputs-from-users-in-python)
+- [How to Work With Strings in Python](#heading-how-to-work-with-strings-in-python)
+- [What Are the Sequence Types in Python?](#heading-what-are-the-sequence-types-in-python)
+    - [Lists in Python](#heading-lists-in-python)
+    - [Tuples in Python](#heading-tuples-in-python)
+    - [Ranges in Python](#heading-ranges-in-python)
+    - [How Indexing Works in Python](#heading-how-indexing-works-in-python)
+- [What Are the Iterable Types and How to Use them for Loops in Python](#heading-what-are-the-iterable-types-and-how-to-use-them-for-loops-in-python)
+- [How to Use While Loops in Python](#heading-how-to-use-while-loops-in-python)
+- [How to Write Nested Loops in Python](#heading-how-to-write-nested-loops-in-python)
+- [What Are Some Common Sequence Type Operations in Python?](#heading-what-are-some-common-sequence-type-operations-in-python)
+    - [How to Use the in Operator in Python](#heading-how-to-use-the-in-operator-in-python)
+    - [How to Use the + and * Operators with Sequence Types in Python](#heading-how-to-use-the-and-operators-with-sequence-types-in-python)
+    - [How to Use the len(), min(), and max() Functions in Python](#heading-how-to-use-the-len-min-and-max-functions-in-python)
+- [What Are Some String Type Operations in Python?](#heading-what-are-some-string-type-operations-in-python)
+    - [How to Capitalize Strings in Python](#heading-how-to-capitalize-strings-in-python)
+    - [How to Convert Strings to Lower Case or Upper Case in Python](#heading-how-to-convert-strings-to-lower-case-or-upper-case-in-python)
+    - [How to Count the Number of Occurrences of a Substring in a String in Python](#heading-how-to-count-the-number-of-occurrences-of-a-substring-in-a-string-in-python)
+    - [How to Split and Join Strings in Python](#heading-how-to-split-and-join-strings-in-python)
+- [How to Write Conditional Statements in Python](#heading-how-to-write-conditional-statements-in-python)
+- [What are Relational and Logical Operators in Python?](#heading-what-are-relational-and-logical-operators-in-python)
+- [What Are Assignment Operators in Python?](#heading-what-are-assignment-operators-in-python)
+- [What Is the Set Type in Python?](#heading-what-is-the-set-type-in-python)
+- [What Is the Mapping Type in Python?](#heading-what-is-the-mapping-type-in-python)
+    - [What Are Dictionary View Objects in Python?](#heading-what-are-dictionary-view-objects-in-python)
+- [How to Write Functions in Python](#heading-how-to-write-functions-in-python)
+    - [How to Write Anonymous or Lambda Functions in Python](#heading-how-to-write-anonymous-or-lambda-functions-in-python)
+    - [How to Work with local, nonlocal and global Variables in Python](#heading-how-to-work-with-local-nonlocal-and-global-variables-in-python)
+    - [How to Pass a Variable Number of Arguments to a Function Using *args and **kwargs in Python](#heading-how-to-pass-a-variable-number-of-arguments-to-a-function-using-args-and-kwargs-in-python)
+- [What Are Modules in Python?](#heading-what-are-modules-in-python)
+- [How to Use the Python Documentation Efficiently](#heading-how-to-use-the-python-documentation-efficiently)
+- [What's Next?](#heading-whats-next)
+    - [Object Oriented Programming](#heading-object-oriented-programming)
+    - [Algorithms and Data Structures](#heading-algorithms-and-data-structures)
+    - [Django](#heading-django)
+    - [Qt](#heading-qt)
+    - [PyGame](#heading-pygame)
+    - [Data Science](#heading-data-science)
+- [Conclusion](#heading-conclusion)
+
 
 ## **Prerequisites**
 
@@ -100,13 +115,13 @@ python3 --version
 
 I'd also suggest that you check for updates on your Linux distribution and install any new updates for Python.
 
-Although Python comes preinstalled with macOS as well, I'd suggest that you follow this article by [Dillion Megida][48] and install a more recent version.
+Although Python comes preinstalled with macOS as well, I'd suggest that you follow this article by [Dillion Megida](https://www.freecodecamp.org/news/author/dillionmegida/) and install a more recent version.
 
-[https://www.freecodecamp.org/news/how-to-install-python-3-on-mac-and-update-the-python-version-macos-homebrew-command-guide/][49]
+%[https://www.freecodecamp.org/news/how-to-install-python-3-on-mac-and-update-the-python-version-macos-homebrew-command-guide/]
 
-Finally, for Windows, I'd suggest you follow an article by [Md. Fahim Bin Amin][50] and properly install the latest version of Python.
+Finally, for Windows, I'd suggest you follow an article by [Md. Fahim Bin Amin](https://www.freecodecamp.org/news/author/fahimbinamin/) and properly install the latest version of Python.
 
-[https://www.freecodecamp.org/news/how-to-install-python-in-windows-operating-system/][51]
+%[https://www.freecodecamp.org/news/how-to-install-python-in-windows-operating-system/]
 
 As long as you have a Python 3 version installed, you're good to go.
 
@@ -114,13 +129,14 @@ As long as you have a Python 3 version installed, you're good to go.
 
 Much of your experience as a developer will depend on what program you've chosen to write your code in. A good integrated development environment (IDE) or Code Editor can really boost your productivity.
 
-These days [Visual Studio Code][52] has become the go to code editor for all languages and platforms. But for the sake of simplicity, we'll use [PyCharm][53] in this book.
+These days [Visual Studio Code](https://code.visualstudio.com/) has become the go to code editor for all languages and platforms. But for the sake of simplicity, we'll use [PyCharm](https://www.jetbrains.com/pycharm/) in this book.
 
-If you'd like to use VS Code, have written a full-length article on [how to configure Visual Studio Code for Python development][54]. Feel free to check that out if you do not mind configuring your editor manually.
+If you'd like to use VS Code, have written a full-length article on [how to configure Visual Studio Code for Python development](https://www.freecodecamp.org/news/how-to-configure-visual-studio-code-for-python-development/). Feel free to check that out if you do not mind configuring your editor manually.
 
-The professional edition of the IDE [can cost you $89.00 per year][55] but there is also a free and open-source community edition. Head over to the [PyCharm download page][56].
+The professional edition of the IDE [can cost you $89.00 per year](https://www.jetbrains.com/pycharm/buy/) but there is also a free and open-source community edition. Head over to the [PyCharm download page](https://www.jetbrains.com/pycharm/download/).
 
-![Image](https://www.freecodecamp.org/news/content/images/2024/04/download-pycharm-page.png) _Download PyCharm page_
+![Image](https://www.freecodecamp.org/news/content/images/2024/04/download-pycharm-page.png)
+_Download PyCharm page_
 
 Use the black "Download" button to download the community edition. The file size should be a little larger than 350 megabytes.
 
@@ -132,7 +148,8 @@ Once installed, you can start the IDE from your start menu/app launcher. On your
 
 Once the configuration wizard ends, you should see the following welcome window:
 
-![Image](https://www.freecodecamp.org/news/content/images/2022/09/image-469.png) _Welcome to PyCharm screen - with options to start a new project, open a project, or get one from your VCS_
+![Image](https://www.freecodecamp.org/news/content/images/2022/09/image-469.png)
+_Welcome to PyCharm screen - with options to start a new project, open a project, or get one from your VCS_
 
 Picking one IDE or code editor instead of the other one will not affect your experience with following this handbook, so feel free to use whatever you feel comfortable with.
 
@@ -140,7 +157,8 @@ Picking one IDE or code editor instead of the other one will not affect your exp
 
 If you have the welcome window open from the previous section, click on the "New Project" button.
 
-![Image](https://www.freecodecamp.org/news/content/images/2024/04/start-a-new-project-in-pycharm.png) _Start a new project in PyCharm_
+![Image](https://www.freecodecamp.org/news/content/images/2024/04/start-a-new-project-in-pycharm.png)
+_Start a new project in PyCharm_
 
 In the next step, pick a location to store your project:
 
@@ -148,7 +166,7 @@ In the next step, pick a location to store your project:
 
 In the location input box, the `HelloWorld` part is the name of the project. Then make sure you have "New environment using Virtualenv" selected. Then, make sure that the correct version of Python is selected from the "Base interpreter" dropdown.
 
-[Virtualenv][57] is a program that can create isolated Python environments from a given base interpreter. This is very helpful because later on when you'll work on multiple Python projects, their dependencies may conflict with each other.
+[Virtualenv](https://virtualenv.pypa.io/) is a program that can create isolated Python environments from a given base interpreter. This is very helpful because later on when you'll work on multiple Python projects, their dependencies may conflict with each other.
 
 Creating isolated environments for each project will solve that issue and it'll also keep your global Python installation free from any unnecessary package installation.
 
@@ -158,7 +176,7 @@ The project creation process shouldn't take very long. Once it's done, the IDE s
 
 ![Image](https://www.freecodecamp.org/news/content/images/2022/09/image-473.png)
 
-You can use the play button at the top right corner to run the code. The button is configured to run the "main.py" file by default.
+You can use the play button at the top right corner to run the code. The button is configured to run the "main.py" file by default. 
 
 That's why you can see "main" written by its side. You can write your custom configuration as well, but that's a topic for a later section.
 
@@ -170,7 +188,7 @@ You can see the output of your program at the bottom of the IDE. PyCharm comes w
 
 Continuing on from the last section, open up the "main.py" file and replace all the preexisting code with the following line of code:
 
-```
+```python
 print('Hello, World!')
 
 # Hello, World!
@@ -180,7 +198,7 @@ The `print()` function prints out anything that you pass into the set of parenth
 
 That's all you need to write the simplest executable program in Python. But there is even a better way to do it. Update the code as follows:
 
-```
+```python
 def main():
     print('Hello, World!')
 
@@ -203,16 +221,17 @@ Name your file something like "library" and press enter while "Python file" is h
 
 A new file with the name "library.py" will show up on your project folder. Put the following line of code inside the file:
 
-```
+```python
 def greet():
     print('Hello, World!')
+
 ```
 
 This is a very simple function that prints out "Hello, World!" on the console. You can `import` and use this function in your "main.py" file.
 
 To do so, update the code for "main.py" file as follows:
 
-```
+```python
 from library import greet
 
 
@@ -254,11 +273,11 @@ It tells the programmer and the IDE that this script is for execution (not for i
 
 ## How to Initialize and Publish a Git Repository From PyCharm
 
-You may already be familiar with [Git][58] and know how to initialize a new repository. If you prefer using some other Git client, that's totally fine.
+You may already be familiar with [Git](https://git-scm.com/) and know how to initialize a new repository. If you prefer using some other Git client, that's totally fine.
 
 However I think knowing how to make commits right from your IDE can boost your productivity.
 
-Keep in mind you'll need to have Git installed and configured on your system. If you don't have that, [this article][59] by [Bolaji Ayodeji][60] may come in handy.
+Keep in mind you'll need to have Git installed and configured on your system. If you don't have that, [this article](https://www.freecodecamp.org/news/git-first-time-setup/) by [Bolaji Ayodeji](https://www.freecodecamp.org/news/author/bolajiayodeji/) may come in handy.
 
 Now, continuing on from the last section, if you look at the bottom of your IDE, you should see a "Version Control" tab.
 
@@ -278,7 +297,7 @@ As soon as you press the "OK" button, the "Version Control" tab will change to a
 
 At it's current state, there are no commits. Before you make your first commit, I'd suggest you add a ".gitignore" file so that no unwanted file gets to the repository.
 
-To generate a new gitignore file, head over to [gitignore.io][61] website. You can generate gitignore files for a large number of technologies from this website.
+To generate a new gitignore file, head over to [gitignore.io](https://www.toptal.com/developers/gitignore/) website. You can generate gitignore files for a large number of technologies from this website.
 
 ![Image](https://www.freecodecamp.org/news/content/images/2022/10/image-6.png)
 
@@ -336,7 +355,7 @@ Now you can commit and push your code to GitHub right from your IDE every time y
 
 For example, delete the "library.py" file and update the code inside the "main.py" file to print out "Hello, World!" on the console.
 
-```
+```python
 def main():
     print("Hello, World!")
 
@@ -371,7 +390,7 @@ A variable is an entity that can take on different values of different types. It
 
 To create a new variable in Python, you just need to type out the name of the variable, followed by an equal sign and the value.
 
-```
+```python
 def main():
     book = 'Dracula'
     author = 'Bram Stoker'
@@ -386,14 +405,14 @@ def main():
 
 if __name__ == '__main__':
     main()
-
+    
 # Dracula
 # Bram Stoker
 # 1897
 # 4.01
 ```
 
-When it comes to naming your variable, the [PEP 8 - Style Guide for Python][62] says:
+When it comes to naming your variable, the [PEP 8 - Style Guide for Python](https://peps.python.org/pep-0008/#function-and-variable-names) says:
 
 > Function names should be lowercase, with words separated by underscores as necessary to improve readability.
 
@@ -401,7 +420,7 @@ And
 
 > Variable names follow the same convention as function names.
 
-The [guide also][63] says:
+The [guide also](https://peps.python.org/pep-0008/#names-to-avoid) says:
 
 > Never use the characters ‘l’ (lowercase letter el), ‘O’ (uppercase letter oh), or ‘I’ (uppercase letter eye) as single character variable names. In some fonts, these characters are indistinguishable from the numerals one and zero. When tempted to use ‘l’, use ‘L’ instead.
 
@@ -409,7 +428,7 @@ As long as you're keeping these guidelines in mind, declaring variables in Pytho
 
 Instead of declaring the variables in separate lines, you can declare them in one go as follows:
 
-```
+```python
 def main():
     book, author, release_year, goodreads_rating = 'Dracula', 'Bram Stoker', 1897, 4.01
 
@@ -421,14 +440,15 @@ def main():
 
 if __name__ == '__main__':
     main()
-
+    
 # Dracula
 # Bram Stoker
 # 1897
 # 4.01
+
 ```
 
-All you have to do is write the individual variable names in a single line using commas as separators.
+All you have to do is write the individual variable names in a single line using commas as separators. 
 
 Then after the equal sign you have to write the corresponding values in the same order as their names again using commas as separators.
 
@@ -443,7 +463,7 @@ def main():
 
 if __name__ == '__main__':
     main()
-
+    
 # Dracula Bram Stoker 1897 4.01
 ```
 
@@ -451,7 +471,7 @@ These parameters are then printed on the terminal in a single line using spaces 
 
 Speaking of the `print()` method, you can use the `+` sign to add variables with strings inside a print method:
 
-```
+```python
 def main():
     book, author, release_year, goodreads_rating = 'Dracula', 'Bram Stoker', 1897, 4.01
 
@@ -475,7 +495,7 @@ Whenever Python encounters a `+` sign in front of a numeric type, it assumes tha
 
 The easiest way to solve this problem is to convert the numeric types to strings. You can do that by calling the `str()` method on the numeric variables.
 
-```
+```python
 def main():
     book, author, release_year, goodreads_rating = 'Dracula', 'Bram Stoker', 1897, 4.01
 
@@ -490,7 +510,7 @@ if __name__ == '__main__':
 
 That's better – but you can make that line of code even more readable by using a f string.
 
-```
+```python
 def main():
     book, author, release_year, goodreads_rating = 'Dracula', 'Bram Stoker', 1897, 4.01
 
@@ -507,7 +527,7 @@ You can turn a regular string to a f string by putting a `f` in front of it and 
 
 There is one last thing that's bugging me, and that's the length of the line of code itself. Fortunately you can split long strings into multiple shorter ones as follows:
 
-```
+```python
 def main():
     book, author, release_year, goodreads_rating = 'Dracula', 'Bram Stoker', 1897, 4.01
 
@@ -535,12 +555,12 @@ Simple numbers in Python are of two types. Whole numbers are integers and number
 
 In Python, you can represent integers using four different bases. These are decimal, hexadecimal, octal, and binary.
 
-| Base | Representation |
-| --- | --- |
-| Decimal | 404 |
-| Hexadecimal | 0x194 |
-| Octal | 0o624 |
-| Binary | 0b000110010100 |
+| Base        | Representation |
+|-------------|----------------|
+| Decimal     | 404            |
+| Hexadecimal | 0x194          |
+| Octal       | 0o624          |
+| Binary      | 0b000110010100 |
 
 So you can represent the value of 404 in hexadecimal, octal, or binary by prefixing the corresponding value with `0x`, `0o`, or `0b` respectively.
 
@@ -548,7 +568,7 @@ On the other hand you can represent floats with the precision of up to 15 signif
 
 There are six different arithmetic operations that you can perform on any of the simple numeric types. The simplest of the bunch are addition and subtraction.
 
-```
+```python
 def main():
     num_1 = 15
     num_2 = 12
@@ -565,7 +585,7 @@ if __name__ == '__main__':
 
 In case of a subtraction operation, the result will be negative if the second operand is larger than the first one.
 
-```
+```python
 def main():
     num_1 = 15
     num_2 = 12
@@ -580,7 +600,7 @@ if __name__ == '__main__':
 
 Similarly you can perform multiplication and division operations using their corresponding operators.
 
-```
+```python
 def main():
     num_1 = 15
     num_2 = 12
@@ -596,13 +616,14 @@ if __name__ == '__main__':
 # product of num_1 and num_2 is: 180
 # quotient of num_1 and num_2 is: 1.25
 # floored quotient of num_1 and num_2 is: 1
+
 ```
 
 Keep in mind that you can not divide a number by zero in Python. If you attempt that, you'll get a `ZeroDivisionError` error (more on that later).
 
 Output from a division operation will always be a float value, unless you perform a floored division by using two division operators.
 
-```
+```python
 def main():
     num_1 = 15
     num_2 = 12
@@ -614,13 +635,14 @@ if __name__ == '__main__':
     main()
 
 # floored quotient of num_1 and num_2 is: 1
+
 ```
 
 In this case the result will be rounded off to the nearest integer low – so, for example, 0.25 will be lost. So only perform this operation when such loss of data is permissible.
 
 The last operation to discuss is finding the remainder of a division operation.
 
-```
+```python
 def main():
     num_1 = 15
     num_2 = 12
@@ -632,13 +654,14 @@ if __name__ == '__main__':
     main()
 
 # remainder of num_1 / num_2 is: 3
+
 ```
 
 This operation is also called a modulo or modulus operation. So if someone mentions the modulo or modulus operator, they're referring to the percent sign.
 
 You can turn an unsigned number into a negative one just by adding a `-` sign in front of it. You can also freely convert between integer to float and vice versa.
 
-```
+```python
 def main():
     float_variable = 1.25
     integer_variable = 55
@@ -652,13 +675,14 @@ if __name__ == '__main__':
 
 # 1.25 converted to an integer is: 1
 # 55 converted to a float is: 55.0
+
 ```
 
 Loss of data in case of a float to integer conversion is inevitable, so be careful. You can use the `int()` and `float()` methods on strings as well (more on that later).
 
 Any arithmetic operation involving a float operand will always produce a float result, unless converted to integer explicitly.
 
-```
+```python
 def main():
     float_variable = 5.0
     integer_variable = 55
@@ -673,11 +697,12 @@ if __name__ == '__main__':
 
 # the sum of 5.0 and 55 is: 60.0
 # the sum of 5.0 and 55 converted to integer is: 60
+
 ```
 
 If you ever want to get the absolute value of a signed value you can do so using the `abs()` method.
 
-```
+```python
 def main():
     num_1 = -5.8
 
@@ -688,11 +713,12 @@ if __name__ == '__main__':
     main()
 
 # the absolute value of -5.8 is: 5.8
+
 ```
 
 There is a similar method `pow(x, y)` that you can use to apply `x` as the power of `y` like this.
 
-```
+```python
 def main():
     x = 2
     y = 3
@@ -706,13 +732,14 @@ if __name__ == '__main__':
 
 # 2 to the power of 3 is: 8
 # 2 to the power of 3 is: 8
+
 ```
 
 You can perform the same operation using two multiplication operators but I always prefer the `pow()` method.
 
 Finally there is the `divmod()` method that you can use to combine the division and modulo operation.
 
-```
+```python
 def main():
     num_1 = 8
     num_2 = 2
@@ -724,6 +751,7 @@ if __name__ == '__main__':
     main()
 
 # division and modulus of 8 and 2 is: (4, 0)
+
 ```
 
 The method returns a tuple of numbers (more on that later). The first one is the result of the division and the second one is the result of the modulo operation.
@@ -736,7 +764,7 @@ Learning how to take input from a user is an important milestone because it lets
 
 Unlike many other programming languages, taking user inputs in Python is very straightforward.
 
-```
+```python
 def main():
     name = input('What is your name? ')
 
@@ -745,9 +773,10 @@ def main():
 
 if __name__ == '__main__':
     main()
-
+    
 # What is your name? Farhan
 # Nice to meet you Farhan
+
 ```
 
 The built-in `input()` method does exactly what it sounds like. The method accepts a single parameter `prompt` which is of string type.
@@ -758,7 +787,7 @@ Once the user writes something on the console and presses enter, the input metho
 
 You can save that string to any variable like I've saved the name inside the `name` variable. Even if the user inputs a number, `input()` will return that as a string.
 
-```
+```python
 def main():
     name = input('What is your name? ')
     age = input(f'How old are you {name}? ')
@@ -780,7 +809,7 @@ Even though Python is taking all the user inputs correctly, it fails to calculat
 
 To solve this problem, you just have to convert the user inputs to numeric types using the `int()` or `float()` functions as needed.
 
-```
+```python
 def main():
     name = input('What is your name? ')
     age = int(input(f'How old are you {name}? '))
@@ -796,11 +825,12 @@ if __name__ == '__main__':
 # How old are you Farhan? 27
 # What year is this again? 2023
 # If my calculations are right, you were born in 1996
+
 ```
 
 There you go, works like a charm. You can perform this conversion at any point in the code. It's not mandatory to convert them right at the beginning.
 
-```
+```python
 def main():
     temperature_in_celsius = input('What is the temperature in celsius? ')
 
@@ -814,6 +844,7 @@ if __name__ == '__main__':
 
 # What is the temperature in celsius? 32
 # 32 degree celsius is equivalent to 89.6 degree fahrenheit.
+
 ```
 
 This program can convert temperature from Celsius to Fahrenheit. In this program, I didn't convert the input from string to a numeric type right away.
@@ -826,7 +857,7 @@ You've already seen examples of strings in the previous sections – but there i
 
 In Python, anything enclosed within a set of single, double, or triple quotes is a string. These are sequences of bytes representing Unicode characters.
 
-```
+```python
 def main():
     book = 'Dracula'
     author = "Bram Stoker"
@@ -840,6 +871,7 @@ if __name__ == '__main__':
 
 # Title: Dracula
 # Author: Bram Stoker
+
 ```
 
 Declaring a string with single or double quotes makes no difference whatsoever. But based on the scenario, you may have to choose on over the other.
@@ -857,11 +889,12 @@ if __name__ == '__main__':
     main()
 
 # What's your name?
+
 ```
 
 The opposite can also occur. For example, when you have a direct quote within your string:
 
-```
+```python
 def main():
     sentence = 'Harriet Jacobs writes, "She sat down, quivering in every limb"'
 
@@ -872,13 +905,14 @@ if __name__ == '__main__':
     main()
 
 # Harriet Jacobs writes, "She sat down, quivering in every limb"
+
 ```
 
-You can also go for [escape sequences][64] if you want to, but the [PEP 8 - Style Guide for Python Code][65] recommends avoiding the usage of back slashes within strings.
+You can also go for [escape sequences](https://www.freecodecamp.org/news/escape-sequences-python/) if you want to, but the [PEP 8 - Style Guide for Python Code](https://peps.python.org/pep-0008/#string-quotes) recommends avoiding the usage of back slashes within strings.
 
 Triple quotes are a different case altogether. You can put multi-line strings within triple quotes and Python will preserve the white spaces as well.
 
-```
+```python
 def main():
     synopsis = """Dracula comprises journal entries, letters, and telegrams written by the main characters.
 It begins with Jonathan Harker, a young English lawyer, as he travels to Transylvania.
@@ -913,11 +947,12 @@ if __name__ == '__main__':
 # Harker correctly assumes that he is to be the count’s next victim.
 # He attacks the count, but his efforts are unsuccessful.
 # Dracula leaves Harker trapped in the castle and then, along with 50 boxes of dirt, departs for England.
+
 ```
 
 So if you ever want to print out a multi line string while preserving the white spaces, go for triple quotes.
 
-You can declare a triple quoted string using three single quotes but the [PEP 8 - Style Guide for Python Code][66] recommends the usage of three double quotes.
+You can declare a triple quoted string using three single quotes but the [PEP 8 - Style Guide for Python Code](https://peps.python.org/pep-0008/#string-quotes) recommends the usage of three double quotes.
 
 There is a lot more to learn about strings, but I'd like to introduce you to some other sequence types in Python.
 
@@ -931,7 +966,7 @@ A list in Python is exactly what it sounds like: a collection of data stored seq
 
 You can create a new list in Python by writing out its name followed by an equal sign, followed by the values to store enclosed in square brackets:
 
-```
+```python
 def main():
     horror_books = ['Dracula', 'Carmilla', 'The Imago Sequence']
 
@@ -942,11 +977,12 @@ if __name__ == '__main__':
     main()
 
 # ['Dracula', 'Carmilla', 'The Imago Sequence']
+
 ```
 
 In this example, `horror_books` is a list of strings. But you can create lists of integers, floats, or even of mixed types.
 
-```
+```python
 def main():
     a_random_list = ['Dracula', 1, 5.7, 'Carmilla']
 
@@ -957,13 +993,14 @@ if __name__ == '__main__':
     main()
 
 # ['Dracula', 1, 5.7, 'Carmilla']
+
 ```
 
 Though this is perfectly valid, you may find yourself creating lists of the same types more often.
 
 Lists in Python are mutable. This means you can modify a list after its creation. For example, you can use the `pop()` method to get rid of the last value in a list.
 
-```
+```python
 def main():
     horror_books = ['Dracula', 'Carmilla', 'The Imago Sequence']
 
@@ -980,7 +1017,7 @@ if __name__ == '__main__':
 
 As you can see, the `pop()` method returns the last value from the list and gets rid of it. Like `pop()` there is the `append()` method for inserting new item to the list.
 
-```
+```python
 def main():
     horror_books = ['Dracula', 'Carmilla', 'The Imago Sequence']
 
@@ -993,16 +1030,17 @@ def main():
 
 if __name__ == '__main__':
     main()
-
+    
 # ['Dracula', 'Carmilla', 'The Imago Sequence']
 # ['Dracula', 'Carmilla', 'The Imago Sequence', 'The Exorcist']
+
 ```
 
 As you can see from the method name, it adds the new item at the end of the list. Given their mutable nature, lists can also be sorted.
 
-Feel free to check out the following article written by my colleague [Dionysia Lemonaki][67] here on freeCodeCamp about how to sort lists in Python:
+Feel free to check out the following article written by my colleague [Dionysia Lemonaki](https://www.freecodecamp.org/news/author/dionysia/) here on freeCodeCamp about how to sort lists in Python:
 
-[https://www.freecodecamp.org/news/python-sort-how-to-sort-a-list-in-python/][68]
+%[https://www.freecodecamp.org/news/python-sort-how-to-sort-a-list-in-python/]
 
 ### Tuples in Python
 
@@ -1010,7 +1048,7 @@ Lists are not the only sequence type in Python. The closest sibling of lists in 
 
 You can create a new tuple in Python by writing out its name followed by an equal sign, then enclosing inside a pair of parenthesis the values you want to store.
 
-```
+```python
 def main():
     horror_books = ('Dracula', 'Carmilla', 'The Imago Sequence')
 
@@ -1025,7 +1063,7 @@ if __name__ == '__main__':
 
 Just like lists, you can also mix and match different types of data within a single tuple as you see fit.
 
-```
+```python
 def main():
     a_random_list = ('Dracula', 1, 5.7, 'Carmilla')
 
@@ -1036,6 +1074,7 @@ if __name__ == '__main__':
     main()
 
 # ('Dracula', 1, 5.7, 'Carmilla')
+
 ```
 
 The most glaring dissimilarity between a list and a tuple is the fact that a tuple is immutable. So there's no popping and appending for us this time.
@@ -1048,7 +1087,7 @@ You can create a range by calling the `range()` method and it'll return a range 
 
 The most common is by passing a single number as a parameter. In this case, the method will treat that number as the end of the range and 0 as the start.
 
-```
+```python
 def main():
     a_range = range(10)
 
@@ -1065,6 +1104,7 @@ if __name__ == '__main__':
 # range(0, 10)
 # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 # (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+
 ```
 
 Printing out a range as is won't give you much information. You'll have to convert the range to a list or a tuple by either calling the `list()` or `tuple()` method.
@@ -1073,7 +1113,7 @@ Once converted, you can then print out the entire range to the console. Notice h
 
 The second way of calling the method is by supplying both the starting and ending numbers for the range.
 
-```
+```python
 def main():
     a_range = range(5, 15)
 
@@ -1094,13 +1134,14 @@ if __name__ == '__main__':
 # range(5, 15)
 # [5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 # (5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
+
 ```
 
 Once again, the number you pass as the ending for the range will not be included in the resultant range.
 
 The third and final way to call the method is by also defining a step. For example, imagine you want a range comprising of all the odd numbers within 1 to 10.
 
-```
+```python
 def main():
     a_range = range(1, 10, 2)
 
@@ -1121,15 +1162,16 @@ if __name__ == '__main__':
 # range(1, 10, 2)
 # [1, 3, 5, 7, 9]
 # (1, 3, 5, 7, 9)
+
 ```
 
 Since the value of step is 2 in this case, the range will begin with 1 but then skip every second number.
 
 It may take some time to wrap your head around this concept but practicing with different step values will help.
 
-Or you can read the following article written by [Bala Priya C][69]:
+Or you can read the following article written by [Bala Priya C](https://www.freecodecamp.org/news/author/bala-priya/):
 
-[https://www.freecodecamp.org/news/python-range-function-explained-with-code-examples/][70]
+%[https://www.freecodecamp.org/news/python-range-function-explained-with-code-examples/]
 
 ### How Indexing Works in Python
 
@@ -1145,7 +1187,7 @@ The second one is at the 1st place and the third one is at the 2nd place. This z
 
 The most basic usage of a index is to access its corresponding value from the sequence.
 
-```
+```python
 def main():
     horror_books = ['Dracula', 'Carmilla', 'The Imago Sequence']
 
@@ -1164,7 +1206,7 @@ if __name__ == '__main__':
 
 You can also use negative numbers as indices but in that case the counting will start from the end.
 
-```
+```python
 def main():
     books = ['Dracula', 'Frankenstein', 'The Omen', 'The Exorcist', 'The Legend of Sleepy Hollow',
              'And Then There Were None', 'The ABC Murders', 'The Valley of Fear']
@@ -1198,7 +1240,8 @@ The element on the 2nd position is "The Omen" but the element at the -2nd positi
 
 If you're finding it hard to wrap your head around, imagine the list like a clock.
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/01/list-clock.svg) _Zero-based indexing represented as a circular diagram like a clock_
+![Image](https://www.freecodecamp.org/news/content/images/2023/01/list-clock.svg)
+_Zero-based indexing represented as a circular diagram like a clock_
 
 Here the outer number is the negative index and the inner number is the positive index. If you try to match the outputs against this imaginary clock, it should be easier to understand.
 
@@ -1212,7 +1255,7 @@ Now you want to multiply each number in that list by two, insert the multiplied 
 
 This is an excellent use case for the `for` statement in Python. Let's begin by first iterating through each number in a given list.
 
-```
+```python
 def main():
     random_numbers = [6, 1, 3, 8, 0, 9, 12, 3, 4, 0, 54, 8, 100, 55, 60, 70, 85]
 
@@ -1255,13 +1298,13 @@ Inside the for loop you can write whatever you want to do with the current value
 
 Since there are 17 numbers in the sequence, the loop will run 17 times and each time it'll have a new value.
 
-It'll start at index 0 which has the value of 6 and go through index 1, 2, 3, 4, 5, and so on.
+It'll start at index 0 which has the value of 6 and go through index 1, 2, 3, 4, 5, and so on. 
 
 On each iteration, it'll save the value of the index it's currently working on inside the `number` variable and print it out. Hence you get the long list of numbers.
 
 Instead of printing out the original value, you can multiply it by 2 and print out the resultant value instead.
 
-```
+```python
 def main():
     random_numbers = [6, 1, 3, 8, 0, 9, 12, 3, 4, 0, 54, 8, 100, 55, 60, 70, 85]
 
@@ -1288,11 +1331,12 @@ if __name__ == '__main__':
 # 120
 # 140
 # 170
+
 ```
 
 Now you're getting the multiplied values. The final task is to insert these multiplied values in a new list and print out the new list itself.
 
-```
+```python
 def main():
     random_numbers = [6, 1, 3, 8, 0, 9, 12, 3, 4, 0, 54, 8, 100, 55, 60, 70, 85]
     multiplied_random_numbers = []
@@ -1318,7 +1362,7 @@ Well, any object that has the `__iter__()` method is considered an iterable in P
 
 You can call the `dir()` function on any object to list out all its methods and properties. Take the `random_numbers` list as an example.
 
-```
+```python
 def main():
     random_numbers = [6, 1, 3, 8, 0, 9, 12, 3, 4, 0, 54, 8, 100, 55, 60, 70, 85]
 
@@ -1338,7 +1382,7 @@ As you keep working in Python you'll eventually remember the types supported by 
 
 There is another type of loop in Python known as the `while` loop. Unlike `for`, a `while` loop can execute a statement as long as a given condition evaluates to `true`.
 
-```
+```python
 def main():
     number = 1
     while number < 11:
@@ -1347,7 +1391,7 @@ def main():
 
 if __name__ == '__main__':
     main()
-
+    
 # 1
 # 2
 # 3
@@ -1372,7 +1416,7 @@ The line `number += 1` is another way to write `number = number + 1` and it's ve
 
 You can also nest one loop inside another. For example, look at the following code that prints out multiplication tables:
 
-```
+```python
 def main():
     for x in range(1, 6):
         print()
@@ -1438,11 +1482,12 @@ if __name__ == '__main__':
 # 5 x 8 = 40
 # 5 x 9 = 45
 # 5 x 10 = 50
+
 ```
 
 To be honest, this is a very simple bit of code that makes use of a lot of the things you've already learned in this handbook.
 
-To create a multiplication table we need two operands: one remains constant for the entire table and the other increases by 1 until it reaches 10.
+To create a multiplication table we need two operands: one remains constant for the entire table and the other increases by 1 until it reaches 10. 
 
 Here, `x` represents the left operand or the constant one and `y` represents the right operand or the variable one.
 
@@ -1482,7 +1527,7 @@ So I think it's time for you to learn some common operations that you can perfor
 
 The `in` operator is the most common way of checking for any object's existence. For example, assume that you have a string and you want to check if it contains the word "red" or not.
 
-```
+```python
 def main():
     a_string = 'Little Red Riding-Hood comes to me one Christmas Eve to give me information of the cruelty and ' \
                'treachery of that dissembling Wolf who ate her grandmother. '
@@ -1494,13 +1539,14 @@ if __name__ == '__main__':
     main()
 
 # True
+
 ```
 
 It's literally like asking Python, if the word `Red` is `in` the `a_string` variable. And Python will give you either `True` or `False` as an answer.
 
 The `in` operator is not exclusive to strings. You can actually use it on any other collection type such as lists, tuples, and ranges.
 
-```
+```python
 def main():
     books = ['Dracula', 'Frankenstein', 'The Omen', 'The Exorcist', 'The Legend of Sleepy Hollow']
     movies = ('A Christmas Carol', 'The Sea Beast', 'Enchanted', 'Pinocchio', 'The Addams Family')
@@ -1517,13 +1563,14 @@ if __name__ == '__main__':
 # False
 # True
 # True
+
 ```
 
 A Christmas Carol doesn't exist in the `books` list so it's a `False` statement. The other two statements are right, so they're `True`.
 
 You may also want to find out about the absence of an object. For that, you can use the `not` operator in conjunction with the `in` operator.
 
-```
+```python
 def main():
     books = ['Dracula', 'Frankenstein', 'The Omen', 'The Exorcist', 'The Legend of Sleepy Hollow']
     movies = ('A Christmas Carol', 'The Sea Beast', 'Enchanted', 'Pinocchio', 'The Addams Family')
@@ -1540,6 +1587,7 @@ if __name__ == '__main__':
 # True
 # False
 # True
+
 ```
 
 A Christmas Carol doesn't exist in the `books` list, so the first statement evaluates to `true`. The second one evaluates to false because Enchanted is present in the `movies` list.
@@ -1552,7 +1600,7 @@ You've already learned about `+` and `*` as arithmetic operators – but in the 
 
 The `+` operator lets you merge two sequences together.
 
-```
+```python
 def main():
     books = ['Dracula', 'Frankenstein', 'The Omen', 'The Exorcist', 'The Legend of Sleepy Hollow']
     more_books = ['And Then There Were None', 'The ABC Murders', 'The Valley of Fear', 'The Hound of the Baskervilles', 'The Chestnut Man']
@@ -1571,7 +1619,7 @@ As you can see, the operator has appended the content of the `books` list to the
 
 The `*` operator, on the other hand, makes multiple copies of a given sequence.
 
-```
+```python
 def main():
     books = ['Dracula', 'Frankenstein', 'The Omen', 'The Exorcist', 'The Legend of Sleepy Hollow']
 
@@ -1591,7 +1639,7 @@ So multiplying the `books` list by 2 gives us all the 5 books in the list twice.
 
 The `len()` function can return the length of a given sequence. And the `min()` and `max()` functions can return the minimum and maximum value in a given sequence, respectively.
 
-```
+```python
 def main():
     random_numbers = [6, 1, 3, 8, 0]
 
@@ -1609,7 +1657,7 @@ if __name__ == '__main__':
 # 8
 ```
 
-Since there are 5 elements in the list, 5 is the output from the `len()` function call.
+Since there are 5 elements in the list, 5 is the output from the `len()` function call. 
 
 The smallest value in the list is 0 and the largest value is 8 which are the outputs from the `min()` and `max()` function calls, respectively.
 
@@ -1627,7 +1675,7 @@ Although each of the methods I'm going to teach you performs a different task, t
 
 If you want to learn about all the available string methods, feel free to consult the official Python documentation.
 
-[https://docs.python.org/3/library/stdtypes.html#string-methods][71]
+%[https://docs.python.org/3/library/stdtypes.html#string-methods]
 
 Also remember it's not a matter of just going through each method and memorizing their usage.
 
@@ -1637,7 +1685,7 @@ It's about knowing what works best in a given scenario and coming up with clever
 
 The first method you're going to learn is called `capitalize()` and it does what it sounds like.
 
-```
+```python
 def main():
     country_name = 'bangladesh'
 
@@ -1648,13 +1696,14 @@ if __name__ == '__main__':
     main()
 
 # Bangladesh
+
 ```
 
 As you can see from the code snippet above, the `capitalize()` method turns the first letter of the word to a capital letter.
 
 This is simple, but let's try this on a string with multiple words in it – a sentence perhaps.
 
-```
+```python
 def main():
     book_name = 'the house of silk'
 
@@ -1665,13 +1714,14 @@ if __name__ == '__main__':
     main()
 
 # The house of silk
+
 ```
 
 Although the method did its job, there is slight problem. Depending on what you're trying to achieve, you may expect the first letter of each word to be capitalized.
 
 That's where the `title()` method comes in. This method returns a title cased version of a given string.
 
-```
+```python
 def main():
     book_name = 'the house of silk'
 
@@ -1682,11 +1732,12 @@ if __name__ == '__main__':
     main()
 
 # The House Of Silk
+
 ```
 
 But there is still an issue. Take the following string with apostrophes for example.
 
-```
+```python
 def main():
     book_name = "alice's adventures in wonderland"
 
@@ -1697,17 +1748,18 @@ if __name__ == '__main__':
     main()
 
 # Alice'S Adventures In Wonderland
+
 ```
 
 As you can see, the `title()` method treats the `s` following the apostrophe as a separate word and capitalizes it.
 
-Regarding this issue, the [official documentation][72] states:
+Regarding this issue, the [official documentation](https://docs.python.org/3/library/stdtypes.html#str.title) states:
 
 > The algorithm uses a simple language-independent definition of a word as groups of consecutive letters. The definition works in many contexts but it means that apostrophes in contractions and possessives form word boundaries.
 
 The `capwords()` helper function can solve this issue. This function breaks the string into multiple words based on the spaces between them, capitalizes the words, joins them back into a string and returns that to the user.
 
-```
+```python
 from string import capwords
 
 
@@ -1721,13 +1773,14 @@ if __name__ == '__main__':
     main()
 
 # Alice's Adventures In Wonderland
+
 ```
 
 Pay attention to the `import` statement at the top. The `capwords()` function is not a method within the string type but a function that resides inside the `string` module.
 
 You'll learn about modules and imports in more details later on. For now, just roll with it. Although the function uses spaces to split words, you can overwrite it.
 
-```
+```python
 from string import capwords
 
 
@@ -1741,6 +1794,7 @@ if __name__ == '__main__':
     main()
 
 # House 42, Road 02, Wonderland
+
 ```
 
 As you can see, in this case the string has multiple parts divided by a comma followed by a space.
@@ -1749,7 +1803,7 @@ The `capwords()` function can take a custom delimiter as its second parameter. Y
 
 Finally, there is the `istitle()` method that can check whether a given string is in title case or not.
 
-```
+```python
 def main():
     book_name = 'hearts in atlantis'
 
@@ -1762,6 +1816,7 @@ if __name__ == '__main__':
 
 # Is "hearts in atlantis" in title case? False
 # Is "Hearts In Atlantis" in title case? True
+
 ```
 
 However, keep in mind that the `istitle()` method doesn't work with the `capwords()` helper function.
@@ -1770,7 +1825,7 @@ However, keep in mind that the `istitle()` method doesn't work with the `capword
 
 Apart from capitalization, you may want to convert an entire string to upper case or lower case. You can do that by using the `upper()` and `lower()` methods in Python.
 
-```
+```python
 def main():
     book_name = 'moriarty'
 
@@ -1786,11 +1841,12 @@ if __name__ == '__main__':
 
 # MORIARTY
 # dracula
+
 ```
 
 There are also the `isupper()` and `islower()` methods to check whether a given string is already in either of the letter cases or not.
 
-```
+```python
 def main():
     book_name = 'moriarty'
 
@@ -1814,17 +1870,18 @@ if __name__ == '__main__':
 # DRACULA
 # Is DRACULA in upper case? True
 # Is DRACULA in lower case? False
+
 ```
 
 There is one last method called `casefold()` which is kind of a more aggressive version of the `lower()` method.
 
-According to the [official documentation][73]:
+According to the [official documentation](https://docs.python.org/3/library/stdtypes.html#str.casefold):
 
 > Casefolding is similar to lowercasing but more aggressive because it is intended to remove all case distinctions in a string. For example, the German lowercase letter 'ß' is equivalent to "ss". Since it is already lowercase, lower() would do nothing to 'ß'; casefold() converts it to "ss".
 
 The usage of this method is identical to the `lower()` method.
 
-```
+```python
 def main():
     book_name = 'DRACULA'
 
@@ -1835,13 +1892,14 @@ if __name__ == '__main__':
     main()
 
 # dracula
+
 ```
 
 These three methods are fine and dandy, but what if you don't want to use any of these particular methods and just want to switch the case of a given string?
 
 The `swapcase()` method can do just that.
 
-```
+```python
 def main():
     book_name = 'HEARTS IN ATLANTIS'
 
@@ -1852,6 +1910,7 @@ if __name__ == '__main__':
     main()
 
 # hearts in atlantis
+
 ```
 
 As you can see, the method has converted the book name into lower case from upper case.
@@ -1860,7 +1919,7 @@ As you can see, the method has converted the book name into lower case from uppe
 
 If you want to find out the number of occurrences of a substring within a string, you can use the `count()` method in Python.
 
-```
+```python
 def main():
     paragraph = '''At three in the morning the chief Sussex detective, obeying the urgent call from Sergeant Wilson of 
     Birlstone, arrived from headquarters in a light dog-cart behind a breathless trotter. By the five-forty train in 
@@ -1879,6 +1938,7 @@ if __name__ == '__main__':
     main()
 
 # The substring "morning" shows up 2 times in the paragraph.
+
 ```
 
 If you call the `count()` method without passing anything to it, the method will return the number of empty spaces in the given string.
@@ -1887,7 +1947,7 @@ If you call the `count()` method without passing anything to it, the method will
 
 You can actually break a string into a list of words or join a list of words in a string in Python.
 
-```
+```python
 def main():
     string = 'Holmes was certainly not a difficult man to live with'
 
@@ -1906,7 +1966,7 @@ If you call the `split()` method without any parameters, it'll split the given s
 
 You can override that by passing a custom separator and also fix the number of splits you want.
 
-```
+```python
 def main():
     string = 'Holmes,was,certainly,not,a,difficult,man,to,live,with'
 
@@ -1919,6 +1979,7 @@ if __name__ == '__main__':
     main()
 
 # ['Holmes', 'was', 'certainly', 'not', 'a', 'difficult,man,to,live,with']
+
 ```
 
 This time I've replaced the spaces in the source string with commas. I've also overridden the default separator with a comma and fixed the number of splits to five.
@@ -1929,7 +1990,7 @@ The `split()` method is good for using with data that has been intentionally del
 
 The opposite of the `split()` method is `join()` and it works on any iterator type in Python.
 
-```
+```python
 def main():
     word_list = ['Holmes', 'was', 'certainly', 'not', 'a', 'difficult', 'man', 'to', 'live', 'with']
     string = ''
@@ -1951,6 +2012,7 @@ if __name__ == '__main__':
 
 # Holmeswascertainlynotadifficultmantolivewith
 # Holmes was certainly not a difficult man to live with
+
 ```
 
 There you have it. Notice how the `join()` method didn't care about adding spaces as separator after each word in the first call.
@@ -1965,7 +2027,7 @@ I hope you remember the `boolean` data type from a previous section – the one 
 
 Well, you can use a boolean with an `if` statement (a conditional statement) in Python to perform an action conditionally.
 
-```
+```python
 def main():
     number = int(input('what number would you like to check?\n- '))
 
@@ -1981,6 +2043,7 @@ if __name__ == '__main__':
 # what number would you like to check?
 # - 10
 # 10 is even.
+
 ```
 
 You start by writing out `if` followed by a condition and a colon. By condition, what I mean is a statement that evaluates to a boolean value (true or false).
@@ -1991,7 +2054,7 @@ So, if you divide a given number by 2 and the remainder is 0, that's an even num
 
 You can use the `if...else` statement to choose between two different options. But, if you have multiple options to choose from, you can use the `if...elif...else` statement.
 
-```
+```python
 def main():
     year = int(input('which year would you like to check?\n- '))
 
@@ -2009,6 +2072,7 @@ if __name__ == '__main__':
 # which year would you like to check?
 # - 2004
 # 2004 is leap year.
+
 ```
 
 The `elif` statement usually goes after an `if` statement and before an `else` statement.
@@ -2023,7 +2087,7 @@ Don't worry if you do not understand the `and` operator in detail at the moment.
 
 Another thing you need to understand is that these `if` statements are just regular statements so you can do pretty much anything inside them.
 
-```
+```python
 def main():
     number = int(input('what number would you like to check?\n- '))
 
@@ -2049,6 +2113,7 @@ if __name__ == '__main__':
 # what number would you like to check?
 # - 10
 # 10 is not a prime number.
+
 ```
 
 This example is a bit more complex than what you've seen so far. So let me break it down for you. The program checks whether a given number is a prime number or not.
@@ -2067,7 +2132,7 @@ So as you can see, not only you can put loops inside a conditional statement but
 
 The final example that I'd like to show you is the `for...else` statement. As you can see in the example above, you have a `for` statement followed by a `if...else` statement.
 
-```
+```python
 def main():
     number = int(input('what number would you like to check?\n- '))
 
@@ -2088,6 +2153,7 @@ if __name__ == '__main__':
 # what number would you like to check?
 # - 5
 # 5 is a prime number.
+
 ```
 
 If you put an `else` statement on the same level as a `for` statement, then Python will execute whatever you put inside that `else` block as soon as the loop has finished.
@@ -2098,14 +2164,14 @@ In the examples above, you've seen the usage of `==` as well as the `and` operat
 
 The relational operators come in handy when you want to check the relationship between two operands. There are six of these operators:
 
-| OPERATOR | EXPLANATION | USAGE |
-| --- | --- | --- |
-| `==` | Equal To | `5 == 5` gives you `True`, but `5 == 10` gives you `False` |
-| `!=` | Not Equal To | `5 != 10` gives you `True`, but `5 != 5` gives you `False` |
-| `>` | Greater Than | `10 > 5` gives you `True`, but `5 > 10`gives you `False` |
-| `<` | Less Than | `5 < 10` gives you `True`, but `10 < 5` gives you `False` |
-| `>=` | Greater Than or Equal | `10 >= 5` and `10 >= 10` gives you `True`, but `5 >= 10` gives you `False` |
-| `<=` | Less Than or Equal | `5 <= 10` and `5 <= 5` gives you `True`, but `10 <= 5` gives you `False` |
+| OPERATOR | EXPLANATION           | USAGE                                                                      |
+|----------|-----------------------|----------------------------------------------------------------------------|
+| `==`     | Equal To              | `5 == 5` gives you `True`, but `5 == 10` gives you `False`                 |
+| `!=`     | Not Equal To          | `5 != 10` gives you `True`, but `5 != 5` gives you `False`                 |
+| `>`      | Greater Than          | `10 > 5` gives you `True`, but `5 > 10`gives you `False`                   |
+| `<`      | Less Than             | `5 < 10` gives you `True`, but `10 < 5` gives you `False`                  |
+| `>=`     | Greater Than or Equal | `10 >= 5` and `10 >= 10` gives you `True`, but `5 >= 10` gives you `False` |
+| `<=`     | Less Than or Equal    | `5 <= 10` and `5 <= 5` gives you `True`, but `10 <= 5` gives you `False`   |
 
 You've been using the `equal to` operator since the very beginning. The other ones you'll learn about as you keep going.
 
@@ -2113,7 +2179,7 @@ Apart from these, there are three logical operators in Python. They are the `and
 
 Take an RPG game, for example, where the hero has to have a level 45 or up shield and a level 48 or up sword in order to go to the next level.
 
-```
+```python
 def main():
     shield = int(input('what is your shield level? '))
     sword = int(input('what is your sword level? '))
@@ -2130,11 +2196,12 @@ if __name__ == '__main__':
 # what is your shield level? 42
 # what is your sword level? 52
 # you shall not pass!
+
 ```
 
 Unless you meet both conditions, the statement will evaluate to `False`. You can have more conditions in a statement like this:
 
-```
+```python
 def main():
     shield = int(input('what is your shield level? '))
     sword = int(input('what is your sword level? '))
@@ -2153,13 +2220,14 @@ if __name__ == '__main__':
 # what is your sword level? 50
 # what is your armor level? 10
 # you shall not pass!
+
 ```
 
 The `or` operator, on the other hand, is a bit more forgiving. If any of the given conditions evaluates true, than the entire statement will evaluate to true.
 
 For example in another horror game, you can only get into The Castle Dracula if you are more than 500,000 years old or legally dead.
 
-```
+```python
 def main():
     age = 10_000
     is_legally_dead = True
@@ -2174,13 +2242,14 @@ if __name__ == '__main__':
     main()
 
 # you shall pass!
+
 ```
 
 You can mix the `and` and `or` operators together. I won't list out all the possible combinations of these operators, but as you keep working with Python, you'll get to use a lot of them.
 
 The last logical operator that I'd like to discuss is the `not` operator. This operator takes only one operand and returns the opposite value.
 
-```
+```python
 def main():
     print('not True =', not True)
     print('not False =', not False)
@@ -2191,11 +2260,12 @@ if __name__ == '__main__':
 
 # not True = False
 # not False = True
+
 ```
 
 For example, if you change the rules of the horror game we talked about in the previous example and make is so that only people who are over 500,000 years old and not Van Helsing can enter the castle.
 
-```
+```python
 def main():
     age = 800_000
     is_van_helsing = True
@@ -2210,13 +2280,14 @@ if __name__ == '__main__':
     main()
 
 # you shall not pass!
+
 ```
 
 Since we've been talking about conditional statements and some of the operators associated with them, I'd like to introduce you to another statement first introduced in Python 3.10, the `match...case` statement.
 
-[https://www.freecodecamp.org/news/python-switch-statement-switch-case-example/][74]
+%[https://www.freecodecamp.org/news/python-switch-statement-switch-case-example/]
 
-Since my colleague [Kolade Chris][75] has written such a nice article on the topic, I'll not repeat that here. Feel free to check it out at your leisure.
+Since my colleague [Kolade Chris](https://www.freecodecamp.org/news/author/kolade/) has written such a nice article on the topic, I'll not repeat that here. Feel free to check it out at your leisure.
 
 ## What Are Assignment Operators in Python?
 
@@ -2228,14 +2299,14 @@ Bitwise operations are a little out of the scope of this book, so I'll stick to 
 
 There are seven different assignment operators in Python. Since you've already learned about the simple one, I'll discuss the other six in the following table.
 
-| OPERATOR | USAGE | EQUIVALENT TO |
-| --- | --- | --- |
-| `+=` | `a += b` | `a = a + b` |
-| `-=` | `a -= b` | `a = a - b` |
-| `*=` | `a *= b` | `a = a * b` |
-| `/=` | `a /= b` | `a = a / b` |
-| `%=` | `a %= b` | `a = a % b` |
-| `**=` | `a **= b` | `a = a ** b` |
+| OPERATOR | USAGE     | EQUIVALENT TO |
+|----------|-----------|---------------|
+| `+=`     | `a += b`  | `a = a + b`   |
+| `-=`     | `a -= b`  | `a = a - b`   |
+| `*=`     | `a *= b`  | `a = a * b`   |
+| `/=`     | `a /= b`  | `a = a / b`   |
+| `%=`     | `a %= b`  | `a = a % b`   |
+| `**=`    | `a **= b` | `a = a ** b`  |
 
 These operators are not exclusive to Python, and in most programming resources, you'll find these in a much earlier chapter.
 
@@ -2243,7 +2314,7 @@ But I wanted to wait until you've learned about taking input from the user, work
 
 Assume that you want to write a program that calculates the sum of all the numbers within a given range.
 
-```
+```python
 def main():
     start = int(input('which number do you want to start from?\n- '))
     end = int(input('which number do you want to stop at?\n- '))
@@ -2264,6 +2335,7 @@ if __name__ == '__main__':
 # which number do you want to stop at?
 # - 10
 # the sum of the numbers between 1 and 10 is: 55
+
 ```
 
 I hope you remember that the ending number of a `range()` function call is exclusive. So I had to add a `+1` with the ending number.
@@ -2274,7 +2346,7 @@ Otherwise it's a very simple range based for loop that adds each number to the `
 
 So far you've learned about a number of iterable types such as lists, tuples, and also strings. There is another one known as a set. Let's look at an example:
 
-```
+```python
 def main():
     numbers = {1, 2, 3, 4, 5}
 
@@ -2290,13 +2362,14 @@ if __name__ == '__main__':
 # 3
 # 4
 # 5
+
 ```
 
 You can create a new set by putting the values between a set of curly braces. Keep in mind however, you can not create an empty set using the curly braces.
 
 You'll have to use the `set()` function for that.
 
-```
+```python
 def main():
     numbers = {}
 
@@ -2312,13 +2385,14 @@ if __name__ == '__main__':
 
 # <class 'dict'>
 # <class 'set'>
+
 ```
 
 As you can see, usage of empty curly braces creates a dictionary whereas the `set()` function creates an empty set.
 
 Sets may seem similar to lists, but they are actually quite different. For starters, you can not put duplicate values in a set.
 
-```
+```python
 def main():
     numbers_list = [1, 2, 3, 4, 5, 3, 2, 4]
 
@@ -2334,13 +2408,14 @@ if __name__ == '__main__':
 
 # [1, 2, 3, 4, 5, 3, 2, 4]
 # {1, 2, 3, 4, 5}
+
 ```
 
 The list of numbers can hold duplicate values without any problem. But as soon as you create a set from that list, all the duplicate values will be gone.
 
 Sets are mutable, so you can add new values to a set using the `add()` method.
 
-```
+```python
 def main():
     numbers = {1, 2, 3, 4, 5}
 
@@ -2353,11 +2428,12 @@ if __name__ == '__main__':
     main()
 
 # {1, 2, 3, 4, 5, 500}
+
 ```
 
 Likewise you can use the `discard()` method to remove an item from a set or use the `clear()` method to remove all values altogether.
 
-```
+```python
 def main():
     numbers = {1, 2, 3, 4, 5}
 
@@ -2375,19 +2451,20 @@ if __name__ == '__main__':
 
 # {1, 2, 4, 5}
 # set()
+
 ```
 
 Notice how an empty set shows up as `set()` instead of `{}` because the latter indicates an empty dictionary.
 
 Apart from the fact that a set never contains duplicate values, there is another speciality of this type.
 
-You can perform set operations such as union, intersection, complement, and difference using sets in Python.
+You can perform set operations such as union, intersection, complement, and  difference using sets in Python.
 
-My colleague [Estefania Cassingena Navone][76] has written an excellent guide on sets, frozen set and all the operations that you can perform on them.
+My colleague [Estefania Cassingena Navone](https://www.freecodecamp.org/news/author/estefaniacn/) has written an excellent guide on sets, frozen set and all the operations that you can perform on them.
 
-[https://www.freecodecamp.org/news/python-sets-detailed-visual-introduction/][77]
+%[https://www.freecodecamp.org/news/python-sets-detailed-visual-introduction/]
 
-Finally, if you'd like to get a definitive look at the set type, the [official documentation][78] will more than suffice.
+Finally, if you'd like to get a definitive look at the set type, the [official documentation](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset) will more than suffice.
 
 ## What Is the Mapping Type in Python?
 
@@ -2395,7 +2472,7 @@ You've already learned about the sequence types and set types in Python. Those a
 
 But situations where you want to store data in key value pairs are not uncommon. Take, for example, an online bookshop where you have to store the prices of the books.
 
-```
+```python
 def main():
     programming_books = {
         'C Programming Language': 35,
@@ -2416,7 +2493,7 @@ The variable `programming_books` here is a mapping type usually known as a dicti
 
 Enclosed within the braces are a bunch of key value pairs. The strings on the left side are the keys and the numbers are the values. You can access any of the keys using the `get()` method.
 
-```
+```python
 def main():
     programming_books = {
         'C Programming Language': 35,
@@ -2442,7 +2519,7 @@ Alternatively, you can also use square braces like you did with lists to access 
 
 Dictionaries are mutable which means you can add new items to them, remove or change existing items.
 
-```
+```python
 def main():
     programming_books = {
         'C Programming Language': 35,
@@ -2463,6 +2540,7 @@ if __name__ == '__main__':
     main()
 
 # {'C Programming Language': 45, 'Introduction to Algorithms': 100, 'Clean Code: A Handbook of Agile Software Craftsmanship': 50, 'The Pragmatic Programmer': 32}
+
 ```
 
 You can change an existing item by accessing the item using the square braces and assign a new value to it. The price of C Programming Language has gone up by $10.
@@ -2471,7 +2549,7 @@ If you put a nonexistent key in between the square braces, then that'll show up 
 
 For removing an item from a dictionary, you can use the `popitem()` or the `pop()` method.
 
-```
+```python
 def main():
     programming_books = {
         'C Programming Language': 35,
@@ -2494,6 +2572,7 @@ if __name__ == '__main__':
 # ('Clean Code: A Handbook of Agile Software Craftsmanship', 50)
 # 35
 # {'Introduction to Algorithms': 100}
+
 ```
 
 The `popitem()` method removes the last item in the dictionary and returns that as a tuple.
@@ -2504,7 +2583,7 @@ The final `print()` function call shows that indeed two items were removed from 
 
 Finally, there is the `clear()` method that wipes out all the pairs in a given dictionary in one go.
 
-```
+```python
 def main():
     programming_books = {
         'C Programming Language': 35,
@@ -2521,6 +2600,7 @@ if __name__ == '__main__':
     main()
 
 # {}
+
 ```
 
 ### What Are Dictionary View Objects in Python?
@@ -2531,7 +2611,7 @@ This is where the view objects come in handy. You can call some specific methods
 
 The first method that I'm going to discuss is the `keys()` methods. It returns the keys of a given dictionary and you can loop over them.
 
-```
+```python
 def main():
     programming_books = {
         'C Programming Language': 35,
@@ -2549,11 +2629,12 @@ if __name__ == '__main__':
 # C Programming Language
 # Introduction to Algorithms
 # Clean Code: A Handbook of Agile Software Craftsmanship
+
 ```
 
 Just like the `keys()` method, there is the `values()` method that returns the values in a dictionary instead.
 
-```
+```python
 def main():
     programming_books = {
         'C Programming Language': 35,
@@ -2571,11 +2652,12 @@ if __name__ == '__main__':
 # 35
 # 100
 # 50
+
 ```
 
 Finally, if you want both the keys and the values as tuples, you can use the `items` method.
 
-```
+```python
 def main():
     programming_books = {
         'C Programming Language': 35,
@@ -2593,13 +2675,14 @@ if __name__ == '__main__':
 # ('C Programming Language', 35)
 # ('Introduction to Algorithms', 100)
 # ('Clean Code: A Handbook of Agile Software Craftsmanship', 50)
+
 ```
 
 ## How to Write Functions in Python
 
 A function in Python (and programming in general) is a self-contained collection of instructions that perform a single task.
 
-```
+```python
 def print_hello():
     print('Hello, World!')
 
@@ -2612,13 +2695,14 @@ if __name__ == '__main__':
     main()
 
 # Hello, World!
+
 ```
 
 You define a function by writing out `def` followed by the name of the funtion and a colon. You can then write the function body from the next indented line.
 
 In this example, the `print_hello()` prints out `Hello, World!` on the terminal. It doesn't accept any argument.
 
-```
+```python
 def print_hello(message):
     print(message)
 
@@ -2631,13 +2715,14 @@ if __name__ == '__main__':
     main()
 
 # Hello, Universe!
+
 ```
 
 Now instead of printing out `Hello, World!` all the time, you can pass a custom message for the function to print out.
 
 You can make a function accept multiple arguments and even set a default value for it.
 
-```
+```python
 def print_hello(message, is_lower=False):
     if is_lower:
         print(message.lower())
@@ -2655,13 +2740,14 @@ if __name__ == '__main__':
 
 # HELLO, UNIVERSE!
 # hello, universe!
+
 ```
 
 Setting a default value to a function parameter makes it optional. So if you do not pass a value during the function call, your program will use the default value.
 
 Instead of printing out the message outright, you can make the function return the message.
 
-```
+```python
 def hello(message, is_lower=False):
     if is_lower:
         return message.lower()
@@ -2687,7 +2773,7 @@ When you call the function with or without a custom message, the function return
 
 You can also save the message in variables instead of passing them to the `print()` function directly.
 
-```
+```python
 def hello(message, is_lower=False):
     if is_lower:
         return message.lower()
@@ -2708,11 +2794,12 @@ if __name__ == '__main__':
 
 # HELLO, UNIVERSE!
 # hello, universe!
+
 ```
 
 It's not that you can only pass singular values to a function. You can pass lists, tuples, dictionaries or any other object to a function.
 
-```
+```python
 def total(numbers):
     s = 0
     for number in numbers:
@@ -2728,6 +2815,7 @@ if __name__ == '__main__':
     main()
 
 # 55
+
 ```
 
 In this function, you can pass a list of numbers to and get their sum. I had to name the function `total()` instead of `sum()` because there is a built-in function with that name.
@@ -2738,7 +2826,7 @@ Recursion in Python or programming in general is the technique of making a funct
 
 For example, imagine a function that accepts an integer and calculates the sum of all natural numbers up to that given integer. You can write this program using loops.
 
-```
+```python
 def natural_sum(last_number):
     if last_number < 1:
         return last_number
@@ -2762,11 +2850,12 @@ if __name__ == '__main__':
 # up to which number would you like to calculate the sum?
 # - 10
 # 55
+
 ```
 
 There is nothing new there, just regular usage of a range-based for loop. Now, you can also write the same program without any loop.
 
-```
+```python
 def recursive_natural_sum(last_number):
     if last_number < 1:
         return last_number
@@ -2786,6 +2875,7 @@ if __name__ == '__main__':
 # up to which number would you like to calculate the sum?
 # - 10
 # 55
+
 ```
 
 At a glance, this piece of code may look very complicated to you. But in reality it's very simple. Let's break it down step by step.
@@ -2808,9 +2898,9 @@ This calling goes on and on until the value of `last_digit` becomes zero. Once i
 
 The value returned from each function call is `last_digit + (last_digit - 1)` by the end of the recursion chain it adds up to 55.
 
-My colleague [Beau Carnes][79] has written a more in-depth article discussing how recursion works. You may take a look at it if you want to learn more.
+My colleague [Beau Carnes](https://www.freecodecamp.org/news/author/beau/) has written a more in-depth article discussing how recursion works. You may take a look at it if you want to learn more.
 
-[https://www.freecodecamp.org/news/how-recursion-works-explained-with-flowcharts-and-a-video-de61f40cb7f9/][80]
+%[https://www.freecodecamp.org/news/how-recursion-works-explained-with-flowcharts-and-a-video-de61f40cb7f9/]
 
 I'm not sating that recursive functions are easier than loops – but at times, using a recursive function instead of nested loops can be more efficient.
 
@@ -2820,7 +2910,7 @@ Anonymous or lambda functions are functions without any name. This is not someth
 
 Instead of beginning the function declaration with `def`, you instead start with writing out `lambda` followed by a colon and the function body.
 
-```
+```python
 print_hello = lambda: print('Hello, World!')
 
 
@@ -2832,13 +2922,14 @@ if __name__ == '__main__':
     main()
 
 # Hello, World!
+
 ```
 
 Since lambdas do not have a name, you have to put it in a variable in order to access it but that's not recommended. If you need a named function, use `def` instead.
 
 Lambda functions are useful when you want to pass a function as an argument to another function call. Take the `filter()` function for example.
 
-```
+```python
 def check_even(number):
     if number % 2 == 0:
         return True
@@ -2858,6 +2949,7 @@ if __name__ == '__main__':
     main()
 
 # [2, 4, 88, 12]
+
 ```
 
 The `filter()` function takes a function and an iterable type as its two arguments. The function should describe the logic for filtering and the iterable type will contain the values you want to filter from.
@@ -2872,7 +2964,7 @@ It keeps the number if the `check_even()` function returns `True` or discards th
 
 Now this `check_even()` function doesn't have any purpose other than checking if a given number is divisible by two or not. So you can write it as a lambda.
 
-```
+```python
 def main():
     numbers = [1, 2, 5, 4, 7, 88, 12, 15, 55, 77, 95]
 
@@ -2885,6 +2977,7 @@ if __name__ == '__main__':
     main()
 
 # [2, 4, 88, 12]
+
 ```
 
 This lambda takes an argument named `number` then returns `True` if that's divisible by two and `False` otherwise.
@@ -2897,7 +2990,7 @@ So `True if number % 2 == 0 else False` is equivalent to `return True if number 
 
 Scope of a variable in Python or programming in general refers to region where that variable is accessible.
 
-```
+```python
 def outside():
     message = 'Hello, World!'
 
@@ -2910,6 +3003,7 @@ if __name__ == '__main__':
     main()
 
 # NameError: name 'msg' is not defined
+
 ```
 
 In this example, the `message` variable is defined inside the `outside()` function and there is no existence of it anywhere else.
@@ -2920,7 +3014,7 @@ Variables like this are called local variables and they only exist within the bl
 
 Global variables, on the other hand, are usually declared outside of any particular block of code.
 
-```
+```python
 message = 'Hello, World!'
 
 
@@ -2932,11 +3026,12 @@ if __name__ == '__main__':
     main()
 
 # Hello, World!
+
 ```
 
 As you can see, now the `message` variable has no indentation and is declared at the top of the function. You could've declared the variable after the `main()` function.
 
-```
+```python
 def main():
     print(message)
 
@@ -2947,13 +3042,14 @@ if __name__ == '__main__':
     main()
 
 # Hello, World!
+
 ```
 
 This works because you don't try to access the variable until you call the `main()` function inside the `if` statement.
 
 Although global variables are accessible pretty much everywhere, it can be a bit tricky to work with if you have a local variable with a similar name.
 
-```
+```python
 message = 'Hello, {name}!'
 
 
@@ -2964,7 +3060,7 @@ def main():
 
 if __name__ == '__main__':
     main()
-
+    
 # UnboundLocalError: local variable 'message' referenced before assignment
 ```
 
@@ -2974,13 +3070,13 @@ But if you try to run this code, you'll get a `local variable 'message' referenc
 
 So clearly, Python is looking for a local variable with the given name instead of accessing the global one. Since it's asking, try giving it a local variable.
 
-```
+```python
 message = 'Hello, {name}!'
 
 
 def main():
     message = str()
-
+    
     message = message.format(name='Farhan')
     print(message)
 
@@ -2993,7 +3089,7 @@ This time the error will be gone but you will not get any output in your console
 
 This is where the `global` keyword comes in. Instead of creating a local variable, you can let Python know that you're trying to access the global `message` variable.
 
-```
+```python
 message = 'Hello, {name}!'
 
 
@@ -3008,13 +3104,14 @@ if __name__ == '__main__':
     main()
 
 # Hello, Farhan!
+
 ```
 
 Now, instead of trying to look for a variable named `message` within the local scope, Python will directly reach out to the global scope.
 
 Finally, there is the `nonlocal` keyword usually used in nested functions. It solves a similar problem as the `global` keyword but in a local scope.
 
-```
+```python
 def greet(name):
     message = 'Hello, {name}!'
 
@@ -3033,6 +3130,7 @@ if __name__ == '__main__':
     main()
 
 # UnboundLocalError: local variable 'message' referenced before assignment
+
 ```
 
 In this example, you're dealing with three functions. There is the `main()` function, there is the `greet()` function, and inside that is the `include_name()` function.
@@ -3043,13 +3141,13 @@ Instead it calls the `include_name()` function defined within its local scope. T
 
 You see, the `message` variable is outside the scope of the `include_message()` function and that's why you're getting the `referenced before assignment` error message.
 
-```
+```python
 def greet(name):
     message = 'Hello, {name}!'
 
     def include_name():
         global message
-
+        
         message = message.format(name=name)
 
     include_name()
@@ -3070,7 +3168,7 @@ You can't use the `global` keyword either since the `message` variable is not de
 
 You can use the `nonlocal` keyword to use variables that are not in the global scope but in the scope of the outer function.
 
-```
+```python
 def greet(name):
     message = 'Hello, {name}!'
 
@@ -3094,13 +3192,13 @@ if __name__ == '__main__':
 
 Now the `include_name()` function will look for the `message` variable within the scope of the `greet()` function instead of its local scope.
 
-### How to Pass a Variable Number of Arguments to a Function Using _args and \*_kwargs in Python
+### How to Pass a Variable Number of Arguments to a Function Using *args and **kwargs in Python
 
 Imagine a function that takes a bunch of numbers as arguments and returns their sum. In a function like this, it'd be nice to have the provision of passing a variable number of arguments.
 
 Surely you can pass the numbers as a tuple or as a list but you may want to pass them as regular arguments separated by commas. You can do that by using `*args` or non key arguments in Python.
 
-```
+```python
 def total(*args):
     print(type(args))
 
@@ -3120,6 +3218,7 @@ if __name__ == '__main__':
 
 # <class 'tuple'>
 # 15
+
 ```
 
 Here, you can pass an arbitrary number of variables to the `total()` function as argument and you'll have access to them as a tuple inside that function.
@@ -3128,7 +3227,7 @@ It's not mandatory to name the argument as `*args`_,_ you can call it something 
 
 Like `*args` there is also `**kwargs` or keyword arguments that will allow you to access the function arguments as a dictionary.
 
-```
+```python
 def items(**kwargs):
     print(type(kwargs))
 
@@ -3151,6 +3250,7 @@ if __name__ == '__main__':
 # Apple : 10
 # Orange : 8
 # Grape : 35
+
 ```
 
 In this case, you can pass arbitrary number of key-value pairs and access them as a dictionary inside the `items()` function.
@@ -3161,7 +3261,7 @@ As long as you put the double asterisks at the front, you'll be fine. The `items
 
 You can also change the names of the `key` and `value` variables. A more readable version of the function can be as follows:
 
-```
+```python
 def items(**fruits):
     print(type(fruits))
 
@@ -3184,6 +3284,7 @@ if __name__ == '__main__':
 # Apple : 10
 # Orange : 8
 # Grape : 35
+
 ```
 
 Keep in mind that the type of the keys in this case has to be a string and the values can be anything you want.
@@ -3196,7 +3297,7 @@ For example, assume that you have a Python project with two files. The first one
 
 The "mathstuff.py" file can contain stuff related to mathematics, for example a function that sums up all the natural numbers in a range.
 
-```
+```python
 # mathstuff.py
 
 def natural_sum(last_number):
@@ -3212,7 +3313,7 @@ def natural_sum(last_number):
 
 Now you can import this function any other file such as the "main.py" file.
 
-```
+```python
 import mathstuff
 
 
@@ -3236,7 +3337,7 @@ It's not uncommon to house more than one function, variable, or other object in 
 
 You can use the `from...import` statement in these situations.
 
-```
+```python
 from mathstuff import natural_sum
 
 
@@ -3252,13 +3353,14 @@ if __name__ == '__main__':
 # up to which number would you like to calculate the sum?
 # - 10
 # 55
+
 ```
 
 It also saves you from having to write the module name everytime you want to access a function or object living inside that module.
 
 Finally, you can use the `as` keyword to change the name of an imported module to make that more easily accessible.
 
-```
+```python
 import mathstuff as math
 
 
@@ -3274,11 +3376,12 @@ if __name__ == '__main__':
 # up to which number would you like to calculate the sum?
 # - 10
 # 55
+
 ```
 
 Also works with the `from...import` statement.
 
-```
+```python
 from mathstuff import natural_sum as nsum
 
 
@@ -3294,6 +3397,7 @@ if __name__ == '__main__':
 # up to which number would you like to calculate the sum?
 # - 10
 # 55
+
 ```
 
 Importing modules is something that you'll have to do all the time. Apart from modules, there is also the idea of packages.
@@ -3309,7 +3413,7 @@ Now this `framework` package can in turn have multiple subpackages – for examp
 │   └───http
 ```
 
-At the moment, these are just regular folders. To turn them into Python, all you need is to create "**init**.py" files inside them.
+At the moment, these are just regular folders. To turn them into Python, all you need is to create "__init__.py" files inside them.
 
 ```
 ├───framework
@@ -3319,11 +3423,11 @@ At the moment, these are just regular folders. To turn them into Python, all you
 │           __init__.py
 ```
 
-Now these files have turned into packages. These "**init**.py" files will tell the Python import system that these folders are indeed packages.
+Now these files have turned into packages. These "__init__.py" files will tell the Python import system that these folders are indeed packages.
 
 Finally, to put some code inside the `http` package, create a file named `response.py` with the following content:
 
-```
+```python
 # framework/http/response.py
 
 from json import dumps
@@ -3333,19 +3437,20 @@ def as_json(message):
     return dumps({
         'message': message
     })
+
 ```
 
 First, you're importing the `dumps` function from the `json` package. These are part of the Python standard library.
 
 The `dumps` function can turn a Python object like a dictionary into a JSON string, which means the `as_json()` function returns a given value in JSON format.
 
-```
+```json
 {"message": "Hello, World"}
 ```
 
 Now you can import this function in the "main.py" file.
 
-```
+```python
 from framework.http.response import as_json
 
 
@@ -3357,13 +3462,14 @@ if __name__ == '__main__':
     main()
 
 # {"message": "Hello, World"}
+
 ```
 
-Instead of putting the `as_json()` function inside another Python file, you can simply put it inside the "framework/http/**init**.py" file.
+Instead of putting the `as_json()` function inside another Python file, you can simply put it inside the "framework/http/__init__.py" file.
 
 Then you can update the "main.py" file to use the updated package path.
 
-```
+```python
 from framework.http import as_json
 
 
@@ -3375,6 +3481,7 @@ if __name__ == '__main__':
     main()
 
 # {"message": "Hello, World"}
+
 ```
 
 If you ever try out a framework like Django, you'll see that the framework contains a huge amount of packages, so understanding how the import system works will help you out immensely.
@@ -3387,9 +3494,10 @@ You may think, well browsing documentation is not hard and you'd be absolutely r
 
 So what I'm going to do is give you a little primer on how I have used the documentation throughout my career.
 
-The first step is to visit [https://docs.python.org/][81] and you'll automatically land on the documentation for the latest version of Python.
+The first step is to visit [https://docs.python.org/](https://docs.python.org/) and you'll automatically land on the documentation for the latest version of Python.
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/08/image-154.png) _Python Documentation ([https://docs.python.org/][82])_
+![Image](https://www.freecodecamp.org/news/content/images/2023/08/image-154.png)
+_Python Documentation ([https://docs.python.org/](https://docs.python.org/))_
 
 At the time of writing, the latest version of Python is 3.11.4 however I still have version 3.10.11 installed on my computers.
 
@@ -3399,7 +3507,8 @@ The best way to find out which link to what page is to to have a look at whichev
 
 I'll talk about three links from this page that have helped me immensely. The first one is the "Tutorial" page.
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/08/image-155.png) _The Python Tutorial (https://docs.python.org/3/tutorial/index.html)_
+![Image](https://www.freecodecamp.org/news/content/images/2023/08/image-155.png)
+_The Python Tutorial (https://docs.python.org/3/tutorial/index.html)_
 
 Back when I was making my shift from C to Python, this is the tutorial I went through. The tutorial starts with an introduction to the Python interpreter.
 
@@ -3407,23 +3516,27 @@ Then it teaches you topics including but not limited to data types, control flow
 
 The other page that's extremely useful is the "Glossary" page. It contains a list of all the important terminology that you may come across while working with Python.
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/08/image-156.png) _Glossary (https://docs.python.org/3/glossary.html)_
+![Image](https://www.freecodecamp.org/news/content/images/2023/08/image-156.png)
+_Glossary (https://docs.python.org/3/glossary.html)_
 
 So at any point if you feel like that you do not know the meaning of a word, take a look at the glossary.
 
 Finally the "Library Reference" page is a detailed description of everything included in the standard Python library.
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/08/image-158.png) _Library Reference (https://docs.python.org/3/library/index.html)_
+![Image](https://www.freecodecamp.org/news/content/images/2023/08/image-158.png)
+_Library Reference (https://docs.python.org/3/library/index.html)_
 
 Say, for example, I'd like to learn about the context manager type (which is beyond the scope of this book). I can just look under the "Built-in Types" section.
 
 Or if you want to know about something else such as the JSON package, you can search the library reference for JSON – and sure enough you'll find something on it.
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/08/image-159.png) _JSON is under the Internet Data Handling section ()_
+![Image](https://www.freecodecamp.org/news/content/images/2023/08/image-159.png)
+_JSON is under the Internet Data Handling section ()_
 
 Following the link will land you on the page describing how the JSON package works.
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/08/image-160.png) _JSON encoder and decoder (https://docs.python.org/3/library/json.html)_
+![Image](https://www.freecodecamp.org/news/content/images/2023/08/image-160.png)
+_JSON encoder and decoder (https://docs.python.org/3/library/json.html)_
 
 The page not only contains text but also contains practical and very useful code examples.
 
@@ -3437,7 +3550,7 @@ As I've said, this text is not a definitive guide to Python – which means ther
 
 The first thing that you may want to learn right after finishing this handbook is object oriented programming with Python.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Ej_02ICOIgs" style="aspect-ratio: 16 / 9; width: 100%; height: auto;" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" loading="lazy"></iframe>
+%[https://www.youtube.com/watch?v=Ej_02ICOIgs]
 
 This comprehensive video course is hosted on the freeCodeCamp YouTube channel. It's a little over 2 hours long and covers the essential concepts nicely.
 
@@ -3449,7 +3562,7 @@ Writing good object oriented code takes a lot of practice and it all begins with
 
 The second item on the list that you should absolutely learn if you're serious about being an efficient programmer is data structures and algorithms.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8hly31xKli0" style="aspect-ratio: 16 / 9; width: 100%; height: auto;" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" loading="lazy"></iframe>
+%[https://www.youtube.com/watch?v=8hly31xKli0]
 
 Fortunately, the freeCodeCamp YouTube channel hosts a very comprehensive video produced by some of the finest teachers out there on the topic.
 
@@ -3461,7 +3574,7 @@ This course is not going to turn you into a better programmer instantly, but it'
 
 If you'd like to get into web development using Python, Django is among the most popular choices out there.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/o0XbHvKxw7Y" style="aspect-ratio: 16 / 9; width: 100%; height: auto;" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" loading="lazy"></iframe>
+%[https://www.youtube.com/watch?v=o0XbHvKxw7Y]
 
 The freeCodeCamp YouTube channel hosts this massive 18 hour long course taught by Dr. Chuck, one of the best teachers in the world.
 
@@ -3473,7 +3586,7 @@ Having a good understanding of object oriented programming is important before y
 
 Python may not be the most popular languages for building graphical user interfaces, but it's surprisingly capable on that end, too.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Z1N9JzNax2k" style="aspect-ratio: 16 / 9; width: 100%; height: auto;" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" loading="lazy"></iframe>
+%[https://www.youtube.com/watch?v=Z1N9JzNax2k]
 
 Qt is a very popular cross-platform UI framework and PySide6 is the official Python bindings for Qt 6.
 
@@ -3483,7 +3596,7 @@ In this 5 hour long course, you'l learn all the fundamentals of creating user in
 
 Just like cross-platform graphical user interfaces, Python is not the most popular choice when it comes to game programing.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/R9apl6B_ZgI" style="aspect-ratio: 16 / 9; width: 100%; height: auto;" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" loading="lazy"></iframe>
+%[https://www.youtube.com/watch?v=R9apl6B_ZgI]
 
 However, the PyGame library is a very powerful and easy to use library for writing 2D games in Python.
 
@@ -3495,7 +3608,7 @@ Undoubtedly, this is a very challenging video to go through but so is making gam
 
 Data science is arguably the most popular field where Python plays a huge role. Becoming a data scientist can take years but you gotta start somewhere.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LHBE6Q9XlzI" style="aspect-ratio: 16 / 9; width: 100%; height: auto;" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" loading="lazy"></iframe>
+%[https://www.youtube.com/watch?v=LHBE6Q9XlzI]
 
 This 12 hour long course on the freeCodeCamp YouTube channel teaches you a lot about how to use your Python knowledge in data science.
 
@@ -3507,97 +3620,11 @@ Near the end of the course, you'll also create a project by applying everything 
 
 I would like to thank you from the bottom of my heart for the time you've spent reading this article.
 
-Although I've listed only a small number of courses here, the [freeCodeCamp YouTube channel][83] is just filled with excellent Python learning resources.
+Although I've listed only a small number of courses here, the [freeCodeCamp YouTube channel](https://www.youtube.com/c/Freecodecamp/search?query=python) is just filled with excellent Python learning resources.
 
 Keep in mind that this handbook is a living document and I'll update it with from time to time. So bookmarking it maybe a great idea.
 
-I also have a personal blog where I write about random tech stuff, so if you're interested in something like that, checkout [https://farhan.dev][84].
+I also have a personal blog where I write about random tech stuff, so if you're interested in something like that, checkout [https://farhan.dev](https://farhan.dev).
 
-If you have any questions or are confused about anything – or just want to get in touch – I'm available on [Twitter][85] and [LinkedIn][86].
+If you have any questions or are confused about anything – or just want to get in touch – I'm available on [Twitter](https://twitter.com/frhnhsin) and [LinkedIn](https://www.linkedin.com/in/farhanhasin/).
 
-[1]: #heading-prerequisites
-[2]: #heading-how-to-setup-python-on-your-computer
-[3]: #heading-how-to-install-a-python-ide-on-your-computer
-[4]: #heading-how-to-create-a-new-project-on-pycharm
-[5]: #heading-how-to-write-the-hello-world-program-in-python
-[6]: #heading-how-to-initialize-and-publish-a-git-repository-from-pycharm
-[7]: #heading-how-to-work-with-variables-and-different-types-of-data-in-python
-[8]: #heading-how-to-work-with-simple-numbers-in-python
-[9]: #heading-how-to-take-inputs-from-users-in-python
-[10]: #heading-how-to-work-with-strings-in-python
-[11]: #heading-what-are-the-sequence-types-in-python
-[12]: #heading-lists-in-python
-[13]: #heading-tuples-in-python
-[14]: #heading-ranges-in-python
-[15]: #heading-how-indexing-works-in-python
-[16]: #heading-what-are-the-iterable-types-and-how-to-use-them-for-loops-in-python
-[17]: #heading-how-to-use-while-loops-in-python
-[18]: #heading-how-to-write-nested-loops-in-python
-[19]: #heading-what-are-some-common-sequence-type-operations-in-python
-[20]: #heading-how-to-use-the-in-operator-in-python
-[21]: #heading-how-to-use-the-and-operators-with-sequence-types-in-python
-[22]: #heading-how-to-use-the-len-min-and-max-functions-in-python
-[23]: #heading-what-are-some-string-type-operations-in-python
-[24]: #heading-how-to-capitalize-strings-in-python
-[25]: #heading-how-to-convert-strings-to-lower-case-or-upper-case-in-python
-[26]: #heading-how-to-count-the-number-of-occurrences-of-a-substring-in-a-string-in-python
-[27]: #heading-how-to-split-and-join-strings-in-python
-[28]: #heading-how-to-write-conditional-statements-in-python
-[29]: #heading-what-are-relational-and-logical-operators-in-python
-[30]: #heading-what-are-assignment-operators-in-python
-[31]: #heading-what-is-the-set-type-in-python
-[32]: #heading-what-is-the-mapping-type-in-python
-[33]: #heading-what-are-dictionary-view-objects-in-python
-[34]: #heading-how-to-write-functions-in-python
-[35]: #heading-how-to-write-anonymous-or-lambda-functions-in-python
-[36]: #heading-how-to-work-with-local-nonlocal-and-global-variables-in-python
-[37]: #heading-how-to-pass-a-variable-number-of-arguments-to-a-function-using-args-and-kwargs-in-python
-[38]: #heading-what-are-modules-in-python
-[39]: #heading-how-to-use-the-python-documentation-efficiently
-[40]: #heading-whats-next
-[41]: #heading-object-oriented-programming
-[42]: #heading-algorithms-and-data-structures
-[43]: #heading-django
-[44]: #heading-qt
-[45]: #heading-pygame
-[46]: #heading-data-science
-[47]: #heading-conclusion
-[48]: https://www.freecodecamp.org/news/author/dillionmegida/
-[49]: https://www.freecodecamp.org/news/how-to-install-python-3-on-mac-and-update-the-python-version-macos-homebrew-command-guide/
-[50]: https://www.freecodecamp.org/news/author/fahimbinamin/
-[51]: https://www.freecodecamp.org/news/how-to-install-python-in-windows-operating-system/
-[52]: https://code.visualstudio.com/
-[53]: https://www.jetbrains.com/pycharm/
-[54]: https://www.freecodecamp.org/news/how-to-configure-visual-studio-code-for-python-development/
-[55]: https://www.jetbrains.com/pycharm/buy/
-[56]: https://www.jetbrains.com/pycharm/download/
-[57]: https://virtualenv.pypa.io/
-[58]: https://git-scm.com/
-[59]: https://www.freecodecamp.org/news/git-first-time-setup/
-[60]: https://www.freecodecamp.org/news/author/bolajiayodeji/
-[61]: https://www.toptal.com/developers/gitignore/
-[62]: https://peps.python.org/pep-0008/#function-and-variable-names
-[63]: https://peps.python.org/pep-0008/#names-to-avoid
-[64]: https://www.freecodecamp.org/news/escape-sequences-python/
-[65]: https://peps.python.org/pep-0008/#string-quotes
-[66]: https://peps.python.org/pep-0008/#string-quotes
-[67]: https://www.freecodecamp.org/news/author/dionysia/
-[68]: https://www.freecodecamp.org/news/python-sort-how-to-sort-a-list-in-python/
-[69]: https://www.freecodecamp.org/news/author/bala-priya/
-[70]: https://www.freecodecamp.org/news/python-range-function-explained-with-code-examples/
-[71]: https://docs.python.org/3/library/stdtypes.html#string-methods
-[72]: https://docs.python.org/3/library/stdtypes.html#str.title
-[73]: https://docs.python.org/3/library/stdtypes.html#str.casefold
-[74]: https://www.freecodecamp.org/news/python-switch-statement-switch-case-example/
-[75]: https://www.freecodecamp.org/news/author/kolade/
-[76]: https://www.freecodecamp.org/news/author/estefaniacn/
-[77]: https://www.freecodecamp.org/news/python-sets-detailed-visual-introduction/
-[78]: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
-[79]: https://www.freecodecamp.org/news/author/beau/
-[80]: https://www.freecodecamp.org/news/how-recursion-works-explained-with-flowcharts-and-a-video-de61f40cb7f9/
-[81]: https://docs.python.org/
-[82]: https://docs.python.org/
-[83]: https://www.youtube.com/c/Freecodecamp/search?query=python
-[84]: https://farhan.dev
-[85]: https://twitter.com/frhnhsin
-[86]: https://www.linkedin.com/in/farhanhasin/

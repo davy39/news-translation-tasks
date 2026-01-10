@@ -1,16 +1,26 @@
 ---
 title: Python List Length – How to Get the Size of a List in Python
-date: 2024-10-18T11:17:30.856Z
+subtitle: ''
 author: Kolade Chris
-authorURL: https://www.freecodecamp.org/news/author/koladechris/
-originalURL: https://www.freecodecamp.org/news/python-list-length-how-to-get-the-size-of-a-list-in-python/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2022-03-03T18:21:33.000Z'
+originalURL: https://freecodecamp.org/news/python-list-length-how-to-get-the-size-of-a-list-in-python
+coverImage: https://www.freecodecamp.org/news/content/images/2022/03/calendar-g2ed8847ef_1280.jpg
+tags:
+- name: Python
+  slug: python
+seo_title: null
+seo_desc: 'In Python, you use a list to store various types of data such as strings
+  and numbers.
+
+  A list is identifiable by the square brackets that surround it, and individual values
+  are separated by a comma.
+
+  To get the length of a list in Python, you can use t...'
 ---
 
 In Python, you use a list to store various types of data such as strings and numbers.
-
-<!-- more -->
 
 A list is identifiable by the square brackets that surround it, and individual values are separated by a comma.
 
@@ -28,7 +38,7 @@ This method is commonly called the naïve method.
 
 The example below shows you how to use the naïve method to get the length of a list in Python
 
-```
+```py
 demoList = ["Python", 1, "JavaScript", True, "HTML", "CSS", 22]
 
 # Initializing counter variable
@@ -53,13 +63,13 @@ The syntax for using the `len()` method is `len(listName)`.
 
 The code snippet below shows how to use the `len()` function to get the length of a list:
 
-```
+```py
 demoList = ["Python", 1, "JavaScript", True, "HTML", "CSS", 22]
 
 sizeOfDemoList = len(demoList)
 
 print("The length of the list using the len() method is: " + str(sizeOfDemoList))
-# Output: The length of the list using the len() method is: 7
+# Output: The length of the list using the len() method is: 7 
 ```
 
 ## How to Get the Length of a List with the `length_hint()` Function
@@ -72,7 +82,7 @@ The syntax for using the `length_hint()` method is `length_hint(listName)`.
 
 The example below shows you how to use the `length_hint()` method to get the length of a list:
 
-```
+```py
 from operator import length_hint:
 demoList = ["Python", 1, "JavaScript", True, "HTML", "CSS", 22]
 
@@ -92,3 +102,6 @@ I would advise that you use `len()` because you don't need to do much to use it 
 In addition, `len()` seems to be faster than both the for loop and `length_hint()`.
 
 If you find this article helpful, share it so it can reach others who need it.
+
+
+

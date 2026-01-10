@@ -1,55 +1,69 @@
 ---
-title: Conclusion
-date: 2024-09-15T02:12:59.669Z
-authorURL: ""
-originalURL: https://www.freecodecamp.org/news/build-web-apis-with-nestjs-beginners-guide/
-posteditor: ""
-proofreader: ""
+title: How to Build Web APIs with NestJS, Postgres, and Sequelize - A Beginner's Guide
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2020-06-15T23:12:08.000Z'
+originalURL: https://freecodecamp.org/news/build-web-apis-with-nestjs-beginners-guide
+coverImage: https://www.freecodecamp.org/news/content/images/2020/06/1_75rW-2GHINvKPaoPbtGo6w-1.png
+tags:
+- name: api
+  slug: api
+- name: node js
+  slug: node-js
+- name: postgres
+  slug: postgres
+- name: TypeScript
+  slug: typescript
+seo_title: null
+seo_desc: "By Victor Onwuzor\nNestJS is an MVC framework for building efficient, scalable\
+  \ Node.js server-side applications. \nIt is built with and fully supports TypeScript\
+  \ (yet still enables developers to code in pure JavaScript). It also combines elements\
+  \ of Ob..."
 ---
 
 By Victor Onwuzor
 
-<!-- more -->
+NestJS is an MVC framework for building efficient, scalable [Node.js](https://nodejs.org/) server-side applications. 
 
-NestJS is an MVC framework for building efficient, scalable [Node.js][1] server-side applications.
-
-It is built with and fully supports [TypeScript][2] (yet still enables developers to code in pure JavaScript). It also combines elements of Object Oriented Programming, Functional Programming, and Functional Reactive Programming.
+It is built with and fully supports [TypeScript](http://www.typescriptlang.org/) (yet still enables developers to code in pure JavaScript). It also combines elements of Object Oriented Programming, Functional Programming, and Functional Reactive Programming. 
 
 One of the key benefits of Nest is that it provides an out-of-the-box application architecture that allows developers and teams to create highly testable, scalable, loosely coupled, and easily maintainable applications.
 
 ## What we are building
 
-In this post, I will take you through the journey of getting started with Nest. We will build a Mini Blog that's a Web RESTful API Application.
+In this post, I will take you through the journey of getting started with Nest. We will build a Mini Blog that's a Web RESTful API Application. 
 
 This simple Mini Blog application will cover:
 
--   Setting up Sequelize and Postgres Database
--   Authentication with Passport (Login and Sign up)
--   Validating user input
--   Route protection with JWT
--   Creating, Reading, Updating, and Deleting a blog post
+* Setting up Sequelize and Postgres Database
+* Authentication with Passport (Login and Sign up)
+* Validating user input
+* Route protection with JWT
+* Creating, Reading, Updating, and Deleting a blog post
 
 ## Prerequisites
 
-Knowledge of TypeScript and JavaScript is very important to follow along with this tutorial. Experience with Angular is a plus, but no worries – this post will explain every concept you need to know about Nest.
+Knowledge of TypeScript and JavaScript is very important to follow along with this tutorial. Experience with Angular is a plus, but no worries – this post will explain every concept you need to know about Nest. 
 
-You will need to install [Postman][3], as we will use it to test our API endpoints. And also make sure you have [Node.js][4] (>= 8.9.0) installed on your machine. [Lastly, you can find a link to the final project GitHub repo here][5].
+You will need to install [Postman](https://www.postman.com/), as we will use it to test our API endpoints. And also make sure you have [Node.js](https://nodejs.org/) (>= 8.9.0) installed on your machine. [Lastly, you can find a link to the final project GitHub repo here](https://github.com/onwuvic/nest-blog-api).
 
 ## Building blocks
 
-Before we get started, we'll discuss some abstractions/concepts that will help you know where to put specific business logic from project to project.
+Before we get started, we'll discuss some abstractions/concepts that will help you know where to put specific business logic from project to project. 
 
-Nest is very similar to Angular – so if you are familiar with Angular concepts it will be straightforward to you.
+Nest is very similar to Angular – so if you are familiar with Angular concepts it will be straightforward to you. 
 
 Still, I'll assume that you have no knowledge of these concepts and will explain them to you.
 
 ### Controller
 
-The controller is responsible for listening to requests that come into your application. It then formulates the responses that go out.
+The controller is responsible for listening to requests that come into your application. It then formulates the responses that go out. 
 
 For instance, when you make an API call to `/posts` the controller will handle this request and return the appropriate response you specified.
 
-```
+```typescript
 import { Controller, Get } from '@nestjs/common';
 
 @Controller('posts')
@@ -66,23 +80,23 @@ export class PostsController {
 }
 ```
 
-This is just a basic Class declaration in TypeScript/JavaScript with a `@Controller` decorator. All Nest Controllers must have the decorator which is **required** to define a basic Controller in Nest.
+This is just a basic Class declaration in TypeScript/JavaScript with a `@Controller` decorator. All Nest Controllers must have the decorator which is **required** to define a basic Controller in Nest. 
 
-Nest allows you to specify your routes as a parameter in the `@Controller()` decorator. This helps you group a set of related routes and minimises code repetition. Any request to `/posts` will be handled by this controller.
+Nest allows you to specify your routes as a parameter in the `@Controller()` decorator. This helps you group a set of related routes and minimises code repetition. Any request to `/posts` will be handled by this controller. 
 
-At the class methods level, you can specify which method should handle the `GET`, `POST,` `DELETE`, `PUT/PATCH` HTTP requests.
+At the class methods level, you can specify which method should handle the `GET`, `POST,` `DELETE`, `PUT/PATCH` HTTP requests. 
 
 In our example, the `findAll()` method with the `@Get()` decorator handles all `GET` HTTP requests to get all blog posts. While the `findOne()` method with the `@Get(': id')`decorator will handle a `GET /posts/1` request.
 
 ### Providers
 
-Providers were designed to abstract any form of complexity and logic to a separate class. A provider can be a service, a repository, a factory, or a helper.
+Providers were designed to abstract any form of complexity and logic to a separate class. A provider can be a service, a repository, a factory, or a helper. 
 
-Providers are plain TypeScript/JavaScript classes with an `@Injectable()` decorator preceding their class declaration. Just like services in Angular, you can create and inject providers into other controllers or other providers as well.
+Providers are plain TypeScript/JavaScript classes with an `@Injectable()` decorator preceding their class declaration. Just like services in Angular, you can create and inject providers into other controllers or other providers as well. 
 
 A good use case for a service provider is to create a PostService that abstracts all communication to the database into this service. This keeps the `PostsController` nice and clean.
 
-```
+```typescript
 import { Injectable } from '@nestjs/common';
 import { Post } from './interfaces/post.interface';
 
@@ -100,27 +114,27 @@ export class PostsService {
 }
 ```
 
-```
+```typescript
 export interface Post {
     title: string;
     body: string;
 }
 ```
 
-This is just a plain TypeScript class with a `@Injectable()` decorator (this is how Nest knows it is a provider). `Post` is just an interface for type checking.
+This is just a plain TypeScript class with a `@Injectable()` decorator (this is how Nest knows it is a provider). `Post` is just an interface for type checking. 
 
 Here, we are using a simple data structure to store the data. In a real project, this service will be communicating with the database.
 
 ### Modules
 
-A module is a JavaScript/TypeScript class with the `@Module()`decorator.  
-The `@Module()` decorator provides metadata that Nest uses to organise the application structure.
+A module is a JavaScript/TypeScript class with the `@Module()`decorator.   
+The `@Module()` decorator provides metadata that Nest uses to organise the application structure. 
 
-Modules are a very important aspect of Nest and each application must provide at least one Module: the application root module. The root module is the starting point Nest uses to build the application graph.
+Modules are a very important aspect of Nest and each application must provide at least one Module: the application root module. The root module is the starting point Nest uses to build the application graph. 
 
 The post service, controller, post entity, and everything related to post should be grouped into a module (PostsModule). Below, we have defined the PostsModule.
 
-```
+```typescript
 import { Module } from '@nestjs/common';
 import { PostsController } from './posts.controller';
 import { PostsService } from './posts.service';
@@ -134,7 +148,7 @@ export class PostsModule {}
 
 Then, we import this module into the root module `AppModule`:
 
-```
+```typescript
 import { Module } from '@nestjs/common';
 import { PostsModule } from './posts/posts.module';
 
@@ -146,10 +160,10 @@ export class AppModule {}
 
 The `@Module()` decorator takes a single object whose properties describes the module:
 
--   `**imports:**` Other modules that are needed by this module.
--   `**exports:**` By default, modules encapsulate providers. It’s impossible to inject providers that are neither directly part of the current module nor are exported from the imported modules. To make the current module providers available to other modules in the application, they have to be exported here. We can also export modules we imported too.
--   `**controllers:**` The set of controllers defined in this module which have to be instantiated.
--   `**providers:**`in simple terms, all our services and providers within the module will be here.
+* `**imports:**` Other modules that are needed by this module.
+* `**exports:**` By default, modules encapsulate providers. It’s impossible to inject providers that are neither directly part of the current module nor are exported from the imported modules. To make the current module providers available to other modules in the application, they have to be exported here. We can also export modules we imported too.
+* `**controllers:**` The set of controllers defined in this module which have to be instantiated.
+* `**providers:**`in simple terms, all our services and providers within the module will be here.
 
 ### Interceptor
 
@@ -157,9 +171,9 @@ An interceptor is a specialised set of middleware that lets you peek into the re
 
 ### Guard
 
-Guard is also a special kind of middleware that is used mainly for authentication and authorisation. It only returns a boolean value of true or false.
+Guard is also a special kind of middleware that is used mainly for authentication and authorisation. It only returns a boolean value of true or false. 
 
-Guards have a **single responsibility**: they determine whether a given request will be handled by the route handler or not, depending on certain conditions (like permissions, roles, ACLs, etc.) present at run-time.
+Guards have a **single responsibility**: they determine whether a given request will be handled by the route handler or not, depending on certain conditions (like permissions, roles, ACLs, etc.) present at run-time. 
 
 A Guard should also implement the `CanActivate` interface.
 
@@ -195,23 +209,27 @@ Navigate to `[http://localhost:3000](http://localhost:3000/)` on any of your bro
 
 Your folder structure should look like this:
 
-![Image](https://www.freecodecamp.org/news/content/images/2020/06/1_qLCtw-62xXAdTHXPy2JAMg.png) _Nest folder structure_
+![Image](https://www.freecodecamp.org/news/content/images/2020/06/1_qLCtw-62xXAdTHXPy2JAMg.png)
+_Nest folder structure_
 
 ## Sequelize and Database Setup
 
 We’ll start by installing the following dependencies. Make sure your terminal or cmd is currently on your project root directory. Then run the following commands:
 
-`npm install -g sequelize npm install --save sequelize sequelize-typescript pg-hstore pg npm install --save-dev @types/sequelize npm install dotenv --save`
+`npm install -g sequelize  
+npm install --save sequelize sequelize-typescript pg-hstore pg  
+npm install --save-dev @types/sequelize  
+npm install dotenv --save`
 
 Now, create a database module. Run `nest generate module /core/database`.
 
 ### Database Interface
 
-Inside the database folder, create an `interfaces` folder, then create a `dbConfig.interface.ts` file inside it. This is for the database configuration interface.
+Inside the database folder, create an `interfaces` folder, then create a `dbConfig.interface.ts` file inside it. This is for the database configuration interface. 
 
 Each of the database environments should optionally have the following properties. Copy and paste the following code:
 
-```
+```typescript
 export interface IDatabaseConfigAttributes {
     username?: string;
     password?: string;
@@ -233,7 +251,7 @@ export interface IDatabaseConfig {
 
 Now, let’s create a database environment configuration. Inside the database folder, create a `database.config.ts` file. Copy and paste the below code:
 
-```
+```typescript
 import * as dotenv from 'dotenv';
 import { IDatabaseConfig } from './interfaces/dbConfig.interface';
 
@@ -272,7 +290,7 @@ The environment will determine which configuration should be used.
 
 On our project root folder, create `.env` and `.env.sample` files. Copy and paste the following code into both files:
 
-```
+```typescript
 DB_HOST=localhost
 DB_PORT=5432
 DB_USER=database_user_name
@@ -296,7 +314,7 @@ Run `npm i --save @nestjs/config`.
 
 Import the `@nestjs/config` into your app root module:
 
-```
+```typescript
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 
@@ -318,7 +336,7 @@ The core directory will contain all our core setups, configuration, shared modul
 
 In the `database.providers.ts` file, copy and paste this code:
 
-```
+```typescript
 import { Sequelize } from 'sequelize-typescript';
 import { SEQUELIZE, DEVELOPMENT, TEST, PRODUCTION } from '../constants';
 import { databaseConfig } from './database.config';
@@ -348,24 +366,25 @@ export const databaseProviders = [{
 }];
 ```
 
-Here, the application decides what environment we are currently running on and then chooses the environment configuration.
+Here, the application decides what environment we are currently running on and then chooses the environment configuration. 
 
-All our models will be added to the `sequelize.addModels([User, Post])` function. Currently, there are no models.
-
-**Best practice**: It is a good idea to keep all string values in a constant file and export it to avoid misspelling those values. You'll also have a single place to change things.
+All our models will be added to the `sequelize.addModels([User, Post])` function. Currently, there are no models.  
+  
+**Best practice**: It is a good idea to keep all string values in a constant file and export it to avoid misspelling those values. You'll also have a single place to change things. 
 
 Inside the core folder, create a `constants` folder and inside it create an `index.ts` file. Paste the following code:
 
-```
+```typescript
 export const SEQUELIZE = 'SEQUELIZE';
 export const DEVELOPMENT = 'development';
 export const TEST = 'test';
 export const PRODUCTION = 'production';
+
 ```
 
 Let’s add the database provider to our database module. Copy and paste this code:
 
-```
+```typescript
 import { Module } from '@nestjs/common';
 import { databaseProviders } from './database.providers';
 
@@ -380,7 +399,7 @@ We exported the database provider `exports: [...databaseProviders]` to make it *
 
 Now, let’s import the database module into our app root module to make it available to all our services.
 
-```
+```typescript
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from './core/database/database.module';
@@ -400,7 +419,7 @@ We might want all our API endpoints to start with `api/v1` for different version
 
 In the `main.ts` file, add `app.setGlobalPrefix('api/v1');`
 
-```
+```typescript
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
@@ -429,7 +448,7 @@ This will automatically add this service to the Users module.
 
 Inside `modules/users`, create a file called `user.entity.ts` then copy and paste this code:
 
-```
+```typescript
 import { Table, Column, Model, DataType } from 'sequelize-typescript';
 
 @Table
@@ -462,13 +481,13 @@ export class User extends Model<User> {
 }
 ```
 
-Here, we are specifying what our User table will contain. The `@column() decorator` provides information about each column in the table. The User table will have `name` `email` `password` and `gender` as columns. We imported all the Sequelize decorators from `sequelize-typescript`. To read more about [Sequelize and TypeScript, check this out][6].
+Here, we are specifying what our User table will contain. The `@column() decorator` provides information about each column in the table. The User table will have `name` `email` `password` and `gender` as columns. We imported all the Sequelize decorators from `sequelize-typescript`. To read more about [Sequelize and TypeScript, check this out](https://github.com/RobinBuschmann/sequelize-typescript#readme).
 
 ### User DTO
 
 Let’s create our User DTO (**Data Transfer Object**) schema. Inside the users folder, create a `dto` folder. Then create a `user.dto.ts` file inside it. Paste the following code in:
 
-```
+```typescript
 export class UserDto {
     readonly name: string;
     readonly email: string;
@@ -481,7 +500,7 @@ export class UserDto {
 
 Now, create a User **Repository** provider. Inside the user's folder, create a `users.providers.ts` file. This provider is used to communicate with the database.
 
-```
+```typescript
 import { User } from './user.entity';
 import { USER_REPOSITORY } from '../../core/constants';
 
@@ -491,11 +510,11 @@ export const usersProviders = [{
 }];
 ```
 
-Add this `_export_` const USER\_REPOSITORY = 'USER\_REPOSITORY'; to the constants `index.ts` file.
+Add this `_export_` const USER_REPOSITORY = 'USER_REPOSITORY'; to the constants `index.ts` file.
 
 Also, add the user provider to the User module. Notice, we added the UserService to our `exports` array. That is because we’ll need it outside of the User Module.
 
-```
+```typescript
 import { Module } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { usersProviders } from './users.providers';
@@ -509,7 +528,7 @@ export class UsersModule {}
 
 Let’s encapsulate user operations inside the UsersService. Copy and paste the following code:
 
-```
+```typescript
 import { Injectable, Inject } from '@nestjs/common';
 import { User } from './user.entity';
 import { UserDto } from './dto/user.dto';
@@ -536,15 +555,15 @@ export class UsersService {
 
 Here, we injected the user repository to communicate with the DB.
 
--   `create(user: UserDto)` This method creates a new user into the user table and returns the newly created user object.
--   `findOneByEmail(email: string)` This method is used to look up a user from the user table by email and returns the user.
--   `findOneById(id: number)` This method is used to look up a user from the user table by the user Id and returns the user.
+* `create(user: UserDto)` This method creates a new user into the user table and returns the newly created user object.
+* `findOneByEmail(email: string)` This method is used to look up a user from the user table by email and returns the user.
+* `findOneById(id: number)` This method is used to look up a user from the user table by the user Id and returns the user.
 
 We will use these methods later.
 
 Lastly, let’s add the User model to the `database.providers.ts` file `sequelize.addModels([User]);`.
 
-```
+```typescript
 import { Sequelize } from 'sequelize-typescript';
 import { SEQUELIZE, DEVELOPMENT, TEST, PRODUCTION } from '../constants';
 import { databaseConfig } from './database.config';
@@ -594,12 +613,12 @@ Run `nest g co /modules/auth`.
 This will automatically add this controller to the Auth module.  
 **Note:** `**g**` **is an alias for** `**generate**` **and** `**co**` **is for** `**controller**`**.**
 
-We will be using [Passport][7] to handle our authentication. It is straightforward to integrate this library with a **Nest** application using the @nestjs/passport module.
+We will be using [Passport](https://github.com/jaredhanson/passport) to handle our authentication. It is straightforward to integrate this library with a **Nest** application using the @nestjs/passport module.
 
 We will implement two auth strategies for this application:
 
--   **Local Passport Strategy:** This strategy will be used for logging in users. It will verify if the email/username and password provided by the user is valid or not. If user credentials are valid, it will return a token and user object, if not, it will throw an exception.
--   **JWT Passport Strategy:** This strategy will be used to protect protected resources. Only authenticated users with a valid token will be able to access these resources or endpoints.
+* **Local Passport Strategy:** This strategy will be used for logging in users. It will verify if the email/username and password provided by the user is valid or not. If user credentials are valid, it will return a token and user object, if not, it will throw an exception.
+* **JWT Passport Strategy:** This strategy will be used to protect protected resources. Only authenticated users with a valid token will be able to access these resources or endpoints.
 
 ### Local Passport Strategy
 
@@ -610,7 +629,7 @@ Run
 
 Inside the auth folder create a `local.strategy.ts` file and add the following code:
 
-```
+```typescript
 import { Strategy } from 'passport-local';
 import { PassportStrategy } from '@nestjs/passport';
 import { Injectable, UnauthorizedException } from '@nestjs/common';
@@ -637,15 +656,15 @@ Here, we are importing `Strategy, PassportStrategy and AuthService.` We extend t
 
 We must implement the `validate()` method. For the local-strategy, Passport expects a `validate()` method with the following signature: `validate(username: string, password:string): any`.
 
-Most of the validation work is done in our `AuthService` (with the help of our `UserService`), so this method is quite straightforward.
+Most of the validation work is done in our `AuthService` (with the help of our `UserService`), so this method is quite straightforward. 
 
-We call the `validateUser()` method in the `AuthService` (we are yet to write this method), which checks if the user exists and if the password is correct. `authService.validateUser()` returns null if not valid or the user object if valid.
+We call the `validateUser()` method in the `AuthService` (we are yet to write this method), which checks if the user exists and if the password is correct. `authService.validateUser()` returns null if not valid or the user object if valid. 
 
-If a user is found and the credentials are valid, the user is returned so Passport can complete its tasks (e.g., creating the `user` property on the `Request` object), and the request handling pipeline can continue. If it's not found, we throw an exception and let our [exceptions layer][8] handle it.
+If a user is found and the credentials are valid, the user is returned so Passport can complete its tasks (e.g., creating the `user` property on the `Request` object), and the request handling pipeline can continue. If it's not found, we throw an exception and let our [exceptions layer](https://docs.nestjs.com/exception-filters) handle it.
 
 Now, add the `PassportModule, UserModule`and `LocalStrategy` to our AuthModule.
 
-```
+```typescript
 import { Module } from '@nestjs/common';
 import { PassportModule } from '@nestjs/passport';
 import { AuthService } from './auth.service';
@@ -671,7 +690,7 @@ export class AuthModule {}
 
 Let’s implement the `validateUser()` method.
 
-```
+```typescript
 import { Injectable } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { UsersService } from '../users/users.service';
@@ -717,7 +736,7 @@ Run
 
 Inside the auth folder create a `jwt.strategy.ts` file and add the following code:
 
-```
+```typescript
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { PassportStrategy } from '@nestjs/passport';
 import { Injectable, UnauthorizedException } from '@nestjs/common';
@@ -746,14 +765,14 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
 
 Here, we are extending `PassportStrategy.` Inside the `super()` we added some options object. In our case, these options are:
 
--   `jwtFromRequest:` supplies the method by which the JWT will be extracted from the `Request`. We will use the standard approach of supplying a bearer token in the Authorization header of our API requests.
--   `ignoreExpiration`: just to be explicit, we choose the default `false` setting, which delegates the responsibility of ensuring that a JWT has not expired to the Passport module. This means that if our route is supplied with an expired JWT, the request will be denied and a `401 Unauthorized` response sent. Passport conveniently handles this automatically for us.
--   `secretOrKey`: This is our secret key for the token. This will use the secret key in our `.env` file.
--   The `validate(payload: any)` For the jwt-strategy, Passport first verifies the JWT’s signature and decodes the JSON. It then invokes our `validate()` method passing the decoded JSON as its single parameter. Based on the way JWT signing works, we're guaranteed that we're receiving a valid token that we have previously signed and issued to a valid user. We confirm if the user exists with the user payload id. If the user exists, we return the user object, and Passport will attach it as a property on the `Request` object. If the user doesn’t exist, we throw an Exception.
+* `jwtFromRequest:` supplies the method by which the JWT will be extracted from the `Request`. We will use the standard approach of supplying a bearer token in the Authorization header of our API requests.
+* `ignoreExpiration`: just to be explicit, we choose the default `false` setting, which delegates the responsibility of ensuring that a JWT has not expired to the Passport module. This means that if our route is supplied with an expired JWT, the request will be denied and a `401 Unauthorized` response sent. Passport conveniently handles this automatically for us.
+* `secretOrKey`: This is our secret key for the token. This will use the secret key in our `.env` file.
+* The `validate(payload: any)` For the jwt-strategy, Passport first verifies the JWT’s signature and decodes the JSON. It then invokes our `validate()` method passing the decoded JSON as its single parameter. Based on the way JWT signing works, we're guaranteed that we're receiving a valid token that we have previously signed and issued to a valid user. We confirm if the user exists with the user payload id. If the user exists, we return the user object, and Passport will attach it as a property on the `Request` object. If the user doesn’t exist, we throw an Exception.
 
 Now, add the `JwtStrategy` and `JwtModule` to the `AuthModule.`:
 
-```
+```typescript
 import { Module } from '@nestjs/common';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
@@ -786,7 +805,7 @@ We configure the `JwtModule` using `register()`, passing in a configuration obje
 
 Let’s add other methods we will need to login and create a new user in `AuthService`:
 
-```
+```typescript
 import { Injectable } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
@@ -858,10 +877,10 @@ export class AuthService {
 
 Import and inject JwtService.
 
--   `login(user):` This method is used to login the user. This takes the user information, generates a token with it, and then returns the token and user object.
--   `create(user):` This method is used to create a new user. This takes the user information, hash the user password, saves the user to the DB, removes the password from the newly returned user, generates a token with the user object, and then returns the token and user object.
--   `generateToken(user):` This private method generates a token and then returns it.
--   `hashPassword(password):` This private method hashes the user password and returns the hashed password.
+* `login(user):` This method is used to login the user. This takes the user information, generates a token with it, and then returns the token and user object.
+* `create(user):` This method is used to create a new user. This takes the user information, hash the user password, saves the user to the DB, removes the password from the newly returned user, generates a token with the user object, and then returns the token and user object.
+* `generateToken(user):` This private method generates a token and then returns it.
+* `hashPassword(password):` This private method hashes the user password and returns the hashed password.
 
 We will be using all these functions later.
 
@@ -869,7 +888,7 @@ We will be using all these functions later.
 
 Now, let’s create our `signup` and `login` methods:
 
-```
+```typescript
 import { Controller, Body, Post, UseGuards, Request } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { AuthService } from './auth.service';
@@ -914,7 +933,7 @@ Run `npm i class-validator class-transformer --save`.
 
 Inside the core folder, create a pipes folder and then create `validate.pipe.ts` file. Copy and paste the following code:
 
-```
+```typescript
 import { Injectable, ArgumentMetadata, BadRequestException, ValidationPipe, UnprocessableEntityException } from '@nestjs/common';
 
 @Injectable()
@@ -937,7 +956,7 @@ export class ValidateInputPipe extends ValidationPipe {
 
 Let’s auto-validate all our endpoints with `dto` by binding `ValidateInputPipe` at the application level. Inside the `main.ts` file, add this:
 
-```
+```typescript
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidateInputPipe } from './core/pipes/validate.pipe';
@@ -955,7 +974,7 @@ bootstrap();
 
 Now, let’s update our users `dto` file:
 
-```
+```typescript
 import { IsNotEmpty, MinLength, IsEmail, IsEnum } from 'class-validator';
 
 enum Gender {
@@ -985,12 +1004,12 @@ export class UserDto {
 
 Here, we are importing these decorators from `class-validator.`
 
--   `@IsNotEmpty():` ensures the field isn’t empty.
--   `@IsEmail():` checks if the email entered is a valid email address.
--   `@MinLength(6):` ensures the password character is not less than six.
--   `@IsEnum:` ensures only the specified value is allowed (in this case, male and female).
+* `@IsNotEmpty():` ensures the field isn’t empty.
+* `@IsEmail():` checks if the email entered is a valid email address.
+* `@MinLength(6):` ensures the password character is not less than six.
+* `@IsEnum:` ensures only the specified value is allowed (in this case, male and female).
 
-[class-validator][9] has tons of validation decorators – check them out.
+[class-validator](https://github.com/typestack/class-validator) has tons of validation decorators – check them out.
 
 **Let’s try our validation out…**
 
@@ -1004,7 +1023,7 @@ Let’s add a guard that prevents users from signing up with the same email twic
 
 Inside the core folder, create a guards folder, then create a `doesUserExist.guard.ts` file. Copy and paste the following code:
 
-```
+```typescript
 import { CanActivate, ExecutionContext, Injectable, ForbiddenException } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { UsersService } from '../../modules/users/users.service';
@@ -1032,7 +1051,7 @@ export class DoesUserExist implements CanActivate {
 
 Now, let’s add this guard to our signup method in `AuthController.`:
 
-```
+```typescript
 
 import { Controller, Body, Post, UseGuards, Request } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
@@ -1081,7 +1100,7 @@ This will automatically add this controller to the Post module.
 
 Create a `post.entity.ts` file inside the posts folder. Copy and paste the following code:
 
-```
+```typescript
 import { Table, Column, Model, DataType, ForeignKey, BelongsTo } from 'sequelize-typescript';
 import { User } from '../users/user.entity';
 
@@ -1117,7 +1136,7 @@ The only new thing here is the `@ForeignKey(() => User)` specifying that the use
 
 Inside the posts folder, create a `dto` folder then create a `post.dto.ts` file inside it. Copy and paste the following code:
 
-```
+```typescript
 import { IsNotEmpty, MinLength } from 'class-validator';
 
 export class PostDto {
@@ -1136,7 +1155,7 @@ Here, our post body object must have a title, and body and title length must not
 
 Create a `posts.providers.ts` file inside the posts folder. Copy and paste the following code:
 
-```
+```typescript
 import { Post } from './post.entity';
 import { POST_REPOSITORY } from '../../core/constants';
 
@@ -1146,11 +1165,11 @@ export const postsProviders = [{
 }];
 ```
 
-Add this `_export_` const POST\_REPOSITORY = 'POST\_REPOSITORY'; to the constants `index.ts` file.
+Add this `_export_` const POST_REPOSITORY = 'POST_REPOSITORY'; to the constants `index.ts` file.
 
 Add our Post provider to our Post Module file:
 
-```
+```typescript
 import { Module } from '@nestjs/common';
 import { PostsService } from './posts.service';
 import { PostsController } from './posts.controller';
@@ -1171,7 +1190,7 @@ Now, add our Post entity to our database provider. Import the Post entity inside
 
 Copy and paste the following inside the Post service file:
 
-```
+```typescript
 import { Injectable, Inject } from '@nestjs/common';
 import { Post } from './post.entity';
 import { PostDto } from './dto/post.dto';
@@ -1188,15 +1207,15 @@ export class PostsService {
 
     async findAll(): Promise<Post[]> {
         return await this.postRepository.findAll<Post>({
-            include: [{ model: User, attributes: { exclude: ['password'] } }],
-        });
+        	include: [{ model: User, attributes: { exclude: ['password'] } }],
+    	});
     }
 
     async findOne(id): Promise<Post> {
         return await this.postRepository.findOne({
-            where: { id },
-            include: [{ model: User, attributes: { exclude: ['password'] } }],
-        });
+        	where: { id },
+        	include: [{ model: User, attributes: { exclude: ['password'] } }],
+    	});
     }
 
     async delete(id, userId) {
@@ -1213,17 +1232,17 @@ export class PostsService {
 
 Here, we are injecting our Post repository to communicate with our database.
 
--   `create(post: PostDto, userId):` This accepts post object and the id of the user creating the post. It adds the post to the database and returns the newly created Post. The `PostDto` is for validation.
--   `findAll():` This gets all the posts from the database and also includes/eager load the user who created it while excluding the user password.
--   `findOne(id):` This finds and returns the post with the id. It also includes/eager load the user who created it while excluding the user password.
--   `delete(id, userId):` This deletes the post from the database with the id and userId. Only the user who created the post can delete it. This returns the number of rows that were affected.
--   `update(id, data, userId):` This updates an existing post where `id` is the id of the post, `data` is the data to update, `userId` is the id of the original creator. This returns the number of rows that were updated and the newly updated object.
+* `create(post: PostDto, userId):` This accepts post object and the id of the user creating the post. It adds the post to the database and returns the newly created Post. The `PostDto` is for validation.
+* `findAll():` This gets all the posts from the database and also includes/eager load the user who created it while excluding the user password.
+* `findOne(id):` This finds and returns the post with the id. It also includes/eager load the user who created it while excluding the user password.
+* `delete(id, userId):` This deletes the post from the database with the id and userId. Only the user who created the post can delete it. This returns the number of rows that were affected.
+* `update(id, data, userId):` This updates an existing post where `id` is the id of the post, `data` is the data to update, `userId` is the id of the original creator. This returns the number of rows that were updated and the newly updated object.
 
 ### Post Controller Methods
 
 Copy and paste the following inside the Post controller file:
 
-```
+```typescript
 import { Controller, Get, Post, Put, Delete, Param, Body, NotFoundException, UseGuards, Request } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { PostsService } from './posts.service';
@@ -1297,12 +1316,12 @@ export class PostsController {
 
 Most of the CRUD operation functionality is done in our `PostService.`
 
--   `findAll():` This handles `GET` request to `api/v1/posts` endpoint. It returns all the posts in our database.
--   `findOne(@Param(‘id’) id: number):` This handles `GET` request to `api/v1/posts/1` endpoint to get a single post, where 1 is the id of the post. This throws a 404 error if it doesn’t find the post and returns the post object if it does find the post.
--   `create(@Body() post: PostDto, @Request() req):` This handles `POST` request to `api/v1/posts` endpoint to create a new post.
--   `@UseGuards(AuthGuard(‘jwt’))` is used to protect the route (remember our JWT strategy). Only logged in users can create a post.
--   `update(@Param(‘id’) id: number, @Body() post: PostDto, @Request() req):` This handles the `PUT` request to `api/v1/posts` endpoint to update an existing post. It is also a protected route. If the `numberOfAffectedRows` is zero that means no post with the params id was found.
--   `remove(@Param(‘id’) id: number, @Request() req):` This handles the `DELETE` request to delete an existing post.
+* `findAll():` This handles `GET` request to `api/v1/posts` endpoint. It returns all the posts in our database.
+* `findOne(@Param(‘id’) id: number):` This handles `GET` request to `api/v1/posts/1` endpoint to get a single post, where 1 is the id of the post. This throws a 404 error if it doesn’t find the post and returns the post object if it does find the post.
+* `create(@Body() post: PostDto, @Request() req):` This handles `POST` request to `api/v1/posts` endpoint to create a new post.
+* `@UseGuards(AuthGuard(‘jwt’))` is used to protect the route (remember our JWT strategy). Only logged in users can create a post.
+* `update(@Param(‘id’) id: number, @Body() post: PostDto, @Request() req):` This handles the `PUT` request to `api/v1/posts` endpoint to update an existing post. It is also a protected route. If the `numberOfAffectedRows` is zero that means no post with the params id was found.
+* `remove(@Param(‘id’) id: number, @Request() req):` This handles the `DELETE` request to delete an existing post.
 
 ## Let’s try our CRUD operation out…
 
@@ -1312,52 +1331,45 @@ Log in and add your token since creating a post route is a protected route.
 
 ![Image](https://www.freecodecamp.org/news/content/images/2020/06/1_qXyUFopQW72cMaHa0uTVOw.png)
 
-![Image](https://www.freecodecamp.org/news/content/images/2020/06/1_oxqCFmCNaMH4I8FBR1TD-A.png) _Creating a post._
+![Image](https://www.freecodecamp.org/news/content/images/2020/06/1_oxqCFmCNaMH4I8FBR1TD-A.png)
+_Creating a post._
 
 ### Read a single Post
 
 This route isn’t protected, so it can be accessed without the token.
 
-![Image](https://www.freecodecamp.org/news/content/images/2020/06/1_CQzE4J82K9Tmc0OsclMyQw.png) _Fetching a Single Post_
+![Image](https://www.freecodecamp.org/news/content/images/2020/06/1_CQzE4J82K9Tmc0OsclMyQw.png)
+_Fetching a Single Post_
 
+###   
 Reading all Posts
 
 This route isn’t protected, so it can be accessed without the token too.
 
-![Image](https://www.freecodecamp.org/news/content/images/2020/06/1_7D47fSupbbgASbqbpX2jEA.png) _fetching all posts_
+![Image](https://www.freecodecamp.org/news/content/images/2020/06/1_7D47fSupbbgASbqbpX2jEA.png)
+_fetching all posts_
 
 ### Updating a Single Post
 
 This route is protected, so we need a token and only the creator can update it.
 
-![Image](https://www.freecodecamp.org/news/content/images/2020/06/1__yN5JvnyoisPNmRASfLnJw.png) _updating a single post_
+![Image](https://www.freecodecamp.org/news/content/images/2020/06/1__yN5JvnyoisPNmRASfLnJw.png)
+_updating a single post_
 
 ### Deleting a Post
 
 This route is protected, so we need a token and only the creator can delete it.
 
-![Image](https://www.freecodecamp.org/news/content/images/2020/06/1_qLmCLDKCvn_YOxeBGyx_3w.png) _Deleting a post_
+![Image](https://www.freecodecamp.org/news/content/images/2020/06/1_qLmCLDKCvn_YOxeBGyx_3w.png)
+_Deleting a post_
 
 # **Conclusion**
 
-Nest.js gives you a more structured way of building your server-side applications with Node.
+Nest.js gives you a more structured way of building your server-side applications with Node. 
 
-For more information, check out the official [NestJS website here][10].
+For more information, check out the official [NestJS website here](https://nestjs.com/). 
 
-Finally, I hope this article was useful to you! The [link to the final project GitHub repo is here][11].
+Finally, I hope this article was useful to you! The [link to the final project GitHub repo is here](https://github.com/onwuvic/nest-blog-api).
 
-You can connect with me on [LinkedIn][12] and [Twitter][13].
+You can connect with me on [LinkedIn](https://www.linkedin.com/in/victoronwuzor/) and [Twitter](https://twitter.com/victoronwuzor).
 
-[1]: https://nodejs.org/
-[2]: http://www.typescriptlang.org/
-[3]: https://www.postman.com/
-[4]: https://nodejs.org/
-[5]: https://github.com/onwuvic/nest-blog-api
-[6]: https://github.com/RobinBuschmann/sequelize-typescript#readme
-[7]: https://github.com/jaredhanson/passport
-[8]: https://docs.nestjs.com/exception-filters
-[9]: https://github.com/typestack/class-validator
-[10]: https://nestjs.com/
-[11]: https://github.com/onwuvic/nest-blog-api
-[12]: https://www.linkedin.com/in/victoronwuzor/
-[13]: https://twitter.com/victoronwuzor

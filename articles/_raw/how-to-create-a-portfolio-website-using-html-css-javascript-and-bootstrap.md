@@ -1,73 +1,96 @@
 ---
-title: How to Create a Portfolio Website Using HTML, CSS, JavaScript, and Bootstrap 5
-date: 2024-08-27T07:45:43.927Z
-author: Sampurna Chapagain
-authorURL: https://www.freecodecamp.org/news/author/sampurna/
-originalURL: https://www.freecodecamp.org/news/how-to-create-a-portfolio-website-using-html-css-javascript-and-bootstrap/
-posteditor: ""
-proofreader: ""
+title: How to Create a Portfolio Website Using HTML, CSS, JavaScript, and Bootstrap
+  5
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2022-01-25T17:10:50.000Z'
+originalURL: https://freecodecamp.org/news/how-to-create-a-portfolio-website-using-html-css-javascript-and-bootstrap
+coverImage: https://www.freecodecamp.org/news/content/images/2022/01/Untitled-design-6.png
+tags:
+- name: Bootstrap 5
+  slug: bootstrap-5
+- name: CSS
+  slug: css
+- name: HTML
+  slug: html
+- name: JavaScript
+  slug: javascript
+- name: portfolio
+  slug: portfolio
+- name: Web Development
+  slug: web-development
+seo_title: null
+seo_desc: 'By Sampurna Chapagain
+
+  If you are a web developer or a web designer, it is essential for you to have a
+  portfolio website. It lets you provide information about yourself and showcase your
+  best work with your relevant skills and experience.
+
+  In this blog...'
 ---
 
-If you are a web developer or a web designer, it is essential for you to have a portfolio website. It lets you provide information about yourself and showcase your best work with your relevant skills and experience.
+By Sampurna Chapagain
 
-<!-- more -->
+If you are a web developer or a web designer, it is essential for you to have a portfolio website. It lets you provide information about yourself and showcase your best work with your relevant skills and experience.
 
 In this blog post, I will discuss some of the benefits of creating a portfolio website. Then I'll show you how to create a beautiful responsive portfolio website for yourself using HTML, CSS, JavaScript and Bootstrap version 5.
 
 ### Here's an interactive scrim about how to create a portfolio website using HTML, CSS, JS, and Bootstrap 5:
 
-<iframe src="https://scrimba.com/scrim/co27f4302abab219aea652cf7?embed=freecodecamp,mini-header" width="100%" height="480" title="Embedded content" loading="lazy"></iframe>
+<iframe src="https://scrimba.com/scrim/co27f4302abab219aea652cf7?embed=freecodecamp,mini-header" width="100%" height="480"></iframe>
 
 ## Table Of Contents
 
--   [Benefits of having a portfolio website][1]
--   [What is Bootstrap][2]?
--   [Folder Structure][3]
--   [How to Add a Navigation Menu to Your Portfolio][4]
--   [How to Add a Hero Header to the Portfolio][5]
--   [How to Make the About Section][6]
--   [How to Make the Services Section][7]
--   [How to Add Dark Background Color to Navbar on Page Scroll][8]
--   [How to Build the Portfolio Section][9]
--   [How to Build the Contact Section][10]
--   [How to Build the Footer Section][11]
--   [Adding Final Touches][12]
--   [Conclusion][13]
+* [Benefits of having a portfolio website](#heading-benefits-of-having-a-portfolio-website)
+* [What is Bootstrap](#heading-what-is-bootstrap)?
+* [Folder Structure](#heading-folder-structure)
+* [How to Add a Navigation Menu to Your Portfolio](#heading-how-to-add-a-navigation-menu-to-your-portfolio)
+* [How to Add a Hero Header to the Portfolio](#heading-how-to-add-a-hero-header-to-the-portfolio)
+* [How to Make the About Section](#heading-how-to-make-the-about-section)
+* [How to Make the Services Section](#heading-how-to-make-the-services-section)
+* [How to Add Dark Background Color to Navbar on Page Scroll](#heading-how-to-add-dark-background-color-to-navbar-on-page-scroll)
+* [How to Build the Portfolio Section](#heading-how-to-build-the-portfolio-section)
+* [How to Build the Contact Section](#heading-how-to-build-the-contact-section)
+* [How to Build the Footer Section](#heading-how-to-build-the-footer-section)
+* [Adding Final Touches](#heading-final-touches)
+* [Conclusion](#heading-conclusion)
 
 ## Benefits of having a Portfolio Website
 
 Having a portfolio website has several benefits, including:
 
--   it provides a platform to showcase your relevant skills and experience
--   it shows your personality
--   it lets hiring managers find you instead of you reaching out to them
--   you are easily searchable on search engines like Google
+* it provides a platform to showcase your relevant skills and experience 
+* it shows your personality
+* it lets hiring managers find you instead of you reaching out to them 
+* you are easily searchable on search engines like Google 
 
-## What is Bootstrap?
 
-Bootstrap is a popular front-end CSS framework which is used to develop responsive and mobile friendly websites. The latest release of Bootstrap is version 5. You can find the official documentation of Bootstrap 5 [here][14].
+## What is Bootstrap? 
+
+Bootstrap is a popular front-end CSS framework which is used to develop responsive and mobile friendly websites. The latest release of Bootstrap is version 5. You can find the official documentation of Bootstrap 5 [here](https://getbootstrap.com/docs/5.0/getting-started/introduction/). 
 
 ## Folder Structure
 
 We will now start working on creating the portfolio website.
 
-First, let's create the folder structure. You can get the project starter files on [GitHub][15]. Also, you can visit [here][16] to see the live demo of this project.
+First, let's create the folder structure. You can get the project starter files on [GitHub](https://github.com/SampurnaC/portfolio_website_fcc/tree/portfolio-starter-files). Also, you can visit [here](https://brad-portfolio.netlify.app/) to see the live demo of this project.
 
-![Screenshot-from-2022-01-22-19-10-25](https://www.freecodecamp.org/news/content/images/2022/01/Screenshot-from-2022-01-22-19-10-25.png)
+![Image](https://www.freecodecamp.org/news/content/images/2022/01/Screenshot-from-2022-01-22-19-10-25.png)
+_Project Folder Structure_
 
-Project Folder Structure
+The folder structure consists of index.html, style.css, and script.js files and an images folder. We'll write all CSS in the style.css file and the JavaScript in the script.js file . 
 
-The folder structure consists of index.html, style.css, and script.js files and an images folder. We'll write all CSS in the style.css file and the JavaScript in the script.js file .
+In the index.html file, you can see the HTML boilerplate code with the Bootstrap CDN, [font awesome kit](https://fontawesome.com/), and a link to the external style sheet and JavaScript.
 
-In the index.html file, you can see the HTML boilerplate code with the Bootstrap CDN, [font awesome kit][17], and a link to the external style sheet and JavaScript.
-
-Here, the script.js file is loaded after loading all the HTML code.
+Here, the script.js file is loaded after loading all the HTML code. 
 
 ## How to Add a Navigation Menu to Your Portfolio
 
 Now, let's work on adding a navigation menu in our project. It will help visitors find the relevant info they're looking for.
 
-We will use Bootstrap's `fixed-top` class in nav element to keep the navbar at the top of the page. The navbar also has a `navbar-brand` class where we keep the name of the person as a brand.
+We will use Bootstrap's `fixed-top` class in nav element to keep the navbar at the top of the page. The navbar also has a `navbar-brand` class where we keep the name of the person as a brand. 
 
 ```html
 <nav class="navbar navbar-expand-lg fixed-top navbarScroll">
@@ -102,13 +125,13 @@ We will use Bootstrap's `fixed-top` class in nav element to keep the navbar at t
 
 The navbar has the following features:
 
--   It has six links: home, about, services, portfolio, contact, and footer
--   It has a transparent background. We will add a dark background on page scrolling later.
--   It toggles on smaller devices
+* It has six links: home, about, services, portfolio, contact, and footer 
+* It has a transparent background. We will add a dark background on page scrolling later.
+* It toggles on smaller devices
 
-You can find more details regarding Bootstrap 5 navbar features [here][18].
+You can find more details regarding Bootstrap 5 navbar features [here](https://getbootstrap.com/docs/5.0/components/navbar/).
 
-However, the navbar has a problem while scrolling. It's fully transparent throughout the page which causes readability issues.  We will fix this issue after we complete the [Services section][19] to make you understand the issue properly.
+However, the navbar has a problem while scrolling. It's fully transparent throughout the page which causes readability issues.  We will fix this issue after we complete the [Services section](#heading-how-to-make-the-services-section) to make you understand the issue properly. 
 
 ## How to Add a Hero Header to the Portfolio
 
@@ -128,7 +151,7 @@ Now, we will be adding a hero image with some text in the center. A hero image i
     </section>
 ```
 
- Also, let's add the CSS for the above code in the style.css file:
+  Also, let's add the CSS for the above code in the style.css file: 
 
 ```css
 /* hero background image */
@@ -155,17 +178,16 @@ Now, we will be adding a hero image with some text in the center. A hero image i
 }
 ```
 
-Here we can see that the section has an id named `bgimage` which is responsible for displaying the background hero image with full width. It also displays some text in the center above the background image with the help of the above CSS.
+Here we can see that the section has an id named `bgimage` which is responsible for displaying the background hero image with full width. It also displays some text in the center above the background image with the help of the above CSS. 
 
 This is how the site looks so far with the navbar and the hero section:
 
-![Screenshot-from-2022-01-25-10-13-25](https://www.freecodecamp.org/news/content/images/2022/01/Screenshot-from-2022-01-25-10-13-25.png)
-
-Hero Image with Navbar
+![Image](https://www.freecodecamp.org/news/content/images/2022/01/Screenshot-from-2022-01-25-10-13-25.png)
+_Hero Image with Navbar_
 
 ## How to Make the About Section
 
-The About page contains important information about you and your background. Visitors to your portfolio site can get to know you through the information you provide in this page.
+The About page contains important information about you and your background. Visitors to your portfolio site can get to know you through the information you provide in this page. 
 
 We will be adding an image to the left side of the row, and on the right side we will add our quick introduction in this section. Let's demonstrate it using the code below:
 
@@ -209,9 +231,10 @@ We will be adding an image to the left side of the row, and on the right side we
                 </div>
             </div>
     </section>
+
 ```
 
-Let's add some CSS for the left side image:
+ Let's add some CSS for the left side image:
 
 ```css
 /* about section image css */
@@ -222,17 +245,16 @@ Let's add some CSS for the left side image:
 
 This will create an about section. You can modify the content based on your use cases. We have added classes named `mt-4` and `pt-4` with container class which will set the margin top and padding top to 1.5 rem.
 
-The row has two columns. One has the `col-lg-4` class for displaying the image which will occupy the left column with a 4-part grid for large screens.
+The row has two columns. One has the `col-lg-4` class for displaying the image which will occupy the left column with a 4-part grid for large screens. 
 
 The next column is assigned a class of `col-lg-8` which will occupy the right column with an 8-part grid for larger screens. For medium and small screens they will overlap with each other which we can see in the below GIF file:
 
-![about](https://www.freecodecamp.org/news/content/images/2022/01/about.gif)
-
-About Section
+![Image](https://www.freecodecamp.org/news/content/images/2022/01/about.gif)
+_About Section_
 
 ## How to Make the Services Section
 
-This section helps convert website visitors into potential clients. This is where you explain what specific services you offer, and where you [niche down][20] your offered services.
+This section helps convert website visitors into potential clients. This is where you explain what specific services you offer, and where you [niche down](https://www.freecodecamp.org/news/web-design-niche/) your offered services. 
 
 Let's add the code for this section and describe it below:
 
@@ -321,15 +343,15 @@ Let's add the code for this section and describe it below:
 
 Since this website is targeted towards web developers and designers, I've included some of the services which a web developer or designer might offer.
 
-We have used bootstrap cards to display services. Our services section has 2 rows and 3 columns each. For large screens with a width greater than or equal to 992px, three cards are displayed in a row. For screens less than 992px wide, only a single card is displayed in a row.
+We have used bootstrap cards to display services. Our services section has 2 rows and 3 columns each. For large screens with a width greater than or equal to 992px, three cards are displayed in a row. For screens less than 992px wide, only a single card is displayed in a row. 
 
-You can find more about bootstrap breakpoints [here][21].
+You can find more about bootstrap breakpoints [here](https://getbootstrap.com/docs/5.0/layout/breakpoints/). 
 
-Also, there are fonts added in each card to make them look better.
+Also, there are fonts added in each card to make them look better. 
 
 Without CSS, the services section would look like this :
 
-![Screenshot-from-2022-01-23-14-01-00](https://www.freecodecamp.org/news/content/images/2022/01/Screenshot-from-2022-01-23-14-01-00.png)
+![Image](https://www.freecodecamp.org/news/content/images/2022/01/Screenshot-from-2022-01-23-14-01-00.png)
 
 So, let's add some CSS to increase the font icon font size and card height and add some extra color when a user hovers over a card.
 
@@ -357,15 +379,14 @@ So, let's add some CSS to increase the font icon font size and card height and a
 
 This is how our services section looks now:
 
-![services](https://www.freecodecamp.org/news/content/images/2022/01/services.gif)
-
-Services 
+![Image](https://www.freecodecamp.org/news/content/images/2022/01/services.gif)
+_Services_
 
 ## How to Add Dark Background Color to Navbar on Page Scroll
 
 If you look into the above gif properly you will see that the navbar is transparent throughout the page which causes readability issues. So let's work on fixing this issue.
 
-We will write some JavaScript and CSS in order to resolve this problem. We will add a `navbarDark` class in order to show a dark background color for the navbar on page scroll.
+We will write some JavaScript and CSS in order to resolve this problem. We will add a `navbarDark` class in order to show a dark background color for the navbar on page scroll. 
 
 For that we need to go to the script.js file and add the following code:
 
@@ -384,12 +405,12 @@ window.onscroll = function() {
 }
 ```
 
-Now, let's break down the above code:
+ Now, let's break down the above code:
 
--   The header holds the value of the nav element since the querySelector method returns the first element that matches the CSS selector (which is `.navbar` in this case).
--   `window.onscroll` fires up when the scroll event happens.
--   `window.scrollY` returns the number of pixels that the document is scrolled vertically and its value is assigned to a variable named `top`.
--   If the value of `top` is greater than or equal to 100, it adds a class of `navbarDark` to the header.
+* The header holds the value of the nav element since the querySelector method returns the first element that matches the CSS selector (which is `.navbar` in this case).
+* `window.onscroll` fires up when the scroll event happens.
+* `window.scrollY` returns the number of pixels that the document is scrolled vertically and its value is assigned to a variable named `top`.
+* If the value of `top` is greater than or equal to 100, it adds a class of `navbarDark` to the header. 
 
 Let's quickly add CSS for the `navbarDark` class. For that, go to your style.css file and add the following code:
 
@@ -402,9 +423,8 @@ Let's quickly add CSS for the `navbarDark` class. For that, go to your style.css
 
 This is how the navbar will look now:
 
-![navbar](https://www.freecodecamp.org/news/content/images/2022/01/navbar.gif)
-
-Dark background color on Navbar on page scroll
+![Image](https://www.freecodecamp.org/news/content/images/2022/01/navbar.gif)
+_Dark background color on Navbar on page scroll_
 
 ## How to Build the Portfolio Section
 
@@ -412,7 +432,7 @@ This section includes your best work. People can see what you are capable of doi
 
 We will use Bootstrap cards to display the portfolio projects. There will be 2 rows and each row will have 3 columns of cards.
 
-This will be the code for portfolio section:
+This will be the code for portfolio section: 
 
 ```html
 <!-- portfolio section-->
@@ -507,23 +527,22 @@ Each card has an image, title, description, and link to the projects. Three card
 
 The GIF below shows how the portfolio section looks now:
 
-![portfolio](https://www.freecodecamp.org/news/content/images/2022/01/portfolio.gif)
-
-Portfolio
+![Image](https://www.freecodecamp.org/news/content/images/2022/01/portfolio.gif)
+_Portfolio_
 
 ## How to Build the Contact Section
 
-You should include your contact information in this section so that visitors can contact you if they want to hire you.
+You should include your contact information in this section so that visitors can contact you if they want to hire you. 
 
-Our contact section will include 2 columns in a single row: Google maps for location and a contact form.
+Our contact section will include 2 columns in a single row: Google maps for location and a contact form. 
 
 In order to embed the Google map, you need to follow these steps:
 
--   go to [https://www.embed-map.com][22]
--   enter your location
--   click on the **Generate HTML Code** button which will provide your Google Map HTML Code
+* go to [https://www.embed-map.com](https://www.embed-map.com/) 
+* enter your location
+* click on the **Generate HTML Code** button which will provide your Google Map HTML Code
 
-Our code will look like this with the contact form included:
+Our code will look like this with the contact form included: 
 
 ```html
 <!-- contact section-->
@@ -564,21 +583,20 @@ Our code will look like this with the contact form included:
     </section>
 ```
 
-The first column will display the Google map and the next one will display the contact form.
+The first column will display the Google map and the next one will display the contact form. 
 
-The form has four different form fields: name, email, subject and project details. The form doesn't submit the request itself. You will need to connect it with any back-end language. Or, you can simply use [Netlify Form][23] or [Formspree form][24] for this.
+The form has four different form fields: name, email, subject and project details. The form doesn't submit the request itself. You will need to connect it with any back-end language. Or, you can simply use [Netlify Form](https://www.netlify.com/products/forms/) or [Formspree form](https://formspree.io/) for this.
 
 This is how the contact section will appear:
 
-![Screenshot-from-2022-01-25-11-31-56](https://www.freecodecamp.org/news/content/images/2022/01/Screenshot-from-2022-01-25-11-31-56.png)
-
-Contact Section
+![Image](https://www.freecodecamp.org/news/content/images/2022/01/Screenshot-from-2022-01-25-11-31-56.png)
+_Contact Section_
 
 ## How to Build the Footer Section
 
-Now we have come to the last section of this post, which is the footer section. We have already added a link to the font awesome CDN in the index.html file.
+Now we have come to the last section of this post, which is the footer section. We have already added a link to the font awesome CDN in the index.html file.  
 
-In the Footer, we will add links to our social media through font awesome icons.
+In the Footer, we will add links to our social media through font awesome icons. 
 
 ```html
  <!-- footer section-->
@@ -598,9 +616,8 @@ In the Footer, we will add links to our social media through font awesome icons.
 
 Without the CSS, our footer will look like this:
 
-![Screenshot-from-2022-01-23-17-56-37](https://www.freecodecamp.org/news/content/images/2022/01/Screenshot-from-2022-01-23-17-56-37.png)
-
-footer without styling
+![Image](https://www.freecodecamp.org/news/content/images/2022/01/Screenshot-from-2022-01-23-17-56-37.png)
+_footer without styling_
 
 So let's add some styling to the footer with this code:
 
@@ -625,13 +642,12 @@ So let's add some styling to the footer with this code:
 
 The icons are now displayed in the center with a hover effect which we can see in the below GIF file.
 
-![footer](https://www.freecodecamp.org/news/content/images/2022/01/footer.gif)
-
-Footer
+![Image](https://www.freecodecamp.org/news/content/images/2022/01/footer.gif)
+_Footer_
 
 ## Final Touches
 
-In order to add some spacing between all the sections, let's add some more styling:
+In order to add some spacing between all the sections, let's add some more styling: 
 
 ```css
 /* spacing on all sections */
@@ -644,9 +660,9 @@ In order to add some spacing between all the sections, let's add some more styli
 }
 ```
 
-Now we're done making our complete portfolio website.
+Now we're done making our complete portfolio website. 
 
-You can find the full source code of this project [here][25].
+You can find the full source code of this project [here](https://github.com/SampurnaC/portfolio_website_fcc/tree/master). 
 
 ## Conclusion
 
@@ -654,37 +670,16 @@ This is how you can create a complete responsive portfolio website using HTML, C
 
 In this blog post we saw some of the benefits of creating a portfolio website for web developers and designers. We divided the whole website into different sections and discussed each one individually as we built it.
 
-You can customize this website based on your own use cases.
+ You can customize this website based on your own use cases.
 
-I hope you found this post useful.
+I hope you found this post useful. 
 
 Happy Coding!
 
-You can find me on [Twitter][26] for daily content regarding Web development.
+You can find me on [Twitter](https://twitter.com/saam_codes) for daily content regarding Web development.
 
-[1]: #benefits-of-having-a-portfolio-website
-[2]: #what-is-bootstrap
-[3]: #folder-structure
-[4]: #how-to-add-a-navigation-menu-to-your-portfolio
-[5]: #how-to-add-a-hero-header-to-the-portfolio
-[6]: #how-to-make-the-about-section
-[7]: #how-to-make-the-services-section
-[8]: #how-to-add-dark-background-color-to-navbar-on-page-scroll
-[9]: #how-to-build-the-portfolio-section
-[10]: #how-to-build-the-contact-section
-[11]: #how-to-build-the-footer-section
-[12]: #final-touches
-[13]: #conclusion
-[14]: https://getbootstrap.com/docs/5.0/getting-started/introduction/
-[15]: https://github.com/SampurnaC/portfolio_website_fcc/tree/portfolio-starter-files
-[16]: https://brad-portfolio.netlify.app/
-[17]: https://fontawesome.com/
-[18]: https://getbootstrap.com/docs/5.0/components/navbar/
-[19]: #how-to-make-the-services-section
-[20]: https://www.freecodecamp.org/news/web-design-niche/
-[21]: https://getbootstrap.com/docs/5.0/layout/breakpoints/
-[22]: https://www.embed-map.com/
-[23]: https://www.netlify.com/products/forms/
-[24]: https://formspree.io/
-[25]: https://github.com/SampurnaC/portfolio_website_fcc/tree/master
-[26]: https://twitter.com/saam_codes
+ 
+
+
+
+

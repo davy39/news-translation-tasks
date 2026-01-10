@@ -1,20 +1,29 @@
 ---
 title: How to Check if a File Exists in Python with isFile() and exists()
-date: 2024-10-18T11:39:02.240Z
+subtitle: ''
 author: Dionysia Lemonaki
-authorURL: https://www.freecodecamp.org/news/author/dionysialemonaki/
-originalURL: https://www.freecodecamp.org/news/how-to-check-if-a-file-exists-in-python/
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2023-01-05T17:23:20.000Z'
+originalURL: https://freecodecamp.org/news/how-to-check-if-a-file-exists-in-python
+coverImage: https://www.freecodecamp.org/news/content/images/2023/01/pexels-francis-seura-802412.jpg
+tags:
+- name: Python
+  slug: python
+seo_title: null
+seo_desc: 'When working with files in Python, there may be times when you need to
+  check whether a file exists or not.
+
+  But why should you check if a file exists in the first place?
+
+  Confirming the existence of a specific file comes in handy when you want to perfo...'
 ---
 
 When working with files in Python, there may be times when you need to check whether a file exists or not.
 
-<!-- more -->
-
 But why should you check if a file exists in the first place?
 
-Confirming the existence of a specific file comes in handy when you want to perform particular operations, such as [opening, reading from, or writing to that file][1].
+Confirming the existence of a specific file comes in handy when you want to perform particular operations, such as [opening, reading from, or writing to that file](https://www.freecodecamp.org/news/how-to-read-files-in-python/).
 
 If you attempt to perform any of the operations mentioned above and the file doesn't exist, you will come across bugs and your program will end up crashing.
 
@@ -24,8 +33,8 @@ Thankfully, Python has multiple built-in ways of checking whether a file exists,
 
 Specifically, when using the `os.path` module, you have access to:
 
--   the `os.path.isfile(path)` method that returns `True` if the `path` is a file or a symlink to a file.
--   the `os.path.exists(path)` method that returns `True` if the `path` is a file, directory, or a symlink to a file.
+- the `os.path.isfile(path)` method that returns `True` if the `path` is a file or a symlink to a file.
+- the `os.path.exists(path)` method that returns `True` if the `path` is a file, directory, or a symlink to a file.
 
 And when using the `pathlib` module, you have access to the `pathlib.Path(path).is_file()` function, which returns `True` if `path` is a file and it exists.
 
@@ -37,11 +46,11 @@ Let's dive in!
 
 The `os` module is part of the standard library (also known as `stdlib`) in Python and provides a way of accessing and interacting with the operating system.
 
-With the `os` module, you can use functionalities that depend on the underlying operating system, such as creating and deleting files and folders, as well as copying and moving contents of folders, to name a few.
+With the `os` module, you can use functionalities that depend on the underlying operating system, such as creating and deleting files and folders, as well as copying and moving contents of folders, to name a few. 
 
 Since it is part of the standard library, the `os` module comes pre-packaged when you install Python on your local system. You only need to import it at the top of your Python file using the `import` statement:
 
-```
+```python
 import os
 ```
 
@@ -51,7 +60,7 @@ It provides two methods for manipulating files - specifically the `isfile()` and
 
 Since you will be using the `os.path` submodule, you will instead need to import that at the top of your file, like so:
 
-```
+```python
 import os.path
 ```
 
@@ -59,11 +68,11 @@ import os.path
 
 The general syntax for the `isfile()` method looks like this:
 
-```
+```python
 os.path.isfile(path)
 ```
 
-The method accepts only one argument, `path`, which represents the defined path to the file whose existence you want to confirm.
+The method accepts only one argument, `path`, which represents the defined path to the file whose existence you want to confirm. 
 
 The `path` argument is a string enclosed in quotation marks.
 
@@ -83,7 +92,7 @@ Then I use the `isfile()` method and pass `path` as an argument to check whether
 
 Since the file does exist, the return value is `True`:
 
-```
+```python
 import os.path
 
 path = './example.txt'
@@ -101,7 +110,7 @@ Ok, but what about absolute paths?
 
 Here is the equivalent code when using an absolute path. The `example.txt` file is inside a `python_project` directory, which is inside my home directory, `/Users/dionysialemonaki/`:
 
-```
+```python
 import os.path
 
 path = '/Users/dionysialemonaki/python_project/example.txt'
@@ -113,9 +122,9 @@ print(os.path.isfile(file_path))
 # True
 ```
 
-And as mentioned earlier, the `isfile()` method only works for files and _not_ directories:
+And as mentioned earlier, the `isfile()` method only works for files and *not* directories:
 
-```
+```python
 import os.path
 
 path = '/Users/dionysialemonaki/python_project'
@@ -135,7 +144,7 @@ If your path ends in a directory, the return value is `False`.
 
 The general syntax for the `exists()` method looks like this:
 
-```
+```python
 os.path.exists(path)
 ```
 
@@ -149,7 +158,7 @@ Keep in mind that if you don't have access and permissions to the directory, `ex
 
 Let's go back to the example from the previous section and check whether the `example.txt` file exists in the current working directory using the `exists()` method:
 
-```
+```python
 import os.path
 
 path = './example.txt'
@@ -171,7 +180,7 @@ In the previous section, when I used the `isfile()` method and the path pointed 
 
 When using the `exists()` method, if the path to a directory exists, the output will be `True`:
 
-```
+```python
 import os.path
 
 path = '/Users/dionysialemonaki/python_project'
@@ -185,25 +194,25 @@ print(check_file)
 # True
 ```
 
-The `exists()` method comes in handy when you want to check whether a file _or_ directory exists.
+The `exists()` method comes in handy when you want to check whether a file *or* directory exists.
 
 ## How to Check if a File Exists Using the `pathlib` Module
 
 Python 3.4 version introduced the `pathlib` module.
 
-Using the `pathlib` module to check whether a file exists or not is an [object-oriented][2] approach to working with filesystem paths.
+Using the `pathlib` module to check whether a file exists or not is an [object-oriented](https://www.freecodecamp.org/news/crash-course-object-oriented-programming-in-python/) approach to working with filesystem paths. 
 
 Like the `os.path` module from earlier on, you need to import the `pathlib` module.
 
 Specifically, you need to import the `Path` class from the `pathlib` module like so:
 
-```
+```python
 from pathlib import Path
 ```
 
 Then, create a new instance of the `Path` class and initialize it with the file path you want to check:
 
-```
+```python
 from pathlib import Path
 
 # create a Path object with the path to the file
@@ -212,7 +221,7 @@ path = Path('./example.txt')
 
 You can use the `type()` function to check the data type:
 
-```
+```python
 from pathlib import Path
 
 path = Path('./example.txt')
@@ -235,7 +244,7 @@ It returns `True` if the `Path` object points to a file and `False` if the file 
 
 Let's see an example of how it works:
 
-```
+```python
 from pathlib import Path
 
 # create a Path object with the path to the file
@@ -258,5 +267,5 @@ Hopefully, you have understood the differences between the modules and when to u
 
 Thank you for reading, and happy coding!
 
-[1]: https://www.freecodecamp.org/news/how-to-read-files-in-python/
-[2]: https://www.freecodecamp.org/news/crash-course-object-oriented-programming-in-python/
+
+

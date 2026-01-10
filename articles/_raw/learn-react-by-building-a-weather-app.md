@@ -1,18 +1,31 @@
 ---
 title: How to Build a Weather Application with React and React Hooks
-date: 2024-08-26T20:54:41.731Z
-author: Nishant Kumar
-authorURL: https://www.freecodecamp.org/news/author/nishant-kumar/
-originalURL: https://www.freecodecamp.org/news/learn-react-by-building-a-weather-app/
-posteditor: ""
-proofreader: ""
+subtitle: ''
+author: freeCodeCamp
+co_authors: []
+series: null
+date: '2021-03-15T21:16:45.000Z'
+originalURL: https://freecodecamp.org/news/learn-react-by-building-a-weather-app
+coverImage: https://www.freecodecamp.org/news/content/images/2021/03/Pink-Cute-Chic-Vintage-90s-Virtual-Trivia-Quiz-Presentations--39-.png
+tags:
+- name: JavaScript
+  slug: javascript
+- name: React
+  slug: react
+- name: react hooks
+  slug: react-hooks
+seo_title: null
+seo_desc: "By Nishant Kumar\nReact is a super-awesome front-end library that you can\
+  \ use to build user interfaces.\nOne of the best things about React is that the\
+  \ components we create are encapsulated. In other words, they can't be seen. \n\
+  Let's learn more about h..."
 ---
+
+By Nishant Kumar
 
 React is a super-awesome front-end library that you can use to build user interfaces.
 
-<!-- more -->
-
-One of the best things about React is that the components we create are encapsulated. In other words, they can't be seen.
+One of the best things about React is that the components we create are encapsulated. In other words, they can't be seen. 
 
 Let's learn more about how all this works by building a weather application using React.
 
@@ -20,7 +33,7 @@ Let's learn more about how all this works by building a weather application usin
 
 To build our React application, we need a run-time environment called Node. It is mainly used to execute JavaScript code.
 
-To download it, go to [https://nodejs.org/en/][1].
+To download it, go to [https://nodejs.org/en/](https://nodejs.org/en/).
 
 You'll also need **npm**, which is a package manager built on Node. You can use it to install packages for your JavaScript apps. Fortunately it comes with Node, so you don't need to download it separately.
 
@@ -36,13 +49,11 @@ Once the packages are done, go into the project folder and type **`npm start`**.
 
 You'll see the default React template, like this:
 
-![Screenshot-2021-03-12-12-07-22](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-12-12-07-22.png)
+![Image](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-12-12-07-22.png)
+_The default React Boilerplate Template_
 
-The default React Boilerplate Template
-
-![Screenshot-2021-03-12-12-08-28](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-12-12-08-28.png)
-
-App.js
+![Image](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-12-12-08-28.png)
+_App.js_
 
 We don't need all of this right now. So, let's clear out some code.
 
@@ -50,15 +61,14 @@ In your **app.js** file, clear everything inside the `div` tag. Remove the logo 
 
 You will receive a blank screen on the output once you have done that.
 
-![Screenshot-2021-03-12-12-12-25](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-12-12-12-25.png)
-
-App.js after cleanup
+![Image](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-12-12-12-25.png)
+_App.js after cleanup_
 
 ## How to Install the Packages We Need
 
 To make this application more attractive, we need some external packages. So, let's install them.
 
-We need the [Semantic React UI][2] library. To install it, type the following command in the terminal:
+We need the [Semantic React UI](https://react.semantic-ui.com/usage/) library. To install it, type the following command in the terminal:
 
 ```bash
 npm install semantic-ui-react semantic-ui-css
@@ -70,17 +80,16 @@ Once it has been installed, open **index.js** and import the library. Just copy 
 import 'semantic-ui-css/semantic.min.css'
 ```
 
-We also need [moment.js][3] to format our time. Install it using the following command:
+We also need [moment.js](https://momentjs.com/) to format our time. Install it using the following command:
 
 ```
 npm install moment --save
 ```
 
-You can check your package.json file to keep track of all the installed packages.
+You can check your package.json file to keep track of all the installed packages. 
 
-![Screenshot-2021-03-12-12-21-01](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-12-12-21-01.png)
-
-package.json
+![Image](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-12-12-21-01.png)
+_package.json_
 
 Here, you can see all the packages you have so far.
 
@@ -88,11 +97,11 @@ Here, you can see all the packages you have so far.
 
 To make our weather application work, we need OpenWeatherMap, a third-party API that'll let us fetch the weather data.
 
-Go to [https://home.openweathermap.org/users/sign\_up][4] and create your own account.
+Go to [https://home.openweathermap.org/users/sign_up](https://home.openweathermap.org/users/sign_up) and create your own account.
 
 After you are done, click on the API option on the Navigation bar. You'll see different options like Current Weather Data, Hourly 4 hour forecasts, 16 day forecasts, and others. These are API endpoints that you'll need to fetch the data.
 
-![Screenshot-2021-03-12-12-30-10](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-12-12-30-10.png)
+![Image](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-12-12-30-10.png)
 
 You also need an API key to call these APIs. To get your API key, click on your username in the top right corner, and then on "my API keys".
 
@@ -108,7 +117,7 @@ REACT_APP_API_KEY = Paste your API key here.
 REACT_APP_ICON_URL = 'https://openweathermap.org/img/w'
 ```
 
-Paste your copied API key in the REACT\_APP\_API\_KEY variable.
+Paste your copied API key in the REACT_APP_API_KEY variable.
 
 ## How to Use React Hooks
 
@@ -141,7 +150,7 @@ useEffect(() => {
   }, [lat, long]);
 ```
 
-We get our latitude and longitude using `navigator.geolocation` and we use **setLong** and **setLat** to set our longitude and latitude states.
+We get our latitude and longitude using `navigator.geolocation` and we use **setLong** and **setLat** to set our longitude and latitude states. 
 
 ```
 import './App.css';
@@ -167,9 +176,8 @@ export default function App() {
     </div>
   );
 }
-```
 
-app.js
+```
 
 This is how our app.js file looks like now. You can check the console for the latitude and longitude values.
 
@@ -178,13 +186,11 @@ Latitude is: 25.5922166
 Longitude is: 85.12761069999999
 ```
 
-Our latitude and longitude
-
 ## How to Get Our Current Location Using Latitude and Longitude.
 
 Let's create another function **getWeather** that will fetch the weather data from the Weather API, based on our latitude and longitude.
 
-In this function, we are using a fetch call to get the data from the API. The **process.env.REACT\_APP\_API\_URL** gets your API address and **process.env.REACT\_APP\_API\_KEY** gets your API Key from the **.env** file. The lat and long are the latitude and longitude that we got previously.
+In this function, we are using a fetch call to get the data from the API. The **process.env.REACT_APP_API_URL** gets your API address and **process.env.REACT_APP_API_KEY** gets your API Key from the **.env** file. The lat and long are the latitude and longitude that we got previously.
 
 And then we convert the data into **JSON** format.
 
@@ -201,7 +207,7 @@ await fetch(`${process.env.REACT_APP_API_URL}/weather/?lat=${lat}&lon=${long}&un
 
 And we log the data in the console.
 
-![Screenshot-2021-03-12-13-36-26](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-12-13-36-26.png)
+![Image](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-12-13-36-26.png)
 
 Here, you can see all the weather data based on our Latitude and Longitude.
 
@@ -240,9 +246,8 @@ export default function App() {
     </div>
   );
 }
-```
 
-app.js
+```
 
 ### How to Create the Weather Components
 
@@ -290,17 +295,16 @@ export default function App() {
     </div>
   );
 }
-```
 
-Importing Weather Component in app.js file
+```
 
 You can see that I've included a check in the return statement. If the type of data we are getting is undefined, it will show us an empty div. And since the fetch data is an async function, it's mandatory to include this check. It loads the function after all other functions are done executing. So, if you remove this check, you will get an error.
 
-![Screenshot-2021-03-13-05-19-29-1](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-13-05-19-29-1.png)
+![Image](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-13-05-19-29-1.png)
 
 This is because our application renders the return statement before the API call is made, and there is nothing to show in that case so it throws an undefined error.
 
-To learn more about async/await, check out [this article][5].
+To learn more about async/await, check out [this article](https://www.freecodecamp.org/news/async-await-in-javascript/).
 
 ### How to Create our Weather Body
 
@@ -323,8 +327,6 @@ const CardExampleCard = ({weatherData}) => (
 
 export default CardExampleCard;
 ```
-
-Weather.js
 
 Here, we import a card from semantic-ui-react, and inside that card, a header that will show the name of your city.
 
@@ -356,7 +358,7 @@ const CardExampleCard = ({weatherData}) => (
 export default CardExampleCard;
 ```
 
-![Screenshot-2021-03-12-17-36-56](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-12-17-36-56.png)
+![Image](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-12-17-36-56.png)
 
 You can see we get the name of the city according to the location.
 
@@ -384,7 +386,7 @@ export default CardExampleCard;
 
 We can get the Temperature, Sunrise, Sunset, and Description from the API.
 
-![Screenshot-2021-03-12-17-45-36-1](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-12-17-45-36-1.png)
+![Image](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-12-17-45-36-1.png)
 
 You can add any other fields you want, like Humdity, Windspeed, Visibility, and more.
 
@@ -426,8 +428,6 @@ import moment from 'moment';
 <p>Date: {moment().format('LL')}</p>
 ```
 
-Using moment.js
-
 We import the **moment** package at the top and display today's day and date respectively. The great thing about this package is that it automatically updates the date and the day.
 
 This is how our **weather.js** look like now:
@@ -456,11 +456,9 @@ const CardExampleCard = ({weatherData}) => (
 export default CardExampleCard;
 ```
 
-weather.js
+![Image](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-13-12-16-14.png)
 
-![Screenshot-2021-03-13-12-16-14](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-13-12-16-14.png)
-
-And the above is our output.
+And the above is our output. 
 
 ## Let's Do Some Styling
 
@@ -489,8 +487,6 @@ const CardExampleCard = ({weatherData}) => (
 
 export default CardExampleCard;
 ```
-
-weather.js
 
 ```
 @import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap');
@@ -526,9 +522,7 @@ weather.js
 }
 ```
 
-styles.css
-
-![Screenshot-2021-03-13-12-48-03](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-13-12-48-03.png)
+![Image](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-13-12-48-03.png)
 
 This is how our app looks now.
 
@@ -580,7 +574,7 @@ const CardExampleCard = ({weatherData}) => (
 export default CardExampleCard;
 ```
 
-![Screenshot-2021-03-13-12-56-27](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-13-12-56-27.png)
+![Image](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-13-12-56-27.png)
 
 Similarly, add the remaining fields.
 
@@ -612,8 +606,6 @@ const WeatherCard = ({weatherData}) => (
 
 export default WeatherCard;
 ```
-
-weather.js
 
 ```
 @import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap');
@@ -680,11 +672,9 @@ weather.js
 }
 ```
 
-styles.css
-
 This is how our application looks now:
 
-![Screenshot-2021-03-13-13-37-46](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-13-13-37-46.png)
+![Image](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-13-13-37-46.png)
 
 ### How to Add a Refresh Button.
 
@@ -728,8 +718,6 @@ const WeatherCard = ({weatherData}) => (
 export default WeatherCard;
 ```
 
-weather.js
-
 ```
 .button{
     width: 35px;
@@ -737,9 +725,7 @@ weather.js
 }
 ```
 
-styles.css
-
-![Screenshot-2021-03-13-13-51-37](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-13-13-51-37.png)
+![Image](https://www.freecodecamp.org/news/content/images/2021/03/Screenshot-2021-03-13-13-51-37.png)
 
 You can see a button that will trigger the refresh function. When you push it, it will refresh the page.
 
@@ -747,7 +733,7 @@ You can see a button that will trigger the refresh function. When you push it, i
 
 Let's add a loader to make the app even more amazing.
 
-Import Loader from Semantic UI and add it in the return function, where we check for undefined data.
+Import Loader from Semantic UI and add it in the return function, where we check for undefined data. 
 
 ```
 import { Dimmer, Loader } from 'semantic-ui-react';
@@ -765,8 +751,6 @@ import { Dimmer, Loader } from 'semantic-ui-react';
  </div>
 ```
 
-app.js
-
 ## Let's Recap What We've Done
 
 We have created a React application that shows the current weather based on your location.
@@ -775,34 +759,27 @@ Let's go through everything we have done so far.
 
 ### We Learned about State and Props
 
-State and Props are very powerful features in React. They are used to manage data and control its flow within different components.
+State and Props are very powerful features in React. They are used to manage data and control its flow within different components. 
 
-In our application, we are managing the state which the state of the application. For example, the name of the city, the temperature, the date, humidity, and all. They vary from user to user, depending on their location.
+In our application, we are managing the state which the state of the application. For example, the name of the city, the temperature, the date, humidity, and all. They vary from user to user, depending on their location. 
 
 Props, on the other hand, are used to pass data between components. We are getting the data in our **app.js** file, but we are reading it in **weather.js.** Remember, props can only be used to pass data from the parent component to the child component.
 
 ### We Used React Hooks
 
-If you have used class components, then you must know about life-cycle methods. If not, they are the methods that are called when our page renders or re-renders. But we can't use life-cycle methods in functional components, as they are specially built for class components.
+If you have used class components, then you must know about life-cycle methods. If not, they are the methods that are called when our page renders or re-renders. But we can't use life-cycle methods in functional components, as they are specially built for class components. 
 
 So, React Hooks is the alternative. We have used two hooks in our application. One is useState, used to manage the state of the application. The other is the useEffect, which loads when the page is rendered or loaded.
 
-### We Tried Out Semantic UI
+### We Tried Out Semantic UI 
 
 Semantic UI is a library for React which has predefined awesome components.
 
 That's all, folks. You can add more features to the app, like a five-day forecast, icons, and more.
 
-You can [find the code on Github][6] if you want to experiment further.
+You can [find the code on Github](https://github.com/nishant-666/React-weather) if you want to experiment further.
 
-You can also [watch this tutorial on my YouTube channel][7] if you'd like.
+You can also [watch this tutorial on my YouTube channel](https://youtu.be/Y1wKWIRNthQ) if you'd like.
 
-> Try and experiment, happy learning.
+> Try and experiment, happy learning. 
 
-[1]: https://nodejs.org/en/
-[2]: https://react.semantic-ui.com/usage/
-[3]: https://momentjs.com/
-[4]: https://home.openweathermap.org/users/sign_up
-[5]: https://www.freecodecamp.org/news/async-await-in-javascript/
-[6]: https://github.com/nishant-666/React-weather
-[7]: https://youtu.be/Y1wKWIRNthQ

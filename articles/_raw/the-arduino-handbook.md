@@ -1,36 +1,56 @@
 ---
-title: "Chapter 1: Getting Started with Arduino"
-date: 2024-08-19T12:40:10.556Z
+title: The Arduino Handbook – Learn Microcontrollers for Embedded Systems
+subtitle: ''
 author: Ihechikara Abba
-authorURL: https://www.freecodecamp.org/news/author/Ihechikara/
-originalURL: https://www.freecodecamp.org/news/the-arduino-handbook
-posteditor: ""
-proofreader: ""
+co_authors: []
+series: null
+date: '2023-10-05T13:15:02.000Z'
+originalURL: https://freecodecamp.org/news/the-arduino-handbook
+coverImage: https://www.freecodecamp.org/news/content/images/2023/10/The-Arduino-Handbook-Cover.png
+tags:
+- name: arduino
+  slug: arduino
+- name: embedded systems
+  slug: embedded-systems
+- name: handbook
+  slug: handbook
+seo_title: null
+seo_desc: 'Arduino is an open-source platform that combines hardware and software
+  in designing and building electronic projects.
+
+  Arduino can be applied in a variety of projects like:
+
+
+  Home automation.
+
+  Internet of Things (IoT).
+
+  Audio and music.
+
+  Automated and rem...'
 ---
 
 Arduino is an open-source platform that combines hardware and software in designing and building electronic projects.
 
-<!-- more -->
-
 Arduino can be applied in a variety of projects like:
 
--   Home automation.
--   Internet of Things (IoT).
--   Audio and music.
--   Automated and remote controlled systems.
--   Automation in agriculture.
--   Electronic prototyping.
--   Wearable devices, and so much more.
+* Home automation.
+* Internet of Things (IoT).
+* Audio and music.
+* Automated and remote controlled systems.
+* Automation in agriculture.
+* Electronic prototyping.
+* Wearable devices, and so much more.
 
-The hardware part of Arduino comprises Arduino boards, input and output devices (including digital and analog pins, and sensors and actuators), shields, breadboards, jumper wires, and so on. These components can be combined together to create dynamic and interactive projects.
+The hardware part of Arduino comprises Arduino boards, input and output devices (including digital and analog pins, and sensors and actuators), shields, breadboards, jumper wires, and so on. These components can be combined together to create dynamic and interactive projects. 
 
 The software is made up of the development tools used to write, debug, compile, and upload code to Arduino boards. Most 0f the software tools can be found in the Arduino IDE (Integrated Development Environment).
 
 This handbook will help you understand how Arduino works. You'll learn about the Arduino boards, the components that make up a board, and how to connect devices to them.
 
-We'll talk about input and output peripherals which help the microcontroller (the brain of the Arduino board) process information coming from the physical environment, and send output based on programmed logic.
+We'll talk about input and output peripherals which help the microcontroller (the brain of the Arduino board) process information coming from the physical environment, and send output based on programmed logic. 
 
-You'll learn about the Arduino IDE, how to code using the Arduino programming language, and how to use sensors, actuators, and other components to build projects as you learn.
+You'll learn about the Arduino IDE, how to code using the Arduino programming language, and how to use sensors, actuators, and other components to build projects as you learn. 
 
 You'll also learn about serial communication, which helps Arduino boards communicate with other computers.
 
@@ -44,20 +64,20 @@ To make it beginner friendly, we won't talk about some aspects of electronics li
 
 Whether you have knowledge of these concepts or not, you can learn about Arduino using this handbook.
 
-If you know how to use a breadboard and a resistor, then that's all the knowledge on electronics you'll need to follow along.
+If you know how to use a breadboard and a resistor, then that's all the knowledge on electronics you'll need to follow along. 
 
 In summary, this handbook is for everyone. You don't need an engineering degree to become an Arduino maker!
 
 ## Table of Contents:
 
--   [Prerequisites][1]
--   [Chapter 1: Getting Started with Arduino][2]
--   [Chapter 2: Basics of Arduino Programming][3]
--   [Chapter 3: How to use Digital Pins in Arduino][4]
--   [Chapter 4: How to use Analog Pins in Arduino][5]
--   [Chapter 5: How to use Sensors and Actuators in Arduino][6]
--   [Chapter 6: How to use the Serial Monitor in Arduino][7]
--   [Chapter 7: How to use Displays in Arduino][8]
+* [Prerequisites](#heading-prerequisites)
+* [Chapter 1: Getting Started with Arduino](#heading-chapter-1-getting-started-with-arduino)
+* [Chapter 2: Basics of Arduino Programming](#heading-chapter-2-basics-of-arduino-programming)
+* [Chapter 3: How to use Digital Pins in Arduino](#heading-chapter-3-how-to-use-digital-pins-in-arduino)
+* [Chapter 4: How to use Analog Pins in Arduino](#heading-chapter-4-how-to-use-analog-pins-in-arduino)
+* [Chapter 5: How to use Sensors and Actuators in Arduino](#heading-chapter-5-how-to-use-sensors-and-actuators-in-arduino)
+* [Chapter 6: How to use the Serial Monitor in Arduino](#heading-chapter-6-how-to-use-the-serial-monitor-in-arduino-2)
+* [Chapter 7: How to use Displays in Arduino](#heading-chapter-7-how-to-use-displays-in-arduino)
 
 # Chapter 1: Getting Started with Arduino
 
@@ -65,7 +85,7 @@ The Arduino development and design process comprises both hardware and software.
 
 In this chapter, you’ll learn about the different components that make up the Arduino Uno board. You'll also learn how to install the Arduino IDE and set up your development environment.
 
-At the time of writing, a new Uno board was released — the Arduino Uno R4. This handbook will make use of the Uno R3 board, but you can follow along with either of them. The R4 board comes in two variants — Arduino Uno R4 WiFi and Arduino Uno R4 Minima — with cool additional features that you can read about [here][9].
+At the time of writing, a new Uno board was released — the Arduino Uno R4. This handbook will make use of the Uno R3 board, but you can follow along with either of them. The R4 board comes in two variants — Arduino Uno R4 WiFi and Arduino Uno R4 Minima — with cool additional features that you can read about [here](https://blog.arduino.cc/2023/06/26/uno-r4-the-new-dimension-of-making/?_gl=1*18ccx2k*_ga*MTkzMTc3MDUxNC4xNjc5NjU4Mzkz*_ga_NEXN8H46L5*MTY4Nzk0Njg3Mi40LjEuMTY4Nzk0ODE3MS4wLjAuMA..).
 
 ## Components of the Arduino Uno R3 Board
 
@@ -79,15 +99,16 @@ The common boards you’ll come across as a beginner are the Nano, Uno, and Mega
 
 Here are some of the components you'll find on the Uno R3 board:
 
--   A power port.
--   USB connector.
--   Microcontroller (ATmega328).
--   Analog pins.
--   Digital pins.
--   Reset button.
--   TX and RX indicators.
+* A power port.
+* USB connector.
+* Microcontroller (ATmega328).
+* Analog pins.
+* Digital pins.
+* Reset button.
+* TX and RX indicators.
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/10/UnoR3.png) _Arduino Uno R3 board (https://store.arduino.cc/products/arduino-uno-rev3)_
+![Image](https://www.freecodecamp.org/news/content/images/2023/10/UnoR3.png)
+_Arduino Uno R3 board (https://store.arduino.cc/products/arduino-uno-rev3)_
 
 You’ll make use of most of the components listed above as you progress through this handbook.
 
@@ -97,13 +118,13 @@ You can use the Arduino IDE to program Arduino boards. That is, you write the co
 
 In this section, you’ll learn how to set up the IDE, and create your first Arduino program (also called an Arduino sketch).
 
-You can download the latest version of the Arduino IDE on the [Arduino software download page][10]. You can download the IDE for different operating systems — Windows, MacOS, and Linux.
+You can download the latest version of the Arduino IDE on the [Arduino software download page](https://www.arduino.cc/en/software). You can download the IDE for different operating systems — Windows, MacOS, and Linux.
 
 The installation process is similar for the operating systems listed above. Here’s how to install it on a Windows machine:
 
 ### Step #1 – Download the Arduino IDE
 
-The first step is to download the IDE from the [Arduino software download page][11]. You should see a section of the page similar to the image below:
+The first step is to download the IDE from the [Arduino software download page](https://www.arduino.cc/en/software). You should see a section of the page similar to the image below:
 
 ![Image](https://www.freecodecamp.org/news/content/images/2023/10/arduino-download-page-options.PNG)
 
@@ -117,7 +138,8 @@ Go on and unzip the downloaded file. This gives you access to all the resources 
 
 After unzipping the file, you should see files like these:
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/10/arduino-ide-unzipped.PNG) _Image showing the files you should see_
+![Image](https://www.freecodecamp.org/news/content/images/2023/10/arduino-ide-unzipped.PNG)
+_Image showing the files you should see_
 
 To launch the Arduino IDE, click on the file that says “Arduino IDE”.
 
@@ -127,7 +149,8 @@ Now that you’ve downloaded and installed the Arduino IDE, the next part is to 
 
 Before that, let’s have a look at some options you’ll find in the Arduino IDE. At the top left corner of the IDE are five options — File, Edit, Sketch, Tools, Help:
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/10/ide.png) _Screenshot showing these options (File, Edit, Sketch, Tools, Help)_
+![Image](https://www.freecodecamp.org/news/content/images/2023/10/ide.png)
+_Screenshot showing these options (File, Edit, Sketch, Tools, Help)_
 
 The “File” option lets you do different things like creating a new sketch (we’ll talk about sketches in the next section), opening an existing sketch, Arduino practice examples for beginners, keyboard shortcuts, save options, and so on.
 
@@ -139,19 +162,20 @@ You can use the “Tools” option to manage libraries, format code, access the 
 
 The “Help” option provides resources for troubleshooting, information on IDE updates, guides on “getting started”, and so on.
 
-Next, let’s look at some other parts and functionalities in the IDE that you’ll find useful. The image below, from the [Arduino documentation][12], highlights them perfectly:
+Next, let’s look at some other parts and functionalities in the IDE that you’ll find useful. The image below, from the [Arduino documentation](https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2), highlights them perfectly:
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/10/arduino-ide-icons.png) _[https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2][13]_
+![Image](https://www.freecodecamp.org/news/content/images/2023/10/arduino-ide-icons.png)
+_[https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2](https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2)_
 
--   **Verify/Upload**: You can use these options to compile and upload code to Arduino boards. You’ll get error messages if the code doesn't compile as expected.
--   **Select Board & Port**: You can use this option to select a port and port number to upload your code too. The current version of the Arduino IDE automatically detects both boards and ports.
--   **Sketchbook**: This gives you access to all the sketches created in your computer. You can also access sketches saved on Arduino Cloud (mostly used for creating IoT projects).
--   **Boards Manager**: The Arduino IDE comes with support for different boards. As you progress through your journey, you’ll make use of different boards and some of them may not be supported by the IDE. The board manager tab lets you install and manage packages required to use these boards.
--   **Library Manager**: You can use libraries to extend certain functionalities in code. Through the library manager, you can install numerous libraries that’ll help simplify the development process for you.
--   **Debugger**: This is used for real time testing and debugging of Arduino programs.
--   **Search**: You can use the search tool to find specific keywords in your code.
--   **Open Serial Monitor**: You can use the serial monitor to communicate with Arduino boards, debug and test code, visualize data from your boards, interact with user input, and so on. We’ll look at the serial monitor in depth in a different chapter.
--   **Open Serial Plotter**: The serial plotter is mostly used for real-time visualization of numerical data.
+* **Verify/Upload**: You can use these options to compile and upload code to Arduino boards. You’ll get error messages if the code doesn't compile as expected.
+* **Select Board & Port**: You can use this option to select a port and port number to upload your code too. The current version of the Arduino IDE automatically detects both boards and ports.
+* **Sketchbook**: This gives you access to all the sketches created in your computer. You can also access sketches saved on Arduino Cloud (mostly used for creating IoT projects).
+* **Boards Manager**: The Arduino IDE comes with support for different boards. As you progress through your journey, you’ll make use of different boards and some of them may not be supported by the IDE. The board manager tab lets you install and manage packages required to use these boards.
+* **Library Manager**: You can use libraries to extend certain functionalities in code. Through the library manager, you can install numerous libraries that’ll help simplify the development process for you.
+* **Debugger**: This is used for real time testing and debugging of Arduino programs.
+* **Search**: You can use the search tool to find specific keywords in your code.
+* **Open Serial Monitor**: You can use the serial monitor to communicate with Arduino boards, debug and test code, visualize data from your boards, interact with user input, and so on. We’ll look at the serial monitor in depth in a different chapter.
+* **Open Serial Plotter**: The serial plotter is mostly used for real-time visualization of numerical data.
 
 ## What Is an Arduino Sketch?
 
@@ -171,11 +195,11 @@ Connect the Arduino board to your computer using the USB cable. Without this ste
 
 ### Step #2 – Create a Sketch
 
-Now it's time to launch the IDE and write some code.
+Now it's time to launch the IDE and write some code. 
 
 Here's a code example that makes an LED blink:
 
-```
+```cpp
 int ledPin = 13;
 
 void setup() {
@@ -188,6 +212,7 @@ void loop() {
   digitalWrite(ledPin, LOW);
   delay(1000);
 }
+
 ```
 
 Don't worry if you don't understand the code — we'll cover everything as we go further.
@@ -202,7 +227,8 @@ You can select the board to upload your code to from the IDE. Here's an image sh
 
 You can use the verify button to compile the code and check for errors. If errors exist, you'll get an error message to show you the possible cause.
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/10/verify.png) _Image showing the verify button_
+![Image](https://www.freecodecamp.org/news/content/images/2023/10/verify.png)
+_Image showing the verify button_
 
 ### Step #5 – Upload the Code
 
@@ -230,6 +256,7 @@ In Arduino programming, you must specify the data type of a variable before usin
 
 ```
 dataType variableName = variableValue
+
 ```
 
 There are different types of data types in Arduino, and we’ll discuss each one along with code examples.
@@ -238,32 +265,36 @@ There are different types of data types in Arduino, and we’ll discuss each one
 
 The `int` data type is used to store integer values. The Uno board has a 16-bit integer capacity so it can store values that fall within the range of -32,768 to 32,767.
 
-```
+```cpp
 int redLED = 6;
+
 ```
 
 In the code above, we created an integer variable called `redLED` with a value of 6.
 
 The `int` data type can also store negative integers:
 
-```
+```c++
 int redLED = -6;
+
 ```
 
 ### `long` Data Type in Arduino
 
 The `long` data type is similar to `int` but has a wider range of integer values. It has a 32-bit integer limit which falls within the range of -2,147,483,648 to 2,147,483,647.
 
-```
+```c++
 long largeNumber = 6000;
+
 ```
 
 ### `float` Data Type in Arduino
 
 The `float` data type can be used to store numbers with decimals. Float variables can store values up to 3.4028235E+38 and values as low as -3.4028235E+38.
 
-```
+```c++
 float num = 10.5;
+
 ```
 
 Although the `float` data type is mainly used for decimal numbers, it can also accept whole numbers (integers without decimals). But it'll always return a float value. So if you store 10 in a `float`, it'll return 10.00.
@@ -274,8 +305,9 @@ You can use the `String` data type to store and manipulate text. You'll work wit
 
 Here's a code example:
 
-```
+```c++
 String greeting = "Hello World!";
+
 ```
 
 The value of strings are nested within double quotation marks as can be seen in the code above.
@@ -284,28 +316,30 @@ Note that when declaring a string, the "S" should always be in uppercase.
 
 ### `char` Data Type in Arduino
 
-The `char` data type stores single characters.
+The `char`  data type stores single characters.
 
 Here's an example:
 
-```
+```c++
 char alphabet = 'A';
+
 ```
 
 This is different from the `String` data type that can store multiple characters.
 
 There are two main differences between `char` and `String`:
 
--   `char` uses single quotes ('A') while `string` uses double quotes ("Arduino").
--   `char` stores single characters while `string` stores multiple characters.
+* `char` uses single quotes ('A') while `string` uses double quotes ("Arduino").
+* `char` stores single characters while `string` stores multiple characters.
 
-`char` can also accept integer values equivalent to the [ASCII][14] value of letters:
+`char` can also accept integer values equivalent to the [ASCII](https://www.asciitable.com/) value of letters:
 
-```
+```c++
 char charValue = 65;
+
 ```
 
-In the code above, we initialized a `char` variable with the value of 65. When printed to the serial monitor (we'll talk about the serial monitor in [Chapter 6: How to use the Serial Monitor in Arduino][15]), A will be returned.
+In the code above, we initialized a `char` variable with the value of 65. When printed to the serial monitor (we'll talk about the serial monitor in [Chapter 6: How to use the Serial Monitor in Arduino](#heading-chapter-6-how-to-use-the-serial-monitor-in-arduino-2)), A will be returned.
 
 A is returned because 65 has an ASCII character of A.
 
@@ -313,7 +347,7 @@ A is returned because 65 has an ASCII character of A.
 
 You can use both `bool` and `boolean` to store/denote boolean values of either `true` or `false`.
 
-```
+```cpp
 bool roomIsCold = false;
 ```
 
@@ -323,8 +357,9 @@ Boolean values are mostly used with logical and comparison operators, and condit
 
 The `byte` data type has an 8-bit unsigned integer limit that ranges from 0 to 255. Unsigned means that it can't store negative values.
 
-```
+```c++
 byte sensorValue = 200;
+
 ```
 
 The `byte` data type isn't the only data type that can be unsigned. You can also use the `unsigned int`, `unsigned long`, and `unsigned char` data types which all have their respective positive integer ranges.
@@ -343,111 +378,119 @@ Arithmetic operators are used to perform mathematical operations like addition, 
 
 The addition operator, denoted by the `+` symbol, adds two operands together:
 
-```
+```c++
 int a = 5;
 int b = 10;
 
 // we use addition operator to add a and b below
 int c = a + b;
-
+    
 Serial.print(c);
 // 15
+
 ```
 
 #### Subtraction(-) Operator
 
 The subtraction operator subtracts the value of one operand from another operand. It is denoted by the `-` symbol:
 
-```
+```c++
 int a = 5;
 int b = 10;
 
 // we use subtraction operator to subtract b from a below
 int c = b - a;
-
+    
 Serial.print(c);
 // 5
+
 ```
 
-#### Multiplication (\*) Operator
+#### Multiplication (*) Operator
 
 You can use the multiplication operator (`*`) to multiply two operands:
 
-```
+```c++
 int a = 5;
 int b = 10;
 
 // we use multiplication operator to multiply a by b below
 int c = a * b;
-
+    
 Serial.print(c);
 // 50
+
 ```
 
 #### Division(/) Operator
 
 The division operator divides one operand by another:
 
-```
+```c++
 int a = 5;
 int b = 10;
 
 // we use division operator to divide b by a below
 int c = b / a;
-
+    
 Serial.print(c);
 // 2
+
 ```
 
 #### Modulus (%) Operator
 
 The modulus operator returns the remainder of a division between two operands:
 
-```
+```c++
 int a = 5;
 int b = 10;
 
 // we use division operator to divide b by a below
 int c = b % a;
-
+    
 Serial.print(c);
 // 0
+
 ```
 
 #### Increment (++) Operator
 
 The increment operator increases the value of a variable by 1:
 
-```
+```c++
 int num = 5;
 num++;
 
 Serial.print(num);
 // 6
+
 ```
 
 #### Decrement (--) Operator
 
 The decrement operator decreases the value of a variable by 1:
 
-```
+```c++
 int num = 5;
 num--;
 
 Serial.print(num);
 // 4
+
 ```
 
 ### Assignment Operators
 
-Assignment operators are mainly used to assign values to variables. You can also use them to update the value of variables.
+Assignment operators are mainly used to assign values to variables. You can also use them to update the value of variables. 
 
 The assignment (`=`) operator is used for assigning and updating variables. The `=` operator should not be confused for "equal to" — they aren't the same. We'll talk about the equal to (`==`) operator in the Comparison Operators section.
 
 Here's an example that shows how to use the assignment operator:
 
-```
+```c++
 int age = 1;
+
 ```
 
 In the code above, we created a variable called `age`, and then assigned a value of 1 to it using the `=` operator.
@@ -458,31 +501,34 @@ But this isn't the only way to assign or update the value of variables when usin
 
 Compound assignment operators let you combine arithmetic operators and the `=` operator. This method provides a shorter way of writing code. Here is an example:
 
-```
+```c++
 int x = 5;
 x += 5;
 
 Serial.print(x)
 // 10
+
 ```
 
 In the code above, we created an `x` variable and assigned a value of 5 to it. But on the second line, you'd see that we combined the arithmetic addition (`+`) operator and the `=` operator to assign a new value to `x`:
 
-```
+```c++
 x += 5;
+
 ```
 
 The line of code above is the same as this:
 
-```
+```c++
 x = x + 5;
+
 ```
 
 So compound operators combine two operators and let you do the same thing in a shorter way. There's nothing wrong with either method.
 
 Here are other compound operator examples:
 
-```
+```c++
 int a = 10;
 a -= 5; // Equivalent to a = a - 5 (a becomes 5)
 
@@ -494,6 +540,7 @@ c /= 5; // Equivalent to c = c / 5 (c becomes 2)
 
 int d = 10;
 d %= 5; // Equivalent to d = d % 3 (d becomes 0)
+
 ```
 
 ### Comparison Operators
@@ -508,12 +555,13 @@ Here are the comparison operators you'll come across occasionally:
 
 This operator compares the values of two variables. If the values are the same, it returns `true`. If the values are not the same, it returns `false`. Here's an example:
 
-```
+```cpp
 int x = 10;
 int y = 5; 
 
 Serial.print(x == y)
 // returns 0
+
 ```
 
 The return value of `x == y` in the code above is 0 (`false`) because the two variables are not the same. Remember that the `==` operator returns 1 (`true`) only when both variables have the same value.
@@ -524,36 +572,39 @@ The not equal operator checks whether two values have different values. It's doe
 
 Here's an example:
 
-```
+```c++
 int x = 10;
 int y = 5; 
 
 Serial.print(x != y)
 // returns 1
+
 ```
 
 #### Greater Than (>) Operator
 
 The greater than (`>`) operator checks if the operand on the left is greater than the operand on the right. If the left operand is greater, it returns 1. If the left operand is smaller, it returns 0.
 
-```
+```c++
 int x = 10;
 int y = 5; 
 
 Serial.print(x > y)
 // returns 1
+
 ```
 
 #### Less Than (<) Operator
 
 The less than (`<`) operator checks if the operand on the left is less than the operand on the left. If the left operand is smaller, it returns 1. If the left operand is greater, it returns 0.
 
-```
+```c++
 int x = 10;
 int y = 5; 
 
 Serial.print(x < y)
 // returns 0
+
 ```
 
 #### Greater Than or Equal To (>=) Operator
@@ -562,29 +613,32 @@ Just like the name, the `>=` operator checks if the operand on the left is eithe
 
 "Or" implies that either of the conditions can be used. If the left operand is not greater than the right operand but is equal to the right operand, you'll still get a value of 1.
 
-```
+```cpp
 int x = 10;
 int y = 5; 
 
 Serial.print(x >= y)
 // returns 1
+
 ```
 
 #### Less Than or Equal To (<=) Operator
 
 The `<=` operator checks if the left operand is either less than or equal to the right operand. If the left operand is less than or equal to the right operand, it returns 1, and returns 0 if the left operand is neither less than nor equal to the right operand.
 
-```
+```c++
 int x = 10;
 int y = 5; 
 
 Serial.print(x <= y)
 // returns 0
+
 ```
 
+###   
 Logical Operators
 
-Logical operators are used in most programming languages to evaluate and determine the relationship between variables.
+Logical operators are used in most programming languages to evaluate and determine the relationship between variables. 
 
 Here are the three logical operators you should know for Arduino programming:
 
@@ -592,11 +646,12 @@ Here are the three logical operators you should know for Arduino programming:
 
 The logical AND (`&&`) operator returns 1 if both statements are true.
 
-```
+```c++
 int x = 10;
 
 Serial.print((x > 5) && (x > 3));
 // returns 1
+
 ```
 
 The expression above — `(x > 5) && (x > 3)` — returns 1 because both statements are true. That is, `x > 3` and `x > 3`. If either or both of those statements were false, then we'd have a return value of 0.
@@ -605,11 +660,12 @@ The expression above — `(x > 5) && (x > 3)` — returns 1 because both stateme
 
 The logical OR (`||`) operator returns 1 if one of both statements is true.
 
-```
+```c++
 int x = 10;
 
 Serial.print((x > 5) && (x > 15));
 // returns 1
+
 ```
 
 The code above returns 1 although one of the statements is false. This is because the `||` operator returns 1 if either or both statements are true.
@@ -620,11 +676,12 @@ The NOT (`!`) operator negates or reverses the value of its operand. If the oper
 
 Here's an example:
 
-```
+```c++
 int x = 10;
 
 Serial.print(!(x > 5));
 // returns 0
+
 ```
 
 The code above returns 0, but why? `x > 5` is true so the expected result is 1.
@@ -643,19 +700,21 @@ The `if` statement is used to execute code if a condition is `true`. Here's what
 
 ```
 if (condition) {
-    // code to be executed if condition is true
+	// code to be executed if condition is true
 }
+
 ```
 
 In the syntax above, `condition` denotes a specified logic. If the condition is `true` then the code in the curly brackets will be executed. Here's an example:
 
-```
+```c++
 int x = 5;
 if (x < 10) {
   Serial.print("x is less than 10");
 }
 
 // x is less than 10
+
 ```
 
 In the code above, we gave a condition— `x < 10` — and a block of code within curly brackets that prints "x is less than 10". The code in the curly brackets will only run if the condition is true.
@@ -668,7 +727,7 @@ But what if the condition is `false`? The code in the curly brackets won't run, 
 
 The `else` statement is used to execute code if a condition is `false`.
 
-```
+```c++
 int score = 20;
 if (score > 50 ) {
   Serial.print("You passed the exam!");
@@ -677,6 +736,7 @@ if (score > 50 ) {
 }
 
 // You have to rewrite the exam
+
 ```
 
 In the code above, the condition given is `false`. So the code for the `else` statement will be executed because the `score` variable is not greater than 50.
@@ -689,12 +749,13 @@ You can use the `else if` statement to define multiple conditions to be checked.
 
 ```
 if (condition1) {
-    // code to be executed if condition1 is true
+	// code to be executed if condition1 is true
 } else if (condition2){
-    // code to be executed if condition2 is true
+	// code to be executed if condition2 is true
 } else {
-    // code to be executed if condition1 and condition2 are false
+	// code to be executed if condition1 and condition2 are false
 }
+
 ```
 
 In the syntax above, there are two conditions (you can create more than two conditions). If `condition1` is `true`, then code in the curly bracket for `condition1` will be executed.
@@ -703,7 +764,7 @@ If condition1 is `false`, then `condition2` will be evaluated. If `condition2` i
 
 If both `condition1` and `condition2` are `false`, the `else` statement's code will be executed.
 
-```
+```c++
 int score = 80;
 if (score > 50 ) {
   Serial.print("You passed the exam!");
@@ -714,6 +775,7 @@ if (score > 50 ) {
 }
 
 // You passed the exam!
+
 ```
 
 ### `switch-case` Statement
@@ -737,18 +799,19 @@ switch (expression) {
         // Code to be executed if expression doesn't match any case
         break;
 }
+
 ```
 
 Let's break the syntax down:
 
--   The `expression` is compared to the value of each `case`.
--   When a `case` matches the `expression`, the code for that case is executed.
--   The `break` keyword stops the `switch` statement's iteration once a match for the `expression` has been found.
--   The code for the `default` keyword is executed if none of the cases match the `expression`.
+* The `expression` is compared to the value of each `case`.
+* When a `case` matches the `expression`, the code for that case is executed.
+* The `break` keyword stops the `switch` statement's iteration once a match for the `expression` has been found.
+* The code for the `default` keyword is executed if none of the cases match the `expression`.
 
 Here's an example:
 
-```
+```cpp
 int day = 2;
 
 switch (day) {
@@ -778,6 +841,7 @@ switch (day) {
   }
 
 //  Tuesday
+
 ```
 
 The code above prints "Tuesday" because the `expression` which has a value of 2 matches `case 2`.
@@ -798,17 +862,18 @@ Here's the syntax:
 for (initialization; condition; increment/decrement) {
    // code to be executed
 }
+
 ```
 
 There are three important keywords in the syntax above:
 
--   **initialization** denotes an initial variable (usually an integer) which specifies the starting point of the loop.
--   **condition** is used to control the number of times the loop is expected to run for. The loop stops when the condition is `false`.
--   **increment/decrement** increases/decreases the value of the initial variable after every iteration.
+* **initialization** denotes an initial variable (usually an integer) which specifies the starting point of the loop.
+* **condition** is used to control the number of times the loop is expected to run for. The loop stops when the condition is `false`.
+* **increment/decrement** increases/decreases the value of the initial variable after every iteration.
 
 Here's an example to help you understand the keywords:
 
-```
+```c++
 for (int i = 0; i < 11; i++){
   Serial.println(i);
 }
@@ -824,6 +889,7 @@ for (int i = 0; i < 11; i++){
 // 8
 // 9
 // 10
+
 ```
 
 In the loop above, we created an initial variable called `1` with a value of 0.
@@ -844,11 +910,12 @@ Here's the syntax:
 while (condition) {
     // Code to be executed
 }
+
 ```
 
 In the syntax above, the code will continue to run until the `condition` becomes `false`.
 
-```
+```c++
 while (i < 11) {
   Serial.println(i);
   i++;
@@ -865,6 +932,7 @@ while (i < 11) {
 // 8
 // 9
 // 10
+
 ```
 
 ### `do-while` Loop
@@ -878,11 +946,12 @@ do {
   // code block to be executed
 }
 while (condition);
+
 ```
 
 Here's the code example:
 
-```
+```c++
 int i = 0;
 
 do {
@@ -901,6 +970,7 @@ do {
 // 8
 // 9
 // 10
+
 ```
 
 ## Arrays in Arduino
@@ -913,18 +983,20 @@ Declaring an array simply means to create one. You can do that in Arduino using 
 
 ```
 dataType arrayName[arraySize]
+
 ```
 
 In the syntax above:
 
--   `dataType` represents the data types that'll be stored in the array. For instance, if the data type is `int`, then only integers can be stored in the array.
--   `arrayName` denotes the name of the array.
--   `arraySize` denotes the number of elements that can be stored in the array.
+* `dataType` represents the data types that'll be stored in the array. For instance, if the data type is `int`, then only integers can be stored in the array.
+* `arrayName` denotes the name of the array.
+* `arraySize` denotes the number of elements that can be stored in the array.
 
 Here's an array declaration code example:
 
-```
+```c++
 int ages[4];
+
 ```
 
 In the code above, we created an array called `ages`. The array can only store four elements with an `int` data type.
@@ -933,27 +1005,30 @@ In the code above, we created an array called `ages`. The array can only store f
 
 To initialize an array means to assign values to the array. In the last section, we created an array called `ages`. Now, let's assign some elements to it:
 
-```
+```c++
 int ages[4] = {2, 4, 6, 8};
+
 ```
 
 You can see from the example above that there are only four elements in the array — 2, 4, 6, 8. Assigning a fifth element would throw an error because we specified that the array can only have for integer elements: `int ages[4];`.
 
 You can access the elements of the array using their index number. Indexes start at zero (0) – so the first element has an index of 0, the second element has an index of 1, the third element has an index of 2, and so on.
 
-```
+```c++
 int ages[4] = {2, 4, 6, 8};
 
 Serial.print(ages[0]);
 // 2
+
 ```
 
 As can be seen above, we accessed the first element using the array name and the index of the element in square brackets: `ages[0]`.
 
 You can also assign and reassign values to a particular element using its index:
 
-```
+```c++
 ages[0] = 10;
+
 ```
 
 Note that you can declare and initialize an array at the same time. I only divided them into separate sections to help you understand what each term means.
@@ -974,17 +1049,18 @@ Just like how built-in functions can be reused to perform a particular task repe
 
 There are four main parts of a function in Arduino:
 
--   The type of data the function returns.
--   The name of the function.
--   The function parameter(s) which is optional.
--   The body of the function.
+* The type of data the function returns.
+* The name of the function.
+* The function parameter(s) which is optional.
+* The body of the function.
 
 Here's what that looks like:
 
 ```
 dataType functionName(optionalParameters) {
-    // body of the function
+	// body of the function
 }
+
 ```
 
 So from the syntax above, `dataType` is the data type the function returns. It can be `int`, `String`, and so on. A function that has no `return` statement uses the `void` type as its data type.
@@ -1005,8 +1081,9 @@ Here's what the syntax looks like for functions that use the `void` type:
 
 ```
 void functionName(optionalParameters) {
-    // code logic
+	// code logic
 }
+
 ```
 
 In the syntax above, `functionName` denotes the name of the function. We can use that name to call the function in order to execute the code defined in the function.
@@ -1015,7 +1092,7 @@ In the syntax above, `functionName` denotes the name of the function. We can use
 
 Here's an example:
 
-```
+```c++
 // function declaration
 void printName(String userName) {
   Serial.println("Hello " + userName);
@@ -1029,6 +1106,7 @@ void loop() {
   printName("Ihechikara"); // function call
   delay(1000);
 }
+
 ```
 
 In the code above, we created a function called `printName` which accepts a string parameter called `userName`. The function's task is to print "Hello " along with whatever the parameter value is.
@@ -1043,7 +1121,7 @@ Using a parameter that has the wrong data type will result in an error. For inst
 
 In this section, I'll use the `int` data type to show you how functions declared without the `void` type are used. The logic here is the same with other functions that use the `return` statement.
 
-```
+```c++
 // function declaration
 int addNums(int a, int b) {
 
@@ -1059,6 +1137,7 @@ void loop() {
   Serial.println(addNums(2, 10)); // function call
   delay(1000);
 }
+
 ```
 
 In the code above, we declared a function with the `int` type: `int addNums(int a, int b) {...}`. This implies that the function is expected to return an integer value.
@@ -1067,8 +1146,9 @@ The function's logic adds the value of the two parameters (`a` and `b`) and retu
 
 We can now say that the task of the `addNums` function is to return the sum of two given parameters. This can be seen when we used the function in the `void loop()`:
 
-```
+```c++
 Serial.println(addNums(2, 10));
+
 ```
 
 We called the function with two parameters and got their sum printed out in the serial monitor.
@@ -1081,7 +1161,7 @@ But what if you used the `return` statement in a `void` function? Would that bre
 
 The main use of the `return` keyword is to return a value from the function, and then terminate the function. Consider the example below:
 
-```
+```cpp
 int addNums(int a, int b) {
 
   int result = a + b;
@@ -1091,6 +1171,7 @@ int addNums(int a, int b) {
   // This part will be ignored
   Serial.println("Hello World");
 }
+
 ```
 
 The function above takes in two parameters — a and b — and returns their sum. You'll notice that we printed "Hello World" after the `return` statement. The part of the code that comes after the `return` statement will not be executed because the function terminates/stops its operation once it sees a `return` statement.
@@ -1111,7 +1192,7 @@ You can use the `setup()` function to configure analog and digital pins, initial
 
 The `loop()` function runs continuously. This part of the sketch is where you write all the code logic. You can use the `loop()` function to give the Arduino board instructions on different components and sensors.
 
-```
+```cpp
 void setup() {
   // put your setup code here, to run once:
 
@@ -1121,6 +1202,7 @@ void loop() {
   // put your main code here, to run repeatedly:
 
 }
+
 ```
 
 ### `pinMode()` Function in Arduino
@@ -1131,10 +1213,11 @@ The `pinMode()` function is used to configure pins as input or output pins. It c
 
 ```
 pinMode(pin, mode)
+
 ```
 
--   `pin` denotes the pin number on an Arduino board.
--   `mode` denotes the configuration of the `pin` which can be INPUT, OUTPUT, or INPUT\_PULLUP.
+* `pin` denotes the pin number on an Arduino board.
+* `mode` denotes the configuration of the `pin` which can be INPUT, OUTPUT, or INPUT_PULLUP.
 
 ### `digitalRead()` Function in Arduino
 
@@ -1144,6 +1227,7 @@ You can use the `digitalRead()` function to read the state of digital pins. It r
 
 ```
 digitalRead(pin)
+
 ```
 
 In the code above, `pin` denotes the pin number on an Arduino board.
@@ -1156,10 +1240,11 @@ The `digitalWrite()` function assigns or writes values (either `HIGH` or `LOW`) 
 
 ```
 digitalWrite(pin, value)
+
 ```
 
--   `pin` denotes the pin number on an Arduino board.
--   `value` denotes the value to be assigned to `pin`. Can be `HIGH` or `LOW`.
+* `pin` denotes the pin number on an Arduino board.
+* `value` denotes the value to be assigned to `pin`. Can be `HIGH` or `LOW`.
 
 ### `analogRead()` Function in Arduino
 
@@ -1169,6 +1254,7 @@ The `analogRead()` function reads values from analog pins and returns values tha
 
 ```
 analogRead(pin)
+
 ```
 
 In the code above, `pin` denotes the pin number on an Arduino board.
@@ -1181,16 +1267,17 @@ This function writes or assigns an analog value to a pin.
 
 ```
 analogWrite(pin, value)
+
 ```
 
--   `pin` denotes the pin number on an Arduino board.
--   `value` denotes the value to be assigned to `pin`. Range from 0 to 255.
+* `pin` denotes the pin number on an Arduino board.
+* `value` denotes the value to be assigned to `pin`. Range from 0 to 255.
 
 ## Serial Functions in Arduino
 
 Serial communication enables an Arduino board to communicate with the computer and other devices using the built-in serial monitor. Here are some of the commonly used functions:
 
-### `Serial.begin()`
+### `Serial.begin()` 
 
 The `Serial.begin()` function initializes serial communication. It is the first function you use when working with the serial monitor. The function takes in a baud rate as its parameter.
 
@@ -1200,20 +1287,22 @@ Here's the syntax:
 
 ```
 Serial.begin(baudRate)
+
 ```
 
 ### `Serial.print()` and `Serial.println()`
 
 You can use the `print()` and `println()` functions to print data to the serial monitor.
 
-```
+```cpp
 print(val)
 println(val)
+
 ```
 
 In the code above, `val` denotes the value to be printed.
 
-We'll talk more about serial communication in [Chapter 6: How to use the Serial Monitor in Arduino][16].
+We'll talk more about serial communication in [Chapter 6: How to use the Serial Monitor in Arduino](#heading-chapter-6-how-to-use-the-serial-monitor-in-arduino-2).
 
 ### `delay()` Function in Arduino
 
@@ -1221,6 +1310,7 @@ You can use the `delay()` function to pause the Arduino program for a specified 
 
 ```
 delay(ms)
+
 ```
 
 In the code above, `ms` denotes the specified time in milliseconds.
@@ -1235,9 +1325,9 @@ The number and arrangement of pins differ in various Arduino boards, but they se
 
 The Uno board has 14 digital pins numbered from 0 to 13. Although each pin can be configured to serve as either a digital input or output pin, some of them come with extra functionalities like:
 
--   Pins 0 (RX) and 1 (TX) enable the Arduino board to communicate serially. RX receives while TX sends.
--   Pins that have the tilde (~) symbol beside them support PWM (Pulse Width Modulation) signals. This means that you can use these pins like analog pins (to receive analog values).
--   Pins 2 and 3 can be used for interrupt-based functionalities.
+* Pins 0 (RX) and 1 (TX) enable the Arduino board to communicate serially. RX receives while TX sends.
+* Pins that have the tilde (~) symbol beside them support PWM (Pulse Width Modulation) signals. This means that you can use these pins like analog pins (to receive analog values).
+* Pins 2 and 3 can be used for interrupt-based functionalities.
 
 ## How to Configure Digital Pins as Input or Output Pins
 
@@ -1255,18 +1345,19 @@ The information or signal sent to input pins can be read using the `digitalRead(
 
 We'll use the following hardware components:
 
--   Arduino Uno.
--   Breadboard.
--   Pushbutton.
--   Jumper wires.
+* Arduino Uno.
+* Breadboard.
+* Pushbutton.
+* Jumper wires.
 
 Here's the diagram for the connection:
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/10/circuit-diagram-digital-input-pushbtn.png) _Configuration diagram – INPUT_
+![Image](https://www.freecodecamp.org/news/content/images/2023/10/circuit-diagram-digital-input-pushbtn.png)
+_Configuration diagram – INPUT_
 
 Here's the code:
 
-```
+```cpp
 int pushBtn = 7;
 int push_btn_state;
 
@@ -1280,23 +1371,26 @@ void loop(){
   Serial.println(push_btn_state);
   delay(1000);
 }
+
 ```
 
 Let's break the code down.
 
 We started by creating two integer variables — `pushBtn` and `push_btn_state`:
 
-```
+```cpp
 int pushBtn = 7;
 int push_btn_state;
+
 ```
 
 `pushBtn` was assigned a value of 7. We used this value to denote pin 7 on the Arduino board. We declared the `push_btn_state` variable but didn't assign any value to it because we'll use it to store the value of the push button later.
 
 In our `setup()` function, we configured the push button to act as an input pin using the `pinMode()` function:
 
-```
+```cpp
 pinMode(pushBtn, INPUT_PULLUP);
+
 ```
 
 The function took in two parameters — the `pushBtn` variable which denoted pin 7, and `INPUT_PULLUP` which sets the pin as an input with a pull-up resistor.
@@ -1307,8 +1401,9 @@ At this point, we've configured the Arduino software and hardware to recognize p
 
 Next, we used the `digitalRead()` function to read signals coming from pin 7. Remember the `push_btn_state` variable we created? That's where we stored the signal:
 
-```
+```cpp
 push_btn_state = digitalRead(pushBtn);
+
 ```
 
 After that, we printed the value being read from pin 7 to the serial monitor using `Serial.println(push_btn_state);`.
@@ -1325,17 +1420,18 @@ In this section, we'll use a LED (Light Emitting Diode) to demonstrate how to co
 
 Here are the components we'll use:
 
--   Arduino Uno.
--   Red LED.
--   1k Ohm resistor.
--   Jumper wires.
--   Breadboard.
+* Arduino Uno.
+* Red LED.
+* 1k Ohm resistor.
+* Jumper wires.
+* Breadboard.
 
 Here's the circuit diagram:
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/10/circuit-diagram-digital-output-led.png) _Configuration diagram – OUTPUT_
+![Image](https://www.freecodecamp.org/news/content/images/2023/10/circuit-diagram-digital-output-led.png)
+_Configuration diagram – OUTPUT_
 
-```
+```cpp
 int RedLED = 8;
 
 void setup(){
@@ -1348,17 +1444,19 @@ void loop(){
   digitalWrite(RedLED, LOW);
   delay(1000);
 }
+
 ```
 
 In the code above, we configured the red LED, which is connected to pin 8 on the Uno board, as an output pin using the `pinMode()` function.
 
 We then used the `digitalWrite()` function to send signals to the pin:
 
-```
+```cpp
   digitalWrite(RedLED, HIGH);
   delay(1000);
   digitalWrite(RedLED, LOW);
   delay(1000);
+
 ```
 
 With the `HIGH` parameter, we send 5V to the pin which makes the LED come on. With `LOW`, we send 0V which turns the LED off. So the LED comes on and off continuously with a delay of 1000 milliseconds. This example is commonly known as the "BLINK" example.
@@ -1371,18 +1469,19 @@ The idea is to control an LED using a pushbutton. When you press the button, the
 
 We'll combine the components used in the previous examples:
 
--   Arduino Uno.
--   Red LED.
--   1k Ohm resistor.
--   Pushbutton.
--   Jumper wires.
--   Breadboard.
+* Arduino Uno.
+* Red LED.
+* 1k Ohm resistor.
+* Pushbutton.
+* Jumper wires.
+* Breadboard.
 
-![digital-IO-project](https://www.freecodecamp.org/news/content/images/2023/10/digital-IO-project.png) _Configuration diagram - INPUT and OUTPUT project_
+![digital-IO-project](https://www.freecodecamp.org/news/content/images/2023/10/digital-IO-project.png)
+_Configuration diagram - INPUT and OUTPUT project_
 
 Here's the code:
 
-```
+```cpp
 int pushBtn = 7;
 int push_btn_state;
 int RedLED = 8;
@@ -1394,13 +1493,14 @@ void setup(){
 
 void loop(){
   push_btn_state = digitalRead(pushBtn);
-
+  
   if (push_btn_state == 1) {
     digitalWrite(RedLED, HIGH);
   } else {
     digitalWrite(RedLED, LOW);
   }
 }
+
 ```
 
 Here's a breakdown of the code above:
@@ -1431,20 +1531,21 @@ In the project for this section, you'll learn how to adjust the brightness of an
 
 Here are the components we'll use:
 
--   Arduino Uno.
--   Yellow LED.
--   Potentiometer.
--   1k Ohm resistor.
--   Jumper wires.
--   Breadboard.
+* Arduino Uno.
+* Yellow LED.
+* Potentiometer.
+* 1k Ohm resistor.
+* Jumper wires.
+* Breadboard.
 
 Here's the circuit diagram:
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/10/analog-IO.png) _Configuration diagram_
+![Image](https://www.freecodecamp.org/news/content/images/2023/10/analog-IO.png)
+_Configuration diagram_
 
 Here's the code for the circuit:
 
-```
+```cpp
 int potentiometer = A0;
 int pot_value = 0;
 float pot_in_PWM;
@@ -1461,6 +1562,7 @@ void loop(){
 
   analogWrite(yelowLED, pot_in_PWM);
 }
+
 ```
 
 In the code above, we set the potentiometer (connected to analog pin A0) as an input component. The yellow LED (connected to digital pin 6) was set as an output component. The LED is connected to a PWM pin because we'll be sending analog values to it.
@@ -1495,14 +1597,14 @@ In the same manner, sensors in Arduino have their specific functions and use cas
 
 Here are some commonly used sensors you'll come across when working with Arduino:
 
--   **Temperature sensor**: Measures the temperature and humidity of the environment.
--   **Light-Dependent Resistor (LDR)**: Measures/senses the intensity of light.
--   **Ultrasonic sensor**: Measures the distance of an object from the sensor.
--   **Motion sensor**: Generally detects motion by sensing changes in infrared energy/radiation.
--   **Soil moisture sensor**: Measures the moisture level of the soil.
--   **Water sensor**: Measures water level/detects water, and so on.
+* **Temperature sensor**: Measures the temperature and humidity of the environment.
+* **Light-Dependent Resistor (LDR)**: Measures/senses the intensity of light.
+* **Ultrasonic sensor**: Measures the distance of an object from the sensor.
+* **Motion sensor**: Generally detects motion by sensing changes in infrared energy/radiation.
+* **Soil moisture sensor**: Measures the moisture level of the soil.
+* **Water sensor**: Measures water level/detects water, and so on.
 
-There are other types of sensors that you can use with Arduino, but we'll just focus on two: the LDR (light-dependent resistor) and ultrasonic sensor.
+There are other types of sensors that you can use with Arduino, but we'll just focus on two: the LDR (light-dependent resistor) and ultrasonic sensor. 
 
 With the examples in this section, you'll be able to explore how other sensors work on your own.
 
@@ -1514,17 +1616,19 @@ Basically, you can use this sensor to sense light. You can do cool things with i
 
 A LDR usually looks like this:
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/10/ldr.png) _Diagram of an LDR_
+![Image](https://www.freecodecamp.org/news/content/images/2023/10/ldr.png)
+_Diagram of an LDR_
 
 Here's what the circuit connection looks like:
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/10/ldr-circuit.png) _Configuration diagram_
+![Image](https://www.freecodecamp.org/news/content/images/2023/10/ldr-circuit.png)
+_Configuration diagram_
 
 In the circuit above, one leg of the LDR is connected to 5V (volts). The other leg is connected to a 1K Ohm resistor — one end of the resistor is connected to ground (GND) while the other end is connected to an analog pin (A1 in our circuit).
 
 Here's the code:
 
-```
+```cpp
 int ldrPin = A1;
 int ldrValue;
 
@@ -1538,6 +1642,7 @@ void loop() {
   Serial.println(ldrValue);
   delay(1000); 
 }
+
 ```
 
 In the code above, we created a variable called `ldrpin` with a value of `A1`. This denotes the connection made in the circuit where one leg of the LDR is connected to the analog pin. This pin will help us know the value of the sensor.
@@ -1548,8 +1653,9 @@ In the `setup()` function, we set the LDR as an INPUT pin. We also initialized t
 
 Next, we read the value of the LDR using the `analogRead` function, and stored the value in the `ldrValue` variable:
 
-```
+```cpp
 ldrValue = analogRead(ldrPin);
+
 ```
 
 Lastly, we printed the read value to the serial monitor with a delay of 1000 milliseconds (one second).
@@ -1560,29 +1666,30 @@ At this point, if you increase the exposure of light on the LDR, the value incre
 
 The ultrasonic sensor is generally used to measure the distance of objects. You can use this sensor in a lot of applications like:
 
--   Home automation (you can perform certain actions when the presence of an object/human is sensed, like turning on lights in a dark room).
--   Automated doors.
--   Security systems.
--   Measurement of distance, and so on.
+* Home automation (you can perform certain actions when the presence of an object/human is sensed, like turning on lights in a dark room).
+* Automated doors.
+* Security systems.
+* Measurement of distance, and so on.
 
 Just like other sensors, there are various types. In this example, we'll use the HC-SR04 ultrasonic sensor. Don't worry, the working principle is the same. So if you understand how to use this one, you can configure and use other types of ultrasonic sensors you come across.
 
 Here's what the circuit diagram looks like:
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/10/ultra-sensor.png) _Configuration diagram (from https://howtomechatronics.com/tutorials/arduino/ultrasonic-sensor-hc-sr04/)_
+![Image](https://www.freecodecamp.org/news/content/images/2023/10/ultra-sensor.png)
+_Configuration diagram (from https://howtomechatronics.com/tutorials/arduino/ultrasonic-sensor-hc-sr04/)_
 
 The sensor has four pins — VCC, Trig, Echo, and GND.
 
--   The VCC pin is connected to 5V on the Uno board
--   The Trig pin is connected to digital pin 9.
--   The Echo pin is connected to digital pin 10.
--   The GND pin is connected to GND on the Uno board.
+* The VCC pin is connected to 5V on the Uno board
+* The Trig pin is connected to digital pin 9.
+* The Echo pin is connected to digital pin 10.
+* The GND pin is connected to GND on the Uno board.
 
 The trig pin is used to "trigger" the ultrasonic sensor while the echo pin is used to distance of objects based on the amount of time it takes for ultrasonic waves/signals to bounce back from an object.
 
 Here's a code example:
 
-```
+```cpp
 int trigPin = 9; 
 int echoPin = 10;  
 
@@ -1598,17 +1705,18 @@ void loop() {
   digitalWrite(trigPin, HIGH);
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
-
+  
   duration = pulseIn(echoPin, HIGH);
-
+  
   distance = (duration / 2) * 0.0343;
 
   Serial.print("Distance: ");
   Serial.print(distance);
   Serial.println(" cm");
-
+  
   delay(1000);
 }
+
 ```
 
 In the code above, the trig pin denotes digital pin 9, and the echo pin denotes digital pin 10.
@@ -1617,10 +1725,11 @@ We declared two variables — duration and distance — to be used to store thei
 
 We triggered the sensor by sending the `HIGH` signal to the trigger pin for 10 microseconds. Without this, the sensor might not work:
 
-```
+```cpp
   digitalWrite(trigPin, HIGH);
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
+
 ```
 
 We measured and stored the duration of the ultrasonic pulse/signals using the `pulseIn(echoPin, HIGH)` function and stored it in the `duration` variable.
@@ -1637,11 +1746,11 @@ Actuators in Arduino are components that convert electrical signals into physica
 
 Here are some actuators:
 
--   LED (Light Emitting Diode): Used as light/visual indicators.
--   Buzzer: Used to produce sound.
--   Relay modules: Used to control high voltage devices.
--   LCD (Liquid Crystal Display): Used as visual display for text, images, sensor data, and so on. We'll dedicate a separate chapter to displays.
--   Servo motors: Used to control angular or rotational motion (an example is the movement of a robotic arm).
+* LED (Light Emitting Diode): Used as light/visual indicators.
+* Buzzer: Used to produce sound.
+* Relay modules: Used to control high voltage devices.
+* LCD (Liquid Crystal Display): Used as visual display for text, images, sensor data, and so on. We'll dedicate a separate chapter to displays.
+* Servo motors: Used to control angular or rotational motion (an example is the movement of a robotic arm).
 
 We'll focus on the buzzer and LED in this section.
 
@@ -1657,13 +1766,13 @@ Here's the circuit connection:
 
 ![Image](https://www.freecodecamp.org/news/content/images/2023/10/led-circuit.png)
 
-In the circuit above, the longer leg of the LED (the anode or positive leg) is connected to digital pin 7.
+In the circuit above, the longer leg of the LED (the anode or positive leg) is connected to digital pin 7. 
 
 The shorter leg (cathode) is connected to ground.
 
 Here's the code:
 
-```
+```cpp
 int redLED = 7;
 
 void setup() {
@@ -1690,10 +1799,10 @@ Passive buzzers are a bit more flexible when it comes to producing sound because
 
 Buzzers can be used in different applications like:
 
--   Alarm systems.
--   Sound indictor for home appliances.
--   Doorbells.
--   Communication devices to denote the start/end of a signal communication, and so on.
+* Alarm systems.
+* Sound indictor for home appliances.
+* Doorbells.
+* Communication devices to denote the start/end of a signal communication, and so on.
 
 We'll work with the passive buzzer because of its flexibility. This is what it looks like:
 
@@ -1709,7 +1818,7 @@ In this example, we'll use the buzzer to produce the DO, RE, MI, FA, SOL, LA, TI
 
 Here's the code:
 
-```
+```cpp
 int buzzerPin = 7;
 
 int notes[] = {262, 294, 330, 349, 392, 440, 494};
@@ -1729,6 +1838,7 @@ void loop() {
 
   delay(1000);
 }
+
 ```
 
 In the code above, we used the `buzzerPin` variable to denote pin 7 on the Uno board.
@@ -1747,9 +1857,9 @@ Now that you understand what sensors and actuators are and how to use them, let'
 
 In many embedded systems, sensors and actuators work together to get a specific task/functionality done. Here's how that works:
 
--   A sensor detects/senses changes in the environment, and sends signals to the microcontroller to notify it of the detected changes.
--   The microcontroller processes the signals from the sensor. Depending on the existing logic (defined in the code), it sends signals to the actuator.
--   The actuator converts the signal from the microcontroller to physical/mechanical motion.
+* A sensor detects/senses changes in the environment, and sends signals to the microcontroller to notify it of the detected changes.
+* The microcontroller processes the signals from the sensor. Depending on the existing logic (defined in the code), it sends signals to the actuator.
+* The actuator converts the signal from the microcontroller to physical/mechanical motion.
 
 Let's demonstrate these using an example. The idea here is to turn on an LED in a dark environment and turn it off when there's enough light.
 
@@ -1761,7 +1871,7 @@ Here's the circuit diagram:
 
 Here's the code:
 
-```
+```cpp
 int redLED = 7;
 
 int ldrPin = A1;
@@ -1785,6 +1895,7 @@ void loop() {
   Serial.println(ldrValue);
   delay(1000); 
 }
+
 ```
 
 As usual, we created variables to represent the Arduino pins connected to the LED and LDR. We then set the LDR as INPUT and the LED as output in the `setup()` function.
@@ -1799,9 +1910,9 @@ If the value is greater than 200, we turn off the LED. If the value is less than
 
 The serial monitor is a useful tool for every Arduino builder. You can use it for a variety of tasks like:
 
--   Debugging and testing code/components.
--   Serial communication between the Arduino board and the computer.
--   Display sensor and component data and readings.
+* Debugging and testing code/components.
+* Serial communication between the Arduino board and the computer.
+* Display sensor and component data and readings.
 
 In this chapter, you'll learn how to initialize and use the serial monitor using the Arduino IDE. You'll learn about different built-in functions that can be used to send and receive data between the Arduino board and the computer.
 
@@ -1813,6 +1924,7 @@ You can use the `Serial.begin()` function to initialize the serial monitor. It t
 
 ```
 Serial.begin(baudRate)
+
 ```
 
 The baud rate is the speed of data transfer between the Arduino board and the computer or any other device communicating with the Arduino board through the serial monitor.
@@ -1821,7 +1933,7 @@ The most commonly used baud rate is 9600, but you'll also come across resources 
 
 For example, we can initialize the serial monitor in the IDE using the `Serial.begin()` function like this:
 
-```
+```cpp
 void setup() {
   Serial.begin(9600);
 
@@ -1831,13 +1943,15 @@ void loop() {
   // put your main code here, to run repeatedly:
 
 }
+
 ```
 
 In the code above, using the `Serial.begin()` function, we initialized the serial monitor in the `setup()` function with a baud rate of 9600.
 
 At this point, nothing is happening. You can verify that the baud rates match by opening the serial monitor window. Once you have it open, you should have the serial monitor appear at the base of the IDE. You'll see the baud rate of the serial monitor within the window, usually written like "9600 baud".
 
-![Image](https://www.freecodecamp.org/news/content/images/2023/10/baud-rate.PNG) _Image showing baud rate_
+![Image](https://www.freecodecamp.org/news/content/images/2023/10/baud-rate.PNG)
+_Image showing baud rate_
 
 If you're using an older version of the IDE, the serial monitor may pop up as a separate window. The functionality is still the same.
 
@@ -1845,15 +1959,15 @@ Now that we've initialized the serial monitor, let's see how to send and receive
 
 ## How to Send Data with Serial Monitor
 
-You can use different built-in functions reserved for serial communication in Arduino. We won't discuss all the built-in serial functions in Arduino – we'll just look at some you'll use/come across regularly. You can see more functions [here][17].
+You can use different built-in functions reserved for serial communication in Arduino. We won't discuss all the built-in serial functions in Arduino – we'll just look at some you'll use/come across regularly. You can see more functions [here](https://www.arduino.cc/reference/en/language/functions/communication/serial/).
 
-### `print()` and `println()` Functions
+### `print()` and  `println()` Functions
 
 The `print()` and `println()` functions both print data to the serial monitor. The difference between the two is that `print()` prints data on the same line while `println()` prints each data on a new line.
 
 Here are some examples:
 
-```
+```cpp
 void setup() {
   Serial.begin(9600);
 }
@@ -1862,6 +1976,7 @@ void loop() {
   Serial.print("Hello"); 
   delay(1000);
 }
+
 ```
 
 In the code above, we used the `print()` function to print "Hello" to the serial monitor repeatedly with a delay of 1000 milliseconds. Here's what the output looks like in the serial monitor:
@@ -1870,7 +1985,7 @@ In the code above, we used the `print()` function to print "Hello" to the serial
 
 Here's another example using the `println()` function:
 
-```
+```cpp
 void setup() {
   Serial.begin(9600);
 }
@@ -1879,6 +1994,7 @@ void loop() {
   Serial.println("Hi");
   delay(1000);
 }
+
 ```
 
 Here's the output in the serial monitor:
@@ -1887,7 +2003,7 @@ Here's the output in the serial monitor:
 
 ## How to Receive Data with Serial Monitor
 
-We'll discuss four functions in this section — `available()`, `readString()`, `parseInt()`, and `parseFloat()`. You can read up on other serial functions [here][18].
+We'll discuss four functions in this section — `available()`, `readString()`, `parseInt()`, and `parseFloat()`. You can read up on other serial functions [here](https://www.arduino.cc/reference/en/language/functions/communication/serial/).
 
 ### `available()` Function
 
@@ -1895,7 +2011,7 @@ The `Serial.available()` function checks the number of characters in the serial 
 
 Here's a code example:
 
-```
+```cpp
 int userInput;
 
 void setup(){
@@ -1910,6 +2026,7 @@ void loop(){
   }
 
 }
+
 ```
 
 In the code above, the code block in the `if` statement will not run until the number of characters in the serial monitor is greater than 0.
@@ -1920,7 +2037,7 @@ When you initialize the serial monitor, the number of readable characters will b
 
 You can use the `readString()` function to read characters from the serial monitor. It returns a string object so whatever values/characters you input in the serial monitor will be seen as string values when using the `readString()` function.
 
-```
+```cpp
 String userInput;
 
 void setup(){
@@ -1935,13 +2052,14 @@ void loop(){
   }
 
 }
+
 ```
 
 ### `parseInt()` Function
 
 The `parseInt()` function returns valid integer values from incoming serial data. Non integer values will be returned as 0.
 
-```
+```cpp
 int userInput;
 
 void setup(){
@@ -1956,13 +2074,14 @@ void loop(){
   }
 
 }
+
 ```
 
 ### `parseFloat()` Function
 
 The `parseFloat()` function returns valid floating point numbers from incoming serial data.
 
-```
+```cpp
 float userInput;
 
 void setup(){
@@ -1977,6 +2096,7 @@ void loop(){
   }
 
 }
+
 ```
 
 ## Serial Monitor Project
@@ -1991,7 +2111,7 @@ In the circuit diagram above, we have three LEDs. The red LED is connected to pi
 
 Here's the code:
 
-```
+```cpp
 int redLED = 6;
 int blueLED = 5;
 int yellowLED = 4;
@@ -2003,7 +2123,7 @@ void setup(){
   pinMode(blueLED, OUTPUT);
   pinMode(yellowLED, OUTPUT);
   Serial.begin(9600);
-
+  
   Serial.println("Choose an LED to turn on from the list below:");
   Serial.println("red");
   Serial.println("blue");
@@ -2011,11 +2131,11 @@ void setup(){
 }
 
 void loop(){
-
+  
   if (Serial.available() > 0) {
-
+    
     userInput = Serial.readString();
-
+    
     if (userInput == "red") {
       digitalWrite(redLED, HIGH);
       digitalWrite(blueLED, LOW);
@@ -2033,39 +2153,43 @@ void loop(){
       digitalWrite(blueLED, LOW);
       digitalWrite(yellowLED, HIGH);
     }
-
+    
   }
 
 }
+
 ```
 
 Let's break down the code above.
 
 Just like the connection in the circuit diagram, we initialized the three LEDs with their respective pin numbers. We also created a string variable called `userInput` that will be used to store the data from the serial monitor:
 
-```
+```cpp
 int redLED = 6;
 int blueLED = 5;
 int yellowLED = 4;
+
 ```
 
 We then configured the three LEDs as output pins using the `pinMode()` function:
 
-```
+```cpp
 pinMode(redLED, OUTPUT);
 pinMode(blueLED, OUTPUT);
 pinMode(yellowLED, OUTPUT);
+
 ```
 
 We initialized the serial monitor with a baud rate of 9600, and printed some strings to give users a hint at the expected values to be used in the serial monitor:
 
-```
+```cpp
 Serial.begin(9600);
-
+  
 Serial.println("Choose an LED to turn on from the list below:");
 Serial.println("red");
 Serial.println("blue");
 Serial.println("yellow");
+
 ```
 
 At this point, you'll have an output like this in the serial monitor:
@@ -2074,21 +2198,23 @@ At this point, you'll have an output like this in the serial monitor:
 
 Using the `Serial.available()` function, we check for availability of serial data before running the code in the `if` statement:
 
-```
+```cpp
 if (Serial.available() > 0) {
     ...
 }
+
 ```
 
 The next thing we did was to read and return the incoming data as string values, and store the data in the `userInput` variable. We did that using the `readString()` function:
 
-```
+```cpp
 userInput = Serial.readString();
+
 ```
 
 Lastly, we used `if` statements to check which LED color value the user has typed in/sent through the serial monitor, then turn on/off the respective LEDs:
 
-```
+```cpp
 if (userInput == "red") {
   digitalWrite(redLED, HIGH);
   digitalWrite(blueLED, LOW);
@@ -2106,6 +2232,7 @@ if (userInput == "yellow") {
   digitalWrite(blueLED, LOW);
   digitalWrite(yellowLED, HIGH);
 }
+
 ```
 
 If you type and send red through the serial monitor, the red LED comes on while the others goes off. The same logic applies to sending blue or yellow through the serial monitor.
@@ -2134,14 +2261,14 @@ We'll be using the first method — this will help you understand how the pins w
 
 The pins control functionalities like memory management, data transfer, and power on an LCD. Let's talk about them in detail:
 
--   The first pin from the left is the GND pin, which is the LCD's ground pin. It is connected to GND on the Arduino board. In some LCD modules, it may be written as VSS.
--   The VCC is the power pin which is connected to 5V on the Arduino board. In some LCD modules, it may be written as VDD.
--   The V0 pin is used to adjust the contrast of the LCD. It is connected to a potentiometer. Tuning the potentiometer changes the contrast of the data being displayed.
--   The RS (Register Select) pin can be used to control the LCD's memory. It is usually connected to a digital pin.
--   The RW (Read/Write) pin controls whether data is written or read to the LCD. It is usually connected to ground (GND) which sets the LCD to write mode — this enables you to send and display data with the LCD.
--   The E (Enable) pin "enables" data transfer between the microcontroller (in our case, the Uno board) and the LCD. It is usually connected to a digital pin.
--   The D0 to D7 (can also be written as DB0 to DB7) are the data pins. There are used to send data to the LCD in bits. In most cases, the D4 to D7 pins are used. The main difference is that data is sent in 4-bits with the D0 to D3 pins, while data is sent in 8-bits with the D4 to D7 pins. There are usually connected to digital pins.
--   The LED pins are used to control the backlight of the LCD. In some LCD modules, they may be written as BLA and BLK, or A and K. The first LED pin is connected to 5V using a resistor while the second LED pin is connected to ground (GND).
+* The first pin from the left is the GND pin, which is the LCD's ground pin. It is connected to GND on the Arduino board. In some LCD modules, it may be written as VSS.
+* The VCC is the power pin which is connected to 5V on the Arduino board. In some LCD modules, it may be written as VDD.
+* The V0 pin is used to adjust the contrast of the LCD. It is connected to a potentiometer. Tuning the potentiometer changes the contrast of the data being displayed.
+* The RS (Register Select) pin can be used to control the LCD's memory. It is usually connected to a digital pin.
+* The RW (Read/Write) pin controls whether data is written or read to the LCD. It is usually connected to ground (GND) which sets the LCD to write mode — this enables you to send and display data with the LCD.
+* The E (Enable) pin "enables" data transfer between the microcontroller (in our case, the Uno board) and the LCD. It is usually connected to a digital pin.
+* The D0 to D7 (can also be written as DB0 to DB7) are the data pins. There are used to send data to the LCD in bits. In most cases, the D4 to D7 pins are used. The main difference is that data is sent in 4-bits with the D0 to D3 pins, while data is sent in 8-bits with the D4 to D7 pins. There are usually connected to digital pins.
+* The LED pins are used to control the backlight of the LCD. In some LCD modules, they may be written as BLA and BLK, or A and K. The first LED pin is connected to 5V using a resistor while the second LED pin is connected to ground (GND).
 
 ## Example #1 – How to Connect and Use an LCD with Arduino
 
@@ -2149,12 +2276,12 @@ In the last section, we talked about the meaning of the pins on an LCD. In this 
 
 We'll use the following components:
 
--   Arduino Uno.
--   16 x 2 LCD.
--   Potentiometer.
--   Jumper wires.
--   Resistors.
--   Breadboard.
+* Arduino Uno.
+* 16 x 2 LCD.
+* Potentiometer.
+* Jumper wires.
+* Resistors.
+* Breadboard.
 
 Here's what the circuit diagram looks like:
 
@@ -2162,23 +2289,23 @@ Here's what the circuit diagram looks like:
 
 In the circuit above, we made the following connections from the LCD to the Uno board:
 
--   The LCD's GND pin was connected to GND on the Uno board.
--   The LCD's VCC pin was connected to 5V on the Uno board.
--   The V0 pin was connected to the potentiometer.
--   The RS pin was connected to digital pin 4 on the Uno board.
--   The RW pin was connected to GND on the Uno board.
--   The LCD's D4 was connected to digital pin 6 on the Uno board.
--   The LCD's D5 was connected to digital pin 7 on the Uno board.
--   The LCD's D6 was connected to digital pin 8 on the Uno board.
--   The LCD's D7 was connected to digital pin 9 on the Uno board.
--   The first LED pin was connected to 5V.
--   The second LED pin was connected to GND.
+* The LCD's GND pin was connected to GND on the Uno board.
+* The LCD's VCC pin was connected to 5V on the Uno board.
+* The V0 pin was connected to the potentiometer.
+* The RS pin was connected to digital pin 4 on the Uno board.
+* The RW pin was connected to GND on the Uno board.
+* The LCD's D4 was connected to digital pin 6 on the Uno board.
+* The LCD's D5 was connected to digital pin 7 on the Uno board.
+* The LCD's D6 was connected to digital pin 8 on the Uno board.
+* The LCD's D7 was connected to digital pin 9 on the Uno board.
+* The first LED pin was connected to 5V.
+* The second LED pin was connected to GND.
 
 For the potentiometer, one of the outer legs (either the left or right) was connected to 5V, the other outer leg was connected to GND. Then the middle leg of the potentiometer was connected to the V0 pin on the LCD. This will enable you to control the contrast of the LCD.
 
 Next, we'll write some code!
 
-```
+```cpp
 #include <LiquidCrystal.h>
 
 LiquidCrystal lcd(4, 5, 6, 7, 8, 9);
@@ -2191,6 +2318,7 @@ void setup() {
 void loop() {
 
 }
+
 ```
 
 In the code above, we first included/imported the built-in `LiquidCrystal` library which can be used to interact with an LCD using Arduino code: `#include <LiquidCrystal.h>`.
@@ -2209,7 +2337,7 @@ In this example, we'll accept input from the user using the serial monitor, and 
 
 We'll make use of the same circuit in the previous example. Here's the code:
 
-```
+```cpp
 #include <LiquidCrystal.h>
 LiquidCrystal lcd(4, 5, 6, 7, 8, 9);
 
@@ -2231,6 +2359,7 @@ void loop() {
     lcd.print("Welcome " + userInput);
   }
 }
+
 ```
 
 In the code above, we created a string variable called `userInput` which will be used to store the value of the user's input.
@@ -2257,7 +2386,7 @@ An alternative way to print the message to the user is by using the same line wh
 
 Here's how:
 
-```
+```cpp
 #include <LiquidCrystal.h>
 LiquidCrystal lcd(4, 5, 6, 7, 8, 9);
 
@@ -2277,6 +2406,7 @@ void loop() {
     lcd.print("Welcome " + userInput);
   }
 }
+
 ```
 
 In this example, we used the `lcd.clear()` function to clear the initial request message and display/print the welcome message to the user. The rest of the logic is the same.
@@ -2289,13 +2419,13 @@ In this example, we'll display data from a sensor on the LCD. We'll use the temp
 
 Here are the components we'll use:
 
--   Arduino Uno.
--   16 x 2 LCD.
--   Light-Dependent Resistor (LDR).
--   Potentiometer.
--   Jumper wires.
--   Resistors.
--   Breadboard.
+* Arduino Uno.
+* 16 x 2 LCD.
+* Light-Dependent Resistor (LDR).
+* Potentiometer.
+* Jumper wires.
+* Resistors.
+* Breadboard.
 
 Here's the circuit diagram:
 
@@ -2305,7 +2435,7 @@ The circuit diagram is almost the same as the ones in the previous examples, exc
 
 Here's the code:
 
-```
+```cpp
 #include <LiquidCrystal.h>
 LiquidCrystal lcd(4, 5, 6, 7, 8, 9);
 
@@ -2319,7 +2449,7 @@ void setup() {
 
 void loop() {
   ldrValue = analogRead(ldrPin);
-
+  
   lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print("LDR value:");
@@ -2329,6 +2459,7 @@ void loop() {
 
   delay(1000);
 }
+
 ```
 
 Let's break down the code.
@@ -2349,37 +2480,19 @@ Using the `lcd.setCursor(0, 1)` function, we moved the cursor down to the second
 
 Lastly, we added a delay of 1000 milliseconds.
 
-Now you can see the value of light intensity in your environment displayed on the LCD.
+Now you can see the value of light intensity in your environment displayed on the LCD. 
 
 You can use a flashlight to increase and decrease the exposure of light on the LDR, and then observe the values change on the LCD. Pretty cool!
 
 # Conclusion
 
-Congratulations! We've come to the end of this handbook. You now have enough knowledge to take on bigger projects.
+Congratulations! We've come to the end of this handbook. You now have enough knowledge to take on bigger projects. 
 
 And that should be your next goal — applying these concepts to projects that aid you and the people around you. There is no limit to what you can create. You can start by watching a couple of videos to see the type of projects people build, then you can come up with yours.
 
-This handbook covered the necessary parts of Arduino (both hardware and software) that you'll need as a beginner to kickstart your journey.
+This handbook covered the necessary parts of Arduino (both hardware and software) that you'll need as a beginner to kickstart your journey. 
 
 The best way to improve and retain what you've learned is by practicing and building.
 
 Happy tinkering!
 
-[1]: #heading-prerequisites
-[2]: #heading-chapter-1-getting-started-with-arduino
-[3]: #heading-chapter-2-basics-of-arduino-programming
-[4]: #heading-chapter-3-how-to-use-digital-pins-in-arduino
-[5]: #heading-chapter-4-how-to-use-analog-pins-in-arduino
-[6]: #heading-chapter-5-how-to-use-sensors-and-actuators-in-arduino
-[7]: #heading-chapter-6-how-to-use-the-serial-monitor-in-arduino-2
-[8]: #heading-chapter-7-how-to-use-displays-in-arduino
-[9]: https://blog.arduino.cc/2023/06/26/uno-r4-the-new-dimension-of-making/?_gl=1*18ccx2k*_ga*MTkzMTc3MDUxNC4xNjc5NjU4Mzkz*_ga_NEXN8H46L5*MTY4Nzk0Njg3Mi40LjEuMTY4Nzk0ODE3MS4wLjAuMA..
-[10]: https://www.arduino.cc/en/software
-[11]: https://www.arduino.cc/en/software
-[12]: https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2
-[13]: https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2
-[14]: https://www.asciitable.com/
-[15]: #heading-chapter-6-how-to-use-the-serial-monitor-in-arduino-2
-[16]: #heading-chapter-6-how-to-use-the-serial-monitor-in-arduino-2
-[17]: https://www.arduino.cc/reference/en/language/functions/communication/serial/
-[18]: https://www.arduino.cc/reference/en/language/functions/communication/serial/
